@@ -16,7 +16,7 @@ featured_count = 9
 # 同じ情報源の分類から選ぶ最大本数（偏り防止）
 featured_per_kind = 5
 # この語を見出しか概要に含む記事は「今日の注目」に選びません
-feature_skip_words = ["セール", "クーポン", "ポイント還元", "％オフ", "%オフ", "割引", "キャンペーン", "入荷", "株価", "NISA", "優待", "個別株", "予約開始", "PR", "sponsored", "deal", "deals", "discount", "live:", "live updates", "as it happened", "首位打者", "打者", "投手", "監督", "試合", "選手"]
+feature_skip_words = ["セール", "クーポン", "ポイント還元", "％オフ", "%オフ", "割引", "キャンペーン", "入荷", "株価", "NISA", "優待", "個別株", "予約開始", "PR", "sponsored", "deal", "deals", "discount", "live:", "live updates", "as it happened", "ゴルフ", "サッカー", "大相撲", "プロ野球", "Jリーグ", "優勝", "五輪代表", "競馬", "首位打者", "打者", "投手", "監督", "試合", "選手"]
 
 # ---- AI（ANTHROPIC_API_KEY を登録したときだけ動きます）----
 # 使うモデル
