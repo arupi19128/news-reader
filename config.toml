@@ -191,6 +191,11 @@ google_news = "(ドコモ OR KDDI OR ソフトバンク OR 楽天モバイル OR
 exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "セ・リーグ", "パ・リーグ", "スポニチ", "日刊スポーツ", "スポーツ報知", "打者", "首位打者", "選手", "監督", "試合"]
 
 [[feeds]]
+name = "Googleニュース：Kis-My-Ft2"
+kind = "エンタメ"
+google_news = "\"Kis-My-Ft2\" OR キスマイ OR 藤ヶ谷太輔 OR 玉森裕太 OR 宮田俊哉 OR 横尾渉 OR 千賀健永 OR 二階堂高嗣"
+
+[[feeds]]
 name = "Google News: Telecom"
 kind = "通信"
 lang = "en"
@@ -238,3 +243,7 @@ keywords = ["外交", "首脳", "会談", "国連", "NATO", "G7", "G20", "戦争
 [[topics]]
 name = "社会"
 keywords = ["事件", "事故", "逮捕", "容疑", "裁判", "判決", "火災", "地震", "災害", "台風", "豪雨", "大雨", "教育", "学校", "医療", "病院", "介護", "子ども", "高齢者", "警察", "自治体", "少子化", "killed", "dead", "police", "court", "earthquake", "storm", "flood", "wildfire"]
+
+[[topics]]
+name = "Kis-My-Ft2"
+keywords = ["Kis-My-Ft2", "キスマイ", "キス・マイ", "藤ヶ谷太輔", "藤ケ谷太輔", "玉森裕太", "宮田俊哉", "横尾渉", "千賀健永", "二階堂高嗣"]
