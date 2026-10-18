@@ -196,6 +196,12 @@ kind = "エンタメ"
 google_news = "\"Kis-My-Ft2\" OR キスマイ OR 藤ヶ谷太輔 OR 玉森裕太 OR 宮田俊哉 OR 横尾渉 OR 千賀健永 OR 二階堂高嗣"
 
 [[feeds]]
+name = "Googleニュース：ソフトバンク株式会社"
+kind = "通信"
+google_news = "(\"ソフトバンク株式会社\" OR 宮川潤一 OR \"ソフトバンク\" 法人 OR \"ソフトバンク\" AI OR \"ソフトバンク\" データセンター) -ホークス -野球 -ソフトバンクグループ -ソフトバンクG"
+exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "選手", "監督", "試合"]
+
+[[feeds]]
 name = "Google News: Telecom"
 kind = "通信"
 lang = "en"

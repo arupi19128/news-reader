@@ -271,6 +271,38 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .recipe-detail ol.steps li { counter-increment: st; display: grid; grid-template-columns: 2em minmax(0, 1fr); gap: 8px; }
 .recipe-detail ol.steps li::before { content: counter(st); width: 1.7em; height: 1.7em; border-radius: 50%; background: var(--wave); color: var(--sheet); display: grid; place-items: center; font: 600 13px var(--font-mono); }
 
+/* Interview notes */
+#company-view { padding-block: 26px 40px; }
+#company-view h1 { font-size: clamp(22px, 3.4vw, 32px); }
+.toc { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.toc button { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; color: var(--wave); }
+.note-sheet { scroll-margin-top: 110px; }
+.note-sheet .pad { padding: 14px 18px 16px; }
+.note-sheet p, .note-sheet li { font-size: 14.5px; line-height: 1.8; }
+.note-sheet ul { margin: 6px 0; padding-left: 1.2em; display: grid; gap: 4px; }
+.note-sheet h3 { font-size: 15px; margin: 16px 0 4px; }
+.pitch { font-size: 16px !important; margin: 0 0 8px; }
+.keys { list-style: none; padding: 0 !important; }
+.facts { width: 100%; border-collapse: collapse; font-size: 14px; }
+.facts th { text-align: left; white-space: nowrap; color: var(--muted); font-weight: 500; padding: 8px 14px 8px 0; vertical-align: top; width: 7.5em; }
+.facts td { padding: 8px 0; }
+.facts tr + tr th, .facts tr + tr td { border-top: 1px dashed var(--line); }
+.stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.stat-box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: grid; gap: 2px; }
+.stat-box b { font: 600 19px/1.3 var(--font-mono); }
+.stat-box small { font-size: 12px; color: var(--muted); }
+.hint { background: var(--wave-soft); border-radius: 8px; padding: 10px 14px; margin: 12px 0 0; }
+.topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.topic { padding: 14px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-width: 0; }
+.topic h3 { margin: 0 0 4px; font-size: 15.5px; }
+.topic p { margin: 0 0 6px; font-size: 13.5px !important; }
+.topic .why { color: var(--wave); font-weight: 500; }
+.qa details { border-bottom: 1px dashed var(--line); padding: 8px 0; }
+.qa summary { cursor: pointer; font-weight: 700; font-size: 15px; }
+.qa details p, .qa details ul { margin: 6px 0 2px; }
+.sources { font-size: 13.5px; }
+@media (max-width: 860px) { .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .topic-grid { grid-template-columns: 1fr; } }
+
 /* Report view */
 .article { padding-block: 26px 60px; }
 .article .inner { max-width: 760px; margin: 0 auto; background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; padding: 22px clamp(16px, 4vw, 36px) 30px; }
@@ -339,6 +371,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     <nav class="tabs" aria-label="ページ切り替え">
       <a href="#news" id="tab-news" aria-current="page">ニュース</a>
       <a href="#recipes" id="tab-recipes">レシピ</a>
+      <a href="#softbank" id="tab-company">面接対策</a>
     </nav>
     <nav class="jump" id="news-nav" aria-label="ニュースの中のリンク">
       <a href="#log" data-cover="uncovered">テレビ圏外</a>
@@ -470,6 +503,148 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   </section>
 </div>
 <main id="recipe-detail" class="wrap article" hidden></main>
+<div id="company-view" class="wrap" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap">Interview notes ・ 2026年10月18日時点</div>
+      <h1>ソフトバンク株式会社 面接対策ノート</h1>
+      <p>通信のソフトバンク（東証プライム 9434）について、面接で話せるように押さえておきたい事実をまとめました。<b>ソフトバンクグループ（SBG・9984）とは別の会社</b>です。</p>
+    </div>
+  </div>
+  <nav class="toc" aria-label="目次">
+    <button type="button" data-go="sb-pitch">30秒で言える会社像</button>
+    <button type="button" data-go="sb-profile">会社の基本</button>
+    <button type="button" data-go="sb-numbers">業績</button>
+    <button type="button" data-go="sb-plan">中期経営計画</button>
+    <button type="button" data-go="sb-topics">注目トピック</button>
+    <button type="button" data-go="sb-rivals">競合との違い</button>
+    <button type="button" data-go="sb-qa">想定質問</button>
+    <button type="button" data-go="sb-news">最新ニュース</button>
+    <button type="button" data-go="sb-sources">出典</button>
+  </nav>
+
+  <section class="sheet note-sheet" id="sb-pitch">
+    <div class="sheet-head"><h2>30秒で言える会社像</h2></div>
+    <div class="pad">
+      <p class="pitch">携帯電話（ソフトバンク・ワイモバイル・LINEMO）を土台に、法人向けのクラウド・AI、PayPay（決済）、LINEヤフー（メディア・EC）までを持つ会社です。2026年5月の新しい中期経営計画で<b>「通信インフラ企業から、AI時代の社会インフラ企業へ」</b>を掲げ、AIデータセンターや法人向けAI（クリスタル・インテリジェンス）に大きく投資しています。</p>
+      <ul class="keys">
+        <li><b>キーワード</b>：Activate AI for Society ／ AIデータセンター（苫小牧・堺）／ クリスタル・インテリジェンス ／ AI-RAN（AITRAS）／ SB Neo（米国ネオクラウド）／ 「数より質」のモバイル</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-profile">
+    <div class="sheet-head"><h2>会社の基本</h2><span class="cap">公式「会社概要」より</span></div>
+    <div class="pad"><table class="facts">
+      <tr><th>正式名称</th><td>ソフトバンク株式会社（SoftBank Corp.）／ 東証プライム 9434</td></tr>
+      <tr><th>代表</th><td>宮川 潤一（代表取締役 社長執行役員 兼 CEO）</td></tr>
+      <tr><th>設立</th><td>1986年12月9日</td></tr>
+      <tr><th>本社</th><td>東京都港区海岸一丁目7番1号（東京ポートシティ竹芝）</td></tr>
+      <tr><th>従業員</th><td>単体 19,150人 ／ 連結 58,432人（2026年3月31日）</td></tr>
+      <tr><th>資本金</th><td>2,443億5,500万円（2026年3月31日）</td></tr>
+      <tr><th>主なブランド</th><td>ソフトバンク ／ ワイモバイル ／ LINEMO（携帯）、SoftBank 光・SoftBank Air（固定）、PayPay、LINEヤフー</td></tr>
+      <tr><th>事業の分け方</th><td>コンシューマ（個人向け通信）／ エンタープライズ（法人向け）／ ディストリビューション（流通）／ メディア・EC（LINEヤフー）／ ファイナンス（PayPay など）</td></tr>
+      <tr><th>求める人物像</th><td>ソフトバンクの変化を楽しみ、何事もチャンスと捉えて挑戦する人。どんな仕事もやり遂げる、機会に自ら手を挙げる（新卒採用ページより）</td></tr>
+    </table></div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-numbers">
+    <div class="sheet-head"><h2>業績（数字は丸暗記より「傾向」を話せるように）</h2></div>
+    <div class="pad">
+      <div class="stat-grid">
+        <div class="stat-box"><span class="cap">2026年3月期 売上高</span><b>7兆387億円</b><small>前期比 +7.6%・過去最高・全セグメント増収</small></div>
+        <div class="stat-box"><span class="cap">2026年3月期 営業利益</span><b>1兆426億円</b><small>前期比 +5.4%</small></div>
+        <div class="stat-box"><span class="cap">2026年3月期 純利益</span><b>5,508億円</b><small>前期比 +4.7%・過去最高</small></div>
+        <div class="stat-box"><span class="cap">2027年3月期 予想</span><b>売上 7.5兆円</b><small>営業利益 1.1兆円 ／ 純利益 5,600億円</small></div>
+      </div>
+      <h3>直近：2027年3月期 第1四半期（2026年4〜6月、8月4日発表）</h3>
+      <ul>
+        <li>売上高 1兆8,147億円（前年同期比 +9.4%）で第1四半期として過去最高。営業利益 3,023億円（+4.0%）。</li>
+        <li><b>エンタープライズ（法人）が成長の柱</b>：売上 2,604億円（+11%）、営業利益 +28%。クラウド・AIがけん引。</li>
+        <li>モバイル：ARPU（1契約あたり月間収入）3,770円に上昇、解約率 1.35% に低下。一方でスマホ契約数は 3,183.5万件で前年から11.6万件減。</li>
+        <li>通期予想（売上 7.5兆円・純利益 5,600億円）は据え置き。第2四半期の決算は例年11月上旬に発表されるので、面接が11月以降なら最新を確認。</li>
+      </ul>
+      <p class="hint"><b>話し方のコツ</b>：「売上・利益とも過去最高で、特に法人のクラウド・AIが伸びている。個人向けは契約数より ARPU と解約率の改善、つまり『数より質』に切り替えている」と言えれば十分です。</p>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-plan">
+    <div class="sheet-head"><h2>中期経営計画（2026年5月発表・2026〜2030年度）</h2></div>
+    <div class="pad">
+      <ul>
+        <li><b>テーマ</b>：「Activate AI for Society」。通信インフラ企業から AI 時代の社会インフラ企業へ。AI 投資は「種まき」から「収穫」のフェーズへ。</li>
+        <li><b>目標（2030年度）</b>：営業利益 1兆7,000億円（年平均 +10%）、純利益 7,000億円（2025年度比 +27%）。</li>
+        <li><b>法人に軸足</b>：エンタープライズ事業の営業利益を年平均 15% で伸ばし、AI関連の売上を倍増。</li>
+        <li><b>投資</b>：設備投資 1.5兆円、AI関連・M&A向けの戦略投資枠 1兆円。</li>
+        <li><b>株主還元</b>：長く続けた年 8.6円配当から増配へ。2026年度 8.8円（予想）、2030年度 10円が目標。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-topics">
+    <div class="sheet-head"><h2>注目トピック（面接で「最近気になったニュース」に使える）</h2></div>
+    <div class="topic-grid">
+      <article class="topic"><h3>AIデータセンター</h3><p>北海道・苫小牧（2026年度）と大阪・堺（2027年度）で大規模データセンターを稼働予定。苫小牧は当初 50MW、将来は 300MW 超の構想。2026年5月から GPU クラウドのベータ版も提供。</p><p class="why">通信会社が「AIの計算力」を売る側に回る、という転換の象徴。</p></article>
+      <article class="topic"><h3>SB Neo（米国ネオクラウド）</h3><p>2026年7月に米国で設立。ソフトバンク 51%・SBG 49% 出資の連結子会社。グループの 10GW 規模のエネルギー・AI インフラを基に、2027年度から米国企業へ AI 計算資源を提供予定。</p><p class="why">国内通信会社が海外の AI インフラ市場に出ていく初の大きな一手。</p></article>
+      <article class="topic"><h3>クリスタル・インテリジェンス</h3><p>SBG と OpenAI の合弁 SB OAI Japan（2025年11月発足）が展開する、企業経営を AI で変える仕組み。2026年2月から OpenAI の法人向け基盤「Frontier」を土台に、ソフトバンクが「第1号ユーザー」として社内で検証。</p><p class="why">自社で使って磨いてから法人に売る、という流れ。</p></article>
+      <article class="topic"><h3>AI-RAN（AITRAS）</h3><p>基地局の無線処理と AI 処理を同じ GPU 基盤で動かす技術。2026年度を目標に自社の商用網へ導入し、国内外の通信会社へも展開を目指す。AI-RAN アライアンスは 140 を超える団体が参加。</p><p class="why">基地局を「AI の計算拠点」にもする発想。技術志望なら必ず押さえる。</p></article>
+      <article class="topic"><h3>モバイルは「数より質」</h3><p>特典目当てに乗り換えを繰り返す「ホッピング」対策を強め、契約数は一時減少。宮川社長は「真剣にやりすぎた」と認めつつ、第3四半期以降の契約数プラス転換を見込む。ARPU と解約率は改善。</p><p class="why">短期の数字より、長く使ってくれる顧客を重視する経営判断。</p></article>
+      <article class="topic"><h3>PayPay の米国上場</h3><p>2026年3月12日に米ナスダックへ上場（ティッカー PAYP、公開価格 16ドル）。日本企業の米国上場として過去最大級。</p><p class="why">通信以外の柱（金融）が独り立ちしたことを示す出来事。</p></article>
+      <article class="topic"><h3>セブン＆アイとの資本業務提携</h3><p>2026年7月31日発表。ソフトバンク・PayPay・三井住友カードが各 1,000億円（計 3,000億円）を出資。セブン-イレブンの 2万店超・1日約2,000万人の顧客接点とデジタルを組み合わせる。</p><p class="why">通信・決済・小売をつなぐ「生活インフラ」づくり。</p></article>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-rivals">
+    <div class="sheet-head"><h2>競合との違い</h2></div>
+    <div class="pad">
+      <p>携帯電話の契約数（2026年5月時点の集計）：ドコモ 約9,307万 ／ au 約7,276万 ／ <b>ソフトバンク 約5,692万</b> ／ 楽天 約1,036万。</p>
+      <ul>
+        <li>契約数では3番手。そのぶん<b>法人・AI・決済（PayPay）・LINEヤフー</b>まで含めた事業の幅と、AI インフラへの踏み込みの速さで差をつけようとしている。</li>
+        <li>「なぜドコモや KDDI ではなくソフトバンクか」と聞かれたら、この<b>事業の幅とスピード</b>、自分の経験とのつながりで答えると説得力が出ます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-qa">
+    <div class="sheet-head"><h2>想定質問と答えの組み立て方</h2></div>
+    <div class="pad qa">
+      <details open><summary>なぜソフトバンクなのか（他の通信会社ではなく）</summary><p>①通信だけで終わらず AI・決済・メディアまで持つ事業の幅、②AI データセンターや AI-RAN に先回りして投資するスピード、③自分の経験・やりたいことがそこにどうつながるか、の順に話す。</p></details>
+      <details><summary>中期経営計画で一番関心があるのは？</summary><p>「Activate AI for Society」のどれか1つ（例：法人向け AI、AI データセンター、AI-RAN）を選び、数字（法人の営業利益 年15%成長、AI 売上倍増など）を1つ添えて、自分がどう関われるかを話す。</p></details>
+      <details><summary>AI 時代に通信会社の役割はどう変わる？</summary><p>「つなぐ」だけでなく「AI を動かす計算力と電力を提供する」側になる。データセンター、GPU クラウド、基地局での AI 処理（AI-RAN）が具体例。</p></details>
+      <details><summary>最近気になったソフトバンクのニュースは？</summary><p>注目トピックから1つ選び、「何が起きたか → なぜ重要か → 自分ならどう関わりたいか」の3段で。下の「最新ニュース」も直前に見ておく。</p></details>
+      <details><summary>挑戦した経験／自分から手を挙げた経験</summary><p>求める人物像（変化を楽しむ・チャンスと捉え挑戦・やり遂げる・自ら手を挙げる）に合う経験を1つ。状況 → 自分の行動 → 結果 → 学び、の順に。</p></details>
+      <details><summary>入社後にやりたいこと</summary><p>部署名だけでなく「誰のどんな課題を、ソフトバンクのどの強み（通信網・AI・PayPay 等）で解くか」まで言えると強い。</p></details>
+      <details><summary>逆質問の例</summary><ul><li>クリスタル・インテリジェンスを社内で使って、仕事の進め方はどう変わりましたか。</li><li>AI データセンターや法人 AI の事業で、若手が任されている役割はどんなものですか。</li><li>モバイルで「数より質」に切り替えたとき、現場ではどんな議論がありましたか。</li></ul></details>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-news">
+    <div class="sheet-head"><h2>最新ニュース（自動更新）</h2><span class="cap">ニュースレーダーが受信した記事から</span></div>
+    <div id="sb-news-list"></div>
+  </section>
+
+  <section class="sheet note-sheet" id="sb-sources">
+    <div class="sheet-head"><h2>出典（面接前に一次情報で確認を）</h2></div>
+    <div class="pad"><ul class="sources">
+      <li><a href="https://www.softbank.jp/corp/aboutus/profile/" target="_blank" rel="noopener">ソフトバンク 会社概要</a></li>
+      <li><a href="https://www.softbank.jp/corp/ir/documents/presentations/fy2025/q4_earnings_summary/" target="_blank" rel="noopener">2026年3月期 決算説明会 要旨</a></li>
+      <li><a href="https://www.softbank.jp/corp/ir/documents/presentations/fy2026/q1_earnings_summary/" target="_blank" rel="noopener">2027年3月期 第1四半期 決算説明会 要旨</a></li>
+      <li><a href="https://www.softbank.jp/corp/ir/policy/strategy/" target="_blank" rel="noopener">経営方針・戦略（中期経営計画）</a></li>
+      <li><a href="https://www.softbank.jp/sbnews/entry/20260529_01" target="_blank" rel="noopener">ソフトバンクニュース：「Activate AI for Society」が描く次の5年</a></li>
+      <li><a href="https://www.softbank.jp/sbnews/entry/20261002_01" target="_blank" rel="noopener">統合報告書 2026 宮川潤一 CEOメッセージ</a></li>
+      <li><a href="https://www.softbank.jp/corp/news/press/sbkk/2026/20260702_01/" target="_blank" rel="noopener">SB Neo 設立のお知らせ</a></li>
+      <li><a href="https://www.softbank.jp/corp/news/press/sbkk/2026/20260206_01/" target="_blank" rel="noopener">クリスタル・インテリジェンス（Frontier 基盤）</a></li>
+      <li><a href="https://www.softbank.jp/corp/technology/research/topics/224/" target="_blank" rel="noopener">AI-RAN を実証から商用展開へ</a></li>
+      <li><a href="https://k-tai.watch.impress.co.jp/docs/news/2130446.html" target="_blank" rel="noopener">ケータイ Watch：2026年度第1四半期決算</a></li>
+      <li><a href="https://www.itmedia.co.jp/mobile/articles/2608/04/news093.html" target="_blank" rel="noopener">ITmedia：スマホ契約数とホッピング対策</a></li>
+      <li><a href="https://www.sbbit.jp/article/fj/186353" target="_blank" rel="noopener">ビジネス+IT：セブン＆アイとの資本業務提携</a></li>
+      <li><a href="https://www.infraexpert.com/blog/2026/05/19/phone024/" target="_blank" rel="noopener">携帯電話契約数・シェア（2026年5月）</a></li>
+      <li><a href="https://www.softbank.jp/recruit/graduate/recruit/message/" target="_blank" rel="noopener">新卒採用：求める人物像</a></li>
+    </ul>
+    <p class="note">数字や予定は2026年10月18日時点で公開されている情報をもとにしています。業績予想や稼働時期は変わることがあるので、面接の前日に公式IRで最新を確認してください。</p></div>
+  </section>
+</div>
+
 <p class="wrap credit" id="recipe-credit" hidden><a href="https://webservice.rakuten.co.jp/" target="_blank" rel="noopener">Supported by Rakuten Developers</a></p>
 
 <footer class="wrap"><span id="updated"></span> ／ 記事の著作権は各報道機関に帰属します。</footer>
@@ -1145,18 +1320,38 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       el("p", { class: "credit" }, el("a", { href: "https://webservice.rakuten.co.jp/", target: "_blank", rel: "noopener" }, "Supported by Rakuten Developers"))));
   }
 
+  // ---------------- Interview notes: SoftBank Corp. ----------------
+  // News about SoftBank Corp. (the carrier), leaving out the Hawks and SoftBank Group stories.
+  const SB_MATCH = /ソフトバンク|SoftBank|宮川潤一|ワイモバイル|Y!mobile|LINEMO|PayPay|LINEヤフー|SB Neo|SB OAI|クリスタル・インテリジェンス|AITRAS/i;
+  const SB_SKIP = /ホークス|野球|投手|打線|日本シリーズ|ソフトバンクグループ|ソフトバンクG|SoftBank Group|SBG|孫正義|Vision Fund|ビジョン・ファンド|アライド|Allied|NISA|個別株|株価|OpenAI.*出資|Stargate|スターゲート|Wayve|ソフトバンク出資/i;
+  function renderCompanyNews() {
+    const box = $("sb-news-list");
+    if (!state.news) { box.replaceChildren(el("div", { class: "empty" }, "ニュースを読み込み中です。")); return; }
+    const seen = new Set();
+    const list = state.news.articles.filter((a) => {
+      const t = [a.title, a.title_ja, a.summary].filter(Boolean).join(" ");
+      const key = (a.title_ja || a.title).slice(0, 25);
+      if (!SB_MATCH.test(t) || SB_SKIP.test(t) || seen.has(key)) return false;
+      seen.add(key); return true;
+    }).slice(0, 9);
+    box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, "直近7日間に、ソフトバンク株式会社の記事はまだありません。"));
+  }
+  document.querySelectorAll(".toc button").forEach((b) => b.addEventListener("click", () => $(b.dataset.go).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" })));
+
   // ---------------- Routing & events ----------------
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec;
-    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : "home";
+    const recipes = h === "#recipes" || !!rec, company = h === "#softbank";
+    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
+    $("company-view").hidden = view !== "company";
     $("recipe-credit").hidden = view !== "recipe";
-    $("news-nav").hidden = recipes;
-    if (recipes) { $("tab-news").removeAttribute("aria-current"); $("tab-recipes").setAttribute("aria-current", "page"); }
-    else { $("tab-recipes").removeAttribute("aria-current"); $("tab-news").setAttribute("aria-current", "page"); }
+    $("news-nav").hidden = recipes || company;
+    const tab = recipes ? "tab-recipes" : company ? "tab-company" : "tab-news";
+    for (const id of ["tab-news", "tab-recipes", "tab-company"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
+    if (company) { renderCompanyNews(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }
     else if (view === "recipe") { renderRecipes(); if (h === "#recipes") window.scrollTo(0, 0); }
