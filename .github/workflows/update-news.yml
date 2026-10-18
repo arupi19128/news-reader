@@ -39,7 +39,9 @@ jobs:
       - name: Fetch news
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/fetch_news.py
+        run: |
+          python scripts/fetch_news.py
+          python scripts/recipes.py
 
       - name: Commit updated data
         run: |
