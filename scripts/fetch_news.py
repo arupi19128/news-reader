@@ -93,6 +93,12 @@ def child_text(el, *paths):
 
 def parse_feed(raw, feed):
     """Return a list of {title, link, summary, published, source} from RSS 2.0, RSS 1.0 or Atom."""
+    # expat only handles UTF-8/16 and Latin-1; re-encode feeds such as Shift_JIS ones.
+    head = raw[:200].decode("ascii", "ignore")
+    declared = re.search(r'encoding=["\']([\w.-]+)["\']', head)
+    if declared and declared.group(1).lower().replace("_", "-") not in ("utf-8", "utf8"):
+        text = raw.decode(declared.group(1), "replace")
+        raw = re.sub(r'encoding=["\'][\w.-]+["\']', 'encoding="utf-8"', text, count=1).encode("utf-8")
     root = ET.fromstring(raw)
     items = []
     if root.tag == "rss":
@@ -309,6 +315,10 @@ def main():
     cutoff = started - keep
     items = [a for a in collected.values()
              if datetime.fromisoformat(a["published"].replace("Z", "+00:00")) >= cutoff]
+
+    excludes = {f["name"]: f["exclude"] for f in config.get("feeds", []) if f.get("exclude")}
+    items = [a for a in items
+             if not any(w in a["title"] + a["summary"] for w in excludes.get(a["feed"], []))]
 
     tv = [a for a in items if a["kind"] == "tv"]
     articles = [a for a in items if a["kind"] != "tv"]

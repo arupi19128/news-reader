@@ -261,7 +261,10 @@ footer summary { cursor: pointer; }
     if (state.kind) list = list.filter((a) => a.kind === state.kind);
     if (state.topic) {
       const t = allTopics().find((t) => t.name === state.topic);
-      if (t) { const m = keywordMatcher(t.keywords); list = list.filter((a) => m(articleText(a))); }
+      if (t) {
+        const m = keywordMatcher(t.keywords), ex = keywordMatcher(t.exclude || []);
+        list = list.filter((a) => { const text = articleText(a); return m(text) && !ex(text); });
+      }
     }
     if (state.q) {
       const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);

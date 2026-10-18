@@ -89,6 +89,7 @@ url = "https://www.france24.com/en/rss"
 # ---------------------------------------------------------------
 # テーマ別（自由に追加できます）
 # kind は画面の分類名になります。google_news はGoogleニュース検索の式です。
+# exclude に書いた語を見出しか概要に含む記事は取り込みません。
 # ---------------------------------------------------------------
 [[feeds]]
 name = "ケータイ Watch"
@@ -108,7 +109,8 @@ url = "https://www.soumu.go.jp/news.rdf"
 [[feeds]]
 name = "Googleニュース：通信キャリア"
 kind = "通信"
-google_news = "ドコモ OR KDDI OR ソフトバンク OR 楽天モバイル OR 通信障害 OR 5G OR 光回線"
+google_news = "(ドコモ OR KDDI OR ソフトバンク OR 楽天モバイル OR 通信障害 OR 5G OR 光回線) -ホークス -野球 -投手 -日本シリーズ"
+exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "CS"]
 
 [[feeds]]
 name = "Google News: Telecom"
@@ -118,11 +120,13 @@ google_news = "telecom OR \"mobile carrier\" OR \"network outage\" OR 5G OR 6G"
 
 # ---------------------------------------------------------------
 # トピック（画面上の絞り込みボタン。キーワードのどれかを含む記事が出ます）
+# exclude に書いた語を含む記事は除外されます。
 # 画面からも自分用のトピックを追加できます。
 # ---------------------------------------------------------------
 [[topics]]
 name = "通信キャリア"
 keywords = ["ドコモ", "docomo", "KDDI", "au", "ソフトバンク", "SoftBank", "楽天モバイル", "Rakuten Mobile", "povo", "ahamo", "MVNO", "格安SIM"]
+exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "CS"]
 
 [[topics]]
 name = "ネットワーク・回線"
