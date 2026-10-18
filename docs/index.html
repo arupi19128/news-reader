@@ -83,10 +83,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .battery .cell { width: 26px; height: 12px; border: 1.5px solid var(--muted); border-radius: 3px; padding: 1px; position: relative; }
 .battery .cell::after { content: ""; position: absolute; right: -4px; top: 3px; width: 2px; height: 4px; background: var(--muted); border-radius: 0 1px 1px 0; }
 .battery .cell i { display: block; height: 100%; background: var(--wave); border-radius: 1px; }
-nav.tabs { display: flex; gap: 4px; order: 1; }
+nav.tabs { display: flex; gap: 4px; order: 1; overflow-x: auto; scrollbar-width: none; max-width: 100%; }
 .phone { order: 2; }
 nav.jump { order: 4; }
-nav.tabs a { text-decoration: none; font-size: 14px; font-weight: 700; padding: 5px 16px; border-radius: 8px; color: var(--muted); border: 1px solid transparent; }
+nav.tabs a { white-space: nowrap; text-decoration: none; font-size: 14px; font-weight: 700; padding: 5px 16px; border-radius: 8px; color: var(--muted); border: 1px solid transparent; }
 nav.tabs a[aria-current="page"] { color: var(--wave); background: var(--wave-soft); border-color: color-mix(in srgb, var(--wave) 30%, transparent); }
 nav.jump { display: flex; gap: 2px; width: 100%; overflow-x: auto; scrollbar-width: none; margin-top: -2px; }
 nav.jump a { font-size: 13px; text-decoration: none; padding: 3px 12px; border-radius: 999px; color: var(--muted); white-space: nowrap; }
@@ -271,6 +271,33 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .recipe-detail ol.steps li { counter-increment: st; display: grid; grid-template-columns: 2em minmax(0, 1fr); gap: 8px; }
 .recipe-detail ol.steps li::before { content: counter(st); width: 1.7em; height: 1.7em; border-radius: 50%; background: var(--wave); color: var(--sheet); display: grid; place-items: center; font: 600 13px var(--font-mono); }
 
+/* Cyber attacks */
+#cyber-view { padding-block: 26px 40px; }
+.cy-map { position: relative; padding: 0; overflow: hidden; background: #0d1b2a; border-color: #0d1b2a; }
+#cy-svg { display: block; width: 100%; height: auto; }
+.cy-map .tip { transform: translate(-50%, calc(-100% - 10px)); }
+.cy-legend { position: absolute; left: 12px; bottom: 10px; display: flex; gap: 14px; flex-wrap: wrap; font-size: 11.5px; color: #c9d6e2; }
+.cy-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.dot-o { background: #ff6b4a; } .dot-t { background: #4cc3ff; }
+.cy-arc { fill: none; stroke: url(#cy-grad); stroke-linecap: round; opacity: .85; stroke-dasharray: 6 10; animation: cy-flow 1.6s linear infinite; }
+@keyframes cy-flow { to { stroke-dashoffset: -32; } }
+@media (prefers-reduced-motion: reduce) { .cy-arc { animation: none; stroke-dasharray: none; } }
+.cy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-block: 16px; }
+.cy-card { background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+.cy-card h2 { margin: 0 0 8px; font-size: 15px; }
+.bars-list { display: grid; gap: 6px; }
+.bar-row { display: grid; grid-template-columns: 1.6em minmax(0, 8em) minmax(0, 1fr) 3.6em; align-items: center; gap: 8px; font-size: 13px; }
+.bar-row .rk { font: 500 12px var(--font-mono); color: var(--muted); }
+.bar-row .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-row .tr { height: 10px; background: var(--bg); border-radius: 5px; overflow: hidden; }
+.bar-row .tr i { display: block; height: 100%; border-radius: 5px; }
+.bar-row .pc { font: 500 12px var(--font-mono); text-align: right; }
+.bar-row.jp .nm { font-weight: 700; color: var(--out); }
+.cy-note { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
+.cy-empty { background: var(--sheet); border: 1px dashed var(--line); border-radius: 10px; padding: 22px; color: var(--muted); margin-block: 16px; }
+.cy-empty b { color: var(--ink); display: block; font-size: 16px; margin-bottom: 4px; }
+@media (max-width: 860px) { .cy-grid { grid-template-columns: 1fr; } }
+
 /* Interview notes */
 #company-view { padding-block: 26px 40px; }
 #company-view h1 { font-size: clamp(22px, 3.4vw, 32px); }
@@ -372,6 +399,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       <a href="#news" id="tab-news" aria-current="page">ニュース</a>
       <a href="#recipes" id="tab-recipes">レシピ</a>
       <a href="#softbank" id="tab-company">面接対策</a>
+      <a href="#cyber" id="tab-cyber">サイバー攻撃</a>
     </nav>
     <nav class="jump" id="news-nav" aria-label="ニュースの中のリンク">
       <a href="#log" data-cover="uncovered">テレビ圏外</a>
@@ -503,6 +531,27 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   </section>
 </div>
 <main id="recipe-detail" class="wrap article" hidden></main>
+<div id="cyber-view" class="wrap" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap" id="cy-updated">Cyber attacks ・ Cloudflare Radar</div>
+      <h1>世界のサイバー攻撃</h1>
+      <p>直近24時間に Cloudflare が防いだ、ウェブサイトへの攻撃の流れです。線は「攻撃元の国 → 攻撃先の国」、太いほど量が多いことを表します。</p>
+    </div>
+  </div>
+  <div class="cy-map sheet">
+    <svg id="cy-svg" role="img" aria-label="世界地図上の攻撃元から攻撃先への線"></svg>
+    <div class="tip" id="cy-tip" hidden></div>
+    <div class="cy-legend"><span><i class="dot-o"></i>攻撃元</span><span><i class="dot-t"></i>攻撃先</span><span>線の太さ＝攻撃の割合</span></div>
+  </div>
+  <div id="cy-body"></div>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>サイバー攻撃のニュース</h2><span class="cap">ニュースレーダーが受信した記事から</span></div>
+    <div id="cy-news"></div>
+  </section>
+  <p class="credit">データ：<a href="https://radar.cloudflare.com/security" target="_blank" rel="noopener">Cloudflare Radar</a>（CC BY-NC 4.0）。Cloudflare のネットワークで観測・防御した攻撃の統計で、世界のすべての攻撃ではありません。攻撃元の国は攻撃に使われた通信の出どころで、攻撃者の国籍とは限りません。</p>
+</div>
+
 <div id="company-view" class="wrap" hidden>
   <div class="menu-head">
     <div>
@@ -1320,6 +1369,118 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       el("p", { class: "credit" }, el("a", { href: "https://webservice.rakuten.co.jp/", target: "_blank", rel: "noopener" }, "Supported by Rakuten Developers"))));
   }
 
+  // ---------------- Cyber attacks (Cloudflare Radar) ----------------
+  // Approximate country centres (lat, lon) for drawing arcs; countries not listed get no line.
+  const CENTROIDS = {US:[39.8,-98.6],CA:[56,-106],MX:[23.6,-102.5],BR:[-10.3,-53.2],AR:[-38.4,-63.6],CL:[-35.7,-71.5],CO:[4.6,-74.3],PE:[-9.2,-75],VE:[6.4,-66.6],EC:[-1.8,-78.2],BO:[-16.3,-63.6],UY:[-32.5,-55.8],PY:[-23.4,-58.4],PA:[8.5,-80.8],CR:[9.7,-83.8],DO:[18.7,-70.2],PR:[18.2,-66.6],GT:[15.8,-90.2],HN:[15.2,-86.2],SV:[13.8,-88.9],NI:[12.9,-85.2],CU:[21.5,-77.8],JM:[18.1,-77.3],
+    GB:[54,-2],IE:[53.4,-8],FR:[46.6,2.4],DE:[51.2,10.4],NL:[52.1,5.3],BE:[50.5,4.5],LU:[49.8,6.1],CH:[46.8,8.2],AT:[47.5,14.6],IT:[42.8,12.6],ES:[40.4,-3.7],PT:[39.6,-8],SE:[62,15],NO:[61,8.5],FI:[64,26],DK:[56,10],IS:[64.9,-19],PL:[52,19.4],CZ:[49.8,15.5],SK:[48.7,19.7],HU:[47.2,19.5],RO:[45.9,24.9],BG:[42.7,25.5],GR:[39,22],TR:[39,35],UA:[49,31.4],RU:[61.5,100],BY:[53.7,28],LT:[55.2,23.9],LV:[56.9,24.6],EE:[58.6,25],MD:[47.4,28.4],RS:[44,21],HR:[45.1,15.2],SI:[46.1,14.9],BA:[44.2,17.8],AL:[41.2,20.2],MK:[41.6,21.7],CY:[35.1,33.4],MT:[35.9,14.4],GE:[42.3,43.4],AM:[40.1,45],AZ:[40.1,47.6],LI:[47.2,9.6],MC:[43.7,7.4],AD:[42.5,1.5],
+    IL:[31,34.9],PS:[31.9,35.2],JO:[31.2,36.5],LB:[33.9,35.9],SY:[35,38.5],IQ:[33.2,43.7],IR:[32.4,53.7],SA:[23.9,45.1],AE:[23.4,53.8],QA:[25.3,51.2],KW:[29.3,47.5],BH:[26,50.6],OM:[21.5,55.9],YE:[15.6,48.5],
+    EG:[26.8,30.8],LY:[26.3,17.2],TN:[34,9.5],DZ:[28,1.7],MA:[31.8,-7.1],NG:[9.1,8.7],GH:[7.9,-1],KE:[0,37.9],ET:[9.1,40.5],TZ:[-6.4,34.9],ZA:[-30.6,22.9],CI:[7.5,-5.5],SN:[14.5,-14.5],CM:[7.4,12.4],AO:[-11.2,17.9],UG:[1.4,32.3],ZW:[-19,29.2],ZM:[-13.1,27.8],MZ:[-18.7,35.5],MG:[-18.8,46.9],SD:[12.9,30.2],RW:[-1.9,29.9],SC:[-4.7,55.5],MU:[-20.3,57.6],
+    KZ:[48,66.9],UZ:[41.4,64.6],KG:[41.2,74.8],TJ:[38.9,71.3],TM:[39,59.6],PK:[30.4,69.3],AF:[33.9,67.7],IN:[21,78],BD:[23.7,90.4],LK:[7.9,80.8],NP:[28.4,84.1],BT:[27.5,90.4],MV:[3.2,73.2],CN:[35.9,104.2],HK:[22.3,114.2],TW:[23.7,121],MO:[22.2,113.5],MN:[46.9,103.8],KR:[36.5,127.9],KP:[40.3,127.5],JP:[36.2,138.3],VN:[14.1,108.3],TH:[15.9,101],MY:[4.2,102],SG:[1.35,103.8],ID:[-0.8,113.9],PH:[12.9,121.8],KH:[12.6,104.9],MM:[21.9,95.9],LA:[19.9,102.5],BN:[4.5,114.7],
+    AU:[-25.3,133.8],NZ:[-41,174.9],FJ:[-17.7,178],PG:[-6.3,143.9]};
+  const regionName = (() => { try { const dn = new Intl.DisplayNames(["ja"], { type: "region" }); return (cc, fallback) => { try { return dn.of(cc) || fallback || cc; } catch { return fallback || cc; } }; } catch { return (cc, f) => f || cc; } })();
+  const cy = { data: undefined, libs: null, world: null };
+  const loadScript = (src) => new Promise((ok, ng) => { const t = document.createElement("script"); t.src = src; t.onload = ok; t.onerror = ng; document.head.append(t); });
+  async function cyberLibs() {
+    if (!cy.libs) cy.libs = (async () => {
+      await loadScript("https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js");
+      const topo = await (await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")).json();
+      cy.world = window.topojson.feature(topo, topo.objects.countries);
+    })();
+    return cy.libs;
+  }
+  // Radar results hold their rows under keys like "top_0", "summary_0", "serie_0"; read them without assuming more.
+  const firstOf = (res, prefix) => res ? res[Object.keys(res).find((k) => k.startsWith(prefix))] : null;
+  const ccOf = (row, side) => row[Object.keys(row).find((k) => k.toLowerCase().startsWith(side) && k.endsWith("Alpha2"))];
+  const nameOf = (row, side) => row[Object.keys(row).find((k) => k.toLowerCase().startsWith(side) && k.endsWith("Name"))];
+  const pct = (v) => `${(+v).toFixed((+v) < 10 ? 1 : 0)}%`;
+  function barList(rows, side, color) {
+    const max = Math.max(...rows.map((r) => +r.value), 1);
+    return el("div", { class: "bars-list" }, ...rows.map((r, i) => {
+      const cc = ccOf(r, side);
+      return el("div", { class: `bar-row${cc === "JP" ? " jp" : ""}` }, el("span", { class: "rk" }, String(i + 1)),
+        el("span", { class: "nm", title: nameOf(r, side) || cc }, regionName(cc, nameOf(r, side))),
+        el("span", { class: "tr" }, el("i", { style: `width:${(+r.value / max) * 100}%;background:${color}` })),
+        el("span", { class: "pc" }, pct(r.value)));
+    }));
+  }
+  function summaryBars(summary, labels, color) {
+    const rows = Object.entries(summary || {}).map(([k, v]) => ({ k, v: +v })).filter((r) => r.v > 0).sort((a, b) => b.v - a.v).slice(0, 6);
+    const max = Math.max(...rows.map((r) => r.v), 1);
+    return el("div", { class: "bars-list" }, ...rows.map((r, i) => el("div", { class: "bar-row" }, el("span", { class: "rk" }, String(i + 1)),
+      el("span", { class: "nm", title: r.k }, labels[r.k] || r.k.toUpperCase()), el("span", { class: "tr" }, el("i", { style: `width:${(r.v / max) * 100}%;background:${color}` })), el("span", { class: "pc" }, pct(r.v)))));
+  }
+  const MITIGATION_JA = { ddos: "DDoS対策", waf: "WAF", ip_reputation: "IPの評判", access_rules: "アクセスルール", bot_management: "ボット対策", api_shield: "API保護", dos: "過剰アクセス", data_loss_prevention: "情報漏えい防止" };
+  const VECTOR_JA = { udp: "UDPフラッド", tcp: "TCP攻撃", syn: "SYNフラッド", ack: "ACKフラッド", rst: "RSTフラッド", icmp: "ICMPフラッド", gre: "GREフラッド", other: "その他" };
+  function drawMap(pairs) {
+    const svg = window.d3.select("#cy-svg");
+    const W = 960, H = 470;
+    svg.attr("viewBox", `0 0 ${W} ${H}`).selectAll("*").remove();
+    const proj = window.d3.geoNaturalEarth1().fitExtent([[6, 6], [W - 6, H - 6]], { type: "Sphere" });
+    const path = window.d3.geoPath(proj);
+    const defs = svg.append("defs");
+    const g = defs.append("linearGradient").attr("id", "cy-grad").attr("gradientUnits", "userSpaceOnUse").attr("x1", 0).attr("x2", W);
+    g.append("stop").attr("offset", "0").attr("stop-color", "#ff6b4a"); g.append("stop").attr("offset", "1").attr("stop-color", "#ff9e7a");
+    svg.append("path").attr("d", path({ type: "Sphere" })).attr("fill", "#0f2236");
+    svg.append("g").selectAll("path").data(cy.world.features).join("path").attr("d", path).attr("fill", "#1d3550").attr("stroke", "#0d1b2a").attr("stroke-width", 0.5);
+    const max = Math.max(...pairs.map((p) => +p.value), 1);
+    const pts = new Map();
+    const arcs = svg.append("g");
+    for (const p of pairs) {
+      const o = ccOf(p, "origin"), t = ccOf(p, "target");
+      if (!CENTROIDS[o] || !CENTROIDS[t] || o === t) continue;
+      const a = proj([CENTROIDS[o][1], CENTROIDS[o][0]]), b = proj([CENTROIDS[t][1], CENTROIDS[t][0]]);
+      const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 - Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.25;
+      const label = `${regionName(o, nameOf(p, "origin"))} → ${regionName(t, nameOf(p, "target"))}：${pct(p.value)}`;
+      arcs.append("path").attr("class", "cy-arc").attr("d", `M${a[0]},${a[1]} Q${mx},${my} ${b[0]},${b[1]}`).attr("stroke-width", 1 + 6 * (+p.value / max))
+        .on("mousemove", (ev) => showCyTip(ev, label)).on("mouseleave", hideCyTip).append("title").text(label);
+      pts.set(`o${o}`, [a, "#ff6b4a", regionName(o, nameOf(p, "origin"))]); pts.set(`t${t}`, [b, "#4cc3ff", regionName(t, nameOf(p, "target"))]);
+    }
+    svg.append("g").selectAll("circle").data([...pts.values()]).join("circle").attr("cx", (d) => d[0][0]).attr("cy", (d) => d[0][1]).attr("r", 4).attr("fill", (d) => d[1]).attr("stroke", "#0d1b2a")
+      .append("title").text((d) => d[2]);
+  }
+  function showCyTip(ev, text) {
+    const box = $("cy-svg").getBoundingClientRect(), tip = $("cy-tip");
+    tip.hidden = false; tip.textContent = text;
+    tip.style.left = `${ev.clientX - box.left}px`; tip.style.top = `${ev.clientY - box.top}px`;
+  }
+  function hideCyTip() { $("cy-tip").hidden = true; }
+  async function renderCyber() {
+    renderCyberNews();
+    if (cy.data === undefined) { cy.data = await fetch("data/attacks.json", { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null); }
+    const d = cy.data, body = $("cy-body");
+    try { await cyberLibs(); } catch { body.replaceChildren(el("div", { class: "cy-empty" }, el("b", {}, "地図を読み込めませんでした"), "通信状態を確かめて、ページを開き直してください。")); return; }
+    const pairs = firstOf(d?.pairs, "top") || [];
+    drawMap(pairs);
+    if (!d) {
+      body.replaceChildren(el("div", { class: "cy-empty" }, el("b", {}, "攻撃データは準備中です"), "GitHub に Cloudflare の API トークン（CLOUDFLARE_API_TOKEN）を登録すると、1時間ごとに最新のデータが届きます。"));
+      return;
+    }
+    $("cy-updated").textContent = `Cyber attacks ・ Cloudflare Radar ・ 更新 ${fullFmt.format(new Date(d.generated_at))}`;
+    const card = (title, content, note) => el("div", { class: "cy-card" }, el("h2", {}, title), content, note ? el("p", { class: "cy-note" }, note) : null);
+    const list = (key, side, color) => { const rows = firstOf(d[key], "top"); return rows?.length ? barList(rows, side, color) : el("p", { class: "cy-note" }, "データがありません"); };
+    const jpRank = (key, side) => { const rows = firstOf(d[key], "top") || []; const i = rows.findIndex((r) => ccOf(r, side) === "JP"); return i >= 0 ? `日本は ${i + 1} 位（${pct(rows[i].value)}）` : "日本はトップ10圏外"; };
+    body.replaceChildren(
+      el("div", { class: "cy-grid" },
+        card("ウェブ攻撃の発信元 トップ10", list("l7_origin", "origin", "#ff6b4a"), jpRank("l7_origin", "origin")),
+        card("ウェブ攻撃を受けた国 トップ10", list("l7_target", "target", "#4cc3ff"), jpRank("l7_target", "target")),
+        card("DDoS（大量の通信で落とす攻撃）の発信元", list("l3_origin", "origin", "#ff9e7a"), "ネットワーク層（L3/L4）の攻撃"),
+        card("DDoS を受けた国", list("l3_target", "target", "#7fd4ff"), jpRank("l3_target", "target")),
+        card("ウェブ攻撃をどう防いだか", firstOf(d.mitigation, "summary") ? summaryBars(firstOf(d.mitigation, "summary"), MITIGATION_JA, "var(--wave)") : el("p", { class: "cy-note" }, "データがありません"), "Cloudflare が攻撃を止めた仕組みの内訳"),
+        card("DDoS の手口", firstOf(d.l3_vector, "summary") ? summaryBars(firstOf(d.l3_vector, "summary"), VECTOR_JA, "var(--out)") : el("p", { class: "cy-note" }, "データがありません"), "ネットワーク層の攻撃の種類")));
+  }
+  const CYBER_WORDS = /サイバー攻撃|不正アクセス|ランサムウェア|情報漏えい|情報流出|個人情報.*流出|ハッキング|ハッカー|DDoS|マルウェア|フィッシング|脆弱性|cyber ?attack|ransomware|hack|breach|malware|phishing|DDoS/i;
+  function renderCyberNews() {
+    const box = $("cy-news");
+    if (!state.news) { box.replaceChildren(el("div", { class: "empty" }, "ニュースを読み込み中です。")); return; }
+    const seen = new Set();
+    const list = state.news.articles.filter((a) => {
+      const t = [a.title, a.title_ja, a.summary].filter(Boolean).join(" "); const key = (a.title_ja || a.title).slice(0, 25);
+      if (!CYBER_WORDS.test(t) || seen.has(key)) return false; seen.add(key); return true;
+    }).slice(0, 9);
+    box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, "直近7日間に、サイバー攻撃の記事はまだありません。"));
+  }
+
   // ---------------- Interview notes: SoftBank Corp. ----------------
   // News about SoftBank Corp. (the carrier), leaving out the Hawks and SoftBank Group stories.
   const SB_MATCH = /ソフトバンク|SoftBank|宮川潤一|ワイモバイル|Y!mobile|LINEMO|PayPay|LINEヤフー|SB Neo|SB OAI|クリスタル・インテリジェンス|AITRAS/i;
@@ -1342,16 +1503,17 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec, company = h === "#softbank";
-    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : "home";
+    const recipes = h === "#recipes" || !!rec, company = h === "#softbank", cyber = h === "#cyber";
+    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
-    $("company-view").hidden = view !== "company";
+    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber";
     $("recipe-credit").hidden = view !== "recipe";
-    $("news-nav").hidden = recipes || company;
-    const tab = recipes ? "tab-recipes" : company ? "tab-company" : "tab-news";
-    for (const id of ["tab-news", "tab-recipes", "tab-company"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
+    $("news-nav").hidden = recipes || company || cyber;
+    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : "tab-news";
+    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
     if (company) { renderCompanyNews(); window.scrollTo(0, 0); }
+    if (cyber) { renderCyber(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }
     else if (view === "recipe") { renderRecipes(); if (h === "#recipes") window.scrollTo(0, 0); }
