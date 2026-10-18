@@ -101,7 +101,7 @@ nav.jump a:hover { background: var(--wave-soft); color: var(--wave); }
 
 /* Featured */
 .feat { list-style: none; margin: 0; padding: 0; counter-reset: feat; }
-.feat li { display: grid; grid-template-columns: 2.4em minmax(0, 1fr); gap: 4px 14px; padding: 16px 18px; border-bottom: 1px solid var(--line); counter-increment: feat; }
+.feat li { display: grid; grid-template-columns: 2.4em minmax(0, 1fr) 200px; gap: 4px 18px; padding: 16px 18px; border-bottom: 1px solid var(--line); counter-increment: feat; }
 .feat li:last-child { border-bottom: 0; }
 .feat li::before { content: counter(feat, decimal-leading-zero); font: 600 20px/1.4 var(--font-mono); color: var(--cell-in-edge); }
 .feat li.out::before { color: var(--out); }
@@ -118,6 +118,22 @@ nav.jump a:hover { background: var(--wave-soft); color: var(--wave); }
 .feat .rel li::before { content: "└ "; font: inherit; color: var(--cell-in-edge); }
 .feat .rel a { color: var(--muted); }
 .feat-empty { padding: 22px 18px; color: var(--muted); }
+.feat .thumb { width: 200px; aspect-ratio: 16 / 10; }
+.feat li > a { text-decoration: none; align-self: start; }
+.feat .thumb.ph { font-size: 13px; }
+
+/* Day pager */
+#log { scroll-margin-top: 110px; }
+.daybar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.daybar b { font-size: 15px; }
+.daybar b small { font: 400 12px var(--font-mono); color: var(--muted); margin-left: 8px; }
+.daybtn { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 3px 14px; font-size: 13px; cursor: pointer; color: var(--wave); white-space: nowrap; }
+.daybtn:disabled { color: var(--muted); opacity: 0.45; cursor: default; }
+.pager { display: flex; justify-content: center; align-items: center; gap: 6px; padding: 14px 16px; flex-wrap: wrap; }
+.pager button { min-width: 34px; height: 34px; border: 1px solid var(--line); background: var(--sheet); border-radius: 8px; cursor: pointer; font: 500 13px var(--font-mono); color: var(--ink); }
+.pager button[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
+.pager button:disabled { opacity: 0.4; cursor: default; }
+.pager .gap { color: var(--muted); padding: 0 2px; }
 
 /* Cell map */
 .map { position: relative; background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; margin-top: 18px; overflow: hidden; }
@@ -234,6 +250,11 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   .legend { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
   .cards .entry { border-right: 0; }
+  .feat li { grid-template-columns: 1.8em minmax(0, 1fr) 96px; gap: 4px 10px; padding: 14px; }
+  .feat li::before { font-size: 15px; }
+  .feat .thumb { width: 96px; aspect-ratio: 4 / 3; }
+  .feat .thumb.ph { font-size: 11px; }
+  .daybar b small { display: block; margin: 0; }
   .entry { grid-template-columns: minmax(0, 1fr) 96px; }
   .thumb { width: 96px; }
   .row > .cap { width: 100%; }
@@ -370,7 +391,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 
 <script>
 (() => {
-  const PAGE = 80;
+  const PER_PAGE = 9;
+  const dayKeyFmt = new Intl.DateTimeFormat("en-CA", { year: "numeric", month: "2-digit", day: "2-digit", timeZone: "Asia/Tokyo" });
+  const dayKey = (a) => dayKeyFmt.format(new Date(a.published));
   const KIND_LABEL = { overseas: "海外" };
   const store = {
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
@@ -379,7 +402,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   const state = {
     news: null, picks: [],
     cover: ["uncovered", "domestic", "overseas", "all"].includes(store.get("nr.cover")) ? store.get("nr.cover") : "uncovered", topic: store.get("nr.topic", null),
-    customTopics: store.get("nr.customTopics", []), q: "", limit: PAGE,
+    customTopics: store.get("nr.customTopics", []), q: "", day: null, page: 0,
   };
   const $ = (id) => document.getElementById(id);
   const el = (tag, attrs = {}, ...kids) => {
@@ -572,7 +595,8 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     openLog();
     if (!filtered().includes(a)) { state.cover = "all"; state.topic = null; state.q = ""; $("q").value = ""; }
     renderFilters();
-    state.limit = Math.max(PAGE, filtered().indexOf(a) + 1);
+    const sameDay = filtered().filter((x) => dayKey(x) === dayKey(a));
+    state.day = dayKey(a); state.page = Math.floor(sameDay.indexOf(a) / PER_PAGE);
     renderList();
     const row = document.querySelector(`[data-id="${a.id}"]`);
     if (!row) return;
@@ -639,13 +663,35 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     const list = filtered();
     $("log-count").textContent = `${list.length} 件`;
     if (!list.length) { box.append(el("div", { class: "empty" }, "条件に合う記事はありません。別のタブにするか、絞り込みを外してください。")); return; }
-    let day = null, grid = null;
-    for (const a of list.slice(0, state.limit)) {
-      const d = dayFmt.format(new Date(a.published));
-      if (d !== day) { day = d; grid = el("div", { class: "cards" }); box.append(el("div", { class: "day" }, d), grid); }
-      grid.append(entry(a));
+    // One day at a time, nine cards per page.
+    const days = [...new Set(list.map(dayKey))];  // newest first, since the list is sorted by time
+    if (!days.includes(state.day)) { state.day = days[0]; state.page = 0; }
+    const di = days.indexOf(state.day);
+    const dayItems = list.filter((a) => dayKey(a) === state.day);
+    const pages = Math.ceil(dayItems.length / PER_PAGE);
+    state.page = Math.min(Math.max(state.page, 0), pages - 1);
+    const goDay = (i) => { state.day = days[i]; state.page = 0; renderList(); scrollToLog(); };
+    const goPage = (p) => { state.page = p; renderList(); scrollToLog(); };
+    box.append(el("div", { class: "daybar" },
+      el("button", { type: "button", class: "daybtn", disabled: di >= days.length - 1 ? "" : null, onclick: () => goDay(di + 1) }, "← 前の日"),
+      el("b", {}, dayFmt.format(new Date(dayItems[0].published)), el("small", {}, `${dayItems.length}件 ・ ${state.page + 1}/${pages}ページ`)),
+      el("button", { type: "button", class: "daybtn", disabled: di <= 0 ? "" : null, onclick: () => goDay(di - 1) }, "次の日 →")));
+    box.append(el("div", { class: "cards" }, ...dayItems.slice(state.page * PER_PAGE, (state.page + 1) * PER_PAGE).map(entry)));
+    if (pages > 1) {
+      const nums = [];
+      // First, last and two pages either side of the current one; gaps become "…".
+      let prev = -1;
+      for (let p = 0; p < pages; p++) {
+        if (p !== 0 && p !== pages - 1 && Math.abs(p - state.page) > 2) continue;
+        if (p - prev > 1) nums.push(el("span", { class: "gap", "aria-hidden": "true" }, "…"));
+        nums.push(el("button", { type: "button", "aria-current": p === state.page ? "page" : null, "aria-label": `${p + 1}ページ`, onclick: () => goPage(p) }, String(p + 1)));
+        prev = p;
+      }
+      box.append(el("nav", { class: "pager", "aria-label": "ページ" },
+        el("button", { type: "button", disabled: state.page === 0 ? "" : null, "aria-label": "前のページ", onclick: () => goPage(state.page - 1) }, "‹"),
+        ...nums,
+        el("button", { type: "button", disabled: state.page >= pages - 1 ? "" : null, "aria-label": "次のページ", onclick: () => goPage(state.page + 1) }, "›")));
     }
-    if (list.length > state.limit) box.append(el("button", { type: "button", class: "more", onclick: () => { state.limit += PAGE; renderList(); } }, `さらに表示（残り ${list.length - state.limit} 件）`));
   }
   function renderFilters() {
     document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cover === state.cover)));
@@ -665,7 +711,8 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     }
     row.append(el("button", { type: "button", class: "chip ghost", onclick: () => { $("addtopic").hidden = false; $("topic-name").focus(); } }, "＋ 追加"));
   }
-  function refreshList() { state.limit = PAGE; renderFilters(); renderList(); }
+  function refreshList() { state.page = 0; renderFilters(); renderList(); }
+  function scrollToLog() { $("log").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }); }
   function openLog() { $("log-body").hidden = false; $("log-open").hidden = true; }
   $("log-open").addEventListener("click", () => { openLog(); refreshList(); });
 
@@ -680,6 +727,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       const href = hasReport ? `#article/${a.id}` : a.link;
       const summary = a.summary && !a.summary.startsWith(a.title.slice(0, 15)) ? a.summary : null;
       const related = f.related.map((id) => byId.get(id)).filter(Boolean);
+      // Use another outlet's picture of the same story when the lead article has none.
+      const image = a.image || related.find((r) => r.image)?.image;
+      const pic = thumb({ ...a, image });
       return el("li", { class: s === "uncovered" ? "out" : null },
         el("div", { class: "body" },
           el("div", { class: "meta" }, signal(a), el("span", { class: "sector" }, sectorOf(a)), el("span", {}, a.outlet),
@@ -689,7 +739,8 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
           a.title_ja ? el("p", { class: "orig", lang: "en" }, a.title) : null,
           summary ? el("p", { class: "summary" }, summary) : null,
           related.length ? el("ul", { class: "rel" }, ...related.map((r) => el("li", {}, el("a", { href: r.link, target: "_blank", rel: "noopener" }, `${r.outlet}：${r.title_ja || r.title}`)))) : null,
-          s === "covered" ? el("p", { class: "orig" }, "TV：", el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, `${a.tv_match.outlet}「${a.tv_match.title}」`)) : null));
+          s === "covered" ? el("p", { class: "orig" }, "TV：", el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, `${a.tv_match.outlet}「${a.tv_match.title}」`)) : null),
+        el("a", { href, target: hasReport ? null : "_blank", rel: hasReport ? null : "noopener", tabindex: "-1", "aria-hidden": "true" }, pic));
     }));
   }
 
@@ -746,7 +797,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   });
   document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => { state.cover = b.dataset.cover; store.set("nr.cover", state.cover); refreshList(); }));
   let qTimer;
-  $("q").addEventListener("input", (e) => { clearTimeout(qTimer); qTimer = setTimeout(() => { state.q = e.target.value.trim(); state.limit = PAGE; renderList(); }, 150); });
+  $("q").addEventListener("input", (e) => { clearTimeout(qTimer); qTimer = setTimeout(() => { state.q = e.target.value.trim(); state.page = 0; renderList(); }, 150); });
   $("addtopic").addEventListener("submit", (e) => {
     e.preventDefault();
     const name = $("topic-name").value.trim();
