@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T09:46:41Z",
+ "generated_at": "2026-10-18T09:49:24Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -16,7 +16,107 @@
  },
  "topics": [
   {
-   "name": "通信キャリア",
+   "name": "政治",
+   "keywords": [
+    "首相",
+    "内閣",
+    "国会",
+    "政府",
+    "与党",
+    "野党",
+    "自民",
+    "立憲",
+    "維新",
+    "公明",
+    "共産党",
+    "国民民主",
+    "選挙",
+    "知事",
+    "市長",
+    "大臣",
+    "閣僚",
+    "法案",
+    "政権",
+    "議員",
+    "政党",
+    "president",
+    "election",
+    "parliament",
+    "minister",
+    "senate",
+    "congress",
+    "lawmakers"
+   ]
+  },
+  {
+   "name": "金融",
+   "keywords": [
+    "日銀",
+    "金利",
+    "利上げ",
+    "利下げ",
+    "為替",
+    "円安",
+    "円高",
+    "銀行",
+    "金融",
+    "融資",
+    "インフレ",
+    "物価",
+    "国債",
+    "債券",
+    "ドル",
+    "central bank",
+    "interest rate",
+    "inflation",
+    "bank",
+    "bonds",
+    "currency",
+    "Fed"
+   ]
+  },
+  {
+   "name": "IT",
+   "keywords": [
+    "アプリ",
+    "ソフトウェア",
+    "クラウド",
+    "セキュリティ",
+    "サイバー",
+    "ハッキング",
+    "不正アクセス",
+    "情報漏えい",
+    "個人情報",
+    "半導体",
+    "パソコン",
+    "PC",
+    "Windows",
+    "Google",
+    "グーグル",
+    "Apple",
+    "アップル",
+    "Microsoft",
+    "マイクロソフト",
+    "Meta",
+    "IT",
+    "DX",
+    "SNS",
+    "X（旧ツイッター）",
+    "software",
+    "cyber",
+    "hack",
+    "cloud",
+    "chip",
+    "semiconductor",
+    "tech"
+   ],
+   "exclude": [
+    "ホークス",
+    "野球"
+   ]
+  },
+  {
+   "name": "通信",
    "keywords": [
     "ドコモ",
     "docomo",
@@ -28,8 +128,32 @@
     "Rakuten Mobile",
     "povo",
     "ahamo",
+    "LINEMO",
     "MVNO",
-    "格安SIM"
+    "格安SIM",
+    "通信",
+    "回線",
+    "光回線",
+    "5G",
+    "6G",
+    "基地局",
+    "電波",
+    "周波数",
+    "通信障害",
+    "Starlink",
+    "スターリンク",
+    "衛星通信",
+    "スマホ",
+    "iPhone",
+    "Android",
+    "NTT",
+    "総務省",
+    "telecom",
+    "carrier",
+    "network outage",
+    "broadband",
+    "spectrum",
+    "mobile network"
    ],
    "exclude": [
     "ホークス",
@@ -42,35 +166,158 @@
     "巨人",
     "DeNA",
     "阪神",
-    "セ・リーグ",
-    "パ・リーグ",
-    "スポニチ",
-    "日刊スポーツ",
-    "スポーツ報知",
-    "打者",
-    "首位打者",
     "選手",
     "監督",
     "試合"
    ]
   },
   {
-   "name": "ネットワーク・回線",
+   "name": "エンタメ",
    "keywords": [
-    "通信障害",
-    "回線",
-    "光回線",
-    "5G",
-    "6G",
-    "基地局",
-    "Starlink",
-    "スターリンク",
-    "衛星通信",
-    "outage",
-    "network",
-    "broadband",
-    "telecom",
-    "NTT"
+    "映画",
+    "ドラマ",
+    "音楽",
+    "アニメ",
+    "漫画",
+    "マンガ",
+    "ゲーム",
+    "俳優",
+    "女優",
+    "歌手",
+    "芸能",
+    "コンサート",
+    "紅白",
+    "アイドル",
+    "声優",
+    "Netflix",
+    "ネットフリックス",
+    "film",
+    "movie",
+    "music",
+    "celebrity",
+    "album",
+    "Hollywood"
+   ]
+  },
+  {
+   "name": "AI",
+   "keywords": [
+    "AI",
+    "人工知能",
+    "生成AI",
+    "ChatGPT",
+    "OpenAI",
+    "Claude",
+    "Anthropic",
+    "Gemini",
+    "機械学習",
+    "LLM",
+    "artificial intelligence",
+    "chatbot"
+   ]
+  },
+  {
+   "name": "株",
+   "keywords": [
+    "株価",
+    "株式市場",
+    "株主",
+    "株高",
+    "株安",
+    "日経平均",
+    "TOPIX",
+    "銘柄",
+    "上場",
+    "決算",
+    "配当",
+    "東証",
+    "ダウ",
+    "ナスダック",
+    "stock",
+    "stocks",
+    "shares",
+    "Nasdaq",
+    "Dow",
+    "IPO",
+    "earnings",
+    "Wall Street"
+   ]
+  },
+  {
+   "name": "国際",
+   "keywords": [
+    "外交",
+    "首脳",
+    "会談",
+    "国連",
+    "NATO",
+    "G7",
+    "G20",
+    "戦争",
+    "停戦",
+    "紛争",
+    "制裁",
+    "大使",
+    "ロシア",
+    "ウクライナ",
+    "中国",
+    "米国",
+    "アメリカ",
+    "トランプ",
+    "中東",
+    "イスラエル",
+    "ガザ",
+    "イラン",
+    "北朝鮮",
+    "韓国",
+    "台湾",
+    "UN",
+    "war",
+    "ceasefire",
+    "sanctions",
+    "diplomat",
+    "diplomats",
+    "Ukraine",
+    "Russia",
+    "China",
+    "Gaza",
+    "Israel",
+    "Iran"
+   ]
+  },
+  {
+   "name": "社会",
+   "keywords": [
+    "事件",
+    "事故",
+    "逮捕",
+    "容疑",
+    "裁判",
+    "判決",
+    "火災",
+    "地震",
+    "災害",
+    "台風",
+    "豪雨",
+    "大雨",
+    "教育",
+    "学校",
+    "医療",
+    "病院",
+    "介護",
+    "子ども",
+    "高齢者",
+    "警察",
+    "自治体",
+    "少子化",
+    "killed",
+    "dead",
+    "police",
+    "court",
+    "earthquake",
+    "storm",
+    "flood",
+    "wildfire"
    ]
   }
  ],
@@ -121,7 +368,7 @@
    "name": "ロイター日本語",
    "kind": "国際",
    "ok": true,
-   "count": 21
+   "count": 20
   },
   {
    "name": "CNN.co.jp",
@@ -169,7 +416,7 @@
    "name": "BBC World",
    "kind": "overseas",
    "ok": true,
-   "count": 27
+   "count": 26
   },
   {
    "name": "Al Jazeera",
@@ -292,6 +539,34 @@
   }
  ],
  "articles": [
+  {
+   "id": "eb0fe5744393bf31",
+   "title": "Nottinghamshire police officer in hospital after being shot in the foot",
+   "link": "https://www.theguardian.com/uk-news/2026/oct/18/nottingham-police-officer-in-hospital-shot-in-foot",
+   "summary": "Large cordon in place around Angel Row area of city centre after ‘shocking incident’ in the early hours of Sunday A police officer is in hospital after being shot in the foot in Nottingham in the early hours of Sunday. Nottinghamshire police said the officer had approached two su…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T09:32:32Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "094c49d8e23664dc",
+   "title": "Food or medicine? The impossible choices facing Sudan’s chronically ill",
+   "link": "https://www.aljazeera.com/features/2026/10/18/food-or-medicine-the-impossible-choices-facing-sudans-chronically-ill?traffic_source=rss",
+   "summary": "Sudanese are facing growing costs of medicine caused by the country's civil war.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T09:22:44Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
   {
    "id": "c5304dc40c604c15",
    "title": "Fighting intensifies across Yemen as humanitarian crisis deepens",
@@ -1830,6 +2105,20 @@
    "picked": false
   },
   {
+   "id": "067ede0b4cd536dd",
+   "title": "サウジのイエメン空爆で子ども3人含む12人死亡、フーシ派発表",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1xcVp3TEw4c3pYVGQzSVoxaTd2QzZLNmZrS2d5dGJLTEFOdDdwbXEzX3lwTU9nVFZyQmV1S0NHWTNOLWZoanhsZVMwWHhPQmNBTXfSAVRBVV95cUxNUnEwWEJXR2dyd0hHejVmYjN1dHprVnFwd0wtdTRITDZmLVNoRmlaaU8tY21YYllUMzRnZ1g1VE9XSGpHcFZwYzlKZU04dkZ3bGprYUY?oc=5",
+   "summary": "サウジのイエメン空爆で子ども3人含む12人死亡、フーシ派発表 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-18T01:25:57Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "fa57b91a1baa2cdf",
    "title": "トランプ大統領に「王はいらない」 中間選挙前に全米各地で抗議デモ",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB6YVZPYlJ3RWFlcmR2ZXg0QzAtRjgtcHlPZmdfMGtIU1ZpSEhVSkI4LVlXQmwzYzg0Q2dXRkdRX3VnamZSYXhhNEJGekliUFhKZXlkNmpHUFVNZUxES2R5NUNuazZXZkU?oc=5",
@@ -3355,10 +3644,10 @@
    "picked": false
   },
   {
-   "id": "d55805933540b027",
-   "title": "危険な「点ブロスマホ」に困っています 視覚障害者が衝突を恐れて「点字ブロック」を使わない異常事態",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE90aXFDamg2U3NhaXhnY1VmQVJDOEkteVF3dzNycldkQ1ZkNWhSUWZtNzE5a3duWndfNklXZW45T1ppLWJIZVhRZTFmY084aVp4X1hj?oc=5",
-   "summary": "危険な「点ブロスマホ」に困っています 視覚障害者が衝突を恐れて「点字ブロック」を使わない異常事態 東京新聞",
+   "id": "1d9858166926f450",
+   "title": "ストーカー問題に奔走した故小早川明子さん、その遺志と支援団体を継いだ探偵の思い",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5kaGk4SW1uWUFrbGIxY0R5RHlwLXlIdXRwdjVQWkVkTXNYVUpxM2RVZkJISXM1TUdMRjZheXRWRWc2QXRRU0FBVEllRzh2WDhveXBB?oc=5",
+   "summary": "ストーカー問題に奔走した故小早川明子さん、その遺志と支援団体を継いだ探偵の思い 東京新聞",
    "outlet": "東京新聞",
    "feed": "東京新聞",
    "kind": "国内",
@@ -3369,10 +3658,10 @@
    "picked": false
   },
   {
-   "id": "1d9858166926f450",
-   "title": "ストーカー問題に奔走した故小早川明子さん、その遺志と支援団体を継いだ探偵の思い",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5kaGk4SW1uWUFrbGIxY0R5RHlwLXlIdXRwdjVQWkVkTXNYVUpxM2RVZkJISXM1TUdMRjZheXRWRWc2QXRRU0FBVEllRzh2WDhveXBB?oc=5",
-   "summary": "ストーカー問題に奔走した故小早川明子さん、その遺志と支援団体を継いだ探偵の思い 東京新聞",
+   "id": "d55805933540b027",
+   "title": "危険な「点ブロスマホ」に困っています 視覚障害者が衝突を恐れて「点字ブロック」を使わない異常事態",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE90aXFDamg2U3NhaXhnY1VmQVJDOEkteVF3dzNycldkQ1ZkNWhSUWZtNzE5a3duWndfNklXZW45T1ppLWJIZVhRZTFmY084aVp4X1hj?oc=5",
+   "summary": "危険な「点ブロスマホ」に困っています 視覚障害者が衝突を恐れて「点字ブロック」を使わない異常事態 東京新聞",
    "outlet": "東京新聞",
    "feed": "東京新聞",
    "kind": "国内",
@@ -7598,20 +7887,6 @@
    "picked": false
   },
   {
-   "id": "be83e838c9dc6d8f",
-   "title": "メーガン妃、英国復帰で披露した「全身ボルドー」の洗練コーデ…9年前の王室デビューとの意外な共通点",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIZU8yOGtIVXN3YUppMFVnZnVaRDJ5YWN5M01YbGJ6SEpvMHVyME9NdG91S0hnMkp1Q0E3RmNKMk1iNDdkYXFVVThkYXlsUW5PeUZYTnlLVE0wdw?oc=5",
-   "summary": "メーガン妃、英国復帰で披露した「全身ボルドー」の洗練コーデ…9年前の王室デビューとの意外な共通点 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-16T09:52:00Z",
-   "first_seen": "2026-10-18T09:46:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "3af686002c867271",
    "title": "メーガン妃、英国復帰で披露した「全身ボルドー」の洗練コーデ…9年前の王室デビューとの意外な共通点",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE11OXptZkhsMFFvSThQZXZfQS1PMXE3LVlJeXpEVmhFT0ZlOVBsNmNDTkI2T2tuM2FWc0lkVFNkMVBMM05TYUdSdUVVMnV0dXp5LWhLYTlrTzBYX3doc1E0eTdOOGpYSjg?oc=5",
@@ -7622,6 +7897,20 @@
    "lang": "ja",
    "published": "2026-10-16T09:52:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "be83e838c9dc6d8f",
+   "title": "メーガン妃、英国復帰で披露した「全身ボルドー」の洗練コーデ…9年前の王室デビューとの意外な共通点",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIZU8yOGtIVXN3YUppMFVnZnVaRDJ5YWN5M01YbGJ6SEpvMHVyME9NdG91S0hnMkp1Q0E3RmNKMk1iNDdkYXFVVThkYXlsUW5PeUZYTnlLVE0wdw?oc=5",
+   "summary": "メーガン妃、英国復帰で披露した「全身ボルドー」の洗練コーデ…9年前の王室デビューとの意外な共通点 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T09:52:00Z",
+   "first_seen": "2026-10-18T09:46:41Z",
    "tv_match": null,
    "picked": false
   },
@@ -7678,6 +7967,20 @@
    "lang": "ja",
    "published": "2026-10-16T09:42:00Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "cdd7ba929a84d841",
+   "title": "中国人民銀総裁、金融市場開放加速と人民元国際化推進表明",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9HNnlYNXBLVUhUMXVxaWVUUTRRa08yUG5vLXNhNXRqcVQxUE1QX1VSdWNSSkstT3p5MU9nTTRQcm4wMnBUZkFZa1BnZ0pKNF96cG4zMXFYVDZ5V01oODh4ZjgydDNwMFk?oc=5",
+   "summary": "中国人民銀総裁、金融市場開放加速と人民元国際化推進表明 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T09:40:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
    "tv_match": null,
    "picked": false
   },
@@ -8364,6 +8667,20 @@
    "picked": false
   },
   {
+   "id": "c49b9f22b9ade0aa",
+   "title": "欧州アルプスの最高峰モンブラン 3年前より2ｍ近く「成長」",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0yajNJbFY2SGlYdTRIa05RY1VZZjdnbHZVNlFubEZLbllRRlRKMUFuNXZBR1RqZjlmYlhBc3Y5YTZqbVpST0xwMURMUUdaMGx4TEHSAVRBVV95cUxQXzFQRU43cE84OXVNc2E0ZXYxOHZXdm9LV2hkQzc5VS16UVlEM2NESkJxOWRXelAxUkpzbHhaOEt5TVpaTFlxWndyQktrMWhtcUt6Z3Y?oc=5",
+   "summary": "欧州アルプスの最高峰モンブラン 3年前より2ｍ近く「成長」 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T05:30:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "d740cadeb1fdb8be",
    "title": "16日昼の「緊急地震速報」誤報、気象庁は「サイバー攻撃ではない」",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2148779.html",
@@ -8383,6 +8700,20 @@
    "picked": false
   },
   {
+   "id": "a4f78748c37657a3",
+   "title": "DJIが25秒自動バッテリー交換無人プラットフォーム「DJI Dock 4」を発表",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5OSi1OaGVCbHV4VlFjRkN2TVRaLUpxZ3FsamxzS09TNkRSd2ZXQmtvTjJlOWVYSUxNLUE4MUxfQ3VHY3h4WmdpMjl6U25CcFRuZlHSAVRBVV95cUxNdHJsU3kxNmJ2bmdiZ3VIeVp3cEVzT0gtaHpuWGtfcS1VUE1fSGUzZXdjM0NheS1rWGFyZExiYnN5MWdtaDNvSDZJNHh6dmYyS0oydGw?oc=5",
+   "summary": "DJIが25秒自動バッテリー交換無人プラットフォーム「DJI Dock 4」を発表 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T05:20:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "8915c9a6866868e4",
    "title": "au PAY、「東京ポイント」から交換で先着2万人に最大1000Pontaポイント",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2148740.html",
@@ -8393,6 +8724,20 @@
    "lang": "ja",
    "published": "2026-10-16T05:18:54Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "c435d4b8436d85a1",
+   "title": "ウクライナ大統領、ロシア軍機4機を破壊したと発表 国産ミサイルで飛行場攻撃",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1zSWxjQUgzTmFtYzFwRnNxZFZlT2tFQmd2bW12ellBWE1RcDdaVGF0em1SbnZwbTgxc05vcUhTaHNOSHFpbEtUZ1o3QzU4czk1NWfSAVRBVV95cUxNYV9WNWJCeGZzSVFqX01mT1R6RWNFbTNWWkdKSzVjSEowWEhCaC02VXNORHd1emJLWTI5aWZGakd1Q211OW53YjhvVlB3LXVuQU8tako?oc=5",
+   "summary": "ウクライナ大統領、ロシア軍機4機を破壊したと発表 国産ミサイルで飛行場攻撃 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T05:12:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
    "tv_match": null,
    "picked": false
   },
@@ -8702,6 +9047,20 @@
    "picked": false
   },
   {
+   "id": "1bd737d7b8513241",
+   "title": "イスタンブールで過去80年最大の豪雨、洪水発生で3人死亡",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA2bDRZSUtxcEcwMW1qUVBRcXUtTXVSUTA5TnpOVGpHLTA5NUR0X2tYWUdCWjhwNFMxYk1iNGprU2hKM1N3VXBUemxBbFdhLUtjRnVqbVFoM1NDQlRCQ0tZYkpPSHZUUdIBVEFVX3lxTFBPUnVneVI0YWhkb25oMXhoTFRjcWdOSFFJc2Jidi01NndOMldvQnBsUDNyMEFTWlFTUkd1Vk9sVmdKTjdVTjZDX1ViLUpfdVc1cmk1Rg?oc=5",
+   "summary": "イスタンブールで過去80年最大の豪雨、洪水発生で3人死亡 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T03:53:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "ec053e4c3a979ca0",
    "title": "米オレゴン州の小学校で銃乱射、子ども3人と教師1人が殺害される 16歳容疑者は現場で射殺",
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9BdGJzOF9FMG13a0g5ek1QdlBId3ViYnVmWE54UW01dDJZT2lFdnEzNmNZREpaRjRMSXhmdU9KbG1BZ3lLa1V2eW9SNjVMS1RFVThsMEo3c3NqTktUQXh0RtIBZkFVX3lxTE1kb18tODZpNXgtMFd4QVJvZ0RJa0x0cDdzSUdQcG9EVzJsM1htOHg4QjJ4Z0RReDljMDVjMVF2WjFCVHdJbjJ0YjZVNWNHRk1fZENSSmZaX1R2Ym51S0tEcjFHSEIxdw?oc=5",
@@ -8757,7 +9116,7 @@
    "tv_match": {
     "title": "米国製「パトリオット」 迎撃ミサイルが枯渇",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9jU0pLNy03QzVhb2JBMXgyS2xVb2tqdTFlTU8tTXFldzRLWERPMVpwTGF3eWQ0Z09vMUV3b05VRGVqZEFqOXBDQ1ZETTdFak1mM0tXeFh2azJlUFpraVE?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrelE0S2ROQ040UXpaRHZ1RFNSclBKSjdPVDN4M2dacUJQNjZaVjRHTTJYMGNLd1lMYlhqSEtkazNoSGktSEtENDcyTllGNTJ4cnRqQklKLV81SkxRTmtkTjFB?oc=5",
     "score": 0.65
    },
    "picked": false
@@ -8857,6 +9216,20 @@
    "lang": "ja",
    "published": "2026-10-16T02:31:21Z",
    "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "f733abbd16f1049c",
+   "title": "サウジ、イランがフーシ派の攻撃激化を後押しと非難 写真2枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8zZnBoS19sR1llcy1SeTRNMzlha2ZvZFdTc21MNE12S1E3azhwMXdZcWxlSUdVOWNPaGtTNTRaaDgxczQxdlBkRzNONG8tWWJPc3c?oc=5",
+   "summary": "サウジ、イランがフーシ派の攻撃激化を後押しと非難 写真2枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T02:30:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
    "tv_match": null,
    "picked": false
   },
@@ -9081,6 +9454,20 @@
    "picked": false
   },
   {
+   "id": "ec8af4bf53678841",
+   "title": "ヘンリー英王子夫妻、帰国後初めてそろって公の場に メーガン妃「戻って来られてうれしい」",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBlOGFORGs5cmg4Z0JmbERjUmlqUzlfb2dRUmU3UmQwVHlXOE5BVTVtRVB1TjMySTNtZ2tiR3RVSU1zWm01SExSU2Frb3U2MnJ1alHSAVRBVV95cUxOazZ2NXNPWXRhVTNONnZLLUxUNlVmUEg0bEZQNHZWSmJnMHMtUlA3TkVMZm56M1UzY0NVQ2hnalhHRDM0b0U0RnJxcF9RQVBXNTlndzk?oc=5",
+   "summary": "ヘンリー英王子夫妻、帰国後初めてそろって公の場に メーガン妃「戻って来られてうれしい」 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-15T23:44:00Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "7bde032eb4b6aeba",
    "title": "GSIT.O",
    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9hN0NJWlYzLVcwRnpUNk5nRXM4cUJVdTN5NnVjV0Fab3VycERNTWhQZnFVakRrazJJR2hxbHJaejFTZ0ZlZUZhV2U0WnFqdFJfNTZ5RHZhWHBtczR3?oc=5",
@@ -9190,6 +9577,25 @@
    "published": "2026-10-15T22:15:13Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "f2e835a7d70a1f5a",
+   "title": "Norway：国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5NWmctOVA3OUMyM0N6MlliX1h3cC1rcUM1aHBVRlI3WHp3cWtoVGJQTk1nOWZaZmFkcUVVYklxOGY3TW9qSWYxcjRPaTlKd1VJcmJZT1FFcGpLZzlQ?oc=5",
+   "summary": "Norway：国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-15T22:11:59Z",
+   "first_seen": "2026-10-18T09:49:24Z",
+   "tv_match": {
+    "title": "池畑修平の国際ニュースCORE",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5JOVlhWE9DcVVOWG1ZX01mY2NZVGRvM0VfOHNWaE83WjFMNHFXYXFvQWdTeTdVQ0lOVFVSaXhWSmNjYS1hS29XMndpbWZMNndWQXlkX1YxYw?oc=5",
+    "score": 0.55
+   },
    "picked": false
   },
   {
@@ -10035,6 +10441,18 @@
  ],
  "tv": [
   {
+   "id": "dc7cb1ea259cbf11",
+   "title": "住宅1棟を全焼 住人の男性病院搬送、命に別条なし 岩手県盛岡市",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBJOUV6c3FYMGJrZGswTmdfTnU0ZktCNWpVc0h0MVZOM3VQX2xfYmNiYlBaUXZreDY4cXlNWWJWRDNYejFrNWFKc2hxbmZJQQ?oc=5",
+   "summary": "住宅1棟を全焼 住人の男性病院搬送、命に別条なし 岩手県盛岡市 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T09:40:00Z",
+   "first_seen": "2026-10-18T09:49:24Z"
+  },
+  {
    "id": "d7efb0b6281962f8",
    "title": "フラーゴラッドいよいよ開幕戦へ！鹿児島市でファンと決起集会",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5FUHY3aVdJNzlsSVlSRjlzVE5tRlUxT0FMaV8zS2dDU0xIRnRJWXVqMnE3LXU0RWI3bHR3dGFOV1A5UWNRRm91Z0F2QmxmQQ?oc=5",
@@ -10045,6 +10463,18 @@
    "lang": "ja",
    "published": "2026-10-18T09:30:58Z",
    "first_seen": "2026-10-18T09:46:41Z"
+  },
+  {
+   "id": "2bfbba3283bb2f3e",
+   "title": "【榮倉奈々】「干支が一周」12年ぶりの連ドラ主演で新しい挑戦＜芸能動画＞",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5adGFjN0VEaFA0aHNiSzV1bVIyRVc2NmQxR1pGMUc4emRsWktNZnh6WVNKUWRJMjY2UXU2M0l6OU15NFdFTWxQMXhDa3RsMFotSkd2X3hUaDlkUVdwNXI0eDV6eGV0TGxkUkpiNDBYVUM?oc=5",
+   "summary": "【榮倉奈々】「干支が一周」12年ぶりの連ドラ主演で新しい挑戦＜芸能動画＞ テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T09:27:24Z",
+   "first_seen": "2026-10-18T09:49:24Z"
   },
   {
    "id": "104816aabb831179",
@@ -10345,6 +10775,18 @@
    "lang": "ja",
    "published": "2026-10-18T06:02:00Z",
    "first_seen": "2026-10-18T07:12:59Z"
+  },
+  {
+   "id": "4c8beb6c394daf97",
+   "title": "【速報】東京・福生市で46歳男性刺され死亡 逃走していた男の身柄を確保 警視庁",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzQVZfUG01a2drMnpVa2RqOEoyLUhVS05EeU5zbEowTU45UU84OV96SW5FMWliUTdyLVlWYXpYWU5Sd1NUMkd0NnhWZERJUXNXUUtsQWxvR1VUYUtTVVpzeEFWRDF0akRVQTFOWHdnWFpqZw?oc=5",
+   "summary": "【速報】東京・福生市で46歳男性刺され死亡 逃走していた男の身柄を確保 警視庁 テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T05:26:50Z",
+   "first_seen": "2026-10-18T09:49:24Z"
   },
   {
    "id": "38c9de700a0dfa99",
@@ -12231,6 +12673,18 @@
    "first_seen": "2026-10-18T04:29:46Z"
   },
   {
+   "id": "dd40bd551a3897a4",
+   "title": "米国製「パトリオット」 迎撃ミサイルが枯渇",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrelE0S2ROQ040UXpaRHZ1RFNSclBKSjdPVDN4M2dacUJQNjZaVjRHTTJYMGNLd1lMYlhqSEtkazNoSGktSEtENDcyTllGNTJ4cnRqQklKLV81SkxRTmtkTjFB?oc=5",
+   "summary": "米国製「パトリオット」 迎撃ミサイルが枯渇 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-16T14:00:00Z",
+   "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
    "id": "9ba4fd5c12af7711",
    "title": "住民が抗議デモ 寄生虫の不妊化工場で悪臭",
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE8zTzVjWHZ1MGZFMzFFRGF1RkRUdEtsR3hPUHF0LTF3OGthU2dNVV9aTXpMdVl5bzl1Nk1yblZqUHVaUUphYmkxWVBOZFJveWtwbmxqX2VzZ2FjRUY3eXR1VHpB?oc=5",
@@ -12289,18 +12743,6 @@
    "lang": "ja",
    "published": "2026-10-16T14:00:00Z",
    "first_seen": "2026-10-18T04:29:46Z"
-  },
-  {
-   "id": "ec1f382008ca5f92",
-   "title": "米国製「パトリオット」 迎撃ミサイルが枯渇",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9jU0pLNy03QzVhb2JBMXgyS2xVb2tqdTFlTU8tTXFldzRLWERPMVpwTGF3eWQ0Z09vMUV3b05VRGVqZEFqOXBDQ1ZETTdFak1mM0tXeFh2azJlUFpraVE?oc=5",
-   "summary": "米国製「パトリオット」 迎撃ミサイルが枯渇 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-16T14:00:00Z",
-   "first_seen": "2026-10-18T09:38:54Z"
   },
   {
    "id": "23f498645749b292",
@@ -12399,6 +12841,18 @@
    "first_seen": "2026-10-18T07:45:34Z"
   },
   {
+   "id": "ec1f382008ca5f92",
+   "title": "米国製「パトリオット」 迎撃ミサイルが枯渇",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9jU0pLNy03QzVhb2JBMXgyS2xVb2tqdTFlTU8tTXFldzRLWERPMVpwTGF3eWQ0Z09vMUV3b05VRGVqZEFqOXBDQ1ZETTdFak1mM0tXeFh2azJlUFpraVE?oc=5",
+   "summary": "米国製「パトリオット」 迎撃ミサイルが枯渇 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-16T14:00:00Z",
+   "first_seen": "2026-10-18T09:38:54Z"
+  },
+  {
    "id": "8b6efac06f1e0a18",
    "title": "日経新聞 個人情報漏えい 不正アクセスで183万件",
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5tV3JDazNaZ2xkcWFMdTZ0V1Job0RzU1lGSDE1Y1Z1S0V4TTFmRmVxT09hZjJpT3lUNURfUmd5alZDSFNrTGk5Mi1RbTVKeFZWakx2aVFjWldVNF9MaFloaV9R?oc=5",
@@ -12409,18 +12863,6 @@
    "lang": "ja",
    "published": "2026-10-16T14:00:00Z",
    "first_seen": "2026-10-18T07:45:34Z"
-  },
-  {
-   "id": "dd40bd551a3897a4",
-   "title": "米国製「パトリオット」 迎撃ミサイルが枯渇",
-   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrelE0S2ROQ040UXpaRHZ1RFNSclBKSjdPVDN4M2dacUJQNjZaVjRHTTJYMGNLd1lMYlhqSEtkazNoSGktSEtENDcyTllGNTJ4cnRqQklKLV81SkxRTmtkTjFB?oc=5",
-   "summary": "米国製「パトリオット」 迎撃ミサイルが枯渇 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-16T14:00:00Z",
-   "first_seen": "2026-10-18T04:29:46Z"
   },
   {
    "id": "a0024c3ad88c8668",
