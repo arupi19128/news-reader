@@ -1,0 +1,129 @@
+# ニュースレーダーの設定ファイル
+# ここを書き換えて GitHub に push すると、次回の自動更新から反映されます。
+
+[settings]
+# 記事を残す日数
+keep_days = 7
+# 1つの情報源から取り込む最大件数
+max_items_per_feed = 40
+# 「テレビで報道済み」と判定する一致度（0〜1）。下げると判定が甘くなる
+tv_match_threshold = 0.32
+# テレビ報道と照らし合わせる期間（記事の前後何時間か）
+tv_match_window_hours = 72
+# 英語記事を日本語に訳すときのモデル（ANTHROPIC_API_KEY を登録したときだけ使われる）
+model = "claude-opus-5-5"
+
+# ---------------------------------------------------------------
+# テレビ局のニュース（比較用。サイトには一覧として出しません）
+# kind = "tv"
+# ---------------------------------------------------------------
+[[feeds]]
+name = "NHK"
+kind = "tv"
+url = "https://www3.nhk.or.jp/rss/news/cat0.xml"
+
+[[feeds]]
+name = "TBS NEWS DIG"
+kind = "tv"
+google_news = "site:newsdig.tbs.co.jp"
+
+[[feeds]]
+name = "日テレNEWS"
+kind = "tv"
+google_news = "site:news.ntv.co.jp"
+
+[[feeds]]
+name = "FNNプライムオンライン"
+kind = "tv"
+google_news = "site:fnn.jp"
+
+[[feeds]]
+name = "テレ朝NEWS"
+kind = "tv"
+google_news = "site:news.tv-asahi.co.jp"
+
+[[feeds]]
+name = "テレ東BIZ"
+kind = "tv"
+google_news = "site:txbiz.tv-tokyo.co.jp"
+
+# ---------------------------------------------------------------
+# 海外メディア（英語。APIキーがあれば日本語訳と要約が付きます）
+# ---------------------------------------------------------------
+[[feeds]]
+name = "BBC World"
+kind = "overseas"
+lang = "en"
+url = "https://feeds.bbci.co.uk/news/world/rss.xml"
+
+[[feeds]]
+name = "Al Jazeera"
+kind = "overseas"
+lang = "en"
+url = "https://www.aljazeera.com/xml/rss/all.xml"
+
+[[feeds]]
+name = "The Guardian World"
+kind = "overseas"
+lang = "en"
+url = "https://www.theguardian.com/world/rss"
+
+[[feeds]]
+name = "NPR World"
+kind = "overseas"
+lang = "en"
+url = "https://feeds.npr.org/1004/rss.xml"
+
+[[feeds]]
+name = "DW"
+kind = "overseas"
+lang = "en"
+url = "https://rss.dw.com/rdf/rss-en-world"
+
+[[feeds]]
+name = "France 24"
+kind = "overseas"
+lang = "en"
+url = "https://www.france24.com/en/rss"
+
+# ---------------------------------------------------------------
+# テーマ別（自由に追加できます）
+# kind は画面の分類名になります。google_news はGoogleニュース検索の式です。
+# ---------------------------------------------------------------
+[[feeds]]
+name = "ケータイ Watch"
+kind = "通信"
+url = "https://k-tai.watch.impress.co.jp/data/rss/1.0/ktw/feed.rdf"
+
+[[feeds]]
+name = "ITmedia Mobile"
+kind = "通信"
+url = "https://rss.itmedia.co.jp/rss/2.0/mobile.xml"
+
+[[feeds]]
+name = "総務省 報道発表"
+kind = "通信"
+url = "https://www.soumu.go.jp/news.rdf"
+
+[[feeds]]
+name = "Googleニュース：通信キャリア"
+kind = "通信"
+google_news = "ドコモ OR KDDI OR ソフトバンク OR 楽天モバイル OR 通信障害 OR 5G OR 光回線"
+
+[[feeds]]
+name = "Google News: Telecom"
+kind = "通信"
+lang = "en"
+google_news = "telecom OR \"mobile carrier\" OR \"network outage\" OR 5G OR 6G"
+
+# ---------------------------------------------------------------
+# トピック（画面上の絞り込みボタン。キーワードのどれかを含む記事が出ます）
+# 画面からも自分用のトピックを追加できます。
+# ---------------------------------------------------------------
+[[topics]]
+name = "通信キャリア"
+keywords = ["ドコモ", "docomo", "KDDI", "au", "ソフトバンク", "SoftBank", "楽天モバイル", "Rakuten Mobile", "povo", "ahamo", "MVNO", "格安SIM"]
+
+[[topics]]
+name = "ネットワーク・回線"
+keywords = ["通信障害", "回線", "光回線", "5G", "6G", "基地局", "Starlink", "スターリンク", "衛星通信", "outage", "network", "broadband", "telecom", "NTT"]

@@ -1,0 +1,60 @@
+name: Update news
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # 毎時17分（UTC）
+  workflow_dispatch:        # Actions 画面から手動実行もできる
+  push:
+    paths:
+      - config.toml
+      - scripts/**
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Fetch news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/fetch_news.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "news-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/news.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update news data"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
