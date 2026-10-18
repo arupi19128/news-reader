@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T04:29:46Z",
+ "generated_at": "2026-10-18T04:31:00Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32
@@ -20,6 +20,14 @@
     "ahamo",
     "MVNO",
     "格安SIM"
+   ],
+   "exclude": [
+    "ホークス",
+    "野球",
+    "投手",
+    "打線",
+    "日本シリーズ",
+    "CS"
    ]
   },
   {
@@ -130,8 +138,8 @@
   {
    "name": "総務省 報道発表",
    "kind": "通信",
-   "ok": false,
-   "error": "multi-byte encodings are not supported"
+   "ok": true,
+   "count": 20
   },
   {
    "name": "Googleニュース：通信キャリア",
@@ -159,19 +167,6 @@
    "published": "2026-10-18T04:21:46Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
-  },
-  {
-   "id": "76967089a5601a99",
-   "title": "「身に染みて分かっている」ソフトバンク倉野信次投手コーチ、CS6連勝突破のDeNA打線を最大限に警戒 2年前の悪夢を胸に刻み（西スポWEB OTTO!）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9wSjhzWEVQdi0zc0RmUlc3NXUwNnYxRG00QlZTNnRQUDdKTi1HUFZJZENEYmh2Zk5ZaHZIR0lXeUZkRG11aGZTa3cxVnh3VEpSUEJWVi1tM3RnWTh0ejhaUmVlaGs3S2xQSVh5emZfZjVZNng5cFZFMk04STBESDQ?oc=5",
-   "summary": "「身に染みて分かっている」ソフトバンク倉野信次投手コーチ、CS6連勝突破のDeNA打線を最大限に警戒 2年前の悪夢を胸に刻み（西スポWEB OTTO!） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-18T04:15:30Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
   },
   {
    "id": "884f4e810fe887aa",
@@ -278,24 +273,6 @@
    "tv_match": "unknown"
   },
   {
-   "id": "36de43be8adbda1c",
-   "title": "【日本シリーズ】DeNA対ソフトバンク、24日開幕！初戦は横浜、福岡での開催はいつ？（まるスポ）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA3SWRMS0lnRUQzY2laMFRmeGw4WkVpQ1VkOFdWV3RfVXF5Y2VVSGlreUZic0g0V1hVdExNaFpSNDNua1dpMXhMZUxmNXRDTmhTcDExbGwxTGhmdnRIUWcwVnNxMElTSTVQQjBTOF9qcGg3cHNtLXRuVzZQUTUydUk?oc=5",
-   "summary": "【日本シリーズ】DeNA対ソフトバンク、24日開幕！初戦は横浜、福岡での開催はいつ？（まるスポ） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-18T03:11:29Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【CSファイナル】ソフトバンクが日本シリーズ進出！ セ・リーグではDeNAが“無傷の5連勝”と驚きの快進撃で王手かける",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE96S0tCVnk4NkFTZU1fRkN1SmZRSkczNmNHNmtBbTBTMnNGQWZEYUx5QVpvSEVBSzYwSlJtT05aaENLMWRYN0p0eWZibmo2LUw5UzJoVDl2SDk5ZUxoYkFZakxqS1hLTTd3cjcwZlVLbW1jQVNkUXg0dmRZaw?oc=5",
-    "score": 0.38
-   }
-  },
-  {
    "id": "a661ac3790b31df4",
    "title": "週間スマホ業界ピックアップ - ドコモのエリアメール不配、対策完了へ！iPhone Duo予約開始！ほか",
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRR1hrenQ1T0lDZHh5SG9TbXVlNExjYm1uSEpJY3VNYmhhY3pMTlE4SE9KQ1JNakN5a2RyWnVxTktEdmFBYlprYnhkWDY2UHFtRU1UZzcxRnBweGdrZkE?oc=5",
@@ -361,6 +338,19 @@
    "tv_match": "unknown"
   },
   {
+   "id": "6d8a817ce027bfe3",
+   "title": "新着情報“カローラフィールダー1．5G”2016年式コバルトブルーメタリック入荷しました！",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5CeE12QlhtekgtMmJMeXEwMnNsa3duRkxZdnlmR0xVMnJsR1YzQXpFcE9WLW14a3l3NEFBNmxMT1haVl9sbGZqc3d6R0RNVVNpR1JncHp2WFA4YVFjcXJLSWU4TnFVY2xTYnB6aUpZQjNYNjFvZTFyZjJYZ0tyNTA?oc=5",
+   "summary": "新着情報“カローラフィールダー1．5G”2016年式コバルトブルーメタリック入荷しました！ 中古車のガリバー",
+   "outlet": "中古車のガリバー",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T02:37:25Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "f85da8bd9d0442f5",
    "title": "Search continues for 11 missing after boat sank off Mexico’s Baja coast",
    "link": "https://www.aljazeera.com/news/2026/10/18/search-continues-for-11-missing-after-boat-sank-off-mexicos-baja-coast?traffic_source=rss",
@@ -387,29 +377,16 @@
    "tv_match": "unknown"
   },
   {
-   "id": "42973d87b0475404",
-   "title": "「マジで強い。怖い」ソフトバンク上茶谷大河、CS無傷の6連勝で日本シリーズ進出の古巣DeNAに戦々恐々 先発に意欲「投げたいです」（西スポWEB OTTO!）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5acTFHdHdLY1FsdWUxSlIwOHI5RGRRQlM0d04yV1BPRE5VS2lGZTgtV1RueExmUVNzeGpSa0k3UkU1RERQU0FDM2p4N1FCZm5ZaWhja2FEOXNQdnhaQW5ielFTaXNZUzJPTW9IcHExb2ZkYnBwSEc5VFBiZGdZTVk?oc=5",
-   "summary": "「マジで強い。怖い」ソフトバンク上茶谷大河、CS無傷の6連勝で日本シリーズ進出の古巣DeNAに戦々恐々 先発に意欲「投げたいです」（西スポWEB OTTO!） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
+   "id": "1076f15b090e71e9",
+   "title": "「OPPO Reno16 5G」と「arrows Alpha2」の違い",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE93VENUY2U2VEhCQjFHbURUeGFSajFMOV9OQ0pHYng0Ql9ZQVoyV0ZkRkx4aFBKUWRITk0wM1p1NEhfQmRvX1dMdk5IYw?oc=5",
+   "summary": "「OPPO Reno16 5G」と「arrows Alpha2」の違い フォトスク",
+   "outlet": "フォトスク",
    "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
-   "published": "2026-10-18T02:13:21Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
-  },
-  {
-   "id": "1a74ce1364b510b9",
-   "title": "「マジで強い。怖い」ソフトバンク上茶谷大河、CS無傷の6連勝で日本シリーズ進出の古巣DeNAに戦々恐々 先発に意欲「投げたいです」 (西スポWEB OTTO!)",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQODFfLV92RklqeDZRUGpYek9XSkhBeHBYTVpjUGRpX1pEU0pVdFUwTktqM3N5T3VydkVBOXJnc1hBY2xBVjBIRFhUSUdyMEJORUlCaTRjaVBSdTN1T0NvendoMkQzN3AxUnlVQlY5c2lmaERXUUNGemxKcjFCT21BY0loaGJTRnk0ckVmWW1n?oc=5",
-   "summary": "「マジで強い。怖い」ソフトバンク上茶谷大河、CS無傷の6連勝で日本シリーズ進出の古巣DeNAに戦々恐々 先発に意欲「投げたいです」 (西スポWEB OTTO!) Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-18T02:13:21Z",
-   "first_seen": "2026-10-18T04:29:46Z",
+   "published": "2026-10-18T02:09:24Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": null
   },
   {
@@ -478,6 +455,19 @@
    "tv_match": null
   },
   {
+   "id": "73021b596b8d9b7f",
+   "title": "ARMホールディングス【ARM】：株価・株式情報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1aVzJsOGRNMzZINmJzSk1nYmJDcnlpZEhIVGI0ZkNKb1lWOWxtQkR1WXJldlNhZ3FiVXZYdGVndkNLWnZWZER1R192aTZRdw?oc=5",
+   "summary": "ARMホールディングス【ARM】：株価・株式情報 Yahoo!ファイナンス",
+   "outlet": "Yahoo!ファイナンス",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T01:24:25Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "4eb41f0b6af358e6",
    "title": "Lenovo Idea Tab 5G Philippines Price: ₱19,995 Launch",
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5IVDhlbEl3SHU2dWpZUFhFSjUtUXZwa3BtMWY4U3pydmRFQS13Smo5RnFjRjlKWU1KN3MyNml1THZUZERuclp3N2ozN1Q1OVhjZVZSWldyaXBIS2xRR05kSHdfeDVnS2RMYVhVVkdjb21IYk1MSExaM1BWRWpSQXM?oc=5",
@@ -489,24 +479,6 @@
    "published": "2026-10-18T01:23:07Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
-  },
-  {
-   "id": "07f8285590fe0703",
-   "title": "2年ぶり日本シリーズ激突で新風吹かすか ソフトバンク「侍三銃士」VSDeNA「元鷹三銃士」",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4xSGZ3Q2UxUEJzR2lhMjFDenNmcjZGVk1kczg1dFpMX25OaHdOaUgxbExLSnM4MkxRTTgyaHhhamI5R0VVazVmWUZ4N051blZUZ3dDMk1FMVFXSi1MamM4?oc=5",
-   "summary": "2年ぶり日本シリーズ激突で新風吹かすか ソフトバンク「侍三銃士」VSDeNA「元鷹三銃士」 西スポWEB OTTO!",
-   "outlet": "西スポWEB OTTO!",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-18T01:17:00Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【CSファイナル】ソフトバンクが日本シリーズ進出！ セ・リーグではDeNAが“無傷の5連勝”と驚きの快進撃で王手かける",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE96S0tCVnk4NkFTZU1fRkN1SmZRSkczNmNHNmtBbTBTMnNGQWZEYUx5QVpvSEVBSzYwSlJtT05aaENLMWRYN0p0eWZibmo2LUw5UzJoVDl2SDk5ZUxoYkFZakxqS1hLTTd3cjcwZlVLbW1jQVNkUXg0dmRZaw?oc=5",
-    "score": 0.38
-   }
   },
   {
    "id": "28d6fccdd1bb5b38",
@@ -613,17 +585,22 @@
    "tv_match": "unknown"
   },
   {
-   "id": "861521bcea2010be",
-   "title": "ソフトバンク今宮健太、日本シリーズも不在へ レギュラーシーズン最終戦で右太もも裏の肉離れ 最短復帰目指すも回復思わしくなく",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE93clFXS1pIdzRsc1RDem96bTNyX1h2TGlYbjkyMldoOHY4RTlzNjNxMUVKeFI1cVMwcm5UVzJLbXZrQ3I5ajFuSDRMOWpCTjh4M1c4eVV0YjcwSlhPa1RF?oc=5",
-   "summary": "ソフトバンク今宮健太、日本シリーズも不在へ レギュラーシーズン最終戦で右太もも裏の肉離れ 最短復帰目指すも回復思わしくなく 西スポWEB OTTO!",
-   "outlet": "西スポWEB OTTO!",
+   "id": "abfa578047d3f7ef",
+   "title": "ソフトバンク、警備大手アライド・ユニバーサルを最大180億ドルで買収交渉中＝WSJ 執筆",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE83Wm84eExUY3hKWUY2ZXh0Ujc5V29mS3ZGMFdYbnRtQWNQRlNjSHh5Q0d6MkU1YndobUllRlVXaFNZYmp1dU0zZ1o3SDhjeGVibld2czk2SkotU2lYdEgtLTRLSWxJSUstc1E?oc=5",
+   "summary": "ソフトバンク、警備大手アライド・ユニバーサルを最大180億ドルで買収交渉中＝WSJ 執筆 Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
+   "outlet": "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
    "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
-   "published": "2026-10-18T00:52:01Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
+   "published": "2026-10-18T00:39:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "ソフトバンクG、米アライド・ユニバーサルの買収検討-関係者 | TBS CROSS DIG with Bloomberg",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ucXlybHlFZ0EtaHJTODFrM1ZmUFhvcVJHWDZWanFlMTBrb19jNk82aV94d0pfZ3JmWXk1X0c5YXY5SzdNNjFCZVhXMVFpdlU1VEZCSEFNN0Y3QS1qSi1IcmFoSWRSMFE?oc=5",
+    "score": 0.4
+   }
   },
   {
    "id": "b221be521cc74bef",
@@ -730,19 +707,6 @@
    "tv_match": "unknown"
   },
   {
-   "id": "8bc65d6aae20f988",
-   "title": "CS終了で18日から第二次戦力外通告期間がスタート…第1次未発表の阪神・ソフトバンクなど4球団の動向に注目",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1NY1A0YW5VWDFVdm5nbFVZRThJTFA3bWdpeWQybnl0UTBMem9tamhQdVdtN3AtbEM0c1psRm5WdENxWHNUcmhTYmVZUEtuM2NwNG5oRm5JNjBQTnBDVlk3RHJhTlpXN0Y0eTlabjZoR1pvZG9Hcl93aDVIR0RMbjQ?oc=5",
-   "summary": "CS終了で18日から第二次戦力外通告期間がスタート…第1次未発表の阪神・ソフトバンクなど4球団の動向に注目 Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T23:34:46Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
-  },
-  {
    "id": "ba52249f4c28289f",
    "title": "Saudi-led coalition intercepts drones as Egypt weighs sending help",
    "link": "https://www.aljazeera.com/news/2026/10/17/saudi-led-coalition-intercepts-drones-as-egypt-weighs-sending-help?traffic_source=rss",
@@ -766,6 +730,19 @@
    "lang": "ja",
    "published": "2026-10-17T23:00:00Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null
+  },
+  {
+   "id": "15390a831057197a",
+   "title": "〈青空〉災害支援",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQY0RlM29rOEdYSjBObFhkV01vRHJLaUplRkNWYWh3UDA3SERXdEFOZ0hNOXA5R01Ta3N5Z3ZfZkh1YS1QS3pVY05PSXNyVG05bV93QU4yTFZQTHRtOVMwVXllZHFvN1Q3bUFFMDI5YUtjYmtQX0J5dlJKV1RxQVZxS1QtdHI4d9IBeEFVX3lxTE1ieGZIa3lVRE5iZmRrN0d0dVpXTXlqYVNWdWJpaGRDSV9UMng5QmQ1NFpQLWVudl9WMWR5WnF0M0lmcGpnTHZ5MEJ4amYzaHA2NlR5TGQ0YUF6T0YwYVRIem5jQXZNU2NlQ0hYY0p1alh1QVBNYXVoSg?oc=5",
+   "summary": "〈青空〉災害支援 ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T22:51:27Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": null
   },
   {
@@ -795,6 +772,19 @@
    "tv_match": null
   },
   {
+   "id": "2d206905b40dd9f4",
+   "title": "〈青空〉災害支援",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ieGZIa3lVRE5iZmRrN0d0dVpXTXlqYVNWdWJpaGRDSV9UMng5QmQ1NFpQLWVudl9WMWR5WnF0M0lmcGpnTHZ5MEJ4amYzaHA2NlR5TGQ0YUF6T0YwYVRIem5jQXZNU2NlQ0hYY0p1alh1QVBNYXVoStIBeEFVX3lxTE1ieGZIa3lVRE5iZmRrN0d0dVpXTXlqYVNWdWJpaGRDSV9UMng5QmQ1NFpQLWVudl9WMWR5WnF0M0lmcGpnTHZ5MEJ4amYzaHA2NlR5TGQ0YUF6T0YwYVRIem5jQXZNU2NlQ0hYY0p1alh1QVBNYXVoSg?oc=5",
+   "summary": "〈青空〉災害支援 ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T22:31:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "e9908c4bb9c95975",
    "title": "Photos show luxury boat with 50m pool and water slides near Kim Jong Un's summer retreat",
    "link": "https://www.bbc.co.uk/news/articles/cmy4xnyyg1lyo?at_medium=RSS&at_campaign=rss",
@@ -806,6 +796,19 @@
    "published": "2026-10-17T22:09:50Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
+  },
+  {
+   "id": "e160d0660eabe7ef",
+   "title": "ローマ教皇が退院",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE01UXBCaWRUbjgzaWRvUmE1OE5tQTRSWm5HQXBNRUFMSTJld19yXzVfa2NVWlppdDVNMUdYRF9INmlMZTZSY1l3cUxjMHhHd2R3ekNRN0FBY19Gajdjc3hMc1NmaUJxRUNLNnU2UnJfVUJqWDBPZ3JMStIBfkFVX3lxTE1CRFNUVk9GclM0Z2tfaUtFUjc0Y3Rwc3E0c29oZlJVQ2RhMDNRM3h1WHdiTE03WmpfUXRlQ0RIV0RNX2lsRl9BTTRiQ0VmWkRIU1ZsaHJxT2JUcVhPNlRQdlJxLXhPUzZLVTJHX1FpYmF4ZTRpY0RwdWtpdXpsUQ?oc=5",
+   "summary": "ローマ教皇が退院 ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T22:06:25Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
   },
   {
    "id": "033b1ba30f583f71",
@@ -821,6 +824,19 @@
    "tv_match": null
   },
   {
+   "id": "95733fd70d2314ce",
+   "title": "ソフトバンク・近藤健介 川上審判員の意識回復に選手会会長として「ひと安心」 日本Sへは雪辱に燃える (スポニチアネックス)",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNOUJ3eEFpaGdvNUpZLThrTnBXNWJDZlRvNG50eEJiQzdGd25idEVmRlZ2ZEZqSlIyZ1hqSDdyZWxwc0ZyYmRBX1BlSWtvMzhCSW5OUVRiZ256NGlONUU0QzcxbG5MNE9mbGxuYTltcjk0M3RsaTJsUHRINWp4QmhjV1Fib3R3M0lfZEhOZzdB?oc=5",
+   "summary": "ソフトバンク・近藤健介 川上審判員の意識回復に選手会会長として「ひと安心」 日本Sへは雪辱に燃える (スポニチアネックス) Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T21:51:01Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "2fff25c81ddb4b99",
    "title": "How day of protests unfolded as disorder breaks out across France",
    "link": "https://www.bbc.co.uk/news/videos/cwz0vy770gpzo?at_medium=RSS&at_campaign=rss",
@@ -831,6 +847,19 @@
    "lang": "en",
    "published": "2026-10-17T21:33:17Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": "unknown"
+  },
+  {
+   "id": "8244cbe2d3c8b696",
+   "title": "DIGI Spain Telecom, S.A. (DIGIS.MC) Stock Price, News, Quote & History",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1ROHI1Vk5rYU5Lbk5mYXdHMEp4cWVQNnFrakVZY3g5em1EUWZNVmZRSFJmZDhVS1FvaGJQTWRDZHB1VGZHSlVjYzREckg3ZGJMeExNZzZFRQ?oc=5",
+   "summary": "DIGI Spain Telecom, S.A. (DIGIS.MC) Stock Price, News, Quote & History Yahoo! Finance Canada",
+   "outlet": "Yahoo! Finance Canada",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-17T21:26:04Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": "unknown"
   },
   {
@@ -884,19 +913,6 @@
    "published": "2026-10-17T21:02:26Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
-  },
-  {
-   "id": "2278aabd61112bd9",
-   "title": "あと1球から大逆転勝利 DeNA・相川監督「まだ日本シリーズの出場権を得ただけ」ソフトバンクと日本一争う",
-   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1RbjAxOTVIcmZnZ0R0bXNoY0VhRGsyUUdtU3ZpcGFLOFctLWYtSFZVX1RlY2V4aVhLY25jSldhRFV6aUE1dkhreGc2ekpBYkxKMy1tRlM0Ym03NURFcWVaM0NWRk9TRERINUt0UW5pVEJ5OVY0YnVZOHZBcw?oc=5",
-   "summary": "あと1球から大逆転勝利 DeNA・相川監督「まだ日本シリーズの出場権を得ただけ」ソフトバンクと日本一争う 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T21:02:00Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
   },
   {
    "id": "b82b490dbf8367c9",
@@ -1632,6 +1648,42 @@
    "tv_match": "unknown"
   },
   {
+   "id": "03f00327cd7963ed",
+   "title": "緊急地震速報配信されなかったNTTドコモの不具合、対応が完了（朝日新聞）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5qLXFYX0Q1M3Q4bUFEOFRtcmRpSm1RUXdVYzk3djh2dFM1SDVIS2puV24wT0dKZTM2dHpiYnBoU2hQd3ZJT210ckh6WkFfYXdldU9fLTlJSzJUWmpuMlFUaEdsRG4zaDlrRU52VkdYSVlLLW8tTzJYcGxVal8yTUk?oc=5",
+   "summary": "緊急地震速報配信されなかったNTTドコモの不具合、対応が完了（朝日新聞） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T13:35:46Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "score": 0.56
+   }
+  },
+  {
+   "id": "8cd29431d8390a9a",
+   "title": "緊急地震速報配信されなかったNTTドコモの不具合、対応が完了 (朝日新聞)",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONmJjNDJzQS1QYlV4UmZWWFdhY1I1MGpZeWJWaldkTHltQVBka3Y3M2U0TlZ0cnEzQjJvWnhJRms4RlJEekRSV0paa3NDd0xUNjYyRWNuOFlTWU5UbFZnVm9QemdBU190aDRiaHNBanJjWHoyZmNOUlcyelp5M3Z1a0FNLUJ0czZ4MjBPMjN3?oc=5",
+   "summary": "緊急地震速報配信されなかったNTTドコモの不具合、対応が完了 (朝日新聞) Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T13:35:46Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "score": 0.56
+   }
+  },
+  {
    "id": "120ee1a1d3d1f3a8",
    "title": "緊急地震速報配信されなかったNTTドコモの不具合、対応が完了",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE50bUpUZXJHQV85eUpoaHJQeHJ3SEl4YzBGeXl0NURPYXNkYlVuS1Z6a3NKV2w4N3Z0NE5EdDQ0cE9wLUV5MGVwTWJnLVZqbkp3ZFUtRmVxaF9JbGtpQ3ppU0RSeWcxc2c?oc=5",
@@ -1707,6 +1759,19 @@
    "tv_match": "unknown"
   },
   {
+   "id": "1396ba1cefb7d4cf",
+   "title": "Is Verizon Communications (VZ) Below Fair Value On Its 6G Field Call Breakthrough?",
+   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNOWlwN1B6ZDJveGpDMDRsNWI0ZmtiT1dmRzVnX2RJamxuSzRxYVlUdEJjTXZUcS1OVG5RTEhtclFPUTRiSGNuZzZfaXZuWUlueUltM2FqTFFFYUQ3ZDRMZmhfb1d5ZG9FZWx5QUllZERQZzc5NmxzU1B3M2JfQmJlUmlUREpzVlhfY3ByMDUzUkVCYl9Cc0xSSDZ1ZFZkYnphVWg5SHgxbWF1NFhPMUltVXNBSzl5MnFNeER6M3htdVd4Snl3dmF5WVl5RzZoYU01VlNMd3h6VdIB1wFBVV95cUxNOWlwN1B6ZDJveGpDMDRsNWI0ZmtiT1dmRzVnX2RJamxuSzRxYVlUdEJjTXZUcS1OVG5RTEhtclFPUTRiSGNuZzZfaXZuWUlueUltM2FqTFFFYUQ3ZDRMZmhfb1d5ZG9FZWx5QUllZERQZzc5NmxzU1B3M2JfQmJlUmlUREpzVlhfY3ByMDUzUkVCYl9Cc0xSSDZ1ZFZkYnphVWg5SHgxbWF1NFhPMUltVXNBSzl5MnFNeER6M3htdVd4Snl3dmF5WVl5RzZoYU01VlNMd3h6VQ?oc=5",
+   "summary": "Is Verizon Communications (VZ) Below Fair Value On Its 6G Field Call Breakthrough? Simply Wall Street",
+   "outlet": "Simply Wall Street",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-17T12:45:45Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": "unknown"
+  },
+  {
    "id": "ce2a2e6790530e96",
    "title": "Is Verizon Communications (VZ) Below Fair Value On Its 6G Field Call Breakthrough?",
    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOeGV0akViVXA1VnFHMWJVNkdla0YxaThlTFhDdGZKRlE5cmhiSjBHbXppeTFPTjltVFNJWGQzeS1jVlVnMlNJTjRYMUdFNlVPMUFVNzZTUzN6Y0xwZlNLRkFQeHVIdXVIMHdJOExIRmphWThBM3dKUHVfWDN2ZVJ2T1Mwd0MzM3R2VGpBcm9GaEZfYzJ3Xzc5ZEI4OGRsdXBfdGQtNktsT0NjOU1ReHVKV0hUOUxHU0NHcVN3VlM2Yy1aRFl6ZmlXaUdfcVJyREVOZFHSAdcBQVVfeXFMTTlpcDdQemQyb3hqQzA0bDViNGZrYk9XZkc1Z19kSWpsbks0cWFZVHRCY012VHEtTlRuUUxIbXJRT1E0Ykhjbmc2X2l2bllJbnlJbTNhakxRRWFEN2Q0TGZoX29XeWRvRWVseUFJZWREUGc3OTZsc1NQdzNiX0JiZVJpVERKc1ZYX2NwcjA1M1JFQmJfQnNMUkg2dWRWZGJ6YVVoOUh4MW1hdTRYTzFJbVVzQUs5eTJxTXhEejN4bXVXeEp5d3ZheVlZeUc2aGFNNVZTTHd4elU?oc=5",
@@ -1733,6 +1798,42 @@
    "tv_match": "unknown"
   },
   {
+   "id": "8b6afe805648495a",
+   "title": "緊急地震速報が配信されなかったドコモ「エリアメール」、不具合解消（読売新聞オンライン）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBpY0ZHUUp1YXZzUlpobEloSy1pUlhqNmgtTDZoLUVhcXVmZ3g4dUEzSjh3UXhHUnlCTThTZTlPZGpPZ1FuaHdIekcydUpTMEx6QXJ6OVMwLXVXaFg0WnVBbnhMVkVRVmxrZlZvVWUtbmszNFlnT0p2X2JqTTkwZkk?oc=5",
+   "summary": "緊急地震速報が配信されなかったドコモ「エリアメール」、不具合解消（読売新聞オンライン） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T12:25:55Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "score": 0.34
+   }
+  },
+  {
+   "id": "be1c3df338e5b4dc",
+   "title": "緊急地震速報が配信されなかったドコモ「エリアメール」、不具合解消 (読売新聞オンライン)",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLThhaklrQUhlSklnMkduMTdUUVJqbnl4ME5CVUVMYTlyTWdPX3pFTWdfckxUbElOU3VUdEc3czVreDJnZmk1dkhPYTZwNm1fX2h1a2pvVHFsLXE4cmJDYktWRlJnTm9lbzFhUDlSYWlmMVJMUGZneUNNdlE3clhnVlFOOWREODEwdU5MZWxn?oc=5",
+   "summary": "緊急地震速報が配信されなかったドコモ「エリアメール」、不具合解消 (読売新聞オンライン) Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T12:25:55Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "score": 0.34
+   }
+  },
+  {
    "id": "0686895acc54d22d",
    "title": "緊急地震速報が配信されなかったドコモ「エリアメール」、不具合解消",
    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE15VkxfZ0VyRDZCajBJbUM5R0k4aENiVFZsWnlpZk1qaTA4SEN3Wm9KX2EwaGdKYWtoNDlYRE9fSXdMZmdDOU1QV2MwODdHaUdwaWMtUjZFTkpnd05OLWpUWGdlcWYtdw?oc=5",
@@ -1748,24 +1849,6 @@
     "outlet": "TBS NEWS DIG",
     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
     "score": 0.48
-   }
-  },
-  {
-   "id": "b5bde864e601b54e",
-   "title": "ソフトバンク対DeNAの日本シリーズ歴代対戦成績｜通算勝敗・全試合のスコア一覧",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBkOTExeXNKdXpta0lLRVRNTUdwZS1WSEpXVmtacW41cFEyaXlxLU5qLVdRQzRyRjZ0V2xEalNXejdCZnU3M29jdzhjTXV0dnRwQ0ZVMQ?oc=5",
-   "summary": "ソフトバンク対DeNAの日本シリーズ歴代対戦成績｜通算勝敗・全試合のスコア一覧 ベースボールチャンネル",
-   "outlet": "ベースボールチャンネル",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T12:14:52Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【CSファイナル】ソフトバンクが日本シリーズ進出！ セ・リーグではDeNAが“無傷の5連勝”と驚きの快進撃で王手かける",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE96S0tCVnk4NkFTZU1fRkN1SmZRSkczNmNHNmtBbTBTMnNGQWZEYUx5QVpvSEVBSzYwSlJtT05aaENLMWRYN0p0eWZibmo2LUw5UzJoVDl2SDk5ZUxoYkFZakxqS1hLTTd3cjcwZlVLbW1jQVNkUXg0dmRZaw?oc=5",
-    "score": 0.35
    }
   },
   {
@@ -1821,6 +1904,19 @@
    "tv_match": "unknown"
   },
   {
+   "id": "64ca716ff8870125",
+   "title": "ドコモ、16日地震の「緊急地震速報」不配の原因を解消（ケータイ Watch）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5NWmY3RE9PdFBZNVd2UkVlWG1abkFYWFRjU1ZYTVU3NWdaUnQ3bVhxLWw2YWtITjZTZVB1OHVNUW1UWEdyYVNZaEtKdUdDRHJoQW51VmctTFFVc3JxNkZ0aVRFNzdueFJEVHlsczZMN0lmM01yWW5WZTBOamlHYms?oc=5",
+   "summary": "ドコモ、16日地震の「緊急地震速報」不配の原因を解消（ケータイ Watch） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T11:45:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "4927dc620d158d90",
    "title": "Russia wants blackout in Ukraine as winter comes — Zelenskyy",
    "link": "https://www.dw.com/en/russia-wants-blackout-in-ukraine-as-winter-comes-zelenskyy/a-79686703?maca=en-rss-en-world-4025-rdf",
@@ -1832,24 +1928,6 @@
    "published": "2026-10-17T11:34:00Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
-  },
-  {
-   "id": "aec17e22b22521fd",
-   "title": "【ソフトバンク】山本祐大 古巣DeNAとの日本シリーズへ「僕らしい野球をみんなと一緒に」（日刊スポーツ）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBWQS1wVkM5LURWRU5jTU5aRmJyRHNnZnRUdEZQOENvNkZGMmtuQmdmTkxvZURCbjlMVmNPU3RvVnk3SmJuY1FEeHh6NHhiZ3dFelZtTlpPbW1lbFQwZFg2YWIxdml6TVI4Rm1YbTZBU2dpNzlzZzhkWWRFY0lTWmM?oc=5",
-   "summary": "【ソフトバンク】山本祐大 古巣DeNAとの日本シリーズへ「僕らしい野球をみんなと一緒に」（日刊スポーツ） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T11:22:49Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【CSファイナル】ソフトバンクが日本シリーズ進出！ セ・リーグではDeNAが“無傷の5連勝”と驚きの快進撃で王手かける",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE96S0tCVnk4NkFTZU1fRkN1SmZRSkczNmNHNmtBbTBTMnNGQWZEYUx5QVpvSEVBSzYwSlJtT05aaENLMWRYN0p0eWZibmo2LUw5UzJoVDl2SDk5ZUxoYkFZakxqS1hLTTd3cjcwZlVLbW1jQVNkUXg0dmRZaw?oc=5",
-    "score": 0.35
-   }
   },
   {
    "id": "947c8cf253fcab72",
@@ -1896,17 +1974,22 @@
    "tv_match": "unknown"
   },
   {
-   "id": "94d796099b41ddae",
-   "title": "最強ソフトバンクに信じ難いデータ「本当か？」 CS突破の裏で“13”に衝撃「おかしいって…」（THE ANSWER）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE00WkFqbDk5QVBjaWhHMzlpVzhPMElmeDNmVzEwaTFMNmtOcENaWFhKbV9ueTUzX1pjMkZKTURldjNyVzM2N2o4Z1hscEoxRWNydlJ6dFVoV3J1MlBDTDRXLWQyM0Q3R25TTHZyTW9NaDV0MWUtQVE2WUp0akN4Sjg?oc=5",
-   "summary": "最強ソフトバンクに信じ難いデータ「本当か？」 CS突破の裏で“13”に衝撃「おかしいって…」（THE ANSWER） Yahoo!ニュース",
+   "id": "6507b7f72d65acc0",
+   "title": "ソフトバンクG、米警備大手買収検討（時事通信）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9peUNKb1JZbzVrR09zaHVxb1ZSTkZNVnNSdWM2d1VfM25JRjluSl9Kak5HX3FWVVpOclBYRjZibzdjUmhndE5UM1daSXl3cFpaT2N6aWFMT0U1ZjRWbEZEQkVRZFdZWW0wYjAzdS1hMHVTU0ZidjdVRXJ1dWctVzA?oc=5",
+   "summary": "ソフトバンクG、米警備大手買収検討（時事通信） Yahoo!ニュース",
    "outlet": "Yahoo!ニュース",
    "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
-   "published": "2026-10-17T11:03:00Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
+   "published": "2026-10-17T11:00:27Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "ソフトバンクG、米アライド・ユニバーサルの買収検討-関係者 | TBS CROSS DIG with Bloomberg",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ucXlybHlFZ0EtaHJTODFrM1ZmUFhvcVJHWDZWanFlMTBrb19jNk82aV94d0pfZ3JmWXk1X0c5YXY5SzdNNjFCZVhXMVFpdlU1VEZCSEFNN0Y3QS1qSi1IcmFoSWRSMFE?oc=5",
+    "score": 0.53
+   }
   },
   {
    "id": "7a8ec3e14fd4222d",
@@ -1961,6 +2044,19 @@
    "tv_match": "unknown"
   },
   {
+   "id": "ab243bc550652c84",
+   "title": "5Gミリ波をバックホールとしたキャリアフリーWi-Fiを「ROCK IN JAPAN FESTIVAL 2026」へ商用導入",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9COTVXZWVnUHUxTkVxZFlvUEZRcFg1MTltUEtTajZBMVRMZVRrdVc2YmRLNldZZE01Z05Zb2lPMUtjMzQ3SHlCRUxyNE9ST1lUZHk2VWhyZWQxcTF4enV5by1KOVJMLUdqa1RVVnJIVQ?oc=5",
+   "summary": "5Gミリ波をバックホールとしたキャリアフリーWi-Fiを「ROCK IN JAPAN FESTIVAL 2026」へ商用導入 KDDI ニュースルーム",
+   "outlet": "KDDI ニュースルーム",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T10:42:37Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "855c6b0b61f1d68c",
    "title": "Russia hails Trump waiving sanctions as 'historic'",
    "link": "https://www.france24.com/en/video/20261017-russia-hails-trump-waiving-sanctions-as-historic",
@@ -1971,6 +2067,19 @@
    "lang": "en",
    "published": "2026-10-17T10:41:22Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": "unknown"
+  },
+  {
+   "id": "912047878a2ab53a",
+   "title": "Sri Lanka Telecom PLC (SLTL-N0000.CM) holdings",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ZbXN4M2hGX3ZMQ1FzZGZpUVRXNHZlclRTSER6TFlyZndqekVHdU82VGRYTFlYZ2hNUHVOU2pUVzFZSlpkTFFFZ0NXSFZWYzhhak9BTWsxMkRiNXFLTmtyUXd2T3ZkNHhBTVE?oc=5",
+   "summary": "Sri Lanka Telecom PLC (SLTL-N0000.CM) holdings Yahoo Finance UK",
+   "outlet": "Yahoo Finance UK",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-17T10:35:02Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": "unknown"
   },
   {
@@ -2000,24 +2109,6 @@
    "tv_match": "unknown"
   },
   {
-   "id": "1f5f1db4f30ae0a6",
-   "title": "日本シリーズ進出のDeNAとソフトバンク、2024年シーズンとの”奇妙な一致” どうなる2年ぶりの再戦（中日スポーツ）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9iS2NOV3k3S2xXT1djcnZtSGI4aUxrMEpZV1B5VFZ4cExSMzBGWDlkUDJ2Z3JJZXozWTE5V1I0Qk9YXzlIMEdrRUJlR0VLaXdhMU5qbXg0QUo4RnpTN05OTm94ajBTam1RNWNab2hPYllvSV9sYW9GM2swU2JjUGc?oc=5",
-   "summary": "日本シリーズ進出のDeNAとソフトバンク、2024年シーズンとの”奇妙な一致” どうなる2年ぶりの再戦（中日スポーツ） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T09:12:52Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【ソフトバンク】3年連続日本シリーズ進出決定 エラーの正木智也が前田悠伍の好投に応える逆転の一打 3連勝で王者の貫禄見せる（2026年10月16日掲載）",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBBcjZCWDlqdXkxRmMwZEV6R20tSkpCUzFOUFdVckNodW9QMkpkSG15V3JuN0lMT0ZlbDRUcE1YTklRVElocmN2eXUxbnIxMlRnSWM0ajlzWUVySW5mVV9yay1hMEd1amZ1YlgzRlBLT1NnekVuamt2eXpldw?oc=5",
-    "score": 0.33
-   }
-  },
-  {
    "id": "cd7b0d40edf8e53f",
    "title": "STXE 600 Telecom DVP EUR Ann. I (89TQ.Z) interactive stock chart",
    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BdkhhaTdwOG9PYTBualZLTE9pdWVkbzUtR2QwLWIxVHRMTDc0bEVLQlZ2UGNmR212bG9acFdsdjMySk9zSDhfdFRLeUtyM0RBazBRbmplaS1JSEpY?oc=5",
@@ -2031,24 +2122,6 @@
    "tv_match": "unknown"
   },
   {
-   "id": "7b259880b66998b0",
-   "title": "日本シリーズの組み合わせ決定 ソフトバンク対DeNAは２年ぶり３度目 過去１度ずつ日本一（日刊スポーツ）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB3cDJCSVdCSjNiZ1NDTWN6a2s2cjdHaUJMcGt0V2s5ME5wbnRPWE1pU0pUeF90UDhjb29xRFZXSnNXRDBkVENQTlFFbGU2Y1lwSVJ5SmlwQnhfSHptekNsd1ViVm9EUTk3NGlDWkEzZ3VqWV9tVXdldnJFUGJPUVk?oc=5",
-   "summary": "日本シリーズの組み合わせ決定 ソフトバンク対DeNAは２年ぶり３度目 過去１度ずつ日本一（日刊スポーツ） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T09:10:36Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【CSファイナル】ソフトバンクが日本シリーズ進出！ セ・リーグではDeNAが“無傷の5連勝”と驚きの快進撃で王手かける",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE96S0tCVnk4NkFTZU1fRkN1SmZRSkczNmNHNmtBbTBTMnNGQWZEYUx5QVpvSEVBSzYwSlJtT05aaENLMWRYN0p0eWZibmo2LUw5UzJoVDl2SDk5ZUxoYkFZakxqS1hLTTd3cjcwZlVLbW1jQVNkUXg0dmRZaw?oc=5",
-    "score": 0.33
-   }
-  },
-  {
    "id": "aa5023d79336e87a",
    "title": "Sidewalk sleepers: They have nowhere else to stay while a loved one is in the hospital",
    "link": "https://www.npr.org/2026/10/17/g-s1-147874/hospital-diagnosis-patients-india-sidewalk",
@@ -2060,24 +2133,6 @@
    "published": "2026-10-17T09:00:00Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
-  },
-  {
-   "id": "36ed6fc5f92fbe2d",
-   "title": "【ＤｅＮＡ】３位からの下克上再現へ！ ２４日から日本シリーズでソフトバンクと再戦 ２０２４年は２連敗→４連勝で日本一",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBQYWI2dUJQRzRPZ0VzaGcwUXNrcmFaMkpseWg1SmRIVHhQM09nNlhGOHBBd09kTlFESzZ5UmJhWTgyWlplTFc0QlJ6OG9XbkJCN1k3UVZwSlhOV1RtYndEcFFaNS1PMk5YcTR6VTY1Z2k5VHdjUUVmdTZDb0RvaEk?oc=5",
-   "summary": "【ＤｅＮＡ】３位からの下克上再現へ！ ２４日から日本シリーズでソフトバンクと再戦 ２０２４年は２連敗→４連勝で日本一 Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-17T08:56:21Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": {
-    "title": "【ソフトバンク】3年連続日本シリーズ進出決定 エラーの正木智也が前田悠伍の好投に応える逆転の一打 3連勝で王者の貫禄見せる（2026年10月16日掲載）",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBBcjZCWDlqdXkxRmMwZEV6R20tSkpCUzFOUFdVckNodW9QMkpkSG15V3JuN0lMT0ZlbDRUcE1YTklRVElocmN2eXUxbnIxMlRnSWM0ajlzWUVySW5mVV9yay1hMEd1amZ1YlgzRlBLT1NnekVuamt2eXpldw?oc=5",
-    "score": 0.35
-   }
   },
   {
    "id": "6e33965446d8c103",
@@ -2103,6 +2158,32 @@
    "lang": "ja",
    "published": "2026-10-17T08:38:15Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null
+  },
+  {
+   "id": "ac3f0333751f34dd",
+   "title": "ドコモ、KDDI、ソフトバンク、楽天モバイルが示すAI時代のインフラ戦略 今後は「上り」「低遅延」が重要に (ITmedia Mobile)",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWkhSc01mWFdpaWR5MUFJbmNmdUlER3NZNXJwM2wwYmZIY1BIeVJ5c1N4YllqaFJZV2pUczhDd0NwU1RUTzExS0Y2eVhoOFNBZ1E4TDB6eVpQekI3ZHhrQU51V3ZCSE5naGhnU0xuNDdnTlR2X0stcnpZZ0xjS3FEUVVMRkRsVnFYeUpfUlRR?oc=5",
+   "summary": "ドコモ、KDDI、ソフトバンク、楽天モバイルが示すAI時代のインフラ戦略 今後は「上り」「低遅延」が重要に (ITmedia Mobile) Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T08:38:15Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "d0b5970b2ab7413f",
+   "title": "ドコモ、KDDI、ソフトバンク、楽天モバイルが示すAI時代のインフラ戦略 今後は「上り」「低遅延」が重要に",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPM092Y25TaW9YZ191TDFzSkVJVHcybjNUSXpHYzhSYm9CWUlQN3ktZV9nSDNRcGNucFI3TlBBV010TW9JZWtrblBESWc3X0RQT2IxeEpHZW5SMXdlTndPUUZoOVZXREdCcUxHRVZDaXZHb3VPSE9YTjVBenppRHpRR3Y0QUxYV3lVZDZGMkVkZFdsUXIzYmRZ0gGXAUFVX3lxTE8zT3ZjblNpb1hnX3VMMXNKRUlUdzJuM1RJekdjOFJib0JZSVA3eS1lX2dIM1FwY25wUjdOUEFXTXRNb0lla2tuUERJZzdfRFBPYjF4SkdlblIxd2VOd09RRmg5VldER0JxTEdFVkNpdkdvdU9IT1hONUF6emlEelFHdjRBTFhXeVVkNkYyRWRkV2xRcjNiZFk?oc=5",
+   "summary": "ドコモ、KDDI、ソフトバンク、楽天モバイルが示すAI時代のインフラ戦略 今後は「上り」「低遅延」が重要に ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T08:38:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": null
   },
   {
@@ -2176,6 +2257,19 @@
    }
   },
   {
+   "id": "0b7918d6d25a9c93",
+   "title": "日産 自動運転の「頭脳」はソフトバンク出資のWayveと仏「売上3.7兆円企業」が握っていた",
+   "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5PNm41TlRjN1duaW1KbjNYWGxYTzl6cFlLVFl3eFZrczNaUGc1X0N1SE4wMnpSSFJldTFrb3Bjay1BOFdWQS1IVw?oc=5",
+   "summary": "日産 自動運転の「頭脳」はソフトバンク出資のWayveと仏「売上3.7兆円企業」が握っていた 自動運転ラボ",
+   "outlet": "自動運転ラボ",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T07:00:37Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "7b26304572e8608e",
    "title": "‘I cannot carry all of this alone’: the couples kept apart by the war in Gaza",
    "link": "https://www.theguardian.com/world/2026/oct/17/couples-families-separated-war-in-gaza",
@@ -2225,6 +2319,19 @@
    }
   },
   {
+   "id": "1c3789bfcb07710c",
+   "title": "“倶知安駅”周辺の通信環境をさらに強化 | 主な通信品質改善エリア | 通信・エリア",
+   "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE50cGtPNXVCS2Q3cVBsQ2JGTnpoYnlDTjFsUDVLUVplRkhfVVBsZ3ZuY0JKUkFFaEtGX1hQSW9CRW1zSXNXcGFqR2dOejE3U0duRUFuS1lQNUdCeDZtTk9MRER6NzltSkZWb3U4?oc=5",
+   "summary": "“倶知安駅”周辺の通信環境をさらに強化 | 主な通信品質改善エリア | 通信・エリア NTTドコモ",
+   "outlet": "NTTドコモ",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T06:39:18Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "ebb0767146c509d7",
    "title": "Verizon and Ericsson make the first 6G call in the field",
    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeF9DQll1RTBqOUhLZFVMQVZpYmRhTWphUXBhSnpJQUN1MDdIa0xMQlFYMlNVMC11SmpVLVNhNFNvRUg2NUpuT2RXTTFCcUlWLUZ6bkNXbHBOZXR0NFNhUmszSUlZZEI0RE1XVElIWmc4OTUzM2g3cUpsU1BSc2M3VHgweGtsME9ibHFaZ19HSGpWZ01lUEE?oc=5",
@@ -2236,6 +2343,42 @@
    "published": "2026-10-17T06:23:32Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
+  },
+  {
+   "id": "79abd0be590185b8",
+   "title": "ソフトバンクＧ、米警備大手アライド買収検討＝関係筋（ロイター）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9qM00xbC1TOXZyQ0d3MjBOaDlfbHR5dVVVT1VqSzFfRFM4QlYzalBpX2xOWU1NWnFuLVZ1UnFsNEREZTE5VkFRajVnc3dheUEwRUZhNjFIRzZZSzZXejNveTJ3UEI0SjdPT3ZqZVJ6SHpQdjl5MWdwU3JDblRUUlk?oc=5",
+   "summary": "ソフトバンクＧ、米警備大手アライド買収検討＝関係筋（ロイター） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T06:08:14Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "ソフトバンクG、米アライド・ユニバーサルの買収検討-関係者 | TBS CROSS DIG with Bloomberg",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ucXlybHlFZ0EtaHJTODFrM1ZmUFhvcVJHWDZWanFlMTBrb19jNk82aV94d0pfZ3JmWXk1X0c5YXY5SzdNNjFCZVhXMVFpdlU1VEZCSEFNN0Y3QS1qSi1IcmFoSWRSMFE?oc=5",
+    "score": 0.52
+   }
+  },
+  {
+   "id": "08d429c94d19b638",
+   "title": "ソフトバンクＧ、米警備大手アライド買収検討＝関係筋",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1aWjloQjRoVi1zMENURU8xWl95ZmVuMUdGT1dwT3VjZHdsM2dYYnMweUhEZE1WN19sRndKcDVuVmkwUVVkVUJZZWJnNXJiWmtKdk5QZVFXMVljMVFoLUliNnEtYmotRUJxR3pxRXhWZkh1cGZ3Smo1NlphVDN6Zw?oc=5",
+   "summary": "ソフトバンクＧ、米警備大手アライド買収検討＝関係筋 Reuters",
+   "outlet": "Reuters",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T06:08:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "ソフトバンクG、米アライド・ユニバーサルの買収検討-関係者 | TBS CROSS DIG with Bloomberg",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ucXlybHlFZ0EtaHJTODFrM1ZmUFhvcVJHWDZWanFlMTBrb19jNk82aV94d0pfZ3JmWXk1X0c5YXY5SzdNNjFCZVhXMVFpdlU1VEZCSEFNN0Y3QS1qSi1IcmFoSWRSMFE?oc=5",
+    "score": 0.62
+   }
   },
   {
    "id": "f07f65a4e8feaf64",
@@ -2828,6 +2971,19 @@
    "tv_match": null
   },
   {
+   "id": "303a913298a20acd",
+   "title": "ドコモメール、詐欺メールにも「公式マーク」で注意呼びかけ",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xTURNMnlKbkswNzFMOVdYb09sbkNaVzE1VkxBUGFEUEMyWVI2bTNyeVdXRVBzYkIweThNSDRNR0FDcHhsVGE5aEEzelhNWnJ6ZGdYMWlDSnVBbTZabldfRHhObVcwUzA?oc=5",
+   "summary": "ドコモメール、詐欺メールにも「公式マーク」で注意呼びかけ ケータイ Watch",
+   "outlet": "ケータイ Watch",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T13:45:35Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "af3f77abe88cf7e3",
    "title": "「iPhone Duo」の出荷がもう「2027年1月」表記に 受け取り枠が即埋まる",
    "link": "https://www.itmedia.co.jp/mobile/articles/2610/16/news115.html",
@@ -2838,6 +2994,19 @@
    "lang": "ja",
    "published": "2026-10-16T13:45:00Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null
+  },
+  {
+   "id": "7d3416f0a56dfd11",
+   "title": "ＮＴＴドコモ、「Ｍ９・９」の緊急地震速報で「エリアメール」配信されず…２０１２年からの不具合発覚（読売新聞オンライン）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5NRlBadDBNSDBYZjFGUUUtbWRTamQ4ZzRLU0NmWVRGdnZKWkUtc29DbTg3M1drNG5tbW1LY2o3UXJWWkc4cEdTQzMyU2VOWWNUNGVvMlZyc2Q5bTNaR1VFNXhHY0stWlVqS25aS3dwMV9KVU9BLWYzeW9jZnYtcDQ?oc=5",
+   "summary": "ＮＴＴドコモ、「Ｍ９・９」の緊急地震速報で「エリアメール」配信されず…２０１２年からの不具合発覚（読売新聞オンライン） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T13:32:22Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": null
   },
   {
@@ -2878,19 +3047,6 @@
    "published": "2026-10-16T12:32:31Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
-  },
-  {
-   "id": "7d3d34c13e1b0ad1",
-   "title": "【パーソル CS パ】未開催試合の払戻について",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0tUEdYOURxSXdqaDJ5LVNmc3RDUzJ4dDd2T21KZTZrQmRTMGQxUEhiaWFLMXo5T29idW5WWm5LU1R3eUs0bFM0eDY3U0JMd2dLU1BsWWVxNms3Um5NNGxWWENaMGUydEpyQk5OanJn?oc=5",
-   "summary": "【パーソル CS パ】未開催試合の払戻について 福岡ソフトバンクホークス",
-   "outlet": "福岡ソフトバンクホークス",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-16T12:18:27Z",
-   "first_seen": "2026-10-18T04:29:46Z",
-   "tv_match": null
   },
   {
    "id": "2230e238fea2f6bf",
@@ -2971,6 +3127,19 @@
    "tv_match": "unknown"
   },
   {
+   "id": "28a2ec653b6d29f5",
+   "title": "ドコモ「緊急地震速報が届かない」件を謝罪 エリアメール未配信の障害（ITmedia Mobile）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QUElJWXpoeENjTXhNazBjV0R6TkVMbUw3ZDF0Z3otZzdNZV9PQ0tvSTF0N0F6eGVzd0p6X2M2Mmc1UUJnZjZWcm9JeHpxaWpvWVB1QjhEajN2T19rTk85YW5hTWJsZEJ2LS0tTFdyOEJ2RDFCamxwLXNZRE9mOHc?oc=5",
+   "summary": "ドコモ「緊急地震速報が届かない」件を謝罪 エリアメール未配信の障害（ITmedia Mobile） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T10:56:06Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "723730a1b623ccc2",
    "title": "ドコモ「緊急地震速報が届かない」件を謝罪 エリアメール未配信の障害",
    "link": "https://www.itmedia.co.jp/mobile/articles/2610/16/news110.html",
@@ -3049,6 +3218,37 @@
     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
     "score": 0.56
    }
+  },
+  {
+   "id": "1573f66eb8eca5d8",
+   "title": "ドコモ回線で「緊急地震速報」配信されず、16日昼",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBwSldpZVk5eDlmSFlmNEVJeUVqbGZkOTE2bnJQNFRPUDN3NC1KTjRLZC1SZ2J5SEtKTlExUC1fVmhtQUNJVTlwX0k3NFdRajJDY0RSclBxUnRQbkdud2R2R2pRbmFzZU0?oc=5",
+   "summary": "ドコモ回線で「緊急地震速報」配信されず、16日昼 ケータイ Watch",
+   "outlet": "ケータイ Watch",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T10:01:35Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": {
+    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "score": 0.56
+   }
+  },
+  {
+   "id": "d1c0fc3887139b7c",
+   "title": "緊急地震速報がドコモの端末で配信されず 原因はシステム不具合と判明 「深くお詫び」（FNNプライムオンライン（フジテレビ系））",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBMbDNxV3VsZkxKWWl3V0o5QThXeDVWNUFHOVlRUFk4VlduaWNJaS1qVkJXaU5oaHVlM09DQlREdDNLOFNkdGNfUmJvTW1ZRXVnM3dmUl96dDlQX1pocEJlR3BRX3dHbzY5am9BUGN5aHdUSHRKcWhhMUVGdVMyMkE?oc=5",
+   "summary": "緊急地震速報がドコモの端末で配信されず 原因はシステム不具合と判明 「深くお詫び」（FNNプライムオンライン（フジテレビ系）） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T09:47:20Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
   },
   {
    "id": "624c74eed101c7aa",
@@ -3165,6 +3365,19 @@
    "lang": "ja",
    "published": "2026-10-16T07:27:24Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null
+  },
+  {
+   "id": "92876bb6d51637b2",
+   "title": "ドコモメール、詐欺メールにも「公式マーク」表示 一部企業で表示停止へ",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1jWVBzNjlFcXZqOWZyZERraXVfbnktZjQxZG9MLUx0OWI4b3lnWThGaUlhOVNpeF9HXzRvbjBCZnNKVkpVVHBCbEozU2JGRnNNclE?oc=5",
+   "summary": "ドコモメール、詐欺メールにも「公式マーク」表示 一部企業で表示停止へ CNET Japan",
+   "outlet": "CNET Japan",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T07:13:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": null
   },
   {
@@ -3399,6 +3612,19 @@
    "tv_match": null
   },
   {
+   "id": "976f5a4091a5c871",
+   "title": "「『楽天カード公式』から詐欺メール」報告相次ぐ ドコモメールに公式マーク付きフィッシング、一部企業の認証設定に脆弱性",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE83MHBaRUZZWGVmQzFjRzQyWUxNajcySHFWZDNzWHhPOFkyc08ydjItc05ERW5rQjRJR3hKS21SblJodWJ3azA0NHZKaG9zX3ZUdmxWa0wyQVZxTlpwX0w2a3JiejZqWEdyTHJOZ091VnlrMnFXTG81OEpPS1ZVNTQ?oc=5",
+   "summary": "「『楽天カード公式』から詐欺メール」報告相次ぐ ドコモメールに公式マーク付きフィッシング、一部企業の認証設定に脆弱性 Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T01:05:18Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "c72c97702ffee158",
    "title": "「docomo Starlink Direct」、接続者数1000万を突破",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2148488.html",
@@ -3409,6 +3635,136 @@
    "lang": "ja",
    "published": "2026-10-15T21:00:00Z",
    "first_seen": "2026-10-18T04:29:46Z",
+   "tv_match": null
+  },
+  {
+   "id": "c5744290ce220506",
+   "title": "藤井総務大臣閣議後記者会見の概要",
+   "link": "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001583.html",
+   "summary": "藤井総務大臣閣議後記者会見の概要",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "e066f713ae81aa11",
+   "title": "情報通信審議会 情報通信技術分科会 新世代モバイル通信システム委員会 ローカル5G検討作業班（第26回）開催案内",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban14_04001375.html",
+   "summary": "情報通信審議会 情報通信技術分科会 新世代モバイル通信システム委員会 ローカル5G検討作業班（第26回）開催案内",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "894028b5b5cbe55c",
+   "title": "令和8年度都道府県議会議員及び市区町村議会議員総務大臣感謝状贈呈式",
+   "link": "https://www.soumu.go.jp/menu_news/s-news/01gyosei01_02000378.html",
+   "summary": "令和8年度都道府県議会議員及び市区町村議会議員総務大臣感謝状贈呈式",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "851ff7ee9d92da37",
+   "title": "統計委員会 第9回デジタル部会",
+   "link": "https://www.soumu.go.jp/main_sosiki/singi/toukei/digital/kaigi/02shingi05_02000836.html",
+   "summary": "統計委員会 第9回デジタル部会",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "0c3ea3e5c87f97c6",
+   "title": "情報通信審議会 情報通信技術分科会（第199回）の開催について",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02tsushin10_04000738.html",
+   "summary": "情報通信審議会 情報通信技術分科会（第199回）の開催について",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "fd1a11846aaffc40",
+   "title": "ICANNによる新たな分野別トップレベルドメイン名申請の公表及びコメント等受付のお知らせ",
+   "link": "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000284.html",
+   "summary": "ICANNによる新たな分野別トップレベルドメイン名申請の公表及びコメント等受付のお知らせ",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "2c28b3055d5ec16f",
+   "title": "「フロンティアAI時代の通信事業におけるデータの保護・セキュリティの在り方に関する検討会」の開催",
+   "link": "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000296.html",
+   "summary": "「フロンティアAI時代の通信事業におけるデータの保護・セキュリティの在り方に関する検討会」の開催",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "61cbab5ee1eeaaa4",
+   "title": "政策統括官（統計制度担当）統計企画管理官室 非常勤職員採用情報",
+   "link": "https://www.soumu.go.jp/menu_syokai/saiyou/detail/02toukatsu01_04000553.html",
+   "summary": "政策統括官（統計制度担当）統計企画管理官室 非常勤職員採用情報",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "72f79e43e4cf5a28",
+   "title": "フロンティアAI時代の通信事業におけるデータの保護・ セキュリティの在り方に関する検討会（第1回）",
+   "link": "https://www.soumu.go.jp/main_sosiki/kenkyu/data_protection/02kiban18_02000509.html",
+   "summary": "フロンティアAI時代の通信事業におけるデータの保護・ セキュリティの在り方に関する検討会（第1回）",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "2f9474140bcf1086",
+   "title": "都市部でKDDIローミング縮小、楽天モバイルに問われる通信品質と収益改善",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBWcklzcEU5WmF4WDFoT19NNng4c2RIVkxIWmgwcWtUcE1CMmZFV3VydnRrOU9Iak91QnFNTUpGQ1dCem1vSmFIU3JYNlNPcU1Ed2VYYXlwRjB1a2hzYndOTy1nVUFsWkFWWHJJSg?oc=5",
+   "summary": "都市部でKDDIローミング縮小、楽天モバイルに問われる通信品質と収益改善 日経クロステック",
+   "outlet": "日経クロステック",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
    "tv_match": null
   },
   {
@@ -3555,6 +3911,19 @@
    "tv_match": null
   },
   {
+   "id": "1c6fcc3e47fbf387",
+   "title": "役員等の人事について",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9MQm5FdHVzTWxTMDgxV3JYdjd5bDNDVEFJemFiT01TS01kQWZPZFFSOXpYMzhRV1lIMERuM3NYR0labHVsNXZHcXo4bGIxeTE3Q3RPQWlrTmFtb0p2QlRyWDhIaGVBT2lZR0d6RQ?oc=5",
+   "summary": "役員等の人事について KDDI ニュースルーム",
+   "outlet": "KDDI ニュースルーム",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-15T06:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "d5fbf0cffb354f45",
    "title": "auフィナンシャルサービスなど3社が連携、独自クレカ発行基盤を構築へ",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2148338.html",
@@ -3620,6 +3989,97 @@
    "tv_match": "unknown"
   },
   {
+   "id": "69c2be60c15421e1",
+   "title": "第772回 入札監理小委員会（会議資料）",
+   "link": "https://www.soumu.go.jp/main_sosiki/singi/kanmin/02shingi06_02001100.html",
+   "summary": "第772回 入札監理小委員会（会議資料）",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "1e6571ff786555a5",
+   "title": "令和8年度予算「データセンター等の地方分散によるデジタルインフラ強靱化事業」に係る執行団体（補助事業者）の決定",
+   "link": "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000286.html",
+   "summary": "令和8年度予算「データセンター等の地方分散によるデジタルインフラ強靱化事業」に係る執行団体（補助事業者）の決定",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "1129aa339dd497d4",
+   "title": "情報通信審議会 情報通信技術分科会 IPネットワーク設備委員会（第96回）開催案内",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban05_04000800.html",
+   "summary": "情報通信審議会 情報通信技術分科会 IPネットワーク設備委員会（第96回）開催案内",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "4c81c51c8d20c5c8",
+   "title": "地域DX/AXに向けた計画策定等の伴走支援を受ける地方公共団体等の 二次公募の選定結果",
+   "link": "https://www.soumu.go.jp/menu_news/s-news/01ryutsu06_02000489.html",
+   "summary": "地域DX/AXに向けた計画策定等の伴走支援を受ける地方公共団体等の 二次公募の選定結果",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "846ec6f740fc9864",
+   "title": "情報通信審議会 情報通信技術分科会 放送システム委員会 STL/TTL/TSL高度化作業班（第6回）の開催について",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu08_04000620.html",
+   "summary": "情報通信審議会 情報通信技術分科会 放送システム委員会 STL/TTL/TSL高度化作業班（第6回）の開催について",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "46f005d98d4f9274",
+   "title": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 無線従事者制度の在り方検討作業班（第2回）",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000742.html",
+   "summary": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 無線従事者制度の在り方検討作業班（第2回）",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "b8bfbb1da2c95832",
+   "title": "デジタル空間における情報流通の諸課題への対処に関する検討会（第15回）配付資料",
+   "link": "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000606.html",
+   "summary": "デジタル空間における情報流通の諸課題への対処に関する検討会（第15回）配付資料",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-14T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
    "id": "1c06cb477f7a4021",
    "title": "Zimbabwean author Simbarashe Kundizeza denies using AI to write prize-winning story",
    "link": "https://www.theguardian.com/technology/2026/oct/14/zimbabwean-author-simbarashe-kundizeza-denies-ai-story",
@@ -3670,6 +4130,58 @@
    "published": "2026-10-14T05:29:23Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": "unknown"
+  },
+  {
+   "id": "147f6a8143291011",
+   "title": "情報通信審議会 郵政政策部会 郵便局活性化委員会（第21回）開催案内",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu18_04000001_00016.html",
+   "summary": "情報通信審議会 郵政政策部会 郵便局活性化委員会（第21回）開催案内",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-13T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "9134d11375f3d671",
+   "title": "情報通信行政・郵政行政審議会 電気通信事業部会 ユニバーサルサービス委員会（第16回）",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/yusei/02kiban07_04000113.html",
+   "summary": "情報通信行政・郵政行政審議会 電気通信事業部会 ユニバーサルサービス委員会（第16回）",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-13T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "c060a8ef729b2883",
+   "title": "情報通信審議会 郵政政策部会 郵便事業政策委員会（第3回）",
+   "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yuseijigyo_seisakuiinkai/02ryutsu14_04000224.html",
+   "summary": "情報通信審議会 郵政政策部会 郵便事業政策委員会（第3回）",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-13T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
+  },
+  {
+   "id": "44340f5375e0f5de",
+   "title": "デジタル空間における情報流通の諸課題への対処に関する検討会 発信者情報開示ワーキンググループ（第9回）開催案内",
+   "link": "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000607.html",
+   "summary": "デジタル空間における情報流通の諸課題への対処に関する検討会 発信者情報開示ワーキンググループ（第9回）開催案内",
+   "outlet": "総務省 報道発表",
+   "feed": "総務省 報道発表",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-13T20:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null
   }
  ],
  "tv": [
@@ -3744,6 +4256,18 @@
    "lang": "ja",
    "published": "2026-10-18T03:09:20Z",
    "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
+   "id": "4a48cd3f9aaff968",
+   "title": "JR東日本 運転士が鍵を紛失し列車遅延",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9VYnVabXJEY2dZMXQ0Z242eWpGbnhVT2xQdTlBa25aNGN1T2d3eldWR1MxMUxuUFhQTkl6NFpSNnRUWnlvV3M3ZVFQQVFobkk3dUxKc1NrUQ?oc=5",
+   "summary": "JR東日本 運転士が鍵を紛失し列車遅延 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T03:08:00Z",
+   "first_seen": "2026-10-18T04:31:00Z"
   },
   {
    "id": "a91d066291a56dcf",
@@ -4418,6 +4942,18 @@
    "first_seen": "2026-10-18T04:29:46Z"
   },
   {
+   "id": "a45af21ac0eb63af",
+   "title": "児童相談所からの通報で発覚...自宅前路上で小学生の娘の髪掴み引きずる 36歳男を逮捕 （山形）",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1HaVNkZ2RYemprSW1UYlp0QUhkazFib080dXk3bTNvakwwcEZ2MUZSRUVHblBkcHo1bWIxT3ZWWTRYYTVyRG5hUEl4UGxyWVBfOGNkc1V6WQ?oc=5",
+   "summary": "児童相談所からの通報で発覚...自宅前路上で小学生の娘の髪掴み引きずる 36歳男を逮捕 （山形） TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-17T05:50:00Z",
+   "first_seen": "2026-10-18T04:31:00Z"
+  },
+  {
    "id": "33df145aad01f0b4",
    "title": "産廃置き場で火災 付近の山手に延焼 消火活動続く 福岡・久山町",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9DakV6UFMxS3FnOTVNUExtMS1RYm14VkFTQjd0alMySDJIdFphNnlKVGdsZXdVVTZ2ZDZmT0ZITkZhYWJYODA3UnRBQm03Q3ZIem9HM0MxQ3dPbVJ0WlJFTGFVREViMlNFdXZ3ZjlGaHptQQ?oc=5",
@@ -4620,6 +5156,18 @@
    "lang": "ja",
    "published": "2026-10-17T02:48:03Z",
    "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
+   "id": "f91f1ec826e02716",
+   "title": "桜島で噴火5回…鹿児島市街地に火山灰 噴煙最高1600m【きょう・あすの降灰予想】",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1uMFBycGdjcERHcHFJbVR6NFNCQ0ZTWFY0SGhaOVN4V1p3OGZuUUVrbHBOQ3Iza0k0MXczWUlOT2NjRlN1Q0E1cEFtcDBSd3RLQ1JpMkJtdw?oc=5",
+   "summary": "桜島で噴火5回…鹿児島市街地に火山灰 噴煙最高1600m【きょう・あすの降灰予想】 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-17T02:14:00Z",
+   "first_seen": "2026-10-18T04:31:00Z"
   },
   {
    "id": "79db59da239d0c74",
@@ -5978,6 +6526,18 @@
    "first_seen": "2026-10-18T04:29:46Z"
   },
   {
+   "id": "6aa6b487aa31463d",
+   "title": "武部新氏は「心強い大臣。農政全般造詣が深い」農水省幹部から“期待の声” 父は“偉大なるイエスマン”親子2代で農水大臣に",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1FelM5emVIV0YzY3ZkSTlyR2tMRTV0WWxLV3Ixclg3S18zcGtwZjJxSkpCbFNHd2szOTNCNkVJTVZScHJtSmN6MG5nZHp0Zw?oc=5",
+   "summary": "武部新氏は「心強い大臣。農政全般造詣が深い」農水省幹部から“期待の声” 父は“偉大なるイエスマン”親子2代で農水大臣に FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-15T10:17:00Z",
+   "first_seen": "2026-10-18T04:31:00Z"
+  },
+  {
    "id": "89ce90f07d1a9732",
    "title": "キノコの王様「マツタケ」ピンチ！ 10月に入りピタッと採れなくなり厳しいシーズンか 山形・高畠町",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5yTWhGenRpZ1AwbFZYdDRiMS1WelR2Sl9VaTBqZVB2Q3p6TTFXWU1IaGtsSzZoUWw0N2FxZGJ2UldYdTJUR1d2VThSTlNDZw?oc=5",
@@ -6036,6 +6596,18 @@
    "lang": "ja",
    "published": "2026-10-15T07:18:01Z",
    "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
+   "id": "4ae6dc8a748c558e",
+   "title": "「中国国内の共犯者が指示」奄美大島で天然記念物オカヤドカリ1333匹密猟 中国籍の男2人に罰金50万円",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9KSURaNjltdTZ5NmZYRVJsMlFZTHVaajhaal9DYlFSbmExakFGalBOekg3bGxKQW04Y0JhYzdrcmxaMVc3WkU1SGNRRDRMQQ?oc=5",
+   "summary": "「中国国内の共犯者が指示」奄美大島で天然記念物オカヤドカリ1333匹密猟 中国籍の男2人に罰金50万円 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-15T07:00:00Z",
+   "first_seen": "2026-10-18T04:31:00Z"
   },
   {
    "id": "3b6a235a21099c21",
