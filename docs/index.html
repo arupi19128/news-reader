@@ -57,6 +57,7 @@ a { color: inherit; }
 button, input { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 [hidden] { display: none !important; }
+body:not(.ai) [data-ai], body.ai [data-noai] { display: none !important; }
 
 .wrap {
   max-width: 1080px; margin: 0 auto;
@@ -217,7 +218,8 @@ footer.site summary { cursor: pointer; }
 </style>
 </head>
 <body>
-<div class="tagline">テレビでは流れにくい世界のニュースを、AIが「選んで」「訳して」「背景まで説明」します</div>
+<div class="tagline" data-noai>世界のニュースを集めて、テレビで報じられているかを毎時チェックしています</div>
+<div class="tagline" data-ai>テレビでは流れにくい世界のニュースを、AIが「選んで」「訳して」「背景まで説明」します</div>
 <header class="masthead">
   <div class="wrap">
     <a class="brandbar" href="#" style="text-decoration:none" aria-label="ニュースレーダー トップへ">
@@ -248,15 +250,16 @@ footer.site summary { cursor: pointer; }
 <div id="home">
   <section class="hero">
     <div class="wrap">
-      <span class="pill">AI が選ぶ、テレビの外のニュース</span>
+      <span class="pill" data-noai>テレビの外のニュースを探す</span><span class="pill" data-ai>AI が選ぶ、テレビの外のニュース</span>
       <h1>テレビに映らない世界のニュースを、<br>やさしい言葉で。</h1>
-      <p class="lede">ニュースレーダーは、海外メディアや専門メディアから記事を集め、日本のテレビ局のニュースと照らし合わせるサイトです。テレビでは見かけない話題を中心に、AI が毎日選んで、背景まで説明します。</p>
+      <p class="lede">ニュースレーダーは、海外メディアや専門メディアから記事を集め、日本のテレビ局のニュースと照らし合わせるサイトです。テレビでは見かけない話題に印を付けて、1時間ごとに届けます。<span data-ai>さらに AI が毎日選んで、背景まで説明します。</span></p>
       <div class="entries">
         <a class="entry tone-a" href="#picks">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h8"/></svg></span>
           <span class="who">忙しい人へ</span>
           <h3>3分で、世界がわかる</h3>
-          <p>AI が1日約20本を選び、何が起きたか・なぜか・暮らしへの影響をまとめます。</p>
+          <p data-ai>AI が1日約20本を選び、何が起きたか・なぜか・暮らしへの影響をまとめます。</p>
+          <p data-noai>テレビで見当たらない新着ニュースを、カードで一覧にします。</p>
         </a>
         <a class="entry tone-b" href="#all" data-cover="uncovered">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 3l4 3 4-3M4 20l16-16"/></svg></span>
@@ -279,9 +282,9 @@ footer.site summary { cursor: pointer; }
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="eyebrow">PICKS<i>|</i>AI の厳選</div>
+          <div class="eyebrow"><span data-ai>PICKS<i>|</i>AI の厳選</span><span data-noai>NEW<i>|</i>テレビの外の新着</span></div>
           <h2>今日のニュース</h2>
-          <p>通勤の3分で、世界で何が起きているかが分かる。</p>
+          <p data-ai>通勤の3分で、世界で何が起きているかが分かる。</p><p data-noai>テレビ局のサイトで見当たらない、新着のニュースです。</p>
         </div>
         <a class="outline-btn" href="#all" data-cover="all" id="all-count">すべての記事 →</a>
       </div>
@@ -290,9 +293,11 @@ footer.site summary { cursor: pointer; }
       <div class="grid" id="pick-grid"></div>
       <div class="more-wrap" id="pick-more" hidden><button type="button" class="outline-btn">もっと見る</button></div>
       <div class="values">
-        <div class="value"><b>事実から</b>元の記事を読み、ほかの媒体でも確かめてから書いています。</div>
-        <div class="value"><b>背景まで</b>「なぜ起きたか」「暮らしにどう関わるか」まで、やさしい言葉で。</div>
-        <div class="value"><b>テレビの外から</b>日本のテレビ局のニュースと照らし合わせ、報じられていない話題を優先します。</div>
+        <div class="value" data-ai><b>事実から</b>元の記事を読み、ほかの媒体でも確かめてから書いています。</div>
+        <div class="value" data-ai><b>背景まで</b>「なぜ起きたか」「暮らしにどう関わるか」まで、やさしい言葉で。</div>
+        <div class="value" data-noai><b>テレビと照らし合わせ</b>NHK・民放各局のニュースサイトの見出しと、毎時自動で比べています。</div>
+        <div class="value" data-noai><b>1時間ごとに更新</b>海外メディアや通信の専門メディアから、新着を集め続けます。</div>
+        <div class="value"><b>テレビの外から</b>テレビで報じられていない話題を、いちばん前に並べます。</div>
       </div>
     </div>
   </section>
@@ -338,7 +343,8 @@ footer.site summary { cursor: pointer; }
       <div>
         <p>テレビのニュースは放送時間が限られていて、映像があるか、国内の視聴者に身近かどうかで項目が選ばれます。そのため、世界で起きている大事な出来事の多くは、テレビには映りません。</p>
         <p>ニュースレーダーは、海外の報道機関や専門メディアから記事を集め、<b>国内のテレビ局のニュースサイトに同じ話題があるか</b>を自動で確かめます。見当たらない話題には「TV未報道」の印を付けます。</p>
-        <p>そのうえで AI が大事なニュースを選び、<b>「事実から、背景まで、やさしい言葉で」</b>説明します。AI の文章は間違えることもあるので、気になる記事は元の記事でも確かめてください。</p>
+        <p data-ai>そのうえで AI が大事なニュースを選び、<b>「事実から、背景まで、やさしい言葉で」</b>説明します。AI の文章は間違えることもあるので、気になる記事は元の記事でも確かめてください。</p>
+        <p data-noai>判定は見出しの文字の重なりによる推定です。気になる記事は、元の記事やほかの報道でも確かめてください。</p>
       </div>
     </div>
   </section>
@@ -415,9 +421,8 @@ footer.site summary { cursor: pointer; }
   function renderPicks() {
     const { list, ai } = pickSource();
     const notice = $("pick-notice");
-    notice.hidden = ai;
-    if (!ai) notice.replaceChildren(el("strong", {}, "AI の厳選記事はまだありません。 "),
-      "GitHub に ANTHROPIC_API_KEY を登録すると、AI が1日約20本を選んで解説を書きます。それまでは、テレビで見当たらない新着記事を並べています。");
+    notice.hidden = true;
+    document.body.classList.toggle("ai", ai);
     const cats = [...new Set(list.map((a) => a.category).filter(Boolean))];
     const catOrder = state.news?.settings?.categories || [];
     cats.sort((a, b) => catOrder.indexOf(a) - catOrder.indexOf(b));
@@ -428,7 +433,8 @@ footer.site summary { cursor: pointer; }
     const shown = list.filter((a) => !state.pickCat || a.category === state.pickCat);
     $("pick-grid").replaceChildren(...shown.slice(0, state.pickLimit).map((a) => {
       const href = ai ? `#article/${a.id}` : a.link;
-      const sub = ai ? a.detail?.lead : (a.title_ja ? a.title : a.summary);
+      let sub = ai ? a.detail?.lead : (a.title_ja ? a.title : a.summary);
+      if (!ai && sub && sub.startsWith(a.title.slice(0, 15))) sub = null;  // feed summaries often just repeat the headline
       return el("a", { class: "pick", href, target: ai ? null : "_blank", rel: ai ? null : "noopener" },
         thumb(a), el("h3", {}, titleOf(a)), sub ? el("p", { class: "sub" }, sub) : null);
     }));
