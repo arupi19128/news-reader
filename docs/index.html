@@ -245,6 +245,12 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .rtags { display: flex; flex-wrap: wrap; gap: 4px; }
 .rtags span { font-size: 11px; color: var(--wave); background: var(--wave-soft); border-radius: 4px; padding: 0 6px; }
 .recipe-empty { background: var(--sheet); border: 1px dashed var(--line); border-radius: 12px; padding: 28px 22px; color: var(--muted); margin-bottom: 30px; }
+.fav { border: 1px solid var(--line); background: var(--sheet); color: var(--out); border-radius: 999px; width: 28px; height: 28px; font-size: 15px; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; padding: 0; flex: none; }
+.fav[aria-pressed="true"] { background: var(--out); border-color: var(--out); color: #fff; }
+.fav.big { width: 36px; height: 36px; font-size: 19px; }
+.dish { position: relative; }
+.dish > .fav { position: absolute; top: 10px; right: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+.recipe-detail .meta .fav { margin-right: 4px; }
 .recipe-empty b { color: var(--ink); display: block; font-size: 17px; margin-bottom: 4px; }
 .rcards .entry .thumb.ph { font-size: 12px; }
 .plate.photo { background: var(--cell-in); overflow: hidden; }
@@ -451,6 +457,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   <section class="sheet" id="recipe-archive">
     <div class="sheet-head"><h2>これまでのレシピ</h2><span class="cap" id="recipe-count"></span></div>
     <div class="controls">
+      <div class="row" id="rfav"></div>
       <div class="row" id="rrole"></div>
       <div class="row" id="rtime"></div>
       <div class="row" id="rtag"></div>
@@ -854,10 +861,26 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   // ---------------- Recipes (Rakuten Recipe API) ----------------
   const ROLE_TONES = { "主菜": ["#c8553d", "#9c3b28"], "副菜": ["#4f8a3c", "#356428"], "汁物": ["#b98a2e", "#8a6418"], "": ["#5b7186", "#3e5263"] };
   const TIME_FILTERS = [["10分以内", 10], ["15分以内", 15], ["30分以内", 30]];
-  const rstate = { role: null, time: null, cat: null, page: 0 };
+  const rstate = { fav: false, role: null, time: null, cat: null, page: 0 };
+  // Favourites are kept in this browser with the whole recipe, so they outlive the 30-day history.
+  let favs = store.get("nr.favs", {});
+  const isFav = (id) => !!favs[id];
+  function toggleFav(r) {
+    if (favs[r.id]) delete favs[r.id];
+    else favs[r.id] = { ...r, savedAt: new Date().toISOString() };
+    store.set("nr.favs", favs);
+    document.querySelectorAll(`.fav[data-id="${r.id}"]`).forEach((b) => { b.setAttribute("aria-pressed", String(isFav(r.id))); b.textContent = isFav(r.id) ? "♥" : "♡"; });
+    if (!$("recipe-view").hidden) renderRecipeArchive();
+  }
+  function favButton(r, big) {
+    return el("button", { type: "button", class: big ? "fav big" : "fav", "data-id": r.id, "aria-pressed": String(isFav(r.id)),
+      "aria-label": "お気に入り", title: "お気に入りに登録／解除",
+      onclick: (e) => { e.preventDefault(); e.stopPropagation(); toggleFav(r); } }, isFav(r.id) ? "♥" : "♡");
+  }
   function allRecipes() {
     const seen = new Map();
     for (const d of state.recipes || []) for (const r of d.recipes) if (!seen.has(r.id)) seen.set(r.id, { ...r, date: d.date });
+    for (const r of Object.values(favs)) if (!seen.has(r.id)) seen.set(r.id, r);
     return [...seen.values()];
   }
   const dateLabel = (iso) => dayFmt.format(new Date(`${iso}T12:00:00+09:00`));
@@ -994,7 +1017,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     $("menu-totals").replaceChildren(el("span", {}, el("b", {}, today.recipes.length), "品を新しく集めました"));
     const menu = ["主菜", "副菜", "汁物"].map((role) => byId.get(today.menu?.[role])).filter(Boolean);
     $("menu-today").replaceChildren(menu.length ? el("div", { class: "dishes" }, ...menu.map((r) => el("a", { class: "dish", href: `#recipe/${r.id}` },
-      plate(r, true), el("div", { class: "txt" }, el("span", { class: "cap" }, r.role), el("h3", {}, r.name), el("p", {}, r.catch), facts(r))))) :
+      plate(r, true), favButton(r, true), el("div", { class: "txt" }, el("span", { class: "cap" }, r.role), el("h3", {}, r.name), el("p", {}, r.catch), facts(r))))) :
       el("div", { class: "recipe-empty" }, "今日は主菜・副菜・汁物の組み合わせを作れませんでした。下の一覧から選んでください。"));
     renderRecipeArchive();
   }
@@ -1003,20 +1026,25 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     const cats = [...new Set(recipes.flatMap((r) => r.categories || []))];
     const chipRow = (id, label, options, key, text) => $(id).replaceChildren(el("span", { class: "cap" }, label), ...[null, ...options].map((o) => el("button", {
       type: "button", class: "chip", "aria-pressed": String(rstate[key] === o), onclick: () => { rstate[key] = o; rstate.page = 0; renderRecipeArchive(); } }, o == null ? "すべて" : text(o))));
+    const favCount = Object.keys(favs).length;
+    $("rfav").replaceChildren(el("span", { class: "cap" }, "表示"),
+      el("button", { type: "button", class: "chip", "aria-pressed": String(!rstate.fav), onclick: () => { rstate.fav = false; rstate.page = 0; renderRecipeArchive(); } }, "すべて"),
+      el("button", { type: "button", class: "chip", "aria-pressed": String(rstate.fav), onclick: () => { rstate.fav = true; rstate.page = 0; renderRecipeArchive(); } }, `♥ お気に入り（${favCount}）`));
     chipRow("rrole", "種類", ["主菜", "副菜", "汁物"], "role", (o) => o);
     chipRow("rtime", "時間", TIME_FILTERS.map((t) => t[0]), "time", (o) => o);
     chipRow("rtag", "カテゴリ", cats, "cat", (o) => o);
     const limit = TIME_FILTERS.find((t) => t[0] === rstate.time)?.[1];
-    const list = recipes.filter((r) => (!rstate.role || r.role === rstate.role) && (!limit || (r.minutes != null && r.minutes <= limit)) && (!rstate.cat || (r.categories || []).includes(rstate.cat)));
+    const list = recipes.filter((r) => (!rstate.fav || isFav(r.id)) && (!rstate.role || r.role === rstate.role) && (!limit || (r.minutes != null && r.minutes <= limit)) && (!rstate.cat || (r.categories || []).includes(rstate.cat)));
     $("recipe-count").textContent = `${list.length} 品`;
     const box = $("recipe-list");
-    if (!list.length) { box.replaceChildren(el("div", { class: "empty" }, "条件に合うレシピはまだありません。")); return; }
+    if (!list.length) { box.replaceChildren(el("div", { class: "empty" }, rstate.fav ? "お気に入りはまだありません。レシピの ♡ を押すと登録できます。" : "条件に合うレシピはまだありません。")); return; }
+    if (rstate.fav) list.sort((a, b) => (favs[b.id]?.savedAt || "").localeCompare(favs[a.id]?.savedAt || ""));
     const pages = Math.ceil(list.length / PER_PAGE);
     rstate.page = Math.min(rstate.page, pages - 1);
     box.replaceChildren(el("div", { class: "cards rcards" }, ...list.slice(rstate.page * PER_PAGE, (rstate.page + 1) * PER_PAGE).map((r) =>
       el("a", { class: "entry", href: `#recipe/${r.id}` },
         el("div", { class: "body" }, el("h3", {}, r.name),
-          el("div", { class: "meta" }, r.role ? el("span", {}, r.role) : null, r.indication ? el("span", {}, r.indication) : null, r.cost ? el("span", {}, r.cost) : null)),
+          el("div", { class: "meta" }, favButton(r), r.role ? el("span", {}, r.role) : null, r.indication ? el("span", {}, r.indication) : null, r.cost ? el("span", {}, r.cost) : null)),
         plate(r, false)))));
     if (pages > 1) box.append(el("nav", { class: "pager", "aria-label": "ページ" },
       ...Array.from({ length: pages }, (_, p) => el("button", { type: "button", "aria-current": p === rstate.page ? "page" : null,
@@ -1031,7 +1059,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       el("div", { class: "hero-photo" }, plate(r, true)),
       el("span", { class: "cap" }, [r.role, ...(r.categories || [])].filter(Boolean).join(" ・ ")),
       el("h1", {}, r.name),
-      el("div", { class: "meta" }, facts(r), r.author ? el("span", {}, `作者：${r.author}`) : null),
+      el("div", { class: "meta" }, favButton(r, true), facts(r), r.author ? el("span", {}, `作者：${r.author}`) : null),
       r.catch ? el("p", { class: "lead" }, r.catch) : null,
       el("h2", {}, "材料"),
       el("ul", { class: "mats" }, ...(r.materials || []).map((m) => el("li", {}, m))),
