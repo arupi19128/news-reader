@@ -192,6 +192,77 @@ def match_tv(article, tv_items, threshold, window):
     return None
 
 
+# ---- Featured stories (no AI) ---------------------------------------------
+
+_WORD = re.compile(r"[a-z][a-z'-]{2,}")
+_STOP = set("the and for with from that this into over after about amid says said will have has are was were its their they his her you not but more than new how why what who when".split())
+
+
+def _story_key(a):
+    if a["lang"] == "en" and not a.get("title_ja"):
+        text = (a["title"] + " " + a["summary"]).lower()
+        return "en", {w for w in _WORD.findall(text) if w not in _STOP}
+    return "ja", bigrams(a.get("title_ja") or a["title"])
+
+
+def _same_story(k1, k2):
+    (l1, s1), (l2, s2) = k1, k2
+    if l1 != l2 or not s1 or not s2:
+        return False
+    overlap = len(s1 & s2) / min(len(s1), len(s2))
+    return overlap >= (0.4 if l1 == "en" else 0.45)
+
+
+def feature(articles, now, settings):
+    """Pick the day's headline stories without AI: stories carried by more outlets, missing from TV, and recent.
+
+    Returns [{"id", "related", "outlets"}] best first; "related" are other articles on the same story.
+    """
+    skip = [w.lower() for w in settings.get("feature_skip_words", [])]
+    recent = [a for a in articles
+              if parse_iso(a["published"]) >= now - timedelta(hours=24)
+              and not any(w in (a["title"] + a["summary"]).lower() for w in skip)]
+    recent.sort(key=lambda a: a["published"], reverse=True)
+
+    stories = []  # each: {"items": [...], "key": story_key of the first item}
+    for a in recent:
+        key = _story_key(a)
+        for st in stories:
+            if _same_story(key, st["key"]):
+                st["items"].append(a)
+                break
+        else:
+            stories.append({"key": key, "items": [a]})
+
+    def score(st):
+        items = st["items"]
+        outlets = len({a["outlet"] for a in items})
+        uncovered = all(a.get("tv_match") is None for a in items)
+        age_h = (now - parse_iso(items[0]["published"])).total_seconds() / 3600
+        readable = any(a["lang"] == "ja" or a.get("title_ja") for a in items)
+        return outlets * 3 + (4 if uncovered else 0) + max(0, 24 - age_h) / 8 + (2 if readable else 0)
+
+    stories.sort(key=score, reverse=True)
+    count = settings.get("featured_count", 9)
+    per_kind = settings.get("featured_per_kind", 5)
+    picked, kinds = [], {}
+    for st in stories:
+        items = st["items"]
+        # Prefer a Japanese article as the face of the story.
+        lead = next((a for a in items if a["lang"] == "ja" or a.get("title_ja")), items[0])
+        if kinds.get(lead["kind"], 0) >= per_kind:
+            continue
+        kinds[lead["kind"]] = kinds.get(lead["kind"], 0) + 1
+        picked.append({
+            "id": lead["id"],
+            "related": [a["id"] for a in items if a is not lead][:5],
+            "outlets": len({a["outlet"] for a in items}),
+        })
+        if len(picked) >= count:
+            break
+    return picked
+
+
 # ---- Daily picks ----------------------------------------------------------
 
 JST = timezone(timedelta(hours=9))
@@ -342,6 +413,7 @@ def main():
                      "categories": settings.get("categories", [])},
         "topics": config.get("topics", []),
         "feeds": statuses,
+        "featured": feature(articles, started, settings),
         "articles": articles,
         "tv": tv,
     }

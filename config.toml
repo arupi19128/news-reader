@@ -10,6 +10,14 @@ max_items_per_feed = 40
 tv_match_threshold = 0.32
 # テレビ報道と照らし合わせる期間（記事の前後何時間か）
 tv_match_window_hours = 72
+# ---- 今日の注目（AIなし・無料）----
+# トップに出す本数。多くの媒体が報じている話題、テレビ圏外の話題、新しい話題ほど上に来ます
+featured_count = 9
+# 同じ情報源の分類から選ぶ最大本数（偏り防止）
+featured_per_kind = 5
+# この語を見出しか概要に含む記事は「今日の注目」に選びません
+feature_skip_words = ["セール", "クーポン", "ポイント還元", "％オフ", "%オフ", "割引", "キャンペーン", "入荷", "株価", "NISA", "優待", "個別株", "予約開始", "PR", "sponsored", "deal", "deals", "discount", "live:", "live updates", "as it happened", "首位打者", "打者", "投手", "監督", "試合", "選手"]
+
 # ---- AI（ANTHROPIC_API_KEY を登録したときだけ動きます）----
 # 使うモデル
 model = "claude-opus-5-5"
@@ -60,6 +68,54 @@ google_news = "site:news.tv-asahi.co.jp"
 name = "テレ東BIZ"
 kind = "tv"
 google_news = "site:txbiz.tv-tokyo.co.jp"
+
+# ---------------------------------------------------------------
+# 日本語で読める、テレビ局以外のメディア（テレビ報道と照合できます）
+# ---------------------------------------------------------------
+[[feeds]]
+name = "BBCニュース日本語"
+kind = "国際"
+google_news = "site:bbc.com/japanese"
+
+[[feeds]]
+name = "ロイター日本語"
+kind = "国際"
+google_news = "site:jp.reuters.com"
+
+[[feeds]]
+name = "CNN.co.jp"
+kind = "国際"
+google_news = "site:cnn.co.jp"
+
+[[feeds]]
+name = "AFPBB News"
+kind = "国際"
+google_news = "site:afpbb.com"
+
+[[feeds]]
+name = "ニューズウィーク日本版"
+kind = "国際"
+google_news = "site:newsweekjapan.jp"
+
+[[feeds]]
+name = "毎日新聞"
+kind = "国内"
+google_news = "site:mainichi.jp"
+
+[[feeds]]
+name = "朝日新聞"
+kind = "国内"
+google_news = "site:asahi.com"
+
+[[feeds]]
+name = "東京新聞"
+kind = "国内"
+google_news = "site:tokyo-np.co.jp"
+
+[[feeds]]
+name = "時事ドットコム"
+kind = "国内"
+google_news = "site:jiji.com"
 
 # ---------------------------------------------------------------
 # 海外メディア（英語。APIキーがあれば日本語訳と要約が付きます）
@@ -123,8 +179,8 @@ url = "https://www.soumu.go.jp/news.rdf"
 [[feeds]]
 name = "Googleニュース：通信キャリア"
 kind = "通信"
-google_news = "(ドコモ OR KDDI OR ソフトバンク OR 楽天モバイル OR 通信障害 OR 5G OR 光回線) -ホークス -野球 -投手 -日本シリーズ"
-exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "セ・リーグ", "パ・リーグ", "スポニチ", "日刊スポーツ", "スポーツ報知"]
+google_news = "(ドコモ OR KDDI OR ソフトバンク OR 楽天モバイル OR 通信障害 OR 5G OR 光回線) -ホークス -野球 -投手 -日本シリーズ -中古車 -入荷"
+exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "セ・リーグ", "パ・リーグ", "スポニチ", "日刊スポーツ", "スポーツ報知", "打者", "首位打者", "選手", "監督", "試合"]
 
 [[feeds]]
 name = "Google News: Telecom"
@@ -140,7 +196,7 @@ google_news = "telecom OR \"mobile carrier\" OR \"network outage\" OR 5G OR 6G"
 [[topics]]
 name = "通信キャリア"
 keywords = ["ドコモ", "docomo", "KDDI", "au", "ソフトバンク", "SoftBank", "楽天モバイル", "Rakuten Mobile", "povo", "ahamo", "MVNO", "格安SIM"]
-exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "セ・リーグ", "パ・リーグ", "スポニチ", "日刊スポーツ", "スポーツ報知"]
+exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "セ・リーグ", "パ・リーグ", "スポニチ", "日刊スポーツ", "スポーツ報知", "打者", "首位打者", "選手", "監督", "試合"]
 
 [[topics]]
 name = "ネットワーク・回線"
