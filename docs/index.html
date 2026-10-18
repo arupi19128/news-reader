@@ -256,8 +256,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     </div>
     <nav class="jump" aria-label="ページ内リンク">
       <a href="#log" data-cover="uncovered">テレビ圏外</a>
-      <a href="#log" data-cover="all">すべての受信</a>
-      <a href="#log" data-kind="通信">通信</a>
+      <a href="#log" data-cover="domestic">国内</a>
+      <a href="#log" data-cover="overseas">海外</a>
+      <a href="#log" data-cover="all" data-topic="通信">通信</a>
       <a href="#about">このサイトについて</a>
       <a href="#stations">基地局（情報源）</a>
     </nav>
@@ -317,12 +318,12 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
           <span class="cap">表示</span>
           <div class="seg" role="group" aria-label="テレビ報道の有無">
             <button type="button" data-cover="uncovered" aria-pressed="true"><i class="hexicon out"></i>テレビ圏外</button>
+            <button type="button" data-cover="domestic" aria-pressed="false">国内</button>
+            <button type="button" data-cover="overseas" aria-pressed="false">海外</button>
             <button type="button" data-cover="all" aria-pressed="false">すべて</button>
-            <button type="button" data-cover="covered" aria-pressed="false"><i class="hexicon in"></i>圏内</button>
           </div>
           <div class="search"><input id="q" type="search" placeholder="キーワードで絞り込む" aria-label="キーワードで絞り込む"></div>
         </div>
-        <div class="row" id="kinds"></div>
         <div class="row" id="topics"></div>
         <form class="addtopic" id="addtopic" hidden>
           <input id="topic-name" placeholder="名前（例：半導体）" required>
@@ -371,7 +372,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   };
   const state = {
     news: null, picks: [],
-    cover: store.get("nr.cover", "uncovered"), kind: store.get("nr.kind", null), topic: store.get("nr.topic", null),
+    cover: ["uncovered", "domestic", "overseas", "all"].includes(store.get("nr.cover")) ? store.get("nr.cover") : "uncovered", topic: store.get("nr.topic", null),
     customTopics: store.get("nr.customTopics", []), q: "", limit: PAGE,
   };
   const $ = (id) => document.getElementById(id);
@@ -391,6 +392,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   const timeFmt = new Intl.DateTimeFormat("ja-JP", { hour: "2-digit", minute: "2-digit", ...tz });
   const fullFmt = new Intl.DateTimeFormat("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", ...tz });
   const status = (a) => a.tv_match === "unknown" ? "unknown" : a.tv_match ? "covered" : "uncovered";
+  const regionOf = (a) => (a.kind === "国際" || a.kind === "overseas" || a.lang === "en") ? "overseas" : "domestic";
   const sectorOf = (a) => a.category || KIND_LABEL[a.kind] || a.kind;
   const titleOf = (a) => a.detail?.headline || a.title_ja || a.title;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -562,7 +564,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 
   function focusEntry(a) {
     openLog();
-    if (!filtered().includes(a)) { state.cover = "all"; state.kind = null; state.topic = null; state.q = ""; $("q").value = ""; }
+    if (!filtered().includes(a)) { state.cover = "all"; state.topic = null; state.q = ""; $("q").value = ""; }
     renderFilters();
     state.limit = Math.max(PAGE, filtered().indexOf(a) + 1);
     renderList();
@@ -579,18 +581,23 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       const esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       return /^[\x00-\x7f]+$/.test(w) ? `\\b${esc}\\b` : esc;
     });
-    if (!parts.length) return () => false;
-    const re = new RegExp(parts.join("|"), "i");
-    return (t) => re.test(t);
+    // Short all-caps words (IT, AI, au, NTT…) must match their exact case, or "IT" would match "it".
+    const exact = [], loose = [];
+    (words || []).map((w) => w.trim()).filter(Boolean).forEach((w, i) => (/^[A-Z&]{2,4}$/.test(w) || w === "au" ? exact : loose).push(parts[i]));
+    const reExact = exact.length ? new RegExp(exact.join("|")) : null;
+    const reLoose = loose.length ? new RegExp(loose.join("|"), "i") : null;
+    if (!reExact && !reLoose) return () => false;
+    return (t) => (reExact && reExact.test(t)) || (reLoose && reLoose.test(t));
   }
   const articleText = (a) => [a.title, a.title_ja, a.summary, a.outlet].filter(Boolean).join(" ");
   function filtered() {
     let list = state.news.articles;
-    if (state.cover !== "all") list = list.filter((a) => status(a) === state.cover);
-    if (state.kind) list = list.filter((a) => a.kind === state.kind);
+    if (state.cover === "uncovered") list = list.filter((a) => status(a) === "uncovered");
+    else if (state.cover !== "all") list = list.filter((a) => regionOf(a) === state.cover);
     if (state.topic) {
       const t = allTopics().find((t) => t.name === state.topic);
-      if (t) { const m = keywordMatcher(t.keywords), ex = keywordMatcher(t.exclude); list = list.filter((a) => { const s = articleText(a); return m(s) && !ex(s); }); }
+      // Topics look at the headline and summary only, so an outlet name like "ITmedia" does not count.
+      if (t) { const m = keywordMatcher(t.keywords), ex = keywordMatcher(t.exclude); list = list.filter((a) => { const s = [a.title, a.title_ja, a.summary].filter(Boolean).join(" "); return m(s) && !ex(s); }); }
     }
     if (state.q) {
       const ws = state.q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -629,10 +636,6 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   }
   function renderFilters() {
     document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cover === state.cover)));
-    const kinds = [...new Set(state.news.articles.map((a) => a.kind))];
-    $("kinds").replaceChildren(el("span", { class: "cap" }, "情報源"), ...[null, ...kinds].map((k) => el("button", {
-      type: "button", class: "chip", "aria-pressed": String(state.kind === k),
-      onclick: () => { state.kind = k; store.set("nr.kind", k); refreshList(); } }, k ? (KIND_LABEL[k] || k) : "すべて")));
     const row = $("topics");
     row.replaceChildren(el("span", { class: "cap" }, "トピック"), el("button", { type: "button", class: "chip", "aria-pressed": String(!state.topic),
       onclick: () => { state.topic = null; store.set("nr.topic", null); refreshList(); } }, "指定なし"));
@@ -721,12 +724,11 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   window.addEventListener("resize", () => { clearTimeout(rTimer); rTimer = setTimeout(() => { if (!$("home").hidden && state.news) layout(); }, 100); });
 
   document.addEventListener("click", (e) => {
-    const a = e.target.closest("a[data-cover], a[data-kind]");
+    const a = e.target.closest("a[data-cover]");
     if (!a || !state.news) return;
     openLog();
-    state.cover = a.dataset.kind ? "all" : a.dataset.cover; store.set("nr.cover", state.cover);
-    state.kind = a.dataset.kind || null; store.set("nr.kind", state.kind);
-    state.topic = null; store.set("nr.topic", null);
+    state.cover = a.dataset.cover; store.set("nr.cover", state.cover);
+    state.topic = a.dataset.topic || null; store.set("nr.topic", state.topic);
     refreshList();
   });
   document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => { state.cover = b.dataset.cover; store.set("nr.cover", state.cover); refreshList(); }));

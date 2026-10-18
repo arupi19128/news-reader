@@ -194,10 +194,39 @@ google_news = "telecom OR \"mobile carrier\" OR \"network outage\" OR 5G OR 6G"
 # 画面からも自分用のトピックを追加できます。
 # ---------------------------------------------------------------
 [[topics]]
-name = "通信キャリア"
-keywords = ["ドコモ", "docomo", "KDDI", "au", "ソフトバンク", "SoftBank", "楽天モバイル", "Rakuten Mobile", "povo", "ahamo", "MVNO", "格安SIM"]
-exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "セ・リーグ", "パ・リーグ", "スポニチ", "日刊スポーツ", "スポーツ報知", "打者", "首位打者", "選手", "監督", "試合"]
+name = "政治"
+keywords = ["首相", "内閣", "国会", "政府", "与党", "野党", "自民", "立憲", "維新", "公明", "共産党", "国民民主", "選挙", "知事", "市長", "大臣", "閣僚", "法案", "政権", "議員", "政党", "president", "election", "parliament", "minister", "senate", "congress", "lawmakers"]
 
 [[topics]]
-name = "ネットワーク・回線"
-keywords = ["通信障害", "回線", "光回線", "5G", "6G", "基地局", "Starlink", "スターリンク", "衛星通信", "outage", "network", "broadband", "telecom", "NTT"]
+name = "金融"
+keywords = ["日銀", "金利", "利上げ", "利下げ", "為替", "円安", "円高", "銀行", "金融", "融資", "インフレ", "物価", "国債", "債券", "ドル", "central bank", "interest rate", "inflation", "bank", "bonds", "currency", "Fed"]
+
+[[topics]]
+name = "IT"
+keywords = ["アプリ", "ソフトウェア", "クラウド", "セキュリティ", "サイバー", "ハッキング", "不正アクセス", "情報漏えい", "個人情報", "半導体", "パソコン", "PC", "Windows", "Google", "グーグル", "Apple", "アップル", "Microsoft", "マイクロソフト", "Meta", "IT", "DX", "SNS", "X（旧ツイッター）", "software", "cyber", "hack", "cloud", "chip", "semiconductor", "tech"]
+exclude = ["ホークス", "野球"]
+
+[[topics]]
+name = "通信"
+keywords = ["ドコモ", "docomo", "KDDI", "au", "ソフトバンク", "SoftBank", "楽天モバイル", "Rakuten Mobile", "povo", "ahamo", "LINEMO", "MVNO", "格安SIM", "通信", "回線", "光回線", "5G", "6G", "基地局", "電波", "周波数", "通信障害", "Starlink", "スターリンク", "衛星通信", "スマホ", "iPhone", "Android", "NTT", "総務省", "telecom", "carrier", "network outage", "broadband", "spectrum", "mobile network"]
+exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "日本S", "CS", "巨人", "DeNA", "阪神", "選手", "監督", "試合"]
+
+[[topics]]
+name = "エンタメ"
+keywords = ["映画", "ドラマ", "音楽", "アニメ", "漫画", "マンガ", "ゲーム", "俳優", "女優", "歌手", "芸能", "コンサート", "紅白", "アイドル", "声優", "Netflix", "ネットフリックス", "film", "movie", "music", "celebrity", "album", "Hollywood"]
+
+[[topics]]
+name = "AI"
+keywords = ["AI", "人工知能", "生成AI", "ChatGPT", "OpenAI", "Claude", "Anthropic", "Gemini", "機械学習", "LLM", "artificial intelligence", "chatbot"]
+
+[[topics]]
+name = "株"
+keywords = ["株価", "株式市場", "株主", "株高", "株安", "日経平均", "TOPIX", "銘柄", "上場", "決算", "配当", "東証", "ダウ", "ナスダック", "stock", "stocks", "shares", "Nasdaq", "Dow", "IPO", "earnings", "Wall Street"]
+
+[[topics]]
+name = "国際"
+keywords = ["外交", "首脳", "会談", "国連", "NATO", "G7", "G20", "戦争", "停戦", "紛争", "制裁", "大使", "ロシア", "ウクライナ", "中国", "米国", "アメリカ", "トランプ", "中東", "イスラエル", "ガザ", "イラン", "北朝鮮", "韓国", "台湾", "UN", "war", "ceasefire", "sanctions", "diplomat", "diplomats", "Ukraine", "Russia", "China", "Gaza", "Israel", "Iran"]
+
+[[topics]]
+name = "社会"
+keywords = ["事件", "事故", "逮捕", "容疑", "裁判", "判決", "火災", "地震", "災害", "台風", "豪雨", "大雨", "教育", "学校", "医療", "病院", "介護", "子ども", "高齢者", "警察", "自治体", "少子化", "killed", "dead", "police", "court", "earthquake", "storm", "flood", "wildfire"]
