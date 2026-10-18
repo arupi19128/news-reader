@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T19:40:35Z",
+ "generated_at": "2026-10-18T20:44:13Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -383,7 +383,7 @@
    "name": "ロイター日本語",
    "kind": "国際",
    "ok": true,
-   "count": 22
+   "count": 18
   },
   {
    "name": "CNN.co.jp",
@@ -431,7 +431,7 @@
    "name": "BBC World",
    "kind": "overseas",
    "ok": true,
-   "count": 29
+   "count": 31
   },
   {
    "name": "Al Jazeera",
@@ -497,7 +497,7 @@
    "name": "Googleニュース：ソフトバンク株式会社",
    "kind": "通信",
    "ok": true,
-   "count": 33
+   "count": 34
   },
   {
    "name": "Google News: Telecom",
@@ -524,17 +524,22 @@
    "outlets": 2
   },
   {
+   "id": "796588cad57c98ed",
+   "related": [],
+   "outlets": 1
+  },
+  {
+   "id": "973dad06501288e6",
+   "related": [],
+   "outlets": 1
+  },
+  {
    "id": "d9c43198fe00134b",
    "related": [],
    "outlets": 1
   },
   {
    "id": "ff01542cb4a64320",
-   "related": [],
-   "outlets": 1
-  },
-  {
-   "id": "b720a37f4e0de36f",
    "related": [],
    "outlets": 1
   },
@@ -552,17 +557,207 @@
    "id": "0111ec8fae67b2b8",
    "related": [],
    "outlets": 1
-  },
-  {
-   "id": "d43bd75436f307f6",
-   "related": [
-    "6348c8604c735f17",
-    "b0900a8ef5164e51"
-   ],
-   "outlets": 1
   }
  ],
  "articles": [
+  {
+   "id": "55d19e02d108b1f9",
+   "title": "Macron calls for 'calm and order' after riots across France",
+   "link": "https://www.bbc.co.uk/news/articles/cw240zl08dm5o?at_medium=RSS&at_campaign=rss",
+   "summary": "French President Emmanuel Macron gives a national address after widespread disorder and as some looting continued in Paris.",
+   "outlet": "BBC World",
+   "feed": "BBC World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/fb68/live/df4074b0-cb33-11f1-9e57-a506a0943bb2.jpg",
+   "published": "2026-10-18T20:33:21Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "796588cad57c98ed",
+   "title": "2000万円赤字なのに「黒字決算」観光交流協会事務局長が諭旨退職",
+   "link": "http://www.asahi.com/articles/ASVBL3W9QVBLUJUB00FM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T20:30:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261018003246_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "f0a1186d3694f4a3",
+   "title": "戦力の底上げが急務 阪神・藤川球児監督、今季終了をオーナーに報告",
+   "link": "http://www.asahi.com/articles/ASVBL3HNVVBLPTQP00BM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T20:30:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261018002744_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "8dab02b6c2ff1ef2",
+   "title": "Fire engulfs Albania’s Supreme Court as protests enter fifth day",
+   "link": "https://www.aljazeera.com/video/newsfeed/2026/10/18/albania-protests-supreme-court-fire?traffic_source=rss",
+   "summary": "Offices at the Supreme Court in Tirana were set ablaze as anti-government protests continue.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T20:26:03Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792355094.jpg?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "dd113f364c3c0852",
+   "title": "FiberXers edge out Tropang 5G in OT thriller for cross-over momentum",
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZVJKVXlrbXRKSlFVRDRUT25OUWk1T2h3RVg3RHpITjh4ck1DSDJjS2dkSGRxTFUxVEVHaHZoQjg3dS1BVjBCQjBPanU2UHhUQmlwOExhZzBoT0tkSnJWZ1dFVlhhdGlVS2NHY1VhdVkwbVNvenB0R0kxdTlxVHN3UDVYWGhOUXVfdVhJS1lSRkFHd0VReVhKcDBRanRxZjhMdk9TVmFn0gGrAUFVX3lxTE8wTGZNc2xNRS0yUmVoRUI4SlZnSkg4dXkyY3pWZkU2QVhJYmNEeXVnZ05Rck41anBCbXIxVDhIUnZzSzl0QzR0SGpRdi1hZTJPRnF1M2ZKbXEzR2xpbVlhQkpUeHItXzNDaC10QUViUXJSMDRkZnhnWHNYMjRFa1pWWnBzR3dDUEJUVzhXWDJsU0lxZHZuV3FNdzJseGxWMjhiU1pXdUo5d2MzNA?oc=5",
+   "summary": "FiberXers edge out Tropang 5G in OT thriller for cross-over momentum Inquirer.net",
+   "outlet": "Inquirer.net",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-18T20:25:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "45d2eef19302aaee",
+   "title": "‘Anger and shame’: Macron denounces France’s nationwide rioting, looting",
+   "link": "https://www.aljazeera.com/news/2026/10/18/macron-denounces-frances-nationwide-rioting-looting?traffic_source=rss",
+   "summary": "President Macron promises to increase security, but stops short of announcing a state of emergency or curfew.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T20:19:22Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/reuters_6ad519db-1792350683.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "b8f8d63dce10e8a7",
+   "title": "What’s behind Europe’s youth protests?",
+   "link": "https://www.aljazeera.com/video/newsfeed/2026/10/18/whats-behind-europes-youth-protests?traffic_source=rss",
+   "summary": "What's behind Europe's youth protests?",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T20:05:07Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-4-1792353897.png?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "9726f76b383e820c",
+   "title": "Exclusive: Telecom Giants Reap 42 Billion Won From Unused Gifts",
+   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNFFseEtLSl9yTUJzM0xyWnVOTFNlbXMzQ09vb1lWei1qZHVJMGl4eUU4cTVhTUpqREZJQWlfczY1cUFzQ3gwOHZyd1VkUnZSSDZnTlZCVUhRR0IzaWNUSGlmQnVEdExWcGZQclpYcEc1bHBHMjBFSVJqU3dzSGxwTG9YTU5xbm1n?oc=5",
+   "summary": "Exclusive: Telecom Giants Reap 42 Billion Won From Unused Gifts 조선일보",
+   "outlet": "조선일보",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-18T20:03:27Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "973dad06501288e6",
+   "title": "「NASA、月面用の5G通信システム」など5本",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE56TmJ0OEhTMmt6emxrZUJlekhmTGlqTDN2TjhHY2tGM09mc3oxS0dYell2SWhmM3JHZURTMTF2S0NLdHJ6cFVmblNFOUpvNExvbDQ0RVpVV0kyb3BlTkxiN1FiakhzeTBhSzA0RQ?oc=5",
+   "summary": "「NASA、月面用の5G通信システム」など5本 日経クロステック",
+   "outlet": "日経クロステック",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T20:00:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3a3633bcbd19333c",
+   "title": "What we know so far about deadly fire at Canadian military base",
+   "link": "https://www.bbc.co.uk/news/articles/cmgelrq8x92do?at_medium=RSS&at_campaign=rss",
+   "summary": "At least four people are confirmed to have died after a huge fire swept through the base.",
+   "outlet": "BBC World",
+   "feed": "BBC World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4d82/live/7fedb8b0-cb1a-11f1-a9ef-8b4e735f71f0.jpg",
+   "published": "2026-10-18T19:42:37Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "d95401036d2c35c9",
+   "title": "1円スマホのキャンペーン機種一覧！一括1円/月額1円のiPhone・Androidを比較",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5fQXZ4Z1JYSm1zUDF5ODI5RmhBb1BBb0RyZFJHZGdmMkN3cWxWSUdxcnQwS1F2YmZBQlhVNTBlM2J4X0tCaGdlbnZ6SXlpS3NjZ2pvNHRhTXRLRVN2aHBIRg?oc=5",
+   "summary": "1円スマホのキャンペーン機種一覧！一括1円/月額1円のiPhone・Androidを比較 株式会社ピクセラ",
+   "outlet": "株式会社ピクセラ",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T19:34:12Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "383056da8a374019",
+   "title": "India’s crackdown on cockroaches, critics and cameras",
+   "link": "https://www.aljazeera.com/video/the-listening-post/2026/10/18/indias-crackdown-on-cockroaches-critics-and-cameras?traffic_source=rss",
+   "summary": "A government at war with its critics - from young protesters to the media.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T19:31:45Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/YT-TX38-LPKG-THUMB-1792351882.jpg?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "d8601b120c0a3a7b",
+   "title": "How will Europe deal with youth-led protests?",
+   "link": "https://www.aljazeera.com/video/inside-story/2026/10/18/how-will-europe-deal-with-youth-led-protests?traffic_source=rss",
+   "summary": "Demonstrations are spreading across the continent.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T19:15:21Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/reuters_6ad51660-1792349793.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
   {
    "id": "66723cf43648d3cc",
    "title": "Clarence Seedorf calls out genocide in first Corinthians press conference",
@@ -660,9 +855,9 @@
   },
   {
    "id": "8ede705749168907",
-   "title": "Guardian reporter filmed masked militants seconds before West Bank attack on French mayor",
+   "title": "Netanyahu casts doubt on settler attack witnessed by Guardian reporter",
    "link": "https://www.theguardian.com/world/2026/oct/18/guardian-reporter-filmed-masked-militants-seconds-before-west-bank-attack-on-french-mayor",
-   "summary": "New video footage of Israeli settler assault on European delegation as Netanyahu attempts to raise doubt Hours after Israeli militants attacked a delegation of European diplomats, French clerics and a visiting mayor in the occupied West Bank, Israel’s leader, Benjamin Netanyahu, …",
+   "summary": "Assault on European delegation in West Bank exposes government’s response to violence even when those targeted represent Israel’s allies Hours after Israeli militants attacked a delegation of European diplomats, French clerics and a visiting mayor in the occupied West Bank, Israe…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -965,7 +1160,7 @@
   },
   {
    "id": "b720a37f4e0de36f",
-   "title": "横浜市長選、参政党推薦の福山氏が次点確実 山中・前市長らを上回る",
+   "title": "横浜市長選、参政推薦の福山氏が次点 3番手山中前市長は46万票減",
    "link": "http://www.asahi.com/articles/ASVBL54BSVBLULOB012M.html?ref=rss",
    "summary": "",
    "outlet": "朝日新聞",
@@ -976,7 +1171,12 @@
    "first_seen": "2026-10-18T16:47:07Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261019000092_comm.jpg",
-   "tv_match": null,
+   "tv_match": {
+    "title": "【速報】横浜市長選 新人・原沢敦美氏が当選確実「投票にパワハラ考慮」8割超で山中前市長は再選ならず 投票率は午後7時半現在で28.61％で前回より上昇",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5uVThsWTZMREdjdmdYZG1NU0ZzUm43bHNMeDZXY3o1aHFQcm4wRlN4R3BTcWV4cEdIbVlWcUZJZkNWaGg3WG52dm9nUU4zY2NBQmVHV0lSbw?oc=5",
+    "score": 0.32
+   },
    "picked": false
   },
   {
@@ -1381,7 +1581,7 @@
   },
   {
    "id": "d597274d82050830",
-   "title": "France protests live: Big blaze, tear gas fired during standoff in Paris",
+   "title": "France protests updates: Macron vows rioters will ‘pay for their crimes’",
    "link": "https://www.aljazeera.com/news/liveblog/2026/10/18/france-protests-live-macron-to-address-nation-after-deadly-protests?traffic_source=rss",
    "summary": "Protests are sweeping France as anger over conditions in schools meets frustration with high living costs.",
    "outlet": "Al Jazeera",
@@ -3073,6 +3273,20 @@
    "picked": false
   },
   {
+   "id": "8449409d125a5978",
+   "title": "Kis-My-Ft2 SNOW DOMEの約束 IN TOKYO DOME 2013 セットリストまとめ",
+   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9ydks0ZUVuRW0wRWRmWkt5T25ITUhqN2E2Q1NjUHhQTl9qSWpqVzdua2ZaNEJQdnhrcGFSNEp4N0I0MFVLdnNPN1h3?oc=5",
+   "summary": "Kis-My-Ft2 SNOW DOMEの約束 IN TOKYO DOME 2013 セットリストまとめ もとりょこblog -",
+   "outlet": "もとりょこblog -",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-10-18T10:33:46Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "4696cc555ab4c4fb",
    "title": "【キスマイ セトリ】Kis-My-Ft2 LIVE TOUR 2026 fan IS ･･････全公演セットリストまとめ",
    "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1OR0hNYVYtQ3otUFQ4QW9zaG95enhmOHViRUU1OHFrS0xJUVJCc3NfX1U0MGpRQmt1akVJVm1sYVZEZktNQ0J1UHRB?oc=5",
@@ -3380,6 +3594,21 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m050088000p/0c10.jpg?1",
    "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "d8c9aec304ac1db4",
+   "title": "Jordon Steele-John says ‘I’m not on leave’ and accuses Greens leader of making ‘bad call’ regarding complaints",
+   "link": "https://www.theguardian.com/australia-news/2026/oct/18/greens-senator-jordon-steele-john-says-not-on-leave-blames-david-shoebridge-complaints-ntwnfb",
+   "summary": "Greens senator for WA says complaints regarding his behaviour towards women not about ‘accountability’ but rather ‘factionalism’ Get our breaking news email , free app or daily news podcast Jordon Steele-John has accused an internal faction within the Greens of playing “nasty pol…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/011a8490b80a4fe80a018ff4224824ec867c841d/316_0_6021_4817/master/6021.jpg?width=140&quality=85&auto=format&fit=max&s=56a4d7a500b3bda60aa1fc34bb03e2c2",
+   "published": "2026-10-18T09:51:48Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": "unknown",
    "picked": false
   },
   {
@@ -4196,7 +4425,7 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261018001232_comm.jpg",
    "tv_match": {
-    "title": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）｜日テレNEWS NNN",
+    "title": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）",
     "outlet": "日テレNEWS NNN",
     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0xNzJ1bm02SEF0UzNYRjZQY1FLU1hLNzJoODlacjgycDNZdmRDQlhxaFV0UGNrSjhtcmxxSFpkT09CdVFja0NvU0xOOU5KYzNzVTNFcnhaVDc5NHA0UmlSZTlZSXk0WFF3R3lwN3lMVmEyTGZvUlJIZW9sX0s?oc=5",
     "score": 0.5
@@ -5567,6 +5796,20 @@
    "picked": false
   },
   {
+   "id": "e9067baa1a582471",
+   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kXzNRY0tNTno2LS1EN25XSkhPNzRkQ1JmUmZiSmt2UTlYQ3lxZlMycktmR2tuTkhtcHMyYktiVWpTM0llTlVQQXcyTllmRTJxQzZmTHVMOVVaSTVXbEdUZVZJNjJVUXNFYkdpenBpWlJsUQ?oc=5",
+   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像 レスポンス（Response.jp）",
+   "outlet": "レスポンス（Response.jp）",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T04:00:03Z",
+   "first_seen": "2026-10-18T17:42:44Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "52997bae2d39973f",
    "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 17枚目の写真・画像",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EUGpTckQtamVzUG5TYngyMDZ1N1FTczc1bFhvZm5YZ1lLUmNaYTFuaVFsMmtHNV9UNHNNTkRST1liSHpwNDNmY3E2bGlSZlRvTmtYN3FERXNFVzEyS2tvc1Y0QnFGNzJQTVNkU2RWMGhFUQ?oc=5",
@@ -5605,20 +5848,6 @@
    "lang": "ja",
    "published": "2026-10-18T04:00:03Z",
    "first_seen": "2026-10-18T14:31:48Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "e9067baa1a582471",
-   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kXzNRY0tNTno2LS1EN25XSkhPNzRkQ1JmUmZiSmt2UTlYQ3lxZlMycktmR2tuTkhtcHMyYktiVWpTM0llTlVQQXcyTllmRTJxQzZmTHVMOVVaSTVXbEdUZVZJNjJVUXNFYkdpenBpWlJsUQ?oc=5",
-   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像 レスポンス（Response.jp）",
-   "outlet": "レスポンス（Response.jp）",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-18T04:00:03Z",
-   "first_seen": "2026-10-18T17:42:44Z",
    "tv_match": null,
    "picked": false
   },
@@ -6423,9 +6652,9 @@
    "published": "2026-10-18T01:09:40Z",
    "first_seen": "2026-10-18T17:42:44Z",
    "tv_match": {
-    "title": "https://txbiz.tv-tokyo.co.jp/tag?tag=&page=141%EF%BD%9C%E3%83%86%E3%83%AC%E6%9D%B1BIZ%EF%BC%88%E3%83%86%E3%83%AC%E3%83%93%E6%9D%B1%E4%BA%AC%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%",
+    "title": "https://txbiz.tv-tokyo.co.jp/tag?tag=&page=301%EF%BD%9C%E3%83%86%E3%83%AC%E6%9D%B1BIZ%EF%BC%88%E3%83%86%E3%83%AC%E3%83%93%E6%9D%B1%E4%BA%AC%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiqAlBVV95cUxQZzZhSXlzZkRsSTdWR1IwNVJhaXpiSkVTX2hEdTgzRnNvTUk3ZTNQemR1SXpxVGNSUm82clNCaHJvRzExQ3pOUEhYdGJMUjNkcEk0SURyaHFuWHE1QWRxZVNyTlBGZllWTTZNWFNFR0ZyX1liX3RObVBrcjl2aUV0clQzbEhhWmx0dEJOQ0h5RGVSN0tONjdVRE83V0tuRDJRTllJWmxQRHJXeDNBYTFwZGxvek9vamRLdk13YmRzM2llZEx6QVdULURZc09DekRoQVpDbTRiV2V3aUpkSE43eGNqSFItc0h5NjQ3YXFfYWJ1VmM4c0JmcFZrNzNsb3o4RWN3VGk2eHpTV094eFNXSFBIMmdzdWhfQS04TEwzTXBWSE5aNjVkeEFpMDY5djJRQmU3TEI4QVZSOG5veUtrRlVzU05mY2RoSWxPN2V3UWc0OHh5Nm02OHB3S2s2dHB5OXItSTJNNjZlTUZaa0hUZE9iRk1xQ2xWR1Z1X3NWQUh5TUNJeEdiVGpUYlhDTm5DcFFxam9SVlBreTFweV9qd04yU2g2Qkc2LW9Cb3pyVHJ5SGRHdTV0LTZreFAtVi1Ba0NQa3dpZ1ktX09lSnVUdUxFaHNLb2h4dGNNNDc3eUdSbkpydmpsS2stN3pQbDVCc3NZZE9vdkMxVlhlUUpZUlRJSkFVTGp3S1lQaVpGVnVFLTdVRUp1N1Z6TUhsZ3ZvVXpnckVGV2RZTFZZVThMWkNsbXdGNkRfQ3ZCeV9QX3RCelotNDA0T1RJMVk5VnB2WkdFUTlyTC1CZjY3ZlhUd2lmbUo5YmI5WGFsZFpSSjhsM1BMQWxuUDhlYXRWY1FVLUZNT0hjRGladGRuSnk0TG9GN1AwYjExTUVXN0JqMnZZWmpmSjJ6YTZ6WnoxOS16bG5vd1BOTllVS2lGeGI4NGd2cXI1MHVxb2FrVDhFbUlVMUtib0tBLVZQUS1rN2ZZcFJTM0RtYWdGa1RMcS1fMU11c0JoR3Y5UVJjSTJvM2dPQ3ptbzRxWTlFME1hdVVtMFk0dzRxMG1JTnduVXpiMWotamdmQUFuUWFMTmlCMHF0ZEZOTWVkOFNYYnlBZE93cFc4eE00YlhQS1ZCNklKRXg2dExNM3RJQnBZTU9qbklJUDRFdGZqNkZqLTdEbHlVT3BDZUtTaUQxVmVTdkZOS01IQ2R1ZHZxMW8weldzSS1INHVLMHpOTVFGMnAtRGNxLUpPLXJtMUI2bTRLSldjRjNGcE9NYzJ0d2ZRYW81X3E0N0xsQ0xLY2k4dnNILXdxWllLVl92VHZHaFdCSUlad3F1VE50eVMwVXRMakprX2FNLXZ0VjhRT2JET3JyVG92WGpMaDdiUWlOc1l6MnBhME1XZXVnaEhoald2Zk1hVnc1XzdrUGF0ZjQ2LTl0RVRqeVk0SHBoY3hZRmdRMXQzMWRMMFQwSHJsaXJRUlRNY1M5cVRraFVSa054elhQSlRiSVhQaEhEeDRpZXpYWWl1Znl5RTlFaUU5UlVwb0hEWDNScjhYX0tfMWhlS1Q4NkYtdWpNV29iU1pmRGxqdUItQTNUUHAyQ2Fv?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMi-wdBVV95cUxQcTZFaXNkQ1RFVmlzQnd6WHMweDQ4VW1BclNHWFNiY1JYRTBheFdMclp3UElURWpVWjAtT1dfMTdhNTlSbmk4cS12TkVJUEtndmU2SldtSVJuRDRhTGlyMHBhdFktc2dPOXVJaG1jbkZQSVdSY21IQm5kTk44Qncxc0dZbGU5TTVhOGtXdUlFMEdWM1JkMjdzS0l0MHhadThmWTBfQjQ0enhVeGNlZUNlZFMtZTJuSmJmUC1Ma2h4Sk9yVnJQQURvMXZxZHJvNFRRNUoyZU9uRWFsN2pOQ1ZiNjZXLW9IWVFDZEpyLXpleGZ1emxqRE01TFZ0MjRlWFd4TmEzVWtFcUZ2czgzd2E2UmRDZkhuZzdqNzBITHcwS0MzNDl5OXpGZkQwUnFXRUYtOVU3RnphMnktdVlBSjRGcjZhcGlQcjhrS1dEai05LXY3SFkxZzZPNlV4dS0tQjFYcHJLTkdIZXJvZmxpWkpQdmd6WnF5WnpYTUxwRWxLclo1c0tqTV92REJhMmhmS1RIUTVXX0lhZGhhQTFKQXJhU05nUXBRWGFqdlZad2pmei14TU5fcUROSWE5RXdqeDNIckR1bE45VXBhQTg4WUJiNXBiSGJwOWpVYjBiQW1UY0VVanJlclpFUlltNzJ5S2R6dUxNWTJUeGV2OFg3SEJGTXpLNXJnRzk5T3J3VTdLNDU5ZXBncXg4dU1FTGVULWZsanhxUUpPbTlVN2tvU1gyeWQxMWdReFNfNzN5OGwybjRSOVRadHlLZldkV0pzZlFwbXRlMktlbDFESXRJaF9PTGpxZHZTSjBOTkd4b1I2TDBzMjRTd29EWDFPRXJ1dmNmVm1Mc0psd0lUZ0tUWU1JR3c1b0pNTDFFUVFMWHZqMGFYZUp5bWNlV0s2OG9TSGpGbHdFZXVNTFNqanl6UUE2dGhIZ3JZVTNGeUZJSFpHWEpQXzhOQ0RESHFrWTRvd1JNLUVZZ0xwSHBKZlo0VHVJOVBlZGU3MTVoeG9XODZVLUtOWHduSjFKdDJ4OGJPNFdDNGtWVkp6WEM0SGtaUGJJVld3aDJPRHdWY1ljOXN0aS1jeUJiQThUUy1UVDA3Q1oweTFTSjJpUnlYdUR5TFRCWXU1Nm5nMExWQmZMQ0ptTDdFQVh5S0RFNi11cG93OUNsMnNibF9uLU5fU0hnMFhiSjJVc290WGZrSnVWUWpDbU5kYkFodS1jdzBnT0xIekdkbHBpZFVaQnp3dlVXRy0yRzdRLTdVZ2dla056czZuOG9sZG5sbzZoT3dqOWdhNjFrS0pCN3hDOV9xN0ptUW9WR19TRGlGSVV3bGxjUzNsamU4TS1sU2xpUHBRbw?oc=5",
     "score": 0.5
    },
    "picked": false
@@ -7052,7 +7281,7 @@
    "published": "2026-10-17T23:00:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）｜日テレNEWS NNN",
+    "title": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）",
     "outlet": "日テレNEWS NNN",
     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0xNzJ1bm02SEF0UzNYRjZQY1FLU1hLNzJoODlacjgycDNZdmRDQlhxaFV0UGNrSjhtcmxxSFpkT09CdVFja0NvU0xOOU5KYzNzVTNFcnhaVDc5NHA0UmlSZTlZSXk0WFF3R3lwN3lMVmEyTGZvUlJIZW9sX0s?oc=5",
     "score": 0.5
@@ -7379,20 +7608,6 @@
    "picked": false
   },
   {
-   "id": "9179f1b99778eee9",
-   "title": "サンプルリターン、継承発展を 「はやぶさ２」の津田さん―探査機ＭＭＸ打ち上げ",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE83X1JvZndYQnR3R3hodnZNOGZZTXZBOGd1Z0dRUkdUM3FfalF5S0xWUFpRUmIxZElvaXZ6RXY3dHQzQjYxYXdCRGZlV0VMQ0djRHl1M1NLNFMtWDlIVU5jREY5SQ?oc=5",
-   "summary": "サンプルリターン、継承発展を 「はやぶさ２」の津田さん―探査機ＭＭＸ打ち上げ 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-17T22:03:00Z",
-   "first_seen": "2026-10-18T09:38:54Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "857a40b0852ca291",
    "title": "フラビオ氏が僅差でリード 大統領選決選投票まで１週間―ブラジル",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5qWjdoSVJldWpsRzktQ0Iyd1hpNWRnR3N5dC1qTW9OZjdWOFRWczF3ekRMNHZONEVDbHRVUl9lZHBPRFl0X1VvT0FBdlVoaFV1SS1LanBIanJUWmJWdDBCeFVRMA?oc=5",
@@ -7409,6 +7624,20 @@
     "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB2SmdFSlVMZl9PSHI0UFM2eXJWYjhreks5VHJXQ1gxSjVIalg1dl9ZTUY5ck9UWG1nNDlwQmRldlpfRlJRbnRic3VrUDVobWk0SlNsX05xYVZidmM2dUpPUGhn?oc=5",
     "score": 0.35
    },
+   "picked": false
+  },
+  {
+   "id": "9179f1b99778eee9",
+   "title": "サンプルリターン、継承発展を 「はやぶさ２」の津田さん―探査機ＭＭＸ打ち上げ",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE83X1JvZndYQnR3R3hodnZNOGZZTXZBOGd1Z0dRUkdUM3FfalF5S0xWUFpRUmIxZElvaXZ6RXY3dHQzQjYxYXdCRGZlV0VMQ0djRHl1M1NLNFMtWDlIVU5jREY5SQ?oc=5",
+   "summary": "サンプルリターン、継承発展を 「はやぶさ２」の津田さん―探査機ＭＭＸ打ち上げ 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-17T22:03:00Z",
+   "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -7968,7 +8197,7 @@
    "tv_match": {
     "title": "池畑修平の国際ニュースCORE",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5JOVlhWE9DcVVOWG1ZX01mY2NZVGRvM0VfOHNWaE83WjFMNHFXYXFvQWdTeTdVQ0lOVFVSaXhWSmNjYS1hS29XMndpbWZMNndWQXlkX1YxYw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBrUXhCVGlwUHRCbnpDRTNUcldoVHFXSXRzMXhvdHRwbll5cmQ5NXBnMld0ajVGWjFTeDhTNzVRR0tHN0MtOHBzUWZTTzNpYUxVcGF6bUtvSQ?oc=5",
     "score": 0.71
    },
    "picked": false
@@ -8093,34 +8322,6 @@
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792267328.jpg?resize=1920%2C1080&quality=80"
   },
   {
-   "id": "cda5d065af055c49",
-   "title": "売買春「買う側」が処罰対象から除外された70年前の「経緯」とは…公序良俗を強調する法改正議論の死角",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9IZEMyOElzYWhmelVPSldYZFg5T0ExTlQ5aVk2YzFMY1gxYjNPZkpXNTlkelRjbzV1OElXc0hnVWRVLVRtdmVhNU5Ob2ZMd2tlYzJJ?oc=5",
-   "summary": "売買春「買う側」が処罰対象から除外された70年前の「経緯」とは…公序良俗を強調する法改正議論の死角 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-17T20:00:00Z",
-   "first_seen": "2026-10-18T14:31:48Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "80014f4a9667c08d",
-   "title": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9OUy1rd205bXFGOHVtM1dpb0hHWWVjd2Z3dXZlcWNycktQcW5OQzhCQ1BLWWJBOGpSOFhnX0ExbDVQdnB0SGxzTzVGcE9hUHRhYzlF?oc=5",
-   "summary": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-17T20:00:00Z",
-   "first_seen": "2026-10-18T09:38:54Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "cd3c34dd45c44dbf",
    "title": "民主主義が機能した「追及」 簗和生農相ついに辞任〈10月11日〜10月17日〉",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0xeWJEQUp0TUJTQ0djYjNyb1FqcktJLXdOaFhWLXhXbW5PTW9YekpVcHU4UTJONHd4MEJuc2JKd0Jka1VIYUx3SlhmSnI0UVQtVmlv?oc=5",
@@ -8135,10 +8336,52 @@
    "picked": false
   },
   {
+   "id": "cda5d065af055c49",
+   "title": "売買春「買う側」が処罰対象から除外された70年前の「経緯」とは…公序良俗を強調する法改正議論の死角",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9IZEMyOElzYWhmelVPSldYZFg5T0ExTlQ5aVk2YzFMY1gxYjNPZkpXNTlkelRjbzV1OElXc0hnVWRVLVRtdmVhNU5Ob2ZMd2tlYzJJ?oc=5",
+   "summary": "売買春「買う側」が処罰対象から除外された70年前の「経緯」とは…公序良俗を強調する法改正議論の死角 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-17T20:00:00Z",
+   "first_seen": "2026-10-18T14:31:48Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "cbb68d3b1987cce5",
+   "title": "埋没しつつある日本を立て直すには…日本総研会長・寺島実郎さんが訴える「新たな民主主義」とは",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBKUEpteEFHdFJlNHgyeW8tSzBGOFBIZFM4ZDRIeTdvS0pfV1RhTHhCZTFjUGlDekpCdk5UYWl1OFNyMkI1VWg3ZktGc3JCYk9FaURZ?oc=5",
+   "summary": "埋没しつつある日本を立て直すには…日本総研会長・寺島実郎さんが訴える「新たな民主主義」とは 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-17T20:00:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "37477aaf482c4ec1",
    "title": "空港や港湾の「軍民共用」沖縄でさらに増やす動き…市民の不安と懸念 政府は「説明」を自治体に丸投げ",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE03S1ZFR1l6eWRlSzJvMFJSNThXdmVQSW5IaHFIMkZSMlNsUUFUWjk1OGpmem1XZ3dZQXB5N1d0bmlxeV91cF9qczZwUG1QbTMwNm9r?oc=5",
    "summary": "空港や港湾の「軍民共用」沖縄でさらに増やす動き…市民の不安と懸念 政府は「説明」を自治体に丸投げ 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-17T20:00:00Z",
+   "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "80014f4a9667c08d",
+   "title": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9OUy1rd205bXFGOHVtM1dpb0hHWWVjd2Z3dXZlcWNycktQcW5OQzhCQ1BLWWJBOGpSOFhnX0ExbDVQdnB0SGxzTzVGcE9hUHRhYzlF?oc=5",
+   "summary": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は 東京新聞",
    "outlet": "東京新聞",
    "feed": "東京新聞",
    "kind": "国内",
@@ -10041,7 +10284,7 @@
    "published": "2026-10-17T09:46:00Z",
    "first_seen": "2026-10-18T11:43:31Z",
    "tv_match": {
-    "title": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）｜日テレNEWS NNN",
+    "title": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）",
     "outlet": "日テレNEWS NNN",
     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9vWl9WRDduWUhjQnlBRkhNMGtBaDQ3WmstWW4xdkFCTDN1VmM4TFRFc3FiZU9LWko3YVBZQnNyWTF3Xzg5S1RFcFRZQV9ES2VNM2RMVE16aEhEY0diVWtOTEJrV3RNWWcyMFFoYXhFN1lGWWF5bVgtcTRwUjJpUQ?oc=5",
     "score": 0.7
@@ -10175,6 +10418,20 @@
    "lang": "ja",
    "published": "2026-10-17T08:38:15Z",
    "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "0c4a2d5f469d3b70",
+   "title": "ドコモ、KDDI、ソフトバンク、楽天モバイルが示すAI時代のインフラ戦略 今後は「上り」「低遅延」が重要に",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeEc2WmNlRm41X2RxWDV2SzJfSzRVVmswcUc3QjBwZExZWFZMR0EwZ3dJdFBfQ2pySG5TSW1aNWFUbWtmZ1ByRjlaV01fSG5yRGE1NThjUHhtbUgwaEdVUVJLX0hCV2RiUG1CUFVuS1NnaXp4ZXR0dEo4UVkySktZTnMyM3BIR0JaZkI2dWh6NTc5M1dSRmNoUllIY9IBlwFBVV95cUxPM092Y25TaW9YZ191TDFzSkVJVHcybjNUSXpHYzhSYm9CWUlQN3ktZV9nSDNRcGNucFI3TlBBV010TW9JZWtrblBESWc3X0RQT2IxeEpHZW5SMXdlTndPUUZoOVZXREdCcUxHRVZDaXZHb3VPSE9YTjVBenppRHpRR3Y0QUxYV3lVZDZGMkVkZFdsUXIzYmRZ?oc=5",
+   "summary": "ドコモ、KDDI、ソフトバンク、楽天モバイルが示すAI時代のインフラ戦略 今後は「上り」「低遅延」が重要に ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-17T08:38:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
    "tv_match": null,
    "picked": false
   },
@@ -11668,7 +11925,7 @@
    "tv_match": {
     "title": "池畑修平の国際ニュースCORE",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5JOVlhWE9DcVVOWG1ZX01mY2NZVGRvM0VfOHNWaE83WjFMNHFXYXFvQWdTeTdVQ0lOVFVSaXhWSmNjYS1hS29XMndpbWZMNndWQXlkX1YxYw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBrUXhCVGlwUHRCbnpDRTNUcldoVHFXSXRzMXhvdHRwbll5cmQ5NXBnMld0ajVGWjFTeDhTNzVRR0tHN0MtOHBzUWZTTzNpYUxVcGF6bUtvSQ?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -12108,7 +12365,7 @@
    "published": "2026-10-16T21:08:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）｜日テレNEWS NNN",
+    "title": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）",
     "outlet": "日テレNEWS NNN",
     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9vWl9WRDduWUhjQnlBRkhNMGtBaDQ3WmstWW4xdkFCTDN1VmM4TFRFc3FiZU9LWko3YVBZQnNyWTF3Xzg5S1RFcFRZQV9ES2VNM2RMVE16aEhEY0diVWtOTEJrV3RNWWcyMFFoYXhFN1lGWWF5bVgtcTRwUjJpUQ?oc=5",
     "score": 0.48
@@ -12496,6 +12753,20 @@
    "image": "https://i.guim.co.uk/img/media/d50e0bb4a5fc6d77b7f869e6a131ef2969dbc048/1000_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=14d31939a47c4da3f3e2315e5ad5091a"
   },
   {
+   "id": "9ad2845a5f1ac6fb",
+   "title": "Venezuela's Military: What Comes Next?",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBmQXJyanJrOHMyR0g1NHdsM0lqS3NPaGplTmJFNGs3VVh4SUl5cXlQZVNTOHRqQ3JFM2FsNDRDZUlLZk43NmVOQktOMU4zb1dGcV9GVmdKUzhnUXpQUm5hRlhn?oc=5",
+   "summary": "Venezuela's Military: What Comes Next? www.wilsoncenter.org",
+   "outlet": "www.wilsoncenter.org",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-16T18:04:06Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "36707b9f260a8686",
    "title": "CEO来日！ エヌビディア旋風",
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9tb1duTkdSNlBHSm13dVZZRjB3Rkh1WDhvN3lpMDhFY0dhMndZZnAtN0RJczFDUHZhM0pKLVk5V2VCRGhwYkJhaVE4U2FaYXktUFhQWWxkV2I1ZXM?oc=5",
@@ -12806,6 +13077,22 @@
    "image": "https://image.itmedia.co.jp/mobile/articles/2610/17/cover_news017.jpg"
   },
   {
+   "id": "8d0516de66d8a4da",
+   "title": "The murder of a young mother in Iran has once again sparked debate on femicide and the social acceptance of violence against women.",
+   "link": "https://www.dw.com/en/the-murder-of-a-young-mother-in-iran-has-once-again-sparked-debate-on-femicide-and-the-social-acceptance-of-violence-against-women/a-79681977?maca=en-rss-en-world-4025-rdf",
+   "summary": "The murder of a young mother has once again sparked debate in Iran over so-called honor killings, the social acceptance of violence against women and the lack of protection for people vulnerable to gender-based violence.",
+   "outlet": "DW",
+   "feed": "DW",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-16T14:27:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "image_checked": true,
+   "image": "https://static.dw.com/image/67178289_6.jpg",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "a5a0209155033d88",
    "title": "Femicide in Iran: When 'honor' becomes a death sentence",
    "link": "https://www.dw.com/en/femicide-in-iran-when-honor-becomes-a-death-sentence/a-79681977?maca=en-rss-en-world-4025-rdf",
@@ -12879,9 +13166,9 @@
    "published": "2026-10-16T13:51:33Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "大声で「ショウリンジ」と…夜の交番に侵入した疑いで少年2人を逮捕 SNSで同様の挑発行為が拡散し警察が注意呼びかけ",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9DWHZ2QmZfRlZ6NVZsUG5MUWxJZTZoa21CR1BoTVk5cC02RDMtZTJ3Uzd0ZG0xcUxRWGdBYnh0X1BOQkx6ZVBoWEF0M2ZoZw?oc=5",
+    "title": "柏厚生総合病院 SNSに不適切投稿の病院職員を解雇 千葉・柏市",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5QOTdqN3pmVy1xTEQ1NjhvTFNnMTN4U0tZOUM2d1BZX2dRRGE4X1NteGs1bWo1SWdJZy1CUzBiU3AyaGNFUlI4NU9ZZDdBN3N1RnBtdXpyUQ?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -14385,20 +14672,6 @@
    "picked": false
   },
   {
-   "id": "cbc503976ca7c682",
-   "title": "落ち着きどころ探る、投資家の視線は決算へ＝来週の東京株式市場",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA0YkhnLTl1b2hQeUliaEdVRVV0UHZWOU5XUHRaWG1pc3ZRWEQ2ekVBQzZaaXZOdzF5VHFiUVNqSUhubFhZbHNvYnVYZzdhUVFUMS11ZUcyVkdYcUlST0l6d0JGRVhiSHc?oc=5",
-   "summary": "落ち着きどころ探る、投資家の視線は決算へ＝来週の東京株式市場 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-16T07:13:00Z",
-   "first_seen": "2026-10-18T13:20:38Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "92876bb6d51637b2",
    "title": "ドコモメール、詐欺メールにも「公式マーク」表示 一部企業で表示停止へ",
    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1jWVBzNjlFcXZqOWZyZERraXVfbnktZjQxZG9MLUx0OWI4b3lnWThGaUlhOVNpeF9HXzRvbjBCZnNKVkpVVHBCbEozU2JGRnNNclE?oc=5",
@@ -14409,6 +14682,20 @@
    "lang": "ja",
    "published": "2026-10-16T07:13:00Z",
    "first_seen": "2026-10-18T04:31:00Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "cbc503976ca7c682",
+   "title": "落ち着きどころ探る、投資家の視線は決算へ＝来週の東京株式市場",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA0YkhnLTl1b2hQeUliaEdVRVV0UHZWOU5XUHRaWG1pc3ZRWEQ2ekVBQzZaaXZOdzF5VHFiUVNqSUhubFhZbHNvYnVYZzdhUVFUMS11ZUcyVkdYcUlST0l6d0JGRVhiSHc?oc=5",
+   "summary": "落ち着きどころ探る、投資家の視線は決算へ＝来週の東京株式市場 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T07:13:00Z",
+   "first_seen": "2026-10-18T13:20:38Z",
    "tv_match": null,
    "picked": false
   },
@@ -14641,6 +14928,20 @@
    "picked": false
   },
   {
+   "id": "958abb0f04e16c8e",
+   "title": "【10月最新】iPhone17シリーズの値段一覧｜全キャリアの最安を比較",
+   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1RRjFTbkZkaXlzUzI1bVlPM0dwdW1PZWRpdnhvdU5vUVlKc0pHU1pHZUZSczdROXFmSGtqU3dKZzhSVXdESVFCQmNyRUxaVTY1OFV0ZnZJeTJPNFNY?oc=5",
+   "summary": "【10月最新】iPhone17シリーズの値段一覧｜全キャリアの最安を比較 株式会社ピクセラ",
+   "outlet": "株式会社ピクセラ",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T07:00:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "df19efabf9e05a84",
    "title": "iPhoneのおすすめ機種は今買うならどれ？【2026年10月】コスパやカメラなど目的別に選ぼう",
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBjUFVGVnpDczB5NDFTYUdId3YwWGRTOVhEaWxjT29BSjhibF9ZQlA4S3RneVpzeDBiVFVrQVMyRVFDLTlLOEhMS3FocG84Q08xeHN0UXlmWFdLRVNVeDdzTXZtYXA?oc=5",
@@ -14651,6 +14952,20 @@
    "lang": "ja",
    "published": "2026-10-16T07:00:00Z",
    "first_seen": "2026-10-18T16:47:07Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "94324e06115bbbe5",
+   "title": "iPhone17をUQモバイルで使う方法！設定・発売状況・キャンペーンまとめ",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qUjZ4Rkw2V3dpdG50bVNGX2tVdHdoRUVzbHUxVGk5TjJhRmVMUk5YVnk3aWhlaFhPc1FWN1J1RGo5SlU0TWxIQjV3aUM1V2E1cnloS1kxUFVtUUdJQzFN?oc=5",
+   "summary": "iPhone17をUQモバイルで使う方法！設定・発売状況・キャンペーンまとめ 株式会社ピクセラ",
+   "outlet": "株式会社ピクセラ",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-16T07:00:00Z",
+   "first_seen": "2026-10-18T20:44:13Z",
    "tv_match": null,
    "picked": false
   },
@@ -15009,11 +15324,11 @@
    "picked": false
   },
   {
-   "id": "49b2eb01d4f83bb7",
-   "title": "NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9KcG1VR2E0RUduMDRzQXBGOGQyZ1RwRXBTdDVIRk1jYkZVQmpPWDlDeGlBakdoS29LYjJ1dlpLYzVrcU52eG4wTmhkR0QtdG9WUHEzc011R0V1QQ?oc=5",
-   "summary": "NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演 TOKAIネットワーククラブ（TNC）",
-   "outlet": "TOKAIネットワーククラブ（TNC）",
+   "id": "3f53c5b667bf55c6",
+   "title": "画像・写真 | NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演 9枚目",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9xUWxybmh0enJSYXlYOER0UGtjblBkQkVnbXZndDlZVnRwb09SODVEcjRoZndjbTdIUHFwTGlpel9OaXN2TEExcjlzZ2dxUHZoUWpGTjZ2RC1Hdw?oc=5",
+   "summary": "画像・写真 | NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演 9枚目 オリコンニュース",
+   "outlet": "オリコンニュース",
    "feed": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
    "lang": "ja",
@@ -15023,11 +15338,11 @@
    "picked": false
   },
   {
-   "id": "3f53c5b667bf55c6",
-   "title": "画像・写真 | NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演 9枚目",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9xUWxybmh0enJSYXlYOER0UGtjblBkQkVnbXZndDlZVnRwb09SODVEcjRoZndjbTdIUHFwTGlpel9OaXN2TEExcjlzZ2dxUHZoUWpGTjZ2RC1Hdw?oc=5",
-   "summary": "画像・写真 | NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演 9枚目 オリコンニュース",
-   "outlet": "オリコンニュース",
+   "id": "49b2eb01d4f83bb7",
+   "title": "NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9KcG1VR2E0RUduMDRzQXBGOGQyZ1RwRXBTdDVIRk1jYkZVQmpPWDlDeGlBakdoS29LYjJ1dlpLYzVrcU52eG4wTmhkR0QtdG9WUHEzc011R0V1QQ?oc=5",
+   "summary": "NHK20を超える番組でつくばエクスプレス沿線特集 埼玉・八潮市出身Kis-My-Ft2二階堂高嗣も出演 TOKAIネットワーククラブ（TNC）",
+   "outlet": "TOKAIネットワーククラブ（TNC）",
    "feed": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
    "lang": "ja",
@@ -16343,7 +16658,7 @@
    "tv_match": {
     "title": "池畑修平の国際ニュースCORE",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5JOVlhWE9DcVVOWG1ZX01mY2NZVGRvM0VfOHNWaE83WjFMNHFXYXFvQWdTeTdVQ0lOVFVSaXhWSmNjYS1hS29XMndpbWZMNndWQXlkX1YxYw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBrUXhCVGlwUHRCbnpDRTNUcldoVHFXSXRzMXhvdHRwbll5cmQ5NXBnMld0ajVGWjFTeDhTNzVRR0tHN0MtOHBzUWZTTzNpYUxVcGF6bUtvSQ?oc=5",
     "score": 0.55
    },
    "picked": false
@@ -17810,6 +18125,42 @@
  ],
  "tv": [
   {
+   "id": "e42e86b47dd5ad87",
+   "title": "【佐賀県】10/19の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAwMmpFSzlyREJhMk9YSjRHaDVrUlNzS3B0dDlhQm5fdmpCZmRwT1JMRTItUTNRRENzZ3JwV0MxY21ERGRpejZNdG5qUGtldw?oc=5",
+   "summary": "【佐賀県】10/19の天気予報 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T20:10:00Z",
+   "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
+   "id": "e1cdc892ce12640c",
+   "title": "スバル 開発中の運転支援システムを公開",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBoVTV5VklxZi16RFZzX0tDUU1uYUNIWlhsQmtyWDh4LTlyZ1J4a1cwWF9LMmlLUlZsRW1LQmFVMUZURGlmQmlaVWNIZWdLSHpCMDZkeWtFWjBMOWcwTE1tcTNqRnZncGdueWJmZE9BdmYtdVBC?oc=5",
+   "summary": "スバル 開発中の運転支援システムを公開 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T19:55:34Z",
+   "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
+   "id": "51d483f5f43aefbd",
+   "title": "スバル 開発中の運転支援システムを公開",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE11bk5NZUg0RHN3dGVNOUY2V1NWd3dEYUg0TmxObEd0Y21yczk2blRmVHczRmVGeWFUWmdpWF95X19uWVE4VFVLbDBCVG9paVptRG8taGhXTQ?oc=5",
+   "summary": "スバル 開発中の運転支援システムを公開 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T19:55:34Z",
+   "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
    "id": "fc98b22af55b7222",
    "title": "ロシア第2の都市にドローン攻撃 1人死亡5人負傷 隣接州には過去最大規模の攻撃",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBlWGMxTWZNYndKcDM3Z1NhWHh5eGt0SmgxaERQWGVQOE1KcVYyUFI1V21sNlJKQ2J1RC1iM2FMWmZ5R1puOHJnNnRNZmVuOUlYVk4ycE9ZWQ?oc=5",
@@ -17930,6 +18281,18 @@
    "first_seen": "2026-10-18T14:54:44Z"
   },
   {
+   "id": "0fa9018124a4a49f",
+   "title": "高市内閣の支持率57％ 先月からほぼ横ばい 簗前農水相“更迭”「当然だと思う」8割超える【NNN・読売新聞 世論調査】",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jMWIzZFc4Z05OTVU0c3NOVEc3a3c0YzgzMVFqa0t5Z0dSaUxsWnhaY3d1dWJmUldiSGl1aUc5Mlp0OTlXM0E5dVBjX2NkelM4c2t1d0hBN2dtY21aRHB2SHUydURHaUg2YzZhT3dod2FwMGdteWNReEpNUUprdw?oc=5",
+   "summary": "高市内閣の支持率57％ 先月からほぼ横ばい 簗前農水相“更迭”「当然だと思う」8割超える【NNN・読売新聞 世論調査】 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T13:00:00Z",
+   "first_seen": "2026-10-18T15:07:53Z"
+  },
+  {
    "id": "9f937bf9921cc094",
    "title": "【地震】福島県内で震度1 福島県中通りを震源とする最大震度1の地震が発生 津波の心配なし",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5xNzQ5V2JMeDNfMk9FWEdROTZQc2g1dHZFZmhQbFFxM1RrMEY2d2NsWlVnVk1MM21DTHR0b2tRNmFjX0Y0NDFJMXVZNFdSQQ?oc=5",
@@ -17940,18 +18303,6 @@
    "lang": "ja",
    "published": "2026-10-18T13:00:00Z",
    "first_seen": "2026-10-18T13:13:36Z"
-  },
-  {
-   "id": "0fa9018124a4a49f",
-   "title": "高市内閣の支持率57％ 先月からほぼ横ばい【NNN・読売新聞 世論調査】（2026年10月18日掲載）｜日テレNEWS NNN",
-   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jMWIzZFc4Z05OTVU0c3NOVEc3a3c0YzgzMVFqa0t5Z0dSaUxsWnhaY3d1dWJmUldiSGl1aUc5Mlp0OTlXM0E5dVBjX2NkelM4c2t1d0hBN2dtY21aRHB2SHUydURHaUg2YzZhT3dod2FwMGdteWNReEpNUUprdw?oc=5",
-   "summary": "高市内閣の支持率57％ 先月からほぼ横ばい【NNN・読売新聞 世論調査】（2026年10月18日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-18T13:00:00Z",
-   "first_seen": "2026-10-18T15:07:53Z"
   },
   {
    "id": "bdd4cd1015715006",
@@ -18398,18 +18749,6 @@
    "first_seen": "2026-10-18T11:43:31Z"
   },
   {
-   "id": "9e726cb51f1c189b",
-   "title": "肝付町で900年続く伝統行事「高山流鏑馬」 鹿児島",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DbEpsZVNOLVR3TjZBZXNpemlvWFBfa2s4R1YtTEMzMjBMUzNRb0dTY3J4MHNhb01zSTRPOXM0Z0M0ZExCaVZQRzNhbkJfbmhZRUJSc3BCTQ?oc=5",
-   "summary": "肝付町で900年続く伝統行事「高山流鏑馬」 鹿児島 TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-18T09:00:00Z",
-   "first_seen": "2026-10-18T10:13:52Z"
-  },
-  {
    "id": "7664666574ff19b8",
    "title": "肝付町で900年続く伝統行事「高山流鏑馬」 鹿児島",
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE53ejNieFJUTm81YVFtYk9vVFRjYWp6NWE5czdxcGRKWW5JZ2FQeWZwNS1COUM5aWRxUWVnUk0yZngwbUM1bVJ4MzI2Z3BlTFhicTMtSEJ3anFzZ0E5ekpVOUphRmo?oc=5",
@@ -18420,6 +18759,18 @@
    "lang": "ja",
    "published": "2026-10-18T09:00:00Z",
    "first_seen": "2026-10-18T09:38:54Z"
+  },
+  {
+   "id": "9e726cb51f1c189b",
+   "title": "肝付町で900年続く伝統行事「高山流鏑馬」 鹿児島",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DbEpsZVNOLVR3TjZBZXNpemlvWFBfa2s4R1YtTEMzMjBMUzNRb0dTY3J4MHNhb01zSTRPOXM0Z0M0ZExCaVZQRzNhbkJfbmhZRUJSc3BCTQ?oc=5",
+   "summary": "肝付町で900年続く伝統行事「高山流鏑馬」 鹿児島 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T09:00:00Z",
+   "first_seen": "2026-10-18T10:13:52Z"
   },
   {
    "id": "acd1badca7017d42",
@@ -18638,6 +18989,18 @@
    "first_seen": "2026-10-18T15:44:23Z"
   },
   {
+   "id": "87e0911d2804936f",
+   "title": "不正アクセス急増背景に“中国製LLM”台頭、AIが自動で偵察→侵入→情報奪取「情報漏れていない人の方が珍しい」専門家が警鐘、対策は? | TBS NEWS DIG",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1oc0ppRmVxMXpoYWxmUHVkRFlUVGFDUC1NLXdtX2pDVFNtTWQyZDJRV0ZoNTJwSUdHRFRBRWU1VEUtZUZ1dUZtWloyOE1aaEJJb3ZRV1lNaw?oc=5",
+   "summary": "不正アクセス急増背景に“中国製LLM”台頭、AIが自動で偵察→侵入→情報奪取「情報漏れていない人の方が珍しい」専門家が警鐘、対策は? | TBS NEWS DIG TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T08:00:00Z",
+   "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
    "id": "8b2a5e9149297bb2",
    "title": "新千歳空港×新日本プロレス 棚橋弘至社長「良い違和感」 開港100年記念イベント",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xYkxtRHRtR0ZlVTl5ZDdPTl9hLVJLMjJDQTJnTHlhcDZzZ0gzdlNpcXM2OHNpSjQwN2g0MHRSTy1iOVpnVkpDTmtQUGo3a0QxcnYzeV9vSnlLaXhBcjdSQjd2WEkyZ3lKdnhtVU9YcTJMUQ?oc=5",
@@ -18770,6 +19133,18 @@
    "first_seen": "2026-10-18T06:58:06Z"
   },
   {
+   "id": "6b9de20ca3329c39",
+   "title": "鳥取訪問中の愛子さま 避難所運営のワークショップを体験",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ralZCX3Z5a2FlNkZucXA4NnNacWtCQi1wSDhuWXE2X0c1bGtCNXMybEswWGk0VXEzRlRaYm1aQktZNW1rY0Z1NkhkN24yc2tZZ21GNVZiQktQTTk4OVVobmtJNk1FZmJ1ZHdLeVgtRVdhQQ?oc=5",
+   "summary": "鳥取訪問中の愛子さま 避難所運営のワークショップを体験 テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T06:22:54Z",
+   "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
    "id": "33c89004d2709e5b",
    "title": "【速報】逃走していた50代男の身柄確保 東京・福生市で左胸刺され46歳男性死亡 被害者とトラブルか 警視庁が殺人容疑で逮捕へ",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBKcjRTelowWnZDMHR6Q3dleGtDMDNSSWl6M2lMckhRcGRsNU9mcUI1THU2anU1eTFNTTlfOVJiYWxuOURvMDY2UDRvUFZIY1FTTWVMSlQ2MA?oc=5",
@@ -18879,9 +19254,9 @@
   },
   {
    "id": "38c9de700a0dfa99",
-   "title": "【解説】日本が東南アジア諸国の石油備蓄を支援 なぜ？ 課題は？ ～AZEC閣僚会合～",
+   "title": "【解説】日本が東南アジア諸国の石油備蓄を支援 なぜ？ 課題は？ ～AZEC閣僚会合～（2026年10月17日掲載）",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5OODBHeUF5TmRTYUx3TjU2X09qRVJKaDVJaG9la3Uwd0Ztb0Jtd2tVUFNFOHZfRC1XTkZMZHVqQjcxX3ZCWVFiWnFxOGxkSkx3Tm1SWlgzYmhqYnk0U0xKYl9Qa0NwX3IyYzJ4T1JpcjAxYzZBR0lKdmZiNjg?oc=5",
-   "summary": "【解説】日本が東南アジア諸国の石油備蓄を支援 なぜ？ 課題は？ ～AZEC閣僚会合～ 日テレNEWS NNN",
+   "summary": "【解説】日本が東南アジア諸国の石油備蓄を支援 なぜ？ 課題は？ ～AZEC閣僚会合～（2026年10月17日掲載） 日テレNEWS NNN",
    "outlet": "日テレNEWS NNN",
    "feed": "日テレNEWS",
    "kind": "tv",
@@ -19215,9 +19590,9 @@
   },
   {
    "id": "0d8b15cc4cb008cb",
-   "title": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）｜日テレNEWS NNN",
+   "title": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0xNzJ1bm02SEF0UzNYRjZQY1FLU1hLNzJoODlacjgycDNZdmRDQlhxaFV0UGNrSjhtcmxxSFpkT09CdVFja0NvU0xOOU5KYzNzVTNFcnhaVDc5NHA0UmlSZTlZSXk0WFF3R3lwN3lMVmEyTGZvUlJIZW9sX0s?oc=5",
-   "summary": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "summary": "横浜市長選挙の投票始まる 7人が立候補 パワハラ問題で前市長が辞職（2026年10月17日掲載） 日テレNEWS NNN",
    "outlet": "日テレNEWS NNN",
    "feed": "日テレNEWS",
    "kind": "tv",
@@ -19730,6 +20105,18 @@
    "first_seen": "2026-10-18T15:44:23Z"
   },
   {
+   "id": "b2f118e7613e9a15",
+   "title": "池畑修平の国際ニュースCORE",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBrUXhCVGlwUHRCbnpDRTNUcldoVHFXSXRzMXhvdHRwbll5cmQ5NXBnMld0ajVGWjFTeDhTNzVRR0tHN0MtOHBzUWZTTzNpYUxVcGF6bUtvSQ?oc=5",
+   "summary": "池畑修平の国際ニュースCORE テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-17T16:05:49Z",
+   "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
    "id": "7e0841fb1651e097",
    "title": "ヤードで廃棄車両が炎上、周囲の山林に延焼 福岡・久山町（2026年10月17日掲載）",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1VUDZwVzJCTjVlSGlWazFsTzNUUzVHMER5VkM2OHJmbHRTcHp6d3BkQUtzbTM3eVA1bDg5b2pZREYzMnJXLTRzOFRRb2pJZGVLOGxTOWJOSldidHI4QTJGYV9MUHlEREtLSXpIWFdrT1NwRGplaE1aMENldWQ?oc=5",
@@ -19851,9 +20238,9 @@
   },
   {
    "id": "366bb5d1e1715dc6",
-   "title": "EU アメリカにICC制裁撤回を強く求める 首脳会議の成果文書で（2026年10月17日掲載）｜日テレNEWS NNN",
+   "title": "EU アメリカにICC制裁撤回を強く求める 首脳会議の成果文書で（2026年10月17日掲載）",
    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNTlRITk9nSGs3dHZUazVzV0pkYjZpd2pIOUdkTXJlVU1zQnZCV0dPYWIyclAwZzZwbUZOb2huR0ZBVGFTTmF6RGFlODlwYTFOSXF3dk1KdF9WQmg3Z0xjNFM0ck9ETkZ5VGFGMXpVMFJPU0FqeUhOZWxZeFRXVnFBMXpDZzk?oc=5",
-   "summary": "EU アメリカにICC制裁撤回を強く求める 首脳会議の成果文書で（2026年10月17日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "summary": "EU アメリカにICC制裁撤回を強く求める 首脳会議の成果文書で（2026年10月17日掲載） 日テレNEWS NNN",
    "outlet": "日テレNEWS NNN",
    "feed": "日テレNEWS",
    "kind": "tv",
@@ -20307,9 +20694,9 @@
   },
   {
    "id": "fe0fd815ea2df96d",
-   "title": "【速報】愛子さま鳥取・倉吉市で「ぼうさいこくたい」に出席 “女性視点の防災”テーマのセッション聴講（2026年10月16日掲載）",
+   "title": "【速報】愛子さま鳥取・倉吉市で「ぼうさいこくたい」に出席 “女性視点の防災”テーマのセッション聴講（2026年10月17日掲載）",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9jUDViSlZZM1R6Z3FOdzVZb1J1TThlUXBMLUVjcVBfX2IzVGc2ZXBoZ0lRRW9rVk55akQzNWJ3eVk2V2IxTEtWeFAzbkJmMmdJVlhHQWIxTHlSWFJfN05vTVRzM3czX3JBNll1czEtRTVnbEhhbGtBY0hrZ0g?oc=5",
-   "summary": "【速報】愛子さま鳥取・倉吉市で「ぼうさいこくたい」に出席 “女性視点の防災”テーマのセッション聴講（2026年10月16日掲載） 日テレNEWS NNN",
+   "summary": "【速報】愛子さま鳥取・倉吉市で「ぼうさいこくたい」に出席 “女性視点の防災”テーマのセッション聴講（2026年10月17日掲載） 日テレNEWS NNN",
    "outlet": "日テレNEWS NNN",
    "feed": "日テレNEWS",
    "kind": "tv",
@@ -20340,6 +20727,18 @@
    "lang": "ja",
    "published": "2026-10-17T06:05:00Z",
    "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
+   "id": "eb4da65a95eae352",
+   "title": "人気作家の最新作も！職場が舞台の本はなぜ面白い？「お仕事」をテーマにした小説を大特集！｜あの本、読みました？",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE41dmFOU3Qta3pSM3ZOQktvMXdwVDBSOTF2aUw1OXotZ0s1NFNLcEpsT0dMWGpqajY5eEdNaGdDOHhRUl9NVkxLWWF1SXpqeDhfNTRERm9SbUdIbmR1SzRieQ?oc=5",
+   "summary": "人気作家の最新作も！職場が舞台の本はなぜ面白い？「お仕事」をテーマにした小説を大特集！｜あの本、読みました？ テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-17T06:00:00Z",
+   "first_seen": "2026-10-18T20:44:13Z"
   },
   {
    "id": "a45af21ac0eb63af",
@@ -20475,9 +20874,9 @@
   },
   {
    "id": "123d2ee5cbe58592",
-   "title": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）｜日テレNEWS NNN",
+   "title": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）",
    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9vWl9WRDduWUhjQnlBRkhNMGtBaDQ3WmstWW4xdkFCTDN1VmM4TFRFc3FiZU9LWko3YVBZQnNyWTF3Xzg5S1RFcFRZQV9ES2VNM2RMVE16aEhEY0diVWtOTEJrV3RNWWcyMFFoYXhFN1lGWWF5bVgtcTRwUjJpUQ?oc=5",
-   "summary": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "summary": "高市首相、靖国神社の参拝見送りへ 真榊を奉納 秋の例大祭（2026年10月16日掲載） 日テレNEWS NNN",
    "outlet": "日テレNEWS NNN",
    "feed": "日テレNEWS",
    "kind": "tv",
@@ -21398,24 +21797,24 @@
    "first_seen": "2026-10-18T06:58:06Z"
   },
   {
-   "id": "bed2ed74a23455ba",
-   "title": "【クマ】住宅地周辺に出没したら…新潟・上越市で緊急銃猟訓練 流れや役割を確認「実際の場面に生かしたい」",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBPcmxPblpyUjFRTWhqMllYS3V4a0wtMFhvZnFHcFhRVjlBNC1vSmNkajNua0NIT0t5eW5LSm1UYXVMLUM2bTVINVo2OUQtdw?oc=5",
-   "summary": "【クマ】住宅地周辺に出没したら…新潟・上越市で緊急銃猟訓練 流れや役割を確認「実際の場面に生かしたい」 FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-16T13:00:00Z",
-   "first_seen": "2026-10-18T04:29:46Z"
-  },
-  {
    "id": "6ef3f0b95f043564",
    "title": "コマツ会長が農業土木に意欲！売上高４兆円超“建機の巨人”が動く！【ガイア もう一つのエピソード】#180｜ガイアの夜明け",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBpaldjM0NZdmZ2WWJnaXNEQkVqTXFINjBIRXFWRkZjVkNQcElVTmpIWmZHZVZzLS1JeVdqOGxOMGp1eDc1QzRaWVh0eTNEcENyZGFiWFFwTWtpc0NUNHNSbVozSQ?oc=5",
    "summary": "コマツ会長が農業土木に意欲！売上高４兆円超“建機の巨人”が動く！【ガイア もう一つのエピソード】#180｜ガイアの夜明け テレ東BIZ",
    "outlet": "テレ東BIZ",
    "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-16T13:00:00Z",
+   "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
+   "id": "bed2ed74a23455ba",
+   "title": "【クマ】住宅地周辺に出没したら…新潟・上越市で緊急銃猟訓練 流れや役割を確認「実際の場面に生かしたい」",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBPcmxPblpyUjFRTWhqMllYS3V4a0wtMFhvZnFHcFhRVjlBNC1vSmNkajNua0NIT0t5eW5LSm1UYXVMLUM2bTVINVo2OUQtdw?oc=5",
+   "summary": "【クマ】住宅地周辺に出没したら…新潟・上越市で緊急銃猟訓練 流れや役割を確認「実際の場面に生かしたい」 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
    "kind": "tv",
    "lang": "ja",
    "published": "2026-10-16T13:00:00Z",
@@ -21483,9 +21882,9 @@
   },
   {
    "id": "08ca30ad46bc4cbe",
-   "title": "「びっくりです」「避難を意識」緊急地震速報、誤報で取り消し（2026年10月16日掲載）",
+   "title": "「びっくりです」「避難を意識」緊急地震速報、誤報で取り消し（2026年10月16日掲載）｜日テレNEWS NNN",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5sVWthM05Ja1FCMXFpTTl3NXdTamdZcG10RlNkNWcwRWZveEltWnViNDZBQnY1dGxIN3dGQUkzWTVjSlZlZEZUQS1ReVhaa2ZXcTd1emN2VWp4dkZLUXdDSjZDeHdvZmlIb3o3QWthOVA1Q25lQVJFUzdENXk?oc=5",
-   "summary": "「びっくりです」「避難を意識」緊急地震速報、誤報で取り消し（2026年10月16日掲載） 日テレNEWS NNN",
+   "summary": "「びっくりです」「避難を意識」緊急地震速報、誤報で取り消し（2026年10月16日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
    "outlet": "日テレNEWS NNN",
    "feed": "日テレNEWS",
    "kind": "tv",
