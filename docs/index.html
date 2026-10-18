@@ -248,6 +248,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .fav { border: 1px solid var(--line); background: var(--sheet); color: var(--out); border-radius: 999px; width: 28px; height: 28px; font-size: 15px; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; padding: 0; flex: none; }
 .fav[aria-pressed="true"] { background: var(--out); border-color: var(--out); color: #fff; }
 .fav.big { width: 36px; height: 36px; font-size: 19px; }
+.account { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 13px; color: var(--muted); background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; }
+.linkbtn { border: 0; background: none; color: var(--wave); text-decoration: underline; cursor: pointer; padding: 0; font-size: 13px; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--sheet); padding: 10px 18px; border-radius: 999px; font-size: 13.5px; z-index: 50; max-width: calc(100% - 32px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
 .dish { position: relative; }
 .dish > .fav { position: absolute; top: 10px; right: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
 .recipe-detail .meta .fav { margin-right: 4px; }
@@ -454,6 +457,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     <div class="totals" id="menu-totals"></div>
   </div>
   <div id="menu-today"></div>
+  <div class="account" id="account" hidden></div>
   <section class="sheet" id="recipe-archive">
     <div class="sheet-head"><h2>これまでのレシピ</h2><span class="cap" id="recipe-count"></span></div>
     <div class="controls">
@@ -470,7 +474,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 
 <footer class="wrap"><span id="updated"></span> ／ 記事の著作権は各報道機関に帰属します。</footer>
 
+<div class="toast" id="toast" role="status" hidden></div>
 <script src="rakuten-config.js"></script>
+<script src="firebase-config.js"></script>
 <script>
 (() => {
   const PER_PAGE = 9;
@@ -862,15 +868,85 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   const ROLE_TONES = { "主菜": ["#c8553d", "#9c3b28"], "副菜": ["#4f8a3c", "#356428"], "汁物": ["#b98a2e", "#8a6418"], "": ["#5b7186", "#3e5263"] };
   const TIME_FILTERS = [["10分以内", 10], ["15分以内", 15], ["30分以内", 30]];
   const rstate = { fav: false, role: null, time: null, cat: null, page: 0 };
-  // Favourites are kept in this browser with the whole recipe, so they outlive the 30-day history.
-  let favs = store.get("nr.favs", {});
+  // Favourites keep the whole recipe, so they outlive the 30-day history. Without Firebase they live in this
+  // browser; with FIREBASE_CONFIG set they live in Firestore under the signed-in Google account, and the first
+  // tap on a heart asks the viewer to sign in. Browsing never needs an account.
+  const useCloud = !!window.FIREBASE_CONFIG;
+  let favs = useCloud ? {} : store.get("nr.favs", {});
   const isFav = (id) => !!favs[id];
+  const cloud = { ready: false, loading: false, user: null };
+  async function initCloud() {
+    if (!useCloud || cloud.ready || cloud.loading) return;
+    cloud.loading = true;
+    const base = "https://www.gstatic.com/firebasejs/10.12.2";
+    try {
+      const [appMod, authMod, fs] = await Promise.all([import(`${base}/firebase-app.js`), import(`${base}/firebase-auth.js`), import(`${base}/firebase-firestore.js`)]);
+      const app = appMod.initializeApp(window.FIREBASE_CONFIG);
+      Object.assign(cloud, { auth: authMod.getAuth(app), db: fs.getFirestore(app), authMod, fs, ready: true });
+      authMod.onAuthStateChanged(cloud.auth, (user) => {
+        cloud.user = user;
+        cloud.unsub?.(); cloud.unsub = null;
+        if (user) {
+          migrateLocalFavs(user);
+          cloud.unsub = fs.onSnapshot(fs.collection(cloud.db, "users", user.uid, "favs"), (snap) => {
+            favs = {}; snap.forEach((d) => { favs[d.id] = d.data(); }); refreshFavUI();
+          });
+        } else { favs = {}; refreshFavUI(); }
+        renderAccount();
+      });
+    } catch (e) {
+      toast("ログインの仕組みを読み込めませんでした。時間をおいて試してください。");
+    } finally { cloud.loading = false; }
+  }
+  function migrateLocalFavs(user) {
+    const local = store.get("nr.favs", {});
+    const ids = Object.keys(local);
+    if (!ids.length) return;
+    Promise.all(ids.map((id) => cloud.fs.setDoc(cloud.fs.doc(cloud.db, "users", user.uid, "favs", id), local[id])))
+      .then(() => { store.set("nr.favs", {}); toast(`このブラウザのお気に入り ${ids.length} 品をアカウントに移しました`); })
+      .catch(() => {});
+  }
+  const favRef = (uid, id) => cloud.fs.doc(cloud.db, "users", uid, "favs", id);
   function toggleFav(r) {
-    if (favs[r.id]) delete favs[r.id];
-    else favs[r.id] = { ...r, savedAt: new Date().toISOString() };
-    store.set("nr.favs", favs);
-    document.querySelectorAll(`.fav[data-id="${r.id}"]`).forEach((b) => { b.setAttribute("aria-pressed", String(isFav(r.id))); b.textContent = isFav(r.id) ? "♥" : "♡"; });
-    if (!$("recipe-view").hidden) renderRecipeArchive();
+    if (!useCloud) {
+      if (favs[r.id]) delete favs[r.id]; else favs[r.id] = { ...r, savedAt: new Date().toISOString() };
+      store.set("nr.favs", favs);
+      refreshFavUI();
+      return;
+    }
+    if (!cloud.ready) { toast("ログインの準備中です。少し待ってから、もう一度 ♡ を押してください。"); initCloud(); return; }
+    const save = (uid) => {
+      const was = isFav(r.id);
+      if (was) delete favs[r.id]; else favs[r.id] = { ...r, savedAt: new Date().toISOString() };
+      refreshFavUI();
+      (was ? cloud.fs.deleteDoc(favRef(uid, r.id)) : cloud.fs.setDoc(favRef(uid, r.id), favs[r.id]))
+        .catch(() => toast("お気に入りを保存できませんでした。通信状態を確かめてください。"));
+    };
+    if (cloud.user) { save(cloud.user.uid); return; }
+    // Not signed in yet: open Google sign-in straight from the tap (popups must start from a click).
+    cloud.authMod.signInWithPopup(cloud.auth, new cloud.authMod.GoogleAuthProvider())
+      .then((res) => { toast("ログインしました"); if (!isFav(r.id)) save(res.user.uid); })
+      .catch((e) => { if (e?.code !== "auth/popup-closed-by-user" && e?.code !== "auth/cancelled-popup-request") toast("ログインできませんでした。もう一度試してください。"); });
+  }
+  function refreshFavUI() {
+    document.querySelectorAll(".fav[data-id]").forEach((b) => { const on = isFav(b.dataset.id); b.setAttribute("aria-pressed", String(on)); b.textContent = on ? "♥" : "♡"; });
+    if (!$("recipe-view").hidden && state.recipes?.length) renderRecipeArchive();
+  }
+  function renderAccount() {
+    const box = $("account");
+    if (!useCloud) { box.hidden = true; return; }
+    box.hidden = false;
+    if (cloud.user) {
+      box.replaceChildren(el("span", {}, `ログイン中：${cloud.user.displayName || cloud.user.email || "Google アカウント"}`),
+        el("button", { type: "button", class: "linkbtn", onclick: () => cloud.authMod.signOut(cloud.auth) }, "ログアウト"));
+    } else {
+      box.replaceChildren(el("span", {}, "♡ を押すと Google でログインして、お気に入りをスマホでもパソコンでも見られます。"));
+    }
+  }
+  let toastTimer;
+  function toast(msg) {
+    const t = $("toast"); t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3500);
   }
   function favButton(r, big) {
     return el("button", { type: "button", class: big ? "fav big" : "fav", "data-id": r.id, "aria-pressed": String(isFav(r.id)),
@@ -998,6 +1074,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   }
   function renderRecipes() {
     if (state.recipes === undefined && !state.recipeLoading) { loadRecipes(); }
+    initCloud(); renderAccount();
     const days = state.recipes || [];
     if (!days.length) {
       $("menu-totals").replaceChildren();

@@ -16,6 +16,7 @@
 |---|---|
 | `config.toml` | 情報源（RSS / Googleニュース検索）とトピックの設定 |
 | `scripts/fetch_news.py` | 記事を集めて照合し、`docs/data/news.json` に保存 |
+| `docs/firebase-config.js` / `firestore.rules` | レシピのお気に入りを Google ログインで保存するための Firebase 設定と、本人だけが読み書きできるセキュリティルール（設定が空ならブラウザに保存） |
 | `docs/rakuten-config.js` | 楽天ウェブサービスのアプリIDとアクセスキー（レシピのタブで使用。閲覧者のブラウザが楽天レシピAPIを直接呼び出します） |
 | `scripts/ai.py` | Claude による日本語化・分類・厳選・解説（結果は `docs/data/picks.json`） |
 | `.github/workflows/update-news.yml` | 毎時の自動実行と GitHub Pages への公開 |
