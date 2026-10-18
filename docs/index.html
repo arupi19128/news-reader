@@ -4,259 +4,291 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ニュースレーダー</title>
-<meta name="description" content="世界のニュースを毎時スキャンし、日本のテレビで報じられていない話題を見つけます。">
+<meta name="description" content="世界のニュースを毎時受信し、日本のテレビの「圏外」にある話題を見つけます。">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;600;700&family=BIZ+UDPGothic:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-/* Layout: status bar → scope (radar + gauges) → control strip → detection log; single dark "operations room" look */
+/* Layout: phone-style status bar → cell map (hex cells grouped around base stations) → gauges → reception log; area-planning-drawing look */
 :root {
-  --bg: #0a131a;
-  --panel: #0f1c25;
-  --panel-2: #132430;
-  --line: #1d3341;
-  --line-2: #2a4656;
-  --ink: #d9e7ee;
-  --muted: #7d95a3;
-  --phosphor: #5fd8c6;
-  --phosphor-dim: rgba(95, 216, 198, 0.16);
-  --amber: #ffb547;
-  --amber-dim: rgba(255, 181, 71, 0.14);
-  --covered: #5d7482;
-  --font-label: "M PLUS 1 Code", "BIZ UDPGothic", ui-monospace, monospace;
-  --font-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  --font-num: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --bg: #eef2f5;
+  --sheet: #ffffff;
+  --ink: #0f1d2b;
+  --muted: #5a6b7b;
+  --grid: #dbe3ea;
+  --line: #cfd9e2;
+  --cell-in: #cbd8e4;
+  --cell-in-edge: #b3c4d4;
+  --out: #e4572e;
+  --out-soft: #fde6de;
+  --wave: #1f6fb2;
+  --wave-soft: #e1edf8;
+  --unknown: #94a3b1;
+  --font-body: "IBM Plex Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d151d; --sheet: #131e28; --ink: #e2eaf1; --muted: #8fa1b1; --grid: #1a2733; --line: #253645;
+    --cell-in: #22364a; --cell-in-edge: #2e4860; --out: #ff7a4d; --out-soft: #3b2219; --wave: #64aef0; --wave-soft: #172b40; --unknown: #5d7183;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d151d; --sheet: #131e28; --ink: #e2eaf1; --muted: #8fa1b1; --grid: #1a2733; --line: #253645;
+  --cell-in: #22364a; --cell-in-edge: #2e4860; --out: #ff7a4d; --out-soft: #3b2219; --wave: #64aef0; --wave-soft: #172b40; --unknown: #5d7183;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.7 var(--font-body);
-  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 48px 48px; background-position: -1px -1px;
-  background-attachment: fixed;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
-body::after { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 0%, transparent 40%, rgba(5, 10, 14, 0.75) 100%); }
 a { color: inherit; }
 button, input { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--wave); outline-offset: 2px; }
 [hidden] { display: none !important; }
 body:not(.ai) [data-ai] { display: none !important; }
-
 .wrap {
-  position: relative; z-index: 1; max-width: 1120px; margin: 0 auto;
+  max-width: 1120px; margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-.label { font: 600 11px/1.4 var(--font-label); letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
-.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.cap { font: 500 11px/1.4 var(--font-mono); letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+
+/* Signal bars (used in the status bar and the log) */
+.bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 14px; flex: none; }
+.bars i { width: 3px; background: var(--cell-in-edge); border-radius: 1px; }
+.bars i:nth-child(1) { height: 25%; } .bars i:nth-child(2) { height: 50%; } .bars i:nth-child(3) { height: 75%; } .bars i:nth-child(4) { height: 100%; }
+.bars[data-n="1"] i:nth-child(-n+1), .bars[data-n="2"] i:nth-child(-n+2), .bars[data-n="3"] i:nth-child(-n+3), .bars[data-n="4"] i:nth-child(-n+4) { background: var(--wave); }
+.kengai { font: 600 11px var(--font-mono); color: var(--out); border: 1.5px solid var(--out); border-radius: 3px; padding: 0 5px; line-height: 1.6; white-space: nowrap; }
 
 /* Status bar */
-.statusbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(10, 19, 26, 0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line-2); }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--bg); }
-.statusbar .wrap { display: flex; align-items: center; gap: 18px; padding-block: 10px; flex-wrap: wrap; }
-.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
-.brand b { font: 700 20px/1 var(--font-label); letter-spacing: 0.06em; }
-.brand span { font: 600 10px var(--font-label); letter-spacing: 0.3em; color: var(--phosphor); }
-.status { margin-left: auto; display: flex; gap: 16px; align-items: center; font: 400 12px var(--font-label); color: var(--muted); flex-wrap: wrap; }
-.live { display: inline-flex; align-items: center; gap: 6px; color: var(--phosphor); }
-.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--phosphor); box-shadow: 0 0 8px var(--phosphor); animation: pulse 2s infinite; }
-.live.stale { color: var(--amber); }
-.live.stale::before { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
-@keyframes pulse { 50% { opacity: 0.35; } }
-nav.jump { display: flex; gap: 4px; }
-nav.jump a { font: 600 12px var(--font-label); text-decoration: none; padding: 4px 10px; border: 1px solid var(--line-2); border-radius: 3px; color: var(--muted); white-space: nowrap; }
-nav.jump a:hover { color: var(--ink); border-color: var(--phosphor); }
+.statusbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--sheet); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--sheet); }
+.statusbar .wrap { display: flex; align-items: center; gap: 14px; padding-block: 9px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand svg { width: 26px; height: 26px; flex: none; }
+.brand b { font-weight: 700; font-size: 18px; letter-spacing: 0.04em; }
+.brand small { font: 500 10px var(--font-mono); color: var(--wave); letter-spacing: 0.2em; }
+.phone { margin-left: auto; display: flex; align-items: center; gap: 12px; font: 500 12px var(--font-mono); color: var(--muted); }
+.phone .net { color: var(--ink); font-weight: 600; }
+.phone .warn { color: var(--out); }
+.battery { display: inline-flex; align-items: center; gap: 4px; }
+.battery .cell { width: 26px; height: 12px; border: 1.5px solid var(--muted); border-radius: 3px; padding: 1px; position: relative; }
+.battery .cell::after { content: ""; position: absolute; right: -4px; top: 3px; width: 2px; height: 4px; background: var(--muted); border-radius: 0 1px 1px 0; }
+.battery .cell i { display: block; height: 100%; background: var(--wave); border-radius: 1px; }
+nav.jump { display: flex; gap: 2px; width: 100%; overflow-x: auto; scrollbar-width: none; margin-top: -2px; }
+nav.jump a { font-size: 13px; text-decoration: none; padding: 3px 12px; border-radius: 999px; color: var(--muted); white-space: nowrap; }
+nav.jump a:hover { background: var(--wave-soft); color: var(--wave); }
 
-/* Scope */
-.scope { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; padding-block: 34px 26px; align-items: center; }
-.radar-box { position: relative; aspect-ratio: 1; max-width: 520px; width: 100%; justify-self: center; }
-#radar { width: 100%; height: 100%; display: block; cursor: crosshair; }
-.tip { position: absolute; pointer-events: none; max-width: 260px; background: var(--panel-2); border: 1px solid var(--line-2); border-left: 3px solid var(--amber); padding: 6px 10px; font-size: 12.5px; line-height: 1.5; border-radius: 2px; transform: translate(12px, -50%); z-index: 3; }
-.tip .label { display: block; margin-bottom: 2px; }
-.intro h1 { font: 700 clamp(24px, 3.6vw, 36px)/1.4 var(--font-label); margin: 6px 0 12px; text-wrap: balance; letter-spacing: 0.01em; }
-.intro h1 em { font-style: normal; color: var(--amber); }
-.intro p { margin: 0; color: var(--muted); font-size: 14.5px; max-width: 34em; }
-.gauges { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line-2); border: 1px solid var(--line-2); margin-top: 22px; }
-.gauge { background: var(--panel); padding: 12px 14px; display: grid; gap: 2px; }
-.gauge b { font: 600 30px/1.1 var(--font-num); font-variant-numeric: tabular-nums; }
-.gauge.hot b { color: var(--amber); text-shadow: 0 0 18px rgba(255, 181, 71, 0.35); }
+/* Hero */
+.hero { padding-block: 30px 10px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 32px; align-items: end; }
+.hero h1 { margin: 6px 0 8px; font-size: clamp(26px, 4.4vw, 42px); line-height: 1.35; font-weight: 700; text-wrap: balance; letter-spacing: 0.01em; }
+.hero h1 .out { color: var(--out); white-space: nowrap; }
+.hero p { margin: 0; color: var(--muted); max-width: 40em; font-size: 14.5px; }
+.legend { display: grid; gap: 6px; font-size: 12.5px; color: var(--muted); background: var(--sheet); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; }
+.legend span { display: flex; align-items: center; gap: 8px; }
+.hexicon { width: 14px; height: 16px; flex: none; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+.hexicon.out { background: var(--out); }
+.hexicon.in { background: var(--cell-in); }
+.hexicon.unknown { background: transparent; box-shadow: inset 0 0 0 2px var(--unknown); }
+
+/* Cell map */
+.map { position: relative; background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; margin-top: 18px; overflow: hidden; }
+.map-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.map-head b { font-size: 14px; }
+#cells { display: block; width: 100%; height: 440px; cursor: pointer; }
+.tip { position: absolute; pointer-events: none; max-width: 280px; background: var(--ink); color: var(--sheet); padding: 7px 11px; border-radius: 6px; font-size: 12.5px; line-height: 1.5; z-index: 3; transform: translate(-50%, calc(-100% - 12px)); }
+.tip .cap { color: inherit; opacity: 0.7; display: block; margin-bottom: 2px; }
+
+/* Gauges */
+.gauges { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-block: 16px 30px; }
+.gauge { background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; display: grid; gap: 2px; }
+.gauge b { font: 600 28px/1.15 var(--font-mono); font-variant-numeric: tabular-nums; }
+.gauge.out { border-color: var(--out); background: var(--out-soft); }
+.gauge.out b { color: var(--out); }
 .gauge small { font-size: 12px; color: var(--muted); }
-.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
-.dot.uncovered { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
-.dot.covered { background: var(--covered); }
-.dot.unknown { border: 1.5px dashed var(--covered); }
-.dot.pick { background: var(--phosphor); box-shadow: 0 0 6px var(--phosphor); }
+.gauge .unit { font-size: 14px; font-weight: 500; margin-left: 2px; }
 
-/* Panels */
-.panel { background: var(--panel); border: 1px solid var(--line-2); border-radius: 3px; }
-.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 10px 14px; border-bottom: 1px solid var(--line-2); background: var(--panel-2); }
-.panel-head h2 { margin: 0; font: 700 15px/1.4 var(--font-label); letter-spacing: 0.04em; display: flex; align-items: center; gap: 10px; }
-.panel-head h2 .label { color: var(--phosphor); }
-section.block { margin-bottom: 28px; }
+/* Sheets */
+.sheet { background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 28px; overflow: hidden; }
+.sheet-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.sheet-head h2 { margin: 0; font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.sheet-head h2 svg { width: 18px; height: 18px; color: var(--wave); }
 
-/* Reports (AI picks) */
-.reports { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line-2); }
-.report { background: var(--panel); padding: 14px 16px; text-decoration: none; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.report:hover { background: var(--panel-2); }
+/* AI reports */
+.reports { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.report { padding: 14px 16px; text-decoration: none; display: grid; gap: 6px; align-content: start; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-width: 0; }
+.report:hover { background: var(--wave-soft); }
 .report h3 { margin: 0; font-size: 15px; line-height: 1.55; overflow-wrap: anywhere; }
 .report p { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* Controls */
-.controls { display: grid; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line-2); }
+.controls { display: grid; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 50%, var(--sheet)); }
 .row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.row > .label { min-width: 5.5em; }
-.seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 3px; overflow: hidden; }
-.seg button { border: 0; background: transparent; padding: 4px 12px; cursor: pointer; font: 600 12.5px var(--font-label); color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
-.seg button + button { border-left: 1px solid var(--line-2); }
-.seg button[aria-pressed="true"] { background: var(--phosphor-dim); color: var(--ink); }
-.chip { border: 1px solid var(--line-2); background: transparent; border-radius: 3px; padding: 2px 10px; font: 400 12.5px var(--font-label); cursor: pointer; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
-.chip:hover { color: var(--ink); }
-.chip[aria-pressed="true"] { border-color: var(--phosphor); color: var(--phosphor); background: var(--phosphor-dim); }
+.row > .cap { min-width: 6em; }
+.seg { display: inline-flex; background: var(--bg); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; padding: 3px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.seg button[aria-pressed="true"] { background: var(--sheet); color: var(--ink); box-shadow: 0 1px 3px rgba(15, 29, 43, 0.14); font-weight: 500; }
+.chip { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 2px 12px; font-size: 13px; cursor: pointer; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
+.chip[aria-pressed="true"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
 .chip.ghost { border-style: dashed; }
-.chip .x { opacity: 0.7; }
+.chip .x { opacity: 0.75; }
 .search { flex: 1 1 220px; min-width: 0; }
-.search input, .addtopic input { width: 100%; background: var(--bg); border: 1px solid var(--line-2); border-radius: 3px; padding: 5px 10px; font-size: 13.5px; }
-.search input::placeholder, .addtopic input::placeholder { color: var(--muted); }
+.search input, .addtopic input { width: 100%; background: var(--sheet); border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; font-size: 14px; }
 .addtopic { display: flex; gap: 6px; flex-wrap: wrap; }
 .addtopic input { flex: 1 1 160px; width: auto; min-width: 0; }
-.addtopic button { border: 1px solid var(--phosphor); background: var(--phosphor-dim); color: var(--phosphor); border-radius: 3px; padding: 4px 14px; cursor: pointer; font: 600 12.5px var(--font-label); }
-.addtopic .cancel { border-color: var(--line-2); background: none; color: var(--muted); }
+.addtopic button { border: 0; background: var(--wave); color: var(--sheet); border-radius: 8px; padding: 5px 14px; cursor: pointer; }
+.addtopic .cancel { background: none; color: var(--muted); border: 1px solid var(--line); }
 
-/* Detection log */
-.log { display: grid; }
-.day { font: 600 11.5px var(--font-label); letter-spacing: 0.1em; color: var(--phosphor); padding: 8px 14px; background: rgba(95, 216, 198, 0.05); border-bottom: 1px solid var(--line); }
-.entry { display: grid; grid-template-columns: 14px 3.4em 6.5em minmax(0, 1fr); gap: 4px 12px; align-items: baseline; padding: 9px 14px; border-bottom: 1px solid var(--line); transition: background 0.4s; }
-.entry:hover { background: rgba(255, 255, 255, 0.02); }
-.entry.flash { background: var(--amber-dim); }
-.entry .dot { align-self: center; }
-.entry time { font: 400 12.5px var(--font-num); color: var(--muted); }
-.entry .sector { font: 600 11px var(--font-label); color: var(--muted); border: 1px solid var(--line-2); border-radius: 2px; padding: 0 6px; justify-self: start; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+/* Reception log */
+.day { font: 500 12px var(--font-mono); color: var(--muted); padding: 7px 16px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.entry { display: grid; grid-template-columns: 3.6em 3em minmax(0, 1fr); gap: 2px 14px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--line); transition: background 0.4s; }
+.entry.flash { background: var(--out-soft); }
+.entry .sig { display: flex; align-items: center; min-height: 20px; }
+.entry time { font: 400 12.5px var(--font-mono); color: var(--muted); }
 .entry .body { min-width: 0; }
-.entry h3 { margin: 0; font-size: 14.5px; font-weight: 700; line-height: 1.55; overflow-wrap: anywhere; }
+.entry h3 { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; overflow-wrap: anywhere; }
+.entry.out h3 { font-weight: 700; }
 .entry h3 a { text-decoration: none; }
-.entry h3 a:hover { text-decoration: underline; text-decoration-color: var(--phosphor); }
-.entry.covered h3 { font-weight: 400; color: #b5c6cf; }
-.entry .sub { margin: 1px 0 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.entry h3 a:hover { text-decoration: underline; text-decoration-color: var(--wave); }
+.entry .sub { margin: 2px 0 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
 .entry .sub a { color: var(--muted); }
-.entry .flag { font: 600 10.5px var(--font-label); padding: 0 5px; border-radius: 2px; margin-right: 6px; }
-.flag.uncovered { color: var(--amber); border: 1px solid rgba(255, 181, 71, 0.5); }
-.flag.pick { color: var(--phosphor); border: 1px solid rgba(95, 216, 198, 0.5); }
-.empty { padding: 26px 14px; color: var(--muted); text-align: center; }
-.more { display: block; width: 100%; padding: 12px; border: 0; background: var(--panel-2); color: var(--phosphor); font: 600 13px var(--font-label); cursor: pointer; }
+.entry .sector { font-size: 11px; color: var(--wave); background: var(--wave-soft); border-radius: 4px; padding: 0 6px; margin-right: 6px; white-space: nowrap; }
+.entry .flag { font-size: 11px; font-weight: 700; color: var(--sheet); background: var(--wave); border-radius: 4px; padding: 0 6px; margin-right: 6px; }
+.empty { padding: 26px 16px; color: var(--muted); text-align: center; }
+.more { display: block; width: 100%; padding: 12px; border: 0; background: var(--bg); color: var(--wave); font-weight: 500; cursor: pointer; }
 
-/* About + channels */
+/* About + stations */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); }
 .about > div { padding: 18px 20px; }
-.about > div + div { border-left: 1px solid var(--line-2); }
-.about h2 { margin: 6px 0 0; font: 700 20px/1.5 var(--font-label); }
-.about p { margin: 0 0 10px; font-size: 13.5px; color: var(--muted); }
+.about > div + div { border-left: 1px solid var(--line); }
+.about h2 { margin: 6px 0 0; font-size: 22px; line-height: 1.5; }
+.about h2 .out { color: var(--out); }
+.about p { margin: 0 0 10px; font-size: 14px; color: var(--muted); }
 .about p b { color: var(--ink); }
-.channels { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1px; background: var(--line); margin: 0; padding: 0; }
-.channels li { background: var(--panel); list-style: none; padding: 7px 14px; font-size: 12.5px; display: flex; gap: 8px; align-items: center; min-width: 0; }
-.channels li span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.channels .ng { color: var(--amber); }
-footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
+.stations { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); margin: 0; padding: 0; }
+.stations li { list-style: none; padding: 8px 16px; font-size: 13px; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid var(--line); min-width: 0; }
+.stations li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stations li.ng { color: var(--out); }
+footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 
 /* Report view */
 .article { padding-block: 26px 60px; }
-.article .inner { max-width: 760px; margin: 0 auto; }
-.back { display: inline-block; font: 600 12.5px var(--font-label); color: var(--phosphor); text-decoration: none; margin-bottom: 16px; }
-.article header { border-left: 3px solid var(--amber); padding: 4px 0 4px 16px; margin-bottom: 18px; }
-.article header.covered, .article header.unknown { border-left-color: var(--covered); }
-.article h1 { font: 700 clamp(22px, 3.4vw, 30px)/1.45 var(--font-label); margin: 6px 0 8px; text-wrap: balance; }
-.article .meta { font-size: 12.5px; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; }
-.article .lead { font-size: 17px; line-height: 1.9; margin: 0 0 6px; }
-.article h2 { font: 700 13px var(--font-label); letter-spacing: 0.12em; color: var(--phosphor); margin: 30px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line-2); }
+.article .inner { max-width: 760px; margin: 0 auto; background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; padding: 22px clamp(16px, 4vw, 36px) 30px; }
+.back { display: inline-block; font-size: 13px; color: var(--wave); text-decoration: none; margin-bottom: 14px; font-weight: 500; }
+.article h1 { font-size: clamp(22px, 3.4vw, 30px); line-height: 1.45; margin: 8px 0 10px; text-wrap: balance; }
+.article .meta { font-size: 12.5px; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.article .lead { font-size: 17px; line-height: 1.9; margin: 20px 0 6px; }
+.article h2 { font-size: 16px; margin: 28px 0 8px; padding-left: 10px; border-left: 4px solid var(--wave); }
 .article p { margin: 0 0 12px; }
 .article dl { margin: 0; display: grid; gap: 10px; }
 .article dt { font-weight: 700; }
 .article dd { margin: 0; color: var(--muted); font-size: 14px; }
 .article ul.sources { padding-left: 1.2em; margin: 0; font-size: 14px; overflow-wrap: anywhere; }
-.note { margin-top: 26px; font-size: 12.5px; color: var(--muted); border: 1px solid var(--line-2); border-radius: 3px; padding: 12px 14px; background: var(--panel); }
-.orig-btn { display: inline-block; margin-top: 20px; border: 1px solid var(--phosphor); color: var(--phosphor); background: var(--phosphor-dim); padding: 7px 18px; border-radius: 3px; text-decoration: none; font: 600 13px var(--font-label); }
+.note { margin-top: 24px; font-size: 12.5px; color: var(--muted); background: var(--bg); border-radius: 8px; padding: 12px 14px; }
+.orig-btn { display: inline-block; margin-top: 20px; background: var(--wave); color: var(--sheet); padding: 7px 18px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 500; }
 
 @media (max-width: 860px) {
-  .scope { grid-template-columns: 1fr; gap: 18px; padding-top: 22px; }
-  .radar-box { max-width: 420px; }
+  .hero { grid-template-columns: 1fr; }
+  .legend { grid-template-columns: repeat(3, auto); justify-content: start; gap: 6px 16px; }
+  .gauges { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .reports { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
-  .about > div + div { border-left: 0; border-top: 1px solid var(--line-2); }
+  .about > div + div { border-left: 0; border-top: 1px solid var(--line); }
+  #cells { height: 380px; }
 }
 @media (max-width: 560px) {
-  .status { margin-left: 0; width: 100%; }
-  nav.jump { width: 100%; overflow-x: auto; }
-  .entry { grid-template-columns: 12px 3.2em minmax(0, 1fr); }
-  .entry .sector { grid-column: 3; grid-row: 1; }
-  .entry .body { grid-column: 2 / -1; }
-  .row > .label { width: 100%; }
+  .phone { margin-left: 0; width: 100%; justify-content: space-between; order: 3; }
+  .legend { grid-template-columns: 1fr; }
+  .entry { grid-template-columns: 3.4em minmax(0, 1fr); }
+  .entry time { grid-column: 2; grid-row: 1; }
+  .entry .body { grid-column: 1 / -1; }
+  .row > .cap { width: 100%; }
+  #cells { height: 460px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .live::before { animation: none; }
-  .entry { transition: none; }
-}
+@media (prefers-reduced-motion: reduce) { .entry { transition: none; } }
 </style>
 </head>
 <body>
 <div class="statusbar">
   <div class="wrap">
-    <a class="brand" href="#"><b>ニュースレーダー</b><span>NEWS RADAR</span></a>
-    <div class="status">
-      <span class="live" id="live">接続中</span>
-      <span id="scan">最終スキャン --:--</span>
+    <a class="brand" href="#">
+      <svg viewBox="0 0 26 26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M13 11 L8.5 24 M13 11 L17.5 24 M10 19.5 h6" />
+        <circle cx="13" cy="9" r="1.8" fill="currentColor" stroke="none" />
+        <path d="M9.2 5.2 a5.4 5.4 0 0 0 0 7.6 M16.8 5.2 a5.4 5.4 0 0 1 0 7.6" stroke="var(--wave)" />
+        <path d="M6.2 2.4 a9.4 9.4 0 0 0 0 13.2 M19.8 2.4 a9.4 9.4 0 0 1 0 13.2" stroke="var(--out)" />
+      </svg>
+      <span><b>ニュースレーダー</b><br><small>NEWS RADAR</small></span>
+    </a>
+    <div class="phone">
+      <span class="bars" id="sb-bars" data-n="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="net">NEWS</span>
+      <span id="scan">--:--</span>
+      <span class="battery" title="稼働中の情報源"><span class="cell"><i id="sb-batt" style="width:100%"></i></span><span id="sb-feeds" class="mono">--</span></span>
     </div>
     <nav class="jump" aria-label="ページ内リンク">
-      <a href="#log" data-cover="uncovered">TV未報道</a>
-      <a href="#log" data-cover="all">全記録</a>
+      <a href="#log" data-cover="uncovered">テレビ圏外</a>
+      <a href="#log" data-cover="all">すべての受信</a>
       <a href="#log" data-kind="通信">通信</a>
-      <a href="#about">このレーダーについて</a>
+      <a href="#about">このサイトについて</a>
+      <a href="#stations">基地局（情報源）</a>
     </nav>
   </div>
 </div>
 
 <div id="home">
-  <div class="wrap scope">
-    <div class="radar-box">
-      <canvas id="radar" role="img" aria-label="レーダー表示。点は直近24時間の記事。中心に近いほど新しく、オレンジの点はテレビで見当たらない記事。"></canvas>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="cap">Out-of-TV-coverage news</div>
+        <h1>テレビの<span class="out">「圏外」</span>にあるニュースを、受信する。</h1>
+        <p>海外メディアや専門メディアの記事を1時間ごとに受信し、NHK・民放各局のニュースサイトの見出しと照らし合わせています。テレビで見当たらない話題は「圏外」として光ります。</p>
+      </div>
+      <div class="legend" aria-label="凡例">
+        <span><i class="hexicon out"></i>テレビ圏外（未報道）</span>
+        <span><i class="hexicon in"></i>テレビ圏内（報道あり）</span>
+        <span><i class="hexicon unknown"></i>未照合（英語の記事）</span>
+      </div>
+    </section>
+
+    <div class="map">
+      <div class="map-head"><b>セルマップ ・ 直近24時間</b><span class="cap" id="map-note">1セル＝記事1本 ・ 基地局に近いほど新しい</span></div>
+      <canvas id="cells" role="img" aria-label="セルマップ。六角形のセル1つが直近24時間の記事1本。分類ごとに基地局の周りに並び、オレンジのセルはテレビで見当たらない記事。"></canvas>
       <div class="tip" id="tip" hidden></div>
     </div>
-    <div class="intro">
-      <div class="label">TV に映らないニュースを探知</div>
-      <h1>テレビの外で起きている<br><em>ニュース</em>を、毎時スキャン。</h1>
-      <p>海外メディアや専門メディアの記事を集め、NHK・民放各局のニュースサイトの見出しと照らし合わせています。同じ話題が見つからない記事は、オレンジの点で映ります。中心に近いほど新しい記事です。</p>
-      <div class="gauges">
-        <div class="gauge hot"><span class="label">TV未報道</span><b class="num" id="g-unc">—</b><small>テレビ局サイトで見当たらない</small></div>
-        <div class="gauge"><span class="label">24時間の検出</span><b class="num" id="g-day">—</b><small>レーダー上の記事</small></div>
-        <div class="gauge"><span class="label">照合したTV見出し</span><b class="num" id="g-tv">—</b><small>NHK・民放5局</small></div>
-        <div class="gauge"><span class="label">稼働中の情報源</span><b class="num" id="g-feeds">—</b><small>取得できた数 / 全体</small></div>
-      </div>
-      <div class="legend">
-        <span><i class="dot uncovered"></i>TV未報道</span>
-        <span><i class="dot covered"></i>TV報道あり</span>
-        <span><i class="dot unknown"></i>未照合（英語）</span>
-        <span data-ai><i class="dot pick"></i>AI解析済み</span>
-      </div>
-    </div>
-  </div>
 
-  <div class="wrap">
-    <section class="block panel" id="reports" data-ai>
-      <div class="panel-head"><h2><span class="label">REPORTS</span>AI 解析レポート</h2><span class="label">事実・背景・影響</span></div>
+    <div class="gauges">
+      <div class="gauge out"><span class="cap">テレビ圏外</span><b id="g-out">—</b><small>テレビ局サイトで見当たらない記事</small></div>
+      <div class="gauge"><span class="cap">24時間の受信</span><b id="g-day">—</b><small>セルマップ上の記事</small></div>
+      <div class="gauge"><span class="cap">照合したTV見出し</span><b id="g-tv">—</b><small>NHK・民放5局</small></div>
+      <div class="gauge"><span class="cap">稼働中の基地局</span><b id="g-feeds">—</b><small>情報源（取得できた数 / 全体）</small></div>
+    </div>
+
+    <section class="sheet" id="reports" data-ai>
+      <div class="sheet-head"><h2>AI 解説レポート</h2><span class="cap">事実・背景・影響</span></div>
       <div class="reports" id="report-grid"></div>
     </section>
 
-    <section class="block panel" id="log">
-      <div class="panel-head"><h2><span class="label">LOG</span>検出記録</h2><span class="label" id="log-count"></span></div>
+    <section class="sheet" id="log">
+      <div class="sheet-head">
+        <h2><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 15h2.5V12H2zM6.5 15H9V9H6.5zM11 15h2.5V6H11zM15.5 15H16V3h-.5z"/></svg>受信ログ</h2>
+        <span class="cap" id="log-count"></span>
+      </div>
       <div class="controls">
         <div class="row">
-          <span class="label">表示</span>
+          <span class="cap">表示</span>
           <div class="seg" role="group" aria-label="テレビ報道の有無">
-            <button type="button" data-cover="uncovered" aria-pressed="true"><i class="dot uncovered"></i>TV未報道</button>
+            <button type="button" data-cover="uncovered" aria-pressed="true"><i class="hexicon out"></i>テレビ圏外</button>
             <button type="button" data-cover="all" aria-pressed="false">すべて</button>
-            <button type="button" data-cover="covered" aria-pressed="false"><i class="dot covered"></i>TV報道あり</button>
+            <button type="button" data-cover="covered" aria-pressed="false"><i class="hexicon in"></i>圏内</button>
           </div>
           <div class="search"><input id="q" type="search" placeholder="キーワードで絞り込む" aria-label="キーワードで絞り込む"></div>
         </div>
@@ -269,26 +301,27 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
           <button type="button" class="cancel" id="topic-cancel">やめる</button>
         </form>
       </div>
-      <div class="log" id="list"></div>
+      <div id="list"></div>
     </section>
 
-    <section class="block panel" id="about">
+    <section class="sheet" id="about">
       <div class="about">
         <div>
-          <span class="label">ABOUT</span>
-          <h2>テレビの外にも、<br>ニュースはある。</h2>
+          <span class="cap">About</span>
+          <h2>テレビの<span class="out">圏外</span>にも、<br>ニュースはある。</h2>
         </div>
         <div>
           <p>テレビのニュースは放送時間が限られていて、映像があるか、国内の視聴者に身近かどうかで項目が選ばれます。世界で起きている大事な出来事の多くは、テレビには映りません。</p>
-          <p>このレーダーは1時間ごとに記事を集め、<b>国内のテレビ局のニュースサイトに同じ話題があるか</b>を見出しの重なりで確かめます。見つからない記事が「TV未報道」です。判定は推定なので、気になる記事は元の記事やほかの報道でも確かめてください。</p>
-          <p data-ai>AI 解析レポートは、Claude が元の記事やほかの報道をもとに書いたものです。間違いを含むことがあります。</p>
+          <p>このサイトは1時間ごとに記事を受信し、<b>国内のテレビ局のニュースサイトに同じ話題があるか</b>を見出しの重なりで確かめます。見つからない記事が「テレビ圏外」です。アンテナの本数は、テレビ局の見出しとの一致の強さを表します。</p>
+          <p>判定は推定です。気になる記事は、元の記事やほかの報道でも確かめてください。</p>
+          <p data-ai>AI 解説レポートは、Claude が元の記事やほかの報道をもとに書いたものです。間違いを含むことがあります。</p>
         </div>
       </div>
     </section>
 
-    <section class="block panel">
-      <div class="panel-head"><h2><span class="label">CHANNELS</span>情報源の状態</h2><span class="label" id="ch-count"></span></div>
-      <ul class="channels" id="feeds"></ul>
+    <section class="sheet" id="stations">
+      <div class="sheet-head"><h2>基地局（情報源）の状態</h2><span class="cap" id="st-count"></span></div>
+      <ul class="stations" id="feeds"></ul>
     </section>
   </div>
 </div>
@@ -327,148 +360,179 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
   const timeFmt = new Intl.DateTimeFormat("ja-JP", { hour: "2-digit", minute: "2-digit", ...tz });
   const fullFmt = new Intl.DateTimeFormat("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", ...tz });
   const status = (a) => a.tv_match === "unknown" ? "unknown" : a.tv_match ? "covered" : "uncovered";
-  const STATUS_LABEL = { uncovered: "TV未報道", covered: "TV報道あり", unknown: "未照合" };
   const sectorOf = (a) => a.category || KIND_LABEL[a.kind] || a.kind;
   const titleOf = (a) => a.detail?.headline || a.title_ja || a.title;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ---------------- Radar ----------------
-  // Each blip is an article from the last 24 hours: its sector sets the angle, its age sets the radius.
-  const canvas = $("radar"), ctx = canvas.getContext("2d"), tip = $("tip");
-  const rootStyle = getComputedStyle(document.documentElement);
-  const css = (name) => rootStyle.getPropertyValue(name).trim();
-  const ringR = (hours) => 0.1 + 0.86 * Math.sqrt(hours / 24);
-  let blips = [], sectors = [], size = 0, sweep = -Math.PI / 2, hover = null;
+  // Signal bars for "how strongly TV covered it": 圏外 when not found, otherwise 1–4 bars by match score.
+  function signal(a) {
+    const s = status(a);
+    if (s === "uncovered") return el("span", { class: "kengai", title: "テレビ局サイトで見当たらない" }, "圏外");
+    if (s === "unknown") return el("span", { class: "bars", "data-n": "0", title: "英語のため未照合" }, el("i"), el("i"), el("i"), el("i"));
+    const n = Math.max(1, Math.min(4, Math.round(((a.tv_match.score || 0.32) - 0.2) / 0.15)));
+    return el("span", { class: "bars", "data-n": String(n), title: `テレビ局サイトとの一致度 ${Math.round((a.tv_match.score || 0) * 100)}%` }, el("i"), el("i"), el("i"), el("i"));
+  }
 
-  function hash(s) { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967295; }
+  // ---------------- Cell map ----------------
+  // Articles from the last 24 h become hex cells arranged in rings around one base station per sector,
+  // newest closest to the station.
+  const canvas = $("cells"), ctx = canvas.getContext("2d"), tip = $("tip");
+  const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let clusters = [], cells = [], W = 0, H = 0, hover = null, t0 = performance.now();
+  const SQ3 = Math.sqrt(3);
+  const DIRS = [[1, 0], [1, -1], [0, -1], [-1, 0], [-1, 1], [0, 1]];
 
-  function layoutBlips() {
+  function spiral(n) {
+    // Axial coordinates in ring order around (0,0), skipping the centre (the station sits there).
+    const out = [];
+    for (let k = 1; out.length < n; k++) {
+      let q = DIRS[4][0] * k, r = DIRS[4][1] * k;
+      for (let side = 0; side < 6 && out.length < n; side++)
+        for (let step = 0; step < k && out.length < n; step++) { out.push([q, r]); q += DIRS[side][0]; r += DIRS[side][1]; }
+    }
+    return out;
+  }
+  const ringsFor = (n) => { let k = 0; while (3 * k * (k + 1) < n) k++; return Math.max(k, 1); };
+
+  function buildClusters() {
     const now = Date.now();
     const recent = state.news.articles.filter((a) => { const age = now - new Date(a.published); return age < 24 * 3600e3 && age > -3600e3; });
-    sectors = [...new Set(recent.map(sectorOf))];
-    const span = (Math.PI * 2) / Math.max(sectors.length, 1);
-    blips = recent.map((a) => ({
-      a, s: status(a), lit: 0,
-      angle: -Math.PI / 2 + span * sectors.indexOf(sectorOf(a)) + span * (0.12 + 0.76 * hash(a.id)),
-      r: ringR(Math.max(0, now - new Date(a.published)) / 3600e3),
-    }));
-  }
-
-  function resize() {
-    const box = canvas.parentElement.getBoundingClientRect();
-    if (!box.width) return;
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    size = box.width;
-    canvas.width = size * dpr; canvas.height = size * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    draw();
-  }
-
-  function draw() {
-    if (!size) return;
-    const c = size / 2, R = c - 18;
-    const phos = css("--phosphor"), amber = css("--amber"), covered = css("--covered"), line = css("--line-2"), muted = css("--muted");
-    ctx.clearRect(0, 0, size, size);
-    const bg = ctx.createRadialGradient(c, c, 0, c, c, R);
-    bg.addColorStop(0, "rgba(95,216,198,0.10)"); bg.addColorStop(1, "rgba(15,28,37,0.92)");
-    ctx.fillStyle = bg; ctx.beginPath(); ctx.arc(c, c, R, 0, Math.PI * 2); ctx.fill();
-
-    ctx.strokeStyle = line; ctx.lineWidth = 1;
-    for (const h of [6, 12, 18, 24]) { ctx.beginPath(); ctx.arc(c, c, R * ringR(h), 0, Math.PI * 2); ctx.stroke(); }
-    ctx.fillStyle = muted; ctx.font = `500 10px ${css("--font-num")}`; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-    for (const h of [6, 12, 24]) ctx.fillText(`${h}h`, c + 4, c - R * ringR(h) + 12);
-
-    const span = (Math.PI * 2) / Math.max(sectors.length, 1);
-    ctx.font = `600 11px ${css("--font-label")}`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    sectors.forEach((s, i) => {
-      const a0 = -Math.PI / 2 + span * i;
-      ctx.strokeStyle = line; ctx.beginPath(); ctx.moveTo(c, c); ctx.lineTo(c + Math.cos(a0) * R, c + Math.sin(a0) * R); ctx.stroke();
-      const am = a0 + span / 2;
-      ctx.fillStyle = phos; ctx.globalAlpha = 0.8;
-      ctx.fillText(s, c + Math.cos(am) * (R + 9), c + Math.sin(am) * (R + 9));
-      ctx.globalAlpha = 1;
+    const groups = new Map();
+    for (const a of recent) { const s = sectorOf(a); if (!groups.has(s)) groups.set(s, []); groups.get(s).push(a); }
+    clusters = [...groups.entries()].sort((x, y) => y[1].length - x[1].length).map(([name, list]) => {
+      list.sort((x, y) => new Date(y.published) - new Date(x.published));
+      return { name, list, k: ringsFor(list.length), pos: spiral(list.length) };
     });
+    return recent.length;
+  }
 
-    if (!reduceMotion) {
-      const trail = 0.7;
-      for (let i = 0; i < 14; i++) {
-        const a1 = sweep - trail * (i / 14), a2 = sweep - trail * ((i + 1) / 14);
-        ctx.fillStyle = `rgba(95,216,198,${0.22 * (1 - i / 14)})`;
-        ctx.beginPath(); ctx.moveTo(c, c); ctx.arc(c, c, R, a2, a1); ctx.closePath(); ctx.fill();
-      }
-      ctx.strokeStyle = phos; ctx.globalAlpha = 0.85; ctx.lineWidth = 1.5;
-      ctx.beginPath(); ctx.moveTo(c, c); ctx.lineTo(c + Math.cos(sweep) * R, c + Math.sin(sweep) * R); ctx.stroke();
-      ctx.globalAlpha = 1; ctx.lineWidth = 1;
+  function layout() {
+    const rect = canvas.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cells = [];
+    if (!clusters.length) return;
+    // Try 1..n rows; keep the arrangement that gives the biggest hexes.
+    let best = null;
+    for (let rows = 1; rows <= clusters.length; rows++) {
+      const perRow = Math.ceil(clusters.length / rows);
+      const rowsList = [];
+      for (let i = 0; i < clusters.length; i += perRow) rowsList.push(clusters.slice(i, i + perRow));
+      const rowW = rowsList.map((r) => r.reduce((s, c) => s + (2 * c.k + 1) * SQ3 + 1.4, 0));
+      const rowH = rowsList.map((r) => Math.max(...r.map((c) => (2 * c.k + 1) * 1.5 + 2.2)));
+      const size = Math.min((W - 24) / Math.max(...rowW), (H - 16) / rowH.reduce((s, h) => s + h, 0));
+      if (!best || size > best.size) best = { size, rowsList, rowW, rowH };
     }
-
-    const order = [...blips].sort((x, y) => (x.s === "uncovered") - (y.s === "uncovered"));
-    for (const b of order) {
-      const x = c + Math.cos(b.angle) * b.r * R, y = c + Math.sin(b.angle) * b.r * R;
-      b.x = x; b.y = y;
-      const glow = reduceMotion ? 0.7 : b.lit, big = hover === b;
-      if (b.s === "uncovered") {
-        ctx.fillStyle = amber; ctx.shadowColor = amber; ctx.shadowBlur = 4 + 12 * glow;
-        ctx.globalAlpha = 0.5 + 0.5 * glow;
-        ctx.beginPath(); ctx.arc(x, y, big ? 6 : 3.6, 0, Math.PI * 2); ctx.fill();
-      } else {
-        ctx.shadowBlur = 0; ctx.globalAlpha = 0.75;
-        ctx.beginPath(); ctx.arc(x, y, big ? 5 : 2.6, 0, Math.PI * 2);
-        if (b.s === "covered") { ctx.fillStyle = covered; ctx.fill(); } else { ctx.strokeStyle = covered; ctx.stroke(); }
+    const { size, rowsList, rowW, rowH } = best;
+    const s = Math.min(size, 26);
+    let y = (H - rowH.reduce((a, h) => a + h, 0) * s) / 2;
+    rowsList.forEach((row, ri) => {
+      let x = (W - rowW[ri] * s) / 2;
+      const cy = y + (rowH[ri] * s) / 2 - s * 0.4;
+      for (const c of row) {
+        const w = ((2 * c.k + 1) * SQ3 + 1.4) * s;
+        c.cx = x + w / 2; c.cy = cy; c.size = s;
+        c.pos.forEach(([q, r], i) => {
+          cells.push({ a: c.list[i], s: status(c.list[i]), x: c.cx + s * SQ3 * (q + r / 2), y: c.cy + s * 1.5 * r, size: s, c });
+        });
+        x += w;
       }
-      ctx.shadowBlur = 0;
-      if (b.a.picked) { ctx.strokeStyle = phos; ctx.globalAlpha = 0.9; ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.stroke(); }
+      y += rowH[ri] * s;
+    });
+    draw(performance.now());
+  }
+
+  function hexPath(x, y, r) {
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) { const ang = Math.PI / 180 * (60 * i - 30); const px = x + r * Math.cos(ang), py = y + r * Math.sin(ang); i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
+    ctx.closePath();
+  }
+
+  function drawStation(c, colors) {
+    const s = c.size, x = c.cx, y = c.cy;
+    ctx.strokeStyle = colors.ink; ctx.lineWidth = Math.max(1.2, s * 0.09); ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(x, y - s * 0.35); ctx.lineTo(x - s * 0.42, y + s * 0.62); ctx.moveTo(x, y - s * 0.35); ctx.lineTo(x + s * 0.42, y + s * 0.62);
+    ctx.moveTo(x - s * 0.24, y + s * 0.22); ctx.lineTo(x + s * 0.24, y + s * 0.22); ctx.stroke();
+    ctx.fillStyle = colors.wave; ctx.beginPath(); ctx.arc(x, y - s * 0.42, s * 0.13, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = colors.ink; ctx.font = `500 ${Math.max(11, Math.min(13, s * 0.55))}px ${colors.font}`; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    const out = c.list.filter((a) => status(a) === "uncovered").length;
+    ctx.fillText(`${c.name}`, x, c.cy + (c.k * 1.5 + 1.05) * s);
+    ctx.fillStyle = colors.muted; ctx.font = `400 11px ${colors.mono}`;
+    ctx.fillText(`圏外 ${out} / ${c.list.length}`, x, c.cy + (c.k * 1.5 + 1.05) * s + 16);
+  }
+
+  function draw(now) {
+    if (!W) return;
+    const colors = { out: cssVar("--out"), inn: cssVar("--cell-in"), edge: cssVar("--cell-in-edge"), unk: cssVar("--unknown"), wave: cssVar("--wave"), ink: cssVar("--ink"), muted: cssVar("--muted"), sheet: cssVar("--sheet"), font: cssVar("--font-body"), mono: cssVar("--font-mono") };
+    ctx.clearRect(0, 0, W, H);
+    const period = 3200;
+    // Radio waves from each station.
+    for (const c of clusters) {
+      if (c.cx == null) continue;
+      const maxR = (c.k + 0.9) * c.size * SQ3;
+      const phases = reduceMotion ? [0.55] : [((now - t0) % period) / period, (((now - t0) + period / 2) % period) / period];
+      for (const p of phases) {
+        ctx.strokeStyle = colors.wave; ctx.globalAlpha = reduceMotion ? 0.15 : 0.35 * (1 - p); ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.arc(c.cx, c.cy, maxR * p, 0, Math.PI * 2); ctx.stroke();
+      }
       ctx.globalAlpha = 1;
     }
-    ctx.fillStyle = phos; ctx.beginPath(); ctx.arc(c, c, 3, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = phos; ctx.globalAlpha = 0.55; ctx.beginPath(); ctx.arc(c, c, R, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
-  }
-
-  let last = performance.now();
-  function tick(t) {
-    const dt = Math.min(t - last, 100) / 1000; last = t;
-    const step = dt * (Math.PI * 2 / 6); // one turn every 6 seconds
-    const from = sweep;
-    sweep += step;
-    for (const b of blips) {
-      let d = b.angle - from; d = ((d % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
-      b.lit = d <= step ? 1 : Math.max(0, b.lit - dt / 4);
+    for (const cell of cells) {
+      const r = cell.size * 0.94 * (hover === cell ? 1.08 : 1);
+      let lift = 0;
+      if (!reduceMotion && cell.s === "uncovered") {
+        const dist = Math.hypot(cell.x - cell.c.cx, cell.y - cell.c.cy) / ((cell.c.k + 0.9) * cell.size * SQ3);
+        const p = ((now - t0) % period) / period;
+        lift = Math.max(0, 1 - Math.abs(p - dist) * 6);
+      }
+      hexPath(cell.x, cell.y, r);
+      if (cell.s === "uncovered") {
+        ctx.fillStyle = colors.out; ctx.globalAlpha = 0.78 + 0.22 * lift; ctx.fill();
+        ctx.globalAlpha = 1;
+      } else if (cell.s === "covered") {
+        ctx.fillStyle = colors.inn; ctx.fill(); ctx.strokeStyle = colors.edge; ctx.lineWidth = 1; ctx.stroke();
+      } else {
+        ctx.strokeStyle = colors.unk; ctx.lineWidth = 1.4; ctx.setLineDash([3, 2]); ctx.stroke(); ctx.setLineDash([]);
+      }
+      if (cell.a.picked) { hexPath(cell.x, cell.y, r * 0.45); ctx.fillStyle = colors.sheet; ctx.fill(); }
+      if (hover === cell) { hexPath(cell.x, cell.y, r); ctx.strokeStyle = colors.ink; ctx.lineWidth = 2; ctx.stroke(); }
     }
-    if (sweep > Math.PI * 1.5) sweep -= Math.PI * 2;
-    if (!$("home").hidden) draw();
-    requestAnimationFrame(tick);
+    for (const c of clusters) if (c.cx != null) drawStation(c, colors);
   }
 
-  function nearest(ev) {
+  function loop(now) { if (!$("home").hidden) draw(now); requestAnimationFrame(loop); }
+
+  function cellAt(ev) {
     const r = canvas.getBoundingClientRect();
     const mx = ev.clientX - r.left, my = ev.clientY - r.top;
-    let best = null, bd = 16 * 16;
-    for (const b of blips) { const d = (b.x - mx) ** 2 + (b.y - my) ** 2; if (d < bd) { bd = d; best = b; } }
-    return { best, mx, my };
+    let best = null, bd = Infinity;
+    for (const c of cells) { const d = (c.x - mx) ** 2 + (c.y - my) ** 2; if (d < bd) { bd = d; best = c; } }
+    return best && bd <= (best.size * 0.95) ** 2 ? best : null;
   }
   canvas.addEventListener("mousemove", (ev) => {
-    const { best, mx, my } = nearest(ev);
-    hover = best;
-    if (best) {
+    const c = cellAt(ev);
+    hover = c;
+    if (c) {
       tip.hidden = false;
-      tip.style.left = `${Math.min(mx, size - 230)}px`; tip.style.top = `${my}px`;
-      tip.style.borderLeftColor = best.s === "uncovered" ? "" : css("--covered");
-      tip.replaceChildren(el("span", { class: "label" }, `${sectorOf(best.a)} ・ ${timeFmt.format(new Date(best.a.published))} ・ ${STATUS_LABEL[best.s]}`), titleOf(best.a));
+      tip.style.left = `${Math.max(140, Math.min(c.x, W - 140))}px`; tip.style.top = `${c.y + 46}px`;
+      tip.replaceChildren(el("span", { class: "cap" }, `${sectorOf(c.a)} ・ ${timeFmt.format(new Date(c.a.published))} ・ ${{ uncovered: "テレビ圏外", covered: "圏内", unknown: "未照合" }[c.s]}`), titleOf(c.a));
     } else tip.hidden = true;
-    if (reduceMotion) draw();
+    if (reduceMotion) draw(performance.now());
   });
-  canvas.addEventListener("mouseleave", () => { hover = null; tip.hidden = true; if (reduceMotion) draw(); });
+  canvas.addEventListener("mouseleave", () => { hover = null; tip.hidden = true; if (reduceMotion) draw(performance.now()); });
   canvas.addEventListener("click", (ev) => {
-    const { best } = nearest(ev);
-    if (!best) return;
-    if (state.picks.some((p) => p.id === best.a.id)) { location.hash = `#article/${best.a.id}`; return; }
-    focusEntry(best.a);
+    const c = cellAt(ev);
+    if (!c) return;
+    if (state.picks.some((p) => p.id === c.a.id)) { location.hash = `#article/${c.a.id}`; return; }
+    focusEntry(c.a);
   });
 
   function focusEntry(a) {
     if (!filtered().includes(a)) { state.cover = "all"; state.kind = null; state.topic = null; state.q = ""; $("q").value = ""; }
     renderFilters();
-    const idx = filtered().indexOf(a);
-    state.limit = Math.max(PAGE, idx + 1);
+    state.limit = Math.max(PAGE, filtered().indexOf(a) + 1);
     renderList();
     const row = document.querySelector(`[data-id="${a.id}"]`);
     if (!row) return;
@@ -476,7 +540,7 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
     row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 1600);
   }
 
-  // ---------------- Detection log ----------------
+  // ---------------- Reception log ----------------
   const allTopics = () => [...(state.news?.topics || []), ...state.customTopics.map((t) => ({ ...t, custom: true }))];
   function keywordMatcher(words) {
     const parts = (words || []).map((w) => w.trim()).filter(Boolean).map((w) => {
@@ -506,17 +570,14 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
     const s = status(a);
     const hasReport = state.picks.some((p) => p.id === a.id);
     const href = hasReport ? `#article/${a.id}` : a.link;
-    const sub = el("p", { class: "sub" }, a.outlet, a.title_ja ? ` ／ ${a.title}` : null);
+    const sub = el("p", { class: "sub" }, el("span", { class: "sector" }, sectorOf(a)), a.outlet, a.title_ja ? ` ／ ${a.title}` : null);
     if (s === "covered") sub.append(" ／ TV：", el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, `${a.tv_match.outlet}「${a.tv_match.title}」`));
     if (s === "unknown") sub.append(" ／ 英語のため未照合");
-    return el("div", { class: `entry ${s}`, "data-id": a.id },
-      el("i", { class: `dot ${s}`, title: STATUS_LABEL[s] }),
+    return el("div", { class: `entry ${s === "uncovered" ? "out" : s}`, "data-id": a.id },
+      el("span", { class: "sig" }, signal(a)),
       el("time", { datetime: a.published }, timeFmt.format(new Date(a.published))),
-      el("span", { class: "sector" }, sectorOf(a)),
       el("div", { class: "body" },
-        el("h3", {},
-          s === "uncovered" ? el("span", { class: "flag uncovered" }, "TV未報道") : null,
-          hasReport ? el("span", { class: "flag pick" }, "解析済み") : null,
+        el("h3", {}, hasReport ? el("span", { class: "flag" }, "AI解説") : null,
           el("a", { href, target: hasReport ? null : "_blank", rel: hasReport ? null : "noopener" }, a.title_ja || a.title)),
         sub));
   }
@@ -525,7 +586,7 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
     box.replaceChildren();
     const list = filtered();
     $("log-count").textContent = `${list.length} 件`;
-    if (!list.length) { box.append(el("div", { class: "empty" }, "条件に合う記録はありません。表示を「すべて」にするか、絞り込みを外してください。")); return; }
+    if (!list.length) { box.append(el("div", { class: "empty" }, "条件に合う記事はありません。表示を「すべて」にするか、絞り込みを外してください。")); return; }
     let day = null;
     for (const a of list.slice(0, state.limit)) {
       const d = dayFmt.format(new Date(a.published));
@@ -537,11 +598,11 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
   function renderFilters() {
     document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cover === state.cover)));
     const kinds = [...new Set(state.news.articles.map((a) => a.kind))];
-    $("kinds").replaceChildren(el("span", { class: "label" }, "情報源"), ...[null, ...kinds].map((k) => el("button", {
+    $("kinds").replaceChildren(el("span", { class: "cap" }, "情報源"), ...[null, ...kinds].map((k) => el("button", {
       type: "button", class: "chip", "aria-pressed": String(state.kind === k),
       onclick: () => { state.kind = k; store.set("nr.kind", k); refreshList(); } }, k ? (KIND_LABEL[k] || k) : "すべて")));
     const row = $("topics");
-    row.replaceChildren(el("span", { class: "label" }, "トピック"), el("button", { type: "button", class: "chip", "aria-pressed": String(!state.topic),
+    row.replaceChildren(el("span", { class: "cap" }, "トピック"), el("button", { type: "button", class: "chip", "aria-pressed": String(!state.topic),
       onclick: () => { state.topic = null; store.set("nr.topic", null); refreshList(); } }, "指定なし"));
     for (const t of allTopics()) {
       const chip = el("button", { type: "button", class: "chip", "aria-pressed": String(state.topic === t.name), title: t.keywords.join(", "),
@@ -562,20 +623,18 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
   function renderReports() {
     document.body.classList.toggle("ai", state.picks.length > 0);
     $("report-grid").replaceChildren(...state.picks.slice(0, 9).map((p) => el("a", { class: "report", href: `#article/${p.id}` },
-      el("span", { class: "label" }, `${sectorOf(p)} ・ ${fullFmt.format(new Date(p.picked_at))}`),
+      el("span", { class: "cap" }, `${sectorOf(p)} ・ ${fullFmt.format(new Date(p.picked_at))}`),
       el("h3", {}, titleOf(p)),
       p.detail?.lead ? el("p", {}, p.detail.lead) : null)));
   }
   function renderArticle(id) {
     const a = state.picks.find((p) => p.id === id);
     const view = $("article-view");
-    const back = el("a", { class: "back", href: "#" }, "← レーダーに戻る");
+    const back = el("a", { class: "back", href: "#" }, "← セルマップに戻る");
     if (!a) { view.replaceChildren(el("div", { class: "inner" }, back, el("div", { class: "empty" }, "このレポートは見つかりませんでした。掲載期間が過ぎた可能性があります。"))); return; }
     const d = a.detail, s = status(a);
-    const kids = [back, el("header", { class: s },
-      el("span", { class: "label" }, `${sectorOf(a)} ・ ${STATUS_LABEL[s]}`),
-      el("h1", {}, titleOf(a)),
-      el("div", { class: "meta" }, el("span", {}, `元記事：${a.outlet}`), el("span", { class: "num" }, fullFmt.format(new Date(a.published)))))];
+    const kids = [back, el("span", { class: "cap" }, sectorOf(a)), el("h1", {}, titleOf(a)),
+      el("div", { class: "meta" }, signal(a), el("span", {}, `元記事：${a.outlet}`), el("span", { class: "mono" }, fullFmt.format(new Date(a.published))))];
     if (d) {
       kids.push(el("p", { class: "lead" }, d.lead));
       for (const [h, body] of [["なぜ起きたのか", d.background], ["私たちの暮らしとの関わり", d.impact], ["今後の注目点", d.outlook]]) {
@@ -597,10 +656,11 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
     const m = location.hash.match(/^#article\/([\w-]+)$/);
     $("home").hidden = !!m; $("article-view").hidden = !m;
     if (m) { renderArticle(m[1]); window.scrollTo(0, 0); }
-    else if (state.news) requestAnimationFrame(resize);
+    else if (state.news) requestAnimationFrame(layout);
   }
   window.addEventListener("hashchange", route);
-  window.addEventListener("resize", () => { if (!$("home").hidden) resize(); });
+  let rTimer;
+  window.addEventListener("resize", () => { clearTimeout(rTimer); rTimer = setTimeout(() => { if (!$("home").hidden && state.news) layout(); }, 100); });
 
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a[data-cover], a[data-kind]");
@@ -629,33 +689,37 @@ footer { padding-block: 10px 48px; font-size: 12px; color: var(--muted); }
   const load = (url) => fetch(url, { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null);
   Promise.all([load("data/news.json"), load("data/picks.json")]).then(([news, picks]) => {
     if (!news || !news.generated_at) {
-      $("live").textContent = "データなし"; $("live").classList.add("stale");
-      $("list").replaceChildren(el("div", { class: "empty" }, "まだニュースを取得していません。GitHub の Actions で「Update news」を実行してください。"));
+      $("scan").textContent = "圏外"; $("sb-bars").dataset.n = "0";
+      $("list").replaceChildren(el("div", { class: "empty" }, "まだニュースを受信していません。GitHub の Actions で「Update news」を実行してください。"));
       return;
     }
     state.news = news;
     state.picks = (picks?.picks || []).filter((p) => p.detail);
     const gen = new Date(news.generated_at);
-    const stale = (Date.now() - gen) / 60000 >= 90;
-    $("scan").textContent = `最終スキャン ${timeFmt.format(gen)}`;
-    $("live").textContent = stale ? "更新が止まっています" : "稼働中";
-    $("live").classList.toggle("stale", stale);
+    const ageMin = (Date.now() - gen) / 60000;
+    $("scan").textContent = `受信 ${timeFmt.format(gen)}`;
+    // Status-bar bars weaken as the data gets older: 4 bars within 90 min, then down to 0.
+    const n = ageMin < 90 ? 4 : ageMin < 180 ? 2 : ageMin < 360 ? 1 : 0;
+    $("sb-bars").dataset.n = String(n);
+    if (n < 4) { $("scan").classList.add("warn"); $("scan").textContent += "（更新が遅れています）"; }
     $("updated").textContent = `最終更新 ${fullFmt.format(gen)}（1時間ごとに自動更新）`;
 
-    $("g-unc").textContent = news.articles.filter((a) => status(a) === "uncovered").length;
-    $("g-tv").textContent = news.tv.length;
     const ok = news.feeds.filter((f) => f.ok).length;
+    $("sb-feeds").textContent = `${ok}/${news.feeds.length}`;
+    $("sb-batt").style.width = `${Math.round((ok / Math.max(news.feeds.length, 1)) * 100)}%`;
+    $("g-out").textContent = news.articles.filter((a) => status(a) === "uncovered").length;
+    $("g-tv").textContent = news.tv.length;
     $("g-feeds").textContent = `${ok}/${news.feeds.length}`;
-    $("ch-count").textContent = `${ok} / ${news.feeds.length} 稼働`;
+    $("st-count").textContent = `${ok} / ${news.feeds.length} 稼働`;
     $("feeds").replaceChildren(...news.feeds.map((f) => el("li", { class: f.ok ? null : "ng" },
-      el("i", { class: `dot ${f.ok ? "pick" : "uncovered"}` }), el("span", {}, `${f.name}${f.ok ? `（${f.count}）` : "：取得失敗"}`))));
+      f.ok ? el("span", { class: "bars", "data-n": String(Math.max(1, Math.min(4, Math.ceil(f.count / 10)))) }, el("i"), el("i"), el("i"), el("i")) : el("span", { class: "kengai" }, "停止"),
+      el("span", {}, `${f.name}${f.ok ? `（${f.count}件）` : "：取得失敗"}`))));
 
-    layoutBlips();
-    $("g-day").textContent = blips.length;
+    $("g-day").textContent = buildClusters();
     renderReports();
     refreshList();
     route();
-    if (!reduceMotion) requestAnimationFrame((t) => { last = t; tick(t); });
+    requestAnimationFrame(loop);
   });
 })();
 </script>
