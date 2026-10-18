@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T21:44:47Z",
+ "generated_at": "2026-10-18T22:43:01Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -383,7 +383,7 @@
    "name": "ロイター日本語",
    "kind": "国際",
    "ok": true,
-   "count": 19
+   "count": 21
   },
   {
    "name": "CNN.co.jp",
@@ -431,7 +431,7 @@
    "name": "BBC World",
    "kind": "overseas",
    "ok": true,
-   "count": 29
+   "count": 28
   },
   {
    "name": "Al Jazeera",
@@ -497,7 +497,7 @@
    "name": "Googleニュース：ソフトバンク株式会社",
    "kind": "通信",
    "ok": true,
-   "count": 34
+   "count": 33
   },
   {
    "name": "Google News: Telecom",
@@ -508,28 +508,44 @@
  ],
  "featured": [
   {
-   "id": "37c2eeb5feb3e14c",
+   "id": "b07f39817730108e",
    "related": [
+    "37c2eeb5feb3e14c",
+    "1e8c1d9c9632bf29",
     "d24cd0c34bd240a0",
     "87e013c82f68240e"
    ],
-   "outlets": 3
+   "outlets": 4
   },
   {
-   "id": "15390a831057197a",
+   "id": "75c1633f67316ede",
    "related": [
-    "d9c39e79fd01fdc8",
-    "2d206905b40dd9f4"
+    "f5c62e93c4c2c587"
    ],
    "outlets": 2
   },
   {
-   "id": "ebb994487e860144",
+   "id": "997d6b067bec4e92",
    "related": [],
    "outlets": 1
   },
   {
-   "id": "67fc40085c93e250",
+   "id": "91bd248efa953b9d",
+   "related": [],
+   "outlets": 1
+  },
+  {
+   "id": "3a8fe6df2bcaae43",
+   "related": [],
+   "outlets": 1
+  },
+  {
+   "id": "570d06f526d413ef",
+   "related": [],
+   "outlets": 1
+  },
+  {
+   "id": "337995536c608362",
    "related": [],
    "outlets": 1
   },
@@ -539,29 +555,256 @@
    "outlets": 1
   },
   {
-   "id": "9479067fced4df50",
-   "related": [],
-   "outlets": 1
-  },
-  {
-   "id": "e3462432c400de74",
-   "related": [],
-   "outlets": 1
-  },
-  {
    "id": "bb197a3368970496",
    "related": [
     "973dad06501288e6"
    ],
    "outlets": 1
-  },
-  {
-   "id": "e1806f77e0a7dba3",
-   "related": [],
-   "outlets": 1
   }
  ],
  "articles": [
+  {
+   "id": "43443cceb2d766ac",
+   "title": "Canadian military base fire kills at least four, injures dozens",
+   "link": "https://www.france24.com/en/americas/20261018-canada-military-base-fire-four-dead-39-hospitalised",
+   "summary": "Four Canadian service members were killed and 39 people hospitalised after a fire broke out during military training at a base in Alberta on Saturday, officials said. Premier Danielle Smith said Sunday that at least 19 patients were in critical condition, with some suffering seve…",
+   "outlet": "© John Ulan, The Canadian Press",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/f386ca2a-cb40-11f1-afbe-638c1c1f5fd6/w:1024/p:16x9/AP26291249437617.jpg",
+   "published": "2026-10-18T22:16:51Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "997d6b067bec4e92",
+   "title": "デマと差別「許さない」 有楽町で集会 弁護士や学生らアピール",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBxcko0RF9USjNlZklyd1dUS3RCbFA3QTk0NGNTNnM5bjE0OWw0N3pKcGowZHZ0UTI1MEtyX3AtOVRwYzJFdExZZm5PbEV4akRtdUFz?oc=5",
+   "summary": "デマと差別「許さない」 有楽町で集会 弁護士や学生らアピール 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T22:11:55Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "9aad51dd922952d5",
+   "title": "Trump says suspension of Russia sanctions is to keep peace negotiations going",
+   "link": "https://www.bbc.co.uk/news/articles/c9p8gz7zx4peo?at_medium=RSS&at_campaign=rss",
+   "summary": "The US president blocked numerous sanctions on Russia two days before they were due to take effect.",
+   "outlet": "BBC World",
+   "feed": "BBC World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4644/live/461bcc30-cb38-11f1-8a27-2de4c72fadc2.jpg",
+   "published": "2026-10-18T22:10:45Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "91bd248efa953b9d",
+   "title": "20日の天気（東日本）",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOX05JNnhoQ0I1NkV5c25mQm5BWjhzdG1QLVFITkF4WmRqN3RNUGFmdlF0QkVxcGJuQnF2Q3Y0UkxlY3FabzBMOXNiUkpaM1NLVXNzZFQ1cGN5SWl2T2pZb045UC01SkNRRGlGX3BfeWpwZ3BCVXp1UDdWMHlqTkVkSVRUUndWaFBXRnJz0gGQAUFVX3lxTE5YNlNQOG1JcURwRDBQcWJ3UHhLcEtiRUZnQ0p6c2hyOXNXLW4tNUh3MWJ5QjNmYVJCSXFaQ254dVJkeWZaUkt3cEctNXhaS1kwbGdER1BsOFhfRndwOG1fRXlmV3cyQldmSm4zMGVSbDRUYmlGMG51bXpNbGdpSGdRYW9MWjdob1AxZWxma1dqLQ?oc=5",
+   "summary": "20日の天気（東日本） ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T22:09:01Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3a8fe6df2bcaae43",
+   "title": "債券売りでインフレ鈍化へ＝ラガルドＥＣＢ総裁",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9udnpORFJVeTRZMndxN19pRkVkdHdVOFlicHMxNy04YVJvSjhYOFlkZk1tSkdndy0tZ1hwN0h1UnRtdHVqZ1djNnlaT05VaFFxODNxNkhtTld1dw?oc=5",
+   "summary": "債券売りでインフレ鈍化へ＝ラガルドＥＣＢ総裁 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-18T22:09:00Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "75c1633f67316ede",
+   "title": "浅野弥三一さん死去 尼崎脱線事故の遺族",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5KUWdDZnNOVGsyTWJVdGZxeGZFcnMtaVlkcFYyQzZLVnZuWmlwWFJCTWViVTBwdzMteVZiUFRXNUN4TkhYZEJSNjA4M01iN2VkQm5teQ?oc=5",
+   "summary": "浅野弥三一さん死去 尼崎脱線事故の遺族 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T22:07:16Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "d1f7d38396695f98",
+   "title": "Warning signs could predict inflammatory bowel disease a decade before diagnosis",
+   "link": "https://www.theguardian.com/science/2026/oct/18/research-predict-inflammatory-bowel-disease-decade-before-diagnosis",
+   "summary": "Antibody patterns in the blood may help doctors identify people at risk so they can be treated earlier, research shows Patterns of antibodies in people’s blood could predict the onset of inflammatory bowel disease (IBD) a decade before diagnosis, according to research that raises…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/4d5d6a5d440aed0a1cd19ae1126a5b5e117e7a63/337_0_3922_3138/master/3922.jpg?width=140&quality=85&auto=format&fit=max&s=860f60f9cd14f222c26d5f7be7bb02e6",
+   "published": "2026-10-18T22:01:10Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "570d06f526d413ef",
+   "title": "読む政治:傀儡？適材適所？名指しで批判されたのは…高市人事、有権者の声",
+   "link": "https://mainichi.jp/articles/20261016/k00/00m/010/328000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T22:00:24Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/09/17/20260917k0000m010392000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "337995536c608362",
+   "title": "生活保護利用者を「くず」呼ばわり…再発防止へ窓口は変わったのか",
+   "link": "http://www.asahi.com/articles/ASVBG2SL1VBGUTFL004M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T22:00:00Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261014003200_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3342f5cdefc542b1",
+   "title": "なぜ首相の隣は細野氏？ 閣議前や記念撮影、自民で「初入閣」なのに",
+   "link": "http://www.asahi.com/articles/ASVBJ3CXHVBJUTFK01PM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T22:00:00Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261016004659_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "a45dbbbb6ded32a1",
+   "title": "消費減税法案の野党との協議「衆院段階で」萩生田・自民党幹事長代行",
+   "link": "http://www.asahi.com/articles/ASVBL4FP2VBLULFA00FM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T22:00:00Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261018003339_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "9a79891c55bed11d",
+   "title": "トランプ氏、イスラエル総選挙でネタニヤフ首相支持を表明",
+   "link": "https://mainichi.jp/articles/20261019/k00/00m/030/001000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T21:59:34Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/19/20261019k0000m030002000p/0c10.jpg?2",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "04d52c7f63cda0f5",
+   "title": "Trump defends Russia sanctions relief, blasts Zelensky on peace",
+   "link": "https://www.france24.com/en/europe/20261018-ukraine-zelensky-war-trump-peace-russia-sanctions",
+   "summary": "US President Donald Trump on Sunday accused Ukrainian President Volodymyr Zelensky of prolonging the war with Russia, claiming Kyiv had little interest in peace. Trump said negotiations to end the four-year conflict were making “great progress” but alleged Zelensky was reluctant …",
+   "outlet": "© Ukrainian Presidential Press Service, AFP",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/c4a57392-8d19-11f1-9ad5-005056bfb2b6/w:1024/p:16x9/000-C3EB39E-1.jpg",
+   "published": "2026-10-18T21:59:34Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "155e634e28cc2fdc",
+   "title": "Alberta independence referendum: Will separatists survive a loss?",
+   "link": "https://www.aljazeera.com/news/2026/10/18/alberta-independence-referendum-will-separatists-survive-a-loss?traffic_source=rss",
+   "summary": "Alberta’s independence movement faces likely defeat, but history suggests losing a referendum may not end the fight.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T21:53:13Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/afp_6ad50c753c64-1792347253.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "cb1a82393c9208d9",
+   "title": "Canada’s telecom shares are in a slump. What’s behind the stock slide?",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPRGpFcDRtdzBSQ1gtSkpKenlSY0VVbERzNUJ0VHIxaFUyQzJGZGd6cENtTFk2cmtZX0lZNjUyMW00ZmVjaTFNdGhtR1JjaDdqRHdtSl96dG80YWM0MkFuckRyS3JEbGhsS24tTjFFVjJfMXFqSVVORkt3Vzd4NWRVcnR1aERKWWhPRlBnckN1bFl0ZGRfcGd1X0JMd0VxZGNfT1hrRQ?oc=5",
+   "summary": "Canada’s telecom shares are in a slump. What’s behind the stock slide? The Globe and Mail",
+   "outlet": "The Globe and Mail",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-18T21:47:48Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "12104f0c65c9ca57",
+   "title": "「山を下りてからが長い」林業の事務負担をDXで軽減 愛媛・内子",
+   "link": "https://mainichi.jp/articles/20261016/k00/00m/310/364000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T21:45:11Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/16/20261016k0000m310382000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
   {
    "id": "ebb994487e860144",
    "title": "日傘に植物…大都市で進む「日陰戦略」 住みよさの条件にも",
@@ -640,6 +883,20 @@
    "picked": false
   },
   {
+   "id": "4805adfac8fccc54",
+   "title": "Abu Dhabi to host region's first ‘6G Summit in the AI Era’ tomorrow",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQ2xSX1UzWnkyWUw3NkxXaF9NV2VJdXFUbGdKTTVBMHQ2bTFQZjRrQ2xqWVlvRkx4TG5wRU9NdFNxdTlqVDdBN1ctc1hkWlRCRXZveGlaN0ZYNWJDdkNSa1JESFk3RENFaDBoS1JiT2trTGtlYUttY0U1ZThUdDl0MkNYUFlBTEYwTEFPWG8wS2dRX3p5V3dxUVNUR3RXVmPSAZ8BQVVfeXFMTUNsUl9VM1p5MllMNzZMV2hfTVdlSXVxVGxnSk01QTB0Nm0xUGY0a0NsallZb0ZMeExucEVPTXRTcXU5alQ3QTdXLXNYZFpUQkV2b3hpWjdGWDViQ3ZDUmtSREhZN0RDRWgwaEtSYk9ra0xrZWFLbWNFNWU4VHQ5dDJDWFBZQUxGMExBT1hvMEtnUV96eVd3cVFTVEd0V1Zj?oc=5",
+   "summary": "Abu Dhabi to host region's first ‘6G Summit in the AI Era’ tomorrow Qazinform",
+   "outlet": "Qazinform",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-18T21:14:01Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "3277ba9afcf8995f",
    "title": "Macron condemns violence after riots lead to looting and mass arrests",
    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/18/macron-condemns-violence-after-riots-lead-to-looting-and-mass-arrests?traffic_source=rss",
@@ -659,7 +916,7 @@
    "id": "b106d7ca9cc6fcec",
    "title": "Inside Chicago's battle against the synthetic drugs flooding the US",
    "link": "https://www.bbc.co.uk/news/videos/c84g166kz003o?at_medium=RSS&at_campaign=rss",
-   "summary": "A new wave of synthetic drugs is sweeping across the United States, raising fear of a worsening drug crisis. The BBC's Quentin Sommerville reports from the frontlines in South Side, Chicago, where communities are battling the crisis.",
+   "summary": "The BBC's Quentin Sommerville reports from Chicago, where communities are battling a new wave of synthetic drugs.",
    "outlet": "BBC World",
    "feed": "BBC World",
    "kind": "overseas",
@@ -793,7 +1050,12 @@
    "first_seen": "2026-10-18T21:44:47Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261019000436_comm.jpg",
-   "tv_match": null,
+   "tv_match": {
+    "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
+    "score": 0.33
+   },
    "picked": false
   },
   {
@@ -920,6 +1182,25 @@
    "picked": false
   },
   {
+   "id": "b07f39817730108e",
+   "title": "横浜市長選挙、弁護士の原沢敦美氏が初当選確実 「パワハラ辞任」山中竹春氏ら6人を破る",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5MNDNsYk93ZUdScjh6REZOcFVTSUh0ZGtudDVVVVkzcUNHdUotcUxHRHZtLW1GQld2UmVXSWotSDBIZEQtR0tnRjJhWk00dE5JMXhB?oc=5",
+   "summary": "横浜市長選挙、弁護士の原沢敦美氏が初当選確実 「パワハラ辞任」山中竹春氏ら6人を破る 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T20:15:00Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": {
+    "title": "横浜市長選 新人・原沢敦美氏が初当選 パワハラ問題で辞任の山中前市長ら破り（2026年10月18日掲載）",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBzZFhJTG5mSlg3RnNQUmdJalBJQmk4RWtTSHNUdDgxdkxNQUlYbHg4cC10ZEVhU3lQUWpBLVY0eFFEVVlDdkpIbThCcnhqbGs5Tm1ib3ZJaXc1NHFfc1NXNnkyLW9rTXNpNXBnUmVJWWowRWpzcWxieDhRZi0?oc=5",
+    "score": 0.46
+   },
+   "picked": false
+  },
+  {
    "id": "b8f8d63dce10e8a7",
    "title": "What’s behind Europe’s youth protests?",
    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/18/whats-behind-europes-youth-protests?traffic_source=rss",
@@ -974,6 +1255,20 @@
    "lang": "ja",
    "published": "2026-10-18T20:00:00Z",
    "first_seen": "2026-10-18T21:44:47Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "cb8fa87716a3b3c2",
+   "title": "消費税減税「自分にどんな影響あるのか分からない」まま、国会審議へ 財源も給付も支援策も…",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9wQkg1bWRRaHl4MXZCS1lxVU4yVS15Y1lqcFQzdE9PN0NFaS1oTTlibTFTRncyWll4ZXdFc0dhSTl0QVBhQnhOajBKYnd6MXVpdzZZ?oc=5",
+   "summary": "消費税減税「自分にどんな影響あるのか分からない」まま、国会審議へ 財源も給付も支援策も… 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T20:00:00Z",
+   "first_seen": "2026-10-18T22:43:01Z",
    "tv_match": null,
    "picked": false
   },
@@ -1584,6 +1879,20 @@
    "picked": false
   },
   {
+   "id": "f2a15df22b209157",
+   "title": "ブレストvsシュトゥルム・グラーツ : Matchday 1 | Lemino(レミノ) - 映画・ドラマ・アニメや音楽・ライブが見放題",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOS1Y2eHNlakx0QVBiNGdCeEY4U0VCQXdnUXNnbmU4OGlWVTUtYnEtS2VlcHA0dmdpZ3BfYUVuLTlINUUzRHVkam1hMnA1TUJFVEREd0tMbG5leU5FS3RLS2VzXzhSOHNBdkdYWEJpZElLVExBWWRTR3BBUGx2TklDSkZmOUtEQnQ0aS1iUUFrdmNMU3RjZWVwMHdhdUJuWlpqS3Br?oc=5",
+   "summary": "ブレストvsシュトゥルム・グラーツ : Matchday 1 | Lemino(レミノ) - 映画・ドラマ・アニメや音楽・ライブが見放題 Lemino",
+   "outlet": "Lemino",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T16:03:28Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "e1806f77e0a7dba3",
    "title": "ユヴェントスvsPSV : Matchday 1 | Lemino(レミノ) - 映画・ドラマ・アニメや音楽・ライブが見放題",
    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPOFBfam5xblhZQmotVk82NWxyUEV6ZHZtcXhvc3doVmQzRUhHTHNpVk5oSVR3Y1llTXJEeDJuODJ3NVUxYllNN01SLXpBQThlQVlzazJyWVU5QUl2MFo3TnFWRVcxbkhYRm1xaHBFX0RNNXE3T2ZLN2pmVzRXVWxKLUxYejFVZ09YaTZ4NW1PN0VyMVRURFhyeUFTNFZ6WURuRU1J?oc=5",
@@ -1689,7 +1998,7 @@
   },
   {
    "id": "9951afaa5a104ff5",
-   "title": "Macron criticises ‘unbridled violence’ after days of unrest and 2,000 arrests across France",
+   "title": "Macron criticises ‘unbridled violence’ after days of unrest and 2,400 arrests across France",
    "link": "https://www.theguardian.com/world/2026/oct/18/french-government-crisis-talks-violent-unrest-policing-macron",
    "summary": "Ministers, officials and police under pressure over response to protests as government holds crisis talks amid ‘colossal failure of the state’ The French president, Emmanuel Macron, has criticised “unbridled violence” after one of the most violent days of unrest in years left pub…",
    "outlet": "The Guardian World",
@@ -1991,6 +2300,21 @@
    "picked": false
   },
   {
+   "id": "6dee8f9e39cb29fc",
+   "title": "'Like we had a war': France left reeling after nationwide violent protests",
+   "link": "https://www.france24.com/en/france/20261018-like-we-had-a-war-france-left-reeling-after-nationwide-violent-protests",
+   "summary": "France on Sunday is dealing with the aftermath of nationwide protests that damaged around 1,500 businesses and caused losses estimated at hundreds of millions of euros. Police arrested an estimated 1,800 people across the country during Saturday's demonstrations over the cost of …",
+   "outlet": "© Stephanie Lecocq, Reuters",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/f4e9e986-caf7-11f1-9538-6313a763b466/w:1024/p:16x9/2026-10-18T114757Z-1738373567-RC2N5OA0XP4Z-RTRMADP-3-FRANCE-PROTEST.jpg",
+   "published": "2026-10-18T13:50:00Z",
+   "first_seen": "2026-10-18T14:09:55Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "4febb1c674eb3b07",
    "title": "岐阜・可児市長選、冨田成輝氏が5選、クリニック院長の新顔破る",
    "link": "http://www.asahi.com/articles/ASVBL43MMVBLOHGB004M.html?ref=rss",
@@ -2004,21 +2328,6 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261018003232_comm.jpg",
    "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "6dee8f9e39cb29fc",
-   "title": "'Like we had a war': France left reeling after nationwide violent protests",
-   "link": "https://www.france24.com/en/france/20261018-like-we-had-a-war-france-left-reeling-after-nationwide-violent-protests",
-   "summary": "France on Sunday is dealing with the aftermath of nationwide protests that damaged around 1,500 businesses and caused losses estimated at hundreds of millions of euros. Police arrested an estimated 1,800 people across the country during Saturday's demonstrations over the cost of …",
-   "outlet": "© Stephanie Lecocq, Reuters",
-   "feed": "France 24",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://s.france24.com/media/display/f4e9e986-caf7-11f1-9538-6313a763b466/w:1024/p:16x9/2026-10-18T114757Z-1738373567-RC2N5OA0XP4Z-RTRMADP-3-FRANCE-PROTEST.jpg",
-   "published": "2026-10-18T13:50:00Z",
-   "first_seen": "2026-10-18T14:09:55Z",
-   "tv_match": "unknown",
    "picked": false
   },
   {
@@ -2502,9 +2811,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/06/09/20260609k0000m040135000p/0c10.jpg?1",
    "tv_match": {
-    "title": "50歳男を殺人容疑で逮捕 東京・福生市 路上で男性刺され死亡",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5Ga2NDM0IwLUFVU3BWbUxUVjJ5MFVETnA1OGtMRU1iZlE1RlZ2dHhvTHVLZnhrckRNZ1Q4UnhXUDhRMmduUEh3ZHRjc2ZpQQ?oc=5",
+    "title": "東京・福生市の路上で男性刺され死亡 知人の50歳男を殺人容疑で逮捕",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9oQXJvZ2hHdktmcDVCU3M2amNpODlqR01ELW1iWk15M2piNVVSRkZTZGVXZ0FQRmF6STRTaVRySnRNMk93S0JJdmNwem1HRkJ4UGJLRTBnNlBLUVVIMmVrZDZZQmQwWXNKRzhodldSMVdMQQ?oc=5",
     "score": 0.65
    },
    "picked": false
@@ -2723,9 +3032,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m030043000p/0c10.jpg?1",
    "tv_match": {
-    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 デモ隊がシャンゼリゼ通り封鎖、市庁舎に放火など破壊行為も 約1200人拘束",
+    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載）",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOb2Qyc0hONUhiQThqR3IxWkUzanB0Y3R0LTZMcmJfb0gybjV6V09BSTl6enVWMXFhRGk0cWtqWkJYTUlEejMxbnhYWGVBVGc3SU9LLXFyZnVJdW50c2xSSVNIRWRxZ011b2xXYTZ5bWpSOHFwNWl2YU55TW9idC1ISWhZdVU?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSTBCYjlsbllSeWFiUTlXQXdLeWdYeUdXSGxjeHd3UWhIcHczeUdnbUoxeFJIcWptUWxzNDR6Tk50cnluc3Z4a0lrZjQ1RU9GWjlEUGhBUVRTOHdYaUh5ci15YVRjZEZEVmd0eS1DZDJnLUpTQmFiZ1dvUzZxdFpUb0VPQVE?oc=5",
     "score": 0.32
    },
    "picked": false
@@ -3986,10 +4295,10 @@
    "published": "2026-10-18T09:47:00Z",
    "first_seen": "2026-10-18T17:42:44Z",
    "tv_match": {
-    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 デモ隊がシャンゼリゼ通り封鎖、市庁舎に放火など破壊行為も 約1200人拘束",
+    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載）",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOb2Qyc0hONUhiQThqR3IxWkUzanB0Y3R0LTZMcmJfb0gybjV6V09BSTl6enVWMXFhRGk0cWtqWkJYTUlEejMxbnhYWGVBVGc3SU9LLXFyZnVJdW50c2xSSVNIRWRxZ011b2xXYTZ5bWpSOHFwNWl2YU55TW9idC1ISWhZdVU?oc=5",
-    "score": 0.44
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSTBCYjlsbllSeWFiUTlXQXdLeWdYeUdXSGxjeHd3UWhIcHczeUdnbUoxeFJIcWptUWxzNDR6Tk50cnluc3Z4a0lrZjQ1RU9GWjlEUGhBUVRTOHdYaUh5ci15YVRjZEZEVmd0eS1DZDJnLUpTQmFiZ1dvUzZxdFpUb0VPQVE?oc=5",
+    "score": 0.5
    },
    "picked": false
   },
@@ -4424,10 +4733,10 @@
    "published": "2026-10-18T08:47:35Z",
    "first_seen": "2026-10-18T11:43:31Z",
    "tv_match": {
-    "title": "50歳男を殺人容疑で逮捕 東京・福生市 路上で男性刺され死亡",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5Ga2NDM0IwLUFVU3BWbUxUVjJ5MFVETnA1OGtMRU1iZlE1RlZ2dHhvTHVLZnhrckRNZ1Q4UnhXUDhRMmduUEh3ZHRjc2ZpQQ?oc=5",
-    "score": 0.44
+    "title": "東京・福生市の路上で男性刺され死亡 知人の50歳男を殺人容疑で逮捕",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9oQXJvZ2hHdktmcDVCU3M2amNpODlqR01ELW1iWk15M2piNVVSRkZTZGVXZ0FQRmF6STRTaVRySnRNMk93S0JJdmNwem1HRkJ4UGJLRTBnNlBLUVVIMmVrZDZZQmQwWXNKRzhodldSMVdMQQ?oc=5",
+    "score": 0.48
    },
    "picked": false
   },
@@ -4831,7 +5140,12 @@
    "first_seen": "2026-10-18T09:57:24Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261018001646_comm.jpg",
-   "tv_match": null,
+   "tv_match": {
+    "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
+    "score": 0.36
+   },
    "picked": false
   },
   {
@@ -5479,7 +5793,12 @@
    "lang": "ja",
    "published": "2026-10-18T06:10:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
-   "tv_match": null,
+   "tv_match": {
+    "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
+    "score": 0.34
+   },
    "picked": false
   },
   {
@@ -6124,16 +6443,30 @@
    "image": "https://i.guim.co.uk/img/media/c52699fa79a08ff54fc072b7ba247700230f9b4f/213_0_4459_3565/master/4459.jpg?width=140&quality=85&auto=format&fit=max&s=6d09014ff10f6821d87e0d76730829b9"
   },
   {
-   "id": "7509b6626ebdcb48",
-   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 16枚目の写真・画像",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBZMi1qaUdSS04tcmFfelpkc2I2UFNpaGl0UTFrd1NwNUhhdDV3cmZSalhrUWdZVVVKZFh3LVItYUg3R1lGNnBaM21OYlpfYS1MakNsR0g3TUtBMURXd0M3dl94Z1RFenNldzJHdnE1OVJxQQ?oc=5",
-   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 16枚目の写真・画像 レスポンス（Response.jp）",
+   "id": "2e73a5dd6a570768",
+   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 7枚目の写真・画像",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5UWXBjVjE4bl9Qd01ZcHdQWUhKTEdhM0hsQUdqVkhYYkRQemE1R3pRU3FRTjNvUDYweHdMUW1tWlFUNDJsd1lJdk5wNFZzOTNod2pzMGZsZDV4T2NCSko1bU9GQTVBamYwcFZPWldvY01YQQ?oc=5",
+   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 7枚目の写真・画像 レスポンス（Response.jp）",
    "outlet": "レスポンス（Response.jp）",
    "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-18T04:00:03Z",
-   "first_seen": "2026-10-18T14:54:44Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "e9067baa1a582471",
+   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kXzNRY0tNTno2LS1EN25XSkhPNzRkQ1JmUmZiSmt2UTlYQ3lxZlMycktmR2tuTkhtcHMyYktiVWpTM0llTlVQQXcyTllmRTJxQzZmTHVMOVVaSTVXbEdUZVZJNjJVUXNFYkdpenBpWlJsUQ?oc=5",
+   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像 レスポンス（Response.jp）",
+   "outlet": "レスポンス（Response.jp）",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-18T04:00:03Z",
+   "first_seen": "2026-10-18T17:42:44Z",
    "tv_match": null,
    "picked": false
   },
@@ -6152,16 +6485,16 @@
    "picked": false
   },
   {
-   "id": "e9067baa1a582471",
-   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kXzNRY0tNTno2LS1EN25XSkhPNzRkQ1JmUmZiSmt2UTlYQ3lxZlMycktmR2tuTkhtcHMyYktiVWpTM0llTlVQQXcyTllmRTJxQzZmTHVMOVVaSTVXbEdUZVZJNjJVUXNFYkdpenBpWlJsUQ?oc=5",
-   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 5枚目の写真・画像 レスポンス（Response.jp）",
+   "id": "7509b6626ebdcb48",
+   "title": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 16枚目の写真・画像",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBZMi1qaUdSS04tcmFfelpkc2I2UFNpaGl0UTFrd1NwNUhhdDV3cmZSalhrUWdZVVVKZFh3LVItYUg3R1lGNnBaM21OYlpfYS1MakNsR0g3TUtBMURXd0M3dl94Z1RFenNldzJHdnE1OVJxQQ?oc=5",
+   "summary": "AI-Native 6Gをめぐり、ソフトバンク・ドコモ・KDDI・楽天・エヌビディアが示した現在地…CEATEC 2026 16枚目の写真・画像 レスポンス（Response.jp）",
    "outlet": "レスポンス（Response.jp）",
-   "feed": "Googleニュース：ソフトバンク株式会社",
+   "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-18T04:00:03Z",
-   "first_seen": "2026-10-18T17:42:44Z",
+   "first_seen": "2026-10-18T14:54:44Z",
    "tv_match": null,
    "picked": false
   },
@@ -7115,9 +7448,9 @@
    "published": "2026-10-18T01:00:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 デモ隊がシャンゼリゼ通り封鎖、市庁舎に放火など破壊行為も 約1200人拘束",
+    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載）",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOb2Qyc0hONUhiQThqR3IxWkUzanB0Y3R0LTZMcmJfb0gybjV6V09BSTl6enVWMXFhRGk0cWtqWkJYTUlEejMxbnhYWGVBVGc3SU9LLXFyZnVJdW50c2xSSVNIRWRxZ011b2xXYTZ5bWpSOHFwNWl2YU55TW9idC1ISWhZdVU?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSTBCYjlsbllSeWFiUTlXQXdLeWdYeUdXSGxjeHd3UWhIcHczeUdnbUoxeFJIcWptUWxzNDR6Tk50cnluc3Z4a0lrZjQ1RU9GWjlEUGhBUVRTOHdYaUh5ci15YVRjZEZEVmd0eS1DZDJnLUpTQmFiZ1dvUzZxdFpUb0VPQVE?oc=5",
     "score": 0.46
    },
    "picked": false
@@ -7664,6 +7997,20 @@
    "picked": false
   },
   {
+   "id": "2d2d8ee3241c20b3",
+   "title": "仮想ワンちゃん いつでも「心のケア」 アニマルセラピーと同じ効果、介護現場で広がる",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8yelBjY29ldjc1WXFoOTNYZmZTc1lEVHVxa1NiWHVtUTk0T3pkZTl0VzI4TWVJb2ZoR0Y5Y1I3cjlzd0FTZC1lVm55cHEzbEJSRk9N?oc=5",
+   "summary": "仮想ワンちゃん いつでも「心のケア」 アニマルセラピーと同じ効果、介護現場で広がる 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-17T22:48:19Z",
+   "first_seen": "2026-10-18T22:43:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "3a3feafd342140ad",
    "title": "小林沙羅、20周年「献呈」リリース 戦禍の地にも歌届けたい",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1PSnc5VmJENW5iMW1KV052akUwbjJjXzM1Vkd6dFhxWmVocDNScl9FcWstbi1icHZDWkZhU3NldGZvZGJSendEYzZPaXBRSWNKb0Mw?oc=5",
@@ -8153,9 +8500,9 @@
    "published": "2026-10-17T21:58:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 デモ隊がシャンゼリゼ通り封鎖、市庁舎に放火など破壊行為も 約1200人拘束",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOb2Qyc0hONUhiQThqR3IxWkUzanB0Y3R0LTZMcmJfb0gybjV6V09BSTl6enVWMXFhRGk0cWtqWkJYTUlEejMxbnhYWGVBVGc3SU9LLXFyZnVJdW50c2xSSVNIRWRxZ011b2xXYTZ5bWpSOHFwNWl2YU55TW9idC1ISWhZdVU?oc=5",
+    "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
     "score": 0.42
    },
    "picked": false
@@ -8664,10 +9011,10 @@
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792267328.jpg?resize=1920%2C1080&quality=80"
   },
   {
-   "id": "80014f4a9667c08d",
-   "title": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9OUy1rd205bXFGOHVtM1dpb0hHWWVjd2Z3dXZlcWNycktQcW5OQzhCQ1BLWWJBOGpSOFhnX0ExbDVQdnB0SGxzTzVGcE9hUHRhYzlF?oc=5",
-   "summary": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は 東京新聞",
+   "id": "cd3c34dd45c44dbf",
+   "title": "民主主義が機能した「追及」 簗和生農相ついに辞任〈10月11日〜10月17日〉",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0xeWJEQUp0TUJTQ0djYjNyb1FqcktJLXdOaFhWLXhXbW5PTW9YekpVcHU4UTJONHd4MEJuc2JKd0Jka1VIYUx3SlhmSnI0UVQtVmlv?oc=5",
+   "summary": "民主主義が機能した「追及」 簗和生農相ついに辞任〈10月11日〜10月17日〉 東京新聞",
    "outlet": "東京新聞",
    "feed": "東京新聞",
    "kind": "国内",
@@ -8678,10 +9025,10 @@
    "picked": false
   },
   {
-   "id": "cd3c34dd45c44dbf",
-   "title": "民主主義が機能した「追及」 簗和生農相ついに辞任〈10月11日〜10月17日〉",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0xeWJEQUp0TUJTQ0djYjNyb1FqcktJLXdOaFhWLXhXbW5PTW9YekpVcHU4UTJONHd4MEJuc2JKd0Jka1VIYUx3SlhmSnI0UVQtVmlv?oc=5",
-   "summary": "民主主義が機能した「追及」 簗和生農相ついに辞任〈10月11日〜10月17日〉 東京新聞",
+   "id": "80014f4a9667c08d",
+   "title": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9OUy1rd205bXFGOHVtM1dpb0hHWWVjd2Z3dXZlcWNycktQcW5OQzhCQ1BLWWJBOGpSOFhnX0ExbDVQdnB0SGxzTzVGcE9hUHRhYzlF?oc=5",
+   "summary": "空き家を狙った窃盗被害が全国で急増中 2025年は1万2000件 標的にされないための対策は 東京新聞",
    "outlet": "東京新聞",
    "feed": "東京新聞",
    "kind": "国内",
@@ -17058,7 +17405,12 @@
    "lang": "ja",
    "published": "2026-10-15T21:46:27Z",
    "first_seen": "2026-10-18T15:07:53Z",
-   "tv_match": null,
+   "tv_match": {
+    "title": "米コアウィーブ・ショックの影響は？｜モーサテサタデー",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBIV21TUW1UMTdlSURCcjJONkZyd3RBdjUxczZlSzdKQUJUYk9iWHgwRFg2N0FMczVOR0tnZGFpb01hVW9fTlZxRmoyZUlBTDNnREpKd2tRMHVVTnJyUGR1bQ?oc=5",
+    "score": 0.42
+   },
    "picked": false
   },
   {
@@ -18519,6 +18871,18 @@
    "first_seen": "2026-10-18T21:44:47Z"
   },
   {
+   "id": "abef1bc575d1737a",
+   "title": "東京・福生市の路上で男性刺され死亡 知人の50歳男を殺人容疑で逮捕",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9oQXJvZ2hHdktmcDVCU3M2amNpODlqR01ELW1iWk15M2piNVVSRkZTZGVXZ0FQRmF6STRTaVRySnRNMk93S0JJdmNwem1HRkJ4UGJLRTBnNlBLUVVIMmVrZDZZQmQwWXNKRzhodldSMVdMQQ?oc=5",
+   "summary": "東京・福生市の路上で男性刺され死亡 知人の50歳男を殺人容疑で逮捕 テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T20:51:01Z",
+   "first_seen": "2026-10-18T22:43:01Z"
+  },
+  {
    "id": "f20746505236fd93",
    "title": "【東京都】10/19の天気予報",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5leXMtNzd0NUJmWHowUi1yRFNHZ01Fd093eGFTajMybDQ3T3N2SUVlR2RtWmZnWjZuMGIyUW9vb1VMYUpRRFRUR3pHZndCQQ?oc=5",
@@ -18553,6 +18917,18 @@
    "lang": "ja",
    "published": "2026-10-18T19:55:34Z",
    "first_seen": "2026-10-18T20:44:13Z"
+  },
+  {
+   "id": "9b0f3059d7fd3366",
+   "title": "スバル 開発中の運転支援システムを公開",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQeC1Pak9JNU9SU1NxM0doWFVwdURwb3l6T1dWU1MyQjFxNmRBX2NERkFjUVhwUHJsS21KWDlqTXAyODdid1dKeEcyVUtOVlUxX2dVWVhqLTJ0RzVqdHZGQWp1MjNUNG1oQXNuaFlFYmd6YmgtdGxnZUVfQUJTeVY2eGpxYzV6THk0VDFWTg?oc=5",
+   "summary": "スバル 開発中の運転支援システムを公開 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T19:55:34Z",
+   "first_seen": "2026-10-18T22:43:01Z"
   },
   {
    "id": "e1cdc892ce12640c",
@@ -18639,6 +19015,18 @@
    "first_seen": "2026-10-18T15:22:00Z"
   },
   {
+   "id": "e996c325a80ba547",
+   "title": "紅葉が彩る活火山と“神秘の湖”「オンネトー」アイヌ文化が息づく“北海道三大秘湖”",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1keHJockcwcXRHUVFaaUV3ckowRm1qZWdvTXFFM3lrOTkxNXFsXzJhWXBqX2VuZVd5dF8ydEdNWVVnX0hTazg5RmplN1BjSDF3VWU4SzhiMS1Lc2NYODJmQWJkTVBQZmtQR2Y4SWk5bGlXZw?oc=5",
+   "summary": "紅葉が彩る活火山と“神秘の湖”「オンネトー」アイヌ文化が息づく“北海道三大秘湖” テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T14:30:23Z",
+   "first_seen": "2026-10-18T22:43:01Z"
+  },
+  {
    "id": "2b1c3123b12e9fbb",
    "title": "独自「世界が15度傾いた」クマ襲撃で眼球破裂 神奈川・山梨にも出没…親子3頭映像",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE42WHRYZTJyN3RBWWxjX0g3ZWozZDFiUlNaTXZvM3kzeDFYcUJYUG1OcEZiaFpOOTY1ZTExaWdjbEFpYVBXRXl6cFIteC1LSjNoU3lyWXJLNzNFRTBYRERYdWQzeUFGdmRfMVBROHhBV2pZUQ?oc=5",
@@ -18649,6 +19037,18 @@
    "lang": "ja",
    "published": "2026-10-18T14:30:21Z",
    "first_seen": "2026-10-18T21:44:47Z"
+  },
+  {
+   "id": "1c4c887b250bae8e",
+   "title": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載）",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSTBCYjlsbllSeWFiUTlXQXdLeWdYeUdXSGxjeHd3UWhIcHczeUdnbUoxeFJIcWptUWxzNDR6Tk50cnluc3Z4a0lrZjQ1RU9GWjlEUGhBUVRTOHdYaUh5ci15YVRjZEZEVmd0eS1DZDJnLUpTQmFiZ1dvUzZxdFpUb0VPQVE?oc=5",
+   "summary": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載） 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T14:02:00Z",
+   "first_seen": "2026-10-18T22:43:01Z"
   },
   {
    "id": "ca4e7693c245c5e5",
@@ -19503,6 +19903,18 @@
    "first_seen": "2026-10-18T08:47:33Z"
   },
   {
+   "id": "8234ae137babc71e",
+   "title": "米コアウィーブ・ショックの影響は？｜モーサテサタデー",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBIV21TUW1UMTdlSURCcjJONkZyd3RBdjUxczZlSzdKQUJUYk9iWHgwRFg2N0FMczVOR0tnZGFpb01hVW9fTlZxRmoyZUlBTDNnREpKd2tRMHVVTnJyUGR1bQ?oc=5",
+   "summary": "米コアウィーブ・ショックの影響は？｜モーサテサタデー テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T07:02:12Z",
+   "first_seen": "2026-10-18T22:43:01Z"
+  },
+  {
    "id": "6b4e42d731a8e42e",
    "title": "マネードキュメンタリー「あなたの資産...どう守る?」知られざるお金の舞台裏｜特別番組",
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1LYTZnU1dCZHRtMGh2cGx4ZnZNTEdwb1poVThWQW1MbVJGazg4ZmhOT0Z6NFhUS3lNR3ZRdUVwVi1UcXpmeWxPQm92N1hNUmh6TlB3bUJucmlSVmdNcUE?oc=5",
@@ -19849,6 +20261,18 @@
    "lang": "ja",
    "published": "2026-10-18T03:58:11Z",
    "first_seen": "2026-10-18T05:37:15Z"
+  },
+  {
+   "id": "a0cd8a54b99754a9",
+   "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
+   "summary": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-18T03:47:20Z",
+   "first_seen": "2026-10-18T22:43:01Z"
   },
   {
    "id": "8eb4afa209753172",
@@ -20775,18 +21199,6 @@
    "first_seen": "2026-10-18T04:29:46Z"
   },
   {
-   "id": "8b0aa39242b70b1c",
-   "title": "【秋田県】10/18の天気予報",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1BcUEyaEFuWDNudWdYeDZpbEpaTC1lSG9GVmhPZVR1ZzVjOUo0VXdTclhNQzd1VkthLU1XTUwyRUNoNmk2cFMxQ2E2Ty05dw?oc=5",
-   "summary": "【秋田県】10/18の天気予報 FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-17T10:30:00Z",
-   "first_seen": "2026-10-18T11:43:31Z"
-  },
-  {
    "id": "74887e56ebcac516",
    "title": "【群馬県】10/18の天気予報",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFA2VkFnRDlMZXdYM0tuRTVwbTgtaGFyZTZzV1l1MlZVbC1xWURHaHNUeU9jbFZfaG1rbVdFNWVET1dfb2VaVDRUd203aW1tZw?oc=5",
@@ -20797,6 +21209,18 @@
    "lang": "ja",
    "published": "2026-10-17T10:30:00Z",
    "first_seen": "2026-10-18T10:45:25Z"
+  },
+  {
+   "id": "8b0aa39242b70b1c",
+   "title": "【秋田県】10/18の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1BcUEyaEFuWDNudWdYeDZpbEpaTC1lSG9GVmhPZVR1ZzVjOUo0VXdTclhNQzd1VkthLU1XTUwyRUNoNmk2cFMxQ2E2Ty05dw?oc=5",
+   "summary": "【秋田県】10/18の天気予報 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-17T10:30:00Z",
+   "first_seen": "2026-10-18T11:43:31Z"
   },
   {
    "id": "98d104e5df9bdba2",
@@ -22311,6 +22735,18 @@
    "first_seen": "2026-10-18T14:38:32Z"
   },
   {
+   "id": "b00f9dd89e921a0c",
+   "title": "「超強気相場」は過去？今後注目の2つのテーマ株",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwdVJyZkR4Q2pYWjNrc1Vib0pDaHhvenJNT3dYSHNxN0lmRHZzQ0RVcGRub3ZMRF9nYnhNRVZUYkhFMlRQLU4xb1Bxb0s3czRodmY5S1lneWh0clhYNHdYSXo5TDIxdm55RXc?oc=5",
+   "summary": "「超強気相場」は過去？今後注目の2つのテーマ株 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-16T12:54:00Z",
+   "first_seen": "2026-10-18T22:43:01Z"
+  },
+  {
    "id": "e9b0dd1735c33784",
    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
@@ -22417,6 +22853,18 @@
    "lang": "ja",
    "published": "2026-10-16T11:37:01Z",
    "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
+   "id": "83bc00fec787d9d1",
+   "title": "「バドミントンが好き」でつながる社会人サークル 初心者から上級者まで切磋琢磨 岩手県",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFA3WnRlRFlpbWJpWkhianQ4T2V5cE9Yb3JzRHlDblZrc2JLZmUxaTdaVTlEYVBLNHRrbEROam8yOVkxemxYRnM2UzM4WFJFZw?oc=5",
+   "summary": "「バドミントンが好き」でつながる社会人サークル 初心者から上級者まで切磋琢磨 岩手県 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-16T11:30:00Z",
+   "first_seen": "2026-10-18T22:43:01Z"
   },
   {
    "id": "ff7041724e88c8b7",
@@ -22527,6 +22975,18 @@
    "first_seen": "2026-10-18T04:29:46Z"
   },
   {
+   "id": "6a66e50f642c0279",
+   "title": "【北海道(釧路・根室・十勝地方)】10/17の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzNXZPbUczeWIwMV9GRlFkNFhMXzctMEQ2V1ctSXZCLTFGSEVoTFF5U1BNYS02cm5Zd0NIM1NCc2oyQ1FzQ2FneVdjYk5LUQ?oc=5",
+   "summary": "【北海道(釧路・根室・十勝地方)】10/17の天気予報 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-16T10:30:00Z",
+   "first_seen": "2026-10-18T04:29:46Z"
+  },
+  {
    "id": "8477c7f76c9e22d1",
    "title": "【富山県】10/17の天気予報",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBoRzk5Rk40Z1V0N0hSX2V1MFR3TWpZSzZoNENFZ09RaVc4TDloMWZKRVk0YzdULVdFZkdVZFd5bnBJUFU5NHZKTXd5UlM5UQ?oc=5",
@@ -22555,18 +23015,6 @@
    "title": "【福島県】10/17の天気予報",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBVUHFtZU9IclpkTmRwUjhsTFczaVd4UEdXSGZ0dWJLUWlZVzhVT2otcjlkeThicGhaejBkbE5xUTBtMlBMQ0dmaDd4Y254UQ?oc=5",
    "summary": "【福島県】10/17の天気予報 FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-16T10:30:00Z",
-   "first_seen": "2026-10-18T04:29:46Z"
-  },
-  {
-   "id": "6a66e50f642c0279",
-   "title": "【北海道(釧路・根室・十勝地方)】10/17の天気予報",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzNXZPbUczeWIwMV9GRlFkNFhMXzctMEQ2V1ctSXZCLTFGSEVoTFF5U1BNYS02cm5Zd0NIM1NCc2oyQ1FzQ2FneVdjYk5LUQ?oc=5",
-   "summary": "【北海道(釧路・根室・十勝地方)】10/17の天気予報 FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
