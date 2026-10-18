@@ -39,6 +39,7 @@ jobs:
       - name: Fetch news
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
         run: |
           python scripts/fetch_news.py
           python scripts/recipes.py

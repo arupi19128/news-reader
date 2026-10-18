@@ -16,7 +16,7 @@
 |---|---|
 | `config.toml` | 情報源（RSS / Googleニュース検索）とトピックの設定 |
 | `scripts/fetch_news.py` | 記事を集めて照合し、`docs/data/news.json` に保存 |
-| `scripts/recipes.py` | 毎朝1回、AI が2人分の献立（主菜・副菜・汁物）を考える（結果は `docs/data/recipes.json`） |
+| `scripts/recipes.py` | 毎朝1回、楽天レシピAPIから「簡単・健康・節約」などの人気レシピを集め、主菜・副菜・汁物を選ぶ（結果は `docs/data/recipes.json`。GitHub の Secrets に `RAKUTEN_APP_ID` が必要） |
 | `scripts/ai.py` | Claude による日本語化・分類・厳選・解説（結果は `docs/data/picks.json`） |
 | `.github/workflows/update-news.yml` | 毎時の自動実行と GitHub Pages への公開 |
 | `docs/index.html` | 閲覧ページ |

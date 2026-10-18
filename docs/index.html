@@ -233,10 +233,10 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .dishes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 30px; }
 .dish { background: var(--sheet); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; text-decoration: none; display: grid; align-content: start; transition: transform 0.15s, box-shadow 0.15s; }
 .dish:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(15, 29, 43, 0.1); }
-.dish .plate { aspect-ratio: 16 / 9; display: grid; place-items: center; color: #fff; position: relative;
+.plate { aspect-ratio: 16 / 9; display: grid; place-items: center; color: #fff; position: relative;
   background-image: radial-gradient(circle at 50% 55%, rgba(255,255,255,.22) 0 26%, rgba(255,255,255,.08) 26% 34%, transparent 34%), linear-gradient(135deg, var(--ph1), var(--ph2)); }
-.dish .plate b { font-size: 15px; letter-spacing: 0.2em; }
-.dish .plate .mins { position: absolute; right: 10px; bottom: 8px; font: 600 12px var(--font-mono); background: rgba(0,0,0,.25); padding: 1px 8px; border-radius: 999px; }
+.plate b { font-size: 15px; letter-spacing: 0.2em; }
+.plate .mins { position: absolute; right: 10px; bottom: 8px; font: 600 12px var(--font-mono); background: rgba(0,0,0,.25); padding: 1px 8px; border-radius: 999px; }
 .dish .txt { padding: 12px 14px 14px; display: grid; gap: 4px; }
 .dish h3 { margin: 0; font-size: 17px; line-height: 1.45; }
 .dish p { margin: 0; font-size: 13px; color: var(--muted); }
@@ -247,6 +247,14 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .recipe-empty { background: var(--sheet); border: 1px dashed var(--line); border-radius: 12px; padding: 28px 22px; color: var(--muted); margin-bottom: 30px; }
 .recipe-empty b { color: var(--ink); display: block; font-size: 17px; margin-bottom: 4px; }
 .rcards .entry .thumb.ph { font-size: 12px; }
+.plate.photo { background: var(--cell-in); overflow: hidden; }
+.plate.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo { border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
+.hero-photo .plate { aspect-ratio: 16 / 9; }
+.recipe-detail ul.mats { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0 18px; }
+.recipe-detail ul.mats li { padding: 7px 4px; border-bottom: 1px dashed var(--line); font-size: 14.5px; }
+.credit { font-size: 11.5px; color: var(--muted); margin-top: 14px; }
+.credit a { color: var(--muted); }
 .recipe-detail .ings { width: 100%; border-collapse: collapse; font-size: 14.5px; }
 .recipe-detail .ings td { padding: 7px 4px; border-bottom: 1px dashed var(--line); }
 .recipe-detail .ings td:last-child { text-align: right; white-space: nowrap; color: var(--muted); }
@@ -435,7 +443,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     <div>
       <div class="cap" id="menu-date">Today's menu</div>
       <h1 id="menu-theme">今日の献立</h1>
-      <p>簡単で栄養のある夕食を、毎朝 AI が3品（主菜・副菜・汁物）考えます。分量はすべて2人分です。</p>
+      <p>楽天レシピの「簡単・時短」「健康」「節約」などの人気レシピから、主菜・副菜・汁物を毎朝1品ずつ選びます。</p>
     </div>
     <div class="totals" id="menu-totals"></div>
   </div>
@@ -444,12 +452,14 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     <div class="sheet-head"><h2>これまでのレシピ</h2><span class="cap" id="recipe-count"></span></div>
     <div class="controls">
       <div class="row" id="rrole"></div>
+      <div class="row" id="rtime"></div>
       <div class="row" id="rtag"></div>
     </div>
     <div id="recipe-list"></div>
   </section>
 </div>
 <main id="recipe-detail" class="wrap article" hidden></main>
+<p class="wrap credit" id="recipe-credit" hidden><a href="https://webservice.rakuten.co.jp/" target="_blank" rel="noopener">Supported by Rakuten Developers</a></p>
 
 <footer class="wrap"><span id="updated"></span> ／ 記事の著作権は各報道機関に帰属します。</footer>
 
@@ -840,82 +850,89 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     view.replaceChildren(el("div", { class: "inner" }, ...kids));
   }
 
-  // ---------------- Recipes ----------------
-  const ROLE_TONES = { "主菜": ["#c8553d", "#9c3b28"], "副菜": ["#4f8a3c", "#356428"], "汁物": ["#b98a2e", "#8a6418"] };
-  const rstate = { role: null, tag: null, page: 0 };
-  const allDishes = () => (state.recipes || []).flatMap((d) => d.dishes.map((x) => ({ ...x, date: d.date })));
-  const dateLabel = (iso) => dayFmt.format(new Date(`${iso}T12:00:00+09:00`));
-  function plate(d, big) {
-    const [c1, c2] = ROLE_TONES[d.role] || ROLE_TONES["主菜"];
-    return el("div", { class: big ? "plate" : "thumb ph", style: `--ph1:${c1};--ph2:${c2}` },
-      big ? el("b", {}, d.role) : el("span", {}, d.role, el("small", {}, `${d.minutes}分`)),
-      big ? el("span", { class: "mins" }, `${d.minutes}分`) : null);
+  // ---------------- Recipes (Rakuten Recipe API) ----------------
+  const ROLE_TONES = { "主菜": ["#c8553d", "#9c3b28"], "副菜": ["#4f8a3c", "#356428"], "汁物": ["#b98a2e", "#8a6418"], "": ["#5b7186", "#3e5263"] };
+  const TIME_FILTERS = [["10分以内", 10], ["15分以内", 15], ["30分以内", 30]];
+  const rstate = { role: null, time: null, cat: null, page: 0 };
+  function allRecipes() {
+    const seen = new Map();
+    for (const d of state.recipes || []) for (const r of d.recipes) if (!seen.has(r.id)) seen.set(r.id, { ...r, date: d.date });
+    return [...seen.values()];
   }
-  const nums = (d) => el("div", { class: "nums" }, el("span", {}, el("b", {}, d.kcal), " kcal"), el("span", {}, "たんぱく質 ", el("b", {}, d.protein_g), " g"));
-  const rtags = (d) => d.tags?.length ? el("div", { class: "rtags" }, ...d.tags.map((t) => el("span", {}, t))) : null;
+  const dateLabel = (iso) => dayFmt.format(new Date(`${iso}T12:00:00+09:00`));
+  function plate(r, big) {
+    const [c1, c2] = ROLE_TONES[r.role || ""];
+    const ph = () => el("div", { class: big ? "plate" : "thumb ph", style: `--ph1:${c1};--ph2:${c2}` },
+      big ? el("b", {}, r.role || "レシピ") : el("span", {}, r.role || "レシピ", el("small", {}, r.indication || "")));
+    if (!r.image) return ph();
+    const img = el("img", { src: r.image, alt: "", loading: "lazy", decoding: "async", referrerpolicy: "no-referrer" });
+    const box = el("div", { class: big ? "plate photo" : "thumb" }, img, big && r.indication ? el("span", { class: "mins" }, r.indication) : null);
+    img.addEventListener("error", () => box.replaceWith(ph()));
+    return box;
+  }
+  const facts = (r) => el("div", { class: "nums" }, r.indication ? el("span", {}, "⏱ ", el("b", {}, r.indication)) : null, r.cost ? el("span", {}, "¥ ", el("b", {}, r.cost)) : null);
+  const rtags = (r) => r.categories?.length ? el("div", { class: "rtags" }, ...[...new Set(r.categories)].map((t) => el("span", {}, t))) : null;
   function renderRecipes() {
     const days = state.recipes || [];
     if (!days.length) {
-      $("menu-date").textContent = "Today's menu";
       $("menu-totals").replaceChildren();
       $("menu-today").replaceChildren(el("div", { class: "recipe-empty" }, el("b", {}, "レシピは準備中です"),
-        "GitHub に ANTHROPIC_API_KEY を登録すると、毎朝6時ごろに AI がその日の献立（主菜・副菜・汁物、2人分）を考えて、ここに表示します。"));
+        "GitHub に楽天のアプリID（RAKUTEN_APP_ID）を登録すると、毎朝6時ごろに楽天レシピの人気レシピを集めて、ここに表示します。"));
       $("recipe-archive").hidden = true;
       return;
     }
     $("recipe-archive").hidden = false;
     const today = days[0];
+    const byId = new Map(today.recipes.map((r) => [r.id, r]));
     $("menu-date").textContent = dateLabel(today.date);
-    $("menu-theme").textContent = today.theme;
-    const kcal = today.dishes.reduce((s, d) => s + d.kcal, 0), prot = today.dishes.reduce((s, d) => s + d.protein_g, 0);
-    const mins = Math.max(...today.dishes.map((d) => d.minutes));
-    $("menu-totals").replaceChildren(
-      el("span", {}, el("b", {}, kcal), "kcal（1人分の合計）"),
-      el("span", {}, el("b", {}, prot), "g たんぱく質"),
-      el("span", {}, el("b", {}, mins), "分（いちばん長い料理）"));
-    $("menu-today").replaceChildren(el("div", { class: "dishes" }, ...today.dishes.map((d) => el("a", { class: "dish", href: `#recipe/${d.id}` },
-      plate(d, true), el("div", { class: "txt" }, el("h3", {}, d.name), el("p", {}, d.catch), nums(d), rtags(d))))));
+    $("menu-theme").textContent = "今日の献立";
+    $("menu-totals").replaceChildren(el("span", {}, el("b", {}, today.recipes.length), "品を新しく集めました"));
+    const menu = ["主菜", "副菜", "汁物"].map((role) => byId.get(today.menu?.[role])).filter(Boolean);
+    $("menu-today").replaceChildren(menu.length ? el("div", { class: "dishes" }, ...menu.map((r) => el("a", { class: "dish", href: `#recipe/${r.id}` },
+      plate(r, true), el("div", { class: "txt" }, el("span", { class: "cap" }, r.role), el("h3", {}, r.name), el("p", {}, r.catch), facts(r))))) :
+      el("div", { class: "recipe-empty" }, "今日は主菜・副菜・汁物の組み合わせを作れませんでした。下の一覧から選んでください。"));
     renderRecipeArchive();
   }
   function renderRecipeArchive() {
-    const dishes = allDishes();
-    const tags = [...new Set(dishes.flatMap((d) => d.tags || []))];
-    $("rrole").replaceChildren(el("span", { class: "cap" }, "種類"), ...[null, "主菜", "副菜", "汁物"].map((r) => el("button", {
-      type: "button", class: "chip", "aria-pressed": String(rstate.role === r), onclick: () => { rstate.role = r; rstate.page = 0; renderRecipeArchive(); } }, r || "すべて")));
-    $("rtag").replaceChildren(el("span", { class: "cap" }, "こだわり"), ...[null, ...tags].map((t) => el("button", {
-      type: "button", class: "chip", "aria-pressed": String(rstate.tag === t), onclick: () => { rstate.tag = t; rstate.page = 0; renderRecipeArchive(); } }, t || "指定なし")));
-    const list = dishes.filter((d) => (!rstate.role || d.role === rstate.role) && (!rstate.tag || (d.tags || []).includes(rstate.tag)));
+    const recipes = allRecipes();
+    const cats = [...new Set(recipes.flatMap((r) => r.categories || []))];
+    const chipRow = (id, label, options, key, text) => $(id).replaceChildren(el("span", { class: "cap" }, label), ...[null, ...options].map((o) => el("button", {
+      type: "button", class: "chip", "aria-pressed": String(rstate[key] === o), onclick: () => { rstate[key] = o; rstate.page = 0; renderRecipeArchive(); } }, o == null ? "すべて" : text(o))));
+    chipRow("rrole", "種類", ["主菜", "副菜", "汁物"], "role", (o) => o);
+    chipRow("rtime", "時間", TIME_FILTERS.map((t) => t[0]), "time", (o) => o);
+    chipRow("rtag", "カテゴリ", cats, "cat", (o) => o);
+    const limit = TIME_FILTERS.find((t) => t[0] === rstate.time)?.[1];
+    const list = recipes.filter((r) => (!rstate.role || r.role === rstate.role) && (!limit || (r.minutes != null && r.minutes <= limit)) && (!rstate.cat || (r.categories || []).includes(rstate.cat)));
     $("recipe-count").textContent = `${list.length} 品`;
     const box = $("recipe-list");
     if (!list.length) { box.replaceChildren(el("div", { class: "empty" }, "条件に合うレシピはまだありません。")); return; }
     const pages = Math.ceil(list.length / PER_PAGE);
     rstate.page = Math.min(rstate.page, pages - 1);
-    box.replaceChildren(el("div", { class: "cards rcards" }, ...list.slice(rstate.page * PER_PAGE, (rstate.page + 1) * PER_PAGE).map((d) =>
-      el("a", { class: "entry", href: `#recipe/${d.id}` },
-        el("div", { class: "body" }, el("h3", {}, d.name),
-          el("div", { class: "meta" }, el("span", {}, d.role), el("span", {}, `${d.minutes}分`), el("span", {}, `${d.kcal}kcal`), el("time", {}, dateLabel(d.date)))),
-        plate(d, false)))));
+    box.replaceChildren(el("div", { class: "cards rcards" }, ...list.slice(rstate.page * PER_PAGE, (rstate.page + 1) * PER_PAGE).map((r) =>
+      el("a", { class: "entry", href: `#recipe/${r.id}` },
+        el("div", { class: "body" }, el("h3", {}, r.name),
+          el("div", { class: "meta" }, r.role ? el("span", {}, r.role) : null, r.indication ? el("span", {}, r.indication) : null, r.cost ? el("span", {}, r.cost) : null)),
+        plate(r, false)))));
     if (pages > 1) box.append(el("nav", { class: "pager", "aria-label": "ページ" },
       ...Array.from({ length: pages }, (_, p) => el("button", { type: "button", "aria-current": p === rstate.page ? "page" : null,
         onclick: () => { rstate.page = p; renderRecipeArchive(); $("recipe-archive").scrollIntoView({ block: "start" }); } }, String(p + 1)))));
   }
   function renderRecipe(id) {
-    const d = allDishes().find((x) => x.id === id);
+    const r = allRecipes().find((x) => x.id === id);
     const view = $("recipe-detail");
     const back = el("a", { class: "back", href: "#recipes" }, "← レシピに戻る");
-    if (!d) { view.replaceChildren(el("div", { class: "inner" }, back, el("div", { class: "empty" }, "このレシピは見つかりませんでした。"))); return; }
+    if (!r) { view.replaceChildren(el("div", { class: "inner" }, back, el("div", { class: "empty" }, "このレシピは見つかりませんでした。"))); return; }
     view.replaceChildren(el("div", { class: "inner recipe-detail" }, back,
-      el("span", { class: "cap" }, `${d.role} ・ ${dateLabel(d.date)}`),
-      el("h1", {}, d.name),
-      el("div", { class: "meta" }, el("span", {}, `${d.minutes}分`), nums(d), rtags(d)),
-      el("p", { class: "lead" }, d.catch),
-      el("h2", {}, "材料（2人分）"),
-      el("table", { class: "ings" }, el("tbody", {}, ...d.ingredients.map((i) => el("tr", {}, el("td", {}, i.name), el("td", {}, i.amount))))),
-      el("h2", {}, "作り方"),
-      el("ol", { class: "steps" }, ...d.steps.map((t) => el("li", {}, el("span", {}, t)))),
-      el("h2", {}, "栄養のポイント"), el("p", {}, d.nutrition_note),
-      el("h2", {}, "コツ"), el("p", {}, d.tip),
-      el("p", { class: "note" }, "このレシピは AI（Claude）が考えたものです。カロリーとたんぱく質は1人分の目安です。アレルギーのある食材や、加熱が十分かどうかには気をつけてください。")));
+      el("div", { class: "hero-photo" }, plate(r, true)),
+      el("span", { class: "cap" }, [r.role, ...(r.categories || [])].filter(Boolean).join(" ・ ")),
+      el("h1", {}, r.name),
+      el("div", { class: "meta" }, facts(r), r.author ? el("span", {}, `作者：${r.author}`) : null),
+      r.catch ? el("p", { class: "lead" }, r.catch) : null,
+      el("h2", {}, "材料"),
+      el("ul", { class: "mats" }, ...(r.materials || []).map((m) => el("li", {}, m))),
+      el("p", { class: "note" }, "分量と作り方は楽天レシピのページで確認できます。"),
+      el("a", { class: "orig-btn", href: r.url, target: "_blank", rel: "noopener" }, "楽天レシピで作り方を見る →"),
+      el("p", { class: "credit" }, el("a", { href: "https://webservice.rakuten.co.jp/", target: "_blank", rel: "noopener" }, "Supported by Rakuten Developers"))));
   }
 
   // ---------------- Routing & events ----------------
@@ -926,6 +943,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
+    $("recipe-credit").hidden = view !== "recipe";
     $("news-nav").hidden = recipes;
     if (recipes) { $("tab-news").removeAttribute("aria-current"); $("tab-recipes").setAttribute("aria-current", "page"); }
     else { $("tab-recipes").removeAttribute("aria-current"); $("tab-news").setAttribute("aria-current", "page"); }
