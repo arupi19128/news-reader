@@ -1,7 +1,8 @@
 """Collect news feeds, flag stories that TV news has not covered, and write docs/data/news.json.
 
 Run from the repository root:  python scripts/fetch_news.py
-Set ANTHROPIC_API_KEY to add Japanese titles and summaries to English articles.
+Set ANTHROPIC_API_KEY to label articles (Japanese headline, category) and to pick and explain
+the day's stories with Claude; without it the script only collects and matches.
 """
 
 import email.utils
@@ -21,9 +22,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.toml"
 OUT_PATH = ROOT / "docs" / "data" / "news.json"
+PICKS_PATH = ROOT / "docs" / "data" / "picks.json"
 USER_AGENT = "Mozilla/5.0 (compatible; news-radar/1.0; +https://github.com/)"
-TRANSLATE_BATCH = 25
-TRANSLATE_MAX_PER_RUN = 150
 
 NS = {
     "atom": "http://www.w3.org/2005/Atom",
@@ -38,6 +38,10 @@ def now_utc():
 
 def iso(dt):
     return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def parse_iso(text):
+    return datetime.fromisoformat(text.replace("Z", "+00:00"))
 
 
 def parse_date(text):
@@ -188,76 +192,48 @@ def match_tv(article, tv_items, threshold, window):
     return None
 
 
-# ---- Translation (optional) ----------------------------------------------
+# ---- Daily picks ----------------------------------------------------------
 
-def translate(articles, model):
-    """Add title_ja and summary_ja to English articles using the Claude API."""
-    import anthropic
+JST = timezone(timedelta(hours=9))
 
-    client = anthropic.Anthropic()
-    schema = {
-        "type": "object",
-        "properties": {
-            "items": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "id": {"type": "string"},
-                        "title_ja": {"type": "string"},
-                        "summary_ja": {"type": "string"},
-                    },
-                    "required": ["id", "title_ja", "summary_ja"],
-                    "additionalProperties": False,
-                },
-            }
-        },
-        "required": ["items"],
-        "additionalProperties": False,
-    }
-    done = 0
-    for start in range(0, len(articles), TRANSLATE_BATCH):
-        batch = articles[start:start + TRANSLATE_BATCH]
-        payload = [{"id": a["id"], "title": a["title"], "summary": a["summary"]} for a in batch]
-        prompt = (
-            "以下は海外ニュースの見出しと概要です。各項目について、日本の読者向けに"
-            "自然な日本語の見出し(title_ja)と、何が起きたかを1〜2文で説明する要約(summary_ja)を作ってください。"
-            "人名・地名は日本の報道で一般的な表記にしてください。概要が空なら見出しから分かる範囲で書いてください。\n\n"
-            + json.dumps(payload, ensure_ascii=False)
-        )
-        try:
-            response = client.beta.messages.create(
-                model=model,
-                max_tokens=16000,
-                betas=["server-side-fallback-2026-07-01"],
-                fallbacks="default",
-                output_config={
-                    "effort": "low",
-                    "format": {"type": "json_schema", "schema": schema},
-                },
-                messages=[{"role": "user", "content": prompt}],
-            )
-        except anthropic.RateLimitError as e:
-            print(f"  translation rate-limited, stopping for this run: {e}", file=sys.stderr)
-            break
-        except anthropic.APIStatusError as e:
-            print(f"  translation failed ({e.status_code}): {e.message}", file=sys.stderr)
-            continue
-        except anthropic.APIConnectionError as e:
-            print(f"  translation connection error: {e}", file=sys.stderr)
-            continue
-        if response.stop_reason != "end_turn":
-            print(f"  translation stopped: {response.stop_reason}", file=sys.stderr)
-            continue
-        text = next((b.text for b in response.content if b.type == "text"), "")
-        by_id = {a["id"]: a for a in batch}
-        for row in json.loads(text)["items"]:
-            target = by_id.get(row["id"])
-            if target:
-                target["title_ja"] = row["title_ja"].strip()
-                target["summary_ja"] = row["summary_ja"].strip()
-                done += 1
-    print(f"translated {done} articles")
+
+def current_round(now, hours):
+    """The latest pick round (e.g. "2026-10-18-12") that has started today in JST, or None."""
+    jst = now.astimezone(JST)
+    started = [h for h in hours if h <= jst.hour]
+    return f"{jst:%Y-%m-%d}-{max(started):02d}" if started else None
+
+
+def update_picks(picks_data, articles, settings, now, round_id):
+    """Pick this round's stories (if round_id is set) and write any missing explanations."""
+    import ai
+
+    model = settings.get("model", "claude-opus-5-5")
+    picked_ids = {p["id"] for p in picks_data["picks"]}
+    if round_id:
+        recent = now - timedelta(hours=24)
+        candidates = [a for a in articles if a["id"] not in picked_ids and parse_iso(a["published"]) >= recent]
+        # Stories missing from TV come first, newest first within each group.
+        candidates.sort(key=lambda a: (a.get("tv_match") is None, a["published"]), reverse=True)
+        candidates = candidates[:150]
+        recent_titles = [(p.get("detail") or {}).get("headline") or p.get("title_ja") or p["title"]
+                         for p in picks_data["picks"] if parse_iso(p["picked_at"]) >= now - timedelta(days=3)]
+        chosen = ai.pick(candidates, recent_titles, settings.get("picks_per_round", 3), model) if candidates else []
+        by_id = {a["id"]: a for a in candidates}
+        for art_id in chosen:
+            entry = {k: v for k, v in by_id[art_id].items()}
+            entry |= {"picked_at": iso(now), "round": round_id, "detail": None}
+            picks_data["picks"].append(entry)
+        picks_data["rounds_done"] = (picks_data["rounds_done"] + [round_id])[-60:]
+        print(f"round {round_id}: picked {len(chosen)}")
+
+    pending = [p for p in picks_data["picks"] if not p.get("detail")]
+    for p in pending[:settings.get("explain_max_per_run", 6)]:
+        print(f"  explaining: {p.get('title_ja') or p['title']}")
+        p["detail"] = ai.explain(p, model)
+
+    keep = now - timedelta(days=settings.get("picks_keep_days", 30))
+    picks_data["picks"] = [p for p in picks_data["picks"] if parse_iso(p["picked_at"]) >= keep]
 
 
 # ---- Main -----------------------------------------------------------------
@@ -314,7 +290,7 @@ def main():
         collected.setdefault(art_id, art)
     cutoff = started - keep
     items = [a for a in collected.values()
-             if datetime.fromisoformat(a["published"].replace("Z", "+00:00")) >= cutoff]
+             if parse_iso(a["published"]) >= cutoff]
 
     excludes = {f["name"]: f["exclude"] for f in config.get("feeds", []) if f.get("exclude")}
     items = [a for a in items
@@ -323,13 +299,27 @@ def main():
     tv = [a for a in items if a["kind"] == "tv"]
     articles = [a for a in items if a["kind"] != "tv"]
 
-    if os.environ.get("ANTHROPIC_API_KEY"):
-        pending = [a for a in articles if a["lang"] == "en" and "title_ja" not in a]
+    picks_data = {"rounds_done": [], "picks": []}
+    if PICKS_PATH.exists():
+        picks_data = json.loads(PICKS_PATH.read_text(encoding="utf-8"))
+
+    # Claude runs only at the pick hours (JST); other runs just collect and match, using no tokens.
+    use_ai = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    round_id = current_round(started, settings.get("pick_hours_jst", [7, 16, 22]))
+    if round_id in picks_data["rounds_done"]:
+        round_id = None
+    if not use_ai:
+        print("ANTHROPIC_API_KEY not set: skipping labels, picks and explanations")
+    elif round_id:
+        import ai
+        recent = started - timedelta(hours=24)
+        pending = [a for a in articles if "category" not in a and parse_iso(a["published"]) >= recent]
         pending.sort(key=lambda a: a["published"], reverse=True)
         if pending:
-            translate(pending[:TRANSLATE_MAX_PER_RUN], settings.get("model", "claude-opus-5-5"))
+            ai.label(pending[:settings.get("label_max_per_round", 200)], settings["categories"],
+                     settings.get("model", "claude-opus-5-5"))
     else:
-        print("ANTHROPIC_API_KEY not set: English articles stay untranslated")
+        print("not a pick round: Claude is not called this run")
 
     for t in tv:
         t["_grams"] = bigrams(t["title"])
@@ -338,11 +328,18 @@ def main():
     for t in tv:
         del t["_grams"]
 
+    if use_ai and round_id:
+        update_picks(picks_data, articles, settings, started, round_id)
+    picked_ids = {p["id"] for p in picks_data["picks"]}
+    for a in articles:
+        a["picked"] = a["id"] in picked_ids
+
     articles.sort(key=lambda a: a["published"], reverse=True)
     tv.sort(key=lambda a: a["published"], reverse=True)
     data = {
         "generated_at": iso(started),
-        "settings": {"keep_days": keep.days, "tv_match_threshold": threshold},
+        "settings": {"keep_days": keep.days, "tv_match_threshold": threshold,
+                     "categories": settings.get("categories", [])},
         "topics": config.get("topics", []),
         "feeds": statuses,
         "articles": articles,
@@ -350,6 +347,9 @@ def main():
     }
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    picks_data["picks"].sort(key=lambda p: p["picked_at"], reverse=True)
+    picks_data["generated_at"] = iso(started)
+    PICKS_PATH.write_text(json.dumps(picks_data, ensure_ascii=False, indent=1), encoding="utf-8")
     uncovered = sum(1 for a in articles if a["tv_match"] is None)
     print(f"wrote {len(articles)} articles ({uncovered} not seen on TV) and {len(tv)} TV headlines")
 

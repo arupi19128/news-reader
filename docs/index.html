@@ -4,382 +4,567 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ニュースレーダー</title>
+<meta name="description" content="テレビでは流れにくい世界のニュースを、AIが選んでやさしく解説します。">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Kaku+Gothic+New:wght@700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: one reading column; a sticky control bar; cards marked by a TV-coverage stripe */
+/* Layout: dark masthead → light hero with entry cards → pick grid → full list (warm band) → dark about band */
 :root {
-  --bg: #eef0f2;
+  --page: #f6f8fa;
   --surface: #ffffff;
-  --ink: #17212b;
-  --muted: #5b6672;
-  --line: #d5dae0;
-  --accent: #0d6b67;
-  --accent-soft: #d9ecea;
-  --signal: #b9470f;
-  --signal-soft: #fbe7dc;
-  --covered: #8a95a1;
+  --ink: #142235;
+  --muted: #5d6b7a;
+  --line: #dde3ea;
+  --navy: #142235;
+  --navy-2: #1d2f47;
+  --on-navy: #eef3f8;
+  --on-navy-muted: #a9b7c6;
+  --accent: #127a86;
+  --accent-soft: #e0f1f2;
+  --signal: #c2511a;
+  --signal-soft: #fbe9df;
+  --warm: #f6f1ea;
   --font-display: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
-  --font-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-body: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 14px;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #11171c;
-    --surface: #182129;
-    --ink: #e4e9ee;
-    --muted: #97a3ae;
-    --line: #2a3640;
-    --accent: #4fc1b9;
-    --accent-soft: #173a39;
-    --signal: #f08a4b;
-    --signal-soft: #3d2416;
-    --covered: #66727d;
+    --page: #0f1720;
+    --surface: #17212c;
+    --ink: #e6edf4;
+    --muted: #9aa8b6;
+    --line: #273443;
+    --navy: #0a121b;
+    --navy-2: #13202e;
+    --accent: #4cc3cc;
+    --accent-soft: #15343a;
+    --signal: #f08c55;
+    --signal-soft: #3a2418;
+    --warm: #1a1d22;
     color-scheme: dark;
   }
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 15px/1.7 var(--font-body);
-}
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.75 var(--font-body); }
 a { color: inherit; }
 button, input { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[hidden] { display: none !important; }
 
 .wrap {
-  max-width: 820px;
-  margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
 }
 
-header.top { padding-block: 28px 18px; display: grid; gap: 14px; }
-.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-h1 {
-  margin: 0;
-  font: 900 clamp(26px, 5vw, 34px)/1.15 var(--font-display);
-  letter-spacing: 0.02em;
-}
-h1 .dot { display: inline-block; width: 0.42em; height: 0.42em; border-radius: 50%; background: var(--signal); margin-left: 0.12em; vertical-align: 0.35em; }
-.updated { font: 12px/1.4 var(--font-mono); color: var(--muted); }
-.lede { margin: 0; color: var(--muted); max-width: 62ch; }
+/* Masthead */
+.tagline { background: var(--navy); color: var(--on-navy); font-size: 12.5px; text-align: center; padding: 8px 16px; letter-spacing: 0.04em; }
+.masthead { background: var(--navy); color: var(--on-navy); }
+.brandbar { background: var(--navy-2); display: flex; align-items: center; justify-content: center; gap: 22px; padding-block: 26px; border-radius: 0 0 4px 4px; }
+.brandbar svg { width: 64px; height: 64px; flex: none; }
+.wordmark { display: grid; line-height: 1.1; }
+.wordmark b { font: 900 clamp(30px, 6vw, 50px)/1.05 var(--font-display); letter-spacing: 0.04em; }
+.wordmark span { font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.32em; color: var(--on-navy-muted); text-transform: uppercase; margin-top: 6px; }
+nav.main { overflow-x: auto; scrollbar-width: none; }
+nav.main ul { display: flex; justify-content: center; margin: 0 auto; padding: 0; list-style: none; min-width: max-content; }
+nav.main a { display: block; padding: 14px 22px; text-decoration: none; font-size: 14px; color: var(--on-navy); }
+nav.main a:hover { background: rgba(255, 255, 255, 0.08); }
 
-.stats { display: flex; gap: 8px; flex-wrap: wrap; }
-.stat {
-  display: flex; align-items: baseline; gap: 8px;
-  padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
-}
-.stat b { font: 500 22px/1 var(--font-mono); font-variant-numeric: tabular-nums; }
-.stat.hot b { color: var(--signal); }
-.stat span { font-size: 12px; color: var(--muted); }
+/* Hero */
+.hero { background: linear-gradient(180deg, var(--accent-soft) 0%, var(--page) 70%); padding-block: 56px 48px; }
+.pill { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+.hero h1 { font: 900 clamp(28px, 5.2vw, 46px)/1.35 var(--font-display); margin: 16px 0 14px; text-wrap: balance; letter-spacing: 0.01em; }
+.hero p.lede { margin: 0; max-width: 40em; color: var(--muted); font-size: 15.5px; }
+.entries { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.entry { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; text-decoration: none; display: grid; gap: 8px; align-content: start; transition: transform 0.15s, box-shadow 0.15s; }
+.entry:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(20, 34, 53, 0.08); }
+.entry .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
+.entry .ico svg { width: 24px; height: 24px; }
+.entry .who { justify-self: start; font-size: 11.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+.entry h3 { margin: 0; font-size: 19px; font-weight: 900; }
+.entry p { margin: 0; font-size: 13.5px; color: var(--muted); }
+.entry .count { font: 500 13px var(--font-mono); color: var(--signal); }
+.tone-a .ico, .tone-a .who { background: var(--accent-soft); color: var(--accent); }
+.tone-b .ico, .tone-b .who { background: var(--signal-soft); color: var(--signal); }
+.tone-c .ico, .tone-c .who { background: #e6ecfb; color: #3550a8; }
+@media (prefers-color-scheme: dark) { .tone-c .ico, .tone-c .who { background: #1c2747; color: #9bb0f0; } }
 
-.controls {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  padding-block: 10px;
-}
-.controls .wrap { display: grid; gap: 8px; }
-.row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.row-label { font-size: 11px; letter-spacing: 0.08em; color: var(--muted); min-width: 4.5em; }
-
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
-.seg button { border: 0; background: none; padding: 6px 12px; cursor: pointer; font-size: 13px; }
-.seg button + button { border-left: 1px solid var(--line); }
-.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-
-.chip {
-  border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
-  padding: 3px 12px; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
-}
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
-.chip .x { font-size: 15px; line-height: 1; opacity: 0.7; }
+/* Sections */
+section.band { padding-block: 64px; }
+section.band.warm { background: var(--warm); }
+.eyebrow { font: 700 11.5px/1.4 var(--font-mono); letter-spacing: 0.12em; color: var(--accent); }
+.eyebrow i { font-style: normal; color: var(--muted); margin: 0 6px; }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.sec-head h2 { margin: 4px 0 2px; font: 900 26px/1.3 var(--font-body); }
+.sec-head p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.outline-btn { border: 1.5px solid var(--accent); color: var(--accent); background: var(--surface); padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; text-decoration: none; cursor: pointer; white-space: nowrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 14px; font-size: 13px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
+@media (prefers-color-scheme: dark) { .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--navy); } }
+.chip .x { opacity: 0.7; }
 .chip.ghost { border-style: dashed; color: var(--muted); }
 
-.search { flex: 1 1 200px; min-width: 0; }
-.search input, .addtopic input {
-  width: 100%; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 10px; font-size: 14px;
-}
-.addtopic { display: flex; gap: 6px; flex-wrap: wrap; width: 100%; }
-[hidden] { display: none !important; }
-.addtopic input { flex: 1 1 140px; width: auto; min-width: 0; }
+/* Pick cards */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 22px; }
+.pick { text-decoration: none; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.thumb { aspect-ratio: 16 / 9; max-width: 100%; border-radius: 6px; padding: 12px 14px 10px; color: #fff; display: grid; grid-template-rows: auto 1fr auto; position: relative; overflow: hidden; transition: transform 0.15s; }
+.pick:hover .thumb { transform: translateY(-2px); }
+.thumb .cat { justify-self: start; font-size: 10.5px; font-weight: 700; background: rgba(255, 255, 255, 0.92); color: var(--th, #142235); padding: 0 6px; border-radius: 3px; line-height: 1.7; }
+.thumb .ttl { align-self: center; font-weight: 900; font-size: clamp(14px, 1.6vw, 17px); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.thumb .foot { display: flex; justify-content: space-between; font: 500 10.5px var(--font-mono); border-top: 1px solid rgba(255, 255, 255, 0.18); padding-top: 6px; color: rgba(255, 255, 255, 0.8); }
+.thumb .foot b { color: #f2c46d; font-family: var(--font-body); font-weight: 700; }
+.thumb .tvmark { position: absolute; top: 10px; right: 10px; font-size: 10px; font-weight: 700; background: var(--signal); color: #fff; padding: 0 6px; border-radius: 3px; line-height: 1.8; }
+.pick h3 { margin: 0; font-size: 15px; font-weight: 700; line-height: 1.6; overflow-wrap: anywhere; }
+.pick .sub { margin: -4px 0 0; font-size: 12.5px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.notice { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 18px 20px; color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+.notice strong { color: var(--ink); }
+.more-wrap { text-align: center; margin-top: 26px; }
+
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+.value { background: var(--accent-soft); border-radius: 10px; padding: 16px 18px; font-size: 13px; }
+.value b { display: block; font-size: 14px; margin-bottom: 4px; }
+
+/* All-articles list */
+.controls { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 18px; }
+.row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.row-label { font-size: 11px; letter-spacing: 0.08em; color: var(--muted); min-width: 4.8em; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface); padding: 5px 12px; cursor: pointer; font-size: 13px; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--navy); color: var(--on-navy); }
+@media (prefers-color-scheme: dark) { .seg button[aria-pressed="true"] { background: var(--accent); color: var(--navy); } }
+.search { flex: 1 1 220px; min-width: 0; }
+.search input, .addtopic input { width: 100%; border: 1px solid var(--line); background: var(--page); border-radius: 8px; padding: 6px 10px; font-size: 14px; }
+.addtopic { display: flex; gap: 6px; flex-wrap: wrap; }
+.addtopic input { flex: 1 1 160px; width: auto; min-width: 0; }
 .addtopic button { border: 1px solid var(--accent); background: var(--accent); color: var(--surface); border-radius: 8px; padding: 6px 14px; cursor: pointer; }
 .addtopic .cancel { background: none; color: var(--muted); border-color: var(--line); }
 
-main { padding-block: 16px 48px; display: grid; gap: 22px; }
-.day h2 {
-  margin: 0 0 8px; font: 700 13px/1.4 var(--font-mono); color: var(--muted); letter-spacing: 0.04em;
-  display: flex; align-items: center; gap: 10px;
-}
-.day h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .list { display: grid; gap: 8px; }
-
-.card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
-  padding: 12px 14px 12px 18px; position: relative; min-width: 0;
-}
-.card::before {
-  content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px; border-radius: 0 3px 3px 0;
-  background: var(--covered);
-}
-.card.uncovered::before { background: var(--signal); }
-.card.unknown::before { background: var(--line); }
-.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 12px; color: var(--muted); }
-.meta time { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.day h4 { margin: 18px 0 8px; font: 500 12.5px var(--font-mono); color: var(--muted); display: flex; gap: 10px; align-items: center; }
+.day h4::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 11px 14px 11px 18px; position: relative; min-width: 0; }
+.item::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px; border-radius: 0 3px 3px 0; background: var(--line); }
+.item.uncovered::before { background: var(--signal); }
+.item.covered::before { background: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 12px; color: var(--muted); }
+.meta time { font-family: var(--font-mono); }
 .tag { border-radius: 4px; padding: 0 6px; font-size: 11px; line-height: 1.8; background: var(--accent-soft); color: var(--accent); }
 .badge { border-radius: 4px; padding: 0 6px; font-size: 11px; line-height: 1.8; font-weight: 700; }
 .badge.uncovered { background: var(--signal-soft); color: var(--signal); }
-.badge.covered { border: 1px solid var(--line); color: var(--muted); font-weight: 400; }
-.badge.unknown { border: 1px dashed var(--line); color: var(--muted); font-weight: 400; }
-.card h3 { margin: 4px 0 2px; font: 700 16px/1.5 var(--font-body); text-wrap: pretty; overflow-wrap: anywhere; }
-.card h3 a { text-decoration: none; }
-.card h3 a:hover { text-decoration: underline; }
-.orig { margin: 0; font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
-.summary { margin: 6px 0 0; font-size: 14px; overflow-wrap: anywhere; }
-.tvline { margin: 8px 0 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
-.tvline a { color: var(--muted); }
+.badge.covered, .badge.unknown { border: 1px solid var(--line); color: var(--muted); font-weight: 400; }
+.badge.pick { background: var(--navy); color: #f2c46d; }
+@media (prefers-color-scheme: dark) { .badge.pick { background: #f2c46d; color: var(--navy); } }
+.item h5 { margin: 3px 0 0; font-size: 15px; font-weight: 700; line-height: 1.55; overflow-wrap: anywhere; }
+.item h5 a { text-decoration: none; }
+.item h5 a:hover { text-decoration: underline; }
+.item .orig { margin: 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.item .tvline { margin: 4px 0 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 22px; color: var(--muted); }
 
-.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 24px; color: var(--muted); }
-.empty strong { color: var(--ink); display: block; margin-bottom: 4px; }
+/* About */
+.about { background: var(--navy); color: var(--on-navy); padding-block: 72px; }
+.about .wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
+.about .eyebrow { color: #7fd3da; }
+.about h2 { font: 900 clamp(24px, 3.4vw, 32px)/1.45 var(--font-display); margin: 8px 0 0; }
+.about p { margin: 0 0 14px; font-size: 14px; color: var(--on-navy-muted); }
+.about p b { color: var(--on-navy); }
 
-footer { border-top: 1px solid var(--line); padding-block: 20px 40px; color: var(--muted); font-size: 13px; }
-footer details { margin-top: 8px; }
-footer summary { cursor: pointer; }
-.feeds { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 16px; margin-top: 8px; padding: 0; list-style: none; }
-.feeds li { display: flex; gap: 6px; align-items: baseline; min-width: 0; }
-.feeds .ok { color: var(--accent); }
-.feeds .ng { color: var(--signal); }
-.more { display: block; margin: 4px auto 0; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 8px 18px; cursor: pointer; }
+footer.site { background: var(--navy); color: var(--on-navy-muted); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-block: 22px 40px; font-size: 12.5px; }
+footer.site summary { cursor: pointer; }
+.feeds { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 2px 16px; margin: 10px 0 0; padding: 0; list-style: none; }
+.feeds .ng { color: #f39b6b; }
 
-@media (max-width: 480px) {
-  .row-label { width: 100%; }
+/* Article view */
+.article { padding-block: 40px 72px; }
+.article .inner { max-width: 720px; margin: 0 auto; }
+.back { display: inline-block; font-size: 13px; color: var(--accent); text-decoration: none; margin-bottom: 20px; font-weight: 700; }
+.article .thumb { aspect-ratio: auto; min-height: 220px; padding: 20px 24px 14px; border-radius: 10px; }
+.article .thumb .ttl { font-size: clamp(20px, 3.4vw, 28px); -webkit-line-clamp: unset; }
+.article .meta { margin: 14px 0 0; }
+.article .lead { font-size: 17px; line-height: 1.9; margin: 22px 0 8px; font-weight: 500; }
+.article h2 { font-size: 17px; font-weight: 900; margin: 34px 0 8px; padding-left: 12px; border-left: 4px solid var(--accent); }
+.article p { margin: 0 0 12px; }
+.article dl { margin: 0; display: grid; gap: 10px; }
+.article dt { font-weight: 700; }
+.article dd { margin: 0; color: var(--muted); font-size: 14px; }
+.article ul.sources { padding-left: 1.2em; margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+.disclaimer { margin-top: 36px; font-size: 12.5px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.orig-btn { display: inline-block; margin-top: 18px; background: var(--navy); color: var(--on-navy); padding: 8px 18px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 700; }
+@media (prefers-color-scheme: dark) { .orig-btn { background: var(--accent); color: var(--navy); } }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .entries, .values { grid-template-columns: 1fr; }
+  .about .wrap { grid-template-columns: 1fr; gap: 20px; }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .card { transition: border-color 0.15s; }
-  .card:hover { border-color: var(--muted); }
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .brandbar { gap: 14px; padding-block: 20px; }
+  .brandbar svg { width: 46px; height: 46px; }
+  nav.main ul { justify-content: flex-start; }
+  nav.main a { padding: 12px 14px; }
+  .row-label { width: 100%; }
 }
 </style>
 </head>
 <body>
-<header class="top wrap">
-  <div class="brand">
-    <h1>ニュースレーダー<span class="dot" aria-hidden="true"></span></h1>
-    <span class="updated" id="updated">読み込み中…</span>
+<div class="tagline">テレビでは流れにくい世界のニュースを、AIが「選んで」「訳して」「背景まで説明」します</div>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brandbar" href="#" style="text-decoration:none" aria-label="ニュースレーダー トップへ">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs><radialGradient id="rg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4cc3cc" stop-opacity=".55"/><stop offset="1" stop-color="#4cc3cc" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="32" cy="32" r="30" fill="#0c1826" stroke="#4cc3cc" stroke-opacity=".5" stroke-width="1.5"/>
+        <circle cx="32" cy="32" r="20" fill="none" stroke="#4cc3cc" stroke-opacity=".35"/>
+        <circle cx="32" cy="32" r="10" fill="none" stroke="#4cc3cc" stroke-opacity=".35"/>
+        <path d="M32 32 L32 2 A30 30 0 0 1 58 17 Z" fill="url(#rg)"/>
+        <line x1="32" y1="32" x2="58" y2="17" stroke="#7fe3ea" stroke-width="2"/>
+        <circle cx="45" cy="15" r="3" fill="#f08c55"/>
+        <circle cx="20" cy="40" r="2" fill="#7fe3ea" opacity=".8"/>
+      </svg>
+      <div class="wordmark"><b>ニュースレーダー</b><span>News Radar</span></div>
+    </a>
   </div>
-  <p class="lede">海外メディアやテーマ別の情報源から記事を集め、国内テレビ局のニュースサイトに同じ話題が見当たらないものに<strong style="color:var(--signal)">TV未報道</strong>の印を付けています。判定は見出しの一致度による推定です。</p>
-  <div class="stats" id="stats"></div>
+  <nav class="main" aria-label="メインメニュー">
+    <ul>
+      <li><a href="#picks">今日のニュース</a></li>
+      <li><a href="#all" data-cover="uncovered">TV未報道</a></li>
+      <li><a href="#all" data-cover="all">すべての記事</a></li>
+      <li><a href="#all" data-kind="通信">通信・ネットワーク</a></li>
+      <li><a href="#about">このサイトについて</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div class="controls">
-  <div class="wrap">
-    <div class="row">
-      <span class="row-label">表示</span>
-      <div class="seg" role="group" aria-label="テレビ報道の有無">
-        <button type="button" data-cover="uncovered" aria-pressed="true">TV未報道</button>
-        <button type="button" data-cover="all" aria-pressed="false">すべて</button>
-        <button type="button" data-cover="covered" aria-pressed="false">TV報道あり</button>
+<div id="home">
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill">AI が選ぶ、テレビの外のニュース</span>
+      <h1>テレビに映らない世界のニュースを、<br>やさしい言葉で。</h1>
+      <p class="lede">ニュースレーダーは、海外メディアや専門メディアから記事を集め、日本のテレビ局のニュースと照らし合わせるサイトです。テレビでは見かけない話題を中心に、AI が毎日選んで、背景まで説明します。</p>
+      <div class="entries">
+        <a class="entry tone-a" href="#picks">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h8"/></svg></span>
+          <span class="who">忙しい人へ</span>
+          <h3>3分で、世界がわかる</h3>
+          <p>AI が1日約20本を選び、何が起きたか・なぜか・暮らしへの影響をまとめます。</p>
+        </a>
+        <a class="entry tone-b" href="#all" data-cover="uncovered">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 3l4 3 4-3M4 20l16-16"/></svg></span>
+          <span class="who">もっと知りたい人へ</span>
+          <h3>テレビの外のニュース</h3>
+          <p>国内テレビ局のサイトに同じ話題が見当たらない記事だけを一覧にします。</p>
+          <span class="count" id="count-uncovered"></span>
+        </a>
+        <a class="entry tone-c" href="#all" data-kind="通信">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 20v-8M8.5 15.5a5 5 0 0 1 7 0M5.5 12.5a9 9 0 0 1 13 0M2.5 9.5a13 13 0 0 1 19 0"/></svg></span>
+          <span class="who">通信・ネットワークに関心がある人へ</span>
+          <h3>キャリアと回線の動き</h3>
+          <p>ドコモ・KDDI・ソフトバンク・楽天モバイル、通信障害、5G などをまとめて追えます。</p>
+        </a>
       </div>
-      <div class="search"><input id="q" type="search" placeholder="キーワードで検索" aria-label="キーワードで検索"></div>
     </div>
-    <div class="row" id="kinds"><span class="row-label">分類</span></div>
-    <div class="row" id="topics"><span class="row-label">トピック</span></div>
-    <form class="addtopic" id="addtopic" hidden>
-      <input id="topic-name" placeholder="名前（例：半導体）" required>
-      <input id="topic-words" placeholder="キーワード（カンマ区切り：TSMC, ラピダス, chip）" required>
-      <button type="submit">追加</button>
-      <button type="button" class="cancel" id="topic-cancel">やめる</button>
-    </form>
-  </div>
+  </section>
+
+  <section class="band" id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">PICKS<i>|</i>AI の厳選</div>
+          <h2>今日のニュース</h2>
+          <p>通勤の3分で、世界で何が起きているかが分かる。</p>
+        </div>
+        <a class="outline-btn" href="#all" data-cover="all" id="all-count">すべての記事 →</a>
+      </div>
+      <div class="chips" id="pick-cats"></div>
+      <div id="pick-notice" class="notice" hidden></div>
+      <div class="grid" id="pick-grid"></div>
+      <div class="more-wrap" id="pick-more" hidden><button type="button" class="outline-btn">もっと見る</button></div>
+      <div class="values">
+        <div class="value"><b>事実から</b>元の記事を読み、ほかの媒体でも確かめてから書いています。</div>
+        <div class="value"><b>背景まで</b>「なぜ起きたか」「暮らしにどう関わるか」まで、やさしい言葉で。</div>
+        <div class="value"><b>テレビの外から</b>日本のテレビ局のニュースと照らし合わせ、報じられていない話題を優先します。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band warm" id="all">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">ALL<i>|</i>集めたすべての記事</div>
+          <h2>ニュース一覧</h2>
+          <p>直近の記事を、テレビでの報道の有無・分類・トピックで絞り込めます。</p>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="row">
+          <span class="row-label">表示</span>
+          <div class="seg" role="group" aria-label="テレビ報道の有無">
+            <button type="button" data-cover="uncovered" aria-pressed="true">TV未報道</button>
+            <button type="button" data-cover="all" aria-pressed="false">すべて</button>
+            <button type="button" data-cover="covered" aria-pressed="false">TV報道あり</button>
+          </div>
+          <div class="search"><input id="q" type="search" placeholder="キーワードで検索" aria-label="キーワードで検索"></div>
+        </div>
+        <div class="row" id="kinds"></div>
+        <div class="row" id="topics"></div>
+        <form class="addtopic" id="addtopic" hidden>
+          <input id="topic-name" placeholder="名前（例：半導体）" required>
+          <input id="topic-words" placeholder="キーワード（カンマ区切り：TSMC, ラピダス, chip）" required>
+          <button type="submit">追加</button>
+          <button type="button" class="cancel" id="topic-cancel">やめる</button>
+        </form>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">WHY<i>|</i>このサイトについて</div>
+        <h2>テレビの外にも、<br>ニュースはある。</h2>
+      </div>
+      <div>
+        <p>テレビのニュースは放送時間が限られていて、映像があるか、国内の視聴者に身近かどうかで項目が選ばれます。そのため、世界で起きている大事な出来事の多くは、テレビには映りません。</p>
+        <p>ニュースレーダーは、海外の報道機関や専門メディアから記事を集め、<b>国内のテレビ局のニュースサイトに同じ話題があるか</b>を自動で確かめます。見当たらない話題には「TV未報道」の印を付けます。</p>
+        <p>そのうえで AI が大事なニュースを選び、<b>「事実から、背景まで、やさしい言葉で」</b>説明します。AI の文章は間違えることもあるので、気になる記事は元の記事でも確かめてください。</p>
+      </div>
+    </div>
+  </section>
 </div>
 
-<main class="wrap" id="main"></main>
+<main id="article-view" class="article" hidden></main>
 
-<footer class="wrap">
-  <div>データは1時間ごとに自動更新されます。情報源やトピックは <code>config.toml</code> で変更できます。</div>
-  <details>
-    <summary>情報源の取得状況</summary>
-    <ul class="feeds" id="feeds"></ul>
-  </details>
+<footer class="site">
+  <div class="wrap">
+    <div id="updated">読み込み中…</div>
+    <details>
+      <summary>情報源の取得状況</summary>
+      <ul class="feeds" id="feeds"></ul>
+    </details>
+  </div>
 </footer>
 
 <script>
 (() => {
+  const PAGE = 60, PICK_PAGE = 9;
   const KIND_LABEL = { overseas: "海外" };
-  const PAGE = 60;
+  const CAT_TONES = {
+    "政治": ["#1f2c55", "#2b3d72"], "経済": ["#173a3a", "#1f5552"], "国際": ["#1c2a4a", "#24406b"],
+    "社会": ["#3a2a22", "#4e3529"], "IT・通信": ["#162d4a", "#1d4a6e"], "科学・環境": ["#1d3a2a", "#285039"],
+    "健康・医療": ["#3a2238", "#53304f"], "文化・スポーツ": ["#3d3020", "#5a4527"],
+  };
+  const DEFAULT_TONE = ["#1c2636", "#2a3850"];
   const store = {
-    get(k, fallback) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch { return fallback; } },
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
   };
-
   const state = {
-    data: null,
-    cover: store.get("nr.cover", "uncovered"),
-    kind: store.get("nr.kind", null),
-    topic: store.get("nr.topic", null),
-    customTopics: store.get("nr.customTopics", []),
-    q: "",
-    limit: PAGE,
+    news: null, picks: [], pickCat: null, pickLimit: PICK_PAGE,
+    cover: store.get("nr.cover", "uncovered"), kind: store.get("nr.kind", null), topic: store.get("nr.topic", null),
+    customTopics: store.get("nr.customTopics", []), q: "", limit: PAGE,
   };
-
   const $ = (id) => document.getElementById(id);
   const el = (tag, attrs = {}, ...kids) => {
     const n = document.createElement(tag);
     for (const [k, v] of Object.entries(attrs)) {
+      if (v == null) continue;
       if (k === "class") n.className = v;
+      else if (k === "style") n.style.cssText = v;
       else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
       else n.setAttribute(k, v);
     }
-    for (const kid of kids) if (kid != null) n.append(kid);
+    for (const kid of kids) if (kid != null && kid !== false) n.append(kid);
     return n;
   };
+  const dateFmt = new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "2-digit", day: "2-digit", timeZone: "Asia/Tokyo" });
+  const dayFmt = new Intl.DateTimeFormat("ja-JP", { month: "long", day: "numeric", weekday: "short", timeZone: "Asia/Tokyo" });
+  const timeFmt = new Intl.DateTimeFormat("ja-JP", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" });
+  const fullFmt = new Intl.DateTimeFormat("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" });
 
   const status = (a) => a.tv_match === "unknown" ? "unknown" : a.tv_match ? "covered" : "uncovered";
-  const allTopics = () => [...(state.data?.topics || []), ...state.customTopics.map((t) => ({ ...t, custom: true }))];
+  const titleOf = (a) => a.detail?.headline || a.title_ja || a.title;
+  const tone = (cat) => CAT_TONES[cat] || DEFAULT_TONE;
 
+  function thumb(a, big) {
+    const [c1, c2] = tone(a.category);
+    return el("div", { class: "thumb", style: `background:linear-gradient(135deg, ${c1}, ${c2}); --th:${c1}` },
+      el("span", { class: "cat" }, a.category || KIND_LABEL[a.kind] || a.kind),
+      status(a) === "uncovered" ? el("span", { class: "tvmark" }, "TV未報道") : null,
+      el(big ? "h1" : "div", { class: "ttl", style: big ? "margin:0" : null }, titleOf(a)),
+      el("div", { class: "foot" }, el("b", {}, "ニュースレーダー"), el("span", {}, dateFmt.format(new Date(a.picked_at || a.published)).replaceAll("/", "."))));
+  }
+
+  // ---- Picks ----
+  function pickSource() {
+    if (state.picks.length) return { list: state.picks, ai: true };
+    // Without AI picks, show the newest stories that TV has not covered.
+    return { list: (state.news?.articles || []).filter((a) => status(a) === "uncovered" && a.lang === "ja" || status(a) === "uncovered" && a.title_ja), ai: false };
+  }
+  function renderPicks() {
+    const { list, ai } = pickSource();
+    const notice = $("pick-notice");
+    notice.hidden = ai;
+    if (!ai) notice.replaceChildren(el("strong", {}, "AI の厳選記事はまだありません。 "),
+      "GitHub に ANTHROPIC_API_KEY を登録すると、AI が1日約20本を選んで解説を書きます。それまでは、テレビで見当たらない新着記事を並べています。");
+    const cats = [...new Set(list.map((a) => a.category).filter(Boolean))];
+    const catOrder = state.news?.settings?.categories || [];
+    cats.sort((a, b) => catOrder.indexOf(a) - catOrder.indexOf(b));
+    $("pick-cats").replaceChildren(...[null, ...cats].map((c) => el("button", {
+      type: "button", class: "chip", "aria-pressed": String(state.pickCat === c),
+      onclick: () => { state.pickCat = c; state.pickLimit = PICK_PAGE; renderPicks(); },
+    }, c || "すべて")));
+    const shown = list.filter((a) => !state.pickCat || a.category === state.pickCat);
+    $("pick-grid").replaceChildren(...shown.slice(0, state.pickLimit).map((a) => {
+      const href = ai ? `#article/${a.id}` : a.link;
+      const sub = ai ? a.detail?.lead : (a.title_ja ? a.title : a.summary);
+      return el("a", { class: "pick", href, target: ai ? null : "_blank", rel: ai ? null : "noopener" },
+        thumb(a), el("h3", {}, titleOf(a)), sub ? el("p", { class: "sub" }, sub) : null);
+    }));
+    $("pick-more").hidden = shown.length <= state.pickLimit;
+  }
+  $("pick-more").querySelector("button").addEventListener("click", () => { state.pickLimit += PICK_PAGE; renderPicks(); });
+
+  // ---- Full list ----
+  const allTopics = () => [...(state.news?.topics || []), ...state.customTopics.map((t) => ({ ...t, custom: true }))];
   function keywordMatcher(words) {
-    const parts = words.map((w) => w.trim()).filter(Boolean).map((w) => {
+    const parts = (words || []).map((w) => w.trim()).filter(Boolean).map((w) => {
       const esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       return /^[\x00-\x7f]+$/.test(w) ? `\\b${esc}\\b` : esc;
     });
     if (!parts.length) return () => false;
     const re = new RegExp(parts.join("|"), "i");
-    return (text) => re.test(text);
+    return (t) => re.test(t);
   }
-
-  const articleText = (a) => [a.title, a.title_ja, a.summary, a.summary_ja, a.outlet].filter(Boolean).join(" ");
-
+  const articleText = (a) => [a.title, a.title_ja, a.summary, a.outlet].filter(Boolean).join(" ");
   function filtered() {
-    let list = state.data.articles;
-    if (state.cover !== "all") list = list.filter((a) => state.cover === "covered" ? status(a) === "covered" : status(a) === "uncovered");
+    let list = state.news.articles;
+    if (state.cover !== "all") list = list.filter((a) => status(a) === state.cover);
     if (state.kind) list = list.filter((a) => a.kind === state.kind);
     if (state.topic) {
       const t = allTopics().find((t) => t.name === state.topic);
-      if (t) {
-        const m = keywordMatcher(t.keywords), ex = keywordMatcher(t.exclude || []);
-        list = list.filter((a) => { const text = articleText(a); return m(text) && !ex(text); });
-      }
+      if (t) { const m = keywordMatcher(t.keywords), ex = keywordMatcher(t.exclude); list = list.filter((a) => { const s = articleText(a); return m(s) && !ex(s); }); }
     }
     if (state.q) {
-      const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
-      list = list.filter((a) => { const t = articleText(a).toLowerCase(); return words.every((w) => t.includes(w)); });
+      const ws = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+      list = list.filter((a) => { const s = articleText(a).toLowerCase(); return ws.every((w) => s.includes(w)); });
     }
     return list;
   }
-
-  const dayFmt = new Intl.DateTimeFormat("ja-JP", { month: "long", day: "numeric", weekday: "short", timeZone: "Asia/Tokyo" });
-  const timeFmt = new Intl.DateTimeFormat("ja-JP", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" });
-  const fullFmt = new Intl.DateTimeFormat("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" });
-
-  function card(a) {
+  function item(a) {
     const s = status(a);
-    const badgeText = { uncovered: "TV未報道", covered: "TV報道あり", unknown: "TV照合なし" }[s];
     const meta = el("div", { class: "meta" },
-      el("span", { class: `badge ${s}` }, badgeText),
-      el("span", { class: "tag" }, KIND_LABEL[a.kind] || a.kind),
+      a.picked ? el("span", { class: "badge pick" }, "AI厳選") : null,
+      el("span", { class: `badge ${s}` }, { uncovered: "TV未報道", covered: "TV報道あり", unknown: "TV照合なし" }[s]),
+      el("span", { class: "tag" }, a.category || KIND_LABEL[a.kind] || a.kind),
       el("span", {}, a.outlet),
-      el("time", { datetime: a.published }, timeFmt.format(new Date(a.published))),
-    );
-    const title = a.title_ja || a.title;
-    const kids = [meta, el("h3", {}, el("a", { href: a.link, target: "_blank", rel: "noopener" }, title))];
+      el("time", { datetime: a.published }, timeFmt.format(new Date(a.published))));
+    const href = a.picked ? `#article/${a.id}` : a.link;
+    const kids = [meta, el("h5", {}, el("a", { href, target: a.picked ? null : "_blank", rel: a.picked ? null : "noopener" }, a.title_ja || a.title))];
     if (a.title_ja) kids.push(el("p", { class: "orig", lang: "en" }, a.title));
-    const summary = a.summary_ja || a.summary;
-    if (summary && summary !== a.title) kids.push(el("p", { class: "summary" }, summary));
-    if (s === "covered") {
-      kids.push(el("p", { class: "tvline" }, `テレビ局サイトの近い見出し（${a.tv_match.outlet}）：`,
-        el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, a.tv_match.title)));
-    } else if (s === "unknown") {
-      kids.push(el("p", { class: "tvline" }, "英語記事は日本語訳がないため照合していません（ANTHROPIC_API_KEY を登録すると照合されます）。"));
-    }
-    return el("article", { class: `card ${s}` }, ...kids);
+    if (s === "covered") kids.push(el("p", { class: "tvline" }, `テレビ局サイトの近い見出し（${a.tv_match.outlet}）：`,
+      el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, a.tv_match.title)));
+    if (s === "unknown") kids.push(el("p", { class: "tvline" }, "日本語訳がないため、テレビ報道とは照合していません。"));
+    return el("article", { class: `item ${s}` }, ...kids);
   }
-
   function renderList() {
-    const main = $("main");
-    main.replaceChildren();
+    const box = $("list");
+    box.replaceChildren();
     const list = filtered();
-    if (!list.length) {
-      main.append(el("div", { class: "empty" }, el("strong", {}, "条件に合う記事はありません"),
-        "表示を「すべて」に切り替えるか、分類・トピック・検索語を外してみてください。"));
-      return;
-    }
-    let currentDay = null, group = null;
+    if (!list.length) { box.append(el("div", { class: "empty" }, "条件に合う記事はありません。表示を「すべて」にするか、絞り込みを外してください。")); return; }
+    let day = null, group = null;
     for (const a of list.slice(0, state.limit)) {
-      const day = dayFmt.format(new Date(a.published));
-      if (day !== currentDay) {
-        currentDay = day;
-        group = el("div", { class: "list" });
-        main.append(el("section", { class: "day" }, el("h2", {}, day), group));
-      }
-      group.append(card(a));
+      const d = dayFmt.format(new Date(a.published));
+      if (d !== day) { day = d; group = el("div", { class: "list" }); box.append(el("div", { class: "day" }, el("h4", {}, d), group)); }
+      group.append(item(a));
     }
-    if (list.length > state.limit) {
-      main.append(el("button", { type: "button", class: "more", onclick: () => { state.limit += PAGE; renderList(); } },
-        `さらに表示（残り ${list.length - state.limit} 件）`));
-    }
+    if (list.length > state.limit) box.append(el("div", { class: "more-wrap" }, el("button", { type: "button", class: "outline-btn",
+      onclick: () => { state.limit += PAGE; renderList(); } }, `さらに表示（残り ${list.length - state.limit} 件）`)));
   }
-
-  function renderChips() {
-    const kinds = [...new Set(state.data.articles.map((a) => a.kind))];
-    const kindRow = $("kinds");
-    kindRow.replaceChildren(el("span", { class: "row-label" }, "分類"));
-    for (const k of [null, ...kinds]) {
-      kindRow.append(el("button", { type: "button", class: "chip", "aria-pressed": String(state.kind === k),
-        onclick: () => { state.kind = k; store.set("nr.kind", k); update(); } }, k ? (KIND_LABEL[k] || k) : "すべて"));
-    }
-
-    const topicRow = $("topics");
-    topicRow.replaceChildren(el("span", { class: "row-label" }, "トピック"));
-    topicRow.append(el("button", { type: "button", class: "chip", "aria-pressed": String(!state.topic),
-      onclick: () => { state.topic = null; store.set("nr.topic", null); update(); } }, "指定なし"));
-    for (const t of allTopics()) {
-      const chip = el("button", { type: "button", class: "chip", "aria-pressed": String(state.topic === t.name),
-        title: t.keywords.join(", "),
-        onclick: () => { state.topic = state.topic === t.name ? null : t.name; store.set("nr.topic", state.topic); update(); } }, t.name);
-      if (t.custom) {
-        chip.append(el("span", { class: "x", role: "button", "aria-label": `${t.name} を削除`, onclick: (e) => {
-          e.stopPropagation();
-          state.customTopics = state.customTopics.filter((c) => c.name !== t.name);
-          store.set("nr.customTopics", state.customTopics);
-          if (state.topic === t.name) { state.topic = null; store.set("nr.topic", null); }
-          update();
-        } }, "×"));
-      }
-      topicRow.append(chip);
-    }
-    topicRow.append(el("button", { type: "button", class: "chip ghost", onclick: () => { $("addtopic").hidden = false; $("topic-name").focus(); } }, "＋ トピックを追加"));
-  }
-
-  function renderStats() {
-    const arts = state.data.articles;
-    const unc = arts.filter((a) => status(a) === "uncovered").length;
-    $("stats").replaceChildren(
-      el("div", { class: "stat hot" }, el("b", {}, String(unc)), el("span", {}, "TV未報道")),
-      el("div", { class: "stat" }, el("b", {}, String(arts.length)), el("span", {}, `記事（直近${state.data.settings.keep_days}日）`)),
-      el("div", { class: "stat" }, el("b", {}, String(state.data.tv.length)), el("span", {}, "照合したテレビ見出し")),
-    );
-    $("updated").textContent = `最終更新 ${fullFmt.format(new Date(state.data.generated_at))}`;
-    $("feeds").replaceChildren(...state.data.feeds.map((f) => el("li", {},
-      el("span", { class: f.ok ? "ok" : "ng" }, f.ok ? "●" : "×"),
-      el("span", {}, `${f.name}${f.ok ? `（${f.count}件）` : "：取得失敗"}`))));
-  }
-
-  function update() {
+  function renderFilters() {
     document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cover === state.cover)));
-    state.limit = PAGE;
-    renderChips();
-    renderList();
+    const kinds = [...new Set(state.news.articles.map((a) => a.kind))];
+    $("kinds").replaceChildren(el("span", { class: "row-label" }, "情報源"), ...[null, ...kinds].map((k) => el("button", {
+      type: "button", class: "chip", "aria-pressed": String(state.kind === k),
+      onclick: () => { state.kind = k; store.set("nr.kind", k); refreshList(); } }, k ? (KIND_LABEL[k] || k) : "すべて")));
+    const row = $("topics");
+    row.replaceChildren(el("span", { class: "row-label" }, "トピック"), el("button", { type: "button", class: "chip", "aria-pressed": String(!state.topic),
+      onclick: () => { state.topic = null; store.set("nr.topic", null); refreshList(); } }, "指定なし"));
+    for (const t of allTopics()) {
+      const chip = el("button", { type: "button", class: "chip", "aria-pressed": String(state.topic === t.name), title: t.keywords.join(", "),
+        onclick: () => { state.topic = state.topic === t.name ? null : t.name; store.set("nr.topic", state.topic); refreshList(); } }, t.name);
+      if (t.custom) chip.append(el("span", { class: "x", role: "button", "aria-label": `${t.name} を削除`, onclick: (e) => {
+        e.stopPropagation();
+        state.customTopics = state.customTopics.filter((c) => c.name !== t.name); store.set("nr.customTopics", state.customTopics);
+        if (state.topic === t.name) { state.topic = null; store.set("nr.topic", null); }
+        refreshList();
+      } }, "×"));
+      row.append(chip);
+    }
+    row.append(el("button", { type: "button", class: "chip ghost", onclick: () => { $("addtopic").hidden = false; $("topic-name").focus(); } }, "＋ トピックを追加"));
+  }
+  function refreshList() { state.limit = PAGE; renderFilters(); renderList(); }
+
+  // ---- Article page ----
+  function renderArticle(id) {
+    const a = state.picks.find((p) => p.id === id);
+    const view = $("article-view");
+    const back = el("a", { class: "back", href: "#picks" }, "← 今日のニュースへ戻る");
+    if (!a) { view.replaceChildren(el("div", { class: "wrap inner" }, back, el("div", { class: "empty" }, "この記事は見つかりませんでした。掲載期間が過ぎた可能性があります。"))); return; }
+    const d = a.detail;
+    const s = status(a);
+    const kids = [back, thumb(a, true), el("div", { class: "meta" },
+      el("span", { class: `badge ${s}` }, { uncovered: "TV未報道", covered: "TV報道あり", unknown: "TV照合なし" }[s]),
+      el("span", {}, `元記事：${a.outlet}`), el("time", { datetime: a.published }, fullFmt.format(new Date(a.published))))];
+    if (d) {
+      kids.push(el("p", { class: "lead" }, d.lead));
+      for (const [h, body] of [["なぜ起きたのか", d.background], ["私たちの暮らしとの関わり", d.impact], ["今後の注目点", d.outlook]]) {
+        if (!body) continue;
+        kids.push(el("h2", {}, h), ...body.split(/\n+/).map((t) => el("p", {}, t)));
+      }
+      if (d.terms?.length) kids.push(el("h2", {}, "ことばの説明"), el("dl", {}, ...d.terms.flatMap((t) => [el("dt", {}, t.term), el("dd", {}, t.meaning)])));
+      if (d.sources?.length) kids.push(el("h2", {}, "確かめた情報源"), el("ul", { class: "sources" },
+        ...d.sources.map((x) => el("li", {}, el("a", { href: x.url, target: "_blank", rel: "noopener" }, x.title || x.url)))));
+    } else {
+      kids.push(el("p", { class: "lead" }, "解説を準備中です。次の更新で表示されます。"));
+    }
+    if (s === "covered") kids.push(el("p", { class: "disclaimer" }, `テレビ局サイトにも近い話題がありました（${a.tv_match.outlet}）：`,
+      el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, a.tv_match.title)));
+    kids.push(el("a", { class: "orig-btn", href: a.link, target: "_blank", rel: "noopener" }, "元の記事を読む →"),
+      el("p", { class: "disclaimer" }, "この解説は AI（Claude）が元の記事やほかの報道をもとに書いたものです。間違いを含むことがあるので、大事な判断の前には元の記事でも確かめてください。"));
+    view.replaceChildren(el("div", { class: "wrap" }, el("div", { class: "inner" }, ...kids)));
   }
 
-  document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => {
-    state.cover = b.dataset.cover; store.set("nr.cover", state.cover); update();
-  }));
+  // ---- Routing ----
+  function route() {
+    const m = location.hash.match(/^#article\/([\w-]+)$/);
+    $("home").hidden = !!m;
+    $("article-view").hidden = !m;
+    if (m) { renderArticle(m[1]); window.scrollTo(0, 0); }
+  }
+  window.addEventListener("hashchange", route);
+
+  // Links that also set a list filter.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[data-cover], a[data-kind]");
+    if (!a || !state.news) return;
+    if (a.dataset.cover) { state.cover = a.dataset.cover; store.set("nr.cover", state.cover); }
+    state.kind = a.dataset.kind || null; store.set("nr.kind", state.kind);
+    state.topic = null; store.set("nr.topic", null);
+    refreshList();
+  });
+  document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => { state.cover = b.dataset.cover; store.set("nr.cover", state.cover); refreshList(); }));
   let qTimer;
   $("q").addEventListener("input", (e) => { clearTimeout(qTimer); qTimer = setTimeout(() => { state.q = e.target.value.trim(); state.limit = PAGE; renderList(); }, 150); });
   $("addtopic").addEventListener("submit", (e) => {
@@ -390,29 +575,31 @@ footer summary { cursor: pointer; }
     state.customTopics = [...state.customTopics.filter((t) => t.name !== name), { name, keywords }];
     store.set("nr.customTopics", state.customTopics);
     state.topic = name; store.set("nr.topic", name);
-    e.target.reset(); e.target.hidden = true;
-    update();
+    e.target.reset(); e.target.hidden = true; refreshList();
   });
   $("topic-cancel").addEventListener("click", () => { $("addtopic").reset(); $("addtopic").hidden = true; });
 
-  fetch("data/news.json", { cache: "no-cache" })
-    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((data) => {
-      state.data = data;
-      if (!data.generated_at) {
-        $("updated").textContent = "未取得";
-        $("main").replaceChildren(el("div", { class: "empty" }, el("strong", {}, "まだニュースを取得していません"),
-          "GitHub の Actions タブで「Update news」を一度実行すると、ここに記事が並びます。以後は1時間ごとに自動で更新されます。"));
-        return;
-      }
-      renderStats();
-      update();
-    })
-    .catch((err) => {
-      $("updated").textContent = "読み込み失敗";
-      $("main").replaceChildren(el("div", { class: "empty" }, el("strong", {}, "データを読み込めませんでした"),
-        `data/news.json を取得できません（${err.message}）。少し待ってから再読み込みしてください。`));
-    });
+  const load = (url) => fetch(url, { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+  Promise.all([load("data/news.json"), load("data/picks.json")]).then(([news, picks]) => {
+    if (!news || !news.generated_at) {
+      $("updated").textContent = "まだニュースを取得していません。";
+      $("list").replaceChildren(el("div", { class: "empty" }, "GitHub の Actions で「Update news」を実行すると、ここに記事が並びます。"));
+      $("pick-notice").hidden = false;
+      $("pick-notice").textContent = "まだニュースを取得していません。";
+      route();
+      return;
+    }
+    state.news = news;
+    state.picks = (picks?.picks || []).filter((p) => p.detail);
+    const unc = news.articles.filter((a) => status(a) === "uncovered").length;
+    $("count-uncovered").textContent = `いま ${unc} 件`;
+    $("all-count").textContent = `すべての記事（${news.articles.length}本）→`;
+    $("updated").textContent = `最終更新 ${fullFmt.format(new Date(news.generated_at))}（1時間ごとに自動更新）`;
+    $("feeds").replaceChildren(...news.feeds.map((f) => el("li", { class: f.ok ? null : "ng" }, `${f.ok ? "●" : "×"} ${f.name}${f.ok ? `（${f.count}件）` : "：取得失敗"}`)));
+    renderPicks();
+    refreshList();
+    route();
+  });
 })();
 </script>
 </body>
