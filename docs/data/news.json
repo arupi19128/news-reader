@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T13:20:38Z",
+ "generated_at": "2026-10-18T13:44:57Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -346,32 +346,32 @@
   {
    "name": "TBS NEWS DIG",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "日テレNEWS",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "FNNプライムオンライン",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "テレ朝NEWS",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "テレ東BIZ",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "BBCニュース日本語",
@@ -382,8 +382,8 @@
   {
    "name": "ロイター日本語",
    "kind": "国際",
-   "ok": true,
-   "count": 20
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "CNN.co.jp",
@@ -394,14 +394,14 @@
   {
    "name": "AFPBB News",
    "kind": "国際",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "ニューズウィーク日本版",
    "kind": "国際",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "毎日新聞",
@@ -418,14 +418,14 @@
   {
    "name": "東京新聞",
    "kind": "国内",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "時事ドットコム",
    "kind": "国内",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "BBC World",
@@ -484,20 +484,20 @@
   {
    "name": "Googleニュース：通信キャリア",
    "kind": "通信",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "Google News: Telecom",
    "kind": "通信",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   }
  ],
  "featured": [
@@ -516,6 +516,11 @@
     "2d206905b40dd9f4"
    ],
    "outlets": 2
+  },
+  {
+   "id": "ace61952e14083bc",
+   "related": [],
+   "outlets": 1
   },
   {
    "id": "ab11d42f512c19d7",
@@ -538,11 +543,6 @@
    "outlets": 1
   },
   {
-   "id": "4c917a08f0d64f99",
-   "related": [],
-   "outlets": 1
-  },
-  {
    "id": "6348c8604c735f17",
    "related": [
     "b0900a8ef5164e51"
@@ -559,6 +559,94 @@
  ],
  "articles": [
   {
+   "id": "ace61952e14083bc",
+   "title": "バレー推し:初昇格イエスタの司令塔・久保下 プロでもカレー屋で働くワケは",
+   "link": "https://mainichi.jp/articles/20261018/k00/00m/050/180000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T13:42:02Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m050186000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3d77450494ee2ed7",
+   "title": "原沢氏、票集めた要因は パワハラで異例の横浜市長選を振り返る",
+   "link": "https://mainichi.jp/articles/20261018/k00/00m/310/178000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T13:39:24Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m310181000p/0c10.jpg?1",
+   "tv_match": {
+    "title": "約8割がパワハラ「考慮」 横浜市長選の情勢調査 新人・原沢氏大きくリード 前職・山中氏は厳しい戦い 市政「評価」4割超も【横浜市長選2026】",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBudmVLekx4RENYakMzYzg1WEtrR1Y5QjJqaHJoVHdsV1hieThGUmtqT0wwRW0zUzBwa1drNDAzbzdUYnZiWXpuMk83bGtTUTV2YkNmd0tnYw?oc=5",
+    "score": 0.35
+   },
+   "picked": false
+  },
+  {
+   "id": "090db7f0c4a2e267",
+   "title": "The week in pictures: Escalating protests across Europe and the tragic capsize of a migrant boat",
+   "link": "https://www.france24.com/en/france/20261018-the-week-in-pictures-escalating-protests-across-europe-and-the-tragic-capsize-of-a-migrant-boat",
+   "summary": "From student protests and heightened tensions across French demonstrations on October 17, to ongoing anti-government marches in Albania and the tragic sinking of a migrant boat off the coast of Djibouti, FRANCE 24 looks back at some of the most striking images from the past week.",
+   "outlet": "© Thibaud Moritz, AFP",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/1c4f8a14-ca0b-11f1-a0b5-6313a763b466/w:1024/p:16x9/000-D3K887M.jpg",
+   "published": "2026-10-18T13:36:27Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "c7a6b4a30f778433",
+   "title": "初当選確実の原沢氏「何の実績もない私に…」 横浜市長選",
+   "link": "https://mainichi.jp/articles/20261016/k00/00m/010/391000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-18T13:35:50Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m010179000p/0c10.jpg?1",
+   "tv_match": {
+    "title": "【速報】横浜市長選 新人・原沢敦美氏が当選確実「投票にパワハラ考慮」8割超で山中前市長は再選ならず 投票率は午後7時半現在で28.61％で前回より上昇",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5uVThsWTZMREdjdmdYZG1NU0ZzUm43bHNMeDZXY3o1aHFQcm4wRlN4R3BTcWV4cEdIbVlWcUZJZkNWaGg3WG52dm9nUU4zY2NBQmVHV0lSbw?oc=5",
+    "score": 0.4
+   },
+   "picked": false
+  },
+  {
+   "id": "f38d7ae3b1c7d12b",
+   "title": "Forget the seven-year itch: opposite-sex marriages more likely to end after two decades",
+   "link": "https://www.theguardian.com/lifeandstyle/2026/oct/18/opposite-sex-marriages-end-after-20-years-divorce-england-wales-ons",
+   "summary": "ONS data for England and Wales shows 26% of heterosexual divorces in 2025 followed 20 years or more of marriage Most couples are aware of the dreaded “seven-year itch”, when the honeymoon period wears off and real life starts to bite. Now official data has shown that couples in E…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/11cc85d544b8d98544105d6d301a557e8ade9b9f/571_0_2697_2160/master/2697.jpg?width=140&quality=85&auto=format&fit=max&s=3a265a77a1fe0cb30a7a6acf719467e1",
+   "published": "2026-10-18T13:29:53Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "4b5b31c9e8201439",
    "title": "'Like we had a war': France counts cost of violent protests",
    "link": "https://www.france24.com/en/video/20261018-like-we-had-a-war-france-counts-cost-of-violent-protests",
@@ -570,6 +658,38 @@
    "image": "https://s.france24.com/media/display/abf86588-caf5-11f1-ac51-6313a763b466/w:1024/p:16x9/EN-20261018-150146-150332-CS.jpg",
    "published": "2026-10-18T13:17:58Z",
    "first_seen": "2026-10-18T13:20:38Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "a57d27b4778bea9f",
+   "title": "Was ancient India the world’s forgotten superpower?",
+   "link": "https://www.aljazeera.com/video/deja-vu-2/2026/10/18/was-ancient-india-the-worlds-forgotten-superpower?traffic_source=rss",
+   "summary": "In Deja Vu’s latest episode, William Dalrymple explores ancient India’s global influence – and how it was overlooked.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T13:17:31Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792329430.jpg?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "babdd7232540067c",
+   "title": "Gaza families fear food shortages as Israel halts commercial shipments",
+   "link": "https://www.aljazeera.com/news/2026/10/18/gaza-families-fear-food-shortages-as-israel-halts-commercial-shipments?traffic_source=rss",
+   "summary": "Residents report rising prices as the latest restrictions bite, leaving families unable to afford extra supplies.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-18T13:16:13Z",
+   "first_seen": "2026-10-18T13:44:57Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/7K0A8053-copy-1792324954.jpg?resize=1920%2C1440",
    "tv_match": "unknown",
    "picked": false
   },
@@ -5131,20 +5251,6 @@
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/09/AA-20260909-42422213-42422189-IRANS_OIL_TANKERS_OFF_BANDAR_ABBAS_IN_STRAIT_OF_HORMUZ-1788956460.jpg?resize=1920%2C1440"
   },
   {
-   "id": "ee597adeba44d0bb",
-   "title": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBha2puUVJpcnNuR1JwTWtEajdZRkh0dk5uMVdHNEt4eUZZQXNHYmRNX2ppNWxneS1DMnBIUzhFZEFBdUpyRUxWUEtEUHpZQnlLSmRSMTRvTFlTS0JuQmpwdkJyMGRUNVE?oc=5",
-   "summary": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-18T00:00:00Z",
-   "first_seen": "2026-10-18T12:54:12Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "b10f4e10d9cef5d9",
    "title": "サムスン、「Galaxy Z Fold8/8 Ultra」購入でLINEマンガコイン2000円分 店舗に体験コーナーも",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2148436.html",
@@ -5159,6 +5265,20 @@
    "picked": false,
    "image_checked": true,
    "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2148/436/001.jpg"
+  },
+  {
+   "id": "ee597adeba44d0bb",
+   "title": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBha2puUVJpcnNuR1JwTWtEajdZRkh0dk5uMVdHNEt4eUZZQXNHYmRNX2ppNWxneS1DMnBIUzhFZEFBdUpyRUxWUEtEUHpZQnlLSmRSMTRvTFlTS0JuQmpwdkJyMGRUNVE?oc=5",
+   "summary": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-18T00:00:00Z",
+   "first_seen": "2026-10-18T12:54:12Z",
+   "tv_match": null,
+   "picked": false
   },
   {
    "id": "b1ae3fe939028ad5",
@@ -6404,9 +6524,9 @@
    "published": "2026-10-17T20:49:38Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "池畑修平の国際ニュースCORE",
+    "title": "最新の国際ニュース",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5JOVlhWE9DcVVOWG1ZX01mY2NZVGRvM0VfOHNWaE83WjFMNHFXYXFvQWdTeTdVQ0lOVFVSaXhWSmNjYS1hS29XMndpbWZMNndWQXlkX1YxYw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1JXzh1NXl1aVJaN1Z3YngxVnN5R2hENzQwajZDLXp2c0JnMXVYSUlhaWxIZUtzMjhCb25wWjMwdWlXTW9abjFIaDRiM2R4UnkzMXBmeEJQY25LWEloUkhNYUFFOEk?oc=5",
     "score": 0.71
    },
    "picked": false
@@ -8144,9 +8264,9 @@
    "published": "2026-10-17T11:15:06Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": {
-    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "title": "「緊急地震速報」取り消し 気象庁が2度目の会見 マグニチュードを過大に…2つの要因（2026年10月16日掲載）",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96T0RjWnAtYk93QXQyeFd4Y3dHeWlUX3paOVZkdFpQcHZPV3BUQzZBcE9CZ2xqOUhIZTd3OTE2a3RuV1YzQnhwOHZhdmlMVlZLNWwwUm5lbHJpUXl2TnBjUnJYaEJZTVl3Zl9xcEtXZnVrY0w4SXhMWkFoQTE?oc=5",
     "score": 0.33
    },
    "picked": false,
@@ -8817,9 +8937,9 @@
    "published": "2026-10-17T07:10:26Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": {
-    "title": "緊急地震速報“取り消し”めぐり気象庁2度目の会見 マグニチュードを過大に推定…2つの要因あげ説明（2026年10月16日掲載）",
+    "title": "「緊急地震速報」取り消し 気象庁が2度目の会見 マグニチュードを過大に…2つの要因（2026年10月16日掲載）",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1COHBjMFJjd29fVFc5dHdaeFVQMVBVclQ3U1E0UkNTTDVuLUo3ckE3eFk1dko0UnExZnBwUDByTTBFVHA3a05HQzZiNU1JU2lRQzA3NFhEdWxpdmJReHFyVnJLaTI2NXY5bFpJVFpqWjZ2TjdjaWNnMEEwYWI?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96T0RjWnAtYk93QXQyeFd4Y3dHeWlUX3paOVZkdFpQcHZPV3BUQzZBcE9CZ2xqOUhIZTd3OTE2a3RuV1YzQnhwOHZhdmlMVlZLNWwwUm5lbHJpUXl2TnBjUnJYaEJZTVl3Zl9xcEtXZnVrY0w4SXhMWkFoQTE?oc=5",
     "score": 0.33
    },
    "picked": false,
@@ -9936,9 +10056,9 @@
    "published": "2026-10-16T23:31:45Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "池畑修平の国際ニュースCORE",
+    "title": "最新の国際ニュース",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5JOVlhWE9DcVVOWG1ZX01mY2NZVGRvM0VfOHNWaE83WjFMNHFXYXFvQWdTeTdVQ0lOVFVSaXhWSmNjYS1hS29XMndpbWZMNndWQXlkX1YxYw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1JXzh1NXl1aVJaN1Z3YngxVnN5R2hENzQwajZDLXp2c0JnMXVYSUlhaWxIZUtzMjhCb25wWjMwdWlXTW9abjFIaDRiM2R4UnkzMXBmeEJQY25LWEloUkhNYUFFOEk?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -12042,20 +12162,6 @@
    "picked": false
   },
   {
-   "id": "bf1279344cb25b11",
-   "title": "フーシ派はなぜ「強敵」になったのか...サウジを脅かす攻撃力の正体",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFA0OUFVa00xSmtSZHBKa1poY1VyMXFTREhkWkpOQW5lNlU2ZWQ5YkU3Tk9ldWhDVnA3VGV5N3ZsOERYNEUwQlY3bzhpTm5JSm84VzVTYkRMeUZEUQ?oc=5",
-   "summary": "フーシ派はなぜ「強敵」になったのか...サウジを脅かす攻撃力の正体 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-16T09:20:00Z",
-   "first_seen": "2026-10-18T09:38:54Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "be1191fbb71e8702",
    "title": "「auひかり」を2027年1月利用分から月額330円値上げ 「でんきセット割」も提供開始",
    "link": "https://www.itmedia.co.jp/mobile/articles/2610/16/news106.html",
@@ -12070,6 +12176,20 @@
    "picked": false,
    "image_checked": true,
    "image": "https://image.itmedia.co.jp/mobile/articles/2610/16/l_asa_KDDI_01.jpg"
+  },
+  {
+   "id": "bf1279344cb25b11",
+   "title": "フーシ派はなぜ「強敵」になったのか...サウジを脅かす攻撃力の正体",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFA0OUFVa00xSmtSZHBKa1poY1VyMXFTREhkWkpOQW5lNlU2ZWQ5YkU3Tk9ldWhDVnA3VGV5N3ZsOERYNEUwQlY3bzhpTm5JSm84VzVTYkRMeUZEUQ?oc=5",
+   "summary": "フーシ派はなぜ「強敵」になったのか...サウジを脅かす攻撃力の正体 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-16T09:20:00Z",
+   "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
+   "picked": false
   },
   {
    "id": "9da7f51fa496d912",
@@ -13351,9 +13471,9 @@
    "published": "2026-10-16T04:25:00Z",
    "first_seen": "2026-10-18T11:43:31Z",
    "tv_match": {
-    "title": "緊急地震速報“取り消し”めぐり気象庁2度目の会見 マグニチュードを過大に推定…2つの要因あげ説明（2026年10月16日掲載）",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1COHBjMFJjd29fVFc5dHdaeFVQMVBVclQ3U1E0UkNTTDVuLUo3ckE3eFk1dko0UnExZnBwUDByTTBFVHA3a05HQzZiNU1JU2lRQzA3NFhEdWxpdmJReHFyVnJLaTI2NXY5bFpJVFpqWjZ2TjdjaWNnMEEwYWI?oc=5",
+    "title": "震源が日本から離れていたため正常に作動せず 緊急地震速報、気象庁が初の取り消し",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3ak5FVGk4UU53eHgzdS1BQWFxUlZwaENXVm84dk1Dc1J1S2JxUmFJU0M4aVpJZDdMVU40RW1UNE5JWW1OU2d3TEpDUFJPbFllOFd3QkRzblB2dUhnU2NWR2RTd1I5TmNLUUFUWGtCZE5DUQ?oc=5",
     "score": 0.4
    },
    "picked": false
@@ -13845,9 +13965,9 @@
    "published": "2026-10-16T01:37:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "ホワイトハウス新報道官 弁護士資格の不所持を認める 経歴詐称ではないとの持論を展開 辞任も否定",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE15TW5Hb2lQWWVIWUNIcHlneWFNejN5TWUxbXFaTnN0NDlhN3FuNXBtZ21hd0dVRHlDUTlFbEZiZ1BLZk1jcTlJLUxyUmhCTDZSQzM4X2JlMA?oc=5",
+    "title": "ホワイトハウス新報道官が退任の意向 就任から5日 資格ないのに弁護士名乗る",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAzTHM0TkF0bXhJNFBqSWxVck1rTndONW9ocmoxYmNNeENTYlAtS2JzaFN3bGh5d05RZC0ycHRHOHQ1TXEwUU1maU5zZ1FaSFdlTXMwYVRtcXJkbHBmTlhOeU5kQW9MWHJncjFzZWxRRWlNcUxZeDVHRVRB?oc=5",
     "score": 0.38
    },
    "picked": false
@@ -14270,20 +14390,6 @@
    "picked": false
   },
   {
-   "id": "23ded45fd501f845",
-   "title": "「米軍基地Q&A」から辺野古問題の解説さっそく削除…古謝玄太・沖縄県知事の方針に波紋",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5MaUo2YmJKX2RUbFNmV19UNFllQ3NLdExueGt4Ykcxa21BZ3poWDZxTzA1X255Sjg3NVRnYkFDUWhLUV9rVC12a3JNU2xmbTdiWnBZ?oc=5",
-   "summary": "「米軍基地Q&A」から辺野古問題の解説さっそく削除…古謝玄太・沖縄県知事の方針に波紋 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-15T20:00:00Z",
-   "first_seen": "2026-10-18T09:38:54Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "c5744290ce220506",
    "title": "藤井総務大臣閣議後記者会見の概要",
    "link": "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001583.html",
@@ -14428,6 +14534,20 @@
    "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
   },
   {
+   "id": "23ded45fd501f845",
+   "title": "「米軍基地Q&A」から辺野古問題の解説さっそく削除…古謝玄太・沖縄県知事の方針に波紋",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5MaUo2YmJKX2RUbFNmV19UNFllQ3NLdExueGt4Ykcxa21BZ3poWDZxTzA1X255Sjg3NVRnYkFDUWhLUV9rVC12a3JNU2xmbTdiWnBZ?oc=5",
+   "summary": "「米軍基地Q&A」から辺野古問題の解説さっそく削除…古謝玄太・沖縄県知事の方針に波紋 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-15T20:00:00Z",
+   "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "2f9474140bcf1086",
    "title": "都市部でKDDIローミング縮小、楽天モバイルに問われる通信品質と収益改善",
    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBWcklzcEU5WmF4WDFoT19NNng4c2RIVkxIWmgwcWtUcE1CMmZFV3VydnRrOU9Iak91QnFNTUpGQ1dCem1vSmFIU3JYNlNPcU1Ed2VYYXlwRjB1a2hzYndOTy1nVUFsWkFWWHJJSg?oc=5",
@@ -14484,20 +14604,6 @@
    "picked": false
   },
   {
-   "id": "869ded9a9a90e298",
-   "title": "米国株式市場＝Ｓ＆Ｐ５００上昇、医療株などに資金移動 半導体株は続落",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4zaGxXMUFZVXFVVGtRQzZvV0hhMnFsbENJWEptdEhKRDdYVXI0MDBFeTZLaTNfYmc3X3pXY3N5dGRJdm1GdzEyNkIzZnY3UjBldFpTRGx6dlN0TEtmZzlBYmFKMXhrQk0?oc=5",
-   "summary": "米国株式市場＝Ｓ＆Ｐ５００上昇、医療株などに資金移動 半導体株は続落 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-15T15:00:00Z",
-   "first_seen": "2026-10-18T09:38:54Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "15899a959153e122",
    "title": "[てっぱんアプリ！] 「Firefox」ならすぐに要約できて、拡張機能が使えて、プライバシーも守れる",
    "link": "https://k-tai.watch.impress.co.jp/docs/column/teppan/2148465.html",
@@ -14544,6 +14650,20 @@
    "picked": false,
    "image_checked": true,
    "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2144/581/01.jpg"
+  },
+  {
+   "id": "869ded9a9a90e298",
+   "title": "米国株式市場＝Ｓ＆Ｐ５００上昇、医療株などに資金移動 半導体株は続落",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4zaGxXMUFZVXFVVGtRQzZvV0hhMnFsbENJWEptdEhKRDdYVXI0MDBFeTZLaTNfYmc3X3pXY3N5dGRJdm1GdzEyNkIzZnY3UjBldFpTRGx6dlN0TEtmZzlBYmFKMXhrQk0?oc=5",
+   "summary": "米国株式市場＝Ｓ＆Ｐ５００上昇、医療株などに資金移動 半導体株は続落 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-15T15:00:00Z",
+   "first_seen": "2026-10-18T09:38:54Z",
+   "tv_match": null,
+   "picked": false
   },
   {
    "id": "171100fff5e1dadf",
