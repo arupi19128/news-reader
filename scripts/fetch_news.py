@@ -318,13 +318,19 @@ def feature(articles, now, settings):
     stories.sort(key=score, reverse=True)
     count = settings.get("featured_count", 9)
     per_kind = settings.get("featured_per_kind", 5)
-    picked, kinds = [], {}
+    picked, kinds, picked_keys = [], {}, []
     for st in stories:
         items = st["items"]
         # Prefer a Japanese article as the face of the story.
         lead = next((a for a in items if a["lang"] == "ja" or a.get("title_ja")), items[0])
         if kinds.get(lead["kind"], 0) >= per_kind:
             continue
+        # Skip near-duplicates of a story already picked (same event, worded differently).
+        key = _story_key(lead)
+        if any(k[0] == key[0] and key[1] and k[1] and len(key[1] & k[1]) / min(len(key[1]), len(k[1])) >= 0.3
+               for k in picked_keys):
+            continue
+        picked_keys.append(key)
         kinds[lead["kind"]] = kinds.get(lead["kind"], 0) + 1
         picked.append({
             "id": lead["id"],
