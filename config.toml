@@ -4,6 +4,8 @@
 [settings]
 # 記事を残す日数
 keep_days = 7
+# 記事ページから代表画像（og:image）を取りに行く、1回あたりの最大件数
+og_image_max_per_run = 80
 # 1つの情報源から取り込む最大件数
 max_items_per_feed = 40
 # 「テレビで報道済み」と判定する一致度（0〜1）。下げると判定が甘くなる
@@ -75,6 +77,7 @@ google_news = "site:txbiz.tv-tokyo.co.jp"
 [[feeds]]
 name = "BBCニュース日本語"
 kind = "国際"
+url = "https://feeds.bbci.co.uk/japanese/rss.xml"
 google_news = "site:bbc.com/japanese"
 
 [[feeds]]
@@ -85,6 +88,7 @@ google_news = "site:jp.reuters.com"
 [[feeds]]
 name = "CNN.co.jp"
 kind = "国際"
+url = "https://feeds.cnn.co.jp/rss/cnn/cnn.rdf"
 google_news = "site:cnn.co.jp"
 
 [[feeds]]
@@ -95,16 +99,19 @@ google_news = "site:afpbb.com"
 [[feeds]]
 name = "ニューズウィーク日本版"
 kind = "国際"
+url = "https://www.newsweekjapan.jp/story/rss.xml"
 google_news = "site:newsweekjapan.jp"
 
 [[feeds]]
 name = "毎日新聞"
 kind = "国内"
+url = "https://mainichi.jp/rss/etc/mainichi-flash.rss"
 google_news = "site:mainichi.jp"
 
 [[feeds]]
 name = "朝日新聞"
 kind = "国内"
+url = "https://www.asahi.com/rss/asahi/newsheadlines.rdf"
 google_news = "site:asahi.com"
 
 [[feeds]]
@@ -159,6 +166,7 @@ url = "https://www.france24.com/en/rss"
 # ---------------------------------------------------------------
 # テーマ別（自由に追加できます）
 # kind は画面の分類名になります。google_news はGoogleニュース検索の式です。
+# url と google_news の両方があるときは、url（媒体のRSS）を先に試し、読めなければGoogleニュースを使います。
 # exclude に書いた語を見出しか概要に含む記事は取り込みません。
 # ---------------------------------------------------------------
 [[feeds]]

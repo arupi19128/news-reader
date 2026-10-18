@@ -169,19 +169,21 @@ nav.jump a:hover { background: var(--wave-soft); color: var(--wave); }
 
 /* Reception log */
 .day { font: 500 12px var(--font-mono); color: var(--muted); padding: 7px 16px; background: var(--bg); border-bottom: 1px solid var(--line); }
-.entry { display: grid; grid-template-columns: 3.6em 3em minmax(0, 1fr); gap: 2px 14px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--line); transition: background 0.4s; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.entry { display: grid; grid-template-columns: minmax(0, 1fr) 112px; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); transition: background 0.4s; text-decoration: none; min-width: 0; }
+.cards .entry:nth-child(3n) { border-right: 0; }
+.entry:hover { background: var(--wave-soft); }
 .entry.flash { background: var(--out-soft); }
-.entry .sig { display: flex; align-items: center; min-height: 20px; }
-.entry time { font: 400 12.5px var(--font-mono); color: var(--muted); }
-.entry .body { min-width: 0; }
-.entry h3 { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; overflow-wrap: anywhere; }
-.entry.out h3 { font-weight: 700; }
-.entry h3 a { text-decoration: none; }
-.entry h3 a:hover { text-decoration: underline; text-decoration-color: var(--wave); }
-.entry .sub { margin: 2px 0 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
-.entry .sub a { color: var(--muted); }
-.entry .sector { font-size: 11px; color: var(--wave); background: var(--wave-soft); border-radius: 4px; padding: 0 6px; margin-right: 6px; white-space: nowrap; }
-.entry .flag { font-size: 11px; font-weight: 700; color: var(--sheet); background: var(--wave); border-radius: 4px; padding: 0 6px; margin-right: 6px; }
+.entry h3 { margin: 0; font-size: 14.5px; font-weight: 700; line-height: 1.55; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.entry.covered h3, .entry.unknown h3 { font-weight: 500; }
+.entry .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 6px; font-size: 11.5px; color: var(--muted); }
+.entry .meta time { font-family: var(--font-mono); }
+.entry .flag { font-size: 10.5px; font-weight: 700; color: var(--sheet); background: var(--wave); border-radius: 3px; padding: 0 5px; }
+.thumb { width: 112px; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; align-self: start; position: relative; background: var(--cell-in); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb.ph { display: grid; place-items: center; padding: 6px; text-align: center; color: #fff; font-size: 11px; font-weight: 700; line-height: 1.3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='48' viewBox='0 0 28 48'%3E%3Cpath d='M14 0l14 8v16l-14 8-14-8V8zM14 32l14 8v16M14 32L0 40v16' fill='none' stroke='%23ffffff' stroke-opacity='.18'/%3E%3C/svg%3E"), linear-gradient(135deg, var(--ph1), var(--ph2)); }
+.thumb.ph small { display: block; font-weight: 400; opacity: 0.8; font-size: 10px; margin-top: 2px; }
 .empty { padding: 26px 16px; color: var(--muted); text-align: center; }
 .more { display: block; width: 100%; padding: 12px; border: 0; background: var(--bg); color: var(--wave); font-weight: 500; cursor: pointer; }
 
@@ -220,6 +222,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   .legend { grid-template-columns: repeat(3, auto); justify-content: start; gap: 6px 16px; }
   .gauges { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .reports { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards .entry:nth-child(3n) { border-right: 1px solid var(--line); }
+  .cards .entry:nth-child(2n) { border-right: 0; }
   .about { grid-template-columns: 1fr; }
   .about > div + div { border-left: 0; border-top: 1px solid var(--line); }
   #cells { height: 380px; }
@@ -227,9 +232,10 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 @media (max-width: 560px) {
   .phone { margin-left: 0; width: 100%; justify-content: space-between; order: 3; }
   .legend { grid-template-columns: 1fr; }
-  .entry { grid-template-columns: 3.4em minmax(0, 1fr); }
-  .entry time { grid-column: 2; grid-row: 1; }
-  .entry .body { grid-column: 1 / -1; }
+  .cards { grid-template-columns: 1fr; }
+  .cards .entry { border-right: 0; }
+  .entry { grid-template-columns: minmax(0, 1fr) 96px; }
+  .thumb { width: 96px; }
   .row > .cap { width: 100%; }
   #cells { height: 460px; }
 }
@@ -605,32 +611,39 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     }
     return list;
   }
+  const PH_TONES = { domestic: ["#1f6fb2", "#174f80"], overseas: ["#16807a", "#0f5a56"] };
+  function thumb(a) {
+    const [c1, c2] = PH_TONES[regionOf(a)];
+    const placeholder = () => el("div", { class: "thumb ph", style: `--ph1:${c1};--ph2:${c2}` }, el("span", {}, sectorOf(a), el("small", {}, a.outlet)));
+    if (!a.image) return placeholder();
+    const img = el("img", { src: a.image, alt: "", loading: "lazy", decoding: "async", referrerpolicy: "no-referrer" });
+    const box = el("div", { class: "thumb" }, img);
+    img.addEventListener("error", () => box.replaceWith(placeholder()));
+    return box;
+  }
   function entry(a) {
     const s = status(a);
     const hasReport = state.picks.some((p) => p.id === a.id);
-    const href = hasReport ? `#article/${a.id}` : a.link;
-    const sub = el("p", { class: "sub" }, el("span", { class: "sector" }, sectorOf(a)), a.outlet, a.title_ja ? ` ／ ${a.title}` : null);
-    if (s === "covered") sub.append(" ／ TV：", el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, `${a.tv_match.outlet}「${a.tv_match.title}」`));
-    if (s === "unknown") sub.append(" ／ 英語のため未照合");
-    return el("div", { class: `entry ${s === "uncovered" ? "out" : s}`, "data-id": a.id },
-      el("span", { class: "sig" }, signal(a)),
-      el("time", { datetime: a.published }, timeFmt.format(new Date(a.published))),
+    const tvTitle = s === "covered" ? `テレビ局サイトの近い見出し：${a.tv_match.outlet}「${a.tv_match.title}」` : null;
+    return el("a", { class: `entry ${s === "uncovered" ? "out" : s}`, "data-id": a.id, href: hasReport ? `#article/${a.id}` : a.link,
+      target: hasReport ? null : "_blank", rel: hasReport ? null : "noopener", title: a.title_ja ? a.title : tvTitle },
       el("div", { class: "body" },
-        el("h3", {}, hasReport ? el("span", { class: "flag" }, "AI解説") : null,
-          el("a", { href, target: hasReport ? null : "_blank", rel: hasReport ? null : "noopener" }, a.title_ja || a.title)),
-        sub));
+        el("h3", {}, a.title_ja || a.title),
+        el("div", { class: "meta" }, hasReport ? el("span", { class: "flag" }, "AI解説") : null, signal(a),
+          el("span", {}, a.outlet), el("time", { datetime: a.published }, timeFmt.format(new Date(a.published))))),
+      thumb(a));
   }
   function renderList() {
     const box = $("list");
     box.replaceChildren();
     const list = filtered();
     $("log-count").textContent = `${list.length} 件`;
-    if (!list.length) { box.append(el("div", { class: "empty" }, "条件に合う記事はありません。表示を「すべて」にするか、絞り込みを外してください。")); return; }
-    let day = null;
+    if (!list.length) { box.append(el("div", { class: "empty" }, "条件に合う記事はありません。別のタブにするか、絞り込みを外してください。")); return; }
+    let day = null, grid = null;
     for (const a of list.slice(0, state.limit)) {
       const d = dayFmt.format(new Date(a.published));
-      if (d !== day) { day = d; box.append(el("div", { class: "day" }, d)); }
-      box.append(entry(a));
+      if (d !== day) { day = d; grid = el("div", { class: "cards" }); box.append(el("div", { class: "day" }, d), grid); }
+      grid.append(entry(a));
     }
     if (list.length > state.limit) box.append(el("button", { type: "button", class: "more", onclick: () => { state.limit += PAGE; renderList(); } }, `さらに表示（残り ${list.length - state.limit} 件）`));
   }

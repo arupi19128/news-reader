@@ -29,7 +29,13 @@ NS = {
     "atom": "http://www.w3.org/2005/Atom",
     "rss1": "http://purl.org/rss/1.0/",
     "dc": "http://purl.org/dc/elements/1.1/",
+    "media": "http://search.yahoo.com/mrss/",
+    "content": "http://purl.org/rss/1.0/modules/content/",
 }
+_IMG_EXT = re.compile(r"\.(jpe?g|png|webp|gif)(\?|$)", re.I)
+_IMG_TAG = re.compile(r"<img[^>]+src=[\"']([^\"']+)[\"']", re.I)
+_OG_IMAGE = re.compile(r"<meta[^>]+(?:property|name)=[\"'](?:og:image|twitter:image)[\"'][^>]*>", re.I)
+_CONTENT_ATTR = re.compile(r"content=[\"']([^\"']+)[\"']", re.I)
 
 
 def now_utc():
@@ -69,9 +75,15 @@ def clean_text(text, limit=280):
     return text[:limit] + ("…" if len(text) > limit else "")
 
 
-def feed_url(feed):
-    if "url" in feed:
-        return feed["url"]
+def feed_urls(feed):
+    """URLs to try in order: the feed's own RSS first, then its Google News search as a fallback."""
+    urls = [feed["url"]] if "url" in feed else []
+    if "google_news" in feed:
+        urls.append(google_news_url(feed))
+    return urls
+
+
+def google_news_url(feed):
     lang = feed.get("lang", "ja")
     params = {"q": feed["google_news"] + " when:3d"}
     if lang == "en":
@@ -95,6 +107,36 @@ def child_text(el, *paths):
     return ""
 
 
+def find_image(node, *html_parts):
+    """Best image URL for a feed item: media:thumbnail/content, an image enclosure, or the first <img> in its HTML."""
+    for tag in ("media:thumbnail", "media:content", "enclosure", "atom:link"):
+        for el in node.findall(tag, NS):
+            url = el.get("url") or el.get("href") or ""
+            kind = el.get("type", "") + el.get("medium", "")
+            if tag == "atom:link" and el.get("rel") != "enclosure":
+                continue
+            if url.startswith("http") and ("image" in kind or _IMG_EXT.search(url) or tag == "media:thumbnail"):
+                return url
+    for part in html_parts:
+        m = _IMG_TAG.search(part or "")
+        if m and m.group(1).startswith("http"):
+            return html.unescape(m.group(1))
+    return ""
+
+
+def fetch_og_image(url):
+    """The page's og:image (or twitter:image), read from the first 300 KB of its HTML."""
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
+    with urllib.request.urlopen(req, timeout=10) as res:
+        head = res.read(300_000).decode(res.headers.get_content_charset() or "utf-8", "replace")
+    for tag in _OG_IMAGE.findall(head):
+        m = _CONTENT_ATTR.search(tag)
+        if m:
+            img = html.unescape(m.group(1))
+            return urllib.parse.urljoin(url, img)
+    return ""
+
+
 def parse_feed(raw, feed):
     """Return a list of {title, link, summary, published, source} from RSS 2.0, RSS 1.0 or Atom."""
     # expat only handles UTF-8/16 and Latin-1; re-encode feeds such as Shift_JIS ones.
@@ -114,6 +156,7 @@ def parse_feed(raw, feed):
                 "summary": child_text(n, "description"),
                 "published": child_text(n, "pubDate", "dc:date"),
                 "source": child_text(n, "source"),
+                "image": find_image(n, child_text(n, "description"), child_text(n, "content:encoded")),
             })
     elif root.tag.endswith("RDF"):
         for n in root.findall("rss1:item", NS):
@@ -123,6 +166,7 @@ def parse_feed(raw, feed):
                 "summary": child_text(n, "rss1:description"),
                 "published": child_text(n, "dc:date"),
                 "source": "",
+                "image": find_image(n, child_text(n, "rss1:description"), child_text(n, "content:encoded")),
             })
     elif root.tag.endswith("feed"):
         for n in root.findall("atom:entry", NS):
@@ -135,6 +179,7 @@ def parse_feed(raw, feed):
                 "summary": child_text(n, "atom:summary", "atom:content"),
                 "published": child_text(n, "atom:published", "atom:updated"),
                 "source": "",
+                "image": find_image(n, child_text(n, "atom:content", "atom:summary")),
             })
 
     out = []
@@ -152,6 +197,7 @@ def parse_feed(raw, feed):
             "summary": clean_text(it["summary"]),
             "published": parse_date(it["published"]),
             "outlet": source or feed["name"],
+            "image": it["image"],
         })
     return out
 
@@ -190,6 +236,33 @@ def match_tv(article, tv_items, threshold, window):
         return {"title": best["title"], "outlet": best["outlet"], "link": best["link"],
                 "score": round(best_score, 2)}
     return None
+
+
+# ---- Thumbnails ------------------------------------------------------------
+
+def add_page_images(articles, limit):
+    """Fill in missing thumbnails from each article page's og:image, newest first, at most `limit` pages per run."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    todo = [a for a in articles if not a.get("image") and not a.get("image_checked")
+            and "news.google.com" not in a["link"]]
+    todo.sort(key=lambda a: a["published"], reverse=True)
+    todo = todo[:limit]
+
+    def one(a):
+        try:
+            return a, fetch_og_image(a["link"])
+        except Exception:
+            return a, ""
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        found = 0
+        for a, img in pool.map(one, todo):
+            a["image_checked"] = True
+            if img:
+                a["image"] = img
+                found += 1
+    print(f"page images: {found} found in {len(todo)} pages")
 
 
 # ---- Featured stories (no AI) ---------------------------------------------
@@ -328,14 +401,18 @@ def main():
     statuses = []
     for feed in config.get("feeds", []):
         feed = {**feed, "max_items": per_feed}
-        url = feed_url(feed)
-        try:
-            entries = parse_feed(fetch(url), feed)
-            statuses.append({"name": feed["name"], "kind": feed["kind"], "ok": True, "count": len(entries)})
-        except Exception as e:  # one broken feed must not stop the others
-            print(f"[skip] {feed['name']}: {e}", file=sys.stderr)
-            statuses.append({"name": feed["name"], "kind": feed["kind"], "ok": False, "error": str(e)[:200]})
+        entries, error = None, None
+        for url in feed_urls(feed):
+            try:
+                entries = parse_feed(fetch(url), feed)
+                break
+            except Exception as e:  # one broken feed must not stop the others; try the fallback URL
+                error = e
+                print(f"[retry] {feed['name']} {url[:60]}: {e}", file=sys.stderr)
+        if entries is None:
+            statuses.append({"name": feed["name"], "kind": feed["kind"], "ok": False, "error": str(error)[:200]})
             continue
+        statuses.append({"name": feed["name"], "kind": feed["kind"], "ok": True, "count": len(entries)})
         for e in entries:
             art_id = hashlib.sha1(e["link"].encode()).hexdigest()[:16]
             if art_id in collected:  # the same article from an earlier feed wins
@@ -351,6 +428,8 @@ def main():
                 "kind": feed["kind"],
                 "lang": feed.get("lang", "ja"),
             }
+            if e["image"]:
+                art["image"] = e["image"]
             art.setdefault("published", iso(published))
             art.setdefault("first_seen", iso(started))
             collected[art_id] = art
@@ -369,6 +448,7 @@ def main():
 
     tv = [a for a in items if a["kind"] == "tv"]
     articles = [a for a in items if a["kind"] != "tv"]
+    add_page_images(articles, settings.get("og_image_max_per_run", 80))
 
     picks_data = {"rounds_done": [], "picks": []}
     if PICKS_PATH.exists():
