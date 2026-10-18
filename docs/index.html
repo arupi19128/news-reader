@@ -463,6 +463,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 
 <footer class="wrap"><span id="updated"></span> ／ 記事の著作権は各報道機関に帰属します。</footer>
 
+<script src="rakuten-config.js"></script>
 <script>
 (() => {
   const PER_PAGE = 9;
@@ -872,12 +873,116 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   }
   const facts = (r) => el("div", { class: "nums" }, r.indication ? el("span", {}, "⏱ ", el("b", {}, r.indication)) : null, r.cost ? el("span", {}, "¥ ", el("b", {}, r.cost)) : null);
   const rtags = (r) => r.categories?.length ? el("div", { class: "rtags" }, ...[...new Set(r.categories)].map((t) => el("span", {}, t))) : null;
+  // The viewer's browser calls the Rakuten Recipe API once a day and keeps the last 30 days locally.
+  const RAKUTEN_API = "https://openapi.rakuten.co.jp/recipems/api/Recipe";
+  const RECIPE_CATEGORIES = ["簡単料理・時短", "健康料理", "節約料理"];
+  const RECIPE_ROLES = { "主菜": ["鶏むね肉", "豚肉", "鮭"], "副菜": ["野菜のおかず", "サラダ"], "汁物": ["味噌汁", "スープ"] };
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  let lastCall = 0;
+  function jsonp(url) {
+    return new Promise((resolve, reject) => {
+      const cb = `__rakuten${Math.random().toString(36).slice(2)}`;
+      const script = document.createElement("script");
+      const done = () => { clearTimeout(timer); delete window[cb]; script.remove(); };
+      const timer = setTimeout(() => { done(); reject(new Error("楽天から応答がありませんでした")); }, 15000);
+      window[cb] = (data) => { done(); resolve(data); };
+      script.onerror = () => { done(); reject(new Error("楽天に接続できませんでした")); };
+      script.src = `${url}&callback=${cb}`;
+      document.head.append(script);
+    });
+  }
+  async function rakuten(endpoint, params) {
+    const wait = lastCall + 1100 - Date.now();  // about one request per second
+    if (wait > 0) await sleep(wait);
+    lastCall = Date.now();
+    const cfg = window.RAKUTEN_CONFIG || {};
+    const q = new URLSearchParams({ format: "json", formatVersion: "2", applicationId: cfg.applicationId, accessKey: cfg.accessKey, ...params });
+    const url = `${RAKUTEN_API}/${endpoint}/20170426?${q}`;
+    let res;
+    try { res = await fetch(url); } catch { return jsonp(url); }  // no CORS: fall back to JSONP
+    const body = await res.json().catch(() => null);
+    if (!res.ok) throw new Error(`楽天のAPIがエラーを返しました（${res.status}${body?.error_description ? `：${body.error_description}` : body?.errors?.errorMessage ? `：${body.errors.errorMessage}` : ""}）`);
+    return body;
+  }
+  async function categoryIds(words) {
+    let cats = store.get("nr.rcats", null);
+    if (!cats || Date.now() - cats.at > 7 * 86400e3) {
+      const result = (await rakuten("CategoryList", { categoryType: "" })).result;
+      const list = [], mediumPath = {};
+      for (const c of result.large || []) list.push([c.categoryName, String(c.categoryId)]);
+      for (const c of result.medium || []) { const path = `${c.parentCategoryId}-${c.categoryId}`; mediumPath[c.categoryId] = path; list.push([c.categoryName, path]); }
+      for (const c of result.small || []) { const parent = mediumPath[c.parentCategoryId]; if (parent) list.push([c.categoryName, `${parent}-${c.categoryId}`]); }
+      cats = { at: Date.now(), list };
+      store.set("nr.rcats", cats);
+    }
+    const found = {};
+    for (const w of words) {
+      const hit = cats.list.find(([n]) => n === w) || cats.list.find(([n]) => n.includes(w));
+      if (hit) found[w] = hit[1];
+    }
+    return found;
+  }
+  const minutesOf = (ind) => { if (!ind) return null; const m = ind.match(/(\d+)/); return ind.includes("時間") ? 60 * (m ? +m[1] : 1) : m ? +m[1] : null; };
+  async function fetchTodayRecipes(today, history, onProgress) {
+    const words = [...new Set([...RECIPE_CATEGORIES, ...Object.values(RECIPE_ROLES).flat()])];
+    onProgress(0, words.length);
+    const ids = await categoryIds(words);
+    const recipes = new Map(), rankings = {};
+    let i = 0;
+    for (const [word, cid] of Object.entries(ids)) {
+      if (!(cid in rankings)) rankings[cid] = (await rakuten("CategoryRanking", { categoryId: cid }).catch(() => ({}))).result || [];
+      onProgress(++i, Object.keys(ids).length);
+      const role = Object.keys(RECIPE_ROLES).find((r) => RECIPE_ROLES[r].includes(word)) || null;
+      for (const it of rankings[cid]) {
+        const id = String(it.recipeId);
+        if (!recipes.has(id)) recipes.set(id, { id, name: it.recipeTitle || "", catch: it.recipeDescription || "", url: it.recipeUrl || "",
+          image: it.foodImageUrl || it.mediumImageUrl || "", materials: it.recipeMaterial || [], indication: it.recipeIndication || "",
+          minutes: minutesOf(it.recipeIndication), cost: it.recipeCost || "", author: it.nickname || "", role: null, categories: [] });
+        const r = recipes.get(id);
+        r.categories.push(word);
+        if (role && !r.role) r.role = role;
+      }
+    }
+    if (!recipes.size) throw new Error("楽天レシピからレシピを受け取れませんでした");
+    // Today's menu: the quickest main, side and soup that were not on the menu in the last two weeks.
+    const shown = new Set(history.slice(0, 14).flatMap((d) => Object.values(d.menu || {})));
+    const menu = {};
+    for (const role of ["主菜", "副菜", "汁物"]) {
+      const options = [...recipes.values()].filter((r) => r.role === role && !shown.has(r.id))
+        .sort((a, b) => (a.minutes ?? 99) - (b.minutes ?? 99) || b.categories.length - a.categories.length);
+      if (options.length) menu[role] = options[0].id;
+    }
+    return { date: today, menu, recipes: [...recipes.values()] };
+  }
+  async function loadRecipes() {
+    const today = dayKeyFmt.format(new Date());
+    const history = store.get("nr.recipes", []);
+    if (history[0]?.date === today) { state.recipes = history; return; }
+    const cfg = window.RAKUTEN_CONFIG || {};
+    if (!cfg.applicationId || !cfg.accessKey) { state.recipes = history; state.recipeError = "nokey"; return; }
+    state.recipeLoading = true;
+    try {
+      const day = await fetchTodayRecipes(today, history, (done, total) => { state.recipeProgress = [done, total]; if (!$("recipe-view").hidden) renderRecipes(); });
+      state.recipes = [day, ...history.filter((d) => d.date !== today)].slice(0, 30);
+      store.set("nr.recipes", state.recipes);
+    } catch (e) {
+      state.recipes = history;
+      state.recipeError = e.message;
+    } finally {
+      state.recipeLoading = false;
+      if (!$("recipe-view").hidden) renderRecipes();
+    }
+  }
   function renderRecipes() {
+    if (state.recipes === undefined && !state.recipeLoading) { loadRecipes(); }
     const days = state.recipes || [];
     if (!days.length) {
       $("menu-totals").replaceChildren();
-      $("menu-today").replaceChildren(el("div", { class: "recipe-empty" }, el("b", {}, "レシピは準備中です"),
-        "GitHub に楽天のアプリID（RAKUTEN_APP_ID）を登録すると、毎朝6時ごろに楽天レシピの人気レシピを集めて、ここに表示します。"));
+      const [done, total] = state.recipeProgress || [0, 0];
+      const msg = state.recipeLoading || state.recipes === undefined ? [el("b", {}, "楽天レシピから受信中…"), total ? `${done} / ${total} カテゴリ` : "カテゴリを確認しています"] :
+        state.recipeError === "nokey" ? [el("b", {}, "レシピは準備中です"), "楽天ウェブサービスのアプリIDとアクセスキーを docs/rakuten-config.js に入れると、ここに人気レシピが表示されます。"] :
+        [el("b", {}, "レシピを受信できませんでした"), `${state.recipeError || ""}。時間をおいて、ページを開き直してください。`];
+      $("menu-today").replaceChildren(el("div", { class: "recipe-empty" }, ...msg));
       $("recipe-archive").hidden = true;
       return;
     }
@@ -981,8 +1086,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 
   // ---------------- Load ----------------
   const load = (url) => fetch(url, { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-  Promise.all([load("data/news.json"), load("data/picks.json"), load("data/recipes.json")]).then(([news, picks, recipes]) => {
-    state.recipes = recipes?.days || [];
+  Promise.all([load("data/news.json"), load("data/picks.json")]).then(([news, picks]) => {
     if (!news || !news.generated_at) {
       route();
       $("scan").textContent = "圏外"; $("sb-bars").dataset.n = "0";
