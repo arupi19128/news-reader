@@ -294,6 +294,13 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .bar-row .pc { font: 500 12px var(--font-mono); text-align: right; }
 .bar-row.jp .nm { font-weight: 700; color: var(--out); }
 .cy-note { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
+.livetabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.livetabs button { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 4px 14px; font-size: 13px; cursor: pointer; color: var(--muted); }
+.livetabs button[aria-selected="true"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
+.liveframe { position: relative; aspect-ratio: 16 / 9; background: #0d1b2a; border-radius: 8px; overflow: hidden; }
+.liveframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 560px) { .liveframe { aspect-ratio: 3 / 4; } }
+.openbtn { display: inline-block; margin-left: 6px; color: var(--wave); font-weight: 500; }
 .cy-empty { background: var(--sheet); border: 1px dashed var(--line); border-radius: 10px; padding: 22px; color: var(--muted); margin-block: 16px; }
 .cy-empty b { color: var(--ink); display: block; font-size: 16px; margin-bottom: 4px; }
 @media (max-width: 860px) { .cy-grid { grid-template-columns: 1fr; } }
@@ -545,6 +552,15 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     <div class="cy-legend"><span><i class="dot-o"></i>攻撃元</span><span><i class="dot-t"></i>攻撃先</span><span>線の太さ＝攻撃の割合</span></div>
   </div>
   <div id="cy-body"></div>
+  <section class="sheet note-sheet" id="cy-live">
+    <div class="sheet-head"><h2>リアルタイム攻撃マップ</h2><span class="cap">各セキュリティ会社が公開している地図</span></div>
+    <div class="pad">
+      <div class="livetabs" role="tablist" aria-label="攻撃マップの切り替え" id="cy-livetabs"></div>
+      <div class="liveframe"><iframe id="cy-iframe" title="リアルタイム攻撃マップ" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen"></iframe></div>
+      <p class="cy-note" id="cy-livenote"></p>
+    </div>
+  </section>
+
   <section class="sheet note-sheet">
     <div class="sheet-head"><h2>サイバー攻撃のニュース</h2><span class="cap">ニュースレーダーが受信した記事から</span></div>
     <div id="cy-news"></div>
@@ -1445,8 +1461,27 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     tip.style.left = `${ev.clientX - box.left}px`; tip.style.top = `${ev.clientY - box.top}px`;
   }
   function hideCyTip() { $("cy-tip").hidden = true; }
+  // Live maps run by security vendors. Some refuse to be embedded, so each also opens in a new tab.
+  const LIVE_MAPS = [
+    { name: "Kaspersky", url: "https://cybermap.kaspersky.com/", note: "Kaspersky 製品が検知した攻撃を地球儀で表示します。" },
+    { name: "Check Point", url: "https://threatmap.checkpoint.com/", note: "Check Point の ThreatCloud が検知した攻撃を、攻撃元と攻撃先の線で表示します。" },
+    { name: "Fortinet", url: "https://threatmap.fortiguard.com/", note: "Fortinet の FortiGuard が検知した攻撃を表示します。" },
+    { name: "Radware", url: "https://livethreatmap.radware.com/", note: "Radware のおとりサーバーで観測した攻撃を表示します。" },
+    { name: "Bitdefender", url: "https://threatmap.bitdefender.com/", note: "Bitdefender が検知した感染・攻撃・スパムを表示します。" },
+  ];
+  let liveIndex = 0;
+  function renderLiveMaps() {
+    const m = LIVE_MAPS[liveIndex];
+    $("cy-livetabs").replaceChildren(...LIVE_MAPS.map((x, i) => el("button", { type: "button", role: "tab", "aria-selected": String(i === liveIndex),
+      onclick: () => { liveIndex = i; renderLiveMaps(); } }, x.name)));
+    const frame = $("cy-iframe");
+    if (frame.getAttribute("src") !== m.url) frame.setAttribute("src", m.url);
+    $("cy-livenote").replaceChildren(`${m.note} 画面が真っ白・エラーのときは、その会社が埋め込み表示を断っています。`,
+      el("a", { class: "openbtn", href: m.url, target: "_blank", rel: "noopener" }, `${m.name} のマップを新しいタブで開く →`));
+  }
   async function renderCyber() {
     renderCyberNews();
+    renderLiveMaps();
     if (cy.data === undefined) { cy.data = await fetch("data/attacks.json", { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null); }
     const d = cy.data, body = $("cy-body");
     try { await cyberLibs(); } catch { body.replaceChildren(el("div", { class: "cy-empty" }, el("b", {}, "地図を読み込めませんでした"), "通信状態を確かめて、ページを開き直してください。")); return; }
