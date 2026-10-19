@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-19T01:03:36Z",
+ "generated_at": "2026-10-19T01:48:30Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -346,32 +346,32 @@
   {
    "name": "TBS NEWS DIG",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "日テレNEWS",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "FNNプライムオンライン",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "テレ朝NEWS",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "テレ東BIZ",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "BBCニュース日本語",
@@ -382,8 +382,8 @@
   {
    "name": "ロイター日本語",
    "kind": "国際",
-   "ok": true,
-   "count": 19
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "CNN.co.jp",
@@ -394,14 +394,14 @@
   {
    "name": "AFPBB News",
    "kind": "国際",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "ニューズウィーク日本版",
    "kind": "国際",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "毎日新聞",
@@ -418,14 +418,14 @@
   {
    "name": "東京新聞",
    "kind": "国内",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "時事ドットコム",
    "kind": "国内",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "BBC World",
@@ -484,26 +484,26 @@
   {
    "name": "Googleニュース：通信キャリア",
    "kind": "通信",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "Googleニュース：ソフトバンク株式会社",
    "kind": "通信",
-   "ok": true,
-   "count": 36
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "name": "Google News: Telecom",
    "kind": "通信",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 503: Service Unavailable"
   }
  ],
  "featured": [
@@ -542,7 +542,17 @@
    "outlets": 2
   },
   {
+   "id": "556a1fb699c36cbf",
+   "related": [],
+   "outlets": 1
+  },
+  {
    "id": "3a76ce4631d833a9",
+   "related": [],
+   "outlets": 1
+  },
+  {
+   "id": "32055f7e25e98934",
    "related": [],
    "outlets": 1
   },
@@ -552,22 +562,116 @@
    "outlets": 1
   },
   {
-   "id": "9927ef402a68f751",
-   "related": [],
-   "outlets": 1
-  },
-  {
    "id": "58b34787806db7bc",
-   "related": [],
-   "outlets": 1
-  },
-  {
-   "id": "da391647acfa2654",
    "related": [],
    "outlets": 1
   }
  ],
  "articles": [
+  {
+   "id": "31c2c6c1ab7658f1",
+   "title": "‘Limited evidence’ of protester violence at Sydney demonstration against Israeli president Isaac Herzog visit",
+   "link": "https://www.theguardian.com/australia-news/2026/oct/19/limited-evidence-violence-sydney-protest-herzog-visit-police-ntwnfb",
+   "summary": "Amid police brutality allegations, Law Enforcement Conduct Commission inquiry hears protesters ‘largely peaceful’ Get our new political email , free app or daily news podcast An inquiry into a Sydney rally against the Israeli president has so far found protesters were “largely pe…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/2baf9e7ba91340e25cd2b4cd4e507ba3594138ca/250_0_2500_2000/master/2500.jpg?width=140&quality=85&auto=format&fit=max&s=9078eb7b11728211c9cc522d521eb753",
+   "published": "2026-10-19T01:39:12Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "675c53aaf20c9f17",
+   "title": "高市首相、靖国神社に玉串料を私費で奉納 参拝は見送る方向",
+   "link": "http://www.asahi.com/articles/ASVBM0CT9VBMUTFK001M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-19T01:25:27Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261019001328_comm.jpg",
+   "tv_match": {
+    "title": "高市総理「真榊」奉納 参拝は見送る方向 靖国神社 秋の例大祭始まる",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1XdTBpdmFQREk2Vk1WT3d6eWFfaTloOXJreFE3c2hnZlNhODlha2RFbnp5cW9OTFdRcVNBbndJaTZ5WEU2OElfQXg4b3lYRGUxYmJERlZabUJtbXZMYnlUb2tPTFBvbzhjY1lhVVJ6clR0dFU?oc=5",
+    "score": 0.52
+   },
+   "picked": false
+  },
+  {
+   "id": "4efcef1fcc01683c",
+   "title": "フランス各地で物価高などに抗議のデモ、マクロン大統領は「冷静と秩序」呼びかけ",
+   "link": "https://www.bbc.com/japanese/articles/cke8r3n89y8mo?at_medium=RSS&at_campaign=rss",
+   "summary": "フランス各地で17日から18日にかけて、物価高や学校など公共サービスの悪化に抗議するデモが多発する中、エマニュエル・マクロン大統領は19日、「冷静と秩序」を呼びかけた。数55万人が参加した抗議行動はおおむね平和的だったが、一部で暴動や略奪があり、パリでは18日にも混乱が続いた。フランス内務省によると、警察は約2400人を逮捕した。",
+   "outlet": "BBCニュース日本語",
+   "feed": "BBCニュース日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/3671/live/56f97410-cb35-11f1-9e57-a506a0943bb2.jpg",
+   "published": "2026-10-19T01:22:44Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "tv_match": {
+    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載）｜日テレNEWS NNN",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSTBCYjlsbllSeWFiUTlXQXdLeWdYeUdXSGxjeHd3UWhIcHczeUdnbUoxeFJIcWptUWxzNDR6Tk50cnluc3Z4a0lrZjQ1RU9GWjlEUGhBUVRTOHdYaUh5ci15YVRjZEZEVmd0eS1DZDJnLUpTQmFiZ1dvUzZxdFpUb0VPQVE?oc=5",
+    "score": 0.43
+   },
+   "picked": false
+  },
+  {
+   "id": "556a1fb699c36cbf",
+   "title": "「命のビザ」外交官、根井三郎を紹介 故郷・宮崎に常設展示場",
+   "link": "https://mainichi.jp/articles/20261018/k00/00m/310/042000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-19T01:15:09Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018ddlk45040261000p/0c10.jpg?2",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "e6b2fab9c70a5281",
+   "title": "Kenya confirms eighth Ebola case amid widening regional outbreak",
+   "link": "https://www.aljazeera.com/news/2026/10/19/kenya-confirms-eighth-ebola-case-amid-widening-regional-outbreak?traffic_source=rss",
+   "summary": "Kenyan health authorities say latest patient was likely exposed to the country's first Ebola case.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-19T01:07:52Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/AP26280382243949-1792367191.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "c947aac82133434a",
+   "title": "周囲の雑音を気にせず音楽に集中できる「Bose QuietComfort Earbuds LE」がセールで25％オフの1万9800円に",
+   "link": "https://www.itmedia.co.jp/mobile/articles/2610/19/news061.html",
+   "summary": "Amazon.co.jpのタイムセールで「Bose QuietComfort Earbuds LE」が25％オフの1万9800円で販売中。ワールドクラスのノイズキャンセリング機能を搭載し、高音質を楽しめる。",
+   "outlet": "ITmedia Mobile",
+   "feed": "ITmedia Mobile",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-19T01:04:00Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://image.itmedia.co.jp/mobile/articles/2610/19/cover_news061.jpg",
+   "tv_match": null,
+   "picked": false
+  },
   {
    "id": "698e02edb2a19482",
    "title": "実弾訓練中に大規模火災 兵士4人死亡、多数が重軽傷 カナダ軍基地",
@@ -619,6 +723,22 @@
    "picked": false
   },
   {
+   "id": "32055f7e25e98934",
+   "title": "【3COINS】1320円の「マグネット式マルチスマホホルダー」 クランプでデスクに固定できる",
+   "link": "https://www.itmedia.co.jp/mobile/articles/2610/19/news038.html",
+   "summary": "3COINSで「マグネット式マルチスマホホルダー」が販売されている。マグネットで金属面に取り付けられる他、クランプでデスクなどに挟んで固定することも可能。未使用時はコンパクトに折りたたみでき、価格は1320円。",
+   "outlet": "ITmedia Mobile",
+   "feed": "ITmedia Mobile",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-19T01:00:00Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://image.itmedia.co.jp/mobile/articles/2610/19/l_asa_100item_01.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "ecfd9e161d2fb317",
    "title": "Kylie Minogue songs already used to train AI as tech firms ‘strong-arm’ Australian government, music body warns",
    "link": "https://www.theguardian.com/music/2026/oct/19/australia-music-global-copywright-outlier-ai-music-body-warnsns",
@@ -630,6 +750,38 @@
    "image": "https://i.guim.co.uk/img/media/240b7746d1549bd30b616b6fd2e698b1838fb964/0_44_6452_5158/master/6452.jpg?width=140&quality=85&auto=format&fit=max&s=594744b407942f98c05df8d2b4600af7",
    "published": "2026-10-19T00:57:46Z",
    "first_seen": "2026-10-19T01:03:36Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "60420fcc1a121b15",
+   "title": "浴室やアウトドアでも安心して音楽を楽しみたい人に適したポータブルBluetoothスピーカー「Anker SoundCore 2」がセールで33％オフの3990円に",
+   "link": "https://www.itmedia.co.jp/mobile/articles/2610/19/news060.html",
+   "summary": "Amazon.co.jpのセールで、小型ポータブルBluetoothスピーカー「Anker SoundCore 2」が33％オフの3990円で販売されている。独自のBassUp技術やIPX7防水を備え、最大24時間の連続再生が可能だ。",
+   "outlet": "ITmedia Mobile",
+   "feed": "ITmedia Mobile",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-19T00:57:00Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://image.itmedia.co.jp/mobile/articles/2610/19/cover_news060.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "46072549c5a10e01",
+   "title": "Kinship and surveillance: The return of Somali piracy",
+   "link": "https://www.aljazeera.com/news/2026/10/19/kinship-and-surveillance-the-return-of-somali-piracy?traffic_source=rss",
+   "summary": "Somalia’s piracy crackdown leaves coastal fishermen struggling to survive.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-19T00:56:17Z",
+   "first_seen": "2026-10-19T01:48:30Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image00001-1792088717.jpeg?resize=1200%2C675",
    "tv_match": "unknown",
    "picked": false
   },
@@ -1190,9 +1342,9 @@
    "published": "2026-10-18T23:28:39Z",
    "first_seen": "2026-10-19T01:02:20Z",
    "tv_match": {
-    "title": "横浜市長選 新人・原沢敦美氏が初当選 パワハラ問題で辞任の山中前市長ら破り（2026年10月18日掲載）｜日テレNEWS NNN",
+    "title": "フランスでデモの一部が暴徒化…マクロン大統領「怒りと恥辱」（2026年10月18日掲載）｜日テレNEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBzZFhJTG5mSlg3RnNQUmdJalBJQmk4RWtTSHNUdDgxdkxNQUlYbHg4cC10ZEVhU3lQUWpBLVY0eFFEVVlDdkpIbThCcnhqbGs5Tm1ib3ZJaXc1NHFfc1NXNnkyLW9rTXNpNXBnUmVJWWowRWpzcWxieDhRZi0?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONEc5RGFJaHFVVEY1VGtsTzg0T1BDSll4RVlzRGlScjBJQU9ZNWhvNERLQ2lGQnRPaGNYUE5XMU95M0NhQ09Pc2tqcGVuU2EzTWUtSS0xeG5razlwUmdlMzQ5RmVsWjYxUjMtZkV2ZDBzSEpCV3dBOG5mSFhHSTFfUU00bVc?oc=5",
     "score": 0.5
    },
    "picked": false
@@ -1215,7 +1367,7 @@
    "id": "4ed5ce6e3ccafd3d",
    "title": "Labor promises $30 weekly cap for Victorian public transport amid push for free travel",
    "link": "https://www.theguardian.com/australia-news/2026/oct/19/labor-promises-30-weekly-cap-for-victorian-public-transport-amid-push-for-free-travel",
-   "summary": "Premier Ben Carroll says two-year limit will be in place on 1 January if re-elected, while Greens say there should be no fares Get our breaking news email , free app or daily news podcast Public transport fares in Victoria will be capped at $30 a week if the Labor government is r…",
+   "summary": "Premier Ben Carroll says two-year limited cap will start on 1 January if re-elected, while Greens say there should be no fares Get our breaking news email , free app or daily news podcast Public transport fares in Victoria will be capped at $30 a week if the Labor government is r…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -1305,12 +1457,12 @@
    "id": "2e887791f5b1af48",
    "title": "Jacqui Lambie condemns One Nation cartoon mocking her struggle with vaginal prolapse",
    "link": "https://www.theguardian.com/australia-news/2026/oct/19/jacqui-lambie-one-nation-pauline-hanson-please-explain-ntwnfb",
-   "summary": "Independent senator Monique Ryan throws her support behind fellow crossbencher after Pauline Hanson’s Please Explain episode Get our breaking news email , free app or daily news podcast Jacqui Lambie has criticised a One Nation cartoon mocking the Tasmanian senator’s health strug…",
+   "summary": "Independent MP Monique Ryan throws her support behind fellow crossbencher after Pauline Hanson’s Please Explain episode Get our breaking news email , free app or daily news podcast Jacqui Lambie has condemned a One Nation cartoon mocking her health struggle with vaginal prolapse,…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
    "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/db7395d21cfc2aa2ecaa9eec0401566507e7dad2/1484_581_5720_4576/master/5720.jpg?width=140&quality=85&auto=format&fit=max&s=d944a4ea9c1a0cb98ae6ead88cef2cc9",
+   "image": "https://i.guim.co.uk/img/media/09681905fabaf078dfedd3f50f0c72508a1fb9d0/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=71755e2f75186bc7b5a93a85afd3c879",
    "published": "2026-10-18T23:01:22Z",
    "first_seen": "2026-10-18T23:39:42Z",
    "tv_match": "unknown",
@@ -1806,9 +1958,9 @@
   },
   {
    "id": "04d52c7f63cda0f5",
-   "title": "Trump defends Russia sanctions relief, blasts Zelensky on peace",
+   "title": "Zelensky holds US talks as Trump accuses him of not wanting peace",
    "link": "https://www.france24.com/en/europe/20261018-ukraine-zelensky-war-trump-peace-russia-sanctions",
-   "summary": "US President Donald Trump on Sunday accused Ukrainian President Volodymyr Zelensky of prolonging the war with Russia, claiming Kyiv had little interest in peace. Trump said negotiations to end the four-year conflict were making “great progress” but alleged Zelensky was reluctant …",
+   "summary": "Ukrainian President Volodymyr Zelensky spoke with US envoys Steve Witkoff and Jared Kushner on Sunday amid tensions after President Donald Trump accused Kyiv of resisting peace with Russia. The talks came as both sides exchanged attacks on energy infrastructure, while Washington’…",
    "outlet": "© Ukrainian Presidential Press Service, AFP",
    "feed": "France 24",
    "kind": "overseas",
@@ -2153,9 +2305,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261019000436_comm.jpg",
    "tv_match": {
-    "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
+    "title": "フランスでデモの一部が暴徒化…マクロン大統領「怒りと恥辱」（2026年10月18日掲載）｜日テレNEWS NNN",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONEc5RGFJaHFVVEY1VGtsTzg0T1BDSll4RVlzRGlScjBJQU9ZNWhvNERLQ2lGQnRPaGNYUE5XMU95M0NhQ09Pc2tqcGVuU2EzTWUtSS0xeG5razlwUmdlMzQ5RmVsWjYxUjMtZkV2ZDBzSEpCV3dBOG5mSFhHSTFfUU00bVc?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -3671,9 +3823,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m010179000p/0c10.jpg?1",
    "tv_match": {
-    "title": "横浜市長選 新人・原沢敦美氏が初当選 パワハラ問題で辞任の山中前市長ら破り（2026年10月18日掲載）｜日テレNEWS NNN",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBzZFhJTG5mSlg3RnNQUmdJalBJQmk4RWtTSHNUdDgxdkxNQUlYbHg4cC10ZEVhU3lQUWpBLVY0eFFEVVlDdkpIbThCcnhqbGs5Tm1ib3ZJaXc1NHFfc1NXNnkyLW9rTXNpNXBnUmVJWWowRWpzcWxieDhRZi0?oc=5",
+    "title": "パワハラ問題で前市長が辞職 横浜市長選 新人・原沢敦美氏が初当選",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpNWlOS2FMQUd5YWtEZnBWZDN4YlB3ejZlMTk1SmxpME5MVG1sTHFJLVJhQ2o1U1Flam11U3ZqR0dTMXpTeVBYNWQ2NHItLUJBcTRTNEludWxhR2dQUVBuTmZpNngwWlBTV0VxRnQxMmZuZw?oc=5",
     "score": 0.39
    },
    "picked": false
@@ -4039,9 +4191,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/06/09/20260609k0000m040135000p/0c10.jpg?1",
    "tv_match": {
-    "title": "東京・福生市の路上で男性刺され死亡 知人の50歳男を殺人容疑で逮捕",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9oQXJvZ2hHdktmcDVCU3M2amNpODlqR01ELW1iWk15M2piNVVSRkZTZGVXZ0FQRmF6STRTaVRySnRNMk93S0JJdmNwem1HRkJ4UGJLRTBnNlBLUVVIMmVrZDZZQmQwWXNKRzhodldSMVdMQQ?oc=5",
+    "title": "50歳男を殺人容疑で逮捕 東京・福生市 路上で男性刺され死亡",
+    "outlet": "FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5Ga2NDM0IwLUFVU3BWbUxUVjJ5MFVETnA1OGtMRU1iZlE1RlZ2dHhvTHVLZnhrckRNZ1Q4UnhXUDhRMmduUEh3ZHRjc2ZpQQ?oc=5",
     "score": 0.65
    },
    "picked": false
@@ -4680,9 +4832,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/18/20261018k0000m010133000p/0c10.jpg?1",
    "tv_match": {
-    "title": "横浜市長選 新人・原沢敦美氏が初当選 パワハラ問題で辞任の山中前市長ら破り（2026年10月18日掲載）｜日テレNEWS NNN",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBzZFhJTG5mSlg3RnNQUmdJalBJQmk4RWtTSHNUdDgxdkxNQUlYbHg4cC10ZEVhU3lQUWpBLVY0eFFEVVlDdkpIbThCcnhqbGs5Tm1ib3ZJaXc1NHFfc1NXNnkyLW9rTXNpNXBnUmVJWWowRWpzcWxieDhRZi0?oc=5",
+    "title": "パワハラ問題で前市長が辞職 横浜市長選 新人・原沢敦美氏が初当選",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpNWlOS2FMQUd5YWtEZnBWZDN4YlB3ejZlMTk1SmxpME5MVG1sTHFJLVJhQ2o1U1Flam11U3ZqR0dTMXpTeVBYNWQ2NHItLUJBcTRTNEludWxhR2dQUVBuTmZpNngwWlBTV0VxRnQxMmZuZw?oc=5",
     "score": 0.48
    },
    "picked": false
@@ -5290,9 +5442,9 @@
    "published": "2026-10-18T10:24:10Z",
    "first_seen": "2026-10-18T14:09:55Z",
    "tv_match": {
-    "title": "横浜市長選 新人・原沢敦美氏が初当選 パワハラ問題で辞任の山中前市長ら破り（2026年10月18日掲載）｜日テレNEWS NNN",
+    "title": "フランスでデモの一部が暴徒化…マクロン大統領「怒りと恥辱」（2026年10月18日掲載）｜日テレNEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBzZFhJTG5mSlg3RnNQUmdJalBJQmk4RWtTSHNUdDgxdkxNQUlYbHg4cC10ZEVhU3lQUWpBLVY0eFFEVVlDdkpIbThCcnhqbGs5Tm1ib3ZJaXc1NHFfc1NXNnkyLW9rTXNpNXBnUmVJWWowRWpzcWxieDhRZi0?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONEc5RGFJaHFVVEY1VGtsTzg0T1BDSll4RVlzRGlScjBJQU9ZNWhvNERLQ2lGQnRPaGNYUE5XMU95M0NhQ09Pc2tqcGVuU2EzTWUtSS0xeG5razlwUmdlMzQ5RmVsWjYxUjMtZkV2ZDBzSEpCV3dBOG5mSFhHSTFfUU00bVc?oc=5",
     "score": 0.36
    },
    "picked": false
@@ -8830,20 +8982,6 @@
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/09/AA-20260909-42422213-42422189-IRANS_OIL_TANKERS_OFF_BANDAR_ABBAS_IN_STRAIT_OF_HORMUZ-1788956460.jpg?resize=1920%2C1440"
   },
   {
-   "id": "ee597adeba44d0bb",
-   "title": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBha2puUVJpcnNuR1JwTWtEajdZRkh0dk5uMVdHNEt4eUZZQXNHYmRNX2ppNWxneS1DMnBIUzhFZEFBdUpyRUxWUEtEUHpZQnlLSmRSMTRvTFlTS0JuQmpwdkJyMGRUNVE?oc=5",
-   "summary": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-18T00:00:00Z",
-   "first_seen": "2026-10-18T12:54:12Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "b10f4e10d9cef5d9",
    "title": "サムスン、「Galaxy Z Fold8/8 Ultra」購入でLINEマンガコイン2000円分 店舗に体験コーナーも",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2148436.html",
@@ -8858,6 +8996,20 @@
    "picked": false,
    "image_checked": true,
    "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2148/436/001.jpg"
+  },
+  {
+   "id": "ee597adeba44d0bb",
+   "title": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBha2puUVJpcnNuR1JwTWtEajdZRkh0dk5uMVdHNEt4eUZZQXNHYmRNX2ppNWxneS1DMnBIUzhFZEFBdUpyRUxWUEtEUHpZQnlLSmRSMTRvTFlTS0JuQmpwdkJyMGRUNVE?oc=5",
+   "summary": "中国依存を深めるベンツの浅知恵と、日本進出したBYD「ラッコ」の深謀 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-18T00:00:00Z",
+   "first_seen": "2026-10-18T12:54:12Z",
+   "tv_match": null,
+   "picked": false
   },
   {
    "id": "b1ae3fe939028ad5",
@@ -9757,9 +9909,9 @@
    "published": "2026-10-17T21:58:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "フランス全土で55万人規模のデモ ガソリン高騰などに抗議 一部が暴徒化し治安部隊と衝突 1200人拘束 マクロン大統領「フランスに暴力入り込む余地ない」",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9ybW9IX1BXR0hucWItbXBoOGhrQ0VLSlFHMENDUGd4Zmc0T1V1Sk1zQWRwTWdPeVp5VjdzaVZXaFM0TVVxQm4ydVNTalhjdXotQ1luSlc3SQ?oc=5",
+    "title": "フランス全土で大規模デモ 生活費高騰などに抗議 市庁舎に放火など破壊行為も…約1800人拘束 マクロン大統領はデモに乗じた略奪などに厳しく対応する姿勢示す（2026年10月18日掲載）｜日テレNEWS NNN",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSTBCYjlsbllSeWFiUTlXQXdLeWdYeUdXSGxjeHd3UWhIcHczeUdnbUoxeFJIcWptUWxzNDR6Tk50cnluc3Z4a0lrZjQ1RU9GWjlEUGhBUVRTOHdYaUh5ci15YVRjZEZEVmd0eS1DZDJnLUpTQmFiZ1dvUzZxdFpUb0VPQVE?oc=5",
     "score": 0.42
    },
    "picked": false
@@ -11951,9 +12103,9 @@
    "published": "2026-10-17T11:15:06Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": {
-    "title": "NTTドコモ 緊急地震速報配信されず システム不具合で",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NMzI5NnZ6T1R1Y09RZ3dtVWtucnRxQWw2WlE0RXNQZkZkS2EzX01id054cG5PdVgtdERDT3p6Q2x3T0RIeVplNmJLb2VOSEFucFVkUWliVQ?oc=5",
+    "title": "「緊急地震速報」取り消し 気象庁が2度目の会見 マグニチュードを過大に…2つの要因（2026年10月16日掲載）",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96T0RjWnAtYk93QXQyeFd4Y3dHeWlUX3paOVZkdFpQcHZPV3BUQzZBcE9CZ2xqOUhIZTd3OTE2a3RuV1YzQnhwOHZhdmlMVlZLNWwwUm5lbHJpUXl2TnBjUnJYaEJZTVl3Zl9xcEtXZnVrY0w4SXhMWkFoQTE?oc=5",
     "score": 0.33
    },
    "picked": false,
@@ -12666,9 +12818,9 @@
    "published": "2026-10-17T07:10:26Z",
    "first_seen": "2026-10-18T04:29:46Z",
    "tv_match": {
-    "title": "緊急地震速報“取り消し”めぐり気象庁2度目の会見 マグニチュードを過大に推定…2つの要因あげ説明（2026年10月16日掲載）",
+    "title": "「緊急地震速報」取り消し 気象庁が2度目の会見 マグニチュードを過大に…2つの要因（2026年10月16日掲載）",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1COHBjMFJjd29fVFc5dHdaeFVQMVBVclQ3U1E0UkNTTDVuLUo3ckE3eFk1dko0UnExZnBwUDByTTBFVHA3a05HQzZiNU1JU2lRQzA3NFhEdWxpdmJReHFyVnJLaTI2NXY5bFpJVFpqWjZ2TjdjaWNnMEEwYWI?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96T0RjWnAtYk93QXQyeFd4Y3dHeWlUX3paOVZkdFpQcHZPV3BUQzZBcE9CZ2xqOUhIZTd3OTE2a3RuV1YzQnhwOHZhdmlMVlZLNWwwUm5lbHJpUXl2TnBjUnJYaEJZTVl3Zl9xcEtXZnVrY0w4SXhMWkFoQTE?oc=5",
     "score": 0.33
    },
    "picked": false,
@@ -17716,9 +17868,9 @@
    "published": "2026-10-16T04:25:00Z",
    "first_seen": "2026-10-18T11:43:31Z",
    "tv_match": {
-    "title": "緊急地震速報“取り消し”めぐり気象庁2度目の会見 マグニチュードを過大に推定…2つの要因あげ説明（2026年10月16日掲載）",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1COHBjMFJjd29fVFc5dHdaeFVQMVBVclQ3U1E0UkNTTDVuLUo3ckE3eFk1dko0UnExZnBwUDByTTBFVHA3a05HQzZiNU1JU2lRQzA3NFhEdWxpdmJReHFyVnJLaTI2NXY5bFpJVFpqWjZ2TjdjaWNnMEEwYWI?oc=5",
+    "title": "震源が日本から離れていたため正常に作動せず 緊急地震速報、気象庁が初の取り消し",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3ak5FVGk4UU53eHgzdS1BQWFxUlZwaENXVm84dk1Dc1J1S2JxUmFJU0M4aVpJZDdMVU40RW1UNE5JWW1OU2d3TEpDUFJPbFllOFd3QkRzblB2dUhnU2NWR2RTd1I5TmNLUUFUWGtCZE5DUQ?oc=5",
     "score": 0.4
    },
    "picked": false
@@ -18243,9 +18395,9 @@
    "published": "2026-10-16T01:37:00Z",
    "first_seen": "2026-10-18T09:38:54Z",
    "tv_match": {
-    "title": "ホワイトハウス新報道官 弁護士資格の不所持を認める 経歴詐称ではないとの持論を展開 辞任も否定",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE15TW5Hb2lQWWVIWUNIcHlneWFNejN5TWUxbXFaTnN0NDlhN3FuNXBtZ21hd0dVRHlDUTlFbEZiZ1BLZk1jcTlJLUxyUmhCTDZSQzM4X2JlMA?oc=5",
+    "title": "ホワイトハウス新報道官が退任の意向 就任から5日 資格ないのに弁護士名乗る",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAzTHM0TkF0bXhJNFBqSWxVck1rTndONW9ocmoxYmNNeENTYlAtS2JzaFN3bGh5d05RZC0ycHRHOHQ1TXEwUU1maU5zZ1FaSFdlTXMwYVRtcXJkbHBmTlhOeU5kQW9MWHJncjFzZWxRRWlNcUxZeDVHRVRB?oc=5",
     "score": 0.38
    },
    "picked": false
