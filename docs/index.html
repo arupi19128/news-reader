@@ -1424,10 +1424,10 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     const rows = Object.entries(summary || {}).map(([k, v]) => ({ k, v: +v })).filter((r) => r.v > 0).sort((a, b) => b.v - a.v).slice(0, 6);
     const max = Math.max(...rows.map((r) => r.v), 1);
     return el("div", { class: "bars-list" }, ...rows.map((r, i) => el("div", { class: "bar-row" }, el("span", { class: "rk" }, String(i + 1)),
-      el("span", { class: "nm", title: r.k }, labels[r.k] || r.k.toUpperCase()), el("span", { class: "tr" }, el("i", { style: `width:${(r.v / max) * 100}%;background:${color}` })), el("span", { class: "pc" }, pct(r.v)))));
+      el("span", { class: "nm", title: r.k }, labels[r.k.toLowerCase()] || r.k), el("span", { class: "tr" }, el("i", { style: `width:${(r.v / max) * 100}%;background:${color}` })), el("span", { class: "pc" }, pct(r.v)))));
   }
-  const MITIGATION_JA = { ddos: "DDoS対策", waf: "WAF", ip_reputation: "IPの評判", access_rules: "アクセスルール", bot_management: "ボット対策", api_shield: "API保護", dos: "過剰アクセス", data_loss_prevention: "情報漏えい防止" };
-  const VECTOR_JA = { udp: "UDPフラッド", tcp: "TCP攻撃", syn: "SYNフラッド", ack: "ACKフラッド", rst: "RSTフラッド", icmp: "ICMPフラッド", gre: "GREフラッド", other: "その他" };
+  const MITIGATION_JA = { ddos: "DDoS対策", waf: "WAF", ip_reputation: "IPの評判", access_rules: "アクセスルール", bot_management: "ボット対策", api_shield: "API保護", dos: "過剰アクセス対策", data_loss_prevention: "情報漏えい防止" };
+  const VECTOR_JA = { "gre flood": "GREフラッド", "mirai (udp) flood": "Mirai（UDP）フラッド", "udp flood": "UDPフラッド", "syn flood": "SYNフラッド", "ack flood": "ACKフラッド", "rst flood": "RSTフラッド", "icmp flood": "ICMPフラッド", "ssdp flood": "SSDP増幅", "sfu flood": "SFUフラッド", "dns amplification": "DNS増幅", "dns flood": "DNSフラッド", "memcached flood": "Memcached増幅", "ntp amplification": "NTP増幅", other: "その他" };
   function drawMap(pairs) {
     const svg = window.d3.select("#cy-svg");
     const W = 960, H = 470;
