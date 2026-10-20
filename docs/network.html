@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>パケットを届けろ ｜ ニュースレーダー</title>
+<meta name="description" content="IPアドレス・ゲートウェイ・ルーティング・DNS・ファイアウォールを、パケットを届けるパズルで学ぶシミュレーションゲーム。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: same status bar as the news site → stage picker → topology (left) + mission & settings (right) → step log */
+:root {
+  --bg: #eef2f5; --sheet: #ffffff; --ink: #0f1d2b; --muted: #5a6b7b; --grid: #dbe3ea; --line: #cfd9e2;
+  --wave: #1f6fb2; --wave-soft: #e1edf8; --out: #e4572e; --out-soft: #fde6de; --ok: #2f8f5b; --ok-soft: #e1f3e8;
+  --font-body: "IBM Plex Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d151d; --sheet: #131e28; --ink: #e2eaf1; --muted: #8fa1b1; --grid: #1a2733; --line: #253645;
+    --wave: #64aef0; --wave-soft: #172b40; --out: #ff7a4d; --out-soft: #3b2219; --ok: #5fcf8f; --ok-soft: #173326; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d151d; --sheet: #131e28; --ink: #e2eaf1; --muted: #8fa1b1; --grid: #1a2733; --line: #253645;
+  --wave: #64aef0; --wave-soft: #172b40; --out: #ff7a4d; --out-soft: #3b2219; --ok: #5fcf8f; --ok-soft: #173326; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.7 var(--font-body);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 24px 24px; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--wave); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--font-mono); }
+.cap { font: 500 11px/1.4 var(--font-mono); letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+
+.statusbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--sheet); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--sheet); }
+.statusbar .wrap { display: flex; align-items: center; gap: 14px; padding-block: 9px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand svg { width: 26px; height: 26px; }
+.brand b { font-weight: 700; font-size: 18px; letter-spacing: 0.04em; }
+.brand small { font: 500 10px var(--font-mono); color: var(--wave); letter-spacing: 0.2em; }
+nav.tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; max-width: 100%; }
+nav.tabs a { white-space: nowrap; text-decoration: none; font-size: 14px; font-weight: 700; padding: 5px 16px; border-radius: 8px; color: var(--muted); border: 1px solid transparent; }
+nav.tabs a[aria-current="page"] { color: var(--wave); background: var(--wave-soft); border-color: color-mix(in srgb, var(--wave) 30%, transparent); }
+
+main { padding-block: 24px 48px; }
+.head h1 { margin: 4px 0 4px; font-size: clamp(24px, 3.6vw, 34px); line-height: 1.35; }
+.head p { margin: 0; color: var(--muted); max-width: 46em; }
+.stages { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; }
+.stages button { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 4px 14px; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.stages button[aria-current="true"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
+.stages button .done { color: var(--ok); font-weight: 700; }
+.stages button[aria-current="true"] .done { color: var(--sheet); }
+
+.board { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.sheet { background: var(--sheet); border: 1px solid var(--line); border-radius: 12px; min-width: 0; }
+.sheet-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.sheet-head h2 { margin: 0; font-size: 15px; }
+.pad { padding: 14px 16px; }
+#topo { display: block; width: 100%; height: auto; }
+.topo-node text { font-family: var(--font-body); }
+
+.mission { font-size: 15px; margin: 0 0 8px; }
+.goal { background: var(--wave-soft); border-radius: 8px; padding: 8px 12px; font-size: 14px; margin-bottom: 12px; }
+.goal b { color: var(--wave); }
+.dev { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+.dev h3 { margin: 0 0 6px; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.dev h3 .kind { font: 500 11px var(--font-mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; }
+.field { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 6px 10px; align-items: center; font-size: 13.5px; margin: 4px 0; }
+.field > span { color: var(--muted); }
+.field input, .field select { width: 100%; min-width: 0; border: 1.5px solid var(--wave); background: var(--sheet); border-radius: 6px; padding: 4px 8px; font-family: var(--font-mono); font-size: 14px; }
+.field .fixed { font-family: var(--font-mono); }
+.rules { display: grid; gap: 6px; }
+.rule { display: grid; grid-template-columns: 2em minmax(0, 1fr) minmax(0, 1fr); gap: 6px; align-items: center; font-size: 13px; }
+.rule select { border: 1.5px solid var(--wave); background: var(--sheet); border-radius: 6px; padding: 4px 6px; }
+.rule.implicit { color: var(--muted); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.btn { border: 0; background: var(--wave); color: var(--sheet); border-radius: 999px; padding: 8px 20px; font-weight: 700; cursor: pointer; }
+.btn.ghost { background: none; border: 1px solid var(--line); color: var(--muted); font-weight: 500; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.hint { background: var(--bg); border-radius: 8px; padding: 10px 12px; font-size: 13.5px; margin-top: 10px; }
+
+.result { border-radius: 10px; padding: 10px 14px; margin-top: 12px; font-size: 14px; }
+.result.ok { background: var(--ok-soft); color: var(--ok); }
+.result.ng { background: var(--out-soft); color: var(--out); }
+.result b { display: block; font-size: 16px; }
+.lesson { background: var(--sheet); border: 1px solid var(--ok); border-radius: 10px; padding: 12px 14px; margin-top: 10px; font-size: 14px; color: var(--ink); }
+.lesson h3 { margin: 0 0 4px; font-size: 14px; color: var(--ok); }
+
+.log { margin: 0; padding: 0; list-style: none; font-size: 13.5px; }
+.log li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: 8px; padding: 7px 14px; border-bottom: 1px dashed var(--line); }
+.log li:last-child { border-bottom: 0; }
+.log li .n { font: 500 12px var(--font-mono); color: var(--muted); }
+.log li.ok { color: var(--ok); font-weight: 700; }
+.log li.ng { color: var(--out); font-weight: 700; }
+.log li.head { background: var(--bg); font-weight: 700; }
+.log-empty { padding: 14px; color: var(--muted); font-size: 13.5px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); padding: 0 14px 10px; }
+
+.board > .sheet:first-child { position: sticky; top: calc(70px + env(safe-area-inset-top, 0px)); }
+@media (max-width: 860px) { .board { grid-template-columns: 1fr; } .board > .sheet:first-child { position: static; } }
+@media (max-width: 480px) { .field { grid-template-columns: 1fr; gap: 2px; } }
+@media (prefers-reduced-motion: reduce) { .pkt { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="statusbar">
+  <div class="wrap">
+    <a class="brand" href="index.html#news">
+      <svg viewBox="0 0 26 26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M13 11 L8.5 24 M13 11 L17.5 24 M10 19.5 h6" /><circle cx="13" cy="9" r="1.8" fill="currentColor" stroke="none" />
+        <path d="M9.2 5.2 a5.4 5.4 0 0 0 0 7.6 M16.8 5.2 a5.4 5.4 0 0 1 0 7.6" stroke="var(--wave)" />
+        <path d="M6.2 2.4 a9.4 9.4 0 0 0 0 13.2 M19.8 2.4 a9.4 9.4 0 0 1 0 13.2" stroke="var(--out)" />
+      </svg>
+      <span><b>ニュースレーダー</b><br><small>NEWS RADAR</small></span>
+    </a>
+    <nav class="tabs" aria-label="ページ切り替え">
+      <a href="index.html#news">ニュース</a>
+      <a href="index.html#recipes">レシピ</a>
+      <a href="index.html#softbank">対策</a>
+      <a href="index.html#cyber">サイバー攻撃</a>
+      <a href="network.html" aria-current="page">ネットワーク</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="head">
+    <div class="cap">Network simulator</div>
+    <h1>パケットを届けろ</h1>
+    <p>ネットワークの設定を直して、パケットを目的地まで届けるゲームです。「送信テスト」を押すと、パケットが図の上を流れ、途中の機器が何を考えて次へ渡したかが下に1行ずつ表示されます。</p>
+  </div>
+  <div class="stages" id="stages" role="tablist" aria-label="ステージ"></div>
+
+  <div class="board">
+    <section class="sheet">
+      <div class="sheet-head"><h2 id="stage-title">ステージ</h2><span class="cap" id="stage-topic"></span></div>
+      <svg id="topo" viewBox="0 0 640 360" role="img" aria-label="ネットワーク構成図"></svg>
+      <div class="legend"><span>━ ケーブル</span><span>● 青い点＝行きのパケット</span><span>● 緑の点＝返事のパケット</span></div>
+    </section>
+    <section class="sheet">
+      <div class="sheet-head"><h2>ミッション</h2><span class="cap">青い枠の項目を変更できます</span></div>
+      <div class="pad">
+        <p class="mission" id="mission"></p>
+        <div class="goal" id="goal"></div>
+        <div id="devices"></div>
+        <div class="actions">
+          <button type="button" class="btn" id="run">送信テスト ▶</button>
+          <button type="button" class="btn ghost" id="hint-btn">ヒント</button>
+          <button type="button" class="btn ghost" id="reset">最初に戻す</button>
+        </div>
+        <div class="hint" id="hint" hidden></div>
+        <div id="result"></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="sheet" style="margin-top:16px">
+    <div class="sheet-head"><h2>パケットの旅の記録</h2><span class="cap">各機器の判断</span></div>
+    <ol class="log" id="log"><li class="log-empty">「送信テスト」を押すと、ここにパケットの動きが表示されます。</li></ol>
+  </section>
+</main>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v == null) continue;
+      if (k === "class") n.className = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+    }
+    for (const kid of kids) if (kid != null && kid !== false) n.append(kid);
+    return n;
+  };
+  const svgEl = (tag, attrs = {}, text) => { const n = document.createElementNS("http://www.w3.org/2000/svg", tag); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); if (text != null) n.textContent = text; return n; };
+  const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ---------- IPv4 helpers ----------
+  const IP_RE = /^(25[0-5]|2[0-4]\d|1?\d?\d)(\.(25[0-5]|2[0-4]\d|1?\d?\d)){3}$/;
+  const validIp = (s) => IP_RE.test((s || "").trim());
+  const toInt = (s) => s.trim().split(".").reduce((a, o) => (a * 256) + Number(o), 0) >>> 0;
+  const maskInt = (m) => toInt(m);
+  const sameNet = (ip1, ip2, mask) => ((toInt(ip1) & maskInt(mask)) >>> 0) === ((toInt(ip2) & maskInt(mask)) >>> 0);
+  const netOf = (ip, mask) => { const n = (toInt(ip) & maskInt(mask)) >>> 0; return [24, 16, 8, 0].map((s) => (n >>> s) & 255).join("."); };
+  const prefix = (mask) => maskInt(mask).toString(2).replace(/0/g, "").length;
+  const MASKS = ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.128", "255.255.255.252"];
+  const PORT_NAME = { 80: "HTTP（Web）", 23: "Telnet（遠隔操作）", 53: "DNS", 0: "ping" };
+
+  // ---------- Stages ----------
+  // Each node: id, kind, label, x, y, ifaces [{ip, mask, seg}], gw, dns, routes, acl, services, records.
+  // `edit` lists the settings the player may change: [nodeId, path, label, type]
+  const STAGES = [
+    {
+      title: "1. 同じネットワーク", topic: "IPアドレス",
+      mission: "PC-A から PC-B に ping（届いたかの確認）を送りたいのに、返事が来ません。PC-B の IP アドレスを直してください。",
+      goal: "PC-A → PC-B の <b>ping を成功</b>させる",
+      nodes: [
+        { id: "A", kind: "pc", label: "PC-A", x: 110, y: 250, ifaces: [{ ip: "192.168.1.10", mask: "255.255.255.0", seg: "L1" }] },
+        { id: "SW", kind: "switch", label: "スイッチ", x: 320, y: 120 },
+        { id: "B", kind: "pc", label: "PC-B", x: 530, y: 250, ifaces: [{ ip: "192.168.2.20", mask: "255.255.255.0", seg: "L1" }] },
+      ],
+      links: [["A", "SW"], ["SW", "B"]],
+      edit: [["B", "ifaces.0.ip", "IPアドレス", "ip"]],
+      tests: [{ from: "A", to: "B", port: 0, expect: true, label: "PC-A → PC-B ping" }],
+      hint: "サブネットマスク 255.255.255.0 は「最初の3つの数字が同じなら同じネットワーク」という意味です。PC-A は 192.168.1.□。PC-B も 192.168.1.□ にして、最後の数字は PC-A と重ならないようにします。",
+      lesson: "IP アドレスは「ネットワーク部」と「ホスト部」に分かれます。マスク 255.255.255.0（/24）なら前の3つがネットワーク部です。同じネットワーク部どうしは、ルーターを通さずスイッチだけで直接話せます。",
+    },
+    {
+      title: "2. サブネットマスク", topic: "サブネットマスク",
+      mission: "PC-A（10.0.0.10）と PC-B（10.0.1.20）は同じスイッチにつながっていますが、IP アドレスは変えられません。2台のサブネットマスクを直して、通信できるようにしてください。",
+      goal: "PC-A → PC-B の <b>ping を成功</b>させる（IP アドレスは変更不可）",
+      nodes: [
+        { id: "A", kind: "pc", label: "PC-A", x: 110, y: 250, ifaces: [{ ip: "10.0.0.10", mask: "255.255.255.0", seg: "L1" }] },
+        { id: "SW", kind: "switch", label: "スイッチ", x: 320, y: 120 },
+        { id: "B", kind: "pc", label: "PC-B", x: 530, y: 250, ifaces: [{ ip: "10.0.1.20", mask: "255.255.255.0", seg: "L1" }] },
+      ],
+      links: [["A", "SW"], ["SW", "B"]],
+      edit: [["A", "ifaces.0.mask", "サブネットマスク", "mask"], ["B", "ifaces.0.mask", "サブネットマスク", "mask"]],
+      tests: [{ from: "A", to: "B", port: 0, expect: true, label: "PC-A → PC-B ping" }],
+      hint: "10.0.0.10 と 10.0.1.20 は「3つ目の数字」が違います。同じネットワークにするには、ネットワーク部を前の2つ（10.0）だけにするマスクが必要です。",
+      lesson: "マスクを 255.255.0.0（/16）にすると、10.0.□.□ の範囲（約6万5千台）が1つのネットワークになります。マスクを短くするほどネットワークは広く、長くするほど細かく区切られます。両方の機器が同じ考え方（同じマスク）を持っていることが大切です。",
+    },
+    {
+      title: "3. デフォルトゲートウェイ", topic: "ゲートウェイ",
+      mission: "PC-A から、別のネットワークにある Web サーバーに ping を送りたいのに届きません。PC-A の「デフォルトゲートウェイ」を設定してください。",
+      goal: "PC-A → サーバー の <b>ping を成功</b>させる",
+      nodes: [
+        { id: "A", kind: "pc", label: "PC-A", x: 90, y: 260, ifaces: [{ ip: "192.168.1.10", mask: "255.255.255.0", seg: "L1" }], gw: "" },
+        { id: "SW1", kind: "switch", label: "スイッチ1", x: 190, y: 120 },
+        { id: "R1", kind: "router", label: "ルーター", x: 320, y: 260, ifaces: [{ name: "左", ip: "192.168.1.1", mask: "255.255.255.0", seg: "L1" }, { name: "右", ip: "192.168.2.1", mask: "255.255.255.0", seg: "L2" }] },
+        { id: "SW2", kind: "switch", label: "スイッチ2", x: 450, y: 120 },
+        { id: "S", kind: "server", label: "サーバー", x: 550, y: 260, ifaces: [{ ip: "192.168.2.100", mask: "255.255.255.0", seg: "L2" }], gw: "192.168.2.1" },
+      ],
+      links: [["A", "SW1"], ["SW1", "R1"], ["R1", "SW2"], ["SW2", "S"]],
+      edit: [["A", "gw", "デフォルトゲートウェイ", "ip"]],
+      tests: [{ from: "A", to: "S", port: 0, expect: true, label: "PC-A → サーバー ping" }],
+      hint: "ゲートウェイは「別のネットワーク宛てのパケットを預ける出口」です。PC-A と同じネットワーク（192.168.1.□）にある、ルーターの左側の IP アドレスを入れます。",
+      lesson: "宛先が自分と違うネットワークなら、パソコンはパケットをデフォルトゲートウェイ（ルーター）に預けます。ゲートウェイは必ず自分と同じネットワーク内のアドレスでないと、そもそも渡せません。ルーターの右側（192.168.2.1）を入れても失敗するのはそのためです。",
+    },
+    {
+      title: "4. ルーティングテーブル", topic: "ルーティング",
+      mission: "ルーターが2台になりました。ルーター1は、ルーター2の先にある 192.168.3.0 のネットワークへの道を知りません。ルーター1に「経路（ルート）」を1行追加してください。",
+      goal: "PC-A → サーバー の <b>ping を成功</b>させる",
+      nodes: [
+        { id: "A", kind: "pc", label: "PC-A", x: 70, y: 260, ifaces: [{ ip: "192.168.1.10", mask: "255.255.255.0", seg: "L1" }], gw: "192.168.1.1" },
+        { id: "R1", kind: "router", label: "ルーター1", x: 230, y: 130, ifaces: [{ name: "左", ip: "192.168.1.1", mask: "255.255.255.0", seg: "L1" }, { name: "右", ip: "10.0.0.1", mask: "255.255.255.252", seg: "W" }],
+          routes: [{ net: "", mask: "255.255.255.0", via: "" }] },
+        { id: "R2", kind: "router", label: "ルーター2", x: 420, y: 130, ifaces: [{ name: "左", ip: "10.0.0.2", mask: "255.255.255.252", seg: "W" }, { name: "右", ip: "192.168.3.1", mask: "255.255.255.0", seg: "L3" }],
+          routes: [{ net: "192.168.1.0", mask: "255.255.255.0", via: "10.0.0.1" }] },
+        { id: "S", kind: "server", label: "サーバー", x: 570, y: 260, ifaces: [{ ip: "192.168.3.100", mask: "255.255.255.0", seg: "L3" }], gw: "192.168.3.1" },
+      ],
+      links: [["A", "R1"], ["R1", "R2"], ["R2", "S"]],
+      edit: [["R1", "routes.0.net", "宛先ネットワーク", "ip"], ["R1", "routes.0.mask", "マスク", "mask"], ["R1", "routes.0.via", "次に渡す相手（ネクストホップ）", "ip"]],
+      tests: [{ from: "A", to: "S", port: 0, expect: true, label: "PC-A → サーバー ping" }],
+      hint: "「192.168.3.0（/24）宛てのパケットは、隣のルーター2に渡せばいい」と書きます。ネクストホップは、ルーター1から直接届くルーター2の左側のアドレスです。",
+      lesson: "ルーターは、自分に直接つながっていないネットワークへの行き方を「ルーティングテーブル」で判断します。手で書く経路をスタティックルートといいます。帰り道も必要なので、ルーター2には最初から 192.168.1.0 への経路が入っていました。実際の大きなネットワークでは、OSPF や BGP といった仕組みでルーターどうしが経路を自動で教え合います。",
+    },
+    {
+      title: "5. DNS", topic: "名前解決",
+      mission: "PC-A のブラウザで「www.radar.jp」を開きたいのに、つながりません。名前を IP アドレスに変換してくれる DNS サーバーを、PC-A に設定してください。",
+      goal: "PC-A から <b>www.radar.jp（HTTP）</b>につなぐ",
+      nodes: [
+        { id: "A", kind: "pc", label: "PC-A", x: 80, y: 260, ifaces: [{ ip: "192.168.1.10", mask: "255.255.255.0", seg: "L1" }], gw: "192.168.1.1", dns: "8.8.8.8" },
+        { id: "R1", kind: "router", label: "ルーター", x: 260, y: 150, ifaces: [{ name: "左", ip: "192.168.1.1", mask: "255.255.255.0", seg: "L1" }, { name: "右", ip: "192.168.2.1", mask: "255.255.255.0", seg: "L2" }] },
+        { id: "SW", kind: "switch", label: "スイッチ", x: 420, y: 150 },
+        { id: "D", kind: "dns", label: "DNSサーバー", x: 560, y: 70, ifaces: [{ ip: "192.168.2.53", mask: "255.255.255.0", seg: "L2" }], gw: "192.168.2.1", services: [53], records: { "www.radar.jp": "192.168.2.80" } },
+        { id: "W", kind: "server", label: "Webサーバー", x: 560, y: 280, ifaces: [{ ip: "192.168.2.80", mask: "255.255.255.0", seg: "L2" }], gw: "192.168.2.1", services: [80] },
+      ],
+      links: [["A", "R1"], ["R1", "SW"], ["SW", "D"], ["SW", "W"]],
+      edit: [["A", "dns", "DNSサーバー", "ip"]],
+      tests: [{ from: "A", to: "www.radar.jp", port: 80, expect: true, label: "PC-A → www.radar.jp（HTTP）" }],
+      hint: "8.8.8.8 はインターネット上の DNS サーバーですが、このネットワークはインターネットにつながっていません。図の中にある DNS サーバーのアドレスを入れましょう。",
+      lesson: "人は「www.radar.jp」のような名前を使いますが、パケットは IP アドレスでしか届きません。そこで PC は、まず DNS サーバーに「この名前の IP アドレスは？」と聞いてから、教えてもらったアドレスに接続します。Web が開けないとき、原因が DNS ということはとても多いです。",
+    },
+    {
+      title: "6. ファイアウォール", topic: "通信の制御",
+      mission: "サーバーは Web（HTTP・80番）と遠隔操作（Telnet・23番）を受け付けています。Telnet は危険なので止め、Web だけを通すように、ルーターのファイアウォールのルールを並べてください。ルールは上から順に調べられ、最初に当てはまったものが使われます。",
+      goal: "<b>HTTP は届き、Telnet は止まる</b>状態にする",
+      nodes: [
+        { id: "A", kind: "pc", label: "PC-A", x: 90, y: 260, ifaces: [{ ip: "192.168.1.10", mask: "255.255.255.0", seg: "L1" }], gw: "192.168.1.1" },
+        { id: "R1", kind: "router", label: "ファイアウォール", x: 320, y: 140, ifaces: [{ name: "左", ip: "192.168.1.1", mask: "255.255.255.0", seg: "L1" }, { name: "右", ip: "192.168.2.1", mask: "255.255.255.0", seg: "L2" }],
+          acl: [{ port: "any", action: "allow" }, { port: "23", action: "deny" }] },
+        { id: "S", kind: "server", label: "サーバー", x: 550, y: 260, ifaces: [{ ip: "192.168.2.100", mask: "255.255.255.0", seg: "L2" }], gw: "192.168.2.1", services: [80, 23] },
+      ],
+      links: [["A", "R1"], ["R1", "S"]],
+      edit: [["R1", "acl", "ルール", "acl"]],
+      tests: [
+        { from: "A", to: "S", port: 80, expect: true, label: "PC-A → サーバー HTTP（届くべき）" },
+        { from: "A", to: "S", port: 23, expect: false, label: "PC-A → サーバー Telnet（止まるべき）" },
+      ],
+      hint: "今は1行目の「すべて許可」に何でも当てはまってしまい、2行目まで調べられません。止めたいものを上に置くか、「80番だけ許可」にして残りは最後の「暗黙の拒否」に任せます。",
+      lesson: "ファイアウォールのルールは上から順に調べ、最初に当てはまったもので決まります。だから並び順がとても大切です。どのルールにも当てはまらない通信は最後に必ず拒否される（暗黙の拒否）のが一般的なので、「必要なものだけ許可する」書き方が安全です。",
+    },
+  ];
+
+  // ---------- State ----------
+  let current = 0, model = null, animating = false;
+  let cleared = store.get("nr.net.cleared", []);
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  const getPath = (obj, path) => path.split(".").reduce((o, k) => o?.[k], obj);
+  const setPath = (obj, path, v) => { const ks = path.split("."); const last = ks.pop(); ks.reduce((o, k) => o[k], obj)[last] = v; };
+  const node = (id) => model.nodes.find((n) => n.id === id);
+
+  // ---------- Simulation ----------
+  // Walk a packet hop by hop. Returns { ok, path: [nodeIds], log: [{text, cls}] }.
+  function deliver(srcId, dstIp, port, log, dir) {
+    const path = [srcId];
+    let cur = node(srcId), ttl = 8;
+    const say = (text, cls) => log.push({ text, cls });
+    const label = (n) => n.label;
+    // A host only has one interface; it sends straight to the destination when it is on the same network, otherwise to its gateway.
+    const f = cur.ifaces[0];
+    if (!validIp(f.ip)) { say(`${label(cur)}：自分の IP アドレス「${f.ip || "（空）"}」が正しい形ではないので、送信できません。`, "ng"); return { ok: false, path }; }
+    let nextIp;
+    if (sameNet(f.ip, dstIp, f.mask)) {
+      say(`${label(cur)}：宛先 ${dstIp} は自分（${f.ip}/${prefix(f.mask)}）と同じネットワーク ${netOf(f.ip, f.mask)} にある → 直接送ります。`);
+      nextIp = dstIp;
+    } else {
+      say(`${label(cur)}：宛先 ${dstIp} は自分のネットワーク ${netOf(f.ip, f.mask)}/${prefix(f.mask)} の外 → デフォルトゲートウェイに預けます。`);
+      if (!cur.gw) { say(`${label(cur)}：デフォルトゲートウェイが設定されていないので、預け先がありません。パケットは捨てられました。`, "ng"); return { ok: false, path }; }
+      if (!validIp(cur.gw)) { say(`${label(cur)}：ゲートウェイ「${cur.gw}」が正しい IP アドレスの形ではありません。`, "ng"); return { ok: false, path }; }
+      if (!sameNet(f.ip, cur.gw, f.mask)) { say(`${label(cur)}：ゲートウェイ ${cur.gw} は自分と同じネットワークにないので、直接渡せません。`, "ng"); return { ok: false, path }; }
+      nextIp = cur.gw;
+    }
+    let seg = f.seg;
+    while (ttl-- > 0) {
+      // ARP: find who owns nextIp on the same cable/switch segment.
+      const nxt = model.nodes.find((n) => (n.ifaces || []).some((g) => g.ip === nextIp && g.seg === seg));
+      if (!nxt) {
+        say(`${label(cur)}：「${nextIp} は誰？」と同じネットワーク内に問い合わせました（ARP）が、返事がありません。`, "ng");
+        return { ok: false, path };
+      }
+      if (nxt === cur) { say(`${label(cur)}：宛先 ${nextIp} は自分自身のアドレスです。IP アドレスが重なっていないか確かめましょう。`, "ng"); return { ok: false, path }; }
+      path.push(nxt.id);
+      if (nxt.kind !== "router") {
+        if (nxt.ifaces.some((g) => g.ip === dstIp)) {
+          if (port && !(nxt.services || []).includes(port)) { say(`${label(nxt)}：${PORT_NAME[port] || port + "番"} の受付をしていないので、接続を断りました。`, "ng"); return { ok: false, path }; }
+          say(`${label(nxt)}：自分宛てのパケットを受け取りました（${dir}）。`, "ok");
+          return { ok: true, path, dst: nxt };
+        }
+        say(`${label(nxt)}：自分宛てではないので捨てました。`, "ng");
+        return { ok: false, path };
+      }
+      // Router: firewall first, then route lookup.
+      if (nxt.acl && port != null && dir === "行き") {
+        const hit = nxt.acl.find((r) => r.port === "any" || Number(r.port) === port);
+        const rule = hit ? `ルール${nxt.acl.indexOf(hit) + 1}（${hit.port === "any" ? "すべて" : hit.port + "番"}を${hit.action === "allow" ? "許可" : "拒否"}）` : "どのルールにも当てはまらない → 暗黙の拒否";
+        if (!hit || hit.action === "deny") { say(`${label(nxt)}：${PORT_NAME[port] || port + "番"} の通信を調べました → ${rule}。パケットを止めました。`, "ng"); return { ok: false, path, blocked: true }; }
+        say(`${label(nxt)}：${PORT_NAME[port] || port + "番"} の通信を調べました → ${rule}。通します。`);
+      }
+      if (nxt.ifaces.some((g) => g.ip === dstIp)) { say(`${label(nxt)}：自分宛てのパケットを受け取りました。`, "ok"); return { ok: true, path, dst: nxt }; }
+      const connected = nxt.ifaces.find((g) => validIp(g.ip) && sameNet(g.ip, dstIp, g.mask));
+      if (connected) {
+        say(`${label(nxt)}：宛先 ${dstIp} は自分の${connected.name}側に直接つながるネットワーク ${netOf(connected.ip, connected.mask)}/${prefix(connected.mask)} → そのまま${connected.name}側へ送ります。`);
+        nextIp = dstIp; seg = connected.seg; cur = nxt; continue;
+      }
+      const routes = (nxt.routes || []).filter((r) => validIp(r.net) && validIp(r.via) && sameNet(r.net, dstIp, r.mask));
+      routes.sort((a, b) => prefix(b.mask) - prefix(a.mask));
+      if (!routes.length) { say(`${label(nxt)}：ルーティングテーブルに ${dstIp} への経路がありません。パケットは捨てられました。`, "ng"); return { ok: false, path }; }
+      const r = routes[0];
+      const out = nxt.ifaces.find((g) => sameNet(g.ip, r.via, g.mask));
+      if (!out) { say(`${label(nxt)}：経路 ${r.net}/${prefix(r.mask)} の次の相手 ${r.via} は、自分に直接つながっていないので渡せません。`, "ng"); return { ok: false, path }; }
+      say(`${label(nxt)}：ルーティングテーブルを確認 → ${r.net}/${prefix(r.mask)} 宛ては ${r.via} に渡す、と書いてあります。`);
+      nextIp = r.via; seg = out.seg; cur = nxt;
+    }
+    say("パケットの寿命（TTL）が尽きました。経路がぐるぐる回っているかもしれません。", "ng");
+    return { ok: false, path };
+  }
+
+  function runTest(t, log) {
+    const src = node(t.from);
+    let dstIp;
+    log.push({ text: `テスト：${t.label}`, cls: "head" });
+    if (!node(t.to)) {
+      // A name: ask DNS first.
+      if (!validIp(src.dns || "")) { log.push({ text: `${src.label}：DNS サーバーが設定されていないので、「${t.to}」の IP アドレスが分かりません。`, cls: "ng" }); return { ok: false, paths: [] }; }
+      log.push({ text: `${src.label}：「${t.to}」の IP アドレスを、DNS サーバー ${src.dns} に問い合わせます。` });
+      const q = deliver(t.from, src.dns, 53, log, "行き");
+      if (!q.ok) { log.push({ text: `${src.label}：DNS サーバーから答えが返ってこないので、名前を IP アドレスに変換できませんでした。`, cls: "ng" }); return { ok: false, paths: [q.path] }; }
+      const back = deliver(q.dst.id, src.ifaces[0].ip, null, log, "帰り");
+      if (!back.ok) return { ok: false, paths: [q.path, back.path] };
+      dstIp = q.dst.records?.[t.to];
+      if (!dstIp) { log.push({ text: `DNS サーバー：「${t.to}」は知らない名前でした。`, cls: "ng" }); return { ok: false, paths: [q.path, back.path] }; }
+      log.push({ text: `DNS サーバー：「${t.to}」は ${dstIp} です、と答えました。`, cls: "ok" });
+      const go = deliver(t.from, dstIp, t.port, log, "行き");
+      if (!go.ok) return { ok: false, paths: [q.path, back.path, go.path], blocked: go.blocked };
+      const ret = deliver(go.dst.id, src.ifaces[0].ip, null, log, "帰り");
+      return { ok: ret.ok, paths: [q.path, back.path, go.path, ret.path] };
+    }
+    dstIp = node(t.to).ifaces[0].ip;
+    const go = deliver(t.from, dstIp, t.port, log, "行き");
+    if (!go.ok) return { ok: false, paths: [go.path], blocked: go.blocked };
+    log.push({ text: `${go.dst.label}：返事を ${src.label}（${src.ifaces[0].ip}）に送り返します。` });
+    const ret = deliver(go.dst.id, src.ifaces[0].ip, null, log, "帰り");
+    if (ret.ok) log.push({ text: `${src.label}：返事が届きました。通信成功です！`, cls: "ok" });
+    return { ok: ret.ok, paths: [go.path, ret.path] };
+  }
+
+  // ---------- Drawing ----------
+  const ICON = { pc: "💻", server: "🗄", dns: "📖", router: "⇄", switch: "⋯" };
+  const COLORS = { pc: "#1f6fb2", server: "#2f8f5b", dns: "#8a5cc7", router: "#e4572e", switch: "#5a6b7b" };
+  function draw() {
+    const svg = $("topo");
+    svg.replaceChildren();
+    const cs = getComputedStyle(document.documentElement);
+    const ink = cs.getPropertyValue("--ink").trim(), muted = cs.getPropertyValue("--muted").trim(), sheet = cs.getPropertyValue("--sheet").trim(), line = cs.getPropertyValue("--line").trim();
+    for (const [a, b] of model.links) {
+      const p = node(a), q = node(b);
+      svg.append(svgEl("line", { x1: p.x, y1: p.y, x2: q.x, y2: q.y, stroke: line, "stroke-width": 4, "stroke-linecap": "round" }));
+    }
+    for (const n of model.nodes) {
+      const g = svgEl("g", { class: "topo-node" });
+      const c = COLORS[n.kind];
+      if (n.kind === "switch") g.append(svgEl("rect", { x: n.x - 34, y: n.y - 14, width: 68, height: 28, rx: 6, fill: sheet, stroke: c, "stroke-width": 2 }));
+      else if (n.kind === "router") g.append(svgEl("circle", { cx: n.x, cy: n.y, r: 24, fill: sheet, stroke: c, "stroke-width": 2.5 }));
+      else g.append(svgEl("rect", { x: n.x - 26, y: n.y - 22, width: 52, height: 44, rx: 8, fill: sheet, stroke: c, "stroke-width": 2.5 }));
+      g.append(svgEl("text", { x: n.x, y: n.y + 6, "text-anchor": "middle", "font-size": n.kind === "router" ? 20 : 18, fill: c }, ICON[n.kind]));
+      g.append(svgEl("text", { x: n.x, y: n.y + (n.kind === "switch" ? 32 : 42), "text-anchor": "middle", "font-size": 13, "font-weight": 700, fill: ink }, n.label));
+      (n.ifaces || []).forEach((f, i) => {
+        const dy = (n.kind === "switch" ? 32 : 42) + 16 + i * 15;
+        g.append(svgEl("text", { x: n.x, y: n.y + dy, "text-anchor": "middle", "font-size": 11, fill: muted, "font-family": "IBM Plex Mono, monospace" }, `${f.name ? f.name + " " : ""}${f.ip || "?"}/${validIp(f.mask || "") ? prefix(f.mask) : "?"}`));
+      });
+      svg.append(g);
+    }
+  }
+  function animate(paths) {
+    return new Promise(async (done) => {
+      const svg = $("topo");
+      svg.querySelectorAll(".pkt").forEach((p) => p.remove());
+      if (reduceMotion) return done();
+      for (let i = 0; i < paths.length; i++) {
+        const path = paths[i];
+        if (path.length < 2) continue;
+        const color = i % 2 === 0 ? "#1f6fb2" : "#2f8f5b";
+        const dot = svgEl("circle", { class: "pkt", r: 9, fill: color, stroke: "#fff", "stroke-width": 2 });
+        svg.append(dot);
+        // Walk the drawn links between consecutive hops (through switches on the way).
+        const pts = [];
+        for (let k = 0; k < path.length - 1; k++) pts.push(...route(path[k], path[k + 1]));
+        pts.push(node(path[path.length - 1]));
+        for (let k = 0; k < pts.length - 1; k++) await move(dot, pts[k], pts[k + 1]);
+        await new Promise((r) => setTimeout(r, 150));
+        dot.remove();
+      }
+      done();
+    });
+  }
+  function route(a, b) {
+    // Shortest list of nodes from a to b over the drawn links (to pass through switches).
+    const prev = { [a]: null }, q = [a];
+    while (q.length) { const x = q.shift(); if (x === b) break; for (const [p, r] of model.links) for (const [u, v] of [[p, r], [r, p]]) if (u === x && !(v in prev)) { prev[v] = x; q.push(v); } }
+    const out = []; let x = prev[b] === undefined ? a : prev[b];
+    while (x != null) { out.unshift(node(x)); x = prev[x]; }
+    return out.length ? out : [node(a)];
+  }
+  function move(dot, p, q) {
+    return new Promise((res) => {
+      const t0 = performance.now(), dur = 450;
+      const step = (t) => { const k = Math.min(1, (t - t0) / dur); dot.setAttribute("cx", p.x + (q.x - p.x) * k); dot.setAttribute("cy", p.y + (q.y - p.y) * k); k < 1 ? requestAnimationFrame(step) : res(); };
+      requestAnimationFrame(step);
+    });
+  }
+
+  // ---------- UI ----------
+  function renderStages() {
+    $("stages").replaceChildren(...STAGES.map((s, i) => el("button", { type: "button", role: "tab", "aria-current": String(i === current), onclick: () => load(i) },
+      cleared.includes(i) ? el("span", { class: "done" }, "✓") : null, s.title)));
+  }
+  function inputFor(nodeObj, path, type, onchange) {
+    const v = getPath(nodeObj, path) ?? "";
+    if (type === "mask") return el("select", { onchange: (e) => onchange(e.target.value) }, ...MASKS.map((m) => { const o = el("option", { value: m }, `${m}（/${prefix(m)}）`); if (m === v) o.selected = true; return o; }));
+    return el("input", { type: "text", inputmode: "decimal", value: v, placeholder: "例：192.168.1.1", spellcheck: "false", oninput: (e) => onchange(e.target.value.trim()) });
+  }
+  function renderDevices() {
+    const s = STAGES[current];
+    const box = $("devices");
+    box.replaceChildren(...model.nodes.filter((n) => n.kind !== "switch").map((n) => {
+      const kind = { pc: "パソコン", server: "サーバー", dns: "DNSサーバー", router: n.acl ? "ファイアウォール" : "ルーター" }[n.kind];
+      const card = el("div", { class: "dev" }, el("h3", {}, n.label, el("span", { class: "kind" }, kind)));
+      const fields = s.edit.filter(([id]) => id === n.id);
+      const edited = new Set(fields.map(([, p]) => p));
+      // Fixed values first, then editable ones.
+      (n.ifaces || []).forEach((f, i) => {
+        const pre = f.name ? `${f.name}側 ` : "";
+        if (!edited.has(`ifaces.${i}.ip`)) card.append(el("div", { class: "field" }, el("span", {}, `${pre}IPアドレス`), el("span", { class: "fixed" }, f.ip)));
+        if (!edited.has(`ifaces.${i}.mask`)) card.append(el("div", { class: "field" }, el("span", {}, `${pre}マスク`), el("span", { class: "fixed" }, `${f.mask}（/${prefix(f.mask)}）`)));
+      });
+      if (n.gw !== undefined && !edited.has("gw")) card.append(el("div", { class: "field" }, el("span", {}, "ゲートウェイ"), el("span", { class: "fixed" }, n.gw || "（なし）")));
+      if (n.dns !== undefined && !edited.has("dns")) card.append(el("div", { class: "field" }, el("span", {}, "DNSサーバー"), el("span", { class: "fixed" }, n.dns)));
+      if (n.routes && !fields.some(([, p]) => p.startsWith("routes"))) n.routes.forEach((r) => card.append(el("div", { class: "field" }, el("span", {}, "経路"), el("span", { class: "fixed" }, `${r.net}/${prefix(r.mask)} → ${r.via}`))));
+      if (n.records) card.append(el("div", { class: "field" }, el("span", {}, "登録された名前"), el("span", { class: "fixed" }, Object.entries(n.records).map(([k, v]) => `${k} → ${v}`).join(" "))));
+      if (n.services) card.append(el("div", { class: "field" }, el("span", {}, "受け付ける通信"), el("span", { class: "fixed" }, n.services.map((p) => PORT_NAME[p] || p).join("・"))));
+      for (const [, path, label, type] of fields) {
+        if (type === "acl") { card.append(aclEditor(n)); continue; }
+        card.append(el("div", { class: "field" }, el("span", {}, path.startsWith("routes") ? `追加する経路：${label}` : label),
+          inputFor(n, path, type, (v) => { setPath(n, path, v); draw(); })));
+      }
+      return card;
+    }));
+  }
+  function aclEditor(n) {
+    const wrap = el("div", { class: "rules" });
+    const render = () => {
+      wrap.replaceChildren(...n.acl.map((r, i) => el("div", { class: "rule" }, el("span", { class: "mono" }, `${i + 1}.`),
+        sel(["any", "80", "23"], { any: "すべての通信", 80: "80番（HTTP）", 23: "23番（Telnet）" }, r.port, (v) => { r.port = v; }),
+        sel(["allow", "deny"], { allow: "許可する", deny: "拒否する" }, r.action, (v) => { r.action = v; }))),
+        el("div", { class: "rule implicit" }, el("span", { class: "mono" }, `${n.acl.length + 1}.`), el("span", {}, "それ以外すべて"), el("span", {}, "拒否（暗黙の拒否・変更不可）")));
+    };
+    const sel = (opts, names, val, set) => el("select", { onchange: (e) => set(e.target.value) }, ...opts.map((o) => { const x = el("option", { value: o }, names[o]); if (o === val) x.selected = true; return x; }));
+    render();
+    return wrap;
+  }
+  function load(i) {
+    current = i;
+    model = clone(STAGES[i]);
+    const s = STAGES[i];
+    $("stage-title").textContent = s.title;
+    $("stage-topic").textContent = s.topic;
+    $("mission").textContent = s.mission;
+    $("goal").innerHTML = `目標：${s.goal}`;
+    $("hint").hidden = true; $("hint").textContent = s.hint;
+    $("result").replaceChildren();
+    $("log").replaceChildren(el("li", { class: "log-empty" }, "「送信テスト」を押すと、ここにパケットの動きが表示されます。"));
+    try { localStorage.setItem("nr.net.stage", String(i)); } catch {}
+    renderStages(); draw(); renderDevices();
+  }
+  async function run() {
+    if (animating) return;
+    animating = true; $("run").disabled = true;
+    const s = STAGES[current], log = [], results = [];
+    for (const t of s.tests) { const r = runTest(t, log); results.push({ t, r, pass: r.ok === t.expect }); }
+    let step = 0;
+    $("log").replaceChildren(...log.map((x) => el("li", { class: x.cls || null }, el("span", { class: "n" }, x.cls === "head" ? "▶" : String(++step)), el("span", {}, x.text))));
+    for (const { r } of results) await animate(r.paths);
+    const allPass = results.every((x) => x.pass);
+    const res = $("result");
+    res.replaceChildren(el("div", { class: `result ${allPass ? "ok" : "ng"}` },
+      el("b", {}, allPass ? "ミッション成功！" : "まだ届きません"),
+      ...results.map(({ t, r, pass }) => el("div", {}, `${pass ? "✓" : "✗"} ${t.label}：${r.ok ? "届いた" : r.blocked ? "止められた" : "届かなかった"}`)),
+      allPass ? null : el("div", {}, "下の「パケットの旅の記録」で、どこで止まったかを確かめてみましょう。")));
+    if (allPass) {
+      res.append(el("div", { class: "lesson" }, el("h3", {}, "解説"), s.lesson),
+        current < STAGES.length - 1 ? el("div", { class: "actions" }, el("button", { type: "button", class: "btn", onclick: () => { load(current + 1); window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }); } }, "次のステージへ →")) :
+          el("div", { class: "lesson" }, el("h3", {}, "全ステージクリア！"), "IP アドレス・マスク・ゲートウェイ・ルーティング・DNS・ファイアウォールという、ネットワークの基本の流れを一通り体験しました。"));
+      if (!cleared.includes(current)) { cleared.push(current); store.set("nr.net.cleared", cleared); renderStages(); }
+    }
+    animating = false; $("run").disabled = false;
+  }
+
+  $("run").addEventListener("click", run);
+  $("reset").addEventListener("click", () => load(current));
+  $("hint-btn").addEventListener("click", () => { $("hint").hidden = !$("hint").hidden; });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", draw);
+  load(Math.min(Number(store.get("nr.net.stage", 0)) || 0, STAGES.length - 1));
+})();
+</script>
+</body>
+</html>

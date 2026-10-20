@@ -21,6 +21,7 @@
 | `docs/rakuten-config.js` | 楽天ウェブサービスのアプリIDとアクセスキー（レシピのタブで使用。閲覧者のブラウザが楽天レシピAPIを直接呼び出します） |
 | `scripts/ai.py` | Claude による日本語化・分類・厳選・解説（結果は `docs/data/picks.json`） |
 | `.github/workflows/update-news.yml` | 毎時の自動実行と GitHub Pages への公開 |
+| `docs/network.html` | ネットワーク学習ゲーム「パケットを届けろ」（IP・マスク・ゲートウェイ・ルーティング・DNS・ファイアウォールの6ステージ） |
 | `docs/index.html` | 閲覧ページ |
 
 ## はじめ方
