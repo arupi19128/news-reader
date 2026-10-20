@@ -300,6 +300,12 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 .liveframe { position: relative; aspect-ratio: 16 / 9; background: #0d1b2a; border-radius: 8px; overflow: hidden; }
 .liveframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 @media (max-width: 560px) { .liveframe { aspect-ratio: 3 / 4; } }
+.linkmaps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.linkmaps .cap { width: 100%; }
+.linkmap { display: grid; text-decoration: none; border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; min-width: 150px; }
+.linkmap:hover { border-color: var(--wave); background: var(--wave-soft); }
+.linkmap b { color: var(--wave); font-size: 14px; }
+.linkmap small { color: var(--muted); font-size: 12px; }
 .openbtn { display: inline-block; margin-left: 6px; color: var(--wave); font-weight: 500; }
 .cy-empty { background: var(--sheet); border: 1px dashed var(--line); border-radius: 10px; padding: 22px; color: var(--muted); margin-block: 16px; }
 .cy-empty b { color: var(--ink); display: block; font-size: 16px; margin-bottom: 4px; }
@@ -558,6 +564,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       <div class="livetabs" role="tablist" aria-label="攻撃マップの切り替え" id="cy-livetabs"></div>
       <div class="liveframe"><iframe id="cy-iframe" title="リアルタイム攻撃マップ" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen"></iframe></div>
       <p class="cy-note" id="cy-livenote"></p>
+      <div class="linkmaps" id="cy-linkmaps"></div>
     </div>
   </section>
 
@@ -1463,11 +1470,14 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   function hideCyTip() { $("cy-tip").hidden = true; }
   // Live maps run by security vendors. Some refuse to be embedded, so each also opens in a new tab.
   const LIVE_MAPS = [
-    { name: "Kaspersky", url: "https://cybermap.kaspersky.com/", note: "Kaspersky 製品が検知した攻撃を地球儀で表示します。" },
     { name: "Check Point", url: "https://threatmap.checkpoint.com/", note: "Check Point の ThreatCloud が検知した攻撃を、攻撃元と攻撃先の線で表示します。" },
-    { name: "Fortinet", url: "https://threatmap.fortiguard.com/", note: "Fortinet の FortiGuard が検知した攻撃を表示します。" },
     { name: "Radware", url: "https://livethreatmap.radware.com/", note: "Radware のおとりサーバーで観測した攻撃を表示します。" },
     { name: "Bitdefender", url: "https://threatmap.bitdefender.com/", note: "Bitdefender が検知した感染・攻撃・スパムを表示します。" },
+  ];
+  // These refuse to be shown inside another site, so they only open in a new tab.
+  const LINK_MAPS = [
+    { name: "Kaspersky", url: "https://cybermap.kaspersky.com/", note: "地球儀で攻撃を表示" },
+    { name: "Fortinet", url: "https://threatmap.fortiguard.com/", note: "FortiGuard が検知した攻撃" },
   ];
   let liveIndex = 0;
   function renderLiveMaps() {
@@ -1476,8 +1486,10 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       onclick: () => { liveIndex = i; renderLiveMaps(); } }, x.name)));
     const frame = $("cy-iframe");
     if (frame.getAttribute("src") !== m.url) frame.setAttribute("src", m.url);
-    $("cy-livenote").replaceChildren(`${m.note} 画面が真っ白・エラーのときは、その会社が埋め込み表示を断っています。`,
-      el("a", { class: "openbtn", href: m.url, target: "_blank", rel: "noopener" }, `${m.name} のマップを新しいタブで開く →`));
+    $("cy-livenote").replaceChildren(`${m.note} `,
+      el("a", { class: "openbtn", href: m.url, target: "_blank", rel: "noopener" }, `${m.name} のマップを大きく開く →`));
+    $("cy-linkmaps").replaceChildren(el("span", { class: "cap" }, "ほかのマップ（新しいタブで開きます）"),
+      ...LINK_MAPS.map((x) => el("a", { class: "linkmap", href: x.url, target: "_blank", rel: "noopener" }, el("b", {}, `${x.name} ↗`), el("small", {}, x.note))));
   }
   async function renderCyber() {
     renderCyberNews();
