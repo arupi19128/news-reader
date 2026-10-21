@@ -202,6 +202,18 @@ google_news = "(\"ソフトバンク株式会社\" OR 宮川潤一 OR \"ソフ�
 exclude = ["ホークス", "野球", "投手", "打線", "日本シリーズ", "選手", "監督", "試合"]
 
 [[feeds]]
+name = "Googleニュース：KDDI"
+kind = "通信"
+google_news = "(KDDI OR 松田浩路 OR \"UQ mobile\" OR povo OR WAKONX) -野球 -サッカー"
+exclude = ["野球", "サッカー", "選手", "監督", "試合", "株価", "NISA"]
+
+[[feeds]]
+name = "Googleニュース：J:COM"
+kind = "通信"
+google_news = "(\"J:COM\" OR JCOM OR ジェイコム) -番組表"
+exclude = ["番組表", "放送予定", "株価"]
+
+[[feeds]]
 name = "Google News: Telecom"
 kind = "通信"
 lang = "en"

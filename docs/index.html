@@ -314,6 +314,9 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 /* Interview notes */
 #company-view { padding-block: 26px 40px; }
 #company-view h1 { font-size: clamp(22px, 3.4vw, 32px); }
+.co-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
+.co-switch a { text-decoration: none; padding: 4px 14px; }
+.co-switch a[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
 .toc { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
 .toc button { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; color: var(--wave); }
 .note-sheet { scroll-margin-top: 110px; }
@@ -577,6 +580,12 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 </div>
 
 <div id="company-view" class="wrap" hidden>
+  <nav class="co-switch" aria-label="会社の切り替え">
+    <a href="#softbank" class="chip" id="co-tab-softbank">ソフトバンク</a>
+    <a href="#kddi" class="chip" id="co-tab-kddi">KDDI</a>
+    <a href="#jcom" class="chip" id="co-tab-jcom">J:COM</a>
+  </nav>
+<div id="co-softbank">
   <div class="menu-head">
     <div>
       <div class="cap">2026年10月18日時点</div>
@@ -716,6 +725,268 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     </ul>
     <p class="note">数字や予定は2026年10月18日時点で公開されている情報をもとにしています。業績予想や稼働時期は変わることがあるので、面接の前日に公式IRで最新を確認してください。</p></div>
   </section>
+</div>
+
+<div id="co-kddi" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap">2026年10月21日時点</div>
+      <h1>KDDI株式会社</h1>
+      <p>au・UQ mobile・povo の KDDI（東証プライム 9433）について、面接で話せるように押さえておきたい事実をまとめました。</p>
+    </div>
+  </div>
+  <nav class="toc" aria-label="目次">
+    <button type="button" data-go="kd-pitch">30秒で言える会社像</button>
+    <button type="button" data-go="kd-profile">会社の基本</button>
+    <button type="button" data-go="kd-numbers">業績</button>
+    <button type="button" data-go="kd-plan">中期経営計画</button>
+    <button type="button" data-go="kd-topics">注目トピック</button>
+    <button type="button" data-go="kd-rivals">競合との違い</button>
+    <button type="button" data-go="kd-qa">想定質問</button>
+    <button type="button" data-go="kd-news">最新ニュース</button>
+    <button type="button" data-go="kd-sources">出典</button>
+  </nav>
+
+  <section class="sheet note-sheet" id="kd-pitch">
+    <div class="sheet-head"><h2>30秒で言える会社像</h2></div>
+    <div class="pad">
+      <p class="pitch">au・UQ mobile・povo の3ブランドで約3,300万のスマホ契約を持つ、国内2番手の通信会社です。通信を土台に、金融・エネルギー・コンビニ（ローソン）などの生活サービスと、法人向けの DX・AI 基盤（WAKONX）を広げています。2026年5月の中期経営計画<b>「Power-to-Connect 2028」</b>で「AI前提社会の土台づくり」を掲げ、大阪・堺の AI データセンターなどに投資しています。</p>
+      <ul class="keys">
+        <li><b>キーワード</b>：Power-to-Connect 2028 ／ 脱・販促費競争 ／ 3ブランド（au・UQ mobile・povo）／ WAKONX ／ 大阪堺データセンター ／ au Starlink Direct ／ ローソン ／ 24期連続増配</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-profile">
+    <div class="sheet-head"><h2>会社の基本</h2><span class="cap">公式「企業情報」より</span></div>
+    <div class="pad"><table class="facts">
+      <tr><th>正式名称</th><td>KDDI株式会社（KDDI CORPORATION）／ 東証プライム 9433</td></tr>
+      <tr><th>代表</th><td>松田 浩路（代表取締役社長 CEO）</td></tr>
+      <tr><th>創業</th><td>1984年6月1日。2000年に DDI・KDD・IDO の3社が合併して現在の形に</td></tr>
+      <tr><th>本社</th><td>東京都港区高輪2丁目21番1号（THE LINKPILLAR 1 NORTH・高輪ゲートウェイシティ）</td></tr>
+      <tr><th>従業員</th><td>連結 73,198人（2026年3月31日）</td></tr>
+      <tr><th>主なブランド</th><td>au ／ UQ mobile ／ povo（携帯）、auひかり、au PAY・auじぶん銀行（金融）、auでんき</td></tr>
+      <tr><th>事業の分け方</th><td>パーソナル（個人向け通信・金融・エネルギーなど）／ ビジネス（法人向け通信・DX・データセンター）</td></tr>
+      <tr><th>主な関連会社</th><td>J:COM（住友商事と 50%ずつ出資）、ローソン（三菱商事と共同経営）、KDDIアジャイル開発センター など</td></tr>
+    </table></div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-numbers">
+    <div class="sheet-head"><h2>業績（数字は丸暗記より「傾向」を話せるように）</h2></div>
+    <div class="pad">
+      <div class="stat-grid">
+        <div class="stat-box"><span class="cap">2026年3月期 売上高</span><b>6兆719億円</b><small>前期比 +4.1%</small></div>
+        <div class="stat-box"><span class="cap">2026年3月期 営業利益</span><b>1兆991億円</b><small>前期比 +1.1%（一時要因を除く実力値は 1兆1,643億円・+6.0%）</small></div>
+        <div class="stat-box"><span class="cap">2026年3月期 当期利益</span><b>7,071億円</b><small>前期比 +7.9% ／ 配当 80円</small></div>
+        <div class="stat-box"><span class="cap">2027年3月期 予想</span><b>売上 6.41兆円</b><small>調整後営業利益 1.21兆円 ／ 配当 84円</small></div>
+      </div>
+      <h3>直近：2027年3月期 第1四半期（2026年4〜6月、8月7日発表）</h3>
+      <ul>
+        <li>売上高 1兆4,873億円（前年同期比 +5.1%）、営業利益 3,142億円（+21.1%）、親会社に帰属する利益 1,954億円（+22.1%）。</li>
+        <li>モバイル：ARPU（1契約あたり月間収入）4,400円で前年から +160円。スマホ解約率 1.17%。スマホ契約数は 3,330万で前年から +39万。</li>
+        <li>松田社長のメッセージは<b>「脱・販促費競争」</b>。値引きで契約を奪い合うのではなく、au・UQ mobile・povo の間で使い方に合ったブランドへ移ってもらい、長く使ってもらう方針。</li>
+        <li>第2四半期の決算は例年11月上旬に発表されるので、面接が11月以降なら最新を確認。</li>
+      </ul>
+      <p class="hint"><b>話し方のコツ</b>：「売上は伸び続け、モバイルは契約数・ARPU・解約率がそろって改善。値引き競争から抜け出し、成長領域（金融・法人・AI）で利益を伸ばしている」と言えれば十分です。</p>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-plan">
+    <div class="sheet-head"><h2>中期経営計画「Power-to-Connect 2028」（2026年5月発表・2026〜2028年度）</h2></div>
+    <div class="pad">
+      <ul>
+        <li><b>テーマ</b>：「AI前提社会の土台づくり」。通信（テレコムコア）を安定させながら、パーソナルとビジネスの成長領域を伸ばす。</li>
+        <li><b>目標</b>：営業利益を年平均 5% で成長。成長領域は 2ケタ成長を目指す。ROE と ROIC（投下資本利益率）の差も新たな指標に。</li>
+        <li><b>投資</b>：AI インフラなどの成長投資は総額 2兆円超（日経報道）。一方で設備投資は売上の 12% 以下に抑える。</li>
+        <li><b>株主還元</b>：配当性向 40% 超で安定的に増配（24期連続増配）。</li>
+        <li><b>ブランド</b>：新しいブランドメッセージ「Spark Your Journey」。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-topics">
+    <div class="sheet-head"><h2>注目トピック（面接で「最近気になったニュース」に使える）</h2></div>
+    <div class="topic-grid">
+      <article class="topic"><h3>大阪堺データセンター</h3><p>シャープ堺工場の跡地に、約半年で整備して 2026年1月22日に稼働。NVIDIA の GB200 NVL72 を備えた AI 向けデータセンターで、電力は再生可能エネルギー 100%。</p><p class="why">工場跡地の建物と電源を生かした「スピード重視」の AI インフラ整備。</p></article>
+      <article class="topic"><h3>WAKONX（ワコンクロス）</h3><p>2024年5月に発表した法人向けの AI 事業基盤。通信・データセンター・AI を組み合わせ、業界ごとの DX を支える。</p><p class="why">ビジネス事業を「回線を売る」から「データと AI で課題を解く」へ変える柱。</p></article>
+      <article class="topic"><h3>au Starlink Direct</h3><p>スペースX の衛星と au のスマホが直接つながるサービス。圏外の山や海でもメッセージなどが使える。</p><p class="why">「圏外をなくす」取り組み。災害時の通信確保にもつながる。</p></article>
+      <article class="topic"><h3>ローソンとの連携</h3><p>三菱商事とローソンを共同経営。高輪の新本社には「ローソン S KDDI高輪本社店」を開き、ロボットや AI を使った新しい店づくりを試している。</p><p class="why">通信の顧客接点とコンビニの店舗網を組み合わせた生活サービス。</p></article>
+      <article class="topic"><h3>3ブランドと「脱・販促費競争」</h3><p>高めの au、手ごろな UQ mobile、自分で組み立てる povo。乗り換え特典で契約を奪い合うより、ブランド間で移ってもらい解約を減らす。</p><p class="why">ARPU と解約率の改善が数字に表れている。</p></article>
+      <article class="topic"><h3>高輪の新本社</h3><p>高輪ゲートウェイシティの「THE LINKPILLAR 1」へ本社を移転。街全体を実験場にして、通信・AI・ロボットのサービスを試す。</p><p class="why">「街づくり」と通信を組み合わせる KDDI らしい取り組み。</p></article>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-rivals">
+    <div class="sheet-head"><h2>競合との違い</h2></div>
+    <div class="pad">
+      <p>携帯電話の契約数（2026年5月時点の集計）：ドコモ 約9,307万 ／ <b>au 約7,276万</b> ／ ソフトバンク 約5,692万 ／ 楽天 約1,036万。</p>
+      <ul>
+        <li>契約数では2番手。<b>3ブランドの使い分け</b>と、金融・エネルギー・ローソンなど<b>生活に近いサービス</b>の広さが強み。</li>
+        <li>衛星（Starlink）や J:COM のケーブル網など、つなぐ手段の多さも特徴。</li>
+        <li>「なぜドコモやソフトバンクではなく KDDI か」と聞かれたら、<b>生活サービスの幅と、値引きより長く使ってもらう姿勢</b>、自分の経験とのつながりで答えると説得力が出ます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-qa">
+    <div class="sheet-head"><h2>想定質問と答えの組み立て方</h2></div>
+    <div class="pad qa">
+      <details open><summary>なぜ KDDI なのか（他の通信会社ではなく）</summary><p>①通信に金融・エネルギー・コンビニまでつながる生活サービスの幅、②衛星や AI データセンターなど「つなぐ」を広げる取り組み、③自分の経験・やりたいことがそこにどうつながるか、の順に話す。</p></details>
+      <details><summary>中期経営計画で一番関心があるのは？</summary><p>「Power-to-Connect 2028」から1つ（例：AI インフラ、WAKONX、成長領域の 2ケタ成長）を選び、数字（営業利益 年平均 5% 成長、成長投資 2兆円超など）を1つ添えて、自分がどう関われるかを話す。</p></details>
+      <details><summary>AI 時代に通信会社の役割はどう変わる？</summary><p>「つなぐ」だけでなく「AI を動かす計算力を提供し、業界ごとの課題を AI で解く」側になる。堺のデータセンター、WAKONX が具体例。</p></details>
+      <details><summary>最近気になった KDDI のニュースは？</summary><p>注目トピックから1つ選び、「何が起きたか → なぜ重要か → 自分ならどう関わりたいか」の3段で。下の「最新ニュース」も直前に見ておく。</p></details>
+      <details><summary>入社後にやりたいこと</summary><p>部署名だけでなく「誰のどんな課題を、KDDI のどの強み（通信網・衛星・au PAY・ローソン・WAKONX 等）で解くか」まで言えると強い。</p></details>
+      <details><summary>逆質問の例</summary><ul><li>「脱・販促費競争」に切り替えて、現場の売り方や評価はどう変わりましたか。</li><li>WAKONX の案件で、若手が任されている役割はどんなものですか。</li><li>高輪の新本社で試しているサービスのうち、事業になりそうなものはありますか。</li></ul></details>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-news">
+    <div class="sheet-head"><h2>最新ニュース（自動更新）</h2><span class="cap">ニュースレーダーが受信した記事から</span></div>
+    <div id="kd-news-list"></div>
+  </section>
+
+  <section class="sheet note-sheet" id="kd-sources">
+    <div class="sheet-head"><h2>出典（面接前に一次情報で確認を）</h2></div>
+    <div class="pad"><ul class="sources">
+      <li><a href="https://www.kddi.com/corporate/" target="_blank" rel="noopener">KDDI 企業情報</a></li>
+      <li><a href="https://newsroom.kddi.com/ir-news/detail/kddi_ir-1148_4471.html" target="_blank" rel="noopener">2026年3月期 決算</a></li>
+      <li><a href="https://newsroom.kddi.com/ir-news/detail/kddi_ir-1210_4659.html" target="_blank" rel="noopener">2027年3月期 第1四半期 決算</a></li>
+      <li><a href="https://newsroom.kddi.com/news/detail/kddi_nr-1012_4497.html" target="_blank" rel="noopener">大阪堺データセンター 稼働</a></li>
+      <li><a href="https://www.itmedia.co.jp/mobile/articles/2608/07/news090.html" target="_blank" rel="noopener">ITmedia：第1四半期決算と「脱・販促費競争」</a></li>
+      <li><a href="https://spark-journal.kddi.com/technology/article00316/" target="_blank" rel="noopener">KDDI Spark Journal</a></li>
+      <li><a href="https://www.infraexpert.com/blog/2026/05/19/phone024/" target="_blank" rel="noopener">携帯電話契約数・シェア（2026年5月）</a></li>
+    </ul>
+    <p class="note">数字や予定は2026年10月21日時点で公開されている情報をもとにしています。中期経営計画の詳細は KDDI の IR サイトの説明資料（2026年5月12日）で確認してください。</p></div>
+  </section>
+</div>
+
+<div id="co-jcom" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap">2026年10月21日時点</div>
+      <h1>JCOM株式会社</h1>
+      <p>ケーブルテレビ最大手の J:COM について、面接で話せるように押さえておきたい事実をまとめました。<b>上場していない会社</b>なので、数字は会社の発表と報道によります。</p>
+    </div>
+  </div>
+  <nav class="toc" aria-label="目次">
+    <button type="button" data-go="jc-pitch">30秒で言える会社像</button>
+    <button type="button" data-go="jc-profile">会社の基本</button>
+    <button type="button" data-go="jc-numbers">業績</button>
+    <button type="button" data-go="jc-plan">中期経営計画</button>
+    <button type="button" data-go="jc-topics">注目トピック</button>
+    <button type="button" data-go="jc-rivals">競合との違い</button>
+    <button type="button" data-go="jc-qa">想定質問</button>
+    <button type="button" data-go="jc-news">最新ニュース</button>
+    <button type="button" data-go="jc-sources">出典</button>
+  </nav>
+
+  <section class="sheet note-sheet" id="jc-pitch">
+    <div class="sheet-head"><h2>30秒で言える会社像</h2></div>
+    <div class="pad">
+      <p class="pitch">ケーブルテレビ国内最大手で、テレビ・ネット・電話・モバイル・電力などを、地域ごとの営業所と自前の回線網でまとめて届ける会社です。KDDI と住友商事が半分ずつ出資しています。中期経営計画では、<b>2027年度に売上 1兆円超</b>を目標に、回線の光（FTTH）化、法人向け「J:COM BUSINESS」、モバイルとのセット利用を伸ばしています。</p>
+      <ul class="keys">
+        <li><b>キーワード</b>：地域密着 ／ ケーブル網の光化（FTTH）／ J:COM BUSINESS ／ J:COM MOBILE とクロスユース ／ 売上 1兆円 ／ 2030年度カーボンニュートラル</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-profile">
+    <div class="sheet-head"><h2>会社の基本</h2><span class="cap">公式「会社概要」・採用サイトより</span></div>
+    <div class="pad"><table class="facts">
+      <tr><th>正式名称</th><td>JCOM株式会社（ブランド名 J:COM）／ 非上場</td></tr>
+      <tr><th>代表</th><td>岩木 陽一（代表取締役社長）。会長は芳賀 敏（2026年4月1日から）</td></tr>
+      <tr><th>設立</th><td>1995年1月18日</td></tr>
+      <tr><th>本社</th><td>東京都港区虎ノ門</td></tr>
+      <tr><th>株主</th><td>KDDI 50% ／ 住友商事 50%</td></tr>
+      <tr><th>資本金</th><td>456億円</td></tr>
+      <tr><th>従業員</th><td>グループ 15,751人（2026年3月末）</td></tr>
+      <tr><th>主なサービス</th><td>J:COM TV（ケーブルテレビ）、J:COM NET（光・ケーブルのネット）、J:COM PHONE、J:COM MOBILE、J:COM 電力、地域のコミュニティチャンネル（J:COM チャンネル）</td></tr>
+      <tr><th>採用の職種</th><td>営業・マーケティング、コンテンツ、コーポレート、データサイエンス・AI、ネットワーク・放送技術 など。面接は計2回程度とされる（就職情報サイトより）</td></tr>
+    </table></div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-numbers">
+    <div class="sheet-head"><h2>業績（数字は丸暗記より「傾向」を話せるように）</h2></div>
+    <div class="pad">
+      <div class="stat-grid">
+        <div class="stat-box"><span class="cap">2026年3月期 営業収益</span><b>7,888億円</b><small>2026年6月の発表より</small></div>
+        <div class="stat-box"><span class="cap">2026年3月期 営業利益</span><b>1,196億円</b><small>営業利益率 約15%</small></div>
+        <div class="stat-box"><span class="cap">2027年度 目標</span><b>売上 1兆円超</b><small>営業利益 年平均 +5%（中期経営計画）</small></div>
+      </div>
+      <ul>
+        <li>円安と物価高で、工事・保守・番組・機器のコストが上がり、厳しい環境と説明している。</li>
+        <li>上場していないので四半期ごとの決算は細かく出ません。数字は年1回の発表と報道で確認します。</li>
+      </ul>
+      <p class="hint"><b>話し方のコツ</b>：「テレビ離れの中でも、ネット・モバイル・電力・法人向けを組み合わせて売上を伸ばし、1兆円を目指している。コスト高への対応が課題」と言えれば十分です。</p>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-plan">
+    <div class="sheet-head"><h2>中期経営計画（2024〜2027年度）</h2></div>
+    <div class="pad">
+      <ul>
+        <li><b>目標</b>：2027年度に売上 1兆円超、営業利益は年平均 5% 成長。</li>
+        <li><b>回線</b>：同軸ケーブルから光ファイバー（FTTH）への切り替えを進め、速いネットを届ける。</li>
+        <li><b>法人</b>：法人ブランド「J:COM BUSINESS」で、地域の企業や自治体向けの通信・DX を伸ばす。</li>
+        <li><b>モバイル</b>：ネットや TV と J:COM MOBILE を一緒に使う「クロスユースユーザー」を増やし、解約を減らす。</li>
+        <li><b>環境</b>：カーボンニュートラルの目標を 2030年度に前倒し。2026年7月に再生可能エネルギーを地域で分散調達する仕組みを発表。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-topics">
+    <div class="sheet-head"><h2>注目トピック（面接で「最近気になったニュース」に使える）</h2></div>
+    <div class="topic-grid">
+      <article class="topic"><h3>回線の光（FTTH）化</h3><p>ケーブルテレビ用の同軸ケーブルを光ファイバーに置き換え、高速なネットサービスへ移っていく。</p><p class="why">テレビの会社から「地域の通信インフラ会社」への転換の土台。</p></article>
+      <article class="topic"><h3>J:COM BUSINESS</h3><p>地域の企業・自治体向けにネットワークやクラウド、DX 支援をまとめて提供する法人ブランド。</p><p class="why">個人向けの伸びが鈍る中での新しい柱。</p></article>
+      <article class="topic"><h3>モバイルとのセット（クロスユース）</h3><p>J:COM MOBILE は KDDI（au）の回線を使う。ネット・TV と一緒に使ってもらい、長く続けてもらう。</p><p class="why">KDDI グループとしての強みが出る部分。</p></article>
+      <article class="topic"><h3>地域密着</h3><p>各地の営業所と、地元の話題を流すコミュニティチャンネル。災害時には地域の情報を届ける役割も持つ。</p><p class="why">全国キャリアにはない「顔の見える」接点。</p></article>
+      <article class="topic"><h3>再エネの分散調達</h3><p>2026年7月、再生可能エネルギーを地域ごとに分散して調達する仕組みを発表。カーボンニュートラルを 2030年度に前倒し。</p><p class="why">電力を多く使う通信インフラの会社としての環境対応。</p></article>
+      <article class="topic"><h3>コスト高への対応</h3><p>円安・物価高で工事・保守・番組・機器の費用が上がっている。効率化と単価の見直しが課題。</p><p class="why">「課題をどう見ているか」と聞かれたときに使える話題。</p></article>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-rivals">
+    <div class="sheet-head"><h2>競合との違い</h2></div>
+    <div class="pad">
+      <ul>
+        <li>競合は、ドコモ光・auひかり・ソフトバンク光などの光回線、NURO 光、そして Netflix などの動画配信サービス。</li>
+        <li>強みは<b>地域ごとの営業所と自前の回線網</b>、テレビ・ネット・モバイル・電力を<b>まとめて契約できる</b>こと。</li>
+        <li>「なぜ大手キャリアではなく J:COM か」と聞かれたら、<b>地域に根ざした接点と、生活に近いサービスを一つの会社で届けられること</b>、自分の経験とのつながりで答えると説得力が出ます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-qa">
+    <div class="sheet-head"><h2>想定質問と答えの組み立て方</h2></div>
+    <div class="pad qa">
+      <details open><summary>なぜ J:COM なのか（大手キャリアではなく）</summary><p>①地域に根ざした営業所とコミュニティチャンネル、②テレビ・ネット・モバイル・電力をまとめて届けられる幅、③自分の経験・やりたいことがそこにどうつながるか、の順に話す。</p></details>
+      <details><summary>テレビ離れが進む中で、J:COM はどう成長する？</summary><p>回線の光化でネットを強くし、モバイルとのセット利用や法人向け（J:COM BUSINESS）を伸ばす。中期経営計画の「売上 1兆円超」を添える。</p></details>
+      <details><summary>KDDI・住友商事グループであることの強みは？</summary><p>KDDI の通信技術とモバイル回線、住友商事の事業ネットワーク。その両方を地域のお客さまに届けられること。</p></details>
+      <details><summary>最近気になった J:COM のニュースは？</summary><p>注目トピックから1つ選び、「何が起きたか → なぜ重要か → 自分ならどう関わりたいか」の3段で。下の「最新ニュース」も直前に見ておく。</p></details>
+      <details><summary>入社後にやりたいこと</summary><p>職種（営業・コンテンツ・技術など）を決め、「どの地域の誰の課題を、J:COM のどの強みで解くか」まで言えると強い。</p></details>
+      <details><summary>逆質問の例</summary><ul><li>光回線への切り替えで、現場の仕事はどう変わっていますか。</li><li>J:COM BUSINESS で、自治体や地域企業からはどんな相談が多いですか。</li><li>KDDI との連携で、最近うまくいった取り組みはありますか。</li></ul></details>
+    </div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-news">
+    <div class="sheet-head"><h2>最新ニュース（自動更新）</h2><span class="cap">ニュースレーダーが受信した記事から</span></div>
+    <div id="jc-news-list"></div>
+  </section>
+
+  <section class="sheet note-sheet" id="jc-sources">
+    <div class="sheet-head"><h2>出典（面接前に一次情報で確認を）</h2></div>
+    <div class="pad"><ul class="sources">
+      <li><a href="https://recruit.jcom.co.jp/company/index.html" target="_blank" rel="noopener">J:COM 採用サイト：会社を知る</a></li>
+      <li><a href="https://newsreleases.jcom.co.jp/news/20260625_21373.html" target="_blank" rel="noopener">J:COM ニュースリリース</a></li>
+      <li><a href="https://k-tai.watch.impress.co.jp/docs/news/1598086.html" target="_blank" rel="noopener">ケータイ Watch：J:COM の中期経営計画</a></li>
+      <li><a href="https://www.satemaga.co.jp/topic/14394" target="_blank" rel="noopener">サテマガ：J:COM 決算</a></li>
+      <li><a href="https://dempa-digital.com/article/564684" target="_blank" rel="noopener">電波新聞：J:COM</a></li>
+      <li><a href="https://www.nikkei.com/article/DGXZRSP709469_W6A700C2000000/" target="_blank" rel="noopener">日経：再エネの分散調達</a></li>
+    </ul>
+    <p class="note">数字や予定は2026年10月21日時点で公開されている情報をもとにしています。J:COM は非上場のため、公開される数字が限られます。面接の前に公式サイトとニュースリリースで最新を確認してください。</p></div>
+  </section>
+</div>
 </div>
 
 <p class="wrap credit" id="recipe-credit" hidden><a href="https://webservice.rakuten.co.jp/" target="_blank" rel="noopener">Supported by Rakuten Developers</a></p>
@@ -1529,21 +1800,39 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, "直近7日間に、サイバー攻撃の記事はまだありません。"));
   }
 
-  // ---------------- Interview notes: SoftBank Corp. ----------------
-  // News about SoftBank Corp. (the carrier), leaving out the Hawks and SoftBank Group stories.
-  const SB_MATCH = /ソフトバンク|SoftBank|宮川潤一|ワイモバイル|Y!mobile|LINEMO|PayPay|LINEヤフー|SB Neo|SB OAI|クリスタル・インテリジェンス|AITRAS/i;
-  const SB_SKIP = /ホークス|野球|投手|打線|日本シリーズ|ソフトバンクグループ|ソフトバンクG|SoftBank Group|SBG|孫正義|Vision Fund|ビジョン・ファンド|アライド|Allied|NISA|個別株|株価|OpenAI.*出資|Stargate|スターゲート|Wayve|ソフトバンク出資/i;
-  function renderCompanyNews() {
-    const box = $("sb-news-list");
+  // ---------------- Interview notes: one page per company ----------------
+  // Each company's news filter. SoftBank leaves out the Hawks and SoftBank Group stories.
+  const COMPANIES = {
+    softbank: {
+      name: "ソフトバンク株式会社",
+      match: /ソフトバンク|SoftBank|宮川潤一|ワイモバイル|Y!mobile|LINEMO|PayPay|LINEヤフー|SB Neo|SB OAI|クリスタル・インテリジェンス|AITRAS/i,
+      skip: /ホークス|野球|投手|打線|日本シリーズ|ソフトバンクグループ|ソフトバンクG|SoftBank Group|SBG|孫正義|Vision Fund|ビジョン・ファンド|アライド|Allied|NISA|個別株|株価|OpenAI.*出資|Stargate|スターゲート|Wayve|ソフトバンク出資/i,
+      list: "sb-news-list",
+    },
+    kddi: {
+      name: "KDDI",
+      match: /KDDI|\bau\b|UQ mobile|UQモバイル|povo|松田浩路|WAKONX|au Starlink|au PAY|auじぶん銀行/,
+      skip: /NISA|個別株|株価|配当利回り|高配当|優待|野球|サッカー/i,
+      list: "kd-news-list",
+    },
+    jcom: {
+      name: "J:COM",
+      match: /J:COM|JCOM|ジェイコム|岩木陽一/i,
+      skip: /NISA|個別株|株価|番組|放送|出演|配信中/i,
+      list: "jc-news-list",
+    },
+  };
+  function renderCompanyNews(key) {
+    const co = COMPANIES[key], box = $(co.list);
     if (!state.news) { box.replaceChildren(el("div", { class: "empty" }, "ニュースを読み込み中です。")); return; }
     const seen = new Set();
     const list = state.news.articles.filter((a) => {
       const t = [a.title, a.title_ja, a.summary].filter(Boolean).join(" ");
       const key = (a.title_ja || a.title).slice(0, 25);
-      if (!SB_MATCH.test(t) || SB_SKIP.test(t) || seen.has(key)) return false;
+      if (!co.match.test(t) || co.skip.test(t) || seen.has(key)) return false;
       seen.add(key); return true;
     }).slice(0, 9);
-    box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, "直近7日間に、ソフトバンク株式会社の記事はまだありません。"));
+    box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, `直近7日間に、${co.name}の記事はまだありません。`));
   }
   document.querySelectorAll(".toc button").forEach((b) => b.addEventListener("click", () => $(b.dataset.go).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" })));
 
@@ -1551,7 +1840,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec, company = h === "#softbank", cyber = h === "#cyber";
+    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber";
     const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
@@ -1560,7 +1849,13 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     $("news-nav").hidden = recipes || company || cyber;
     const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : "tab-news";
     for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
-    if (company) { renderCompanyNews(); window.scrollTo(0, 0); }
+    if (company) {
+      for (const k of Object.keys(COMPANIES)) {
+        $("co-" + k).hidden = k !== company;
+        k === company ? $("co-tab-" + k).setAttribute("aria-current", "page") : $("co-tab-" + k).removeAttribute("aria-current");
+      }
+      renderCompanyNews(company); window.scrollTo(0, 0);
+    }
     if (cyber) { renderCyber(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }
