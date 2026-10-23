@@ -15,6 +15,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  models: read      # 今日の注目の要約（GitHub Models 無料枠）
 
 concurrency:
   group: update-news
@@ -43,6 +44,11 @@ jobs:
         run: |
           python scripts/fetch_news.py
           python scripts/attacks.py
+
+      - name: Summarize featured stories
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/summarize.py || echo "summaries failed; the site still updates"
 
       - name: Commit updated data
         run: |

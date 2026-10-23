@@ -122,6 +122,14 @@ nav.jump a:hover { background: var(--wave-soft); color: var(--wave); }
 .feat .rel li { display: block; padding: 0; border: 0; counter-increment: none; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .feat .rel li::before { content: "└ "; font: inherit; color: var(--cell-in-edge); }
 .feat .rel a { color: var(--muted); }
+.feat .tldr { margin: 8px 0 2px; padding: 8px 12px 9px; background: var(--wave-soft); border-radius: 8px; }
+.feat .tldr .cap { display: block; font-size: 11.5px; color: var(--wave); margin-bottom: 2px; }
+.feat .tldr ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+.feat .tldr li { display: grid; grid-template-columns: 4.6em 1fr; gap: 6px; padding: 0; border: 0; counter-increment: none; font-size: 14px; line-height: 1.65; }
+.feat .tldr li::before { content: none; }
+.feat .tldr b { font-size: 12px; color: var(--muted); font-weight: 500; padding-top: 1px; }
+@media (max-width: 560px) { .feat .tldr li { grid-template-columns: 1fr; gap: 0; } }
+.feat-note { margin: 0; padding: 10px 18px 12px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); }
 .feat-empty { padding: 22px 18px; color: var(--muted); }
 .feat .thumb { width: 200px; aspect-ratio: 16 / 10; }
 .feat li > a { text-decoration: none; align-self: start; }
@@ -483,6 +491,7 @@ button.chip { font: inherit; font-size: 13px; }
         <span class="cap">多くの媒体が報じ、テレビでは見当たらない話題から</span>
       </div>
       <ol class="feat" id="feat"></ol>
+      <p class="feat-note" id="feat-note" hidden>「3行でいうと」は AI（GitHub Models）が記事をもとに書いた要約です。間違いを含むことがあるので、大事なことは元の記事で確かめてください。</p>
     </section>
 
     <div class="map">
@@ -1454,12 +1463,14 @@ button.chip { font: inherit; font-size: 13px; }
   function renderFeatured() {
     const byId = new Map(state.news.articles.map((a) => [a.id, a]));
     const items = (state.news.featured || []).filter((f) => byId.has(f.id));
+    $("feat-note").hidden = !items.some((f) => summaryOf([f.id, ...f.related]));
     if (!items.length) { $("feat").replaceChildren(el("li", { class: "feat-empty" }, "まだ注目の話題を選べていません。次の更新をお待ちください。")); return; }
     $("feat").replaceChildren(...items.map((f) => {
       const a = byId.get(f.id), s = status(a);
       const hasReport = state.picks.some((p) => p.id === a.id);
       const href = hasReport ? `#article/${a.id}` : a.link;
-      const summary = a.summary && !a.summary.startsWith(a.title.slice(0, 15)) ? a.summary : null;
+      const tldr = summaryOf([f.id, ...f.related]);
+      const summary = !tldr && a.summary && !a.summary.startsWith(a.title.slice(0, 15)) ? a.summary : null;
       const related = f.related.map((id) => byId.get(id)).filter(Boolean);
       // Use another outlet's picture of the same story when the lead article has none.
       const image = a.image || related.find((r) => r.image)?.image;
@@ -1471,11 +1482,21 @@ button.chip { font: inherit; font-size: 13px; }
             el("time", { class: "mono", datetime: a.published }, timeFmt.format(new Date(a.published)))),
           el("h3", {}, el("a", { href, target: hasReport ? null : "_blank", rel: hasReport ? null : "noopener" }, titleOf(a))),
           a.title_ja ? el("p", { class: "orig", lang: "en" }, a.title) : null,
+          tldr ? el("div", { class: "tldr" },
+            el("span", { class: "cap" }, `3行でいうと（AI要約・${tldr.basis}から）`),
+            el("ol", {}, ...["何が", "なぜ", "何が変わる"].map((h, i) => el("li", {}, el("b", {}, h), el("span", {}, tldr.lines[i]))))) : null,
           summary ? el("p", { class: "summary" }, summary) : null,
           related.length ? el("ul", { class: "rel" }, ...related.map((r) => el("li", {}, el("a", { href: r.link, target: "_blank", rel: "noopener" }, `${r.outlet}：${r.title_ja || r.title}`)))) : null,
           s === "covered" ? el("p", { class: "orig" }, "TV：", el("a", { href: a.tv_match.link, target: "_blank", rel: "noopener" }, `${a.tv_match.outlet}「${a.tv_match.title}」`)) : null),
         el("a", { href, target: hasReport ? null : "_blank", rel: hasReport ? null : "noopener", tabindex: "-1", "aria-hidden": "true" }, pic));
     }));
+  }
+
+  // AI summary of a featured story, found by any of its articles (the lead can change between updates).
+  function summaryOf(ids) {
+    const items = state.summaries || {};
+    for (const id of ids) if (items[id]) return items[id];
+    return Object.values(items).find((s) => s.articles?.some((id) => ids.includes(id))) || null;
   }
 
   // ---------------- AI reports ----------------
@@ -2134,7 +2155,7 @@ button.chip { font: inherit; font-size: 13px; }
 
   // ---------------- Load ----------------
   const load = (url) => fetch(url, { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-  Promise.all([load("data/news.json"), load("data/picks.json")]).then(([news, picks]) => {
+  Promise.all([load("data/news.json"), load("data/picks.json"), load("data/summaries.json")]).then(([news, picks, sums]) => {
     if (!news || !news.generated_at) {
       route();
       $("scan").textContent = "圏外"; $("sb-bars").dataset.n = "0";
@@ -2143,6 +2164,7 @@ button.chip { font: inherit; font-size: 13px; }
     }
     state.news = news;
     state.picks = (picks?.picks || []).filter((p) => p.detail);
+    state.summaries = sums?.items || {};
     const gen = new Date(news.generated_at);
     const ageMin = (Date.now() - gen) / 60000;
     $("scan").textContent = `受信 ${timeFmt.format(gen)}`;

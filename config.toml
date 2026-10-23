@@ -271,3 +271,9 @@ keywords = ["事件", "事故", "逮捕", "容疑", "裁判", "判決", "火災"
 [[topics]]
 name = "Kis-My-Ft2"
 keywords = ["Kis-My-Ft2", "キスマイ", "キス・マイ", "藤ヶ谷太輔", "藤ケ谷太輔", "玉森裕太", "宮田俊哉", "横尾渉", "千賀健永", "二階堂高嗣"]
+
+# 今日の注目の3行要約（GitHub Models の無料枠。scripts/summarize.py）
+[summaries]
+models = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]   # 上から順に試す
+max_per_run = 9     # 1回の更新で新しく要約する話題の上限
+max_per_day = 60    # 1日（日本時間）に AI へ頼む回数の上限
