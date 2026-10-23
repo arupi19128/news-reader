@@ -115,6 +115,27 @@ def ask(model, material, token):
     return lines
 
 
+def diagnose(token):
+    """Temporary: what the Models endpoints answer from this runner."""
+    out = []
+    body = json.dumps({"model": "openai/gpt-4o-mini", "messages": [{"role": "user", "content": "OKとだけ返して"}]}).encode()
+    tries = [
+        ("GET catalog", "https://models.github.ai/catalog/models", None, {}),
+        ("POST json", API, body, {"Content-Type": "application/json", "Accept": "application/json"}),
+        ("POST azure", "https://models.inference.ai.azure.com/chat/completions", body, {"Content-Type": "application/json"}),
+    ]
+    for name, url, data, extra in tries:
+        req = urllib.request.Request(url, data=data, headers={"Authorization": f"Bearer {token}", "User-Agent": "curl/8.5.0", **extra})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as res:
+                out.append(f"{name}: {res.status} {res.headers.get('Content-Type')} {res.read()[:160]!r}")
+        except urllib.error.HTTPError as e:
+            out.append(f"{name}: HTTP {e.code} {e.read()[:160]!r}")
+        except Exception as e:
+            out.append(f"{name}: {e}")
+    return out
+
+
 def main(ask=ask):
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
@@ -142,9 +163,9 @@ def main(ask=ask):
         done.update(s.get("articles", []))
     todo = [st for st in news.get("featured", []) if st["id"] not in done]
 
-    made, errors = 0, []
+    made, errors, tried = 0, [], 0
     for st in todo:
-        if made >= per_run or store["usage"]["count"] >= per_day:
+        if tried >= per_run or store["usage"]["count"] >= per_day:
             print(f"summaries: limit reached ({made} this run, {store['usage']['count']} today)")
             break
         material, basis = source_material(st, by_id)
@@ -161,6 +182,7 @@ def main(ask=ask):
                 errors.append(f"{model}: {e}"[:300])
                 print(f"summaries: {model} failed: {e}", file=sys.stderr)
         store["usage"]["count"] += 1
+        tried += 1
         if limited == len(models):
             print("summaries: every model is rate-limited; trying again next run", file=sys.stderr)
             break
@@ -175,6 +197,7 @@ def main(ask=ask):
 
     # Forget summaries of stories that are no longer in the news data.
     store["items"] = {k: v for k, v in store["items"].items() if any(i in by_id for i in v["articles"])}
+    store["diag"] = diagnose(token) if errors else []
     store["errors"] = errors[-6:]  # the latest failures, to see what went wrong without the Actions log
     store["generated_at"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     OUT_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=1), encoding="utf-8")
