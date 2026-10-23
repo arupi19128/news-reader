@@ -214,6 +214,12 @@ google_news = "(\"J:COM\" OR JCOM OR ジェイコム) -番組表"
 exclude = ["番組表", "放送予定", "株価"]
 
 [[feeds]]
+name = "Googleニュース：製造・物流のAI"
+kind = "IT"
+google_news = "(フィジカルAI OR ヒューマノイド OR マテリアルズ・インフォマティクス OR \"自動運転トラック\" OR \"工場 AI\" OR \"物流 AI\" OR \"化学 AI\") -株価 -銘柄"
+exclude = ["株価", "銘柄", "NISA", "セール"]
+
+[[feeds]]
 name = "Google News: Telecom"
 kind = "通信"
 lang = "en"

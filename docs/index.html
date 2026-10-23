@@ -314,6 +314,37 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 /* Interview notes */
 #company-view { padding-block: 26px 40px; }
 #company-view h1 { font-size: clamp(22px, 3.4vw, 32px); }
+button.chip { font: inherit; font-size: 13px; }
+.co-switch button[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
+.ai-points { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.8; }
+.ai-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+.ai-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.lv-live { background: var(--wave); } .lv-pilot { background: var(--wave-soft); border: 1px solid var(--wave); } .lv-none { background: var(--bg); border: 1px dashed var(--line); }
+.ai-matrix-wrap, .ai-compare-wrap { overflow-x: auto; }
+.ai-matrix { border-collapse: separate; border-spacing: 4px; width: 100%; min-width: 560px; font-size: 13px; }
+.ai-matrix th { font-weight: 500; color: var(--muted); padding: 4px 6px; text-align: left; white-space: nowrap; }
+.ai-matrix thead th { text-align: center; font-size: 12.5px; }
+.ai-matrix td { height: 54px; border-radius: 6px; background: var(--bg); border: 1px dashed var(--line); text-align: center; vertical-align: middle; padding: 0; }
+.ai-matrix td button { width: 100%; height: 100%; min-height: 54px; border: 0; background: transparent; cursor: pointer; font: inherit; color: inherit; padding: 4px; line-height: 1.35; }
+.ai-matrix td.live { background: var(--wave); border: 1px solid var(--wave); color: var(--sheet); }
+.ai-matrix td.pilot { background: var(--wave-soft); border: 1px solid var(--wave); color: var(--wave); }
+.ai-matrix td b { display: block; font: 600 16px/1.2 var(--font-mono); }
+.ai-matrix td small { font-size: 11px; }
+.ai-compare { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 13.5px; }
+.ai-compare th, .ai-compare td { border-bottom: 1px solid var(--line); padding: 10px 10px; vertical-align: top; text-align: left; }
+.ai-compare thead th { color: var(--wave); font-size: 14px; }
+.ai-compare tbody th { color: var(--muted); font-weight: 500; white-space: nowrap; }
+.ai-compare td ul { margin: 0; }
+.ai-compare li { font-size: 13.5px !important; }
+.ai-sum { margin: 6px 0 0; font-weight: 500; color: var(--wave); font-size: 13.5px !important; }
+.ai-case .tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 6px; }
+.ai-case .tags span { font-size: 11.5px; border-radius: 999px; padding: 1px 8px; background: var(--bg); color: var(--muted); }
+.ai-case .tags .st-live { background: var(--wave); color: var(--sheet); }
+.ai-case .tags .st-pilot { background: var(--wave-soft); color: var(--wave); }
+.ai-case dl { margin: 0; display: grid; gap: 4px; font-size: 13px; line-height: 1.7; }
+.ai-case dt { font-weight: 600; color: var(--muted); font-size: 12px; }
+.ai-case dd { margin: 0; }
+.ai-case .src { font-size: 12px; margin-top: 6px; }
 .co-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
 .co-switch a { text-decoration: none; padding: 4px 14px; }
 .co-switch a[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
@@ -416,6 +447,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       <a href="#recipes" id="tab-recipes">レシピ</a>
       <a href="#softbank" id="tab-company">対策</a>
       <a href="#cyber" id="tab-cyber">サイバー攻撃</a>
+      <a href="#industry-ai" id="tab-ai">業界AI</a>
       <a href="network.html" id="tab-net">ネットワーク</a>
     </nav>
     <nav class="jump" id="news-nav" aria-label="ニュースの中のリンク">
@@ -577,6 +609,101 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
     <div id="cy-news"></div>
   </section>
   <p class="credit">データ：<a href="https://radar.cloudflare.com/security" target="_blank" rel="noopener">Cloudflare Radar</a>（CC BY-NC 4.0）。Cloudflare のネットワークで観測・防御した攻撃の統計で、世界のすべての攻撃ではありません。攻撃元の国は攻撃に使われた通信の出どころで、攻撃者の国籍とは限りません。</p>
+</div>
+
+<div id="ai-view" class="wrap" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap">2026年10月23日時点</div>
+      <h1>業界AI</h1>
+      <p>自動車・化学素材・物流の AI 事例を、<b>業務 × AIの種類</b>で並べ、効果・実現条件・リスクをまとめました。事例は公式発表や報道で確かめたものだけを載せています。</p>
+    </div>
+  </div>
+
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>要点3行</h2></div>
+    <div class="pad"><ol class="ai-points">
+      <li><b>効果が数字で出ているのは「1つの工程」の改善</b>（検査の見逃し、材料探索の時間、プラントの運転）。工場全体・会社全体の効果はまだ少ない。</li>
+      <li><b>製造は「良いデータと既存設備への組み込み」、物流は「つながり（荷主・倉庫設備・法制度）」が実現条件</b>。止まる理由が違う。</li>
+      <li><b>フィジカルAI（ロボット・自動運転）は実証から本番への移行期</b>。本番稼働まで進んだ企業は 7.5%。投資回収の見通しと人材が壁。</li>
+    </ol></div>
+  </section>
+
+  <nav class="co-switch" aria-label="表示の切り替え" id="ai-switch">
+    <button type="button" class="chip" data-v="map" aria-current="page">俯瞰マップ</button>
+    <button type="button" class="chip" data-v="compare">製造と物流の比較</button>
+    <button type="button" class="chip" data-v="cases">事例</button>
+  </nav>
+
+  <div id="ai-map" data-pane>
+    <section class="sheet note-sheet">
+      <div class="sheet-head"><h2>俯瞰マップ（業務 × AIの種類）</h2><span class="cap">マスを押すと事例へ</span></div>
+      <div class="pad">
+        <div class="ai-legend"><span><i class="lv-live"></i>本番で使用中</span><span><i class="lv-pilot"></i>実証・一部導入</span><span><i class="lv-none"></i>事例未収録</span></div>
+        <div class="ai-matrix-wrap"><table class="ai-matrix" id="ai-matrix"></table></div>
+      </div>
+    </section>
+    <section class="sheet note-sheet">
+      <div class="sheet-head"><h2>AIの種類（5つに分類）</h2></div>
+      <div class="pad"><table class="facts">
+        <tr><th>予測・最適化</th><td>データから「次にどうなるか」「どれが一番良いか」を計算する。材料の配合探索、需要予測、配車。</td></tr>
+        <tr><th>画像認識</th><td>カメラ画像から傷や異常を見つける。外観検査。</td></tr>
+        <tr><th>生成AI</th><td>文章・設計案などを作る。デザイン案の生成、故障原因を調べて対策を示す AI エージェント。</td></tr>
+        <tr><th>自律制御</th><td>AI が設備の操作量を直接決めて動かし続ける。化学プラントの運転。</td></tr>
+        <tr><th>フィジカルAI</th><td>AI が現実の空間を認識し、<b>ロボットや車という「体」で動く</b>。ピッキングロボット、ロボット群の制御、ヒューマノイド、自動運転トラック。</td></tr>
+      </table>
+      <h3>フィジカルAIの中の段階</h3>
+      <ul>
+        <li><b>決まった場所で動くロボット＋AIの目</b>：箱の向きが変わっても掴める（PALTAC × Mujin）。</li>
+        <li><b>たくさんの移動ロボットをAIでまとめて動かす</b>：100万台のロボットの渋滞を減らす（Amazon）。</li>
+        <li><b>人と同じ場所で働くヒューマノイド</b>：自動車工場の部品運び（BMW × Figure）。</li>
+        <li><b>公道を走る自動運転</b>：高速道路の幹線輸送（T2）。今はドライバーが乗るレベル2で商用運行中。</li>
+      </ul>
+      <p class="hint">下に行くほど、扱う環境が広く予測しにくくなり、安全の確保と法制度が難しくなります。</p></div>
+    </section>
+  </div>
+
+  <div id="ai-compare" data-pane hidden>
+    <section class="sheet note-sheet">
+      <div class="sheet-head"><h2>製造と物流の比較</h2><span class="cap">下の事例からのまとめ</span></div>
+      <div class="pad ai-compare-wrap"><table class="ai-compare">
+        <thead><tr><th></th><th>製造（自動車・化学素材）</th><th>物流</th></tr></thead>
+        <tbody>
+          <tr><th>効果</th>
+            <td><ul><li><b>品質</b>：塗装不良の検出率 約7%向上（日産）</li><li><b>開発スピード</b>：材料探索の時間 1/5（レゾナック）、デザイン開発期間 40%以上短縮の見込み（ホンダ）</li><li><b>安定運転・省エネ</b>：プラントを AI が約1年自律制御（ENEOSマテリアル）</li></ul><p class="ai-sum">1つの工程・設備で効果を測りやすい。</p></td>
+            <td><ul><li><b>人手不足への対応</b>：ロボットの生産能力は人の2〜4倍（PALTAC 担当者談）</li><li><b>移動の効率</b>：ロボット全体の移動時間 10%短縮（Amazon 発表）</li><li><b>運転手の負担</b>：幹線の自動運転トラックを21社が利用（T2・レベル2）</li></ul><p class="ai-sum">倉庫・輸送網の全体で効果が出る。1か所だけでは測りにくい。</p></td></tr>
+          <tr><th>実現条件</th>
+            <td><ul><li>大量の良質なデータ（不良の評価データ 50万件超、過去の実験データ）</li><li>シミュレーターで学ばせてから実設備へ</li><li>既存の制御システム・生産ラインへの組み込み</li><li>ロボットの前に工程そのものを整える</li></ul></td>
+            <td><ul><li>荷主とのデータ共有（販売・出荷データ → 配車）</li><li>倉庫設備・倉庫管理システム（WMS）との連携</li><li>多品種・需要の変動・返品に耐える柔軟さ</li><li>自動運転は法制度と安全性の説明（レベル4は2027年度以降の目標）</li></ul></td></tr>
+          <tr><th>リスク</th>
+            <td><ul><li><b>安全</b>：プラントの誤操作は事故につながる → 安全機能で異常時に備える</li><li><b>品質責任</b>：AI の見逃しを誰が負うか</li><li><b>見込みと実績の差</b>：「過去データでの検証」「見込み」の数字が多い</li><li><b>技能の空洞化</b>：熟練者の判断を AI に置き換えたあとの継承</li></ul></td>
+            <td><ul><li><b>投資回収</b>：効果の見通しが立てにくい（導入の最大の壁）</li><li><b>例外対応</b>：想定外の荷物・返品で止まる</li><li><b>事故と責任</b>：公道・人の近くで動く</li><li><b>人材とノウハウ不足</b>、どこから始めるか決められない</li></ul></td></tr>
+        </tbody>
+      </table>
+      <p class="hint"><b>話すときの型</b>：「製造は工程ごとに効果が見えやすく、データと既存設備への組み込みが鍵。物流は全体で効果が出るぶん、荷主・設備・制度とのつながりが鍵。どちらも本番まで行けている企業はまだ少なく、投資回収の見通しが共通の壁」。</p></div>
+    </section>
+  </div>
+
+  <div id="ai-cases" data-pane hidden>
+    <section class="sheet note-sheet">
+      <div class="sheet-head"><h2>事例</h2><span class="cap" id="ai-case-count"></span></div>
+      <div class="pad">
+        <div class="row" id="ai-filter"></div>
+        <div class="row" id="ai-cell-filter" hidden></div>
+      </div>
+      <div class="topic-grid" id="ai-case-list"></div>
+    </section>
+  </div>
+
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>最新ニュース（自動更新）</h2><span class="cap">ニュースレーダーが受信した記事から</span></div>
+    <div id="ai-news-list"></div>
+  </section>
+
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>注意</h2></div>
+    <div class="pad"><p class="note">数字は各社の発表・報道によるもので、第三者が検証したものではありません。「見込み」「過去データでの検証」「担当者の話」は、そのことを各事例に書いています。各事例の出典で最新を確認してください。</p><p class="note">「本番稼働まで進んだ企業は 7.5%（導入検討にも未着手が 71.5%）」は、ローランド・ベルガーが製造業・物流業などの経営層200人に行った調査（2026年9月）。出典：<a href="https://www.logi-today.com/996765" target="_blank" rel="noopener">LOGISTICS TODAY</a></p></div>
+  </section>
 </div>
 
 <div id="company-view" class="wrap" hidden>
@@ -1837,18 +1964,133 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
   document.querySelectorAll(".toc button").forEach((b) => b.addEventListener("click", () => $(b.dataset.go).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" })));
 
   // ---------------- Routing & events ----------------
+  // ---------------- Industry AI: cases tagged by industry, work area and AI type ----------------
+  const AI_AREAS = ["設計・開発", "製造・運転", "品質検査", "設備保全", "倉庫", "輸送・配送"];
+  const AI_TYPES = ["予測・最適化", "画像認識", "生成AI", "自律制御", "フィジカルAI"];
+  const AI_STAGE = { live: "本番で使用中", pilot: "実証・一部導入" };
+  const AI_CASES = [
+    { co: "日産自動車", title: "塗装の外観検査AI「AUTIS」", ind: "自動車", area: "品質検査", type: "画像認識", stage: "live", when: "2024年報道",
+      effect: "不良の検出率が約7%向上。人の目は 85〜90%、AUTIS は 98%以上を見つけるとしている。約3年で 50万台以上を検査（米スマーナ工場）。",
+      cond: "50万件を超える塗装不良の評価データ。1台あたり約1万5,000枚を高解像度カメラで撮影。",
+      risk: "見逃したときの品質責任。米国工場の事例で、国内での効果は未公表。",
+      src: [["Repairer Driven News", "https://www.repairerdrivennews.com/2024/10/03/nissan-improving-paint-quality-with-ai-and-machine-learning/"]] },
+    { co: "ホンダ", title: "フロントデザインの修正案をAIが生成", ind: "自動車", area: "設計・開発", type: "生成AI", stage: "live", when: "2026年1月報道",
+      effect: "デザイン開発期間を 40%以上短縮できる<b>見込み</b>。歩行者保護の性能計算は、従来1日程度かかることもあったものが瞬時に。",
+      cond: "CAE（衝突シミュレーション）を AI で置き換える「サロゲートモデル」。ミリ単位の精度のため形状は画像処理（モーフィング）で作る。",
+      risk: "40%は見込みで実績値ではない。AI の性能予測と実際の衝突試験の差。",
+      src: [["ニュースイッチ", "https://newswitch.jp/p/47899"], ["MONOist（2025年5月）", "https://monoist.itmedia.co.jp/mn/articles/2505/30/news041.html"]] },
+    { co: "BMW × Figure", title: "ヒューマノイドが車体工場で部品を運ぶ", ind: "自動車", area: "製造・運転", type: "フィジカルAI", stage: "pilot", when: "2025〜2026年",
+      effect: "米スパルタンバーグ工場で約11か月、1,250時間以上稼働し、9万点超の部品を運んで BMW X3 約3万台の生産を支えたと報じられている。2026年6月から後継の Figure 03 を導入。",
+      cond: "まずは決まった部品の搬送・仕分けから。耐久性・安全性、充電（ワイヤレス化）、手先のセンサーを改良。",
+      risk: "人と同じ場所で動く安全性、止まる時間（充電・故障）、働く人の受け止め方。数字の多くは報道ベース。",
+      src: [["BMW Group プレスリリース", "https://www.press.bmwgroup.com/usa/article/detail/T0444268EN_US/successful-test-of-humanoid-robots-at-bmw-group-plant-spartanburg"], ["Automotive News（ライプツィヒ工場）", "https://www.autonews.com/bmw/ane-bmw-humanoid-robot-leipzig-germany-0227/"]] },
+    { co: "ENEOSマテリアル × 横河電機", title: "強化学習AIが化学プラントを自律制御", ind: "化学素材", area: "製造・運転", type: "自律制御", stage: "live", when: "2022年実証・2023年正式採用",
+      effect: "蒸留塔を 35日間連続で AI が制御し、品質と省エネを両立。定期修理を挟んで約1年の検証を経て、四日市工場のブタジエンプラントで正式採用。",
+      cond: "プラントの設計情報からシミュレーターで AI を学習 → 異常時も含めて評価 → 既存の制御システム（CENTUM VP）に統合、の3段階。",
+      risk: "化学反応は直線的でなく、外気温などで変わる。誤操作は事故につながるため、安全機能で異常時に備える。",
+      src: [["横河電機 事例紹介", "https://www.yokogawa.com/cis/library/resources/references/successstory-eneos-materials/"], ["MONOist（2022年実証）", "https://monoist.itmedia.co.jp/mn/articles/2203/29/news094.html"]] },
+    { co: "レゾナック", title: "AIで材料の組成を探索", ind: "化学素材", area: "設計・開発", type: "予測・最適化", stage: "live", when: "2024年11月発表",
+      effect: "最適な組成の探索を従来の 1/5 の時間で。半導体パッケージ用の感光性樹脂の原料ポリマーの探索に成功し、社内の汎用ツールとして展開。",
+      cond: "社内に蓄積した実験データ。マテリアルズ・インフォマティクス（MI）の人材。",
+      risk: "AI の提案が実際の試作で再現するとは限らない。削減したのは「時間」で、実験回数とは別の指標。",
+      src: [["MONOist", "https://monoist.itmedia.co.jp/mn/articles/2411/15/news081.html"]] },
+    { co: "三井化学 × 日立", title: "AI-MIで新材料の実験回数を減らす", ind: "化学素材", area: "設計・開発", type: "予測・最適化", stage: "pilot", when: "2024年発表",
+      effect: "高性能な新材料の開発に必要な実験の試行回数が、従来の MI と比べて約 1/4 に。",
+      cond: "有機材料の過去の開発データ。",
+      risk: "<b>過去データでの検証</b>の結果で、実際の新材料開発への適用は実証段階。",
+      src: [["AIsmiley", "https://aismiley.co.jp/ai_news/hitachi-mitsui-chemicals-mi/"]] },
+    { co: "三菱ケミカル × 日立", title: "設備の故障原因を診断するAIエージェント", ind: "化学素材", area: "設備保全", type: "生成AI", stage: "pilot", when: "2025年12月〜",
+      effect: "熟練の設備管理技術者と同等以上の速さ・正確さで故障の原因を特定し、対策を示せるかを東海事業所で検証中（結果は未公表）。参考：ダイキンの試験では回答 10秒以内・精度 90%以上。",
+      cond: "熟練者の知見と設備の点検・故障データ。日立「HMAX Industry」の一部。",
+      risk: "高温・高圧・有害物質を扱う現場での誤診断。熟練者の技能をどう引き継ぐか。",
+      src: [["日立 ニュースリリース", "https://www.hitachi.com/ja-jp/press/articles/2025/12/1224/"], ["MONOist（2026年3月）", "https://monoist.itmedia.co.jp/mn/articles/2603/23/news010.html"]] },
+    { co: "Amazon", title: "100万台のロボットを生成AI基盤「DeepFleet」で動かす", ind: "物流", area: "倉庫", type: "フィジカルAI", stage: "live", when: "2025年7月発表",
+      effect: "世界300か所以上の拠点でロボットが 100万台を突破（100万台目は日本の拠点）。DeepFleet でロボット全体の移動時間が 10%短縮すると発表。",
+      cond: "膨大な稼働データと、ロボット群をまとめて制御する仕組み。倉庫を最初からロボット前提で設計。",
+      risk: "10%は Amazon の発表で第三者の検証はない。巨額の投資が必要で、中小規模では回収しにくい。",
+      src: [["ネットショップ担当者フォーラム", "https://netshop.impress.co.jp/node/14427"]] },
+    { co: "PALTAC × Mujin", title: "知能ロボットでケースの積み付けを自動化", ind: "物流", area: "倉庫", type: "フィジカルAI", stage: "live", when: "2019年〜",
+      effect: "生産能力は人と比べて 2〜4倍と担当者が説明。箱の向きが変わると対応できなかった従来ロボットの壁を越えた。",
+      cond: "3D ビジョンで物を認識し、動きをその場で計算するロボット制御。大型物流センター（RDC埼玉）での導入。",
+      risk: "数字は担当者の話。扱う箱の種類が想定を超えると止まる。古い事例で最新の効果は未公表。",
+      src: [["LNEWS", "https://www.lnews.jp/2019/06/l0614403.html"], ["テレ東プラス", "https://www.tv-tokyo.co.jp/plus/business/entry/2019/018708.html"]] },
+    { co: "T2", title: "高速道路の自動運転トラックで幹線輸送", ind: "物流", area: "輸送・配送", type: "フィジカルAI", stage: "pilot", when: "2025年7月〜",
+      effect: "関東〜関西でドライバーが乗るレベル2の商用運行を開始し、21社が定期利用（2026年7月時点）。日本郵便・コーナン商事の定期便も。",
+      cond: "高速道路という限られた環境。国の実装支援事業、複数台運行の体制、安全性の説明（形式手法など）。累計 165億円超の資金調達。",
+      risk: "運転手が乗らないレベル4は 2027年度以降の目標で未達。事故時の責任と法制度、投資の回収。",
+      src: [["LOGISTICS TODAY", "https://www.logi-today.com/979065"], ["THE BRIDGE（資金調達）", "https://thebridge.jp/2026/07/t2-raises-5-billion-yen-series-b-first-close"]] },
+    { co: "ヤマト運輸 × アルフレッサ", title: "需要予測AIで医薬品の配送ルートを毎日組み直す", ind: "物流", area: "輸送・配送", type: "予測・最適化", stage: "pilot", when: "2021年発表",
+      effect: "固定ルートをやめ、日々の業務量に合わせた配送コースに。走行距離と CO2 の削減、医療機関での対面作業時間の削減（最大 20%減と報道）。",
+      cond: "荷主（アルフレッサ）の販売・物流データの共有。ヤマトの配車ノウハウと渋滞情報。",
+      risk: "荷主とのデータ共有が前提で、1社だけでは成り立たない。効果の数字は報道ベース。",
+      src: [["共同通信PRワイヤー", "https://kyodonewsprwire.jp/release/202108028402"]] },
+  ];
+  const aiState = { view: "map", ind: "すべて", cell: null };
+
+  function renderAiMatrix() {
+    const head = el("tr", {}, el("th", {}, ""), ...AI_TYPES.map((t) => el("th", { scope: "col" }, t)));
+    const rows = AI_AREAS.map((area) => el("tr", {}, el("th", { scope: "row" }, area), ...AI_TYPES.map((type) => {
+      const hits = AI_CASES.filter((c) => c.area === area && c.type === type);
+      if (!hits.length) return el("td", { "aria-label": `${area} × ${type}：事例なし` });
+      const cls = hits.some((c) => c.stage === "live") ? "live" : "pilot";
+      return el("td", { class: cls }, el("button", { type: "button", onclick: () => { aiState.cell = { area, type }; aiState.ind = "すべて"; showAiView("cases"); } },
+        el("b", {}, String(hits.length)), el("small", {}, hits.map((c) => c.co.split(" ×")[0]).join("・"))));
+    })));
+    $("ai-matrix").replaceChildren(el("thead", {}, head), el("tbody", {}, ...rows));
+  }
+
+  function renderAiCases() {
+    $("ai-filter").replaceChildren(el("span", { class: "cap" }, "業界"), ...["すべて", "自動車", "化学素材", "物流"].map((ind) =>
+      el("button", { type: "button", class: "chip", "aria-pressed": String(aiState.ind === ind), onclick: () => { aiState.ind = ind; renderAiCases(); } }, ind)));
+    const cell = aiState.cell;
+    $("ai-cell-filter").hidden = !cell;
+    if (cell) $("ai-cell-filter").replaceChildren(el("span", { class: "cap" }, "マップ"),
+      el("button", { type: "button", class: "chip", "aria-pressed": "true", onclick: () => { aiState.cell = null; renderAiCases(); } }, `${cell.area} × ${cell.type}`, el("span", { class: "x", "aria-hidden": "true" }, "×")));
+    const list = AI_CASES.filter((c) => (aiState.ind === "すべて" || c.ind === aiState.ind) && (!cell || (c.area === cell.area && c.type === cell.type)));
+    $("ai-case-count").textContent = `${list.length}件`;
+    const html = (s) => { const d = el("dd"); d.innerHTML = s; return d; };
+    $("ai-case-list").replaceChildren(...list.map((c) => el("article", { class: "topic ai-case" },
+      el("div", { class: "tags" }, el("span", { class: "st-" + c.stage }, AI_STAGE[c.stage]), el("span", {}, c.ind), el("span", {}, c.area), el("span", {}, c.type), el("span", {}, c.when)),
+      el("h3", {}, c.title), el("p", { class: "cap" }, c.co),
+      el("dl", {}, el("dt", {}, "効果"), html(c.effect), el("dt", {}, "実現条件"), html(c.cond), el("dt", {}, "リスク"), html(c.risk)),
+      el("p", { class: "src" }, "出典：", ...c.src.flatMap(([t, u], i) => [i ? " ／ " : "", el("a", { href: u, target: "_blank", rel: "noopener" }, t)])))));
+  }
+
+  function showAiView(v) {
+    aiState.view = v;
+    for (const b of document.querySelectorAll("#ai-switch button")) b.dataset.v === v ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current");
+    for (const p of ["map", "compare", "cases"]) $("ai-" + p).hidden = p !== v;
+    if (v === "cases") renderAiCases();
+  }
+  document.querySelectorAll("#ai-switch button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.v === "cases") aiState.cell = null; showAiView(b.dataset.v); }));
+
+  const AI_NEWS = /フィジカルAI|ヒューマノイド|人型ロボット|マテリアルズ・インフォマティクス|外観検査|自動運転トラック|スマートファクトリー|(工場|製造|生産|物流|倉庫|化学|素材|自動車).{0,12}(AI|ロボット|自動化)|(AI|ロボット|自動化).{0,12}(工場|製造|生産|物流|倉庫|化学|素材)|physical AI|humanoid|factory automation|warehouse robot/i;
+  const AI_NEWS_SKIP = /NISA|個別株|株価|銘柄|セール|野球|サッカー/i;
+  function renderAiNews() {
+    const box = $("ai-news-list");
+    if (!state.news) { box.replaceChildren(el("div", { class: "empty" }, "ニュースを読み込み中です。")); return; }
+    const seen = new Set();
+    const list = state.news.articles.filter((a) => {
+      const t = [a.title, a.title_ja, a.summary].filter(Boolean).join(" ");
+      const key = (a.title_ja || a.title).slice(0, 25);
+      if (!AI_NEWS.test(t) || AI_NEWS_SKIP.test(t) || seen.has(key)) return false;
+      seen.add(key); return true;
+    }).slice(0, 9);
+    box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, "直近7日間に、該当する記事はまだありません。"));
+  }
+
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber";
-    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : "home";
+    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai";
+    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
-    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber";
+    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai";
     $("recipe-credit").hidden = view !== "recipe";
-    $("news-nav").hidden = recipes || company || cyber;
-    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : "tab-news";
-    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
+    $("news-nav").hidden = recipes || company || cyber || ai;
+    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : "tab-news";
+    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
     if (company) {
       for (const k of Object.keys(COMPANIES)) {
         $("co-" + k).hidden = k !== company;
@@ -1857,6 +2099,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
       renderCompanyNews(company); window.scrollTo(0, 0);
     }
     if (cyber) { renderCyber(); window.scrollTo(0, 0); }
+    if (ai) { renderAiMatrix(); showAiView(aiState.view); renderAiNews(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }
     else if (view === "recipe") { renderRecipes(); if (h === "#recipes") window.scrollTo(0, 0); }
