@@ -461,12 +461,12 @@ def main():
         picks_data = json.loads(PICKS_PATH.read_text(encoding="utf-8"))
 
     # Claude runs only at the pick hours (JST); other runs just collect and match, using no tokens.
-    use_ai = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    use_ai = bool(os.environ.get("ANTHROPIC_API_KEY")) and settings.get("ai_reports", False)
     round_id = current_round(started, settings.get("pick_hours_jst", [7, 16, 22]))
     if round_id in picks_data["rounds_done"]:
         round_id = None
     if not use_ai:
-        print("ANTHROPIC_API_KEY not set: skipping labels, picks and explanations")
+        print("AI reports off (needs ANTHROPIC_API_KEY and ai_reports = true): skipping labels, picks and explanations")
     elif round_id:
         import ai
         recent = started - timedelta(hours=24)

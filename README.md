@@ -19,7 +19,8 @@
 | `scripts/attacks.py` | Cloudflare Radar から世界の攻撃統計を毎時取得（`docs/data/attacks.json`。GitHub の Secrets に `CLOUDFLARE_API_TOKEN` が必要） |
 | `docs/firebase-config.js` / `firestore.rules` | レシピのお気に入りを Google ログインで保存するための Firebase 設定と、本人だけが読み書きできるセキュリティルール（設定が空ならブラウザに保存） |
 | `docs/rakuten-config.js` | 楽天ウェブサービスのアプリIDとアクセスキー（レシピのタブで使用。閲覧者のブラウザが楽天レシピAPIを直接呼び出します） |
-| `scripts/ai.py` | Claude による日本語化・分類・厳選・解説（結果は `docs/data/picks.json`） |
+| `scripts/summarize.py` | 今日の注目に Claude Haiku で「3行でいうと」の要約を付ける（`docs/data/summaries.json`。Secrets に `ANTHROPIC_API_KEY` が必要） |
+| `scripts/ai.py` | Claude による日本語化・分類・厳選・解説（結果は `docs/data/picks.json`。`config.toml` の `ai_reports = true` のときだけ動く） |
 | `.github/workflows/update-news.yml` | 毎時の自動実行と GitHub Pages への公開 |
 | `docs/network.html` | ネットワーク学習ゲーム「パケットを届けろ」（IP・マスク・ゲートウェイ・ルーティング・DNS・ファイアウォールの6ステージ） |
 | `docs/index.html` | 閲覧ページ |
@@ -28,7 +29,7 @@
 
 1. このリポジトリを GitHub に置きます。
 2. **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にします。
-3. **Settings → Secrets and variables → Actions → New repository secret** で、名前 `ANTHROPIC_API_KEY`、値に Claude の API キーを登録します。これがないと AI の厳選・解説は作られず、英語記事も「TV照合なし」のままです。解説の事実確認には Claude の Web 検索・Web 取得ツールを使います。Claude Console の組織設定でこれらが無効の場合は、RSS の概要だけをもとに書きます。
+3. **Settings → Secrets and variables → Actions → New repository secret** で、名前 `ANTHROPIC_API_KEY`、値に Claude の API キーを登録します。登録すると「今日の注目」に3行要約が付きます。AI の厳選・解説（費用が大きい）は、さらに `config.toml` で `ai_reports = true` にしたときだけ動きます。解説の事実確認には Claude の Web 検索・Web 取得ツールを使います。Claude Console の組織設定でこれらが無効の場合は、RSS の概要だけをもとに書きます。
 4. **Actions → Update news → Run workflow** で初回を実行します。
 5. 数分後、`https://<ユーザー名>.github.io/<リポジトリ名>/` で見られます。以後は毎時自動で更新されます。
 

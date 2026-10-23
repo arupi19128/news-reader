@@ -44,6 +44,11 @@ jobs:
           python scripts/fetch_news.py
           python scripts/attacks.py
 
+      - name: Summarize featured stories
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/summarize.py || echo "summaries failed; the site still updates"
+
       - name: Commit updated data
         run: |
           git config user.name "news-radar-bot"

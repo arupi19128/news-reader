@@ -20,7 +20,9 @@ featured_per_kind = 5
 # この語を見出しか概要に含む記事は「今日の注目」に選びません
 feature_skip_words = ["セール", "クーポン", "ポイント還元", "％オフ", "%オフ", "割引", "キャンペーン", "入荷", "株価", "NISA", "優待", "個別株", "予約開始", "PR", "sponsored", "deal", "deals", "discount", "live:", "live updates", "as it happened", "ゴルフ", "サッカー", "大相撲", "野球", "準々決勝", "準決勝", "決勝", "駅伝", "マラソン", "三塁打", "本塁打", "安打", "勝ち越し", "秋季", "甲子園", "Ｖリーグ", "Bリーグ", "Jリーグ", "優勝", "五輪代表", "競馬", "首位打者", "打者", "投手", "監督", "試合", "選手"]
 
-# ---- AI（ANTHROPIC_API_KEY を登録したときだけ動きます）----
+# ---- AI 解説レポート（ANTHROPIC_API_KEY を登録し、ai_reports = true にしたときだけ動きます）----
+# 日本語化・分類・厳選・解説を Claude で行います。費用が大きいので、ふだんは false のままにします。
+ai_reports = false
 # 使うモデル
 model = "claude-opus-5-5"
 # 記事に付けるカテゴリ（画面の絞り込みボタンになります）
@@ -272,8 +274,10 @@ keywords = ["事件", "事故", "逮捕", "容疑", "裁判", "判決", "火災"
 name = "Kis-My-Ft2"
 keywords = ["Kis-My-Ft2", "キスマイ", "キス・マイ", "藤ヶ谷太輔", "藤ケ谷太輔", "玉森裕太", "宮田俊哉", "横尾渉", "千賀健永", "二階堂高嗣"]
 
-# 今日の注目の3行要約（GitHub Models の無料枠。scripts/summarize.py）
+# 今日の注目の3行要約（ANTHROPIC_API_KEY を登録したときだけ動きます。scripts/summarize.py）
+# 一度書いた要約は保存して使い回すので、新しく注目に入った話題の分だけ費用がかかります（1本 約0.1円）。
 [summaries]
-models = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]   # 上から順に試す
-max_per_run = 3     # 1回の更新で新しく要約する話題の上限
-max_per_day = 60    # 1日（日本時間）に AI へ頼む回数の上限
+model = "claude-haiku-5-5"
+effort = "low"
+max_per_run = 9     # 1回の更新で新しく要約する話題の上限
+max_per_day = 40    # 1日（日本時間）に要約する上限

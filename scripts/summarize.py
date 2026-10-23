@@ -1,8 +1,8 @@
-"""Write a three-line Japanese summary for each of today's featured stories, using GitHub Models' free tier.
+"""Write a three-line Japanese summary for each of today's featured stories with Claude.
 
 Run from the repository root after fetch_news.py:  python scripts/summarize.py
-Needs GITHUB_TOKEN with the `models: read` permission (set in the workflow); without it the script does nothing.
-Summaries are kept in docs/data/summaries.json, so each story is summarized only once.
+Needs ANTHROPIC_API_KEY; without it the script does nothing.
+Summaries are kept in docs/data/summaries.json, so each story is summarized (and paid for) only once.
 """
 
 import html
@@ -11,7 +11,6 @@ import os
 import re
 import sys
 import tomllib
-import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -20,7 +19,6 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.toml"
 NEWS_PATH = ROOT / "docs" / "data" / "news.json"
 OUT_PATH = ROOT / "docs" / "data" / "summaries.json"
-API = "https://models.github.ai/inference/chat/completions"
 USER_AGENT = "Mozilla/5.0 (compatible; news-radar/1.0)"
 JST = timezone(timedelta(hours=9))
 
@@ -73,78 +71,53 @@ PROMPT = (
     "- what: 何が起きたか（誰が・いつ・何を）\n"
     "- why: なぜ起きたのか、背景\n"
     "- impact: 何が変わるか、私たちや社会への影響\n"
-    "各行は60字以内。中学生にも分かる言葉で、自分の言葉で書き直し、記事の文をそのまま写さない。"
-    "材料に書かれていないことは推測で補わず、分からない行は「記事からは分かりません」と書く。\n"
-    'JSON で {"what": "...", "why": "...", "impact": "..."} の形だけを返す。\n\n'
+    "各行は60字以内。中学生にも分かる言葉で、自分の言葉で書き直し、記事の文をそのまま写さないでください。"
+    "材料に書かれていないことは推測で補わず、分からない行は「記事からは分かりません」と書いてください。\n\n"
 )
 
+SCHEMA = {
+    "type": "object",
+    "properties": {"what": {"type": "string"}, "why": {"type": "string"}, "impact": {"type": "string"}},
+    "required": ["what", "why", "impact"],
+    "additionalProperties": False,
+}
 
-def ask(model, material, token):
-    body = json.dumps({
-        "model": model,
-        "messages": [{"role": "user", "content": PROMPT + material}],
-        "response_format": {"type": "json_object"},
-        "max_tokens": 600,
-    }).encode()
-    req = urllib.request.Request(API, data=body, headers={
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "application/json",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2026-03-10",
-        "User-Agent": "news-radar/1.0",
-    })
+
+def ask(client, model, effort, material):
+    import anthropic
+
     try:
-        with urllib.request.urlopen(req, timeout=60) as res:
-            raw = res.read()
-            status = f"{res.status} {res.geturl()} {res.headers.get('Content-Type')} {res.headers.get('Server')} {res.headers.get('Via')}"
-    except urllib.error.HTTPError as e:
-        if e.code == 429:
-            raise RateLimited(e.read()[:300])
-        raise RuntimeError(f"HTTP {e.code}: {e.read()[:300]!r}")
-    try:
-        text = json.loads(raw)["choices"][0]["message"]["content"] or ""
-    except Exception:
-        raise RuntimeError(f"unexpected reply (HTTP {status}): {raw[:200]!r}")
-    m = re.search(r"\{.*\}", text, re.S)
-    if not m:
-        raise RuntimeError(f"no JSON in reply: {text[:200]!r}")
-    out = json.loads(m.group(0))
-    lines = [str(out.get(k, "")).strip() for k in ("what", "why", "impact")]
-    if not all(lines):
-        raise RuntimeError(f"incomplete summary: {text[:200]}")
-    return lines
-
-
-def diagnose(token):
-    """Temporary: what the Models endpoints answer from this runner."""
-    out = []
-    body = json.dumps({"model": "openai/gpt-4o-mini", "messages": [{"role": "user", "content": "OKとだけ返して"}]}).encode()
-    tries = [
-        ("GET catalog", "https://models.github.ai/catalog/models", None, {}),
-        ("POST json", API, body, {"Content-Type": "application/json", "Accept": "application/json"}),
-        ("POST azure", "https://models.inference.ai.azure.com/chat/completions", body, {"Content-Type": "application/json"}),
-    ]
-    for name, url, data, extra in tries:
-        req = urllib.request.Request(url, data=data, headers={"Authorization": f"Bearer {token}", "User-Agent": "curl/8.5.0", **extra})
-        try:
-            with urllib.request.urlopen(req, timeout=30) as res:
-                out.append(f"{name}: {res.status} {res.headers.get('Content-Type')} {res.read()[:160]!r}")
-        except urllib.error.HTTPError as e:
-            out.append(f"{name}: HTTP {e.code} {e.read()[:160]!r}")
-        except Exception as e:
-            out.append(f"{name}: {e}")
-    return out
+        response = client.messages.create(
+            model=model,
+            max_tokens=4000,
+            output_config={"effort": effort, "format": {"type": "json_schema", "schema": SCHEMA}},
+            messages=[{"role": "user", "content": PROMPT + material}],
+        )
+    except anthropic.RateLimitError as e:
+        raise RateLimited(e.message)
+    except anthropic.APIStatusError as e:
+        raise RuntimeError(f"API error ({e.status_code}): {e.message}")
+    except anthropic.APIConnectionError as e:
+        raise RuntimeError(f"connection error: {e}")
+    if response.stop_reason != "end_turn":
+        raise RuntimeError(f"stopped: {response.stop_reason}")
+    text = next(b.text for b in response.content if b.type == "text")
+    out = json.loads(text)
+    return [out["what"].strip(), out["why"].strip(), out["impact"].strip()]
 
 
 def main(ask=ask):
-    token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        print("GITHUB_TOKEN not set: skipping summaries")
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print("ANTHROPIC_API_KEY not set: skipping summaries")
         return
+    import anthropic
+
+    client = anthropic.Anthropic()
     settings = tomllib.loads(CONFIG_PATH.read_text(encoding="utf-8")).get("summaries", {})
-    models = settings.get("models", ["openai/gpt-4.1-mini"])
+    model = settings.get("model", "claude-haiku-5-5")
+    effort = settings.get("effort", "low")
     per_run = settings.get("max_per_run", 9)
-    per_day = settings.get("max_per_day", 60)
+    per_day = settings.get("max_per_day", 40)
 
     news = json.loads(NEWS_PATH.read_text(encoding="utf-8"))
     by_id = {a["id"]: a for a in news["articles"]}
@@ -159,34 +132,27 @@ def main(ask=ask):
 
     # A summary belongs to a story; reuse it when a related article of an earlier story becomes the lead.
     done = set(store["items"])
-    for sid, s in store["items"].items():
+    for s in store["items"].values():
         done.update(s.get("articles", []))
     todo = [st for st in news.get("featured", []) if st["id"] not in done]
 
-    made, errors, tried = 0, [], 0
+    made, tried, errors = 0, 0, []
     for st in todo:
         if tried >= per_run or store["usage"]["count"] >= per_day:
-            print(f"summaries: limit reached ({made} this run, {store['usage']['count']} today)")
+            print(f"summaries: limit reached ({tried} this run, {store['usage']['count']} today)")
             break
         material, basis = source_material(st, by_id)
-        lines, limited = None, 0
-        for model in models:
-            try:
-                lines = ask(model, material, token)
-                break
-            except RateLimited as e:
-                limited += 1
-                errors.append(f"{model}: rate-limited {e}"[:300])
-                print(f"summaries: rate-limited on {model}: {e}", file=sys.stderr)
-            except Exception as e:  # unknown model, bad JSON, network: try the next model
-                errors.append(f"{model}: {e}"[:300])
-                print(f"summaries: {model} failed: {e}", file=sys.stderr)
-        store["usage"]["count"] += 1
         tried += 1
-        if limited == len(models):
-            print("summaries: every model is rate-limited; trying again next run", file=sys.stderr)
+        store["usage"]["count"] += 1
+        try:
+            lines = ask(client, model, effort, material)
+        except RateLimited as e:
+            errors.append(f"rate-limited: {e}"[:300])
+            print("summaries: rate-limited; trying again next run", file=sys.stderr)
             break
-        if not lines:
+        except Exception as e:  # one failed story must not stop the others
+            errors.append(str(e)[:300])
+            print(f"summaries: {st['id']} failed: {e}", file=sys.stderr)
             continue
         store["items"][st["id"]] = {
             "lines": lines, "basis": basis, "model": model,
@@ -197,8 +163,7 @@ def main(ask=ask):
 
     # Forget summaries of stories that are no longer in the news data.
     store["items"] = {k: v for k, v in store["items"].items() if any(i in by_id for i in v["articles"])}
-    store["diag"] = diagnose(token) if errors else []
-    store["errors"] = errors[-6:]  # the latest failures, to see what went wrong without the Actions log
+    store["errors"] = errors[-5:]  # the latest failures, readable without the Actions log
     store["generated_at"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     OUT_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"summaries: {made} new, {len(store['items'])} kept, {store['usage']['count']} requests today")
