@@ -134,7 +134,7 @@ def main(ask=ask):
         done.update(s.get("articles", []))
     todo = [st for st in news.get("featured", []) if st["id"] not in done]
 
-    made = 0
+    made, errors = 0, []
     for st in todo:
         if made >= per_run or store["usage"]["count"] >= per_day:
             print(f"summaries: limit reached ({made} this run, {store['usage']['count']} today)")
@@ -147,8 +147,10 @@ def main(ask=ask):
                 break
             except RateLimited as e:
                 limited += 1
+                errors.append(f"{model}: rate-limited {e}"[:300])
                 print(f"summaries: rate-limited on {model}: {e}", file=sys.stderr)
             except Exception as e:  # unknown model, bad JSON, network: try the next model
+                errors.append(f"{model}: {e}"[:300])
                 print(f"summaries: {model} failed: {e}", file=sys.stderr)
         store["usage"]["count"] += 1
         if limited == len(models):
@@ -165,6 +167,7 @@ def main(ask=ask):
 
     # Forget summaries of stories that are no longer in the news data.
     store["items"] = {k: v for k, v in store["items"].items() if any(i in by_id for i in v["articles"])}
+    store["errors"] = errors[-6:]  # the latest failures, to see what went wrong without the Actions log
     store["generated_at"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     OUT_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"summaries: {made} new, {len(store['items'])} kept, {store['usage']['count']} requests today")
