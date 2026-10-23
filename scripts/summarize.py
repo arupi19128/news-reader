@@ -89,18 +89,26 @@ def ask(model, material, token):
     req = urllib.request.Request(API, data=body, headers={
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
-        "Accept": "application/json",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2026-03-10",
+        "User-Agent": "news-radar/1.0",
     })
     try:
         with urllib.request.urlopen(req, timeout=60) as res:
-            data = json.loads(res.read())
+            raw = res.read()
+            status = res.status
     except urllib.error.HTTPError as e:
         if e.code == 429:
             raise RateLimited(e.read()[:300])
         raise RuntimeError(f"HTTP {e.code}: {e.read()[:300]!r}")
-    text = data["choices"][0]["message"]["content"]
+    try:
+        text = json.loads(raw)["choices"][0]["message"]["content"] or ""
+    except Exception:
+        raise RuntimeError(f"unexpected reply (HTTP {status}): {raw[:200]!r}")
     m = re.search(r"\{.*\}", text, re.S)
-    out = json.loads(m.group(0) if m else text)
+    if not m:
+        raise RuntimeError(f"no JSON in reply: {text[:200]!r}")
+    out = json.loads(m.group(0))
     lines = [str(out.get(k, "")).strip() for k in ("what", "why", "impact")]
     if not all(lines):
         raise RuntimeError(f"incomplete summary: {text[:200]}")
