@@ -96,7 +96,7 @@ def ask(model, material, token):
     try:
         with urllib.request.urlopen(req, timeout=60) as res:
             raw = res.read()
-            status = res.status
+            status = f"{res.status} {res.geturl()} {res.headers.get('Content-Type')} {res.headers.get('Server')} {res.headers.get('Via')}"
     except urllib.error.HTTPError as e:
         if e.code == 429:
             raise RateLimited(e.read()[:300])
