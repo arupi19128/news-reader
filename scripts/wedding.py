@@ -34,6 +34,8 @@ _H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S | re.I)
 # 2027年7月1日 / 2027.7.1 / 2027/7/1, optionally followed by a weekday like （木）
 _DATE = r"(?:(\d{4})\s*[年./／]\s*)?(\d{1,2})\s*[月./／]\s*(\d{1,2})\s*日?(?:\s*[（(][^）)]{1,3}[）)])?"
 _RANGE = re.compile(_DATE + r"\s*[~～〜\-－ー―から]+\s*" + _DATE)
+_UNTIL = re.compile(_DATE + r"\s*(?:\d{1,2}:\d{2}\s*)?まで")
+_META_CHARSET = re.compile(rb"<meta[^>]+charset=[\"']?([\w-]+)", re.I)
 CEREMONY_LABEL = re.compile(r"挙式|ご結婚式|wedding date", re.I)
 APPLY_LABEL = re.compile(r"申込|申し込み|お申込|予約|成約|受付|販売")
 
@@ -73,25 +75,39 @@ def to_date(y, m, d, fallback_year):
         return None
 
 
+def _kind(text, pos):
+    # The label is on the same line just before the date, or alone on the line above it.
+    lines = text[max(0, pos - 60):pos].split("\n")
+    label = lines[-1] if lines[-1].strip() or len(lines) < 2 else lines[-2]
+    return "apply" if APPLY_LABEL.search(label) else "ceremony" if CEREMONY_LABEL.search(label) else "other"
+
+
 def find_periods(text, today):
-    """[(kind, start, end, snippet)] for every date range; kind is ceremony / apply / other by the words just before it."""
-    out = []
+    """Every date range ("7月1日〜12月31日") and deadline ("12月30日まで", start None) in the text.
+
+    kind is ceremony / apply / other, judged by the words just before the date.
+    """
+    out, spans = [], []
     for m in _RANGE.finditer(text):
         y1, m1, d1, y2, m2, d2 = m.groups()
         start = to_date(y1, m1, d1, int(y2) if y2 else today.year)
-        if not start:
-            continue
-        end = to_date(y2, m2, d2, start.year)
+        end = start and to_date(y2, m2, d2, start.year)
         if not end:
             continue
         if end < start:  # 2026年12月1日〜3月31日 crosses the new year
             end = end.replace(year=end.year + 1)
-        # The label is on the same line just before the range, or alone on the line above it.
-        lines = text[max(0, m.start() - 60):m.start()].split("\n")
-        label = lines[-1] if lines[-1].strip() or len(lines) < 2 else lines[-2]
-        kind = "apply" if APPLY_LABEL.search(label) else "ceremony" if CEREMONY_LABEL.search(label) else "other"
+        spans.append(m.span())
         snippet = re.sub(r"\s+", " ", text[max(0, m.start() - 30):m.end() + 5]).strip()
-        out.append({"kind": kind, "start": start.isoformat(), "end": end.isoformat(), "text": snippet[:120]})
+        out.append({"kind": _kind(text, m.start()), "start": start.isoformat(), "end": end.isoformat(), "text": snippet[:120]})
+    for m in _UNTIL.finditer(text):
+        if any(a <= m.start() < b for a, b in spans):
+            continue
+        y, mo, d = m.groups()
+        end = to_date(y, mo, d, today.year)
+        if not end:
+            continue
+        snippet = re.sub(r"\s+", " ", text[max(0, m.start() - 30):m.end() + 5]).strip()
+        out.append({"kind": _kind(text, m.start()), "start": None, "end": end.isoformat(), "text": snippet[:120]})
     # Drop exact duplicates, keep order.
     seen, uniq = set(), []
     for p in out:
@@ -121,7 +137,8 @@ def overlaps(periods, target):
     cer = [p for p in periods if p["kind"] == "ceremony"] or [p for p in periods if p["kind"] == "other"]
     if not cer:
         return None
-    return any(date.fromisoformat(p["start"]) <= t1 and date.fromisoformat(p["end"]) >= t0 for p in cer)
+    return any((p["start"] is None or date.fromisoformat(p["start"]) <= t1) and date.fromisoformat(p["end"]) >= t0
+               for p in cer)
 
 
 def crawl_source(src, venues, area, max_pages):
@@ -129,7 +146,7 @@ def crawl_source(src, venues, area, max_pages):
     pages, probe = {}, []
     queue = list(src["seeds"])
     seen = set()
-    host = urllib.parse.urlparse(src["seeds"][0]).netloc
+    hosts = {urllib.parse.urlparse(u).netloc for u in src["seeds"]}
     while queue and len(seen) < max_pages:
         url = queue.pop(0)
         if url in seen:
@@ -143,7 +160,13 @@ def crawl_source(src, venues, area, max_pages):
         if ctype == "application/pdf" or final.lower().endswith(".pdf"):
             text, title, links = pdf_text(body), Path(urllib.parse.urlparse(final).path).name, []
         else:
-            raw = body.decode(charset or "utf-8", "replace")
+            if not charset:
+                meta = _META_CHARSET.search(body[:4000])
+                charset = meta.group(1).decode() if meta else "utf-8"
+            try:
+                raw = body.decode(charset, "replace")
+            except LookupError:
+                raw = body.decode("utf-8", "replace")
             text = html_text(raw)
             t = _H1.search(raw) or _TITLE.search(raw)
             title = re.sub(r"\s+", " ", html.unescape(_TAG.sub("", t.group(1)))).strip() if t else final
@@ -151,7 +174,7 @@ def crawl_source(src, venues, area, max_pages):
             for href, label in _LINK.findall(raw):
                 link = urllib.parse.urljoin(final, html.unescape(href)).split("#")[0]
                 label = re.sub(r"\s+", " ", html.unescape(_TAG.sub("", label))).strip()
-                if urllib.parse.urlparse(link).netloc != host:
+                if urllib.parse.urlparse(link).netloc not in hosts:
                     continue
                 if any(re.search(p, link) for p in src.get("follow", [])) or (
                         CAMPAIGN_WORDS.search(label + " " + link) and (area.search(label + link) or venues.search(label + link))):
@@ -190,6 +213,15 @@ def main():
     for src in config["sources"]:
         pages, probe = crawl_source(src, any_venue, area, config.get("max_pages_per_source", 30))
         probes.append({"source": src["name"], "pages": probe})
+        # Menus and footers repeat on every page of a site and name every chapel; drop lines found on most pages.
+        if len(pages) >= 3:
+            counts = {}
+            for page in pages.values():
+                for line in set(page["text"].split("\n")):
+                    counts[line] = counts.get(line, 0) + 1
+            common = {line for line, n in counts.items() if n >= max(2, len(pages) // 2)}
+            for page in pages.values():
+                page["text"] = "\n".join(l for l in page["text"].split("\n") if l not in common)
         for url, page in pages.items():
             text = page["text"]
             hit = [name for name, rx in venues.items() if rx.search(text)]
