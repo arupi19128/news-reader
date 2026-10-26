@@ -184,8 +184,14 @@ def crawl_source(src, venues, area, max_pages):
                 if any(re.search(p, link) for p in src.get("follow", [])) or (
                         CAMPAIGN_WORDS.search(label + " " + link) and (area.search(label + link) or venues.search(label + link))):
                     links.append(link)
-        probe.append({"url": final, "status": status, "type": ctype, "chars": len(text), "title": title[:80],
-                      "links": len(links), "head": re.sub(r"\s+", " ", text[:300])})
+        final = final.replace(":443/", "/", 1)
+        entry = {"url": final, "status": status, "type": ctype, "chars": len(text), "title": title[:80],
+                 "links": len(links), "head": re.sub(r"\s+", " ", text[:300])}
+        if src.get("debug") and ctype != "application/pdf":
+            entry["assets"] = sorted(set(re.findall(r"[\"'(]([^\"'()\s]+\.(?:json|js|pdf)(?:\?[^\"'()\s]*)?)[\"')]", raw)))[:60]
+            entry["anchors"] = [h for h, _ in _LINK.findall(raw)][:80]
+            entry["text"] = text[:6000]
+        probe.append(entry)
         pages[final] = {"title": title, "text": text}
         if url in src["seeds"]:
             queue.extend(l for l in dict.fromkeys(links) if l not in seen)
