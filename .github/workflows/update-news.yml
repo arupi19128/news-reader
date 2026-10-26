@@ -34,7 +34,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install anthropic
+        run: pip install anthropic pypdf
 
       - name: Fetch news
         env:
@@ -43,6 +43,9 @@ jobs:
         run: |
           python scripts/fetch_news.py
           python scripts/attacks.py
+
+      - name: Check wedding fairs and campaigns
+        run: python scripts/wedding.py || echo "wedding check failed; the site still updates"
 
       - name: Summarize featured stories
         env:

@@ -281,3 +281,34 @@ model = "claude-haiku-5-5"
 effort = "low"
 max_per_run = 9     # 1回の更新で新しく要約する話題の上限
 max_per_day = 40    # 1日（日本時間）に要約する上限
+
+# 式場のフェア・キャンペーン（scripts/wedding.py。1日1回、公式サイトと旅行会社のページを読みに行きます）
+[wedding]
+# この期間の挙式が対象になるキャンペーンを強調します
+target = ["2027-07-01", "2027-12-31"]
+area_match = "グアム|GUAM|Guam"
+interval_hours = 20
+max_pages_per_source = 30
+
+[[wedding.venues]]
+name = "ジュエル・バイ・ザ・シー"
+match = "ジュエル[・･ ]?バイ[・･ ]?ザ[・･ ]?シー|JEWEL[ _-]?BY[ _-]?THE[ _-]?SEA|/jw/|jewel"
+
+[[wedding.venues]]
+name = "クリスタルチャペル"
+match = "クリスタル[・･ ]?チャペル|CRYSTAL[ _-]?CHAPEL|crystal"
+
+[[wedding.sources]]
+name = "アールイズ・ウエディング"
+seeds = ["https://www.arluis.com/fair-cp/chapel_3/", "https://www.arluis.com/guam/", "https://www.arluis.com/guam/jw/", "https://www.arluis.com/fair-cp/50off/hawaii/"]
+follow = ["/fair-cp/"]
+
+[[wedding.sources]]
+name = "HISウェディング"
+seeds = ["https://www.his-j.com/wedding/", "https://www.his-j.com/wedding/guam/"]
+follow = ["/wedding/.*(campaign|cp|sale|fair|special)"]
+
+[[wedding.sources]]
+name = "JTBウエディング"
+seeds = ["https://www.jtb.co.jp/wed/plan/", "https://www.jtb.co.jp/wed/plan/autumn-campaign/"]
+follow = ["/wed/plan/.*campaign", "pdf/guam/"]
