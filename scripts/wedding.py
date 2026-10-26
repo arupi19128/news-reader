@@ -182,7 +182,7 @@ def crawl_source(src, venues, area, max_pages):
                         CAMPAIGN_WORDS.search(label + " " + link) and (area.search(label + link) or venues.search(label + link))):
                     links.append(link)
         probe.append({"url": final, "status": status, "type": ctype, "chars": len(text), "title": title[:80],
-                      "links": len(links)})
+                      "links": len(links), "head": re.sub(r"\s+", " ", text[:300])})
         pages[final] = {"title": title, "text": text}
         if url in src["seeds"]:
             queue.extend(l for l in dict.fromkeys(links) if l not in seen)
@@ -226,8 +226,11 @@ def main():
                 page["text"] = "\n".join(l for l in page["text"].split("\n") if l not in common)
         for url, page in pages.items():
             text = page["text"]
-            hit = [name for name, rx in venues.items() if rx.search(text)]
-            in_area = bool(area.search(text))
+            # A PDF's file name often carries the chapel (crystal_guam_2609.pdf).
+            hit = [name for name, rx in venues.items() if rx.search(text) or rx.search(url)
+                   or (name == "ジュエル・バイ・ザ・シー" and re.search(r"jewel", url, re.I))
+                   or (name == "クリスタルチャペル" and re.search(r"crystal", url, re.I))]
+            in_area = bool(area.search(text) or area.search(url))
             if not (hit or in_area) or not CAMPAIGN_WORDS.search(page["title"] + text[:4000]):
                 continue
             periods = find_periods(text, today)
