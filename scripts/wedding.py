@@ -280,7 +280,9 @@ def main():
     if not config.get("sources"):
         print("wedding: no sources configured")
         return
-    config_hash = hashlib.sha1(json.dumps(config, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12]
+    # Re-check right away when the settings or this script change.
+    config_hash = hashlib.sha1(json.dumps(config, sort_keys=True, ensure_ascii=False).encode()
+                               + Path(__file__).read_bytes()).hexdigest()[:12]
     now = datetime.now(timezone.utc)
     today = now.astimezone(JST).date()
 
