@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T11:18:43Z",
+ "generated_at": "2026-10-26T11:22:29Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -346,32 +346,32 @@
   {
    "name": "TBS NEWS DIG",
    "kind": "tv",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "日テレNEWS",
    "kind": "tv",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "FNNプライムオンライン",
    "kind": "tv",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "テレ朝NEWS",
    "kind": "tv",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "テレ東BIZ",
    "kind": "tv",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "BBCニュース日本語",
@@ -382,8 +382,8 @@
   {
    "name": "ロイター日本語",
    "kind": "国際",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 2
   },
   {
    "name": "CNN.co.jp",
@@ -394,14 +394,14 @@
   {
    "name": "AFPBB News",
    "kind": "国際",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "ニューズウィーク日本版",
    "kind": "国際",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "毎日新聞",
@@ -418,14 +418,14 @@
   {
    "name": "東京新聞",
    "kind": "国内",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "時事ドットコム",
    "kind": "国内",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "BBC World",
@@ -484,44 +484,44 @@
   {
    "name": "Googleニュース：通信キャリア",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "Googleニュース：ソフトバンク株式会社",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "Googleニュース：KDDI",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "Googleニュース：J:COM",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   },
   {
    "name": "Googleニュース：製造・物流のAI",
    "kind": "IT",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 5
   },
   {
    "name": "Google News: Telecom",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 40
   }
  ],
  "featured": [
@@ -658,6 +658,22 @@
    "image": "https://i.guim.co.uk/img/media/458126018f1b9ccb6d073bbbcc3e29cc008b4c62/6_0_4003_3204/master/4003.jpg?width=140&quality=85&auto=format&fit=max&s=e09cdc6e2d5e2202bdfd520b6e2b83a2",
    "published": "2026-10-26T11:09:13Z",
    "first_seen": "2026-10-26T11:18:43Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "1c4f8c9da40aa25f",
+   "title": "Jordan arrests three suspects over church attack in dawn raid: What to know",
+   "link": "https://www.aljazeera.com/news/2026/10/26/jordan-arrests-three-suspects-over-church-attack-in-dawn-raid-what-to-know?traffic_source=rss",
+   "summary": "Jordanian authorities have not named the individuals or any group involved in the 'terrorist incident'.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-26T11:08:48Z",
+   "first_seen": "2026-10-26T11:22:29Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/ap_6adeedf700d45-1792994807.jpg?resize=1920%2C1440",
    "tv_match": "unknown",
    "picked": false
   },
@@ -965,9 +981,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261026003781_comm.jpg",
    "tv_match": {
-    "title": "「要請の有無にかかわらず警察や防衛省・自衛隊において適切に判断」木原官房長官 GMOが緊急要請した「能動的サイバー防御」めぐり",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1NTlRjVEVXZUo5UW5jclhEUVpyc1pNNHE2em9iS0haSURHYU9FYXdfVVlMam9heHRDbW1Id1RoRThmR2g3czRVLXVPZElsZjBxeGxfV0Z5UQ?oc=5",
+    "title": "「能動的サイバー防御」発動第1号を要請 先行するアメリカのケースは 相次ぐ不正アクセス被害",
+    "outlet": "FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAtaHFoQndfc3FtTFI0LXNLODVjNUZjU0dPWmVQSTdzQUV0RXczSGRkRnczNWI3U2F6RHZ4SkNneFRzaGlxZDAxSUF0czRFQQ?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -1798,7 +1814,7 @@
    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE85Y0VtNXZGYk1COEh3NU9YcXBDZVFzazdwSUxCMVpQSjJZOWZXSlEwdThxME5QNUhUMVFJcjB5YVZwLVZUSnpjei0tNzJzUGZ0TFE?oc=5",
    "summary": "KDDI、スマホから離れるキャンプ開催 「オフラインキャンプin箕面2026」 青少年18人が「スマホ依存」と向き合う 電波新聞デジタル",
    "outlet": "電波新聞デジタル",
-   "feed": "Googleニュース：通信キャリア",
+   "feed": "Googleニュース：KDDI",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-26T09:24:11Z",
@@ -2118,6 +2134,20 @@
    "picked": false
   },
   {
+   "id": "b85b8da9d443b7b5",
+   "title": "「男性用避妊薬」実用化へ前進 性行為の30分前に服用",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBtVnU3WWZmaEs5dXlLWXBtSHVETkpMZnNlWnJ1R2tYUzNyZDhINHA3aDQ0VEZuRGd1WDQ3ZXM2ZDlFeXJpSGJVNUhFdUctOUM2SnZFTXFNRkhHUQ?oc=5",
+   "summary": "「男性用避妊薬」実用化へ前進 性行為の30分前に服用 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-26T09:00:00Z",
+   "first_seen": "2026-10-26T11:16:30Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "a43085032d5354ce",
    "title": "スパイと外事警察、活発化する「影響工作」 姿を現した新たな法制度",
    "link": "http://www.asahi.com/articles/ASVBV1CGLVBVUTIL012M.html?ref=rss",
@@ -2162,20 +2192,6 @@
    "first_seen": "2026-10-26T10:01:48Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261026003109_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "b85b8da9d443b7b5",
-   "title": "「男性用避妊薬」実用化へ前進 性行為の30分前に服用",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBtVnU3WWZmaEs5dXlLWXBtSHVETkpMZnNlWnJ1R2tYUzNyZDhINHA3aDQ0VEZuRGd1WDQ3ZXM2ZDlFeXJpSGJVNUhFdUctOUM2SnZFTXFNRkhHUQ?oc=5",
-   "summary": "「男性用避妊薬」実用化へ前進 性行為の30分前に服用 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-26T09:00:00Z",
-   "first_seen": "2026-10-26T11:16:30Z",
    "tv_match": null,
    "picked": false
   },
@@ -2250,9 +2266,9 @@
    "published": "2026-10-26T08:42:05Z",
    "first_seen": "2026-10-26T09:02:20Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.5
    },
    "picked": false
@@ -2622,6 +2638,20 @@
    "picked": false
   },
   {
+   "id": "208953a8b8465500",
+   "title": "阪神の藤川球児監督、２９年まで３年契約 粟井一夫社長「つくり直す期間必要」―プロ野球",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1GZ0E1TWNzdlRQU2xieVhjVmVfRVotaHlIRi03NmpYVnd1MEtYd3dhRUhLOUFmWlBfdnJ3TnFiR3JpQlBlcW1DZk9maDRQdFFWSGEyZlJWTUdCMVZlN0V6UVJTaw?oc=5",
+   "summary": "阪神の藤川球児監督、２９年まで３年契約 粟井一夫社長「つくり直す期間必要」―プロ野球 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-26T08:12:00Z",
+   "first_seen": "2026-10-26T10:01:48Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "51c7ba0f851caf30",
    "title": "WANDRDからカメラ向けバックパック「PRVKE POCKET」登場 シンプルデザインに充実の収納ポケット",
    "link": "https://www.itmedia.co.jp/mobile/articles/2610/26/news072.html",
@@ -2634,20 +2664,6 @@
    "first_seen": "2026-10-26T11:14:04Z",
    "image_checked": true,
    "image": "https://image.itmedia.co.jp/mobile/articles/2610/26/l_asa_PRVKEPOCKET_01.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "208953a8b8465500",
-   "title": "阪神の藤川球児監督、２９年まで３年契約 粟井一夫社長「つくり直す期間必要」―プロ野球",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1GZ0E1TWNzdlRQU2xieVhjVmVfRVotaHlIRi03NmpYVnd1MEtYd3dhRUhLOUFmWlBfdnJ3TnFiR3JpQlBlcW1DZk9maDRQdFFWSGEyZlJWTUdCMVZlN0V6UVJTaw?oc=5",
-   "summary": "阪神の藤川球児監督、２９年まで３年契約 粟井一夫社長「つくり直す期間必要」―プロ野球 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T08:12:00Z",
-   "first_seen": "2026-10-26T10:01:48Z",
    "tv_match": null,
    "picked": false
   },
@@ -3025,9 +3041,9 @@
    "published": "2026-10-26T07:58:36Z",
    "first_seen": "2026-10-26T09:02:20Z",
    "tv_match": {
-    "title": "【速報】福田康夫元首相（90）が死去（2026年10月25日掲載）｜日テレNEWS NNN",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9VQkdXNnR4cks4b1dIN1JObmZ1bXJHVGxtN3hOUGNpRG5pMjZWdThjNXI5NExvV3p6WndLYy1wU0loeUFMX3E5bXYwUURLODN2MjFZY1ZxcHdLWU5CcFlpcnEtYU95RlJiVF9adW9iUzVaN2xMSnVIemJ5aEZ1QQ?oc=5",
+    "title": "福田康夫元総理が死去 90歳 2007年第91代内閣総理大臣に就任 憲政史上初めて親子二代での総理大臣に 洞爺湖サミットでは温室効果ガス削減目標など合意まとめる",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5KcjRMZkJ5dllrYy1QY2ZhS2xYckJwUEtIczdmbU14SmcwRXVyZTJTN2RiMDgxdW9OVnZhLUpkZ1FlMUZkLUhyZ2RGbVJsYlRQdUNYdlo0SQ?oc=5",
     "score": 0.43
    },
    "picked": false
@@ -3065,9 +3081,9 @@
    "published": "2026-10-26T07:54:00Z",
    "first_seen": "2026-10-26T11:14:04Z",
    "tv_match": {
-    "title": "【速報】福田康夫元首相（90）が死去（2026年10月25日掲載）｜日テレNEWS NNN",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9VQkdXNnR4cks4b1dIN1JObmZ1bXJHVGxtN3hOUGNpRG5pMjZWdThjNXI5NExvV3p6WndLYy1wU0loeUFMX3E5bXYwUURLODN2MjFZY1ZxcHdLWU5CcFlpcnEtYU95RlJiVF9adW9iUzVaN2xMSnVIemJ5aEZ1QQ?oc=5",
+    "title": "福田康夫元総理が死去 90歳 2007年第91代内閣総理大臣に就任 憲政史上初めて親子二代での総理大臣に 洞爺湖サミットでは温室効果ガス削減目標など合意まとめる",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5KcjRMZkJ5dllrYy1QY2ZhS2xYckJwUEtIczdmbU14SmcwRXVyZTJTN2RiMDgxdW9OVnZhLUpkZ1FlMUZkLUhyZ2RGbVJsYlRQdUNYdlo0SQ?oc=5",
     "score": 0.43
    },
    "picked": false
@@ -3744,16 +3760,16 @@
    "picked": false
   },
   {
-   "id": "058870c4144c00c3",
+   "id": "4f60de0ff32c5832",
    "title": "メーガン妃の実父トーマス・マークルに児童性的虐待の素材所持疑惑…フィリピン警察の捜査と警察の不祥事に揺れる英王室",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YT050MTk5dlVwYTYzMFFVUVNjUlF3SHFoOVZBS1ZDV1VGLUhBVV9TU2c3OUkyT2tKYlR3YTVJYXNVU04yWVJZaGdUY1ZNTzRPanU2UTJNNFNDUQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAzTzcwVUFlRGstcklvMS16QzZFcDhnbDdGWlJVOWljMUU2c19rZ0JFakt3aEM0ZjgzMHpuX2g2ZzlFanhQVnZ2dFpUUjhDQUdaN01ZRm5oY2NaX3hJdDU2bmUzel9PSDA?oc=5",
    "summary": "メーガン妃の実父トーマス・マークルに児童性的虐待の素材所持疑惑…フィリピン警察の捜査と警察の不祥事に揺れる英王室 ニューズウィーク日本版",
    "outlet": "ニューズウィーク日本版",
    "feed": "ニューズウィーク日本版",
    "kind": "国際",
    "lang": "ja",
    "published": "2026-10-26T07:00:00Z",
-   "first_seen": "2026-10-26T10:57:23Z",
+   "first_seen": "2026-10-26T11:22:29Z",
    "tv_match": null,
    "picked": false
   },
@@ -3768,6 +3784,20 @@
    "lang": "ja",
    "published": "2026-10-26T07:00:00Z",
    "first_seen": "2026-10-26T09:02:20Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "058870c4144c00c3",
+   "title": "メーガン妃の実父トーマス・マークルに児童性的虐待の素材所持疑惑…フィリピン警察の捜査と警察の不祥事に揺れる英王室",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YT050MTk5dlVwYTYzMFFVUVNjUlF3SHFoOVZBS1ZDV1VGLUhBVV9TU2c3OUkyT2tKYlR3YTVJYXNVU04yWVJZaGdUY1ZNTzRPanU2UTJNNFNDUQ?oc=5",
+   "summary": "メーガン妃の実父トーマス・マークルに児童性的虐待の素材所持疑惑…フィリピン警察の捜査と警察の不祥事に揺れる英王室 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-26T07:00:00Z",
+   "first_seen": "2026-10-26T10:57:23Z",
    "tv_match": null,
    "picked": false
   },
@@ -3973,9 +4003,9 @@
    "published": "2026-10-26T06:40:00Z",
    "first_seen": "2026-10-26T08:06:14Z",
    "tv_match": {
-    "title": "ノーベル平和賞のマチャド氏、10カ月ぶりにベネズエラに帰国 早期大統領選挙の実現が焦点",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9uSUpTM3k3TmdLcmZJakhoR29TSUVONlNHaGtKMGhJMVlxemVDWFJSRVdmYnd2VktjdFBfSE90a1ZvY3h4cklCWHU1UnlGZw?oc=5",
+    "title": "ノーベル平和賞を受賞したマチャド氏がベネズエラに帰国 およそ10か月ぶり 早期の大統領選挙実施が実現できるかどうかが焦点",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9zZjdCYmpENmE3bzd6d25Bb3o0cG5BcXZOR3I5SlFSYTFvME5OdzJKTU1WUDJNd0ZZUEROWU14NEtZV3ptSXhaOU1YZWRSYk9VZUhCWDIzYw?oc=5",
     "score": 0.38
    },
    "picked": false
@@ -4268,9 +4298,9 @@
    "published": "2026-10-26T06:05:52Z",
    "first_seen": "2026-10-26T09:02:20Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -4363,6 +4393,20 @@
    "picked": false
   },
   {
+   "id": "747fa0ce4c7ed50d",
+   "title": "低い経済成長率に苦しめられる中国、自身で打ち出したAI輸出規制で自分の首を絞める",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBDMU5jajBYTURHemR5eTB1c3BxcXZPcUJEUGVQVmlBN09Ob0JrNFpaMkhicVd5Y2xWWEFKR2JGTGJ1QTdJZ1p5bEpleXRIeGRKU1U4QnAzNmtpZw?oc=5",
+   "summary": "低い経済成長率に苦しめられる中国、自身で打ち出したAI輸出規制で自分の首を絞める ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-26T06:00:00Z",
+   "first_seen": "2026-10-26T09:02:20Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "90e1c1835cb365c3",
    "title": "GMO不正アクセス 「能動的サイバー防御」より先にやるべきことは",
    "link": "http://www.asahi.com/articles/ASVBV1JK7VBVULZU002M.html?ref=rss",
@@ -4396,20 +4440,6 @@
    "first_seen": "2026-10-26T06:44:37Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261025002325_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "747fa0ce4c7ed50d",
-   "title": "低い経済成長率に苦しめられる中国、自身で打ち出したAI輸出規制で自分の首を絞める",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBDMU5jajBYTURHemR5eTB1c3BxcXZPcUJEUGVQVmlBN09Ob0JrNFpaMkhicVd5Y2xWWEFKR2JGTGJ1QTdJZ1p5bEpleXRIeGRKU1U4QnAzNmtpZw?oc=5",
-   "summary": "低い経済成長率に苦しめられる中国、自身で打ち出したAI輸出規制で自分の首を絞める ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-26T06:00:00Z",
-   "first_seen": "2026-10-26T09:02:20Z",
    "tv_match": null,
    "picked": false
   },
@@ -4994,6 +5024,20 @@
    "picked": false
   },
   {
+   "id": "f8d4db34e84294c3",
+   "title": "ヘグセスがまた失態、アイゼンハワーの歴史的地球儀をスタッフが破損 「レプリカ」と釈明",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE05REhydDBzc0RYU0d6cl8tT09tYnk4RUNQeEFvNzYzX1lXZUQ2TzZyWng1d1pGNUNkc2hJVTBOQ0NZQmRhbjVCZ3NZSVlSakJOOFJ1SGx4ZFc2Zw?oc=5",
+   "summary": "ヘグセスがまた失態、アイゼンハワーの歴史的地球儀をスタッフが破損 「レプリカ」と釈明 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-26T05:00:00Z",
+   "first_seen": "2026-10-26T06:44:37Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "9b66c7b98eba783c",
    "title": "【そもそも解説】中国で始まった「5中全会」って? 注目点を解説",
    "link": "http://www.asahi.com/articles/ASVBT15BDVBTUHBI014M.html?ref=rss",
@@ -5006,20 +5050,6 @@
    "first_seen": "2026-10-26T05:53:06Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261025003717_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "f8d4db34e84294c3",
-   "title": "ヘグセスがまた失態、アイゼンハワーの歴史的地球儀をスタッフが破損 「レプリカ」と釈明",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE05REhydDBzc0RYU0d6cl8tT09tYnk4RUNQeEFvNzYzX1lXZUQ2TzZyWng1d1pGNUNkc2hJVTBOQ0NZQmRhbjVCZ3NZSVlSakJOOFJ1SGx4ZFc2Zw?oc=5",
-   "summary": "ヘグセスがまた失態、アイゼンハワーの歴史的地球儀をスタッフが破損 「レプリカ」と釈明 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-26T05:00:00Z",
-   "first_seen": "2026-10-26T06:44:37Z",
    "tv_match": null,
    "picked": false
   },
@@ -5630,9 +5660,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261024000433_comm.jpg",
    "tv_match": {
-    "title": "混迷のイスラエル総選挙 ネタニヤフ政権に逆風？ 勝敗のカギは「アラブ系政党」",
+    "title": "イスラエル総選挙は野党がリード ネタニヤフ首相の与党劣勢に",
     "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBYSkstY2J5OHVvU0hqSXNTRlpzRlRucDI1cldscnNKY21Mcl8zUWJVblhsT3Boc3VXRjJJU3VrSllYTkEta0dWVmEyVkhkbTh4VHMyTEQyUnAtbWEwckpkeW04YllEWkRtXzE2N0l3X2FPdXNlQm1naHZR?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA5em0wdlJxM1I2VkpRYmtnSVFlOHNwNks4WkQ3ZjJuQU8wS0V1enoyQy1xN20wMEtNaFVONlJqMkZ2QTROWDgxenFfNWpUci00Q3docWV6RUdTYUxPbE4ta2hpODlaZWFNdWJsZHVPUXpuS1Y4QWx3aHR3?oc=5",
     "score": 0.41
    },
    "picked": false
@@ -6864,9 +6894,9 @@
    "published": "2026-10-26T02:03:00Z",
    "first_seen": "2026-10-26T03:55:28Z",
    "tv_match": {
-    "title": "【速報】不正アクセス攻撃者からGMO側に約79億円の要求 熊谷社長が明らかに",
+    "title": "GMO社長「対応が十分でなかった」FX不正アクセスで利用者に被害 「課題、事前に指摘されていた」",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBuRHRNSldiWHd4b1NiQ1FlMk5COW1aYVVjNUhnSnpMUEZnQmZwYVAyYkpWWm5KYkRhR212NGt6U1VvSVNQeXNqZXlrSm93RmZISEVGWjlzVQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9VYmFUTEQ4VFFWQWlFRk5jSmFlVG1qRFZnd1pUMVBhUmRLNjg4TXNLSDJEVEpXZXFPZkNqUWtMOXNub05xOVE3RzZPSnREWVVQQWYtYWZwcw?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -7145,9 +7175,9 @@
    "published": "2026-10-26T01:55:00Z",
    "first_seen": "2026-10-26T06:44:37Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.43
    },
    "picked": false
@@ -7272,20 +7302,6 @@
    "picked": false
   },
   {
-   "id": "2e67dc824407f94f",
-   "title": "ファナック---反発、通期業績上方修正で部材調達問題への懸念も後退",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxONFFuZWtXUkVBWTNIbHREdGNnY1ZPRG8tYXFKYkVjalJielF4NjBmVzBVdGpCZ2hKSWI4ZHhiMlpEbm1lR0s0V3Y2LUstamY4aFhzYzJQLXZnRFl6dWhnRnZwcEtBUWNUSGFqZXdkd0syNGl0ZnlrRC16ejBPUjhuU3c2dHdycW1pVVE4NdIBjAFBVV95cUxONFFuZWtXUkVBWTNIbHREdGNnY1ZPRG8tYXFKYkVjalJielF4NjBmVzBVdGpCZ2hKSWI4ZHhiMlpEbm1lR0s0V3Y2LUstamY4aFhzYzJQLXZnRFl6dWhnRnZwcEtBUWNUSGFqZXdkd0syNGl0ZnlrRC16ejBPUjhuU3c2dHdycW1pVVE4NQ?oc=5",
-   "summary": "ファナック---反発、通期業績上方修正で部材調達問題への懸念も後退 ｄメニューニュース",
-   "outlet": "ｄメニューニュース",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T01:45:00Z",
-   "first_seen": "2026-10-26T05:53:06Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "94d07cb8ef1db087",
    "title": "「専守防衛だけでは日本を守れない」元自衛隊トップが語る憲法9条、核共有、日米同盟の行方",
    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JRW5TVHlCV3lfMmdYVUhkVmJnY3N6ei1DNzdKSXlBSVRJSzRnVDJZQ1JyTXREWVpTS0NFODdiSzJKT29FclVtRjJNb2JEUVBDOEl6d2RXakJfZw?oc=5",
@@ -7293,6 +7309,20 @@
    "outlet": "ニューズウィーク日本版",
    "feed": "ニューズウィーク日本版",
    "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-26T01:45:00Z",
+   "first_seen": "2026-10-26T05:53:06Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2e67dc824407f94f",
+   "title": "ファナック---反発、通期業績上方修正で部材調達問題への懸念も後退",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxONFFuZWtXUkVBWTNIbHREdGNnY1ZPRG8tYXFKYkVjalJielF4NjBmVzBVdGpCZ2hKSWI4ZHhiMlpEbm1lR0s0V3Y2LUstamY4aFhzYzJQLXZnRFl6dWhnRnZwcEtBUWNUSGFqZXdkd0syNGl0ZnlrRC16ejBPUjhuU3c2dHdycW1pVVE4NdIBjAFBVV95cUxONFFuZWtXUkVBWTNIbHREdGNnY1ZPRG8tYXFKYkVjalJielF4NjBmVzBVdGpCZ2hKSWI4ZHhiMlpEbm1lR0s0V3Y2LUstamY4aFhzYzJQLXZnRFl6dWhnRnZwcEtBUWNUSGFqZXdkd0syNGl0ZnlrRC16ejBPUjhuU3c2dHdycW1pVVE4NQ?oc=5",
+   "summary": "ファナック---反発、通期業績上方修正で部材調達問題への懸念も後退 ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
    "lang": "ja",
    "published": "2026-10-26T01:45:00Z",
    "first_seen": "2026-10-26T05:53:06Z",
@@ -8024,6 +8054,20 @@
    "picked": false
   },
   {
+   "id": "92583c509f60c706",
+   "title": "ＵＢＳ移転ならスイスで1.2万人雇用消失も、従業員団体が警告",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15Vkd6VWdBT1VqYk5malpxb09weGpBTlJ0UHAxQk1nMm9LbUVBS1E0RjdNOXA1Q1JLLTJYME9LNnRxeEVJTDUxa0J2RzhlY0h3dkpGR3gzQ0tTdldVTVBjSnM3U2FLSXc?oc=5",
+   "summary": "ＵＢＳ移転ならスイスで1.2万人雇用消失も、従業員団体が警告 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-26T00:59:00Z",
+   "first_seen": "2026-10-26T11:22:29Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "ed0da1b7fd1470ba",
    "title": "Xi Jinping’s corruption crackdown in the spotlight as China prepares for meeting of top leaders",
    "link": "https://www.theguardian.com/world/2026/oct/26/xi-jinping-corruption-crackdown-china-fifth-plenum",
@@ -8154,20 +8198,6 @@
    "picked": false
   },
   {
-   "id": "952241f546c1a2fe",
-   "title": "前島 達也がオルバディーブイエックスヘルスケア株式会社＜2689＞株式の変更報告書を提出（保有減少）",
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMFVZSnNJYnZORXRtejVCZ2lMbWJCbGIyZDkyS2JmRzVxNjI1US1GUGdZVUFFVDhqeU0wOFAwTGtvM3JocHNaVkxaMFJQNThmN1N2b2VYdkFITEk5U21OZ3U2NWtqZ0kwSkduZC1wZXBBeFlxbWF3REF5YnMxa0JoTlpWc2IwNzZLSlHSAYoBQVVfeXFMTzBVWUpzSWJ2TkV0bXo1QmdpTG1iQmxiMmQ5MktiZkc1cTYyNVEtRlBnWVVBRVQ4anlNMDhQMExrbzNyaHBzWlZMWjBSUDU4ZjdTdm9lWHZBSExJOVNtTmd1NjVramdJMEpHbmQtcGVwQXhZcW1hd0RBeWJzMWtCaE5aVnNiMDc2S0pR?oc=5",
-   "summary": "前島 達也がオルバディーブイエックスヘルスケア株式会社＜2689＞株式の変更報告書を提出（保有減少） ｄメニューニュース",
-   "outlet": "ｄメニューニュース",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T00:53:00Z",
-   "first_seen": "2026-10-26T02:53:49Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "c09decdf37d74784",
    "title": "ＡＩ技術活用でハッキング制御可能＝米著名投資家キューバン氏",
    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOLS1kbHlMcngxTjdFbVpyQ2VHWVZnTlIyX0Myc2o5UXdpTmQ5NXhkdXFUdXhBWWZzS1VzSklnbnlXaE80T1dIUm1xdmVJTFRPWlU2NUhVZ2d3aXRaZlZTU29DQnJPYXRxNDJXNFRRU0RaYUcxUXNmajVJNGhESGxORHB0UUcwOEXSAYcBQVVfeXFMTi0tZGx5THJ4MU43RW1ackNlR1lWZ05SMl9DMnNqOVF3aU5kOTV4ZHVxVHV4QVlmc0tVc0pJZ255V2hPNE9XSFJtcXZlSUxUT1pVNjVIVWdnd2l0WmZWU1NvQ0JyT2F0cTQyVzRUUVNEWmFHMVFzZmo1STRoREhsTkRwdFFHMDhF?oc=5",
@@ -8178,6 +8208,20 @@
    "lang": "ja",
    "published": "2026-10-26T00:53:00Z",
    "first_seen": "2026-10-26T03:55:28Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "952241f546c1a2fe",
+   "title": "前島 達也がオルバディーブイエックスヘルスケア株式会社＜2689＞株式の変更報告書を提出（保有減少）",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMFVZSnNJYnZORXRtejVCZ2lMbWJCbGIyZDkyS2JmRzVxNjI1US1GUGdZVUFFVDhqeU0wOFAwTGtvM3JocHNaVkxaMFJQNThmN1N2b2VYdkFITEk5U21OZ3U2NWtqZ0kwSkduZC1wZXBBeFlxbWF3REF5YnMxa0JoTlpWc2IwNzZLSlHSAYoBQVVfeXFMTzBVWUpzSWJ2TkV0bXo1QmdpTG1iQmxiMmQ5MktiZkc1cTYyNVEtRlBnWVVBRVQ4anlNMDhQMExrbzNyaHBzWlZMWjBSUDU4ZjdTdm9lWHZBSExJOVNtTmd1NjVramdJMEpHbmQtcGVwQXhZcW1hd0RBeWJzMWtCaE5aVnNiMDc2S0pR?oc=5",
+   "summary": "前島 達也がオルバディーブイエックスヘルスケア株式会社＜2689＞株式の変更報告書を提出（保有減少） ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-26T00:53:00Z",
+   "first_seen": "2026-10-26T02:53:49Z",
    "tv_match": null,
    "picked": false
   },
@@ -8395,9 +8439,9 @@
    "published": "2026-10-26T00:36:00Z",
    "first_seen": "2026-10-26T03:55:28Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.58
    },
    "picked": false
@@ -10056,9 +10100,9 @@
    "published": "2026-10-25T22:05:00Z",
    "first_seen": "2026-10-26T11:14:04Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.36
    },
    "picked": false
@@ -10075,9 +10119,9 @@
    "published": "2026-10-25T22:05:00Z",
    "first_seen": "2026-10-26T01:14:01Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.36
    },
    "picked": false
@@ -10232,9 +10276,9 @@
    "published": "2026-10-25T21:58:00Z",
    "first_seen": "2026-10-26T02:00:07Z",
    "tv_match": {
-    "title": "ノーベル平和賞のマチャド氏、10カ月ぶりにベネズエラに帰国 早期大統領選挙の実現が焦点",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9uSUpTM3k3TmdLcmZJakhoR29TSUVONlNHaGtKMGhJMVlxemVDWFJSRVdmYnd2VktjdFBfSE90a1ZvY3h4cklCWHU1UnlGZw?oc=5",
+    "title": "ノーベル平和賞を受賞したマチャド氏がベネズエラに帰国 およそ10か月ぶり 早期の大統領選挙実施が実現できるかどうかが焦点",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9zZjdCYmpENmE3bzd6d25Bb3o0cG5BcXZOR3I5SlFSYTFvME5OdzJKTU1WUDJNd0ZZUEROWU14NEtZV3ptSXhaOU1YZWRSYk9VZUhCWDIzYw?oc=5",
     "score": 0.68
    },
    "picked": false
@@ -10670,22 +10714,6 @@
    "picked": false
   },
   {
-   "id": "65dd1bd88fc05c8c",
-   "title": "「Galaxy Z Fold8」「iPhone Duo」を“メイン端末”として使う上での課題 縦型コンテンツの最適化をどう進める？",
-   "link": "https://www.itmedia.co.jp/mobile/articles/2610/26/news038.html",
-   "summary": "横長比率を採用したGalaxy Z Fold8は写真や電子書籍の閲覧に適する一方、縦スクロール型アプリで情報量が減る課題を抱える。Xなど一部アプリは独自UIで対応するが、Yahoo!ニュースやポケモンGOなど最適化不足の例も目立つ。iPhone Duoは未対応アプリが多いものの、アウターディスプレイは合理的な表示レイアウトを採用している。",
-   "outlet": "ITmedia Mobile",
-   "feed": "ITmedia Mobile",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-25T21:00:00Z",
-   "first_seen": "2026-10-25T21:46:13Z",
-   "image_checked": true,
-   "image": "https://image.itmedia.co.jp/mobile/articles/2610/26/cover_news038.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "a3fb7bfb60941eac",
    "title": "ショーウインドーはベニヤ板に覆われ、街角には警察官…厳戒のオルレアンで2万人超が反極右デモ",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFA4dDFRN2g3dVkxUEZqQUlQV3R2eGlwX3AxRm45d1NtUjNScl9rQ2RRRTk5RnNndnU5MElmTkZ5RXR3YUs2Z2xnSnMxRHltdHMzMXM4?oc=5",
@@ -10710,6 +10738,22 @@
    "lang": "ja",
    "published": "2026-10-25T21:00:00Z",
    "first_seen": "2026-10-25T21:46:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "65dd1bd88fc05c8c",
+   "title": "「Galaxy Z Fold8」「iPhone Duo」を“メイン端末”として使う上での課題 縦型コンテンツの最適化をどう進める？",
+   "link": "https://www.itmedia.co.jp/mobile/articles/2610/26/news038.html",
+   "summary": "横長比率を採用したGalaxy Z Fold8は写真や電子書籍の閲覧に適する一方、縦スクロール型アプリで情報量が減る課題を抱える。Xなど一部アプリは独自UIで対応するが、Yahoo!ニュースやポケモンGOなど最適化不足の例も目立つ。iPhone Duoは未対応アプリが多いものの、アウターディスプレイは合理的な表示レイアウトを採用している。",
+   "outlet": "ITmedia Mobile",
+   "feed": "ITmedia Mobile",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-25T21:00:00Z",
+   "first_seen": "2026-10-25T21:46:13Z",
+   "image_checked": true,
+   "image": "https://image.itmedia.co.jp/mobile/articles/2610/26/cover_news038.jpg",
    "tv_match": null,
    "picked": false
   },
@@ -10962,6 +11006,62 @@
    "picked": false
   },
   {
+   "id": "57b737142040d2a1",
+   "title": "岩屋毅前外相が高市首相の台湾有事発言「事実上の訂正」を提案 王毅外相との「撤回」めぐるやりとり明かす",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBQbFZYYVRtQ050WTdoNndfS3lhNEZsajdPNkduNWJncjZmbWtPR2dlRlFZRk1GREF1ZEtrN19ILUJEcm9xd2N3aDJtUFZTSThhWXBJ?oc=5",
+   "summary": "岩屋毅前外相が高市首相の台湾有事発言「事実上の訂正」を提案 王毅外相との「撤回」めぐるやりとり明かす 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-25T20:00:00Z",
+   "first_seen": "2026-10-25T22:43:54Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "e09807c999356b5e",
+   "title": "税務統計が映す「超」格差社会ニッポン ―2024年分データから―",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0xZWdHcUs4bEpiQnRKMFRMOHF1UjNVZnN2RmthWER6T0pnU3FBYlpQMWNoYmdyV3M4bXBUUndybHV4aS14UkdsZmNfYmpIaEpsNFdR?oc=5",
+   "summary": "税務統計が映す「超」格差社会ニッポン ―2024年分データから― 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-25T20:00:00Z",
+   "first_seen": "2026-10-26T01:14:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "8e178b237e8036ce",
+   "title": "「皆さんの取り分が減ります」あおるデベロッパー 再開発「駆け込み」続々 地権者合意「水増し」してでも",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE91bEptUjluRVZtRFlMOHRPNk5oWlZyMmMzVUo3V05qdDBRdjBtQTMxYmxkckhWRXF0QUpTbEwyOENIYm5fdnpMRnlOTEpja0h5Z3JZ?oc=5",
+   "summary": "「皆さんの取り分が減ります」あおるデベロッパー 再開発「駆け込み」続々 地権者合意「水増し」してでも 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-25T20:00:00Z",
+   "first_seen": "2026-10-26T01:14:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "6fb0e70c3c47b15b",
+   "title": "斜面に広がるハーベストゴールドがまぶしくて 能登半島記者の取材日記「9月11日～17日」",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB4eXNlMEVfWjlnYXhZaVA1TC00enFQN1plLWhLOXkzbWxucmNiMHVuQV92THN0cnRkQlRVNGIzajhkcGJTdElwckRSWUhONmtlbWlv?oc=5",
+   "summary": "斜面に広がるハーベストゴールドがまぶしくて 能登半島記者の取材日記「9月11日～17日」 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-25T20:00:00Z",
+   "first_seen": "2026-10-26T01:14:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "f9f41744899d9dd8",
    "title": "情報通信審議会 電気通信事業政策部会 消費者保護政策委員会（第11回）",
    "link": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/shohishahogo/02kiban08_04000529.html",
@@ -11070,62 +11170,6 @@
    "first_seen": "2026-10-25T15:47:57Z",
    "image_checked": true,
    "image": "https://www.soumu.go.jp/main_content/000372150.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "57b737142040d2a1",
-   "title": "岩屋毅前外相が高市首相の台湾有事発言「事実上の訂正」を提案 王毅外相との「撤回」めぐるやりとり明かす",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBQbFZYYVRtQ050WTdoNndfS3lhNEZsajdPNkduNWJncjZmbWtPR2dlRlFZRk1GREF1ZEtrN19ILUJEcm9xd2N3aDJtUFZTSThhWXBJ?oc=5",
-   "summary": "岩屋毅前外相が高市首相の台湾有事発言「事実上の訂正」を提案 王毅外相との「撤回」めぐるやりとり明かす 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-25T20:00:00Z",
-   "first_seen": "2026-10-25T22:43:54Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "e09807c999356b5e",
-   "title": "税務統計が映す「超」格差社会ニッポン ―2024年分データから―",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0xZWdHcUs4bEpiQnRKMFRMOHF1UjNVZnN2RmthWER6T0pnU3FBYlpQMWNoYmdyV3M4bXBUUndybHV4aS14UkdsZmNfYmpIaEpsNFdR?oc=5",
-   "summary": "税務統計が映す「超」格差社会ニッポン ―2024年分データから― 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-25T20:00:00Z",
-   "first_seen": "2026-10-26T01:14:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8e178b237e8036ce",
-   "title": "「皆さんの取り分が減ります」あおるデベロッパー 再開発「駆け込み」続々 地権者合意「水増し」してでも",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE91bEptUjluRVZtRFlMOHRPNk5oWlZyMmMzVUo3V05qdDBRdjBtQTMxYmxkckhWRXF0QUpTbEwyOENIYm5fdnpMRnlOTEpja0h5Z3JZ?oc=5",
-   "summary": "「皆さんの取り分が減ります」あおるデベロッパー 再開発「駆け込み」続々 地権者合意「水増し」してでも 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-25T20:00:00Z",
-   "first_seen": "2026-10-26T01:14:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "6fb0e70c3c47b15b",
-   "title": "斜面に広がるハーベストゴールドがまぶしくて 能登半島記者の取材日記「9月11日～17日」",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB4eXNlMEVfWjlnYXhZaVA1TC00enFQN1plLWhLOXkzbWxucmNiMHVuQV92THN0cnRkQlRVNGIzajhkcGJTdElwckRSWUhONmtlbWlv?oc=5",
-   "summary": "斜面に広がるハーベストゴールドがまぶしくて 能登半島記者の取材日記「9月11日～17日」 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-25T20:00:00Z",
-   "first_seen": "2026-10-26T01:14:01Z",
    "tv_match": null,
    "picked": false
   },
@@ -12586,9 +12630,9 @@
   },
   {
    "id": "2a04f0b177e562af",
-   "title": "那覇市長に知念覚氏再選 新人３人破る",
+   "title": "那覇市長に知念覚氏再選 新人３人破る：時事ドットコム",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE54LUpqQk1pODRkZ1M4UHNITldZUll4VTJlMnNHeTMwNU15aWp0Z3NBeHRuSERFaXhWYWpjUnNxekVMRGZKbFZxV1hQMS10Ti1YNzBKUVhLZlBJcy1NUnFqVUE0WQ?oc=5",
-   "summary": "那覇市長に知念覚氏再選 新人３人破る 時事ドットコム",
+   "summary": "那覇市長に知念覚氏再選 新人３人破る：時事ドットコム 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -14076,9 +14120,9 @@
    "published": "2026-10-25T11:11:00Z",
    "first_seen": "2026-10-25T15:47:57Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.38
    },
    "picked": false
@@ -14916,9 +14960,9 @@
    "published": "2026-10-25T09:29:49Z",
    "first_seen": "2026-10-26T03:55:28Z",
    "tv_match": {
-    "title": "【26日の天気】九州～東北は広く雨でヒンヤリ 局地的に激しい雨も（2026年10月25日掲載）｜日テレNEWS NNN",
+    "title": "福岡・広川町で車2台の衝突事故 女性1人が死亡 男女4人ケガ（2026年10月25日掲載）｜FBS NEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1lMmZJOUFVMkhROEM0UFZnNWF4dXJLQ25LMU9GNllGU2Z6V1o3RnNBTjZucGo5cThETEUyX0F6ODBRTkNCTVpPUE5aM1lUSW9WNUpwU3VqRFVFckowZFNGeTFJeG5VRkJXaUs5cTNGV1BXa1U4LXJuM21CNGQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV1VpSnpaOFhHUU84MFZuRTd5cklnNTBDTG56WklLZDlFbEVCWXYtMjB3S1BkUmFuZnlPc3kwMmdhMWdZUUhqMGlhYUZOdFpvQjROQ1hMOWhZTHRQYnBfcWhieHY3dDlIN29QSVNsWDlGR0Jja2Q5RzJiQUZrdkVDTjB4b2xxYk0?oc=5",
     "score": 0.36
    },
    "picked": false
@@ -15198,9 +15242,9 @@
    "published": "2026-10-25T08:57:36Z",
    "first_seen": "2026-10-25T14:47:49Z",
    "tv_match": {
-    "title": "【26日の天気】九州～東北は広く雨でヒンヤリ 局地的に激しい雨も（2026年10月25日掲載）｜日テレNEWS NNN",
+    "title": "福岡・広川町で車2台の衝突事故 女性1人が死亡 男女4人ケガ（2026年10月25日掲載）｜FBS NEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1lMmZJOUFVMkhROEM0UFZnNWF4dXJLQ25LMU9GNllGU2Z6V1o3RnNBTjZucGo5cThETEUyX0F6ODBRTkNCTVpPUE5aM1lUSW9WNUpwU3VqRFVFckowZFNGeTFJeG5VRkJXaUs5cTNGV1BXa1U4LXJuM21CNGQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV1VpSnpaOFhHUU84MFZuRTd5cklnNTBDTG56WklLZDlFbEVCWXYtMjB3S1BkUmFuZnlPc3kwMmdhMWdZUUhqMGlhYUZOdFpvQjROQ1hMOWhZTHRQYnBfcWhieHY3dDlIN29QSVNsWDlGR0Jja2Q5RzJiQUZrdkVDTjB4b2xxYk0?oc=5",
     "score": 0.36
    },
    "picked": false
@@ -18314,9 +18358,9 @@
    "published": "2026-10-25T00:56:21Z",
    "first_seen": "2026-10-25T10:47:53Z",
    "tv_match": {
-    "title": "混迷のイスラエル総選挙 ネタニヤフ政権に逆風？ 勝敗のカギは「アラブ系政党」",
+    "title": "イスラエル総選挙は野党がリード ネタニヤフ首相の与党劣勢に",
     "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBYSkstY2J5OHVvU0hqSXNTRlpzRlRucDI1cldscnNKY21Mcl8zUWJVblhsT3Boc3VXRjJJU3VrSllYTkEta0dWVmEyVkhkbTh4VHMyTEQyUnAtbWEwckpkeW04YllEWkRtXzE2N0l3X2FPdXNlQm1naHZR?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA5em0wdlJxM1I2VkpRYmtnSVFlOHNwNks4WkQ3ZjJuQU8wS0V1enoyQy1xN20wMEtNaFVONlJqMkZ2QTROWDgxenFfNWpUci00Q3docWV6RUdTYUxPbE4ta2hpODlaZWFNdWJsZHVPUXpuS1Y4QWx3aHR3?oc=5",
     "score": 0.52
    },
    "picked": false
@@ -19406,9 +19450,9 @@
    "published": "2026-10-24T22:13:47Z",
    "first_seen": "2026-10-25T04:51:00Z",
    "tv_match": {
-    "title": "【26日の天気】九州～東北は広く雨でヒンヤリ 局地的に激しい雨も（2026年10月25日掲載）｜日テレNEWS NNN",
+    "title": "福岡・広川町で車2台の衝突事故 女性1人が死亡 男女4人ケガ（2026年10月25日掲載）｜FBS NEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1lMmZJOUFVMkhROEM0UFZnNWF4dXJLQ25LMU9GNllGU2Z6V1o3RnNBTjZucGo5cThETEUyX0F6ODBRTkNCTVpPUE5aM1lUSW9WNUpwU3VqRFVFckowZFNGeTFJeG5VRkJXaUs5cTNGV1BXa1U4LXJuM21CNGQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV1VpSnpaOFhHUU84MFZuRTd5cklnNTBDTG56WklLZDlFbEVCWXYtMjB3S1BkUmFuZnlPc3kwMmdhMWdZUUhqMGlhYUZOdFpvQjROQ1hMOWhZTHRQYnBfcWhieHY3dDlIN29QSVNsWDlGR0Jja2Q5RzJiQUZrdkVDTjB4b2xxYk0?oc=5",
     "score": 0.59
    },
    "picked": false
@@ -22737,9 +22781,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261024003290_comm.jpg",
    "tv_match": {
-    "title": "「要請の有無にかかわらず警察や防衛省・自衛隊において適切に判断」木原官房長官 GMOが緊急要請した「能動的サイバー防御」めぐり",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1NTlRjVEVXZUo5UW5jclhEUVpyc1pNNHE2em9iS0haSURHYU9FYXdfVVlMam9heHRDbW1Id1RoRThmR2g3czRVLXVPZElsZjBxeGxfV0Z5UQ?oc=5",
+    "title": "GMO会長謝罪「能動的サイバー防御」適用を政府に緊急要請 「次は預金口座」警告",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1BbVFGeGN4MlJVWUNLcXdSb3JfN2JpdnV2c014M05FeENjenhGd2lLWTdySlNpWjZQZGRoRTAtYVo2MzgyWVU4OVlMc2xXVHpud0hvNWduUFVINGN5UHZyOFhKbVFudGVZRmxlb2V0N2dfZlU?oc=5",
     "score": 0.56
    },
    "picked": false
@@ -26304,9 +26348,9 @@
    "published": "2026-10-24T04:45:25Z",
    "first_seen": "2026-10-24T07:01:24Z",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.44
    },
    "picked": false
@@ -29919,9 +29963,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/23/20261023k0000m030394000p/0c10.jpg?1",
    "tv_match": {
-    "title": "ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り通算4期目の当選 生活保護支給額の増額などで票獲得",
+    "title": "【速報】ブラジル大統領選挙・決選投票 左派で現職のルラ候補が勝利 ボルソナロ氏破り再選 生活保護支給額の増額などで票獲得",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FdlJaZTVsbk1iektQNnM3R01Ydjc1TmtqWDhJN0lfcU15ckdIY1R3Z1hEb1NqazNXNkx3RTJMZmZ0XzlvOFdqMVZON3NUelk5NzkyeW42OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1kNnFEQjNtS0NQOFo4VDR4cU0yOFBaZEtfS3hkdXB3ekxDWElJcjkyalVydkxPTHExSDZ0RVh5XzBvOXJheFdhRC1VMTBaZGx5ZVRQNWpWcw?oc=5",
     "score": 0.42
    },
    "picked": false
@@ -100789,43 +100833,6 @@
    "first_seen": "2026-10-19T11:52:25Z",
    "tv_match": "unknown",
    "picked": false
-  },
-  {
-   "id": "93dc81ea48115c18",
-   "title": "【随時更新】個人情報の漏洩の恐れ、公表した主な企業一覧",
-   "link": "http://www.asahi.com/articles/ASVB83VWFVB8UEFT00JM.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-19T11:22:18Z",
-   "first_seen": "2026-10-19T11:52:25Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261016001078_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8399aeec8b10601a",
-   "title": "住宅「半壊」の世帯に千葉県独自の支援金 8月豪雨と台風25号",
-   "link": "https://mainichi.jp/articles/20261019/k00/00m/310/219000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-19T11:21:09Z",
-   "first_seen": "2026-10-19T11:52:25Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/19/20261019k0000m310222000p/0c10.jpg?1",
-   "tv_match": {
-    "title": "台風25号から1か月 千葉県内で今も76人避難、鉄道運休続く中…県が「半壊世帯」など独自支援策発表",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE44UlVRMGtlUGtfZ0lrWTYyUFpUejdlV3p5UDlzQ20yeDJ1Zy1VX0lhLUJMMUJ2UnRlTXhrQ3RGaVg3a0pNb2NBZmFzZm9JWktyNEx1UF85VQ?oc=5",
-    "score": 0.38
-   },
-   "picked": false
   }
  ],
  "tv": [
@@ -101032,6 +101039,18 @@
    "lang": "ja",
    "published": "2026-10-26T09:53:00Z",
    "first_seen": "2026-10-26T10:57:23Z"
+  },
+  {
+   "id": "912bfa2dcd3731ba",
+   "title": "ここでしか聞けない！出演者に聞く“稼ぐ”秘訣【経済WEEK】",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1NT0JDYnl1aTJoZ2ttd0JfMmg2SWlhMXdCa2dzS2NHWnJkTENBak5zNVRTUWRSaEpxUmxaYXZHYzB2NHNMU2szbVJKNXh0T0dSdXhiVUdZTQ?oc=5",
+   "summary": "ここでしか聞けない！出演者に聞く“稼ぐ”秘訣【経済WEEK】 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-26T09:47:30Z",
+   "first_seen": "2026-10-26T11:22:29Z"
   },
   {
    "id": "fc91f303117f3352",
@@ -101476,6 +101495,18 @@
    "lang": "ja",
    "published": "2026-10-26T06:13:12Z",
    "first_seen": "2026-10-26T08:06:14Z"
+  },
+  {
+   "id": "ca916fe28f77e341",
+   "title": "WBS 豊島晋作キャスター・田中瞳キャスターに聞く！“稼ぐ”秘訣｜SPECIALコンテンツ",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5rNDhLRlo2ZGtPSFN3RDdxREt1RThEaUdvSmMzRlRaWjZydXR2eVpoU0pjRjg2TXVfMWMzM3ctRjZVRVhuVTlXazVLdWduSllfUzNCb24wLUphTmxNZVVsa29oM2Y?oc=5",
+   "summary": "WBS 豊島晋作キャスター・田中瞳キャスターに聞く！“稼ぐ”秘訣｜SPECIALコンテンツ テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-26T06:00:00Z",
+   "first_seen": "2026-10-26T11:22:29Z"
   },
   {
    "id": "dcd6a2df354104a0",
@@ -120920,42 +120951,6 @@
    "lang": "ja",
    "published": "2026-10-19T11:32:20Z",
    "first_seen": "2026-10-19T11:52:25Z"
-  },
-  {
-   "id": "2962a1d7bd73e588",
-   "title": "黒部峡谷の水平歩道に“無人のテント” 57歳男性が行方不明 県警ヘリ捜索も見つからず クマに襲われた形跡なし 富山",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9paEhqYWdCdDRoclJPS2MwWjhaVFdLLU95R1lGbE1IYWpZU2s5VHBpNFJ5b0dlOVZJWFNDcEUzWFZWLTZ4TjFHbzhycjJHYXAzOTJaWXFINA?oc=5",
-   "summary": "黒部峡谷の水平歩道に“無人のテント” 57歳男性が行方不明 県警ヘリ捜索も見つからず クマに襲われた形跡なし 富山 TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-19T11:21:00Z",
-   "first_seen": "2026-10-19T22:47:49Z"
-  },
-  {
-   "id": "516fcd63844cdbf2",
-   "title": "上履きの中敷き窃盗容疑の男 警察は単独犯とみて県内複数中高での被害との関連を捜査 富山県高岡市",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNU3RTQWt3dnMyeGp6S0ZobDUyODFxZ0ZfVWg5ZVJSdm93TjFPZDJDdDZzZjk1bVNRQ3VJMURkRVFUalBGdnltUnVzX0RQaFFPbFNKSlBxc0ZsUnlZYnJQQ0k4NEF6cmFmbXBsdUlsRlBfMllfZm5aUXc1RjczcVhGb1NUYS1PaUE?oc=5",
-   "summary": "上履きの中敷き窃盗容疑の男 警察は単独犯とみて県内複数中高での被害との関連を捜査 富山県高岡市 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-19T11:20:00Z",
-   "first_seen": "2026-10-20T02:51:45Z"
-  },
-  {
-   "id": "4f28b0d7e5f92c28",
-   "title": "自動運転で止まらず 日比谷線300m通過 なぜ",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5RckJJaFlqV0g1VGRlSnphS0VkbTdIdmRxdDRodWdQMm92b2hpSWhsaWdBamtTdmZlbGZQM0xSakktX096ODFodWVYc0VRazlra2E3a1EtUEpxM2E4WjdtS1ZsSHRqc0Q1MFpqNzRKc2ZtQQ?oc=5",
-   "summary": "自動運転で止まらず 日比谷線300m通過 なぜ テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-19T11:19:00Z",
-   "first_seen": "2026-10-19T19:00:27Z"
   }
  ]
 }
