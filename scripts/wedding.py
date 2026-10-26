@@ -146,6 +146,45 @@ def overlaps(periods, target):
                for p in cer)
 
 
+_JSON_FILES = re.compile(r"jsonFiles\s*:\s*\[\s*['\"]([^'\"]+)['\"]")
+_DATA_FOLDER = re.compile(r"dataFolder\s*:\s*['\"]([^'\"]*)['\"]")
+
+
+def fair_plans(page_url, page_title, raw, area):
+    """HIS sale pages fill in their plans from a JSON file; read it and return one pseudo-page per plan in the area."""
+    files, folder = _JSON_FILES.search(raw), _DATA_FOLDER.search(raw)
+    if not files:
+        return {}
+    url = urllib.parse.urljoin(page_url, (folder.group(1) if folder else "") + files.group(1) + ".json")
+    try:
+        data = json.loads(fetch(url)[4].decode("utf-8-sig", "replace"))
+    except Exception as e:
+        print(f"wedding: {url}: {e}", file=sys.stderr)
+        return {}
+    plans = {}
+    for key, entries in data.items():
+        if not key.startswith("avanti--") or not isinstance(entries, list):
+            continue
+        for p in entries:
+            if not isinstance(p, dict) or p.get("disp") != "○" or not area.search(p.get("area_name", "") + key):
+                continue
+            name = re.sub(r"<[^>]+>", "", p.get("title_plan", "")).strip()
+            deal = f"【{p['limit']}組限定】" if p.get("limit") else ""
+            if p.get("discount"):
+                deal += f"{p.get('yaku', '')}{p['discount']}万円引き"
+            price = f"おふたりで {p['listprice_01']}円{p.get('pricemax', '')}" if p.get("listprice_01") else ""
+            text = "\n".join(x for x in [
+                name,
+                f"対象挙式期間：{p['kikan_dtl']}" if p.get("kikan_dtl") else "",
+                f"お申込期間：{p['kikan_application']}" if p.get("kikan_application") else "",
+                deal, price, p.get("prm", ""),
+                html.unescape(re.sub(r"<[^>]+>", " ", p.get("pkg_01_dtl", ""))),
+            ] if x)
+            code = p.get("code") if p.get("code") not in (None, "", "なし") else f"{key}-{p.get('no', '')}"
+            plans[f"{page_url}#{code}"] = {"title": f"{page_title}：{name}", "text": text, "plan": True}
+    return plans
+
+
 def crawl_source(src, venues, area, max_pages):
     """Fetch the seed pages and the campaign-looking links on them (one level deep, same site)."""
     pages, probe = {}, []
@@ -187,12 +226,13 @@ def crawl_source(src, venues, area, max_pages):
         final = final.replace(":443/", "/", 1)
         entry = {"url": final, "status": status, "type": ctype, "chars": len(text), "title": title[:80],
                  "links": len(links), "head": re.sub(r"\s+", " ", text[:300])}
-        if src.get("debug") and ctype != "application/pdf":
-            entry["assets"] = sorted(set(re.findall(r"[\"'(]([^\"'()\s]+\.(?:json|js|pdf)(?:\?[^\"'()\s]*)?)[\"')]", raw)))[:60]
-            entry["anchors"] = [h for h, _ in _LINK.findall(raw)][:80]
-            entry["text"] = text[:6000]
         probe.append(entry)
         pages[final] = {"title": title, "text": text}
+        if ctype != "application/pdf" and not final.lower().endswith(".pdf"):
+            plans = fair_plans(final, title, raw, area)
+            if plans:
+                entry["plans"] = len(plans)
+                pages.update(plans)
         if url in src["seeds"]:
             queue.extend(l for l in dict.fromkeys(links) if l not in seen)
     return pages, probe
@@ -249,13 +289,14 @@ def main():
         pages, probe = crawl_source(src, any_venue, area, config.get("max_pages_per_source", 30))
         probes.append({"source": src["name"], "pages": probe})
         # Menus and footers repeat on every page of a site and name every chapel; drop lines found on most pages.
-        if len(pages) >= 3:
+        real = [page for page in pages.values() if not page.get("plan")]
+        if len(real) >= 3:
             counts = {}
-            for page in pages.values():
+            for page in real:
                 for line in set(page["text"].split("\n")):
                     counts[line] = counts.get(line, 0) + 1
-            common = {line for line, n in counts.items() if n >= max(2, len(pages) // 2)}
-            for page in pages.values():
+            common = {line for line, n in counts.items() if n >= max(2, len(real) // 2)}
+            for page in real:
                 page["text"] = "\n".join(l for l in page["text"].split("\n") if l not in common)
         for url, page in pages.items():
             text = page["text"]
