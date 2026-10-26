@@ -354,6 +354,26 @@ button.chip { font: inherit; font-size: 13px; }
 .ai-case dt { font-weight: 600; color: var(--muted); font-size: 12px; }
 .ai-case dd { margin: 0; }
 .ai-case .src { font-size: 12px; margin-top: 6px; }
+.wd-list { display: grid; }
+.wd-card { padding: 14px 18px; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
+.wd-card:last-child { border-bottom: 0; }
+.wd-card .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.wd-card .tags span { font-size: 11.5px; border-radius: 999px; padding: 1px 8px; background: var(--bg); color: var(--muted); }
+.wd-card .tags .src { background: var(--wave-soft); color: var(--wave); }
+.wd-card .tags .new { background: var(--out); color: var(--sheet); font-weight: 600; }
+.wd-card .tags .gone { background: var(--unknown); color: var(--sheet); }
+.wd-card h3 { margin: 0; font-size: 15.5px; line-height: 1.5; overflow-wrap: anywhere; }
+.wd-card .periods { display: grid; gap: 2px; font-size: 13.5px; }
+.wd-card .periods b { display: inline-block; min-width: 5.5em; font-size: 12px; color: var(--muted); font-weight: 500; }
+.wd-card .periods .soon { color: var(--out); font-weight: 600; margin-left: 6px; }
+.wd-card .periods .over { color: var(--unknown); margin-left: 6px; }
+.wd-card ul { margin: 0; padding-left: 1.1em; font-size: 13.5px; color: var(--ink); display: grid; gap: 2px; }
+.wd-empty { padding: 16px 18px; color: var(--muted); font-size: 14px; }
+.wd-more > summary { cursor: pointer; list-style: none; }
+.wd-more > summary::-webkit-details-marker { display: none; }
+.wd-more > summary h2::before { content: "▸ "; color: var(--muted); }
+.wd-more[open] > summary h2::before { content: "▾ "; }
+#wd-venue { margin: 12px 0; }
 .co-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
 .co-switch a { text-decoration: none; padding: 4px 14px; }
 .co-switch a[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
@@ -457,6 +477,7 @@ button.chip { font: inherit; font-size: 13px; }
       <a href="#softbank" id="tab-company">対策</a>
       <a href="#cyber" id="tab-cyber">サイバー攻撃</a>
       <a href="#industry-ai" id="tab-ai">業界AI</a>
+      <a href="#wedding" id="tab-wedding">式場</a>
       <a href="network.html" id="tab-net">ネットワーク</a>
     </nav>
     <nav class="jump" id="news-nav" aria-label="ニュースの中のリンク">
@@ -619,6 +640,34 @@ button.chip { font: inherit; font-size: 13px; }
     <div id="cy-news"></div>
   </section>
   <p class="credit">データ：<a href="https://radar.cloudflare.com/security" target="_blank" rel="noopener">Cloudflare Radar</a>（CC BY-NC 4.0）。Cloudflare のネットワークで観測・防御した攻撃の統計で、世界のすべての攻撃ではありません。攻撃元の国は攻撃に使われた通信の出どころで、攻撃者の国籍とは限りません。</p>
+</div>
+
+<div id="wedding-view" class="wrap" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap" id="wd-checked">確認中…</div>
+      <h1>式場フェア・キャンペーン</h1>
+      <p>グアムの <b>ジュエル・バイ・ザ・シー</b> と <b>クリスタルチャペル</b> のフェア・キャンペーンを、アールイズ・ウエディング、HISウェディング、JTBウエディングの公式ページから1日1回集めています。<b>2027年7〜12月の挙式</b>が対象のものを一番上に出します。</p>
+    </div>
+  </div>
+  <div class="row" id="wd-venue"></div>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>2027年7〜12月の挙式が対象</h2><span class="cap" id="wd-hit-count"></span></div>
+    <div id="wd-hit"></div>
+  </section>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>対象の挙式期間が読み取れないもの</h2><span class="cap">公式ページで期間を確認</span></div>
+    <div id="wd-unknown"></div>
+  </section>
+  <details class="sheet note-sheet wd-more">
+    <summary class="sheet-head"><h2>ほかの時期の挙式が対象（参考）</h2><span class="cap" id="wd-miss-count"></span></summary>
+    <div id="wd-miss"></div>
+  </details>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>読みに行っているページ</h2></div>
+    <div class="pad"><ul class="sources" id="wd-sources"></ul>
+    <p class="note">期間や割引額はページの文字から自動で読み取っているので、読み違えることがあります。申し込む前に必ず公式ページで確認してください。</p></div>
+  </section>
 </div>
 
 <div id="ai-view" class="wrap" hidden>
@@ -2107,18 +2156,70 @@ button.chip { font: inherit; font-size: 13px; }
     box.replaceChildren(list.length ? el("div", { class: "cards" }, ...list.map(entry)) : el("div", { class: "empty" }, "直近7日間に、該当する記事はまだありません。"));
   }
 
+  // ---------------- Wedding fairs & campaigns (docs/data/wedding.json, from scripts/wedding.py) ----------------
+  const wd = { data: undefined, venue: "すべて" };
+  const ymd = (iso) => { const [y, m, d] = iso.split("-").map(Number); return `${y}年${m}月${d}日`; };
+  function periodRow(label, p) {
+    if (!p) return null;
+    const range = p.start ? `${ymd(p.start)}〜${ymd(p.end)}` : `${ymd(p.end)}まで`;
+    const left = Math.ceil((new Date(`${p.end}T23:59:59+09:00`) - Date.now()) / 86400000);
+    const note = label !== "申込" ? null : left < 0 ? el("span", { class: "over" }, "受付終了") : left <= 14 ? el("span", { class: "soon" }, `あと${left}日`) : null;
+    return el("div", {}, el("b", {}, label === "申込" ? "申込期間" : label === "挙式" ? "対象の挙式" : "期間"), range, note);
+  }
+  function wdCard(it) {
+    const since = new Date(wd.data.since || 0), first = new Date(it.first_seen);
+    const isNew = !it.gone && first - since > 86400000 && Date.now() - first < 14 * 86400000;
+    const cer = it.periods.find((p) => p.kind === "ceremony"), apply = it.periods.find((p) => p.kind === "apply");
+    const other = !cer && !apply ? it.periods.find((p) => p.kind === "other") : null;
+    return el("article", { class: "wd-card" },
+      el("div", { class: "tags" }, isNew ? el("span", { class: "new" }, "NEW") : null, it.gone ? el("span", { class: "gone" }, "掲載終了") : null,
+        el("span", { class: "src" }, it.source), ...it.venues.map((v) => el("span", {}, v))),
+      el("h3", {}, el("a", { href: it.url, target: "_blank", rel: "noopener" }, it.title)),
+      el("div", { class: "periods" }, periodRow("挙式", cer), periodRow("申込", apply), periodRow("期間", other)),
+      it.highlights.length ? el("ul", {}, ...it.highlights.slice(0, 4).map((h) => el("li", {}, h))) : null);
+  }
+  function wdFill(id, list, empty) {
+    $(id).replaceChildren(list.length ? el("div", { class: "wd-list" }, ...list.map(wdCard)) : el("div", { class: "wd-empty" }, empty));
+  }
+  async function renderWedding() {
+    if (wd.data === undefined) {
+      $("wd-checked").textContent = "読み込み中…";
+      wd.data = await fetch("data/wedding.json", { cache: "no-cache" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+    }
+    const d = wd.data;
+    if (!d) { $("wd-checked").textContent = "まだ確認していません"; wdFill("wd-hit", [], "まだデータがありません。次の自動更新をお待ちください。"); return; }
+    $("wd-checked").textContent = `最終確認 ${fullFmt.format(new Date(d.generated_at))}（1日1回）`;
+    $("wd-venue").replaceChildren(el("span", { class: "cap" }, "式場"), ...["すべて", ...d.venues].map((v) =>
+      el("button", { type: "button", class: "chip", "aria-pressed": String(wd.venue === v), onclick: () => { wd.venue = v; renderWedding(); } }, v)));
+    // "グアム全体" campaigns apply to every Guam chapel, so they show under each venue too.
+    const items = d.items.filter((it) => wd.venue === "すべて" || it.venues.includes(wd.venue) || it.venues.includes("グアム全体"))
+      .sort((a, b) => (a.gone ? 1 : 0) - (b.gone ? 1 : 0) || b.first_seen.localeCompare(a.first_seen));
+    const hit = items.filter((it) => it.target_match === true), unknown = items.filter((it) => it.target_match == null), miss = items.filter((it) => it.target_match === false);
+    $("wd-hit-count").textContent = `${hit.length}件`;
+    $("wd-miss-count").textContent = `${miss.length}件`;
+    wdFill("wd-hit", hit, "まだ出ていません。2027年7〜12月の挙式が対象のキャンペーンが出たら、ここに NEW 付きで表示します。");
+    wdFill("wd-unknown", unknown, "ありません。");
+    wdFill("wd-miss", miss, "ありません。");
+    const failed = new Set(d.probe.flatMap((p) => p.pages.filter((x) => x.error).map((x) => x.url)));
+    $("wd-sources").replaceChildren(...d.probe.map((p) => {
+      const ok = p.pages.filter((x) => !x.error).length;
+      return el("li", {}, el("a", { href: d.sources.find((s) => s.name === p.source)?.url, target: "_blank", rel: "noopener" }, p.source),
+        `：${ok}ページ読めました`, p.pages.some((x) => x.error) ? `（${[...failed].filter((u) => p.pages.some((x) => x.url === u)).length}ページはサイト側で拒否）` : "");
+    }));
+  }
+
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai";
-    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : "home";
+    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai", wedding = h === "#wedding";
+    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : wedding ? "wedding" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
-    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai";
+    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai"; $("wedding-view").hidden = view !== "wedding";
     $("recipe-credit").hidden = view !== "recipe";
-    $("news-nav").hidden = recipes || company || cyber || ai;
-    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : "tab-news";
-    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
+    $("news-nav").hidden = recipes || company || cyber || ai || wedding;
+    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : wedding ? "tab-wedding" : "tab-news";
+    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai", "tab-wedding"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
     if (company) {
       for (const k of Object.keys(COMPANIES)) {
         $("co-" + k).hidden = k !== company;
@@ -2127,6 +2228,7 @@ button.chip { font: inherit; font-size: 13px; }
       renderCompanyNews(company); window.scrollTo(0, 0);
     }
     if (cyber) { renderCyber(); window.scrollTo(0, 0); }
+    if (wedding) { renderWedding(); window.scrollTo(0, 0); }
     if (ai) { renderAiMatrix(); showAiView(aiState.view); renderAiNews(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }

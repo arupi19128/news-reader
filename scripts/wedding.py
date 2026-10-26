@@ -255,6 +255,8 @@ def main():
 
     data = {
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        # When checking started; pages already there on the first check are not marked NEW.
+        "since": old.get("since", now.strftime("%Y-%m-%dT%H:%M:%SZ")),
         "config_hash": config_hash,
         "target": target,
         "venues": [v["name"] for v in config["venues"]],
