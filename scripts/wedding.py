@@ -150,6 +150,18 @@ _JSON_FILES = re.compile(r"jsonFiles\s*:\s*\[\s*['\"]([^'\"]+)['\"]")
 _DATA_FOLDER = re.compile(r"dataFolder\s*:\s*['\"]([^'\"]*)['\"]")
 
 
+_MONTHS = re.compile(r"(\d{4})年(\d{1,2})月\s*[~～〜\-－]\s*(?:(\d{4})年)?(\d{1,2})月(?!\s*\d)")
+
+
+def month_range(text):
+    """'2026年10月～2027年9月' -> '2026年10月1日～2027年9月30日' (plans often give whole months)."""
+    def full(m):
+        y1, m1, y2, m2 = int(m.group(1)), int(m.group(2)), int(m.group(3) or m.group(1)), int(m.group(4))
+        last = (date(y2 + (m2 == 12), m2 % 12 + 1, 1) - timedelta(days=1)).day
+        return f"{y1}年{m1}月1日～{y2}年{m2}月{last}日"
+    return _MONTHS.sub(full, text)
+
+
 def fair_plans(page_url, page_title, raw, area):
     """HIS sale pages fill in their plans from a JSON file; read it and return one pseudo-page per plan in the area."""
     files, folder = _JSON_FILES.search(raw), _DATA_FOLDER.search(raw)
@@ -175,7 +187,8 @@ def fair_plans(page_url, page_title, raw, area):
             price = f"おふたりで {p['listprice_01']}円{p.get('pricemax', '')}" if p.get("listprice_01") else ""
             text = "\n".join(x for x in [
                 name,
-                f"対象挙式期間：{p['kikan_dtl']}" if p.get("kikan_dtl") else "",
+                f"対象挙式期間：{p['kikan_dtl']}" if p.get("kikan_dtl")
+                else f"対象挙式期間：{month_range(p['kikan'])}" if p.get("kikan") else "",
                 f"お申込期間：{p['kikan_application']}" if p.get("kikan_application") else "",
                 deal, price, p.get("prm", ""),
                 html.unescape(re.sub(r"<[^>]+>", " ", p.get("pkg_01_dtl", ""))),
@@ -341,7 +354,9 @@ def main():
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # Notify about pages never seen before (not on the very first check, when everything is new).
-    fresh = [it for it in items if not it.get("gone") and it["url"] not in previous]
+    # Also re-announce a known page once it turns out to cover the target months.
+    fresh = [it for it in items if not it.get("gone") and (
+        it["url"] not in previous or (it["target_match"] is True and previous[it["url"]].get("target_match") is not True))]
     notify_path = os.environ.get("WEDDING_NOTIFY_FILE")
     if fresh and previous and notify_path:
         Path(notify_path).write_text(notice(fresh, target, config), encoding="utf-8")
