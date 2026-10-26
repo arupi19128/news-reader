@@ -123,6 +123,8 @@ def highlights(text):
     picks = []
     for line in text.split("\n"):
         line = line.strip()
+        if re.search(r"無料相談|はこちら|予約する|お問い合わせ", line) and not re.search(r"OFF|円", line, re.I):
+            continue  # the "book a free consultation" buttons on every page
         if 6 <= len(line) <= 90 and re.search(r"OFF|オフ|円引|割引|%|％|プレゼント|無料|限定|特典", line, re.I):
             if line not in picks:
                 picks.append(line)

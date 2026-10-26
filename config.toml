@@ -292,11 +292,11 @@ max_pages_per_source = 30
 
 [[wedding.venues]]
 name = "ジュエル・バイ・ザ・シー"
-match = "ジュエル[・･ ]?バイ[・･ ]?ザ[・･ ]?シー|JEWEL[ _-]?BY[ _-]?THE[ _-]?SEA|/jw/|jewel"
+match = "ジュエル[・･ ]?バイ[・･ ]?ザ[・･ ]?シー|JEWEL[ _-]?BY[ _-]?THE[ _-]?SEA"
 
 [[wedding.venues]]
 name = "クリスタルチャペル"
-match = "クリスタル[・･ ]?チャペル|CRYSTAL[ _-]?CHAPEL|crystal"
+match = "クリスタル[・･ ]?チャペル|CRYSTAL[ _-]?CHAPEL"
 
 [[wedding.sources]]
 name = "アールイズ・ウエディング"
@@ -305,8 +305,8 @@ follow = ["/fair-cp/"]
 
 [[wedding.sources]]
 name = "HISウェディング"
-seeds = ["https://access.his-j.com/01/139/", "https://www.his-j.com/wedding/", "https://www.his-j.com/wedding/guam/"]
-follow = ["/wedding/.*(campaign|cp|sale|fair|special)", "access\\.his-j\\.com/01/139/recommended/"]
+seeds = ["https://www.his-wedding.com/kanto/cpn/micronesia/", "https://www.his-wedding.com/kanto/"]
+follow = ["/kanto/cpn/micronesia", "/kanto/.*(guam|micronesia).*(cpn|campaign|fair|sale)"]
 
 [[wedding.sources]]
 name = "JTBウエディング"
