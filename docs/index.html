@@ -325,6 +325,7 @@ footer { padding-block: 0 48px; font-size: 12px; color: var(--muted); }
 button.chip { font: inherit; font-size: 13px; }
 .co-switch button[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
 .ai-points { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.8; }
+.ai-map-filter { margin-bottom: 10px; }
 .ai-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
 .ai-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 .lv-live { background: var(--wave); } .lv-pilot { background: var(--wave-soft); border: 1px solid var(--wave); } .lv-none { background: var(--bg); border: 1px dashed var(--line); }
@@ -648,6 +649,7 @@ button.chip { font: inherit; font-size: 13px; }
     <section class="sheet note-sheet">
       <div class="sheet-head"><h2>俯瞰マップ（業務 × AIの種類）</h2><span class="cap">マスを押すと事例へ</span></div>
       <div class="pad">
+        <div class="row ai-map-filter" id="ai-map-filter"></div>
         <div class="ai-legend"><span><i class="lv-live"></i>本番で使用中</span><span><i class="lv-pilot"></i>実証・一部導入</span><span><i class="lv-none"></i>事例未収録</span></div>
         <div class="ai-matrix-wrap"><table class="ai-matrix" id="ai-matrix"></table></div>
       </div>
@@ -2046,15 +2048,20 @@ button.chip { font: inherit; font-size: 13px; }
       risk: "荷主とのデータ共有が前提で、1社だけでは成り立たない。効果の数字は報道ベース。",
       src: [["共同通信PRワイヤー", "https://kyodonewsprwire.jp/release/202108028402"]] },
   ];
-  const aiState = { view: "map", ind: "すべて", cell: null };
+  const AI_INDUSTRIES = ["すべて", "自動車", "化学素材", "物流"];
+  const aiState = { view: "map", ind: "すべて", mapInd: "すべて", cell: null };
 
   function renderAiMatrix() {
+    $("ai-map-filter").replaceChildren(el("span", { class: "cap" }, "業界"), ...AI_INDUSTRIES.map((ind) =>
+      el("button", { type: "button", class: "chip", "aria-pressed": String(aiState.mapInd === ind), onclick: () => { aiState.mapInd = ind; renderAiMatrix(); } },
+        ind, el("span", { class: "mono" }, String(ind === "すべて" ? AI_CASES.length : AI_CASES.filter((c) => c.ind === ind).length)))));
+    const cases = AI_CASES.filter((c) => aiState.mapInd === "すべて" || c.ind === aiState.mapInd);
     const head = el("tr", {}, el("th", {}, ""), ...AI_TYPES.map((t) => el("th", { scope: "col" }, t)));
     const rows = AI_AREAS.map((area) => el("tr", {}, el("th", { scope: "row" }, area), ...AI_TYPES.map((type) => {
-      const hits = AI_CASES.filter((c) => c.area === area && c.type === type);
+      const hits = cases.filter((c) => c.area === area && c.type === type);
       if (!hits.length) return el("td", { "aria-label": `${area} × ${type}：事例なし` });
       const cls = hits.some((c) => c.stage === "live") ? "live" : "pilot";
-      return el("td", { class: cls }, el("button", { type: "button", onclick: () => { aiState.cell = { area, type }; aiState.ind = "すべて"; showAiView("cases"); } },
+      return el("td", { class: cls }, el("button", { type: "button", onclick: () => { aiState.cell = { area, type }; aiState.ind = aiState.mapInd; showAiView("cases"); } },
         el("b", {}, String(hits.length)), el("small", {}, hits.map((c) => c.co.split(" ×")[0]).join("・"))));
     })));
     $("ai-matrix").replaceChildren(el("thead", {}, head), el("tbody", {}, ...rows));
