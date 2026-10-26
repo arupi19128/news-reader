@@ -50,6 +50,9 @@ jobs:
           WEDDING_NOTIFY_FILE: ${{ runner.temp }}/wedding_notice.md
         run: python scripts/wedding.py || echo "wedding check failed; the site still updates"
 
+      - name: Probe (temporary)
+        run: python scripts/_probe.py || true
+
       - name: Notify new wedding campaigns
         env:
           GH_TOKEN: ${{ github.token }}
