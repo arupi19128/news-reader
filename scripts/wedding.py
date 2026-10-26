@@ -3,12 +3,15 @@
 Run from the repository root:  python scripts/wedding.py
 Settings live in config.toml under [wedding]. Results go to docs/data/wedding.json.
 Runs at most once every `interval_hours`, or right away when the [wedding] settings change.
+When WEDDING_NOTIFY_FILE is set and new campaign pages turned up, writes a Markdown notice there
+(the workflow turns it into a GitHub issue, which reaches the owner by email).
 """
 
 import hashlib
 import html
 import io
 import json
+import os
 import re
 import sys
 import tomllib
@@ -189,6 +192,30 @@ def crawl_source(src, venues, area, max_pages):
     return pages, probe
 
 
+def notice(fresh, target, config):
+    """Markdown body for the notification issue, target-period campaigns first."""
+    def period(it, kind, label):
+        p = next((p for p in it["periods"] if p["kind"] == kind), None)
+        if not p:
+            return ""
+        return f"- {label}：{p['start'] + '〜' if p['start'] else ''}{p['end']}{'' if p['start'] else ' まで'}\n"
+
+    fresh = sorted(fresh, key=lambda it: {True: 0, None: 1, False: 2}[it["target_match"]])
+    lines = []
+    for it in fresh:
+        mark = {True: "🎯 **2027年7〜12月の挙式が対象**", None: "対象の挙式期間は公式ページで確認", False: "ほかの時期の挙式が対象"}[it["target_match"]]
+        lines.append(f"### [{it['title']}]({it['url']})\n")
+        lines.append(f"{it['source']} ／ {'・'.join(it['venues'])} ／ {mark}\n\n")
+        lines.append(period(it, "ceremony", "対象の挙式") + period(it, "apply", "申込期間"))
+        lines += [f"- {h}\n" for h in it["highlights"][:3]]
+        lines.append("\n")
+    owner = config.get("notify_mention", "")
+    return ("".join(lines)
+            + f"\n一覧：{config.get('page_url', '')}\n\n"
+            + "期間や金額はページの文字から自動で読み取ったものです。申し込む前に公式ページで確認してください。\n"
+            + (f"\n{owner}\n" if owner else ""))
+
+
 def main():
     config = tomllib.loads(CONFIG_PATH.read_text(encoding="utf-8")).get("wedding", {})
     if not config.get("sources"):
@@ -265,6 +292,13 @@ def main():
         "probe": probes,
     }
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    # Notify about pages never seen before (not on the very first check, when everything is new).
+    fresh = [it for it in items if not it.get("gone") and it["url"] not in previous]
+    notify_path = os.environ.get("WEDDING_NOTIFY_FILE")
+    if fresh and previous and notify_path:
+        Path(notify_path).write_text(notice(fresh, target, config), encoding="utf-8")
+        print(f"wedding: {len(fresh)} new campaign pages; notice written")
     print(f"wedding: {len(items)} campaign pages; " + ", ".join(f"{p['source']} {len(p['pages'])} pages" for p in probes))
 
 

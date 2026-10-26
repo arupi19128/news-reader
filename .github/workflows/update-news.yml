@@ -15,6 +15,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write     # 式場の新しいキャンペーンを Issue（メール）で知らせる
 
 concurrency:
   group: update-news
@@ -45,7 +46,20 @@ jobs:
           python scripts/attacks.py
 
       - name: Check wedding fairs and campaigns
+        env:
+          WEDDING_NOTIFY_FILE: ${{ runner.temp }}/wedding_notice.md
         run: python scripts/wedding.py || echo "wedding check failed; the site still updates"
+
+      - name: Notify new wedding campaigns
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NOTICE: ${{ runner.temp }}/wedding_notice.md
+        run: |
+          if [ -s "$NOTICE" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "式場の新しいキャンペーン（$(TZ=Asia/Tokyo date +%-m月%-d日)）" \
+              --body-file "$NOTICE" || echo "could not create the notice issue"
+          fi
 
       - name: Summarize featured stories
         env:

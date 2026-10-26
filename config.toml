@@ -289,6 +289,9 @@ target = ["2027-07-01", "2027-12-31"]
 area_match = "グアム|GUAM|Guam"
 interval_hours = 20
 max_pages_per_source = 30
+# 新しいキャンペーンが出たら GitHub の Issue を作ってメールで知らせます（宛先はこのアカウント）
+notify_mention = "@arupi19128"
+page_url = "https://arupi19128.github.io/news-reader/#wedding"
 
 [[wedding.venues]]
 name = "ジュエル・バイ・ザ・シー"
@@ -305,8 +308,8 @@ follow = ["/fair-cp/"]
 
 [[wedding.sources]]
 name = "HISウェディング"
-seeds = ["https://www.his-wedding.com/kanto/cpn/micronesia/", "https://www.his-wedding.com/kanto/"]
-follow = ["/kanto/cpn/micronesia", "/kanto/.*(guam|micronesia).*(cpn|campaign|fair|sale)", "/fair/.*guam.*\\.pdf"]
+seeds = ["https://www.his-wedding.com/kanto/cpn/micronesia/", "https://www.his-wedding.com/kanto/", "https://www.his-wedding.com/sp/fair/kessan/"]
+follow = ["/sp/fair/", "/kanto/cpn/micronesia", "/kanto/.*(guam|micronesia).*(cpn|campaign|fair|sale)", "/fair/.*guam.*\\.pdf"]
 
 [[wedding.sources]]
 name = "JTBウエディング"
