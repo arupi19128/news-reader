@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T15:13:49Z",
+ "generated_at": "2026-10-30T16:05:46Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -383,7 +383,7 @@
    "name": "ロイター日本語",
    "kind": "国際",
    "ok": true,
-   "count": 10
+   "count": 9
   },
   {
    "name": "CNN.co.jp",
@@ -455,7 +455,7 @@
    "name": "DW",
    "kind": "overseas",
    "ok": true,
-   "count": 11
+   "count": 10
   },
   {
    "name": "France 24",
@@ -515,7 +515,7 @@
    "name": "Googleニュース：製造・物流のAI",
    "kind": "IT",
    "ok": true,
-   "count": 6
+   "count": 15
   },
   {
    "name": "Google News: Telecom",
@@ -598,20 +598,19 @@
    "outlets": 3
   },
   {
-   "id": "a9d322f64a16fd78",
-   "related": [
-    "f0161a51cc3d2269",
-    "ef971ed97e30990e"
-   ],
-   "outlets": 3
-  },
-  {
    "id": "211fa56c72d63909",
    "related": [
     "da3fb6ae3d4bbba7",
     "a6970acba75e48d6"
    ],
    "outlets": 3
+  },
+  {
+   "id": "baf7af3df82a3a90",
+   "related": [
+    "5dc089173e1f375f"
+   ],
+   "outlets": 2
   }
  ],
  "articles": [
@@ -628,6 +627,261 @@
    "first_seen": "2026-10-28T09:06:05Z",
    "image_checked": true,
    "image": "https://www.soumu.go.jp/main_content/000372150.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "c12f9a106585a494",
+   "title": "T-Mobile CTO says carrier will be first to 6G in US",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQc08xejlOajhMTzR4Qnc3N0JWRXVKb1h0VndnMURsZUc3U2RORlZXVGtUOE1TNm9fYl9VM2VvY3BGeGc4S0FpOE10N1pNcDE3YkRmdXdzYnE4NTYxQ1hWMmZZcFphS0RiYk5uT0JHT2lTR1ZnSlBjVUlrMWtDOUV5eURHRUFwUElwSlJJTGd2aVdjSnRoQTFsZVpVMA?oc=5",
+   "summary": "T-Mobile CTO says carrier will be first to 6G in US Data Center Dynamics",
+   "outlet": "Data Center Dynamics",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-30T15:49:49Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "d6f468599e53ff5c",
+   "title": "US tech stocks see sharp falls over AI cost fears",
+   "link": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss",
+   "summary": "Shares in Intel continue to fall while the tech-heavy Nasdaq opens at its lowest level in more than two months.",
+   "outlet": "BBC World",
+   "feed": "BBC World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/10b0/live/dcdf2a60-d46e-11f1-9dda-1ba6fcc7d159.jpg",
+   "published": "2026-10-30T15:46:28Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "4e2a9aaf5cf6fbe5",
+   "title": "Swiss foreign minister talks political ties on rare visit to North Korea",
+   "link": "https://www.aljazeera.com/news/2026/10/30/swiss-foreign-minister-talks-political-ties-on-rare-visit-to-north-korea?traffic_source=rss",
+   "summary": "Switzerland formally reopens diplomatic office in North Korea after its closure in 2020.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-30T15:37:03Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/afp_6ae4a687b829-1793369735.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "8b80c557e83d5cd8",
+   "title": "Trump reverses course, reinstates cancelled campaign rallies",
+   "link": "https://www.aljazeera.com/news/2026/10/30/trump-reverses-course-reinstates-cancelled-campaign-rallies?traffic_source=rss",
+   "summary": "The decision marks a sharp reversal after the US president said he didn't feel like he had to hold the events.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-30T15:35:39Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/afp_6ae4b142a5dd-1793372482.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "e3d6064bf8b2b874",
+   "title": "Biggest hack in history: Cryptocurrency giant Binance loses $6.3 billion",
+   "link": "https://www.france24.com/en/video/20261030-biggest-hack-in-history-cryptocurrency-giant-binance-loses-6-3-billion",
+   "summary": "Cryptocurrency exchange giant Binance has been targeted by a record-breaking $6.3 billion cyber heist, with blockchain intelligence firms linking the attack to North Korea. By Thursday night in the US, a coordinated effort by major crypto platforms successfully froze roughly $3 b…",
+   "outlet": "France 24",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/45b28188-d472-11f1-9c12-bf1914cabd52/w:1024/p:16x9/capture-d6a713ea.jpg",
+   "published": "2026-10-30T15:34:46Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "f9e0dfa65f255be3",
+   "title": "Spain working to identify train crash dead as relatives' anguish grows",
+   "link": "https://www.france24.com/en/video/20261030-spain-working-to-identify-train-crash-dead-as-relatives-anguish-grows",
+   "summary": "A second day of mourning is underway in Spain, with some families still waiting for news about missing loved ones, following Wednesday's high speed train crash that killed 69 people. Some have flooded social media with desperate appeals for information, posting photos or describi…",
+   "outlet": "France 24",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/4187d6b4-d470-11f1-a06c-1beafce15fea/w:1024/p:16x9/AP26302685581510.jpg",
+   "published": "2026-10-30T15:34:20Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "4f710221c62a8318",
+   "title": "Midterms 2026: The former neo-Nazi pastor speaking out against Trump",
+   "link": "https://www.france24.com/en/video/20261030-midterms-2026-the-former-neo-nazi-pastor-speaking-out-against-trump",
+   "summary": "According to one poll, 82 per cent of white evangelical Protestants voted for Donald Trump in the 2024 US presidential election. That makes pastor Caleb Campbell a significant outlier – he has been one of the few outspoken evangelical critics of the Trump administration, dating b…",
+   "outlet": "France 24",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/db530fa2-d475-11f1-a511-1beafce15fea/w:1024/p:16x9/midterms-pastor-vignette.jpg",
+   "published": "2026-10-30T15:34:09Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "25108ea3d047eab9",
+   "title": "Israeli election: 'Netanyahu did not win, he lost dramatically,' former PM Barak says",
+   "link": "https://www.france24.com/en/tv-shows/t%C3%AAte-%C3%A0-t%C3%AAte/20261030-israeli-election-netanyahu-did-not-win-he-lost-dramatically-former-pm-barak-says",
+   "summary": "In an interview with FRANCE 24, former Israeli prime minister Ehud Barak said Prime Minister Benjamin Netanyahu \"did not win\" this week's election in Israel but \"lost dramatically\", and that his rival Gadi Eisenkot should ally with Arab parties. Barak also suggested that claims o…",
+   "outlet": "France 24",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/720abe50-d44d-11f1-95eb-a575454bc579/w:1024/p:16x9/EN-NW-PKG-CLEAN-TETE-A-TETE-EHUD-BARAK-AUBIN-Sophian.jpg",
+   "published": "2026-10-30T15:34:03Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "a948a60c011aa63a",
+   "title": "FCC proposes restricting Chinese telecom carriers’ access to US phone numbers",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSlhFRXhQWWJKU0R0dWNGQ0xQZU1MdndxbmJ5ekdXZEtBcXNsbmFwQ3ZuRl9mUWZwcEJCaVFXZGRwbV80NEhLd2wtekY1NmRuWFE2dXdpUEFVcVk1WDdkalZXR2JzZHpaT1BORW1SVFlwcXpLa0RMNnQ1ZjNnV05ZZGVENXJEODhxNnVyWlBQcm9JSWQ3WV9kWWlaWEVFNTZPb3U2UEstMmdpWlhlX3dWc2ZEN01zM191?oc=5",
+   "summary": "FCC proposes restricting Chinese telecom carriers’ access to US phone numbers Baltimore Sun",
+   "outlet": "Baltimore Sun",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-30T15:29:20Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "2ea641cb1cf1bd27",
+   "title": "'Deeply hurt': Convicted murderer Christa Pike speaks out after botched execution",
+   "link": "https://www.france24.com/en/americas/20261030-deeply-hurt-convicted-murderer-christa-pike-speaks-out-after-botched-execution",
+   "summary": "Tennessee death row inmate Christa Pike said she remains in constant pain after surviving a botched lethal injection in September, in her first public statement since the failed execution. She expressed gratitude for those who saved her life while urging compassion for her victim…",
+   "outlet": "© Tenessee Department of Correction, Reuters",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/04ffd4cc-bcfa-11f1-b6d4-7be0f5469a6a/w:1024/p:16x9/2026-09-30T050004Z-1357594743-RC2GTNA3DKIY-RTRMADP-3-TENNESSEE-EXECUTION.jpg",
+   "published": "2026-10-30T15:29:10Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "47b1a47c3172525f",
+   "title": "‘Need a Plan B’: Yemenis in Aden prepare for another war as missiles fall",
+   "link": "https://www.aljazeera.com/news/2026/10/30/need-a-plan-b-yemenis-in-aden-prepare-for-another-war-as-missiles-fall?traffic_source=rss",
+   "summary": "As Houthi missiles strike Aden, residents stockpile food and prepare escape plans, fearing a return to all-out war.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-30T15:26:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/reuters_6ae4a968-1793370472.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "baf7af3df82a3a90",
+   "title": "二階堂高嗣の関連画像",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MQVpaZmhCWlZ0ZF94SGVrblh2V0FqUWhHUGJudjBycTJGN2NUOVlmLVdWVERWSnZmYjlUZGllNE5QdkNOXzRWQjFxTzZkN0xRbmMxTFExYUFhdFNVYlRPUEVRTVFjcE0?oc=5",
+   "summary": "二階堂高嗣の関連画像 推し楽",
+   "outlet": "推し楽",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-10-30T15:25:11Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "95e2869036565e80",
+   "title": "Israel's election ends in deadlock as final results show no clear winner",
+   "link": "https://www.france24.com/en/video/20261030-israel-s-election-ends-in-deadlock-as-final-results-show-no-clear-winner",
+   "summary": "Israel's wartime election appeared deadlocked on Tuesday, exit polls showed, ​with Gadi Eisenkot's opposition bloc running neck and neck with Prime Minister Benjamin Netanyahu's camp, leaving neither side with a clear path to power. The projections pointed to a setback for Netany…",
+   "outlet": "France 24",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/9575a300-d470-11f1-ad90-1beafce15fea/w:1024/p:16x9/capture-253001ce.jpg",
+   "published": "2026-10-30T15:24:24Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "6e4fb3b4a22ff2a3",
+   "title": "Democratic senator blames Egypt press crackdown on US military aid decision",
+   "link": "https://www.bbc.co.uk/news/articles/c63r529wn2vzo?at_medium=RSS&at_campaign=rss",
+   "summary": "Chris Murphy said waiving a human rights condition on aid paved the way for arrests of journalists.",
+   "outlet": "BBC World",
+   "feed": "BBC World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6fe5/live/560bc7b0-d454-11f1-a701-fddedf244c16.jpg",
+   "published": "2026-10-30T15:17:11Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "f6026fbdb3aafd3e",
+   "title": "Perfume bottle and child’s necklace among treasures found in Pompeii wardrobe",
+   "link": "https://www.theguardian.com/science/2026/oct/30/perfume-bottle-child-necklace-pompeii-wardrobe",
+   "summary": "Archaeologists uncover jewellery, cosmetics and coins in cabinet sealed since eruption of Mount Vesuvius in AD79 Fragments of personal objects, from makeup tools and a perfume bottle to coins and a child’s necklace, have been found tucked away in a wooden wardrobe sealed off for …",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/cbb6e50e8024e1511f3898626ebb804146ccba7e/47_0_1406_1125/master/1406.jpg?width=140&quality=85&auto=format&fit=max&s=caed1aa8aa6124502b2b4439c5f7cd9d",
+   "published": "2026-10-30T15:06:39Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "acc46978d3e5ec6a",
+   "title": "Israeli forces blow up homes of Palestinians accused of killing soldiers",
+   "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/israeli-forces-blow-up-homes-of-palestinians-accused-of-killing-soldiers?traffic_source=rss",
+   "summary": "Israeli forces demolished the homes of two Palestinians accused of killing two Israeli soldiers in Hebron last week.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-10-30T15:06:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1793372747.jpg?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "e56f67c02ffbfda6",
+   "title": "海老名市・相鉄バス・ＮＴＴドコモビジネスが連携し、自動運転バスの実証実験 中新田地区で２０２７年１月に開始",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBESVBjWERXTlcxSF9VakM2SzNMamdoTmZ6dFdJNjc2c1VsMGpjNWl4Si1EU3VuNDhjMzZwbENWSllnTUpWTnNzZ3RKZW9TN3ZnRFpLR0pfZHBYQW9telpZLUlhUVc?oc=5",
+   "summary": "海老名市・相鉄バス・ＮＴＴドコモビジネスが連携し、自動運転バスの実証実験 中新田地区で２０２７年１月に開始 タウンニュース",
+   "outlet": "タウンニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-30T15:00:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
    "tv_match": null,
    "picked": false
   },
@@ -886,6 +1140,20 @@
    "image": "https://s.france24.com/media/display/aeadaf9c-d467-11f1-8aab-bf1914cabd52/w:1024/p:16x9/Screenshot-2026-10-30-at-14-23-41.png",
    "published": "2026-10-30T14:06:25Z",
    "first_seen": "2026-10-30T14:16:43Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "4bfd328c138c3586",
+   "title": "The Five Nine: Can AI fix telecom's customer experience problem?",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQX0pVZmFnY0UzWFY2OXVBb0doUHBfRHZQQ2JNZXprZmtEN3MybHB0by1oLWJ6bURSemxnd19NYVJia2RDWXpRYnNnLXRMWHZubXpLZ2dab1lDdWVUZVUxOWNDeFREaHlURUUyNE9xNjdyU2lqaHRNQ3N2OHhoR21Td2RZd05KTHFYTTVERE5XVm82eUVPWjVsTE1ROFBZUQ?oc=5",
+   "summary": "The Five Nine: Can AI fix telecom's customer experience problem? Fierce Network",
+   "outlet": "Fierce Network",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-10-30T14:03:35Z",
+   "first_seen": "2026-10-30T16:05:46Z",
    "tv_match": "unknown",
    "picked": false
   },
@@ -1594,7 +1862,7 @@
    "id": "9d53d0842ee7601b",
    "title": "Man who ran over cyclist and dragged him under car for a mile convicted of murder",
    "link": "https://www.theguardian.com/uk-news/2026/oct/30/cyclist-murder-manchester-simon-richardson-michael-mullins",
-   "summary": "Simon Richardson knew headteacher Michael Mullins was under his 4×4 as he kept driving in Manchester, jury heard A motorist who drove into a cyclist and dragged him under his car for more than a mile has been found guilty of murder. Simon Richardson, 35, drove straight through gi…",
+   "summary": "Simon Richardson knew headteacher Michael Mullins was under his 4×4 as he kept driving in Manchester, jury heard A motorist who drove through give-way markings, collided with a cyclist and then dragged him, trapped under his car, for more than a mile has been found guilty of murd…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -1831,6 +2099,25 @@
    "published": "2026-10-30T11:58:36Z",
    "first_seen": "2026-10-30T13:16:08Z",
    "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "6d691bb7bbaeb984",
+   "title": "バイナンスから１兆円流出か 暗号資産交換最大手、北朝鮮関与も",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBfOHVqUl9scDJNeFRZdDMxaDFZVnF6OFZhNWlmY19lTXZyODljeG1CRnNteDlScFphcTc5ZzZRbndsUWV5bG0zOUI4ZmxqaEZKZ2RFZl9RdEEyWGNoZGhsUXhpUQ?oc=5",
+   "summary": "バイナンスから１兆円流出か 暗号資産交換最大手、北朝鮮関与も 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-30T11:58:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": {
+    "title": "暗号資産「バイナンス」サイバー攻撃で約1兆円被害か 北朝鮮のハッキンググループが不正アクセスを行った可能性も",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB3M0FDYnpjT2N6Yi11c1JsVThXdE50c0tSOVJ4U2E1M2N2YlFpaTB2Y3dvdUpLOWtVN2NKTDZqYW1yVVhTakphaHBVTnE5Z2xIdmZNcTdGQQ?oc=5",
+    "score": 0.4
+   },
    "picked": false
   },
   {
@@ -2079,7 +2366,7 @@
    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFA1aThKRkZmMWdBUTZ0ZU1yT1NVeHhkWlctdHM2UkVEWGE5OF9NUjRyaF9VODdWSm42MHRrRTdsTUo4X01pa25kcGZ1dDJGWG5DamZQd0Q4S0xUZHFvS2NBR3daZm9zYWR5bXB3ajJKY1E2UHFJ?oc=5",
    "summary": "KDDI、最大2万2541人分の顧客情報流出か ライフネット生命への不正アクセスで BigGo ファイナンス",
    "outlet": "BigGo ファイナンス",
-   "feed": "Googleニュース：通信キャリア",
+   "feed": "Googleニュース：KDDI",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-30T11:26:00Z",
@@ -2191,6 +2478,20 @@
    "lang": "ja",
    "published": "2026-10-30T11:15:00Z",
    "first_seen": "2026-10-30T11:57:30Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3645ba1e66c58b1c",
+   "title": "頭が透明で「目」が丸見え…深海600メートルで撮影された奇妙な魚の驚くべき映像",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8tQ0N0NnBnNXhVOU82OEZDdUhCODhqcWowME9sWGU3N1YzNVYyeDFNeV9TdksxeWk2ZzZhc1o1bUlxemJfNGtPRDhiaE5lZkdZWWRKcnZLaUVZZFFGNHRfdGlRZm1OSDQ?oc=5",
+   "summary": "頭が透明で「目」が丸見え…深海600メートルで撮影された奇妙な魚の驚くべき映像 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-30T11:14:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
    "tv_match": null,
    "picked": false
   },
@@ -3583,9 +3884,9 @@
   },
   {
    "id": "8610d06d514b3a1a",
-   "title": "People of 27 nationalities may be among those killed or injured in Spain train crash, Sánchez says – Europe live",
+   "title": "People of 27 nationalities may be among those killed or injured in Spain train crash, Sánchez says – as it happened",
    "link": "https://www.theguardian.com/world/live/2026/oct/30/spain-investigates-toledo-crash-pedro-sanchez-france-italy-protests-latest-news-updates",
-   "summary": "Some 69 people have been confirmed dead but the toll may rise further, with at least 70 people reported missing Peunte begins by paying tribute to all affected by the incident. He says that “at present, evidence points to a failure within Adif’s command and control centre,” but a…",
+   "summary": "This blog is now closed, you can read more on this story here Peunte begins by paying tribute to all affected by the incident. He says that “at present, evidence points to a failure within Adif’s command and control centre,” but adds that investigators are still looking “to clari…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -3605,7 +3906,7 @@
    "feed": "The Guardian World",
    "kind": "overseas",
    "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/5407f0bb8b4ec3f07ec3bb346d75ffa3f399525f/540_55_5769_4613/master/5769.jpg?width=140&quality=85&auto=format&fit=max&s=58f394b9146a8b0dae237891ea0dc67f",
+   "image": "https://i.guim.co.uk/img/media/5407f0bb8b4ec3f07ec3bb346d75ffa3f399525f/639_47_5791_4633/master/5791.jpg?width=140&quality=85&auto=format&fit=max&s=2310792a58398241de1593bde83be92f",
    "published": "2026-10-30T09:33:03Z",
    "first_seen": "2026-10-30T10:07:00Z",
    "tv_match": "unknown",
@@ -3972,9 +4273,9 @@
   },
   {
    "id": "38b4a8e927c8ecba",
-   "title": "Russian newspaper Novaya Gazeta to close, citing pressure from ‘special services’",
+   "title": "Russian society being ‘systematically crushed’ says Novaya Gazeta as newspaper announces closure",
    "link": "https://www.theguardian.com/world/2026/oct/30/novaya-gazeta-russia-independent-newspaper-to-close",
-   "summary": "Independent outlet, whose former editor won Nobel peace prize, says Russian authorities have forced it to shut Europe live – latest updates The Russian independent newspaper Novaya Gazeta has announced it is closing, citing pressure from authorities who recently searched the home…",
+   "summary": "Independent outlet, whose former editor Dmitry Muratov won Nobel prize, cites intolerable pressure from authorities Europe live – latest updates Novaya Gazeta, one of Russia’s best-known independent media outlets, has announced it will permanently close next month. The newspaper,…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -4136,20 +4437,6 @@
    "picked": false
   },
   {
-   "id": "a27ffeafd1cb9393",
-   "title": "WOWOW×ドコモの“新生”「Lemino」有料会員数300万件突破（AV Watch）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0wcGlxcktoSkZYTDBHTG9JMDR5c1BYUUFTY3RWbC0xWXhNb0E4RUdzMzZWY2VfTGJfUVV0RklDWEZsNHNjeXh4R3VXNHhSNUtjcmg4UU0yLW1Wejl3UGM2eFA0MFBEMllXLU8xWGF3OHZvZFgyc1pqLUJTemhlNkk?oc=5",
-   "summary": "WOWOW×ドコモの“新生”「Lemino」有料会員数300万件突破（AV Watch） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-30T09:00:00Z",
-   "first_seen": "2026-10-30T09:07:42Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "9afa7f4c8ffc8f82",
    "title": "WOWOW×ドコモの“新生”「Lemino」有料会員数300万件突破",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9PWnZKS1lIMEZ3Z3NicjB6cWMzYXU0SUJ0N0cxa0Z3bG5GeWlrV0dXVnRFSzM2ZjNLQjFqal9iS1NXSFZhNHZaaVRfeEJKVXo5UUpiV0ZIUHhHQ0tUV0lzNkVXQQ?oc=5",
@@ -4160,6 +4447,20 @@
    "lang": "ja",
    "published": "2026-10-30T09:00:00Z",
    "first_seen": "2026-10-30T11:57:30Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "a27ffeafd1cb9393",
+   "title": "WOWOW×ドコモの“新生”「Lemino」有料会員数300万件突破（AV Watch）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0wcGlxcktoSkZYTDBHTG9JMDR5c1BYUUFTY3RWbC0xWXhNb0E4RUdzMzZWY2VfTGJfUVV0RklDWEZsNHNjeXh4R3VXNHhSNUtjcmg4UU0yLW1Wejl3UGM2eFA0MFBEMllXLU8xWGF3OHZvZFgyc1pqLUJTemhlNkk?oc=5",
+   "summary": "WOWOW×ドコモの“新生”「Lemino」有料会員数300万件突破（AV Watch） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-30T09:00:00Z",
+   "first_seen": "2026-10-30T09:07:42Z",
    "tv_match": null,
    "picked": false
   },
@@ -4926,7 +5227,7 @@
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE4yY3lNSXZhbHdteEx1b1NCZmlYcG1BS2VWYXZMYkR3UkQyS2JPSk04cDZsZkdJZjNXa3RSQU53UXlBbzctRUN2WXZPOFY3SFJObEpkNU5JZ2tvYTBlRkZ2TDVnMA?oc=5",
    "summary": "KDDI、接客から教育まで一貫支援するAIプラットフォーム「KDDI Avatar Canvas」提供開始。労働力不足などの課題解決に対応 AIsmiley",
    "outlet": "AIsmiley",
-   "feed": "Googleニュース：通信キャリア",
+   "feed": "Googleニュース：KDDI",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-30T08:00:30Z",
@@ -5074,7 +5375,12 @@
    "first_seen": "2026-10-30T09:07:42Z",
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/30/20261030k0000m040254000p/0c10.jpg?1",
-   "tv_match": null,
+   "tv_match": {
+    "title": "長崎市長が高市総理に面会「核禁条約の初の再検討会議へオブザーバー参加求める」《長崎》",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV2kwSUo2MnJHVnZVWFdmOV9JVVNZb01VSzN2eGZhbjdrMFBhWDMyQk9ZN0xHSkNqdWpzWHcyU1FRUjh6TFBCVFdLbF9BckRQUEdXalBpSUU0Skk2bkhYSEtvbkpDazUwNGROLTdIdFEzREdSY1pGTXA1TUFNaU9ZYVJFb21aNUk?oc=5",
+    "score": 0.54
+   },
    "picked": false
   },
   {
@@ -6164,6 +6470,20 @@
    "picked": false
   },
   {
+   "id": "b6d48d0061770661",
+   "title": "「NTTドコモ Presents Lemino BOXING PHOENIX BATTLE 1... | Lemino ニュース",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0tYnpNeEdwWlcxeHEtRVE2TkpxREZoQ3JvRkFXLThuTFc5eVRDMk9zeENwMXc3WkxKM0I3TnVHZjJOOHZyT0VHandQTWZjQUE0ZWJ5WmNlWGw5UHBRemw4WlU2bTkzczloVVhUUFl2M05XRmJRcnprTTBHVl8xRG8?oc=5",
+   "summary": "「NTTドコモ Presents Lemino BOXING PHOENIX BATTLE 1... | Lemino ニュース Lemino",
+   "outlet": "Lemino",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-30T06:35:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "6025b1c4eefa9fb9",
    "title": "都立六本木高校で生徒が刃物で刺されたか 同級生を現行犯逮捕",
    "link": "http://www.asahi.com/articles/ASVBZ1RWLVBZUTIL02DM.html?ref=rss",
@@ -6185,20 +6505,6 @@
    "picked": false
   },
   {
-   "id": "70658bcb39376554",
-   "title": "ソフトバンクグループ[9984]：（開示事項の経過）連結子会社（LINE MAN CORPORATION PTE. LTD.）の株式取得の完了時期の変更に関するお知らせ 2026年10月30日(適時開示) ：日経会社情報DIGITAL",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5pR2dueHBsN0ZKRWc4VnRZUTBhVC1VaWdSY29nN3FYWnNMZFhsdlRXSmxtal8xVDVOaDRoLThvbFdOb3dtb2Q1V2txRHo4X3QzNVBFa0RndzZ4bHdTN3RWa1lheHFGcXloZUE?oc=5",
-   "summary": "ソフトバンクグループ[9984]：（開示事項の経過）連結子会社（LINE MAN CORPORATION PTE. LTD.）の株式取得の完了時期の変更に関するお知らせ 2026年10月30日(適時開示) ：日経会社情報DIGITAL 日本経済新聞",
-   "outlet": "日本経済新聞",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-30T06:30:00Z",
-   "first_seen": "2026-10-30T14:16:43Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "2cf1cd535d2908be",
    "title": "ソフトバンクグループ[9984]：（開示事項の経過）連結子会社（LINE MAN CORPORATION PTE. LTD.）の株式取得の完了時期の変更に関するお知らせ 2026年10月30日(適時開示) ：日経会社情報DIGITAL",
    "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQQl9nUnBnS2dFMWp6YXdwRzhBQmYwcWFXZHlZU01uX1FXbFlhZnFwV090QlVZa291NGJGQXFZbXZtX3FTNWNGQ2JtSk8xc2g5NnBndk9BdGF2VF94b2xQV01VS2FFZ2duSU85WTB3SldhX0hOV2o5MzA5Q2l5WkFEdldTc3I5cmFwbHlrRXNPOXFEcERXQ2Z4MHVhR2N0cFVQZTZRci01ZzBNMmQ4RHRVX3YyU1F2clAxMlJTZUMzRVNNbDc0OFhtUVFQel8?oc=5",
@@ -6209,6 +6515,20 @@
    "lang": "ja",
    "published": "2026-10-30T06:30:00Z",
    "first_seen": "2026-10-30T13:16:08Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "70658bcb39376554",
+   "title": "ソフトバンクグループ[9984]：（開示事項の経過）連結子会社（LINE MAN CORPORATION PTE. LTD.）の株式取得の完了時期の変更に関するお知らせ 2026年10月30日(適時開示) ：日経会社情報DIGITAL",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5pR2dueHBsN0ZKRWc4VnRZUTBhVC1VaWdSY29nN3FYWnNMZFhsdlRXSmxtal8xVDVOaDRoLThvbFdOb3dtb2Q1V2txRHo4X3QzNVBFa0RndzZ4bHdTN3RWa1lheHFGcXloZUE?oc=5",
+   "summary": "ソフトバンクグループ[9984]：（開示事項の経過）連結子会社（LINE MAN CORPORATION PTE. LTD.）の株式取得の完了時期の変更に関するお知らせ 2026年10月30日(適時開示) ：日経会社情報DIGITAL 日本経済新聞",
+   "outlet": "日本経済新聞",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-30T06:30:00Z",
+   "first_seen": "2026-10-30T14:16:43Z",
    "tv_match": null,
    "picked": false
   },
@@ -6407,7 +6727,7 @@
    "feed": "BBC World",
    "kind": "overseas",
    "lang": "en",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/329d/live/be5913a0-d435-11f1-93e1-3b657b665bcf.jpg",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/32b3/live/2a2c9e80-d477-11f1-93e1-3b657b665bcf.jpg",
    "published": "2026-10-30T06:02:23Z",
    "first_seen": "2026-10-30T07:19:26Z",
    "tv_match": "unknown",
@@ -7043,7 +7363,7 @@
    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ReHY3bTRJbnQ0UjFESm1DdHhTSU1NbFVwVkgyLUd1VDd4Wk01ZmM5alUxLXB4bEVjY1JYWjN2QkREM3kzS2NrRHFISFp3ZHlfanlmM3p3?oc=5",
    "summary": "【11/18・19開催】法人向けメッセージ配信サービス KDDI Message Cast、「Salesforce World Tour Tokyo」に展示ブーススポンサーとして出展 supership.jp",
    "outlet": "supership.jp",
-   "feed": "Googleニュース：KDDI",
+   "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-30T04:51:50Z",
@@ -7068,20 +7388,6 @@
    "picked": false
   },
   {
-   "id": "9b1c2e03478e873f",
-   "title": "楽天モバイル、ファミマ駐車場に移動型ショップを展開 アンケートに答えて1000ポイント進呈も - ITmedia Mobile",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5mbG1NZ1FvX2RuUUdmaEZhOGI3ZDhvM1ZwTko3dXBCZEpxN2pId1RuckZQbHRhNERQTktTRzZZYVJ6ZURhclctZnBLcHVEeWNFM1BtN0xOV1J3azQ2VTlOZ1JZaFVCcHdTZ2hmcmVUZ9IBaEFVX3lxTE95XzN6SHhJMEdhLWM3ckkzWF9WOWtEaTVIUmtQWEFSUzVGaVZiWXUzQ1dYcXlmYzlCWklHTkZIQnNqSnFyUlFJUTVmNDBUdHZEQy1oeXpaZEhBRzVKZmlFbWdlTVJLbjdy?oc=5",
-   "summary": "楽天モバイル、ファミマ駐車場に移動型ショップを展開 アンケートに答えて1000ポイント進呈も - ITmedia Mobile ITmedia",
-   "outlet": "ITmedia",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-30T04:50:00Z",
-   "first_seen": "2026-10-30T09:07:42Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "29138287e5034ac0",
    "title": "楽天モバイル、ファミマ駐車場に移動型ショップを展開 アンケートに答えて1000ポイント進呈も - ITmedia Mobile",
    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE95XzN6SHhJMEdhLWM3ckkzWF9WOWtEaTVIUmtQWEFSUzVGaVZiWXUzQ1dYcXlmYzlCWklHTkZIQnNqSnFyUlFJUTVmNDBUdHZEQy1oeXpaZEhBRzVKZmlFbWdlTVJLbjdy0gFoQVVfeXFMT3lfM3pIeEkwR2EtYzdySTNYX1Y5a0RpNUhSa1BYQVJTNUZpVmJZdTNDV1hxeWZjOUJaSUdORkhCc2pKcXJSUUlRNWY0MFR0dkRDLWh5elpkSEFHNUpmaUVtZ2VNUktuN3I?oc=5",
@@ -7092,6 +7398,20 @@
    "lang": "ja",
    "published": "2026-10-30T04:50:00Z",
    "first_seen": "2026-10-30T07:19:26Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "9b1c2e03478e873f",
+   "title": "楽天モバイル、ファミマ駐車場に移動型ショップを展開 アンケートに答えて1000ポイント進呈も - ITmedia Mobile",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5mbG1NZ1FvX2RuUUdmaEZhOGI3ZDhvM1ZwTko3dXBCZEpxN2pId1RuckZQbHRhNERQTktTRzZZYVJ6ZURhclctZnBLcHVEeWNFM1BtN0xOV1J3azQ2VTlOZ1JZaFVCcHdTZ2hmcmVUZ9IBaEFVX3lxTE95XzN6SHhJMEdhLWM3ckkzWF9WOWtEaTVIUmtQWEFSUzVGaVZiWXUzQ1dYcXlmYzlCWklHTkZIQnNqSnFyUlFJUTVmNDBUdHZEQy1oeXpaZEhBRzVKZmlFbWdlTVJLbjdy?oc=5",
+   "summary": "楽天モバイル、ファミマ駐車場に移動型ショップを展開 アンケートに答えて1000ポイント進呈も - ITmedia Mobile ITmedia",
+   "outlet": "ITmedia",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-30T04:50:00Z",
+   "first_seen": "2026-10-30T09:07:42Z",
    "tv_match": null,
    "picked": false
   },
@@ -7356,7 +7676,7 @@
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1neGhyT2haMWlqN1NkME5fOTFHQ2dWZGJyTVplNFdWcjRWYl9tN0FXVnZsYTRNYlhRZk53YVZ1Z1lhMU9MeGI3cXN5ejVfd1dDODR2ZVdHODFtM1VTa3JNVm1Ja3dyY3BmVmhQbmlXRjRyem1qUWg4bmJ1bWRULTQ?oc=5",
    "summary": "KDDI における Amazon EKS Auto Mode 商用導入：カスタムコントローラーによる運用課題の解決 | Amazon Web Services Amazon Web Services (AWS)",
    "outlet": "Amazon Web Services (AWS)",
-   "feed": "Googleニュース：KDDI",
+   "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-10-30T04:12:08Z",
@@ -8010,9 +8330,9 @@
   },
   {
    "id": "9f3f10b099464473",
-   "title": "【速報】日銀はＥＴＦの年間売却額を８６００億円に増やす：時事ドットコム",
+   "title": "【速報】日銀はＥＴＦの年間売却額を８６００億円に増やす",
    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9hSGpvVl93NWx4Rk5EQlc2UWJqUWd2cWp4ZHdwVE16VVZmNzMzV2hDVm1OVlVvVk9ZWGlvYngybjdfN2JvUnNXa3BQeXRJdGV5SGZ5eDVhSTNuNWRLd3BmamtBUWtxZw?oc=5",
-   "summary": "【速報】日銀はＥＴＦの年間売却額を８６００億円に増やす：時事ドットコム 時事ドットコム",
+   "summary": "【速報】日銀はＥＴＦの年間売却額を８６００億円に増やす 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -9145,6 +9465,20 @@
    "picked": false
   },
   {
+   "id": "08fbc2ccef39ceeb",
+   "title": "【受講者募集】ビジネスでの「信頼の見える化」に役立つ！「適合性評価に関するNITE講座」 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBVcFM1bjBwXzFvb0h2Nnd0dXFZY3BqOHc2eXcyWDlOZmUzbG9DS0k0c3Y4RHh2aHRnc05Ub3R4MkFMS2Z2X1BXbzc3X0NzY2pNY0E?oc=5",
+   "summary": "【受講者募集】ビジネスでの「信頼の見える化」に役立つ！「適合性評価に関するNITE講座」 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-30T02:17:47Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "d364da2843c6926a",
    "title": "Democrats have an identity crisis - it won't be an easy fix",
    "link": "https://www.bbc.co.uk/news/articles/cknv08980d3vo?at_medium=RSS&at_campaign=rss",
@@ -9606,20 +9940,6 @@
    "picked": false
   },
   {
-   "id": "48bbb1099178b231",
-   "title": "AIの拡大が社会にもたらした「新たなリスク」、各国の対応は足並み揃わず…AI規制のあるべき姿",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Wk02Y1REcW5NS2xsQ3JELUNsSDFMTHZhSlVHdDhpbTFFUGJpRVhzalJVcjlMVEMwb2VOaVhNU0QwRGtoTmZvS1J1X09YMWZBanhud0dPdGRtR0JMdVJKa0dmMk82UFU?oc=5",
-   "summary": "AIの拡大が社会にもたらした「新たなリスク」、各国の対応は足並み揃わず…AI規制のあるべき姿 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-30T01:31:00Z",
-   "first_seen": "2026-10-30T09:07:42Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "07bf97022f883a13",
    "title": "AIの拡大が社会にもたらした「新たなリスク」、各国の対応は足並み揃わず…AI規制のあるべき姿",
    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1Dd0xnTHpUclFMZ0F3ZEFLdnd2TWFIVG9JS3NGTDAwTnVpMWtNX25SX1EwTElvc0NSclVJVVlQNjlPbWpWQzdGcC1NZEF2QVRsc1loNVgwRU9XQQ?oc=5",
@@ -9630,6 +9950,20 @@
    "lang": "ja",
    "published": "2026-10-30T01:31:00Z",
    "first_seen": "2026-10-30T10:07:00Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "48bbb1099178b231",
+   "title": "AIの拡大が社会にもたらした「新たなリスク」、各国の対応は足並み揃わず…AI規制のあるべき姿",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Wk02Y1REcW5NS2xsQ3JELUNsSDFMTHZhSlVHdDhpbTFFUGJpRVhzalJVcjlMVEMwb2VOaVhNU0QwRGtoTmZvS1J1X09YMWZBanhud0dPdGRtR0JMdVJKa0dmMk82UFU?oc=5",
+   "summary": "AIの拡大が社会にもたらした「新たなリスク」、各国の対応は足並み揃わず…AI規制のあるべき姿 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-30T01:31:00Z",
+   "first_seen": "2026-10-30T09:07:42Z",
    "tv_match": null,
    "picked": false
   },
@@ -12147,6 +12481,20 @@
    "image_checked": true,
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/09/AFP__20260804__C3XT4Z7__v12__HighRes__TopshotIsraelPalestinianConflictJerusalemRelig-1-1789906343.jpg?resize=1920%2C1440",
    "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "0b69a52296a4ec1d",
+   "title": "「Okinawa Open Days 2026」 開催のお知らせ",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1YcXU4TjYwRlREejNHdVFqWXduNnFXSmJKdVBJbWZ0ZEgzUUh2RHhCUlpqOTFuUms5N2tRYmVTdGUxdVlGY3o1aDdpVm9DbzFTYm9kMA?oc=5",
+   "summary": "「Okinawa Open Days 2026」 開催のお知らせ ニコニコニュース",
+   "outlet": "ニコニコニュース",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-29T21:15:29Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -16816,20 +17164,6 @@
    "picked": false
   },
   {
-   "id": "cf9669b2540f0f01",
-   "title": "「反腐敗闘争」継続表明 幹部３３人を党籍剥奪処分、来年後半に党大会―中国共産党",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ZWWk2bWd3LW5MV1Z6RWtnaTJPcll4MmxVcGpVMVlBa2pmeHJ0RTJ6Vm4zRFhYNE8tTExIaWpPSkdTZ3VtN283bkMzVXFvTmtWWTl3QkdpQ1lCcFVOUW82Vm1SSQ?oc=5",
-   "summary": "「反腐敗闘争」継続表明 幹部３３人を党籍剥奪処分、来年後半に党大会―中国共産党 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-29T12:00:00Z",
-   "first_seen": "2026-10-29T13:18:49Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "8354a45a4b884dd5",
    "title": "TBS新イベント「アニメの場」に宮田俊哉、佐久間大介が出演 エヴァ初号機の巨大フォトスポットも設置",
    "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE01eXpkWXUxdEJINHBENGN2NjhJVjNTVmVvaEhXbHhiQ1k5aVdaeXBORklFYWNOVVdSTUJaMlVJd3ZYU0xlMkt5NlJoOA?oc=5",
@@ -16837,6 +17171,20 @@
    "outlet": "アニメハック",
    "feed": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-10-29T12:00:00Z",
+   "first_seen": "2026-10-29T13:18:49Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "cf9669b2540f0f01",
+   "title": "「反腐敗闘争」継続表明 幹部３３人を党籍剥奪処分、来年後半に党大会―中国共産党",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ZWWk2bWd3LW5MV1Z6RWtnaTJPcll4MmxVcGpVMVlBa2pmeHJ0RTJ6Vm4zRFhYNE8tTExIaWpPSkdTZ3VtN283bkMzVXFvTmtWWTl3QkdpQ1lCcFVOUW82Vm1SSQ?oc=5",
+   "summary": "「反腐敗闘争」継続表明 幹部３３人を党籍剥奪処分、来年後半に党大会―中国共産党 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
    "lang": "ja",
    "published": "2026-10-29T12:00:00Z",
    "first_seen": "2026-10-29T13:18:49Z",
@@ -19627,9 +19975,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/29/20261029k0000m030035000p/0c10.jpg?1",
    "tv_match": {
-    "title": "【速報】スペイン列車事故 乗客名簿に日本人2人の名前",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE02dmp5dVlPc1ZFbW9LX0tJWHJUckI3amw0TXA3ODMySTVLalI3M2ZSaHNjTzhXbDNZWUJyOFBFVnJaMDBxWGtIYkhCVkpFdw?oc=5",
+    "title": "少なくとも68人死亡のスペイン・ウルダ列車事故 乗客名簿に日本人2人の氏名 乗車していたか現地総領事館が確認中",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9QdUpVQmVHcVQ0b3hJNEoxRW5wUVVOZHVkcmM3V1VCdHVDUU5HZS1LV0JJMFN6dmZhSDl3R3BSNXU1c3VacUJLMjlhWXFtNFBkdUhreUdNSQ?oc=5",
     "score": 0.42
    },
    "picked": false
@@ -20059,20 +20407,6 @@
    "picked": false
   },
   {
-   "id": "79b54d85562bb721",
-   "title": "【速報】中部電力は、２７年３月期連結決算で浜岡原発に関する特別損失として３８００億円程度を計上すると発表した",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5pU2c4RGxrUHpJM1g0NDBUcXhLWTdadU5lVlh2aVE1bGlCWDUtM0lnb2E3bnd4bHhGY3FzQ2o5NklFc2ViZ24yMXJQbmZSZGNJbnhER0plU1dxNjZyRjVMNnp5Z3ZDUQ?oc=5",
-   "summary": "【速報】中部電力は、２７年３月期連結決算で浜岡原発に関する特別損失として３８００億円程度を計上すると発表した 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-29T08:43:00Z",
-   "first_seen": "2026-10-29T11:58:36Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "d4d248e00ac5f3e8",
    "title": "楽天モバイル、新型iPad miniやiPad、iPad Pro、iPad Airを取り扱い 11月6日から",
    "link": "https://www.itmedia.co.jp/mobile/articles/2610/29/news079.html",
@@ -20085,6 +20419,20 @@
    "first_seen": "2026-10-29T11:02:02Z",
    "image_checked": true,
    "image": "https://image.itmedia.co.jp/mobile/articles/2610/29/l_asa_rakuten_01.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "79b54d85562bb721",
+   "title": "【速報】中部電力は、２７年３月期連結決算で浜岡原発に関する特別損失として３８００億円程度を計上すると発表した",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5pU2c4RGxrUHpJM1g0NDBUcXhLWTdadU5lVlh2aVE1bGlCWDUtM0lnb2E3bnd4bHhGY3FzQ2o5NklFc2ViZ24yMXJQbmZSZGNJbnhER0plU1dxNjZyRjVMNnp5Z3ZDUQ?oc=5",
+   "summary": "【速報】中部電力は、２７年３月期連結決算で浜岡原発に関する特別損失として３８００億円程度を計上すると発表した 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-29T08:43:00Z",
+   "first_seen": "2026-10-29T11:58:36Z",
    "tv_match": null,
    "picked": false
   },
@@ -20932,20 +21280,6 @@
    "picked": false
   },
   {
-   "id": "f5af7cc3f5e088d3",
-   "title": "Kis-My-Ft2・宮田俊哉『少年ジャンプ』読者プレゼントに“サイン色紙”誤掲載「とんでもねえ」訂正に驚きの声",
-   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9FOUFKM3VSNE1nV1dwTmE3NlJUaUpfb3RaRzQzQWlvV0IwYm5EbV83X3BudFlkbUdSY3JwdzdyUmJxVkpjQXJ2QUlPOUptdWdzaW5hc1daQnhKUENR?oc=5",
-   "summary": "Kis-My-Ft2・宮田俊哉『少年ジャンプ』読者プレゼントに“サイン色紙”誤掲載「とんでもねえ」訂正に驚きの声 週刊女性PRIME",
-   "outlet": "週刊女性PRIME",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-10-29T08:00:00Z",
-   "first_seen": "2026-10-29T11:58:36Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "a5899d7635ee77ff",
    "title": "インターネット経由の個人消費萎縮を想定...エコノミスト、情報漏えいが相次ぐ中で",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVOFlhS3hZYVhPeVBWRmZycEcyQ3dPdkxySmlqbVpCVEFpUk1hTWhMT2tOUl9QN091Wk9YWWtBaGxwRlRpa04zQXhDN2Z3eHEtTllNejJ1NDc0VnhuUnVrVUZicWp5dGc?oc=5",
@@ -20956,6 +21290,20 @@
    "lang": "ja",
    "published": "2026-10-29T08:00:00Z",
    "first_seen": "2026-10-29T21:58:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "f5af7cc3f5e088d3",
+   "title": "Kis-My-Ft2・宮田俊哉『少年ジャンプ』読者プレゼントに“サイン色紙”誤掲載「とんでもねえ」訂正に驚きの声",
+   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9FOUFKM3VSNE1nV1dwTmE3NlJUaUpfb3RaRzQzQWlvV0IwYm5EbV83X3BudFlkbUdSY3JwdzdyUmJxVkpjQXJ2QUlPOUptdWdzaW5hc1daQnhKUENR?oc=5",
+   "summary": "Kis-My-Ft2・宮田俊哉『少年ジャンプ』読者プレゼントに“サイン色紙”誤掲載「とんでもねえ」訂正に驚きの声 週刊女性PRIME",
+   "outlet": "週刊女性PRIME",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-10-29T08:00:00Z",
+   "first_seen": "2026-10-29T11:58:36Z",
    "tv_match": null,
    "picked": false
   },
@@ -21193,9 +21541,9 @@
    "published": "2026-10-29T07:55:00Z",
    "first_seen": "2026-10-29T09:07:58Z",
    "tv_match": {
-    "title": "【速報】スペイン列車事故 乗客名簿に日本人2人の名前",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE02dmp5dVlPc1ZFbW9LX0tJWHJUckI3amw0TXA3ODMySTVLalI3M2ZSaHNjTzhXbDNZWUJyOFBFVnJaMDBxWGtIYkhCVkpFdw?oc=5",
+    "title": "スペイン列車事故で対策本部 乗客名簿に日本人2人",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNQVphWG5tT2NZbDJ5ZFJVUjdBX0FKMk03S2tWYlc0ZEEyNndwcVJ5TnFfTk8waTB0bmVENWVNMWxkVVBFRTNnbXRxbmVFa25JQUxUNEhGSEx4NWlrY1l4UGNrd2tKM0VxVThLa3JnM1dNcWlOOVhjLUN2T1RweXJ6dTVVSE9SZzZGcFFrMFA5Y1g?oc=5",
     "score": 0.58
    },
    "picked": false
@@ -21320,9 +21668,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/10/29/20261029k0000m020152000p/0c10.jpg?1",
    "tv_match": {
-    "title": "ANAが中堅2社を子会社化 AIRDOとソラシドエア",
+    "title": "ANAHDが完全子会社化 AIRDO･ソラシドエア親会社",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORFNGdE1VSHlZdU45S0Z4NGxZQzR3ZFpHR1gzaVFCaEhDNGFYOUw2UnU0dWFFX0FPc2pCLUVyUHdJUUVIOFVkd1pjcDQ4SU50TUNBY29JTEtKb1UtTEJZZUZKaWNHT0NsTVNFQjZTUWNEZ3JobEYwU2RhLTY4ZUl0NzBpZVFiYW52cXNHR1FaWmhLNzZWSlE?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBCVEdkM2ZmVjlqRERjdDJxVkVtZW1KMVdaYmhsVU9xNVlUX0MyeUpTTjNWeDdqdnh0WnJHUnB1MGtrSDIwMEdCYmQ0dktYSlZzSm12VC0tMldJMmRoQVE?oc=5",
     "score": 0.56
    },
    "picked": false
@@ -21982,6 +22330,34 @@
    "picked": false
   },
   {
+   "id": "1b934ef95957d24d",
+   "title": "U.S. to add more Chinese firms to blacklists - FT",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBlRVJnRkhTNW1lZU0tNDFZTExTQl9Eb0U2RWFzNlJZalhOUWpFZFBoeGVtSlZTdnlFZ3lkYVdqNno0MFZNcG5KajBCY1YxU3ZBWDFfUVJ5REUxTTA?oc=5",
+   "summary": "U.S. to add more Chinese firms to blacklists - FT Reuters",
+   "outlet": "Reuters",
+   "feed": "ロイター日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-29T07:00:00Z",
+   "first_seen": "2026-10-30T16:05:46Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "7f997ed8471a8c15",
+   "title": "新自由主義との決別を謳ったのに、出てきたのは「小粒なバラマキ」と「先送り」…バーナム政権の初予算案が露呈した英国の限界",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9xa2xNOU05akRqWXlzS3ZDd3hDb0JUVFFGZUgxdm1zd3UtUm5tcklISzJSczdiZFEwdVhkdjI3TGVWb0pSUUk4VHgyOS1aZTVEdlgtc0NLbFlwQXpfMnNFZTNIMW01Sm8?oc=5",
+   "summary": "新自由主義との決別を謳ったのに、出てきたのは「小粒なバラマキ」と「先送り」…バーナム政権の初予算案が露呈した英国の限界 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-29T07:00:00Z",
+   "first_seen": "2026-10-30T05:02:59Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "90bc84da5a38fff7",
    "title": "Teen in MAGA hat denies mocking Native American",
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9yTy1kcnNlSU4xNVJWdmI0bVQ5cU1iR1pVQVJxYk0xb0ZGNFdKU3plNW9sS1F1ZmZxUVdRY1R5VFVyMW54WkpEdndtbVpfbld4VnM1X3lfVHl1OGs?oc=5",
@@ -22006,20 +22382,6 @@
    "lang": "ja",
    "published": "2026-10-29T07:00:00Z",
    "first_seen": "2026-10-30T15:13:49Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "7f997ed8471a8c15",
-   "title": "新自由主義との決別を謳ったのに、出てきたのは「小粒なバラマキ」と「先送り」…バーナム政権の初予算案が露呈した英国の限界",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9xa2xNOU05akRqWXlzS3ZDd3hDb0JUVFFGZUgxdm1zd3UtUm5tcklISzJSczdiZFEwdVhkdjI3TGVWb0pSUUk4VHgyOS1aZTVEdlgtc0NLbFlwQXpfMnNFZTNIMW01Sm8?oc=5",
-   "summary": "新自由主義との決別を謳ったのに、出てきたのは「小粒なバラマキ」と「先送り」…バーナム政権の初予算案が露呈した英国の限界 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-29T07:00:00Z",
-   "first_seen": "2026-10-30T05:02:59Z",
    "tv_match": null,
    "picked": false
   },
@@ -25688,9 +26050,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261029001398_comm.jpg",
    "tv_match": {
-    "title": "【速報】スペイン列車事故 乗客名簿に日本人2人の名前",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE02dmp5dVlPc1ZFbW9LX0tJWHJUckI3amw0TXA3ODMySTVLalI3M2ZSaHNjTzhXbDNZWUJyOFBFVnJaMDBxWGtIYkhCVkpFdw?oc=5",
+    "title": "少なくとも68人死亡のスペイン・ウルダ列車事故 乗客名簿に日本人2人の氏名 乗車していたか現地総領事館が確認中",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9QdUpVQmVHcVQ0b3hJNEoxRW5wUVVOZHVkcmM3V1VCdHVDUU5HZS1LV0JJMFN6dmZhSDl3R3BSNXU1c3VacUJLMjlhWXFtNFBkdUhreUdNSQ?oc=5",
     "score": 0.65
    },
    "picked": false
@@ -29686,20 +30048,6 @@
    "picked": false
   },
   {
-   "id": "8b6d355331861cfb",
-   "title": "石田ゆり子の自然体な美しさに集まる支持！アラ還世代のヒロインを好演した「マイ・スイート・ホーム」ほか出演作3選",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5hdmljREE2QmN3ejVpQUZMVFdjRWpRdFVELVU0OEtWQzZKdzczU3lUWXVvSloydTdQelE3OFQ4NGFoX2lPVnp3Z3JRRFJUMW95SHA0R0g0bURuOEdJRl9UZEV0OVJkcVZrUy1XT2JCRQ?oc=5",
-   "summary": "石田ゆり子の自然体な美しさに集まる支持！アラ還世代のヒロインを好演した「マイ・スイート・ホーム」ほか出演作3選 J:magazine!",
-   "outlet": "J:magazine!",
-   "feed": "Googleニュース：J:COM",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-28T19:00:00Z",
-   "first_seen": "2026-10-29T19:11:11Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "b2d5af27a2960767",
    "title": "Kis-My-Ft2、JOYSOUNDで新アルバム発売記念キャンペーン 「Escape」など歌って限定グッズ当たる",
    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kLWZoM1pkRzZqeG5MQWhoanptZURhMWEzaUJhcEo4NkkwR2FwMVlsSE1YaFpFLTdnZ25hTFpSY1hFNDlxY0Y0cXRieGhJT3NUMEhtQjg4bmF3Q2Ut?oc=5",
@@ -29710,6 +30058,20 @@
    "lang": "ja",
    "published": "2026-10-28T19:00:00Z",
    "first_seen": "2026-10-28T19:59:33Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "8b6d355331861cfb",
+   "title": "石田ゆり子の自然体な美しさに集まる支持！アラ還世代のヒロインを好演した「マイ・スイート・ホーム」ほか出演作3選",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5hdmljREE2QmN3ejVpQUZMVFdjRWpRdFVELVU0OEtWQzZKdzczU3lUWXVvSloydTdQelE3OFQ4NGFoX2lPVnp3Z3JRRFJUMW95SHA0R0g0bURuOEdJRl9UZEV0OVJkcVZrUy1XT2JCRQ?oc=5",
+   "summary": "石田ゆり子の自然体な美しさに集まる支持！アラ還世代のヒロインを好演した「マイ・スイート・ホーム」ほか出演作3選 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-28T19:00:00Z",
+   "first_seen": "2026-10-29T19:11:11Z",
    "tv_match": null,
    "picked": false
   },
@@ -33272,9 +33634,9 @@
    "published": "2026-10-28T11:38:00Z",
    "first_seen": "2026-10-28T14:15:36Z",
    "tv_match": {
-    "title": "68人死亡のスペイン高速列車衝突、1月にも同じ路線で46人死亡の事故 乗客名簿に2人の日本人“実際に乗っていたか含め確認”",
-    "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9nWmlDc0E3c041cXRKbXJsU0c2RWJRVUtrNzV1cnA1OVRKQjZlVi1FajAyb0RuTTMwemtzU3lmelc3cU44M3pNckxWS2Yydw?oc=5",
+    "title": "【速報】スペインで高速鉄道の列車同士が衝突する事故 少なくとも46人死亡",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9HZnRGXzdLVk1lNTB6M3dKREZaTm1MQzd2ZU5jWmY2Q0NJaUtNaUxZNnFxZTRHeU00SEhnM21ueU95Z2dNWlkxNkt5MTUzMk92cG9nX0lWOA?oc=5",
     "score": 0.44
    },
    "picked": false
@@ -45412,20 +45774,6 @@
    "picked": false
   },
   {
-   "id": "7aa05c4a5346f599",
-   "title": "KDDI、大阪堺データセンターの推論環境にAIモデルを拡充、2027年度には「NVIDIA HGX Rubin NVL8」を導入",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE85Rnd6b05IWDVjZ2IzS2tsdXZsX2JTWUJxSEdndUVjNTc1UzBUVVRtbElnSmswRm9ZbU82VGVqc04tZG1VU05QdnpYelZyWUlVb0JlTWNzX2VyY1Y4azFJTDFVNEdiU1k?oc=5",
-   "summary": "KDDI、大阪堺データセンターの推論環境にAIモデルを拡充、2027年度には「NVIDIA HGX Rubin NVL8」を導入 クラウド Watch",
-   "outlet": "クラウド Watch",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-27T21:00:00Z",
-   "first_seen": "2026-10-27T21:51:31Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "f8112271b93b9cfa",
    "title": "Kis-My-Ft2二階堂高嗣が内藤剛志の人生初ドッキリに大苦戦＜ニカゲーム＞（WEBザテレビジョン）",
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9VQmlGSERhdHZrdFNnTFFsMUh0aDMzVDRuN3NqcUhjY2FFYVlCanhoUXcyYmlNVkVValg0cE84b2dZOGxZM0VLZVA3WnkxS0xTRkdwdFpJWTltRjFqamYwdkt4M01uR2hNNFFGWEg1XzF1czQ4LXpzUXJ6SXp6OEE?oc=5",
@@ -45464,6 +45812,20 @@
    "lang": "ja",
    "published": "2026-10-27T21:00:00Z",
    "first_seen": "2026-10-30T07:19:26Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "7aa05c4a5346f599",
+   "title": "KDDI、大阪堺データセンターの推論環境にAIモデルを拡充、2027年度には「NVIDIA HGX Rubin NVL8」を導入",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE85Rnd6b05IWDVjZ2IzS2tsdXZsX2JTWUJxSEdndUVjNTc1UzBUVVRtbElnSmswRm9ZbU82VGVqc04tZG1VU05QdnpYelZyWUlVb0JlTWNzX2VyY1Y4azFJTDFVNEdiU1k?oc=5",
+   "summary": "KDDI、大阪堺データセンターの推論環境にAIモデルを拡充、2027年度には「NVIDIA HGX Rubin NVL8」を導入 クラウド Watch",
+   "outlet": "クラウド Watch",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-27T21:00:00Z",
+   "first_seen": "2026-10-27T21:51:31Z",
    "tv_match": null,
    "picked": false
   },
@@ -73751,7 +74113,7 @@
    "tv_match": {
     "title": "市場で拮抗する2つの見方 弱気派vs強気派【朝活Online】｜SPECIALコンテンツ",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBHc2plb1ZPdjZWbFVsVzlDQ2I5Vlh6bXNBRHlVc19STGZReGxWX2h1VG9mazI2Zk0wRDkxOVBDQkg3VmU5dVV2el9aalZ0bVNpUm5wVy03YTE4cF80VFdnaHcxNTk0LU8wRmc?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE40aXd6VERudjFBUUJ5OXdPWDhZZldUSUp2WVlNYlBXRTFKa1pCS2FsaHc4a0RSd0hlYTU3M3JjZEZhanpvWWRfczZhV0pKb3FBVnNuRi1YLWN3aWpKVnljeVVKdF8?oc=5",
     "score": 0.38
    },
    "picked": false
@@ -98557,12 +98919,7 @@
    "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/7c59/live/b8966750-cef5-11f1-a701-fddedf244c16.jpg",
    "published": "2026-10-24T02:28:04Z",
    "first_seen": "2026-10-24T03:51:43Z",
-   "tv_match": {
-    "title": "パリ近郊で銃撃 1人死亡4人けが 12歳少女重体 テロ目的殺人・殺人未遂容疑で捜査",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAwZGRfaW4tMUozWVRvcmVOUUpLY3BucTE3ek9PUnUwanJxNVNHWm9nRkFPRVZwa0xkMHdEQWpLbDBsR2hKczdWNFFuYjRvMC1yYzJ0dmFrbkc3WUkya19OZGs4RlZ3Njc2dUlsUXlzNDlpYjRJTmQwemZ3?oc=5",
-    "score": 0.33
-   },
+   "tv_match": null,
    "picked": false
   },
   {
@@ -101033,12 +101390,7 @@
    "lang": "ja",
    "published": "2026-10-23T21:29:00Z",
    "first_seen": "2026-10-24T20:44:47Z",
-   "tv_match": {
-    "title": "パリ近郊で銃撃 1人死亡4人けが 12歳少女重体 テロ目的殺人・殺人未遂容疑で捜査",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAwZGRfaW4tMUozWVRvcmVOUUpLY3BucTE3ek9PUnUwanJxNVNHWm9nRkFPRVZwa0xkMHdEQWpLbDBsR2hKczdWNFFuYjRvMC1yYzJ0dmFrbkc3WUkya19OZGs4RlZ3Njc2dUlsUXlzNDlpYjRJTmQwemZ3?oc=5",
-    "score": 0.33
-   },
+   "tv_match": null,
    "picked": false
   },
   {
@@ -102949,291 +103301,33 @@
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/AFP__20261013__D3666FJ__v2__HighRes__FrancePoliticsEducationProtest-1-1792591739.jpg?resize=1920%2C1440",
    "tv_match": "unknown",
    "picked": false
-  },
-  {
-   "id": "423c90a645288e21",
-   "title": "Kis-My-Ft2玉森裕太、最も記憶力が優れているメンバー明かす 『月刊TVガイド』表紙＆巻頭グラビア登場",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE50YlVMN0NSNXhCSi1wV3FqYjRaRmRzSWRHYVQ2Qm5GZ0thaFJwaHNJcUxldHhHRFp0RW1UTkRfazB3dllteGpxcEd5X1BuVVRkNnozWl9WaGRwLTlFWUpMWTZWd0JDN203SUlOcms4RQ?oc=5",
-   "summary": "Kis-My-Ft2玉森裕太、最も記憶力が優れているメンバー明かす 『月刊TVガイド』表紙＆巻頭グラビア登場 山陽新聞デジタル｜さんデジ",
-   "outlet": "山陽新聞デジタル｜さんデジ",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-10-23T16:00:12Z",
-   "first_seen": "2026-10-23T20:50:37Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "f95af2d8473652f9",
-   "title": "RUGTAKE T5 Pro 5G Rugged Tablet Review",
-   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1YRG1icUJFNlpjdEplRndUT0dHcVloVllnYk1aclk3QUxsTEF5VjQ3cXpKQVBtZXZobjF4NGFZMVh6dF84U09mUzFtLUZ3b2FHRHlpX0d4RHNBUW90RHJMc2lSVVdCcWZNc0J0V0JGMk5XMHRCcUVGTlpWU0JsZw?oc=5",
-   "summary": "RUGTAKE T5 Pro 5G Rugged Tablet Review Comics Gaming Magazine",
-   "outlet": "Comics Gaming Magazine",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T16:00:00Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "8bbed367df58c018",
-   "title": "Watch: CCTV footage shows gunmen near church in Jordan",
-   "link": "https://www.bbc.co.uk/news/videos/c39wz712q0kzo?at_medium=RSS&at_campaign=rss",
-   "summary": "Dozens of people had been inside the church for a funeral when the shooting began, local media report.",
-   "outlet": "BBC World",
-   "feed": "BBC World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0594/live/4fa5d550-cefa-11f1-93e1-3b657b665bcf.jpg",
-   "published": "2026-10-23T15:59:36Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "eb2f37aef5eb45b2",
-   "title": "West Bank: Extensive military operation 'on the way', Netanyahu says",
-   "link": "https://www.france24.com/en/video/20261023-west-bank-extensive-military-operation-on-the-way-netanyahu-says",
-   "summary": "Israeli Prime Minister Benjamin Netanyahu on Friday warned of an imminent large-scale military operation in the West Bank and vowed to displace some residents of Hebron after Palestinian gunmen killed two soldiers in an attack.",
-   "outlet": "France 24",
-   "feed": "France 24",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://s.france24.com/media/display/be36cda4-cef9-11f1-b713-5b4a75578ebb/w:1024/p:16x9/West-Bank-1.jpg",
-   "published": "2026-10-23T15:56:28Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "aa53df98fb203efe",
-   "title": "Yes, Israeli settlers are ripping up West Bank olive trees – but this video is fake",
-   "link": "https://www.france24.com/en/middle-east/20261023-yes-israeli-settlers-ripping-up-west-bank-olive-trees-%E2%80%93-but-this-video-fake",
-   "summary": "Israeli settlers and soldiers have made a habit of destroying olive trees grown by Palestinian farmers in the West Bank and, in recent days, a video showing some trees being ripped up has circulated online. Just one problem: this particular video was generated by artificial intel…",
-   "outlet": "© X",
-   "feed": "France 24",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://s.france24.com/media/display/ce2ffdb4-cef6-11f1-93cf-bdb9616e85cf/w:1024/p:16x9/ban-olivier2-EN.jpg",
-   "published": "2026-10-23T15:56:19Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "592dc4cd04fda696",
-   "title": "Japanese telecom firm sorry over huge Mongolia wildfire",
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZGNmN3h6bjAxSUF2Q2I3YjQ0a3prWmtOVHdRWmRSYWJwWHoyTjZfRGxZTEtETjNJRHZucE96S0hGcWh6U0FaOEpQNFdSVTNWWVlmUDRobmhvUWFPcVZQQkllRlJtSXNBZ2U5VGwwOHhCYWc5N082N1lBZU14dkJoZFdobXhYckhhOGc?oc=5",
-   "summary": "Japanese telecom firm sorry over huge Mongolia wildfire Macau Business",
-   "outlet": "Macau Business",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T15:55:52Z",
-   "first_seen": "2026-10-23T18:58:46Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "bf35aab3f17fe4a0",
-   "title": "SpaceX Rocks Telecom. Here’s My Play on Tower Stocks and the Big 3",
-   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbGlhcVJQZ1haNjVxZldTRGt5NkFSZlFWWERBZlVheVVCWGtEclJZRl9oSVpYQmRVMTl1a0s5YVp1c2hvOGJudE84SnBJS1Jrdl92OE9iUDFsTHV2Qy1QekllT3lGRGw2LXhTZUt6aEdIMWptV3RMNVA3Z3pWTHpqcHM0aXMyYTJOSUd4MmFTQ0JjWUlPbVg2RElmV1ZzUnBTcGU5NA?oc=5",
-   "summary": "SpaceX Rocks Telecom. Here’s My Play on Tower Stocks and the Big 3 RealMoney Pro",
-   "outlet": "RealMoney Pro",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T15:55:00Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "9df14f592d9a327d",
-   "title": "Beyond the Cable: Ookla analyst talks M&As and the tapestry of telecom",
-   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNazE4LUlIVmpXNUcxT1N3VXp2elBHZmYwcktHVHU2RnRrRzZJaV90ZVVuaW5VZlVjQlRXSW11X2pRTzhGYkstYXZndVBPWk1OVUVnak1vd3hFR1BLRm1Xbzk0WWRJSzQyYTUyOE04QW9FbzAxVVlkZHFIWkRON0NLNXZWd1NrOVA1RTJfWjhuaDU1dw?oc=5",
-   "summary": "Beyond the Cable: Ookla analyst talks M&As and the tapestry of telecom Broadband Communities",
-   "outlet": "Broadband Communities",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T15:54:37Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "a4b03efae83c88dd",
-   "title": "‘Foreign policy is the economy’: How Iran war is shaping US midterm vote",
-   "link": "https://www.aljazeera.com/news/2026/10/23/foreign-policy-is-the-economy-how-iran-war-is-shaping-us-midterm-vote?traffic_source=rss",
-   "summary": "Democrats are framing the conflict as an affordability issue to criticise Republican candidates backed by Trump.",
-   "outlet": "Al Jazeera",
-   "feed": "Al Jazeera",
-   "kind": "overseas",
-   "lang": "en",
-   "published": "2026-10-23T15:51:29Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "image_checked": true,
-   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/freelance-1-1792696560.jpg?resize=1920%2C1440",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "93648e5a70cf4c5b",
-   "title": "The Five Nine: How AT&T and GSMA are building AI for telecom networks",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmplbFBlUFJVNWZWWE5COFlzNGhVMGhLQUhxLTdHQ3lUQkMzSjhPWkt4MjZBdGhNX1JWbDFPYXAzeDZ6SkhEdXVfTVU5elk3N1VuMWg2d1BkY3QyUkQyQ3hZMk5LYl82UGVmTjRGdnFLU2Y0SktmTzdVM0VHZlJMRnpkb3BBYnRSV0VyRjdJalltSm80UUZTQlJmZUh6ckZv?oc=5",
-   "summary": "The Five Nine: How AT&T and GSMA are building AI for telecom networks Fierce Network",
-   "outlet": "Fierce Network",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T15:37:00Z",
-   "first_seen": "2026-10-23T16:53:17Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "ba704f222330a82e",
-   "title": "The Five Nine: How AT&T and GSMA are building AI for telecom networks",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOay01bXp6UjhNR05kUkV5bkFnWXZHbzFWN21jM3V6LW1IV3ZJN1MyeW5UZmpocVFEUTFUUnNscjFodEZEWFl5eTF0YmhONldYblhxZ24zZDJrdFNxZ3FsajE5ZDhFZzBDNWpYTWc0cDhFWGJPMHU1R25HSmdSNHhzUWRQdVg4VmxSbjg2UGhsRm9vVnMxbHo3a0tTWWJjN3h0?oc=5",
-   "summary": "The Five Nine: How AT&T and GSMA are building AI for telecom networks Fierce Network",
-   "outlet": "Fierce Network",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T15:37:00Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "b4c1ada7737fecf7",
-   "title": "アメックス、26年利益見通し上方修正 世界で5％人員削減へ",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9JVjhwYlFNUEQ5RmJaZzhtcHZ0MEk5NjBmOUNYalV4UzhtUWZ6RTVPOE1nNnFOWUgzY2JxdEVkSlhkMjJqSUN6TVpBbkRyM3d0azBTc1hSS2RDMkJBdWJVcGMxdnM0dGM?oc=5",
-   "summary": "アメックス、26年利益見通し上方修正 世界で5％人員削減へ ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-23T15:36:00Z",
-   "first_seen": "2026-10-25T10:47:53Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "9436a73ceceea325",
-   "title": "France to deploy 70,000 police on Saturday to prevent civil unrest",
-   "link": "https://www.theguardian.com/world/2026/oct/23/france-police-demonstrations-civil-unrest",
-   "summary": "Security forces to include elite units usually used for counter-terrorism after worst street violence in years France will deploy about 70,000 police around the country on Saturday as the government seeks to prevent more civil unrest after some of the worst street violence in yea…",
-   "outlet": "The Guardian World",
-   "feed": "The Guardian World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/b6ac2b9c5241141a833ecef0b1e0772c1adb957a/458_0_4583_3667/master/4583.jpg?width=140&quality=85&auto=format&fit=max&s=ae2af0554df68a1c1cfdaeb235c2d115",
-   "published": "2026-10-23T15:34:21Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "1b53825f47c11103",
-   "title": "Oil spill washes up on UAE beaches after tanker strike",
-   "link": "https://www.bbc.co.uk/news/articles/c6rey3n974g5o?at_medium=RSS&at_campaign=rss",
-   "summary": "Satellite images show oil spreading for miles along the coastline, threatening local marine wildlife",
-   "outlet": "BBC World",
-   "feed": "BBC World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6926/live/c5f26d10-cef3-11f1-93e1-3b657b665bcf.png",
-   "published": "2026-10-23T15:30:47Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "5347caf54b2c11c5",
-   "title": "Free Speech Union hit by internal allegations of racism and sexually inappropriate remarks",
-   "link": "https://www.theguardian.com/uk-news/2026/oct/23/free-speech-union-allegations-racism-sexually-inappropriate-remarks",
-   "summary": "Exclusive: Key figure in campaign group accused of saying she would ‘never hire a black person’, and second figure discussed Sydney Sweeney’s ‘assets’ The Free Speech Union (FSU) is reeling from internal grievances involving allegations of racism, workplace discrimination and sex…",
-   "outlet": "The Guardian World",
-   "feed": "The Guardian World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/68043c75e21b00b026cd06f6ba2b6bbedbdc4908/838_0_1561_1249/master/1561.jpg?width=140&quality=85&auto=format&fit=max&s=aea3437a46a00ef16fa629a16c921393",
-   "published": "2026-10-23T15:30:07Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "09d247b870f2fef5",
-   "title": "ウクライナ南部で限定的停戦 米、トランプ氏妻が仲介と発表",
-   "link": "http://www.asahi.com/articles/ASVBR4V25VBRUHBI026M.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-23T15:30:05Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261023005991_comm.jpg",
-   "tv_match": {
-    "title": "ロシアとウクライナが局地的に戦闘停止で合意 27日からウクライナ南部で人道支援物資を搬入 米大統領妻が主導",
-    "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5oeDVuOGRNbkxpN0x1cnhVQ0hxejBnWjdOYzBuVmhLc2ttbThsV09RU1dEdVRqcTBWN3JsSWVVTjI1N3VldnRYVUltdkQ4Y3ZXSTlTREo4dzBoa3FITkRtZFRkSQ?oc=5",
-    "score": 0.32
-   },
-   "picked": false
-  },
-  {
-   "id": "56f729f824aa3fd3",
-   "title": "Home distillers rejoice as US Supreme Court considers whether to finally legalise moonshine",
-   "link": "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss",
-   "summary": "The Supreme Court will consider in the new year whether the 1868 legislation forbidding home distilling should be overturned.",
-   "outlet": "BBC World",
-   "feed": "BBC World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bffe/live/95770270-cef5-11f1-b441-2b33b063138f.jpg",
-   "published": "2026-10-23T15:24:35Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "22ee0a1c8056b7be",
-   "title": "ロ中銀、政策金利14％に据え置き インフレ見通し引き上げ",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0tMFlEY3o5d1ptNy0zZjE3ZzRFOVNRa04xN3RjMnc4UU1jb1NaZjBhTnE4dTUyVTRjU0UtMmhQZHd6R0Frd2ZHRHVxcDhIYkpIZkRjNE9wU21JRUIwQ0RNaUdPNmZyVWc?oc=5",
-   "summary": "ロ中銀、政策金利14％に据え置き インフレ見通し引き上げ ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-23T15:18:00Z",
-   "first_seen": "2026-10-25T09:49:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8f403bb7c38c06c4",
-   "title": "SpaceX’s mobile carrier push reportedly involves tapping into 80,000 cell sites",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNazZVaXlKd09aZXNQVW5Yb1dkVnFTRzY2MU54V0ViQWR5N2hBU0NvT05xNkE3VUltNDBVdmRyeHVKS1lXdXhrWllrWHZtbThMMExkeEotWjB5Zkg4STRfcXlpM3ZXUTR2dDdxekZOS1BFaG0xX0hwRld5Q2ZoaWFEdg?oc=5",
-   "summary": "SpaceX’s mobile carrier push reportedly involves tapping into 80,000 cell sites The Verge",
-   "outlet": "The Verge",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-23T15:16:24Z",
-   "first_seen": "2026-10-23T15:55:12Z",
-   "tv_match": "unknown",
-   "picked": false
   }
  ],
  "tv": [
+  {
+   "id": "a3a444a48f413f2d",
+   "title": "トヨタ×Waymo 自動運転タクシー2027年から国内で運行開始",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5wOVpibkcxTjlXRHFpTmxzSFlXcnNydTI5VDZHLUpPdURHRll6Y2hrX1AybnpYMnJaeGV2TzBxX3FGODdTNERIT3lqLWdTQQ?oc=5",
+   "summary": "トヨタ×Waymo 自動運転タクシー2027年から国内で運行開始 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T15:37:00Z",
+   "first_seen": "2026-10-30T16:05:46Z"
+  },
+  {
+   "id": "4dbc6c85895a8920",
+   "title": "69人死亡のスペイン列車衝突事故 日本人2人は犠牲者リストに名前なし",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1rSEpqclE3WVB1TXAzRnJoSm5QSlBmMFhMbldMSkF5WGtKSWo3cEc5UFJ4SWxlV2dGSG5nSWJFMS05bjhCVDlRUHo1VS1veGNsUDVSejJtcw?oc=5",
+   "summary": "69人死亡のスペイン列車衝突事故 日本人2人は犠牲者リストに名前なし TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T15:33:24Z",
+   "first_seen": "2026-10-30T16:05:46Z"
+  },
   {
    "id": "4182e6be9e453ab3",
    "title": "ことしの県産米１等比率 コシヒカリ９１．５％ 富富富９８．５％ 過去５年で最良の出来 富山県",
@@ -103257,6 +103351,18 @@
    "lang": "ja",
    "published": "2026-10-30T11:24:00Z",
    "first_seen": "2026-10-30T11:57:30Z"
+  },
+  {
+   "id": "bca084d314c07d19",
+   "title": "【天気】31日は「朝から秋の日差したっぷり」朝晩はヒンヤリするので調整の利く服装を《長崎》",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQY1V0Zk1acUFyc3ZneVpqSzIwc0p0QXRqNjlEaVpUZFBmZ1JobzM3aFRPYmdpOEJqYmdqMjRQZnF4ZHd5SlNMUGZNVUhaaXktbko5UUc4SElDMGFockVJZTZkZ0RkQTlXVzhST3N3eW9ON2NsVHFjV1otN2VvUnNlWXA2bUQ3NTA?oc=5",
+   "summary": "【天気】31日は「朝から秋の日差したっぷり」朝晩はヒンヤリするので調整の利く服装を《長崎》 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T11:13:00Z",
+   "first_seen": "2026-10-30T16:05:46Z"
   },
   {
    "id": "6acaa856f0c820ab",
@@ -103317,6 +103423,18 @@
    "lang": "ja",
    "published": "2026-10-30T10:30:00Z",
    "first_seen": "2026-10-30T15:13:49Z"
+  },
+  {
+   "id": "5091bff7673b87d3",
+   "title": "長崎市長が高市総理に面会「核禁条約の初の再検討会議へオブザーバー参加求める」《長崎》",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV2kwSUo2MnJHVnZVWFdmOV9JVVNZb01VSzN2eGZhbjdrMFBhWDMyQk9ZN0xHSkNqdWpzWHcyU1FRUjh6TFBCVFdLbF9BckRQUEdXalBpSUU0Skk2bkhYSEtvbkpDazUwNGROLTdIdFEzREdSY1pGTXA1TUFNaU9ZYVJFb21aNUk?oc=5",
+   "summary": "長崎市長が高市総理に面会「核禁条約の初の再検討会議へオブザーバー参加求める」《長崎》 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T10:20:00Z",
+   "first_seen": "2026-10-30T16:05:46Z"
   },
   {
    "id": "aa0ddf0a156f2152",
@@ -103931,6 +104049,18 @@
    "first_seen": "2026-10-30T04:04:04Z"
   },
   {
+   "id": "f0e83b86e020731d",
+   "title": "島根・松江市の小学校3校で約300人にかゆみ・嘔吐などの症状 児童10人搬送 給食で「ヒスタミン中毒」の疑い",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1ORnpSdnRRa3JBamlwbDVfUXRRdldCMnVRTXlKeVRsOFI2NHg3RGNoNUczRUxRcWdRQ2lMVG9ZN081QjFETEN5bkNsU3Z4SlBzakVETzVGOA?oc=5",
+   "summary": "島根・松江市の小学校3校で約300人にかゆみ・嘔吐などの症状 児童10人搬送 給食で「ヒスタミン中毒」の疑い TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T02:56:33Z",
+   "first_seen": "2026-10-30T16:05:46Z"
+  },
+  {
    "id": "b70ee48d81c57278",
    "title": "韓国で日本人女性殺害 死因は出血性ショックか 全身に多数の刺し傷 韓国籍の30代男を殺人の疑いで拘束",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9lUWFfQkpxaTl6UkJYdTI5VUNVY1RsQUx4UWFfUXBXeUtucHMwRUs0ZnAtcHUwd1NMODFwLU5CVjlLSWd3RE93ODhYeFM0UGlZRWNVN1oyMA?oc=5",
@@ -104027,6 +104157,30 @@
    "first_seen": "2026-10-30T10:59:06Z"
   },
   {
+   "id": "a07bf45b997687d9",
+   "title": "インテル、アマゾン・ドット・コム決算を受け大幅安",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE91QTVXUW5tUmgtbi1PWnZrWG1ZbktvSFZXb3JqLWNSeTUxTE1UOFdmTmdfZXZSNlQwVmZZNFVCWTQ1Q2ZGdEIyLV9PZzc3TUxqSlo1bmUtd3dYZURmTFRR?oc=5",
+   "summary": "インテル、アマゾン・ドット・コム決算を受け大幅安 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T02:13:00Z",
+   "first_seen": "2026-10-30T16:05:46Z"
+  },
+  {
+   "id": "58b2709d35f419ee",
+   "title": "日銀 政策金利据え置きへ 2％の物価目標は到達と判断の公算大｜昼サテ",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE92Zl84X21SOWJRWkRMSHBjQ2F3RUhwSUtqRmNLUGFtZnZLSThPb1VsMTlKek9MVnUtajQ5UFR2V1lqeDFxQ1lrczBNMHlCNVRuOXZuUVVRaDlxNi04akE?oc=5",
+   "summary": "日銀 政策金利据え置きへ 2％の物価目標は到達と判断の公算大｜昼サテ テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-30T02:13:00Z",
+   "first_seen": "2026-10-30T05:02:59Z"
+  },
+  {
    "id": "7d9bbcf475898a3c",
    "title": "エヌビディアに中国女性スパイか フアンCEOと親密な関係築き 機密情報入手の疑い",
    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5LLUpPcWppZ1lxem1hOS15MmNJMXpCLXRtX3N5YnRmU2NVTmQ0aHFEMWQ3a2pKNzlhd1B1X2c1QThmaHp3T3RNbFZQang4bEpvdmIyOXQzYjJTVjBmTVRN?oc=5",
@@ -104073,18 +104227,6 @@
    "lang": "ja",
    "published": "2026-10-30T02:13:00Z",
    "first_seen": "2026-10-30T10:07:00Z"
-  },
-  {
-   "id": "58b2709d35f419ee",
-   "title": "日銀 政策金利据え置きへ 2％の物価目標は到達と判断の公算大｜昼サテ",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE92Zl84X21SOWJRWkRMSHBjQ2F3RUhwSUtqRmNLUGFtZnZLSThPb1VsMTlKek9MVnUtajQ5UFR2V1lqeDFxQ1lrczBNMHlCNVRuOXZuUVVRaDlxNi04akE?oc=5",
-   "summary": "日銀 政策金利据え置きへ 2％の物価目標は到達と判断の公算大｜昼サテ テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-30T02:13:00Z",
-   "first_seen": "2026-10-30T05:02:59Z"
   },
   {
    "id": "441e909225a50665",
@@ -104219,6 +104361,18 @@
    "first_seen": "2026-10-30T04:04:04Z"
   },
   {
+   "id": "9d1572de7ef5730a",
+   "title": "「もったいない」に付加価値を フードロス最前線｜日経モーニングプラスFT（モープラFT）",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ieW5FRXFCc2JFOGk4UXRwU25aTHNHeXRYazZKT0tmMXV0NXdidVM4TE1DQlQtdExSZk4zM1hndzZDSXdSb00wbkxOQXZjSndZRzNjYlptcWJ1T0N0TGJoVA?oc=5",
+   "summary": "「もったいない」に付加価値を フードロス最前線｜日経モーニングプラスFT（モープラFT） テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-29T22:05:00Z",
+   "first_seen": "2026-10-30T01:21:25Z"
+  },
+  {
    "id": "3cf7977f5d43467c",
    "title": "【日経解説】「もったいない」に付加価値を フードロス最前線（経済WEEK）",
    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1EQl9feGdDbllsaDVXZ2pVRjFjTGtzazd5M2tRVHV1SGZpb3NZZGpMWXptNk00VVliWlJaT1lMV19UVExTcVFmQ2thcVBVRmEyakR2V2hhclRPUWo1Ymo3V0syNDRJZw?oc=5",
@@ -104265,18 +104419,6 @@
    "lang": "ja",
    "published": "2026-10-29T22:05:00Z",
    "first_seen": "2026-10-30T04:04:04Z"
-  },
-  {
-   "id": "9d1572de7ef5730a",
-   "title": "「もったいない」に付加価値を フードロス最前線｜日経モーニングプラスFT（モープラFT）",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ieW5FRXFCc2JFOGk4UXRwU25aTHNHeXRYazZKT0tmMXV0NXdidVM4TE1DQlQtdExSZk4zM1hndzZDSXdSb00wbkxOQXZjSndZRzNjYlptcWJ1T0N0TGJoVA?oc=5",
-   "summary": "「もったいない」に付加価値を フードロス最前線｜日経モーニングプラスFT（モープラFT） テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-29T22:05:00Z",
-   "first_seen": "2026-10-30T01:21:25Z"
   },
   {
    "id": "6f7d4663e1eebe07",
@@ -106391,18 +106533,6 @@
    "first_seen": "2026-10-29T09:07:58Z"
   },
   {
-   "id": "9a43be202a1fe68e",
-   "title": "市場で拮抗する2つの見方 弱気派vs強気派【朝活Online】｜SPECIALコンテンツ",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBHc2plb1ZPdjZWbFVsVzlDQ2I5Vlh6bXNBRHlVc19STGZReGxWX2h1VG9mazI2Zk0wRDkxOVBDQkg3VmU5dVV2el9aalZ0bVNpUm5wVy03YTE4cF80VFdnaHcxNTk0LU8wRmc?oc=5",
-   "summary": "市場で拮抗する2つの見方 弱気派vs強気派【朝活Online】｜SPECIALコンテンツ テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-28T22:07:00Z",
-   "first_seen": "2026-10-29T21:58:13Z"
-  },
-  {
    "id": "fd18b3b1816ded0f",
    "title": "市場で拮抗する2つの見方 弱気派vs強気派【朝活Online】｜SPECIALコンテンツ",
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE40aXd6VERudjFBUUJ5OXdPWDhZZldUSUp2WVlNYlBXRTFKa1pCS2FsaHc4a0RSd0hlYTU3M3JjZEZhanpvWWRfczZhV0pKb3FBVnNuRi1YLWN3aWpKVnljeVVKdF8?oc=5",
@@ -106425,6 +106555,18 @@
    "lang": "ja",
    "published": "2026-10-28T22:07:00Z",
    "first_seen": "2026-10-29T07:19:58Z"
+  },
+  {
+   "id": "9a43be202a1fe68e",
+   "title": "市場で拮抗する2つの見方 弱気派vs強気派【朝活Online】｜SPECIALコンテンツ",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBHc2plb1ZPdjZWbFVsVzlDQ2I5Vlh6bXNBRHlVc19STGZReGxWX2h1VG9mazI2Zk0wRDkxOVBDQkg3VmU5dVV2el9aalZ0bVNpUm5wVy03YTE4cF80VFdnaHcxNTk0LU8wRmc?oc=5",
+   "summary": "市場で拮抗する2つの見方 弱気派vs強気派【朝活Online】｜SPECIALコンテンツ テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-28T22:07:00Z",
+   "first_seen": "2026-10-29T21:58:13Z"
   },
   {
    "id": "23209d8f20c5e306",
@@ -107243,18 +107385,6 @@
    "first_seen": "2026-10-30T03:03:52Z"
   },
   {
-   "id": "a5382722b84b7363",
-   "title": "経産大臣「日本車を対象に」 欧州EV優遇策を巡り",
-   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE53MmFyZHczRUgxeXpDMzh1VndkTHloUDNZcnJpMFNtR2pOQ0RRQ1ZMQzdpRklBSE8wMjEwczh3UE1LZkh5MFo2eFJjNUFXRzEzZ2ZualZDaHJwNG5DZXB4YlNB?oc=5",
-   "summary": "経産大臣「日本車を対象に」 欧州EV優遇策を巡り テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-28T13:00:00Z",
-   "first_seen": "2026-10-28T21:56:20Z"
-  },
-  {
    "id": "bedb0378b54a2c4c",
    "title": "GMO不正アクセス問題【延長戦ライブ】｜ワールドビジネスサテライト（WBS）",
    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBOS0Nxb1FndlVuSGVfbEppQUxQTlZrRWV6QXRhM0pXSEJNV2kxSjAtMnhlc3dJMTc1WU9RT1FRMWdmMVU2bnNacmE4ZGtaTTBHdGdVZGw3V1lPdEJ3?oc=5",
@@ -107265,6 +107395,18 @@
    "lang": "ja",
    "published": "2026-10-28T13:00:00Z",
    "first_seen": "2026-10-28T16:08:12Z"
+  },
+  {
+   "id": "a5382722b84b7363",
+   "title": "経産大臣「日本車を対象に」 欧州EV優遇策を巡り",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE53MmFyZHczRUgxeXpDMzh1VndkTHloUDNZcnJpMFNtR2pOQ0RRQ1ZMQzdpRklBSE8wMjEwczh3UE1LZkh5MFo2eFJjNUFXRzEzZ2ZualZDaHJwNG5DZXB4YlNB?oc=5",
+   "summary": "経産大臣「日本車を対象に」 欧州EV優遇策を巡り テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-28T13:00:00Z",
+   "first_seen": "2026-10-28T21:56:20Z"
   },
   {
    "id": "c241e5760aa80912",
@@ -109991,18 +110133,6 @@
    "first_seen": "2026-10-28T09:06:05Z"
   },
   {
-   "id": "acb86c773805b702",
-   "title": "自動車部品セクター ～非自動車部品事業のポテンシャル～【朝活Online】｜SPECIALコンテンツ",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5tSy1RaTFyZWlRczRMZVFzdEdfN0h6VU5EcjE5eXZfS1dadzFLQi1iN2FKdjJBRWZqVzVVdDB1alZvYzNFZzgxRW1IWnlwbmhtOWRvVFRNdWwyR2REalJGSE5GVGE4bkVBTUE?oc=5",
-   "summary": "自動車部品セクター ～非自動車部品事業のポテンシャル～【朝活Online】｜SPECIALコンテンツ テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-27T22:07:00Z",
-   "first_seen": "2026-10-28T19:08:27Z"
-  },
-  {
    "id": "5ee915956c18bd71",
    "title": "自動車部品セクター ～非自動車部品事業のポテンシャル～【朝活Online】",
    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1idE0wSXA2YlhKZkUyZF9MUzJXU2ZaY0g1M1F4amZzTV85RWozVVpkOTFzNFFLZjduY1pZcWU5UDNhSzYtc0JuVDRYRDhYWGlmaVZwejhCcEJYWjA0T1BCSHRDMDJUZ0R1ZWc?oc=5",
@@ -110013,6 +110143,18 @@
    "lang": "ja",
    "published": "2026-10-27T22:07:00Z",
    "first_seen": "2026-10-28T04:00:43Z"
+  },
+  {
+   "id": "acb86c773805b702",
+   "title": "自動車部品セクター ～非自動車部品事業のポテンシャル～【朝活Online】｜SPECIALコンテンツ",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5tSy1RaTFyZWlRczRMZVFzdEdfN0h6VU5EcjE5eXZfS1dadzFLQi1iN2FKdjJBRWZqVzVVdDB1alZvYzNFZzgxRW1IWnlwbmhtOWRvVFRNdWwyR2REalJGSE5GVGE4bkVBTUE?oc=5",
+   "summary": "自動車部品セクター ～非自動車部品事業のポテンシャル～【朝活Online】｜SPECIALコンテンツ テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-27T22:07:00Z",
+   "first_seen": "2026-10-28T19:08:27Z"
   },
   {
    "id": "07c72533ce8eb3fd",
@@ -121607,54 +121749,6 @@
    "lang": "ja",
    "published": "2026-10-23T16:12:00Z",
    "first_seen": "2026-10-23T16:53:17Z"
-  },
-  {
-   "id": "72cf328bdbfffdaa",
-   "title": "パリ近郊で銃撃 1人死亡4人けが 12歳少女重体 テロ目的殺人・殺人未遂容疑で捜査",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAwZGRfaW4tMUozWVRvcmVOUUpLY3BucTE3ek9PUnUwanJxNVNHWm9nRkFPRVZwa0xkMHdEQWpLbDBsR2hKczdWNFFuYjRvMC1yYzJ0dmFrbkc3WUkya19OZGs4RlZ3Njc2dUlsUXlzNDlpYjRJTmQwemZ3?oc=5",
-   "summary": "パリ近郊で銃撃 1人死亡4人けが 12歳少女重体 テロ目的殺人・殺人未遂容疑で捜査 テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-23T16:04:44Z",
-   "first_seen": "2026-10-24T17:43:57Z"
-  },
-  {
-   "id": "da2f3a1c98799b2f",
-   "title": "【気象解説】台風30号、最新予報円や週末の天気は 広範囲で警報級大雨に警戒を",
-   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBIWm51eUJfR1RXM1VLVFJVOWFINFc1dDQ3Vl95NGJFOW5DR1N4UDNjejJNVy1NdlNXdnZJemdNMkpjTHlQR2tnRkhYc2tYRVVNVUt0WWc5Yy13X1pNZXMzWDB5RnRrN2hveV80T2xNRnZndjdLdHVubEdhS1M?oc=5",
-   "summary": "【気象解説】台風30号、最新予報円や週末の天気は 広範囲で警報級大雨に警戒を 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-23T15:54:00Z",
-   "first_seen": "2026-10-24T10:48:15Z"
-  },
-  {
-   "id": "dd15352065570eb7",
-   "title": "「30回以上現金を盗んだ」福岡市消防局の職員(40)が停職6か月の処分 仮眠室で同僚の財布から現金窃盗",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBYM3owRkhiNHVjZlRyRjZDTXZETVdCVUtrRTBpcTNEbEFYUkhkaEFKa2hNX0FFMjkzdU5ONEZIVXhteDFpeUhJeHFPWG5pbmlOY3VoaHlycw?oc=5",
-   "summary": "「30回以上現金を盗んだ」福岡市消防局の職員(40)が停職6か月の処分 仮眠室で同僚の財布から現金窃盗 TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-23T15:38:00Z",
-   "first_seen": "2026-10-25T22:43:54Z"
-  },
-  {
-   "id": "2b6954290a0a879e",
-   "title": "「PHP」問題拡大 緊急地震速報も 災害情報や注文アプリに影響",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9WNURXbGJUaWduZG5XYXZZUjdHb2hDTUVQb1ZyZmswWDdQbEhKd0NBRGYycGhkcTZsNjlkZEl5MWpUMUg3UUtSN1Q2U3hnZw?oc=5",
-   "summary": "「PHP」問題拡大 緊急地震速報も 災害情報や注文アプリに影響 FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-23T15:24:00Z",
-   "first_seen": "2026-10-25T00:58:49Z"
   }
  ]
 }
