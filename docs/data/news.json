@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T21:56:47Z",
+ "generated_at": "2026-11-02T22:56:01Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -455,7 +455,7 @@
    "name": "DW",
    "kind": "overseas",
    "ok": true,
-   "count": 11
+   "count": 12
   },
   {
    "name": "France 24",
@@ -509,13 +509,13 @@
    "name": "Googleニュース：J:COM",
    "kind": "通信",
    "ok": true,
-   "count": 17
+   "count": 32
   },
   {
    "name": "Googleニュース：製造・物流のAI",
    "kind": "IT",
    "ok": true,
-   "count": 1
+   "count": 2
   },
   {
    "name": "Google News: Telecom",
@@ -567,14 +567,13 @@
    "outlets": 4
   },
   {
-   "id": "b06e0ec2403c36f5",
+   "id": "36dac76e9d3b5d79",
    "related": [
-    "674b3a4a6f7b5239",
-    "e4eee9e87ffc8bf0",
-    "157bfbb3c1b1af22",
-    "bb3bc5ec191c1548"
+    "62f88662fd12ec73",
+    "0c1a8b57ef5c00c7",
+    "09373fd007f4c9fc"
    ],
-   "outlets": 4
+   "outlets": 3
   },
   {
    "id": "0ba06b362cbb9bee",
@@ -586,6 +585,15 @@
    "outlets": 3
   },
   {
+   "id": "62caac31c8665339",
+   "related": [
+    "d7d1da84c60489e8",
+    "126a55160b5d4d7e",
+    "f3d90294b24e0939"
+   ],
+   "outlets": 2
+  },
+  {
    "id": "57ba3af0762b7ede",
    "related": [
     "99e9184feb96bc9d"
@@ -593,18 +601,13 @@
    "outlets": 2
   },
   {
-   "id": "ee21db166206fd27",
+   "id": "7fd84d51bb82be62",
    "related": [
-    "f462433ba7677c54"
+    "84b91f1959c40de2",
+    "bf1c293df267809c",
+    "81a98094294bdbda"
    ],
-   "outlets": 2
-  },
-  {
-   "id": "d65eed7f178e710b",
-   "related": [
-    "9959396216b6d485"
-   ],
-   "outlets": 2
+   "outlets": 3
   }
  ],
  "articles": [
@@ -621,6 +624,272 @@
    "first_seen": "2026-11-02T09:24:28Z",
    "image_checked": true,
    "image": "https://www.soumu.go.jp/main_content/000372150.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "d0385f454009de42",
+   "title": "夕張市「次のスタートラインに」 財政再生団体、借金返済終了へ",
+   "link": "https://mainichi.jp/articles/20261102/k00/00m/310/036000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:45:10Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102ddlk01040304000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "7fd84d51bb82be62",
+   "title": "日本人2人目の死亡確認 スペイン高速列車事故、全員の身元確認終了",
+   "link": "http://www.asahi.com/articles/ASVC27GYZVC2UHBI00YM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:39:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261103000649_comm.jpg",
+   "tv_match": {
+    "title": "【速報】スペイン列車衝突事故 日本人2人目の死亡を確認 69人全員の身元特定 スペイン当局発表",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9WbFdYVnFaMjNjTjFGbXNkdVhaTEF6VU9rRG1VWG9neGd0N1N4S0pWeGRnRDdNWTkzX0hTTXZtalk5LVhuallIV2lRRTNOblU3QlNqaWtkdw?oc=5",
+    "score": 0.64
+   },
+   "picked": false
+  },
+  {
+   "id": "ca33406e01bd8f8d",
+   "title": "「学校と避難所が標的に」 ロシア軍の攻撃で26人死亡 ウクライナ",
+   "link": "http://www.asahi.com/articles/ASVC27G8NVC2UHBI002M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:35:47Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261103000645_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "286c8dc3dc9a6b4c",
+   "title": "PM to ask countries affected by UK’s role in slavery to help shape formal apology",
+   "link": "https://www.theguardian.com/world/2026/nov/02/andy-burnham-ask-countries-affected-uk-role-slavery-shape-formal-apology",
+   "summary": "Andy Burnham to launch ‘structured dialogue’ on issue at Commonwealth summit in Antigua and Baruda Andy Burnham will ask countries affected by Britain’s role in slavery to help shape an expected formal apology, Downing Street has indicated, arguing that their input is indispensab…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/cac4744e8fd790c6566d2c6152e9d67bac5fb83e/686_3_4370_3496/master/4370.jpg?width=140&quality=85&auto=format&fit=max&s=5336496dbd7f7446b27a5e147c5aa938",
+   "published": "2026-11-02T22:30:30Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "e001b1cb08247225",
+   "title": "挫折乗り越えた4番打者「自分が決める」 西濃運輸・野崎大地",
+   "link": "https://mainichi.jp/articles/20261101/k00/00m/050/142000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:30:12Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/01/20261101k0000m050181000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "56f151ce82c0da06",
+   "title": "ADR主要銘柄（日本）－日産自、ソニーＧが上昇、ニデック、ソフトバンクＧが下落(トレーダーズ・ウェブ)",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOcm5MVnpObldmVHJNNXplNlgyWGJpZHVibzhDaVhtSFl6X1VESmt5X21HTVNwSFRWenVULTNYczBFRHNOZmlVQ3I5dHRzOF9JX2lfUU16VDVkenZZeEp3NXF1SnBmSEpmeDhtRmJQRkVWX0dFSE1ybUxjLVN3R3hpeF91V2k0QWs?oc=5",
+   "summary": "ADR主要銘柄（日本）－日産自、ソニーＧが上昇、ニデック、ソフトバンクＧが下落(トレーダーズ・ウェブ) Yahoo!ファイナンス",
+   "outlet": "Yahoo!ファイナンス",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T22:30:03Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "f50ef87cdd9d84ad",
+   "title": "熊本・菊陽に半導体研究の共同キャンパス 三菱UFJなどが構想",
+   "link": "https://mainichi.jp/articles/20261102/k00/00m/310/073000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:15:13Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102k0000m310068000p/0c10.jpg?3",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "62caac31c8665339",
+   "title": "ＮＹ市場サマリー（2日）ドル軟調、長期債利回り低下 Ｓ＆Ｐ下落",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoZ0oyRUNxdVF6ZkFPU0k0MzY2MVhHeFFwZk1IeVE2aE1UeUxkeVZza0lSc2w3RE5DZmd0TXI5Y0tzamxkdHFYa2E3ZjN4cThaaC1YVkVsUEJhUQ?oc=5",
+   "summary": "ＮＹ市場サマリー（2日）ドル軟調、長期債利回り低下 Ｓ＆Ｐ下落 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-02T22:12:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2d05be68b9f12eb8",
+   "title": "Trump and Jim Cramer Defend SpaceX as Musk Wants to Enter the Telecom Market",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB5R2dWRy1acW12TGZRRlpleWVnZ0pqdHNQZDdhUlVrdlcxRUZINExlcTN6UnVaaHR6eDljZ18wRlZmLUtuSTdTMFpWZUVBbnp6aDhFYWMxYjVWTHY4dEJHTkpDUjIteGM2NGNvYnh1Yw?oc=5",
+   "summary": "Trump and Jim Cramer Defend SpaceX as Musk Wants to Enter the Telecom Market BeInCrypto",
+   "outlet": "BeInCrypto",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-02T22:10:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "545919a26fa86eb4",
+   "title": "憲法改正議論、与野党幹事に聞く現状 国民の理解と納得得るには",
+   "link": "https://mainichi.jp/articles/20261102/k00/00m/010/309000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:01:12Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102k0000m010313000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "4f2952fa3efaeaff",
+   "title": "王将戦リーグ、永瀬・伊藤匠・藤本の争い 郷田らにもチャンス",
+   "link": "https://mainichi.jp/articles/20261102/k00/00m/200/318000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:14Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102k0000m200354000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "7a42078b42dd2560",
+   "title": "高市首相の「発議にめど」は何を指す? 改憲議論は「寸止め」か",
+   "link": "https://mainichi.jp/articles/20261102/k00/00m/010/312000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:11Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102k0000m010263000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "35bb6456604f802f",
+   "title": "無期限休部→移籍4年目 新天地でつかんだ日本選手権初出場",
+   "link": "https://mainichi.jp/articles/20261102/k00/00m/050/149000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:11Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102k0000m050331000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "cf47bdbb6bffa0dc",
+   "title": "「この中間選挙に勝ったら、権力をどう使うのか」民主党新人議員が問う“最低賃金25ドル”案",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE91U1JfSzZDTkZiMFdROUZ6WE8tYUM5SDlidWMwVFJ4ZVN5UG9jaU9vaFFnV00td0dDT0VOdzN1Z2Mya2JyUkJtR1N4TnpPeUVYWkpkSk1pNzZRUQ?oc=5",
+   "summary": "「この中間選挙に勝ったら、権力をどう使うのか」民主党新人議員が問う“最低賃金25ドル”案 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3c4ca610c20a68f0",
+   "title": "全焼した酒蔵「越後鶴亀」が間借りで再起へ ファンや同業者も後押し",
+   "link": "http://www.asahi.com/articles/ASVC243J9VC2OXIE003M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261102004425_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "419b6dd0a2b29125",
+   "title": "「いつもと違う」簗氏の様子に記者の予感 辞任劇が問いかけたものは",
+   "link": "http://www.asahi.com/articles/ASVC22GXFVC2UTFK00RM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261102002980_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "afc24014c205f70c",
+   "title": "携帯4社、通品品質は「2強2弱」？ ドコモと楽天モバイルの現状は",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9fMGJkX2xpS3ZjdDBXUHd6RDR0M05qUnkxYjVsVWw5ejYxWkQwRUNraWdfX0ZwVUhkak9aUFlMbk9hcnl1MkF2cV9JQ2NZSzllSklVaWFJdHktbTREUXBZ?oc=5",
+   "summary": "携帯4社、通品品質は「2強2弱」？ ドコモと楽天モバイルの現状は ASCII.jp",
+   "outlet": "ASCII.jp",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T22:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
    "tv_match": null,
    "picked": false
   },
@@ -655,6 +924,50 @@
    "picked": false
   },
   {
+   "id": "b2b629e4ce660302",
+   "title": "COVID-19 \"ten times more lethal than seasonal flu\": Fauci",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1XYUxHcUZhUjhqSkUzNmp2UWc2YTd2MjVmazdhdjBnaVhnRVAxWWZSTTh5NEJGUFk3LUZpcWtIVnhORkV2akczdmhGMTNpcnczYTFrR3hGWWJ3eW8?oc=5",
+   "summary": "COVID-19 \"ten times more lethal than seasonal flu\": Fauci Reuters",
+   "outlet": "Reuters",
+   "feed": "ロイター日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-02T21:42:52Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "59a1973b87e9a737",
+   "title": "米アップル7─9月期、市場予想上回る ｉＰｈｏｎｅ需要堅調",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83eFBBb1VWM0pDbUtJd0dwRlJPMjJKbU8zSTY5XzdyQTBReVJVVGxJR0JTVXFrWGdrOG92dWZaM2ZCNTFsMkFPR2EyNVhCWVlGby1xSEZfSVh3QQ?oc=5",
+   "summary": "米アップル7─9月期、市場予想上回る ｉＰｈｏｎｅ需要堅調 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-02T21:42:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "c359980aaa88668c",
+   "title": "US to drop South Africa, Rwanda from duty-free trade initiative",
+   "link": "https://www.dw.com/en/us-to-drop-south-africa-rwanda-from-duty-free-trade-initiative/a-79834508?maca=en-rss-en-world-4025-rdf",
+   "summary": "The Trump administration has said South Africa and Rwanda are breaking the rules of the AGOA free trade initiative, a centerpiece of US economic engagement with sub-Saharan Africa.",
+   "outlet": "DW",
+   "feed": "DW",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-11-02T21:40:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "image_checked": true,
+   "image": "https://static.dw.com/image/73497516_6.jpg",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "d1d98fc2aafa65c0",
    "title": "Trump promised 'no more wars'. His foreign policy tells another story",
    "link": "https://www.france24.com/en/tv-shows/truth-or-fake/20261102-trump-promised-no-more-wars-his-foreign-policy-tells-another-story",
@@ -667,6 +980,20 @@
    "published": "2026-11-02T21:34:10Z",
    "first_seen": "2026-11-02T21:56:47Z",
    "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "36dac76e9d3b5d79",
+   "title": "ドコモの5G基地局はau・ソフトバンクの半分以下、5Gの割合18.5%で4社最下位｜総務省調査",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE4tYk9pVmZQTzJQTFlBOUZHSTBpZVVxTEMzVU1RT1Yyb1d1YktRNDVpc3FfRXZxV2Nyc3hpQnBXUk4yTGFXelNtMmlyTlBFeDdHbG4wQlU3bjg5ZEVwZnJ0bGs1b21SeDdrODVVQ25SUDlXclFvOTk3UExabUhGUQ?oc=5",
+   "summary": "ドコモの5G基地局はau・ソフトバンクの半分以下、5Gの割合18.5%で4社最下位｜総務省調査 セレクトラ",
+   "outlet": "セレクトラ",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T21:30:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -876,6 +1203,39 @@
    "picked": false
   },
   {
+   "id": "3b07f725d06abbdf",
+   "title": "ブルーウエーブは起こる？ トランプ政権への「信任投票」アメリカ中間選挙、3日投開票",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tSjhRQzJWdmZROEc4YzN0UXR0TmZDYmdCMlN1Y2ZGSlNQVWRMeDd3RllNWnE5T2c3eW14TGNEUXdscWpIc3VLV2dFdmo0bHdUT3Fz?oc=5",
+   "summary": "ブルーウエーブは起こる？ トランプ政権への「信任投票」アメリカ中間選挙、3日投開票 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T21:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": {
+    "title": "アメリカ中間選挙とは 11月3日に投開票 何が決まる？ 大統領の「中間テスト」 トランプ氏が求心力維持か 民主党が過半数奪還か",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5ESWoxZUliVkdES0Mzc2pQOEplZnk5T3ZEME5FdUFkblV5VlFSZjFKTTNISkNZNWRxNlJVT3hOQWEwTXFucVdmZk1vZ0tmWHQzMmViSnhLdw?oc=5",
+    "score": 0.39
+   },
+   "picked": false
+  },
+  {
+   "id": "5ae6a3f542019245",
+   "title": "トランプ氏がロシアに接近、外交成果で自身の株上げるため？ 選挙結果によっては国際秩序に荒波が",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBUc1JxZUNhOGlZVVpCWXRob1pQbXBIcUxKbTRUZVZKVHdtTGtCSEN1eTcwY2lQV3UzQjljeU81UWR3QUF4aUdkLVg5Z1o2a1RuMDdZ?oc=5",
+   "summary": "トランプ氏がロシアに接近、外交成果で自身の株上げるため？ 選挙結果によっては国際秩序に荒波が 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T21:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "7e9dfd4a1bca6f29",
    "title": "【ワークマン】3500円の「ザットカジュアルバックパック」 視認性の高いオレンジ内装にポケットも充実",
    "link": "https://www.itmedia.co.jp/mobile/articles/2611/02/news069.html",
@@ -888,6 +1248,20 @@
    "first_seen": "2026-11-02T21:56:47Z",
    "image_checked": true,
    "image": "https://image.itmedia.co.jp/mobile/articles/2611/02/l_asa_100item_01.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "ed1321037dbb1f93",
+   "title": "毎日出版文化賞決まる",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRHVDdjEtUmRuQ0poWFJUbU5oUTJ5dTRmTmZvNmlNeko1WTdxVkh2bFZyYkhHSS1oYXgtVHNqN1ZyODNFeFBDNjF0NlB1aHdtQkx0N19UMUhfNHg3ZjN4cE9aMUlsN2FUZWFEbTc5Vks0LVdKc3VIQ0FpQVdXb1pNTzBWY21VUk5ON3A2d0Rka0JaVDdqZ214cENB0gGaAUFVX3lxTE1EdUN2MS1SZG5DSmhYUlRtTmhRMnl1NGZOZm82aU16SjVZN3FWSHZsVnJiSEdJLWhheC1Uc2o3VnI4M0V4UEM2MXQ2UHVod21CTHQ3X1QxSF80eDdmM3hwT1oxSWw3YVRlYURtNzlWSzQtV0pzdUhDQWlBV1dvWk1PMFZjbVVSTk43cDZ3RGRrQlpUN2pnbXhwQ0E?oc=5",
+   "summary": "毎日出版文化賞決まる ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T21:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
    "tv_match": null,
    "picked": false
   },
@@ -933,6 +1307,20 @@
    "published": "2026-11-02T20:54:38Z",
    "first_seen": "2026-11-02T21:56:47Z",
    "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "d7d1da84c60489e8",
+   "title": "欧州市場サマリー（2日）",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQOG0wdkZOTTJRc0M1RV8zc3NMVC1tck1hbEpDbDJuRE0wUVJDMk12VUMyUFVpUjlMRUZ4SGFhZ181eVdGaXlsd2hxXzJUcTlxd1JrVml2dnlMQmYwZDRUZkdaWEJSanNQaVdwVWJKMHRtYTFKQTZaV2xXeGw5emxFOEF6R1N1RXRWTk1V0gGHAUFVX3lxTE90a2E2bVVqSkRTTnBMUk9USnQyOVI1T1p0dEg3Y0dIZ1VjbThKc2FyUVdWeTRHdTZIUlNIVWF4bjd1MTk4NnpySmZla1RjOVRtRzdoaEs5bzN5QU0xTWdwbUtMN2hTdkJxVmlRcVF4U0dpZVEwTUFDUlRLbGNpb2Y3dkdsb2ExYw?oc=5",
+   "summary": "欧州市場サマリー（2日） ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T20:49:33Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -1021,9 +1409,9 @@
   },
   {
    "id": "53aad65db3624b7a",
-   "title": "Migration is a moral issue for Burnham – but he also wants to tell a positive story",
+   "title": "Migration is a moral issue for Burnham – but is he trying to please everyone?",
    "link": "https://www.theguardian.com/uk-news/2026/nov/02/migration-andy-burnham-shabana-mahmood-labour-immigration",
-   "summary": "While PM is keen to support those making a contribution his backing of Shabana Mahmood’s hard line is no surprise How will UK immigration rules change under Shabana Mahmood’s latest plans? While out on the campaign trail in Makerfield, Andy Burnham gave a glimpse into where he mi…",
+   "summary": "PM wants to tie Shabana Mahmood’s hard line on borders to recognition of the value of migration, but he may need to shout his conviction How will UK immigration rules change under Shabana Mahmood’s latest plans? While out on the campaign trail in Makerfield, Andy Burnham gave a g…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -1171,6 +1559,20 @@
    "picked": false
   },
   {
+   "id": "f3d90294b24e0939",
+   "title": "欧州市場サマリー（2日）",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdGthNm1VakpEU05wTFJPVEp0MjlSNU9adHRIN2NHSGdVY204SnNhclFXVnk0R3U2SFJTSFVheG43dTE5ODZ6ckpmZWtUYzlUbUc3aGhLOW8zeUFNMU1ncG1LTDdoU3ZCcVZpUXFReFNHaWVRME1BQ1JUS2xjaW9mN3ZHbG9hMWPSAYcBQVVfeXFMT3RrYTZtVWpKRFNOcExST1RKdDI5UjVPWnR0SDdjR0hnVWNtOEpzYXJRV1Z5NEd1NkhSU0hVYXhuN3UxOTg2enJKZmVrVGM5VG1HN2hoSzlvM3lBTTFNZ3BtS0w3aFN2QnFWaVFxUXhTR2llUTBNQUNSVEtsY2lvZjd2R2xvYTFj?oc=5",
+   "summary": "欧州市場サマリー（2日） ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T20:06:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "aee040e6858b439e",
    "title": "Fossilised red blood cells found in 115m-year-old dinosaur’s bone, say scientists",
    "link": "https://www.theguardian.com/science/2026/nov/02/fossilised-red-blood-cells-aratasaurus-dinosaurs-bone",
@@ -1266,6 +1668,20 @@
    "picked": false
   },
   {
+   "id": "f25892dfb1fdbed4",
+   "title": "高市首相の憲法観に「深みがない」ワケ 40年前から知る小林節・慶応大名誉教授が示す「根本的な間違い」",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5HVmhKVTE2azJIeHgyU01OU28yYjZMODdxbnNFLU9jSzFtcDNOUV8wWWpjYUpHeVJWWUtOS3pxSFBscmVyanhLelE0N0R3a3IyVmIw?oc=5",
+   "summary": "高市首相の憲法観に「深みがない」ワケ 40年前から知る小林節・慶応大名誉教授が示す「根本的な間違い」 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-02T20:00:00Z",
+   "first_seen": "2026-11-02T21:56:47Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "77b03839094ac3d5",
    "title": "高市首相が「真っ先に変える」と語った憲法の「おめでたい一文」 すり替えられた松下幸之助氏の教え",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1HNndYTjYyRS1MUDd1UVNIWnJRUlJWTGpNWjhaZUdsQzZzOFFHRkE4TFJfYldXd3RTWHlzdzZzbzlXdHpWRU5CTWtyS1BZWnFtS01F?oc=5",
@@ -1322,20 +1738,6 @@
    "picked": false
   },
   {
-   "id": "f25892dfb1fdbed4",
-   "title": "高市首相の憲法観に「深みがない」ワケ 40年前から知る小林節・慶応大名誉教授が示す「根本的な間違い」",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5HVmhKVTE2azJIeHgyU01OU28yYjZMODdxbnNFLU9jSzFtcDNOUV8wWWpjYUpHeVJWWUtOS3pxSFBscmVyanhLelE0N0R3a3IyVmIw?oc=5",
-   "summary": "高市首相の憲法観に「深みがない」ワケ 40年前から知る小林節・慶応大名誉教授が示す「根本的な間違い」 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-02T20:00:00Z",
-   "first_seen": "2026-11-02T21:56:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "0245b2330014ed62",
    "title": "令和8年秋の叙勲",
    "link": "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001183.html",
@@ -1373,6 +1775,34 @@
    "picked": false
   },
   {
+   "id": "f578292d2a00af58",
+   "title": "同じインドなのになぜ？ドコモと第一三共はつまずき、スズキは40年以上勝ち続けた理由",
+   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1aVFZiRWlNWHZ3cGJJTVAydlNvVEdJVzAweVFqaTZ0d3VqSmQ2RHVkLVV3NngxMG94ZXJUdm1tZGlpSUV4bVhTZEVuVS1QcHBoeVhiWlBB?oc=5",
+   "summary": "同じインドなのになぜ？ドコモと第一三共はつまずき、スズキは40年以上勝ち続けた理由 ダイヤモンド・オンライン",
+   "outlet": "ダイヤモンド・オンライン",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T20:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "8b958b5090cabf19",
+   "title": "昨年度、5G基地局11％増 KDDI最多 総務省まとめ",
+   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ySzl4R2w1VU8zRHRTNzItaDJiOUhha1Y4V25IV25sZWpTR092aEVfbExVTEVuYXlQd25mbGNRWE9zYm52NU00TnBmeUgzTmpHNjhROGlYSDE?oc=5",
+   "summary": "昨年度、5G基地局11％増 KDDI最多 総務省まとめ 日刊工業新聞",
+   "outlet": "日刊工業新聞",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T20:00:00Z",
+   "first_seen": "2026-11-02T21:56:47Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "8b9df12490655c5b",
    "title": "同じインドなのになぜ？ドコモと第一三共はつまずき、スズキは40年以上勝ち続けた理由",
    "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1walhjRFJlTjBCaUxSb2dsRHFJY0Vuay1OVlFyNG5RSm81R3l2TmRIX0VSN3NEMlVBSkJvMWZmQXhQUlA5aHVEZVl2dnfSAU9BVV95cUxPWjNtNFBWOE13Wlo4akprMnJBc255dkRYQVFZUUNudTFseUZzWTRiMkxTTlc0UTdvNDFhSjZmNi12YjF1WWZnS2pSMmRPZHBr?oc=5",
@@ -1387,17 +1817,17 @@
    "picked": false
   },
   {
-   "id": "8b958b5090cabf19",
-   "title": "昨年度、5G基地局11％増 KDDI最多 総務省まとめ",
-   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ySzl4R2w1VU8zRHRTNzItaDJiOUhha1Y4V25IV25sZWpTR092aEVfbExVTEVuYXlQd25mbGNRWE9zYm52NU00TnBmeUgzTmpHNjhROGlYSDE?oc=5",
-   "summary": "昨年度、5G基地局11％増 KDDI最多 総務省まとめ 日刊工業新聞",
-   "outlet": "日刊工業新聞",
-   "feed": "Googleニュース：KDDI",
+   "id": "d9042fe3bf9b3721",
+   "title": "Tech, Media & Telecom Roundup: Market Talk",
+   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxORVFMMVRRLUtrVTRsTktlZTA4V1dXdVQ2SXZCMTFiTlNYZUdMUTlYYnRwdUo5YVRtYnNlN0d5QVR1N2VhaS14WDA2V3h6eTNwV3RiWEwydEhLOVhDLWdyUTBGNTM3b01fcUNzMkVveG1yVGVlU0lVZmdZQW9HazVXZ0Nn?oc=5",
+   "summary": "Tech, Media & Telecom Roundup: Market Talk WSJ",
+   "outlet": "WSJ",
+   "feed": "Google News: Telecom",
    "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-02T20:00:00Z",
-   "first_seen": "2026-11-02T21:56:47Z",
-   "tv_match": null,
+   "lang": "en",
+   "published": "2026-11-02T19:49:25Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": "unknown",
    "picked": false
   },
   {
@@ -2121,20 +2551,6 @@
    "picked": false
   },
   {
-   "id": "6ddbe6dfa2dfadf1",
-   "title": "ＫＤＤＩ(株)【KDDIY】：株価・株式情報",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5UeXNVcVVoNnBzaHVrVDJRR3VqcmJrUDk1T0h1dDRJT0ttelAwWVk0UWZWT0JaQTIxMkRtQUxzLW1FdnNRVXpvUWZRb0p4cVlJ?oc=5",
-   "summary": "ＫＤＤＩ(株)【KDDIY】：株価・株式情報 Yahoo!ファイナンス",
-   "outlet": "Yahoo!ファイナンス",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-02T17:21:15Z",
-   "first_seen": "2026-11-02T20:58:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "fe2bd460e083f6be",
    "title": "Oil price falls amid hope of a breakthrough to end Iran war",
    "link": "https://www.theguardian.com/business/2026/nov/02/oil-price-falls-amid-hope-of-a-breakthrough-to-end-iran-war",
@@ -2146,6 +2562,20 @@
    "image": "https://i.guim.co.uk/img/media/5aa655482ec1b18379bdd2373abb83196044c4d5/1261_325_3461_2770/master/3461.jpg?width=140&quality=85&auto=format&fit=max&s=e23edc26d2d93062098ab5141262aae8",
    "published": "2026-11-02T17:14:23Z",
    "first_seen": "2026-11-02T18:08:09Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "c9cecff89cc44611",
+   "title": "Vivo Y32 5G features: Tired of charging your phone every day? This smartphone packs 8,000mAh battery & mil",
+   "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxPYmZSUnFmTWljS1FTV2EyWHFsUWNodzAyejl3V0hPSjZ6S1RLVUdkYTJUdGZFWC1TeThpRWJUc21zQXk3akJsMEhWSnRUZUVXcnlSMzhpaUpfUVF1LUE5MUNwb2c0LTFZeUZzdkNjVEt3T2kxaDg4RTdjZ251OXYxRWl5NV8ySWNuWkgyS2V1Q3N6dlpyOTdWcXVzUDBSOWVLd3kyS2NGbXhLRzUxdzY1SkNmZ1RkOXA0TmtjTDF2V2tZWDFGcmRvZ2lkcmxVVzVBc1QxSncxbDdYam92NHpPYjdVV3lRcWRRNUZFYkxjRUZfemNkZ2hVUUZ6RC1MbWNJMzdQelhEZFU3WVI5eGlHa3hNcnVNWWpvekR5VmQxMUJYekpMZTBHSmZXT21NbG9QRFlsNDQ2QjZhNFF1cFBXMktOeFJNMlXSAcwCQVVfeXFMTVJzdlhZVmEwZ2lBYzIzc3pjRmt6YzFJQU9nRjkyaXF1bVVxdUlRMXY2WGpQTHZ3Qk5PRk5qMkJHZXN3aVZGMzZ4R05fcV9KbTRjZ0VhckVvSmY5SHZVcXNaYUhTWjA2cWtFYjBFaFd3T2ZzLW9QMGlaOVNwbkdhb0F3OWN4RWlOYVVCdE5XOTVOelFraExHLUxReVJ6R2FKSUxSN2V5ZngzTW90RHB6R1BRYzVKY2pOVDJaX0xnbjFnbXJnaTZENjRiTlZFdkZKbTltWXF0cWx0bms3aWRyU1JXQ2c5ek1fbElvU3BSYThzMDNYM2dfV0plbXNrcGtmU1k2S2lVSm1oODk3bHVra3k5dTZhS21DNnF6UkhMRWJpZ3huZVNDRERjeFpvYWJ3azdGX1lqV3Q4WjFaNDNWSUxXWThsMDRZLXVpcjE?oc=5",
+   "summary": "Vivo Y32 5G features: Tired of charging your phone every day? This smartphone packs 8,000mAh battery & mil The Economic Times",
+   "outlet": "The Economic Times",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-02T17:12:56Z",
+   "first_seen": "2026-11-02T22:56:01Z",
    "tv_match": "unknown",
    "picked": false
   },
@@ -2167,9 +2597,9 @@
   },
   {
    "id": "0184637c9cfc0016",
-   "title": "Trump, Vance and candidates campaign on last day before US midterms",
+   "title": "Trump, Vance campaign with candidates on last day before US midterms",
    "link": "https://www.aljazeera.com/news/2026/11/2/trump-vance-and-candidates-make-final-push-before-us-midterms?traffic_source=rss",
-   "summary": "Republicans and Democrats hold last rallies around the United States as polls point to a tight congressional race.",
+   "summary": "President Donald Trump closes his midterm campaign push at the Reflecting Pool, urging supporters to vote.",
    "outlet": "Al Jazeera",
    "feed": "Al Jazeera",
    "kind": "overseas",
@@ -4194,6 +4624,21 @@
    "picked": false
   },
   {
+   "id": "2bbdae702ea12751",
+   "title": "Shop freezers in seven European countries hit by cyber-attack",
+   "link": "https://www.bbc.co.uk/news/articles/cq1kd1nee80eo?at_medium=RSS&at_campaign=rss",
+   "summary": "The temperature of freezers in several shops across Europe reportedly rose to as high as 50C.",
+   "outlet": "BBC World",
+   "feed": "BBC World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/31c7/live/152ec730-d6c3-11f1-93e1-3b657b665bcf.jpg",
+   "published": "2026-11-02T11:56:32Z",
+   "first_seen": "2026-11-02T12:10:11Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "96c5b512100a5a0e",
    "title": "西部ガスの「キーマン」松山が先制打 社会人野球日本選手権",
    "link": "https://mainichi.jp/articles/20261102/k00/00m/050/338000c",
@@ -4207,21 +4652,6 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/11/02/20261102k0000m050341000p/0c10.jpg?1",
    "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "2bbdae702ea12751",
-   "title": "Shop freezers in seven European countries hit by cyber-attack",
-   "link": "https://www.bbc.co.uk/news/articles/cq1kd1nee80eo?at_medium=RSS&at_campaign=rss",
-   "summary": "The temperature of freezers in several shops across Europe reportedly rose to as high as 50C.",
-   "outlet": "BBC World",
-   "feed": "BBC World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/31c7/live/152ec730-d6c3-11f1-93e1-3b657b665bcf.jpg",
-   "published": "2026-11-02T11:56:32Z",
-   "first_seen": "2026-11-02T12:10:11Z",
-   "tv_match": "unknown",
    "picked": false
   },
   {
@@ -6678,20 +7108,6 @@
    "picked": false
   },
   {
-   "id": "e70df968695ff01e",
-   "title": "Ericsson launches ISAC system for drone detection",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeTZPWGxyN015ckp0Q3hyNXF4dnNpT3JWdThLaHBXRUR5ZlMzY1YwVkE0NzhvS3d2dUV3ZmhRV00zV0NiZE12N0RqNFFYVUNYZXdpSG10akFGYXVTUEsxYW8wVnBwSmlPQzlyNDdTX1VBVU9TVnphblFHd0FDejZGM0JlMFRPNWNydFdvYnl3?oc=5",
-   "summary": "Ericsson launches ISAC system for drone detection Fierce Network",
-   "outlet": "Fierce Network",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-11-02T09:05:00Z",
-   "first_seen": "2026-11-02T09:24:28Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
    "id": "bd71e070ee4b9847",
    "title": "Ericsson launches ISAC system for drone detection",
    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQX3hJXzdZdC1pVkNyWnJwSWxBSmZfeGlBbjFCUlJwM2RnUUxJaWkycENmNHhOVGdpUzRrb0xtbE9Dc2FTQ1dRWjFmdUQzYVRoSjFmX0VaVXRSMVpxR29sTmZDM200cEYxdWI5Qmk3aERUenZJeFVyOFd1a291eFB0a1U3YXpEdjJGSlVQYzJB?oc=5",
@@ -6702,6 +7118,20 @@
    "lang": "en",
    "published": "2026-11-02T09:05:00Z",
    "first_seen": "2026-11-02T11:14:45Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "e70df968695ff01e",
+   "title": "Ericsson launches ISAC system for drone detection",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeTZPWGxyN015ckp0Q3hyNXF4dnNpT3JWdThLaHBXRUR5ZlMzY1YwVkE0NzhvS3d2dUV3ZmhRV00zV0NiZE12N0RqNFFYVUNYZXdpSG10akFGYXVTUEsxYW8wVnBwSmlPQzlyNDdTX1VBVU9TVnphblFHd0FDejZGM0JlMFRPNWNydFdvYnl3?oc=5",
+   "summary": "Ericsson launches ISAC system for drone detection Fierce Network",
+   "outlet": "Fierce Network",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-02T09:05:00Z",
+   "first_seen": "2026-11-02T09:24:28Z",
    "tv_match": "unknown",
    "picked": false
   },
@@ -6786,9 +7216,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261102003038_comm.jpg",
    "tv_match": {
-    "title": "【画像まとめ】広さ8倍であす開館！皇居内「三の丸尚蔵館」皇室の至宝が一堂に",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcElHX29kSWY2WDc1YkJ4SDZKSGRsVUVYRlRyNTR1amJlVTFqTW8tb0lCSDZBcFZ1aGJ2MFZJa0dHbkpSbklSYUlKMHNhdkN3RnZwQmhrVXJOdlpXZUswM2QxMlFhTlZkZEJCUnowNEI1QmpJV0ZrSF9UbFNoY0pkS3BjTVhOdHJ2S3RkV1Y5dmM4YWZMVVpvQWNXTVRKLW9JS2hMcGJoYmU0TV84c05jdDZCRVItR0VJ?oc=5",
+    "title": "皇居三の丸尚蔵館 3日に全面開館 特別展を開催",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1SSW9mMlNyX0RIQkpVd1pIZk9KMUx2WFZ4SGJKWGxnLVRaMkhhM1o1MlFxdFFVOHJBWmxjTUlsQXBfbV9NeU5iUHlyaFB5WUdUQTlsUnhCRTctMkpmQ0E?oc=5",
     "score": 0.32
    },
    "picked": false
@@ -7627,20 +8057,6 @@
    "picked": false
   },
   {
-   "id": "3b4140927ac6e72b",
-   "title": "Kis-My-Ft2・宮田俊哉「池ハロ」降臨!!「神々しい」「王子ステキです」 今後やってみたいコスプレは“姫コス”!?【レポ】 2枚目の写真・画像",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA3bWNWemh6NjhIYVZCRWNzREFoaWFIa1BtZnBmNVFBOEl6bXBVQWcyLXU3bE5YeG9TdFVjclllTTZZbEVKSTZmWmNpUlNJcExZRDNhYnAwekJvWVA2VEMtNVkzY0hVVE1hTHIxMUgwUkhkSFU?oc=5",
-   "summary": "Kis-My-Ft2・宮田俊哉「池ハロ」降臨!!「神々しい」「王子ステキです」 今後やってみたいコスプレは“姫コス”!?【レポ】 2枚目の写真・画像 アニメ！アニメ！",
-   "outlet": "アニメ！アニメ！",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-02T08:00:03Z",
-   "first_seen": "2026-11-02T11:14:45Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "0e6a8ece0513f5fa",
    "title": "Kis-My-Ft2・宮田俊哉「池ハロ」降臨!!「神々しい」「王子ステキです」 今後やってみたいコスプレは“姫コス”!?【レポ】",
    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcW5KMmtWc25CakRncUhBMUR4bklFaERVSXdpZjFmdmpHOEt6a3BsWktRdjRibldkZ3N6YXBYa0xtR3ZzcDU4VnZVZEtkMTh4ZTZZQmlQdVN5TDFELUJkajVnd3BFT1ZqampNQjV2bmtueWhocGZCUTMtV1dHSDJHS2VwV1dUUWlweUxXUnhR?oc=5",
@@ -7651,6 +8067,20 @@
    "lang": "ja",
    "published": "2026-11-02T08:00:03Z",
    "first_seen": "2026-11-02T12:10:11Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "3b4140927ac6e72b",
+   "title": "Kis-My-Ft2・宮田俊哉「池ハロ」降臨!!「神々しい」「王子ステキです」 今後やってみたいコスプレは“姫コス”!?【レポ】 2枚目の写真・画像",
+   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA3bWNWemh6NjhIYVZCRWNzREFoaWFIa1BtZnBmNVFBOEl6bXBVQWcyLXU3bE5YeG9TdFVjclllTTZZbEVKSTZmWmNpUlNJcExZRDNhYnAwekJvWVA2VEMtNVkzY0hVVE1hTHIxMUgwUkhkSFU?oc=5",
+   "summary": "Kis-My-Ft2・宮田俊哉「池ハロ」降臨!!「神々しい」「王子ステキです」 今後やってみたいコスプレは“姫コス”!?【レポ】 2枚目の写真・画像 アニメ！アニメ！",
+   "outlet": "アニメ！アニメ！",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-02T08:00:03Z",
+   "first_seen": "2026-11-02T11:14:45Z",
    "tv_match": null,
    "picked": false
   },
@@ -7697,6 +8127,34 @@
    "picked": false
   },
   {
+   "id": "306b9a3bb07626d6",
+   "title": "ドコモとau、スマートグラス「XREAL AURA」発売 約23万円から（アスキー）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0ydEpSbFB1MXcxanA3Y194REliWmJ1ajBTM19LTURON1FlZzhEWDBPQkRsVkMwcGh2U1JBVkJKcE8xeVh6RUtxc2FLRFprRlBnUDRLUm5keEpQbHVzRFZmeGhDQ2lSck51RW1MZi1GdHRGWXJiWXlBQkxTdm1PRzg?oc=5",
+   "summary": "ドコモとau、スマートグラス「XREAL AURA」発売 約23万円から（アスキー） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T08:00:00Z",
+   "first_seen": "2026-11-02T18:08:09Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "b3550958cdc011eb",
+   "title": "チャン・ルオユン主演、総計16冠に輝いた歴史エンタメを全国無料放送 シャオ・ジャンら豪華キャストも集結＜慶余年",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TU1BySmpwVTRIRE5yZF8zdzZFTi0xR2JsaFVmWW5FVXRIY3dCcllIWWlpYWRRNkZkSndtbGRnZUw2SDVvVTBPMDFXZWNBUQ?oc=5",
+   "summary": "チャン・ルオユン主演、総計16冠に輝いた歴史エンタメを全国無料放送 シャオ・ジャンら豪華キャストも集結＜慶余年 WEBザテレビジョン",
+   "outlet": "WEBザテレビジョン",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-02T08:00:00Z",
+   "first_seen": "2026-11-02T09:24:28Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "20b3d2a218a5e56b",
    "title": "北朝鮮、なぜサイバー攻撃で巨額の収益 能力より道義心の欠如が問題",
    "link": "http://www.asahi.com/articles/ASVC21HN1VC2UHBI00KM.html?ref=rss",
@@ -7709,20 +8167,6 @@
    "first_seen": "2026-11-02T09:24:28Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261102002114_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "306b9a3bb07626d6",
-   "title": "ドコモとau、スマートグラス「XREAL AURA」発売 約23万円から（アスキー）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0ydEpSbFB1MXcxanA3Y194REliWmJ1ajBTM19LTURON1FlZzhEWDBPQkRsVkMwcGh2U1JBVkJKcE8xeVh6RUtxc2FLRFprRlBnUDRLUm5keEpQbHVzRFZmeGhDQ2lSck51RW1MZi1GdHRGWXJiWXlBQkxTdm1PRzg?oc=5",
-   "summary": "ドコモとau、スマートグラス「XREAL AURA」発売 約23万円から（アスキー） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-02T08:00:00Z",
-   "first_seen": "2026-11-02T18:08:09Z",
    "tv_match": null,
    "picked": false
   },
@@ -7759,20 +8203,6 @@
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdmJTUl9ZR0V1c1pDcVdjUU9WZ182NlVHWVFFcWNTaUxtVDk3RjBGMmpUVzZxMGw2M0d6Z1hmQnFfMG1EUTR1ZGJiWVAtMkhERGZ6Vk8wUlVIb19OSDBzbG9lZ09pbTYxZ2hDTTVTeF95MEFtMGItVXhRZndvRHMxS0wtc20?oc=5",
     "score": 0.39
    },
-   "picked": false
-  },
-  {
-   "id": "b3550958cdc011eb",
-   "title": "チャン・ルオユン主演、総計16冠に輝いた歴史エンタメを全国無料放送 シャオ・ジャンら豪華キャストも集結＜慶余年",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TU1BySmpwVTRIRE5yZF8zdzZFTi0xR2JsaFVmWW5FVXRIY3dCcllIWWlpYWRRNkZkSndtbGRnZUw2SDVvVTBPMDFXZWNBUQ?oc=5",
-   "summary": "チャン・ルオユン主演、総計16冠に輝いた歴史エンタメを全国無料放送 シャオ・ジャンら豪華キャストも集結＜慶余年 WEBザテレビジョン",
-   "outlet": "WEBザテレビジョン",
-   "feed": "Googleニュース：J:COM",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-02T08:00:00Z",
-   "first_seen": "2026-11-02T09:24:28Z",
-   "tv_match": null,
    "picked": false
   },
   {
@@ -8679,10 +9109,10 @@
    "picked": false
   },
   {
-   "id": "25547406195f59dc",
-   "title": "第7回 立正大学英語スピーチコンテスト開催のご案内 写真1枚 国際ニュース",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5UQWd2V2c1a1hXNWtvbWhGdXRmUktvOEZxYlJDWThhMm9OcmVudmtlZnRpWkxmbEJBZm9TOUx1VEtmaTNxRDZlOThXMnNzNVlrTGc?oc=5",
-   "summary": "第7回 立正大学英語スピーチコンテスト開催のご案内 写真1枚 国際ニュース AFPBB News",
+   "id": "3af8c049658b0b4b",
+   "title": "“耐力壁日本一”決める「カベワングランプリ」で総合準優勝など3賞受賞！ 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBteUl5eW9sUExNc1h2OC0tMXdwZ3BvS3FFbUpMMkdCaGg5ZmpTdVE3SW5Ucmw3TnNPVEw2RUFIWkFJWkZJdXNtTkxnRGNUX0YwaUE?oc=5",
+   "summary": "“耐力壁日本一”決める「カベワングランプリ」で総合準優勝など3賞受賞！ 写真1枚 国際ニュース AFPBB News",
    "outlet": "AFPBB News",
    "feed": "AFPBB News",
    "kind": "国際",
@@ -8693,10 +9123,10 @@
    "picked": false
   },
   {
-   "id": "3af8c049658b0b4b",
-   "title": "“耐力壁日本一”決める「カベワングランプリ」で総合準優勝など3賞受賞！ 写真1枚 国際ニュース",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBteUl5eW9sUExNc1h2OC0tMXdwZ3BvS3FFbUpMMkdCaGg5ZmpTdVE3SW5Ucmw3TnNPVEw2RUFIWkFJWkZJdXNtTkxnRGNUX0YwaUE?oc=5",
-   "summary": "“耐力壁日本一”決める「カベワングランプリ」で総合準優勝など3賞受賞！ 写真1枚 国際ニュース AFPBB News",
+   "id": "25547406195f59dc",
+   "title": "第7回 立正大学英語スピーチコンテスト開催のご案内 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5UQWd2V2c1a1hXNWtvbWhGdXRmUktvOEZxYlJDWThhMm9OcmVudmtlZnRpWkxmbEJBZm9TOUx1VEtmaTNxRDZlOThXMnNzNVlrTGc?oc=5",
+   "summary": "第7回 立正大学英語スピーチコンテスト開催のご案内 写真1枚 国際ニュース AFPBB News",
    "outlet": "AFPBB News",
    "feed": "AFPBB News",
    "kind": "国際",
@@ -9794,7 +10224,7 @@
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5LR3VXMGV2ZFVHQXJHLU9jTjVVb0xlaWpmWFFuRXhaVFdGdE1wZjJiWEtfa21oYW9US3liVzhqdlFjaUZ0TXV1SGs2U1VaTWFjUlVlbXhDTQ?oc=5",
    "summary": "【出演情報】吉俣良 ４５周年Anniversary Concert Supported by KDDI ｜soyokaze fan.pia.jp",
    "outlet": "fan.pia.jp",
-   "feed": "Googleニュース：KDDI",
+   "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-11-02T06:02:45Z",
@@ -10113,9 +10543,9 @@
   },
   {
    "id": "ad156912f89e26cf",
-   "title": "国会答弁案をＡＩ作成 政府試行、議員質問も分析：時事ドットコム",
+   "title": "国会答弁案をＡＩ作成 政府試行、議員質問も分析",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBYVXlTM3NmQTRxVWcxUElIVWJUMHBYNzAtYWhja2FhVlJOMER6ZnV2RGtmYjc4TktwT3ZmY0VlZWkyTU9TNXFnX1NqaU5UdU90TTNjWTdoUkNiWVFmQUR2UFpvbw?oc=5",
-   "summary": "国会答弁案をＡＩ作成 政府試行、議員質問も分析：時事ドットコム 時事ドットコム",
+   "summary": "国会答弁案をＡＩ作成 政府試行、議員質問も分析 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -10140,10 +10570,10 @@
    "picked": false
   },
   {
-   "id": "49a25327a3256f62",
-   "title": "老将、真の名将に ブルワーズのマーフィー監督、ウイットも信念も―米大リーグ：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBTR1RJd2IwMjRSOUJpc0FLeU55SFpfRDd0X1NVeGhoZm1GNm9qdS1TaWZyN1JNZEx3anFfUmhQanZ6eTFsbzJJS19iZ1RjODFPcUZpLWVEaE9WVU9yMWxQWnczbw?oc=5",
-   "summary": "老将、真の名将に ブルワーズのマーフィー監督、ウイットも信念も―米大リーグ：時事ドットコム 時事ドットコム",
+   "id": "9e20746e1d0d48ed",
+   "title": "国際交流の絆、原動力に 飯塚翔太「スポーツは共通言語」―陸上：時事ドットコム",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0tMGRSM2xmT3ZaLTJXekNEdW5EYmlMaVZJd0ZuWUNxalVtamFEZEYtVkVkYlM0b3IwMEJMRmFPcXM4Qjhjd3lwcTRqN29kbEpEak9MMDFrekdVVngzVHE1NUVGTQ?oc=5",
+   "summary": "国際交流の絆、原動力に 飯塚翔太「スポーツは共通言語」―陸上：時事ドットコム 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -10154,10 +10584,10 @@
    "picked": false
   },
   {
-   "id": "9e20746e1d0d48ed",
-   "title": "国際交流の絆、原動力に 飯塚翔太「スポーツは共通言語」―陸上：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0tMGRSM2xmT3ZaLTJXekNEdW5EYmlMaVZJd0ZuWUNxalVtamFEZEYtVkVkYlM0b3IwMEJMRmFPcXM4Qjhjd3lwcTRqN29kbEpEak9MMDFrekdVVngzVHE1NUVGTQ?oc=5",
-   "summary": "国際交流の絆、原動力に 飯塚翔太「スポーツは共通言語」―陸上：時事ドットコム 時事ドットコム",
+   "id": "49a25327a3256f62",
+   "title": "老将、真の名将に ブルワーズのマーフィー監督、ウイットも信念も―米大リーグ：時事ドットコム",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBTR1RJd2IwMjRSOUJpc0FLeU55SFpfRDd0X1NVeGhoZm1GNm9qdS1TaWZyN1JNZEx3anFfUmhQanZ6eTFsbzJJS19iZ1RjODFPcUZpLWVEaE9WVU9yMWxQWnczbw?oc=5",
+   "summary": "老将、真の名将に ブルワーズのマーフィー監督、ウイットも信念も―米大リーグ：時事ドットコム 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -10831,9 +11261,9 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261102001956_comm.jpg",
    "tv_match": {
-    "title": "「共和党だけには絶対入れない」物価高でトランプ氏に批判の声 激戦州ミシガン 3日投票始まるアメリカ中間選挙 最大争点「アフォーダビリティ」“手の届きやすさ”",
+    "title": "「何もかも値上がり」物価高でトランプ氏に批判の声 激戦州ミシガン 3日投票始まるアメリカ中間選挙 最大争点「アフォーダビリティ」“手の届きやすさ”",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB3WDlkdkV5OU5idDBSTWNzSTY4UWJDWmhhNE9SVkotUTVXRmNmQlpDNFA2ZzJPbFAyTHJ3enRCcnFHLTB1eWJoY3NZS0ZVdml2elJreGE3OA?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5ZSDVJb2dZQ0tDMHdqZ284MElkWmhXX1g4bko2SXFEM1hiT0xGUzRwYktreHA4VEVYdGs2QkxwLXVwM1ZndWxOb0N5UjkwUWJLRDNTODRmRQ?oc=5",
     "score": 0.41
    },
    "picked": false
@@ -11356,8 +11786,8 @@
    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcW1fbkJXa2ctdHNHSGZMa2YxT1FobHMzY2lWTmg3WDQzbGZIdzBDa2RzdERBMWxwdmJnQ09DME5iR0NGZ2UzdnBQenEzWDdTeV9sR3NFbm51LVRzaWJrWkRyWEdPQVdZdmlmelRCREc5N1R6aVB5S0pYYXZ2N21abTRnX2Z0eGNLUk10NzZXWQ?oc=5",
    "summary": "なぜWiMAXは“推し活あるある”に着目したか キスマイファンを超えた共感を生み出すための工夫とは 宣伝会議",
    "outlet": "宣伝会議",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
+   "feed": "Googleニュース：KDDI",
+   "kind": "通信",
    "lang": "ja",
    "published": "2026-11-02T03:42:56Z",
    "first_seen": "2026-11-02T05:22:40Z",
@@ -11836,6 +12266,20 @@
    "picked": false
   },
   {
+   "id": "ba7a82e66c9b1a05",
+   "title": "「エディオン クロスモール近江八幡店」移転増床オープンのお知らせ 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBpVTlUZkZwRUtyZVpYWTVtaU41N295bU9vT2I0Q0dEbWpRUEFZX3RvRkF3ZkYwV0twMC16WDFDbkFwb18tVEVvemhFZzJvcUhoR3c?oc=5",
+   "summary": "「エディオン クロスモール近江八幡店」移転増床オープンのお知らせ 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-02T03:05:00Z",
+   "first_seen": "2026-11-02T03:06:53Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "05662599cc145e55",
    "title": "KDDI、2万2541件の顧客情報漏えいか ライフネット生命への不正アクセスで（アスキー）",
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA0VlAzbG5oVUU2MzhxVjNTTUNMSHRJWTFTc0lUSGdZYWpGNDNta0Z6aGcyNVpDTDh3QWNkd3owbVhPZ1EydzR6Q1FBaXFQd3d4R3lFQldQOHE2V1BDd2JVMl9wWUFSeUgzUE5mSXJGLWEzREQ2VWh0VFM3ekRxVUU?oc=5",
@@ -11860,20 +12304,6 @@
    "lang": "ja",
    "published": "2026-11-02T03:05:00Z",
    "first_seen": "2026-11-02T18:08:09Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "ba7a82e66c9b1a05",
-   "title": "「エディオン クロスモール近江八幡店」移転増床オープンのお知らせ 写真1枚 国際ニュース",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBpVTlUZkZwRUtyZVpYWTVtaU41N295bU9vT2I0Q0dEbWpRUEFZX3RvRkF3ZkYwV0twMC16WDFDbkFwb18tVEVvemhFZzJvcUhoR3c?oc=5",
-   "summary": "「エディオン クロスモール近江八幡店」移転増床オープンのお知らせ 写真1枚 国際ニュース AFPBB News",
-   "outlet": "AFPBB News",
-   "feed": "AFPBB News",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-02T03:05:00Z",
-   "first_seen": "2026-11-02T03:06:53Z",
    "tv_match": null,
    "picked": false
   },
@@ -12356,6 +12786,20 @@
    "picked": false
   },
   {
+   "id": "8ae8adb859d8c2fe",
+   "title": "パキスタン軍、米イラン仲介に「慎重ながら楽観的」",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBxbUVPVVN6YWtNZXVMSFA2MVppQndmdGFXLWF1Rm1nbFdxMlhzNzZEeDRPU0tpV1Z5ZTlmWk05NUFwWm1EN2o5S3BJdWdvTDg1ajhnTUlYTy1oQQ?oc=5",
+   "summary": "パキスタン軍、米イラン仲介に「慎重ながら楽観的」 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-02T02:46:00Z",
+   "first_seen": "2026-11-02T13:28:47Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "3499634437cd959c",
    "title": "災害対応の司令塔「防災庁」発足 初代担当相、国民に「緊急要請」 備蓄や確認を呼び掛け",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9Gb0lPVE9PV2hESDh4UkVsb3A4Qi1QdFN4TjQ1M1VobVpvQWtRV3BnMThCNTdic184Z3pRRXEzUE9RdzlqTGQtZk9ISVpxN250ZTZFdDIybFBVanBlT2ptbVhvVQ?oc=5",
@@ -12372,20 +12816,6 @@
     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE4zUFZfVVJpRTcybEpiSnpfYUw5LXUxbDI5d3hXWjZIeTR2bFFrTTB0dG8zLS0tZzdkTml4OC1SYTZBWlltZDFYTlpOVjdRamtWNnoxRlpJTQ?oc=5",
     "score": 0.47
    },
-   "picked": false
-  },
-  {
-   "id": "8ae8adb859d8c2fe",
-   "title": "パキスタン軍、米イラン仲介に「慎重ながら楽観的」",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBxbUVPVVN6YWtNZXVMSFA2MVppQndmdGFXLWF1Rm1nbFdxMlhzNzZEeDRPU0tpV1Z5ZTlmWk05NUFwWm1EN2o5S3BJdWdvTDg1ajhnTUlYTy1oQQ?oc=5",
-   "summary": "パキスタン軍、米イラン仲介に「慎重ながら楽観的」 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-02T02:46:00Z",
-   "first_seen": "2026-11-02T13:28:47Z",
-   "tv_match": null,
    "picked": false
   },
   {
@@ -12440,7 +12870,7 @@
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5nSE5ybkJ1bWg3eGo4a0dQOGtlUFFKbUNqeDlPQlZ5MlJQQXBBclBkV1B0Um9uOHEwX0lBeVczNFR4aHctWDFhSDc3VkdLSXl2aGRR?oc=5",
    "summary": "富士通とソフトバンクロボティクスのAI活用--段ボール外装の「傷・へこみ」判定を標準化へ ZDNET Japan",
    "outlet": "ZDNET Japan",
-   "feed": "Googleニュース：通信キャリア",
+   "feed": "Googleニュース：ソフトバンク株式会社",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-11-02T02:43:00Z",
@@ -12505,9 +12935,9 @@
    "published": "2026-11-02T02:40:00Z",
    "first_seen": "2026-11-02T03:06:53Z",
    "tv_match": {
-    "title": "「共和党だけには絶対入れない」物価高でトランプ氏に批判の声 激戦州ミシガン 3日投票始まるアメリカ中間選挙 最大争点「アフォーダビリティ」“手の届きやすさ”",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB3WDlkdkV5OU5idDBSTWNzSTY4UWJDWmhhNE9SVkotUTVXRmNmQlpDNFA2ZzJPbFAyTHJ3enRCcnFHLTB1eWJoY3NZS0ZVdml2elJreGE3OA?oc=5",
+    "title": "迫る米中間選挙 トランプ氏にも“迷い”？候補者に“変化”も 激戦州で有権者の本音を取材【バンキシャ！】",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPU1EwSkdsMkU1N1BuaEI3QWZ6TjZhMTBXOEJ0bjZueVBuRUkwUmIwU3ZidVl1SU1WazFyT21uMWZQUXRCaldiNGRpcXctZkpDT0x4RE5Xby1iMFYwSG1hRWpoVUpjd3lJT0xLenFwY3VaM3NXQmRNaUFqVlhoRURLeGpvRm0?oc=5",
     "score": 0.32
    },
    "picked": false
@@ -13840,9 +14270,9 @@
    "published": "2026-11-02T01:04:20Z",
    "first_seen": "2026-11-02T04:16:02Z",
    "tv_match": {
-    "title": "迫るアメリカ中間選挙 争点の一つ「AIデータセンター」全米各地で建設相次ぐ “共和党の牙城”で住民たちに変化も",
+    "title": "アメリカ中間選挙にAIデータセンターが“暗い影” 「格差の拡大」「富の集中」…米の実情色濃く反映",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVUNYMFUzODNNelM1bFZobEN3MFhOWjlJMzM5WThGVWtZV0JSWlg5OGxJXzJyUGFjRFo2R2ZneVNfUER1dGQyc2ZncjN1T291QnJFSFp3eE5VU1lJQ1VQRk52dU5QMGhoVUNFV1pWZENxR01leXlwXzFxZjcwUS15OEE5TF8?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdEw5Uk5TN2d4ZlhDMVRjOXdVMmEteVZvTFVnRVFtRUR1SzYzOXJzZ09IaWtfc2VIbEpTSlFtQ0RCOEV3amNxd1B1X09lTmwxVU5YdkU4ejJGRXBmSUlQSk1zWnUwUFJFZ09zM0tnU1Z5eTgtaGJGVkFRbGlrWTFENFJvdG4?oc=5",
     "score": 0.35
    },
    "picked": false
@@ -15066,20 +15496,6 @@
    "picked": false
   },
   {
-   "id": "90b9487b527ca4ee",
-   "title": "メキシコ第3四半期成長率が予想超え、早期利下げ観測後退",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jaFQwUTg3Q3Z4OXd4amd6SXJ0VURzMDVDTjBPLTNHMzE2OHR6bGNuQXBscFZlU290WjVPeDE3dnVIRlBXRUtHUXk0STBsczBfWTZEcTI3Yzlsdw?oc=5",
-   "summary": "メキシコ第3四半期成長率が予想超え、早期利下げ観測後退 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-01T22:36:00Z",
-   "first_seen": "2026-11-02T16:18:22Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "eefcbe251e5aa6e0",
    "title": "メキシコ第3四半期成長率が予想超え、早期利下げ観測後退",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1XY3cwekMyNndicWN1NjhjYjdrcmlNaFQtdUx5OXh4Q050RmNGOVBnMUdvQnoydXRVLW1MQkttZ3NBb2I0MFc2VFBPSXpkMWlBdFVhMThxMng1TVhXeXNKM1FnMVdacG8?oc=5",
@@ -15090,6 +15506,20 @@
    "lang": "ja",
    "published": "2026-11-01T22:36:00Z",
    "first_seen": "2026-11-02T19:14:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "90b9487b527ca4ee",
+   "title": "メキシコ第3四半期成長率が予想超え、早期利下げ観測後退",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jaFQwUTg3Q3Z4OXd4amd6SXJ0VURzMDVDTjBPLTNHMzE2OHR6bGNuQXBscFZlU290WjVPeDE3dnVIRlBXRUtHUXk0STBsczBfWTZEcTI3Yzlsdw?oc=5",
+   "summary": "メキシコ第3四半期成長率が予想超え、早期利下げ観測後退 ニューズウィーク日本版",
+   "outlet": "ニューズウィーク日本版",
+   "feed": "ニューズウィーク日本版",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-01T22:36:00Z",
+   "first_seen": "2026-11-02T16:18:22Z",
    "tv_match": null,
    "picked": false
   },
@@ -15520,9 +15950,9 @@
   },
   {
    "id": "9ef2f6c5c13909c5",
-   "title": "知識を伝承・蓄積できる省庁に 首長らの防災教育充実を―石破前首相インタビュー",
+   "title": "知識を伝承・蓄積できる省庁に 首長らの防災教育充実を―石破前首相インタビュー：時事ドットコム",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5MZ2R2bVlLLXZwLXo2QTZxcnB0bU9vWXhPTWR2Q3J5R3JvaEcxNkZJRVI0WjBLTFFiTGFjQ09qOXpyeHJLZlJFd0p2ZVdMaUtjVjBYbm1aeFUxWFl1LUNBelRIUQ?oc=5",
-   "summary": "知識を伝承・蓄積できる省庁に 首長らの防災教育充実を―石破前首相インタビュー 時事ドットコム",
+   "summary": "知識を伝承・蓄積できる省庁に 首長らの防災教育充実を―石破前首相インタビュー：時事ドットコム 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -23366,20 +23796,6 @@
    "picked": false
   },
   {
-   "id": "4828c6cb8016c5d2",
-   "title": "〈本音のコラム〉私が私を代表する！ 前川喜平（現代教育行政研究会代表）",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5KQkY2SEJZWnU3MVNsREZKclhSZHROTDNtOVEtTjZfUFBpVFRTdW9GeG01LTQyVTRtb2tnNzUxbzVudHBfdldoT2lBZEN5MTZrME9N?oc=5",
-   "summary": "〈本音のコラム〉私が私を代表する！ 前川喜平（現代教育行政研究会代表） 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-01T03:00:00Z",
-   "first_seen": "2026-11-01T05:04:48Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "db0c92ced5b4446e",
    "title": "Leminoでボクシング「フェニックスバトル163」を独占生配信、11月10日から",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2152798.html",
@@ -23406,34 +23822,6 @@
    "lang": "ja",
    "published": "2026-11-01T03:00:00Z",
    "first_seen": "2026-11-01T04:08:34Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8f667d4bc6787811",
-   "title": "Kis-My-Ft2冠番組「キスマイ×NEXT」第2弾配信、15年の歴史をクイズで総ざらい",
-   "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5BNXRHYjhJSzMtdTFvSVRxRnJBWkpvY21qSEM4STlVMHBqQ3VGMl9zc3BYWEZkS3ZFTi1SNTdoNUNzUHFaYWh3WVhiUkE?oc=5",
-   "summary": "Kis-My-Ft2冠番組「キスマイ×NEXT」第2弾配信、15年の歴史をクイズで総ざらい ナタリー",
-   "outlet": "ナタリー",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-01T03:00:00Z",
-   "first_seen": "2026-11-01T03:03:31Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "496d465ca6758d95",
-   "title": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 4枚目",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44NHlxY2IyWmxEOWhpQnpMbVFlRlYtRmlEb24yTURpQVVMZGEtdVV3MWI3QnI1LUE0UER1SDVNdnRjSG0ySjB2bFVtYzZ3NXg1SXl5endmTEVSZw?oc=5",
-   "summary": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 4枚目 オリコンニュース",
-   "outlet": "オリコンニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-01T03:00:00Z",
-   "first_seen": "2026-11-01T17:48:35Z",
    "tv_match": null,
    "picked": false
   },
@@ -23466,20 +23854,6 @@
    "picked": false
   },
   {
-   "id": "25b8e9fa929b0481",
-   "title": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 1枚目",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uR3pHNWZrcHNPazQ4VDlHY0hDXzVGSms1d2Y0V0ZOT3N5YlpFVUYzYVRWM2NMZzZzZlMzcmtYcUpCeXZaNko0ZUlRcmFWT2M0THp1V0NVMHRPUQ?oc=5",
-   "summary": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 1枚目 オリコンニュース",
-   "outlet": "オリコンニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-01T03:00:00Z",
-   "first_seen": "2026-11-01T05:58:48Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "187af100899318ea",
    "title": "ウー・レイ×チャオ・ルースーが「長歌行」以来の再共演 数々のランキングで1位を獲得した大河ロマンス「星漢燦爛」の魅力(2/3)",
    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBINnB6M3U0M0RDNlRxc2hzd3hFeUdwQnE1S1E0N3c1dDBsSlYxNG9QSXBhdE1vRjFERVZ6b3RxenB2c2h6ay12cGpnTllEUnNJQVE?oc=5",
@@ -23490,6 +23864,62 @@
    "lang": "ja",
    "published": "2026-11-01T03:00:00Z",
    "first_seen": "2026-11-01T15:51:30Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "4828c6cb8016c5d2",
+   "title": "〈本音のコラム〉私が私を代表する！ 前川喜平（現代教育行政研究会代表）",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5KQkY2SEJZWnU3MVNsREZKclhSZHROTDNtOVEtTjZfUFBpVFRTdW9GeG01LTQyVTRtb2tnNzUxbzVudHBfdldoT2lBZEN5MTZrME9N?oc=5",
+   "summary": "〈本音のコラム〉私が私を代表する！ 前川喜平（現代教育行政研究会代表） 東京新聞",
+   "outlet": "東京新聞",
+   "feed": "東京新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-01T03:00:00Z",
+   "first_seen": "2026-11-01T05:04:48Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "8f667d4bc6787811",
+   "title": "Kis-My-Ft2冠番組「キスマイ×NEXT」第2弾配信、15年の歴史をクイズで総ざらい",
+   "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5BNXRHYjhJSzMtdTFvSVRxRnJBWkpvY21qSEM4STlVMHBqQ3VGMl9zc3BYWEZkS3ZFTi1SNTdoNUNzUHFaYWh3WVhiUkE?oc=5",
+   "summary": "Kis-My-Ft2冠番組「キスマイ×NEXT」第2弾配信、15年の歴史をクイズで総ざらい ナタリー",
+   "outlet": "ナタリー",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-01T03:00:00Z",
+   "first_seen": "2026-11-01T03:03:31Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "496d465ca6758d95",
+   "title": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 4枚目",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44NHlxY2IyWmxEOWhpQnpMbVFlRlYtRmlEb24yTURpQVVMZGEtdVV3MWI3QnI1LUE0UER1SDVNdnRjSG0ySjB2bFVtYzZ3NXg1SXl5endmTEVSZw?oc=5",
+   "summary": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 4枚目 オリコンニュース",
+   "outlet": "オリコンニュース",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-01T03:00:00Z",
+   "first_seen": "2026-11-01T17:48:35Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "25b8e9fa929b0481",
+   "title": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 1枚目",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uR3pHNWZrcHNPazQ4VDlHY0hDXzVGSms1d2Y0V0ZOT3N5YlpFVUYzYVRWM2NMZzZzZlMzcmtYcUpCeXZaNko0ZUlRcmFWT2M0THp1V0NVMHRPUQ?oc=5",
+   "summary": "画像・写真 | Kis-My-Ft2、記憶と絆が問われる15周年の歴史クイズに挑戦 Travis Japanがもらった“ありがたい話”や顔を覆いたくなるエピソードも 1枚目 オリコンニュース",
+   "outlet": "オリコンニュース",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-01T03:00:00Z",
+   "first_seen": "2026-11-01T05:58:48Z",
    "tv_match": null,
    "picked": false
   },
@@ -26634,27 +27064,6 @@
    "picked": false
   },
   {
-   "id": "0e82929cf70d48c0",
-   "title": "【まとめてわかる】米中間選挙の予想は？いつ結果？負けるとどうなる",
-   "link": "http://www.asahi.com/articles/ASVBX0HG2VBXUHBI00HM.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-31T21:00:00Z",
-   "first_seen": "2026-10-31T21:50:19Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261030002988_comm.jpg",
-   "tv_match": {
-    "title": "迫る米中間選挙 トランプ氏にも“迷い”？候補者に“変化”も 激戦州で有権者の本音を取材【バンキシャ！】",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPU1EwSkdsMkU1N1BuaEI3QWZ6TjZhMTBXOEJ0bjZueVBuRUkwUmIwU3ZidVl1SU1WazFyT21uMWZQUXRCaldiNGRpcXctZkpDT0x4RE5Xby1iMFYwSG1hRWpoVUpjd3lJT0xLenFwY3VaM3NXQmRNaUFqVlhoRURLeGpvRm0?oc=5",
-    "score": 0.38
-   },
-   "picked": false
-  },
-  {
    "id": "0b5d5a7bfefa0516",
    "title": "ドコモ、ガストでdポイント2倍還元、11月1日から",
    "link": "https://k-tai.watch.impress.co.jp/docs/news/2152809.html",
@@ -26672,6 +27081,27 @@
     "outlet": "日テレNEWS NNN",
     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE84S1dpTm9BOEp1ZHRfMVVyZ3J1RmdDR3RMREFITW5UOG9MQmFqdWZxTDd5ZllyaWh5RlpzX2RVS1pzdEFYZ0ZJMmdyQXdDQkU0R1d1Y0NUNFJldjBUd253Mlp2Zm03QUFrUlJGR192SURzc3gxbHVRcmVITms?oc=5",
     "score": 0.33
+   },
+   "picked": false
+  },
+  {
+   "id": "0e82929cf70d48c0",
+   "title": "【まとめてわかる】米中間選挙の予想は？いつ結果？負けるとどうなる",
+   "link": "http://www.asahi.com/articles/ASVBX0HG2VBXUHBI00HM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-10-31T21:00:00Z",
+   "first_seen": "2026-10-31T21:50:19Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261030002988_comm.jpg",
+   "tv_match": {
+    "title": "迫る米中間選挙 トランプ氏にも“迷い”？候補者に“変化”も 激戦州で有権者の本音を取材【バンキシャ！】",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPU1EwSkdsMkU1N1BuaEI3QWZ6TjZhMTBXOEJ0bjZueVBuRUkwUmIwU3ZidVl1SU1WazFyT21uMWZQUXRCaldiNGRpcXctZkpDT0x4RE5Xby1iMFYwSG1hRWpoVUpjd3lJT0xLenFwY3VaM3NXQmRNaUFqVlhoRURLeGpvRm0?oc=5",
+    "score": 0.38
    },
    "picked": false
   },
@@ -30948,6 +31378,20 @@
    "picked": false
   },
   {
+   "id": "cf4e6d3c92d82a72",
+   "title": "KDDI、最大2.2万件の情報漏えいの可能性。連携先ライフネット生命に不正アクセス（ビジネス＋IT）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB4OUlvWkE4QlA4VFQ4b1QyNVRKcml3Q3BCeExIZFpPWWJseUY3S0dBUDFSTkNzMG8tWU91YTczWDNKMElhUGpPN0lkVno4Mlo1eTlRckgxOUs0N1JyYkJEZkVSeWUyUmpjNFBMUHVSbFlLbC0zMnhlRkZkVEdVc2M?oc=5",
+   "summary": "KDDI、最大2.2万件の情報漏えいの可能性。連携先ライフネット生命に不正アクセス（ビジネス＋IT） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：KDDI",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-31T07:35:06Z",
+   "first_seen": "2026-10-31T10:52:02Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "a1c31da29b151dd8",
    "title": "KDDI、最大2.2万件の情報漏えいの可能性。連携先ライフネット生命に不正アクセス (ビジネス＋IT)",
    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdUVoV1pYYVBIVGJuM0VqY0RDQnJyNmF1T1YxQXJtNzE5OHJodnV3aVN2dWlkSUtHM1d2Z1MyU0pXV2xjeHdIMzIwM1Fyc0R0cjV5U0oteGtZbEtUbmFDdF9jVXJxMUFOc2drYUV3T0NXQkRLY3UzYjVldXd1QmtoUUtyU2l0YmFxQmhBUE9B?oc=5",
@@ -30958,20 +31402,6 @@
    "lang": "ja",
    "published": "2026-10-31T07:35:06Z",
    "first_seen": "2026-10-31T20:52:51Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "cf4e6d3c92d82a72",
-   "title": "KDDI、最大2.2万件の情報漏えいの可能性。連携先ライフネット生命に不正アクセス（ビジネス＋IT）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB4OUlvWkE4QlA4VFQ4b1QyNVRKcml3Q3BCeExIZFpPWWJseUY3S0dBUDFSTkNzMG8tWU91YTczWDNKMElhUGpPN0lkVno4Mlo1eTlRckgxOUs0N1JyYkJEZkVSeWUyUmpjNFBMUHVSbFlLbC0zMnhlRkZkVEdVc2M?oc=5",
-   "summary": "KDDI、最大2.2万件の情報漏えいの可能性。連携先ライフネット生命に不正アクセス（ビジネス＋IT） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-31T07:35:06Z",
-   "first_seen": "2026-10-31T10:52:02Z",
    "tv_match": null,
    "picked": false
   },
@@ -31610,20 +32040,6 @@
    "picked": false
   },
   {
-   "id": "4f478ae1556f4c14",
-   "title": "S&P 500 will gain 4% to 7% once trade deal is done",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ZOG9QcHcxdFlwN21VTjlYMVBHYkJqbWZodzY1eFkxRzR2Rm8xQmFvTlBwTG9COHpZLUY0ekZ5SHVkdUdTNG5mMHd5R3I2SVpRcUZGbmM0MjFzRUU?oc=5",
-   "summary": "S&P 500 will gain 4% to 7% once trade deal is done Reuters",
-   "outlet": "Reuters",
-   "feed": "ロイター日本語",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-31T07:00:00Z",
-   "first_seen": "2026-11-02T05:22:40Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "7ae52f38a74be6b5",
    "title": "China halts approval for new online games - SCMP",
    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE51dC15dno0aUtvYlFuMmNYcE9aRDhGXzRRSTVQelIxekNfS1lNWmZIVlM2c0RoVXhhby0tS0dfYVFnRlBUWV8waWxHdExwdlJsNU5mMkZ4MmtzanM?oc=5",
@@ -32044,34 +32460,6 @@
    "picked": false
   },
   {
-   "id": "2e3fd30c3f75bf99",
-   "title": "（画像）和田聰宏が語る「鬼平犯科帳」に対する思い 「自分の大切な人に心から報いたいという気持ちは現代人にも通じる」",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FNFdlM3lLazBkREo3UzNSeF9SZmN4enh4b1QwUWVQaHRKU3hkLVVXdjZOc0pPVVBZSlZiV2xObmNYM01MMk9SLUFTdTBCNDRiVWpYelJqbjZFVjBZeE1XN0NnbU4zYnl6emJjMUpFQ0ZhY08zUThBY29B?oc=5",
-   "summary": "（画像）和田聰宏が語る「鬼平犯科帳」に対する思い 「自分の大切な人に心から報いたいという気持ちは現代人にも通じる」 J:magazine!",
-   "outlet": "J:magazine!",
-   "feed": "Googleニュース：J:COM",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-31T07:00:00Z",
-   "first_seen": "2026-11-02T20:58:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "0dc191a6a6a8f49b",
-   "title": "Bayer wins EU approval for $62.5 bln Monsanto buy",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAzMjRUYThNaVlzbUEyMnNyRXFWNnA5Q05PZ1NTMnZHcVJBWjBDWnQ4RlpoOU5hZTVnTkZBa3JLLWVZbkJ1YllyX3RaMUlSTElwXy1TM2pTRnlPNlk?oc=5",
-   "summary": "Bayer wins EU approval for $62.5 bln Monsanto buy Reuters",
-   "outlet": "Reuters",
-   "feed": "ロイター日本語",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-10-31T07:00:00Z",
-   "first_seen": "2026-11-02T18:08:09Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "354ba667aa9b83f8",
    "title": "奥智哉×杢代和人がドラマ「君は夏のなか」で深まった絆と互いへの刺激",
    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE04V3RIVDJ3T2YxcVpNWTJDTkxCNE5uN1Z0U0lETXlXWU96MmJSVkR6WmdRRF9udzIzSmoxWjF2c0IwSDZDbW4xVmR4UzRyaUd5T1RuUnJBRFZ4MXpxVTRMWFlhSlNvYVp0MHo1NnRwcw?oc=5",
@@ -32082,6 +32470,20 @@
    "lang": "ja",
    "published": "2026-10-31T07:00:00Z",
    "first_seen": "2026-11-02T19:14:13Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2e3fd30c3f75bf99",
+   "title": "（画像）和田聰宏が語る「鬼平犯科帳」に対する思い 「自分の大切な人に心から報いたいという気持ちは現代人にも通じる」",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FNFdlM3lLazBkREo3UzNSeF9SZmN4enh4b1QwUWVQaHRKU3hkLVVXdjZOc0pPVVBZSlZiV2xObmNYM01MMk9SLUFTdTBCNDRiVWpYelJqbjZFVjBZeE1XN0NnbU4zYnl6emJjMUpFQ0ZhY08zUThBY29B?oc=5",
+   "summary": "（画像）和田聰宏が語る「鬼平犯科帳」に対する思い 「自分の大切な人に心から報いたいという気持ちは現代人にも通じる」 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-31T07:00:00Z",
+   "first_seen": "2026-11-02T20:58:47Z",
    "tv_match": null,
    "picked": false
   },
@@ -32100,6 +32502,20 @@
    "picked": false
   },
   {
+   "id": "f379af579cd3a079",
+   "title": "声優・石見舞菜香インタビュー#2「10年、20年経ったときに自分自身の人生経験が生かせる役者でありたい」",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1nb2NtVVhZdGMzempVZXRGTm9uNVBjU1ZUX3lCTXpfLWlOdFhIZDRfalMwdTh5YkprY19xUWJJakJYYmhUOHVjdXhvanZZbEZMaUt5ak5qeDhFVEtDcExReFRqMXM?oc=5",
+   "summary": "声優・石見舞菜香インタビュー#2「10年、20年経ったときに自分自身の人生経験が生かせる役者でありたい」 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-10-31T07:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "263ac37690c5a5c7",
    "title": "ファンビンビン（范冰冰）が圧巻の変貌！武則天の14歳から82歳までを一人で演じ切った女優魂が光る",
    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9hWTMyVmllMnZjMjBrWTVTRnFhS3JUNHRJTGZyUkNrLTZlVGdGY0lhdUYyU3NpbUQ1cFdUc2ZVWnl4WW1xbGJkaWtCRW1pWVBsQUd5b0dQMmNCbEo0Q0VwZS1nVG95c01oWWc?oc=5",
@@ -32110,6 +32526,34 @@
    "lang": "ja",
    "published": "2026-10-31T07:00:00Z",
    "first_seen": "2026-11-02T16:18:22Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "4f478ae1556f4c14",
+   "title": "S&P 500 will gain 4% to 7% once trade deal is done",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ZOG9QcHcxdFlwN21VTjlYMVBHYkJqbWZodzY1eFkxRzR2Rm8xQmFvTlBwTG9COHpZLUY0ekZ5SHVkdUdTNG5mMHd5R3I2SVpRcUZGbmM0MjFzRUU?oc=5",
+   "summary": "S&P 500 will gain 4% to 7% once trade deal is done Reuters",
+   "outlet": "Reuters",
+   "feed": "ロイター日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-31T07:00:00Z",
+   "first_seen": "2026-11-02T05:22:40Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "0dc191a6a6a8f49b",
+   "title": "Bayer wins EU approval for $62.5 bln Monsanto buy",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAzMjRUYThNaVlzbUEyMnNyRXFWNnA5Q05PZ1NTMnZHcVJBWjBDWnQ4RlpoOU5hZTVnTkZBa3JLLWVZbkJ1YllyX3RaMUlSTElwXy1TM2pTRnlPNlk?oc=5",
+   "summary": "Bayer wins EU approval for $62.5 bln Monsanto buy Reuters",
+   "outlet": "Reuters",
+   "feed": "ロイター日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-10-31T07:00:00Z",
+   "first_seen": "2026-11-02T18:08:09Z",
    "tv_match": null,
    "picked": false
   },
@@ -33238,20 +33682,6 @@
    "picked": false
   },
   {
-   "id": "6b52b5f53a4726e5",
-   "title": "画像・写真 | キスマイ・宮田俊哉＆えなこ、コスプレ姿でランウェイに サプライズにファン歓声 5枚目",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1xa3A5cEMzTXE3dVgyZkdTSHRLbTF5LXVwSTFfUGVoNUN0elRrSVo3bUpfMHF6NHBDdTNiT05HLWcwZnZiRmE5SlNvVDAxQTNFMC1ROHZtODF0dw?oc=5",
-   "summary": "画像・写真 | キスマイ・宮田俊哉＆えなこ、コスプレ姿でランウェイに サプライズにファン歓声 5枚目 オリコンニュース",
-   "outlet": "オリコンニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-10-31T06:26:00Z",
-   "first_seen": "2026-10-31T13:56:31Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "c1c8d6fe1b12e976",
    "title": "画像・写真 | キスマイ・宮田俊哉＆えなこ、コスプレ姿でランウェイに サプライズにファン歓声 7枚目",
    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wRXVGMDdEaTB0aW9zS3ktakZ6MG1pQWtHZlhqT3ZEYmI1MTVPTDU2VDE1QWx1UFlPMklncDNNamVqb2xTYmJLbjFXZG5yMUNFUTFKMWtwOU5PUQ?oc=5",
@@ -33262,6 +33692,20 @@
    "lang": "ja",
    "published": "2026-10-31T06:26:00Z",
    "first_seen": "2026-11-01T01:27:44Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "6b52b5f53a4726e5",
+   "title": "画像・写真 | キスマイ・宮田俊哉＆えなこ、コスプレ姿でランウェイに サプライズにファン歓声 5枚目",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1xa3A5cEMzTXE3dVgyZkdTSHRLbTF5LXVwSTFfUGVoNUN0elRrSVo3bUpfMHF6NHBDdTNiT05HLWcwZnZiRmE5SlNvVDAxQTNFMC1ROHZtODF0dw?oc=5",
+   "summary": "画像・写真 | キスマイ・宮田俊哉＆えなこ、コスプレ姿でランウェイに サプライズにファン歓声 5枚目 オリコンニュース",
+   "outlet": "オリコンニュース",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-10-31T06:26:00Z",
+   "first_seen": "2026-10-31T13:56:31Z",
    "tv_match": null,
    "picked": false
   },
@@ -37439,9 +37883,9 @@
    "published": "2026-10-30T23:02:48Z",
    "first_seen": "2026-10-31T03:01:42Z",
    "tv_match": {
-    "title": "迫るアメリカ中間選挙 争点の一つ「AIデータセンター」全米各地で建設相次ぐ “共和党の牙城”で住民たちに変化も",
+    "title": "アメリカ中間選挙にAIデータセンターが“暗い影” 「格差の拡大」「富の集中」…米の実情色濃く反映",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVUNYMFUzODNNelM1bFZobEN3MFhOWjlJMzM5WThGVWtZV0JSWlg5OGxJXzJyUGFjRFo2R2ZneVNfUER1dGQyc2ZncjN1T291QnJFSFp3eE5VU1lJQ1VQRk52dU5QMGhoVUNFV1pWZENxR01leXlwXzFxZjcwUS15OEE5TF8?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdEw5Uk5TN2d4ZlhDMVRjOXdVMmEteVZvTFVnRVFtRUR1SzYzOXJzZ09IaWtfc2VIbEpTSlFtQ0RCOEV3amNxd1B1X09lTmwxVU5YdkU4ejJGRXBmSUlQSk1zWnUwUFJFZ09zM0tnU1Z5eTgtaGJGVkFRbGlrWTFENFJvdG4?oc=5",
     "score": 0.35
    },
    "picked": false
@@ -39461,9 +39905,9 @@
    "image_checked": true,
    "image": "https://www.soumu.go.jp/main_content/000372150.jpg",
    "tv_match": {
-    "title": "冬の風物詩…兼六園で「雪吊り」作業始まる 石川（2026年10月31日掲載）｜日テレNEWS NNN",
+    "title": "友人を包丁で刺した殺人未遂の疑い 男を逮捕 北九州市（2026年10月31日掲載）｜FBS NEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9FQ1RaRkRsb3B6YUpwTGN6dzdxR21mcXRhYVZkQ0Rxd0RLYU1OczVaRDlkMVMzeXVPWUUxeHZFQmxzWm56YnIwZzRoRGtlYXp3cDVIaDZ1SjFWUDhZQWFqRTRHbjdsMElRYkNzZ3FiN1VlR3FvX2NSOFFQbWw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcTRiZmRhSmhSNGZkVVJfdW5QVzBvUlJnWVdtNzFUanhEMjdWM1dxSmFOYzRJZy1MMUdBRGF2T251blB0dlhqM21xcWZMVDNJYUpXWDFUUExOUHBDV3VrX1NqS0ZJQ2VIdGhDUndxbVRySnFqc2hOeXJ4TXdNWmRIQlN1aktKazQ?oc=5",
     "score": 0.4
    },
    "picked": false
@@ -64896,7 +65340,7 @@
    "published": "2026-10-29T07:55:00Z",
    "first_seen": "2026-10-29T09:07:58Z",
    "tv_match": {
-    "title": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が日本人1人の死亡を確認 死者、安否不明者は追突列車の先頭2両に集中 日本人1人の安否はいまだ不明",
+    "title": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が全員の身元を特定 日本人は2人死亡",
     "outlet": "テレ朝NEWS",
     "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE44U2J4aTdaTVlNMW9vbUpHYmhTdWl0bUZqMFpHUWg2eU1SZ3BXZnN5NjE0cTB6R2FTNmdPTVdKeDd1UHZZaE1XUXItNkt0MkwtV2RmV0VtSld5ZkZOUzNnU2t2MHRpRVFvZGhMd0dTSFpzUTZCWEVtcVJR?oc=5",
     "score": 0.58
@@ -68228,9 +68672,9 @@
    "published": "2026-10-29T04:22:56Z",
    "first_seen": "2026-10-29T05:58:38Z",
    "tv_match": {
-    "title": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が日本人1人の死亡を確認 死者、安否不明者は追突列車の先頭2両に集中 日本人1人の安否はいまだ不明",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE44U2J4aTdaTVlNMW9vbUpHYmhTdWl0bUZqMFpHUWg2eU1SZ3BXZnN5NjE0cTB6R2FTNmdPTVdKeDd1UHZZaE1XUXItNkt0MkwtV2RmV0VtSld5ZkZOUzNnU2t2MHRpRVFvZGhMd0dTSFpzUTZCWEVtcVJR?oc=5",
+    "title": "スペイン列車事故 乗客名簿に日本人2人 死者68人 赤信号で発車指示か",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE52M0NkdUlyMlJfVEd1YV9LSmlsN2h0MTczYUVkWkU3N0REbFc1R1AzWk1OdDQ0VTRBdmhFVUQ4ZW5XSW1OeXpOdk92N3lXT1VKbGJaQWxQLWtQRVZ5aEpN?oc=5",
     "score": 0.35
    },
    "picked": false
@@ -107882,744 +108326,21 @@
    "first_seen": "2026-10-27T01:07:57Z",
    "tv_match": null,
    "picked": false
-  },
-  {
-   "id": "56721cd88eddc26e",
-   "title": "ワイン造り 牛久で後押し 新規参入農家らに市補助制度 5年で生産量倍増へ",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSGJfdk5yOUFFajlyUVpvUjBNQUwyME54Wi1Kc2hmd1p0VUtxbDgzX1diZy0xRzFvcXZSWmotMHE0dUpSUnNFSG5DaU9vOFF4VWxZ?oc=5",
-   "summary": "ワイン造り 牛久で後押し 新規参入農家らに市補助制度 5年で生産量倍増へ 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:54:39Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "3794e872698d7feb",
-   "title": "〈社説〉初の「女性棋士」 重圧に勝て、西山さん",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5INWhtNDA5LU9mLXREMHptM3N0MlNESTJpRWtzcDBTTE9VcGdLMGJ6aWZKTmZNV19rOVNUeV9qeUZ1VnZ2MzJUZ3FYSTVLcnpHeGM0?oc=5",
-   "summary": "〈社説〉初の「女性棋士」 重圧に勝て、西山さん 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:53:57Z",
-   "first_seen": "2026-10-27T23:47:38Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "5e1daee9b9545c54",
-   "title": "14人の作家 ときめく「キユン発力」 笠間・県陶芸美術館で140点",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE92OG82SmhfUVduUzQwRHdIVmp1dXlNcjVMQlgwTjE1U00tSU9IU0VXV1pqc3BrTWQ4X1YyVl9kR2JOR256b3I5TXgtbTRiZ0ZJWC1Z?oc=5",
-   "summary": "14人の作家 ときめく「キユン発力」 笠間・県陶芸美術館で140点 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:53:23Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "851f7ae98fe07657",
-   "title": "〈社説〉金総書記訪中 核開発の放置を許すな",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBmVHY3dUl0WUFEWFJXWDFFbG5WS2ZaS2ZHeVd4RTNEaEZabEM1M3ZDRzhjSm9LUF9Qb0x4Rm85LVpDRmFwR1ZpRFcyOVBMck1XQUM4?oc=5",
-   "summary": "〈社説〉金総書記訪中 核開発の放置を許すな 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:52:27Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "ba8ae73430eaed6c",
-   "title": "東海第2原発の避難計画は「空論」 上岡直見さん講演",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB4dFNSb2VnbTE0cVNuWXF6MmZNb1dnREdvSElBVFZ3ZnRUc0tXUWdCUFk2M3MxZjM0QWlMUHFIQ1E5QkR3VzdKSkdkVDUzaVctc2R3?oc=5",
-   "summary": "東海第2原発の避難計画は「空論」 上岡直見さん講演 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:51:50Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "135d8d92f4e6d0df",
-   "title": "茨城県HPが復旧 ランサムウエア攻撃 個人情報漏えい確認されず",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBocmNsUUVnSzJEYjdJd3p1VFh3d2hOUWhkZ1ZXcEtqY0ZCYnktTks1MXRzcUNLYkZaUUMxVEtSZzBPZkZ1YWZHX296TGRwVHlCcUxF?oc=5",
-   "summary": "茨城県HPが復旧 ランサムウエア攻撃 個人情報漏えい確認されず 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:50:59Z",
-   "first_seen": "2026-10-27T01:56:57Z",
-   "tv_match": {
-    "title": "GMO不正アクセス ランサムウエア攻撃予告 顧客情報公開も 顧客に電源切断呼びかけ",
-    "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OX05IS3l1YVNxOHZGU25RamZYNVpxeFBZQm9xNUFKUmZIYTJHZ3F2QkRtSHNUcC14bVk3RHBxWDNpN240OGhYay1WZ2JmbGdNMHdYMVd5TUVTVXBpTjc0?oc=5",
-    "score": 0.36
-   },
-   "picked": false
-  },
-  {
-   "id": "6f4c715ba2de998a",
-   "title": "三郷市長選挙、候補者4人はどんな人？ 経歴や政治への思い、趣味をまとめました",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1fOXYwTzBKb0hjY3JBRGgzdFFOWURtQ0d6emM1OUFOMzBUcWhmUkhCUm5HX0tocm9mZXJHaGxfeTV6dThZVG52TUNwVnROQ21SaUZJ?oc=5",
-   "summary": "三郷市長選挙、候補者4人はどんな人？ 経歴や政治への思い、趣味をまとめました 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:47:44Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "2a6cfcde37460d31",
-   "title": "校長先生が落語披露 生徒から大喝采「知らない一面見られた」",
-   "link": "https://mainichi.jp/articles/20261026/k00/00m/310/056000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:45:09Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/26/20261026ddlk21100247000p/0c10.jpg?3",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "47a1f460a1c6dc29",
-   "title": "ドコモ、au、ソフトバンク、楽天の「5Gがつながるエリア」に最大2倍の違い――全国で実測比較",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE15ckxnTW5RcjZIRUdUTDhMajRUTFdkMVVpWkUxd25XVU03NnpPWmRSRmZmT0FhN2F4eG9yOXJTMlp6eXdHUE04d1FuUVZzMVctWlJjcWJQQU9OSXhST0xKc3RBcldLZ2RRNnM4YjhSd3E1dw?oc=5",
-   "summary": "ドコモ、au、ソフトバンク、楽天の「5Gがつながるエリア」に最大2倍の違い――全国で実測比較 ITmedia",
-   "outlet": "ITmedia",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:45:00Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8b13fd74f4f0bd92",
-   "title": "秩父温泉郷 日本一目指す 総選挙に初出場、投票呼びかけ",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9YSVVoTEI4a05ybzJGanZya3l5blBwVUFJaVNnc0JxZlRreUdDclFSdWRaTGNhd0RJRXBRUTBQeDhKRkppc1UxU0tteU02M1o5R01n?oc=5",
-   "summary": "秩父温泉郷 日本一目指す 総選挙に初出場、投票呼びかけ 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:44:36Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "a5ab1515ddab3ec1",
-   "title": "汚染土の再利用は「国の責任」県回答 市民団体は再質問書提出",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBvNDJBVnkxLVl1Y2VrSWk1YmtfbWE1bEN1cy1BelNaenNSUUx5bEUwYkg2MkZJY2dIX2RlMFd6MXFEM3ZYN3UzMV9GckRCLXF6ZVQ0?oc=5",
-   "summary": "汚染土の再利用は「国の責任」県回答 市民団体は再質問書提出 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:43:41Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "1ba491fab384caa1",
-   "title": "和洋女子大生×東武船橋店 カボチャメニューでコラボ 29日から9店舗で販売",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSdkpNTjk3M0ZnczBpUmFiTVlZT2RnRmJXdXRVR0xkMmdmbzJqQXN6MEVpLUJJeHRQQlY4em93X2JTTnhOb3EtUzZiXzc3RGpnX3pr?oc=5",
-   "summary": "和洋女子大生×東武船橋店 カボチャメニューでコラボ 29日から9店舗で販売 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:41:29Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "3f68bcb680cdf2bf",
-   "title": "匝瑳市議15人決まる",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5QNWJ2S2hpMXV2RkNMQTdaTUEwUndjTDBLMkdURVVzY1IyTVZaU3pUTTZ0Sk1LX3BteWYzNlRxNlczVXlvZUlOclhXUjlXdHBzaTRn?oc=5",
-   "summary": "匝瑳市議15人決まる 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:40:48Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "642085c08c6c4667",
-   "title": "君津市議補選1人決まる",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5aNmxsS2R4NU51RUNKQWJ5V0hkUkFsV0k0Q0l1OFNocW40U0c0YnY0aUljZnBtbWJPWF9rd1lpOFN5V2RUc211RlVwb01KQ1lLRXZr?oc=5",
-   "summary": "君津市議補選1人決まる 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:40:07Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "a22dfe61d1e00fed",
-   "title": "匝瑳市議15人決まる",
-   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5SS0lYQXlBY0s1UWxnSWJyQm11TmxDV2o1T0lWTmFpOTN6ZWdVZTZZazY1YVhGaHpPS2pkb01qY0dxbjNPclJhYlpnck8tMGcwODhGU01RaU1NZGl3S0FEdTdHU1NBejNINnJhZ0hIWW4wdHkwQnJPaNIBeEFVX3lxTE5SS0lYQXlBY0s1UWxnSWJyQm11TmxDV2o1T0lWTmFpOTN6ZWdVZTZZazY1YVhGaHpPS2pkb01qY0dxbjNPclJhYlpnck8tMGcwODhGU01RaU1NZGl3S0FEdTdHU1NBejNINnJhZ0hIWW4wdHkwQnJPaA?oc=5",
-   "summary": "匝瑳市議15人決まる ｄメニューニュース",
-   "outlet": "ｄメニューニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:40:00Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "850deb911040fba9",
-   "title": "「お金」の教育 動画で 中高生コンテスト 県大会、7作品発表",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9NNUpZVzJGSkI0RHo0SWFUWnR6YzVkTGN6M1lUWjFRNFpsRnplOXpwRlJ3TmI2dTI4UzBqUklUTlNYTXRuR3ZUZGR1dlg5d2w0blJJ?oc=5",
-   "summary": "「お金」の教育 動画で 中高生コンテスト 県大会、7作品発表 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:37:16Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "abc96e3a994daab8",
-   "title": "吃音あっても自然に堂々と 当事者で言語聴覚士・川崎の岩田さん発信 北九州の佐藤さんとYouTube開設",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ndloyUFU4eHBrMkFHWE9nUUlVSldpSnZxN3pDUjdzekh5R1lCbUJhb0hPQUdTN2Ffc1ZGSEpvSkQybFd0X216eGh3bFgwMWVzU3Q4?oc=5",
-   "summary": "吃音あっても自然に堂々と 当事者で言語聴覚士・川崎の岩田さん発信 北九州の佐藤さんとYouTube開設 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:33:54Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "0eb8c06b00c905c4",
-   "title": "茅ケ崎市長選告示 現新4人の争い 子育て、活性化など争点",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE42S1BtbHhQbV9TMnVkeEJDNW9QdVZPYUhUR3lKN040cl9PR2NUMl9xQnVHb2xuQ2pZaE9pQjBIZXZ1NjFBREgycHJkU3RYQ0V3RlI0?oc=5",
-   "summary": "茅ケ崎市長選告示 現新4人の争い 子育て、活性化など争点 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:32:30Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "18cbf8ffc1e6f926",
-   "title": "Carers allowed to earn over the weekly limit without losing out as ‘cliff-edge’ abolished in the budget",
-   "link": "https://www.theguardian.com/society/2026/oct/26/carers-allowance-cliff-edge-abolished-in-the-budget",
-   "summary": "Controversial mechanism that hit unpaid carers with huge penalties to be scrapped following Guardian investigation The controversial rule that led to unpaid carers being punished with penalties amounting to thousands of pounds is to be abolished, the Guardian can reveal. The chan…",
-   "outlet": "The Guardian World",
-   "feed": "The Guardian World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/f76a9a9e99db01ac0ebb04555c9b3585407accd3/889_0_4680_3744/master/4680.jpg?width=140&quality=85&auto=format&fit=max&s=6716ff5cb14e4e83705fff30a04d5c9a",
-   "published": "2026-10-26T22:30:53Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "ec712c261aa5da6a",
-   "title": "感性の音楽、データで変革 滋賀大+国立音大、異色タッグ深める研究",
-   "link": "http://www.asahi.com/articles/ASVBV31T0VBVPLFA008M.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:30:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261026003585_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "bb00cd34ac0ba3a4",
-   "title": "〈小池知事会見ファイル＋10月〉よどみない答え、「塩対応」も 簗前農相問題、首相に配慮か",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5HQTZDWkxKTURTaWdVSmVXdll1Q01kM1R3emlLenRLS1F6a1AzLWozUUpDb0lyMC1sMmZFTkV6NjVJa0o5dUEyRVJBdVB1SEhzeUtR?oc=5",
-   "summary": "〈小池知事会見ファイル＋10月〉よどみない答え、「塩対応」も 簗前農相問題、首相に配慮か 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:23:49Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "c2e60318cf74c950",
-   "title": "墨田区、マスコットで啓発動画 ニセ電話詐欺防止に一役",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5BZl82bDd4b2Q0ZUtISFdOeFE4eGx3VmFzOU1zdDhSVEwzUXRDUXlTWUZYTWNmZW9WaHBjYUpZTHdWbGYtY2p4NUxmTDVaZC1QZk9J?oc=5",
-   "summary": "墨田区、マスコットで啓発動画 ニセ電話詐欺防止に一役 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:21:39Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "7ef6327992caa1af",
-   "title": "河西衆院議員が公明党都代表に 加藤幹事長は再任",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5WckRHaWZDYy1ZMl8ycVVMWl9zcE9famc1UTZJZm9jMVhBQk9lTG9XcFNNX2p4bFM1X3Y3cG5rZl8yNmt1djd3VEZkRXl4RVZ6dExj?oc=5",
-   "summary": "河西衆院議員が公明党都代表に 加藤幹事長は再任 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:20:57Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "295bfa6fdf2935e5",
-   "title": "ソフトバンク、「緊急速報メール」を全面再開 PHP問題への対処完了で",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeFNSWWY3bVR6RDF6VmoteE9vcDBHaUlnU2V2YThoOV9SdUN3M1VNTzBhaVBBNmVLX2k0OHpPdU1FbVlIMWZjNWhST2hTOGlrRnRzM29jV0ptanZ2QmZPVG9uV0MtSGtDaGt4dUtqcWRHSl9lZUczbnFlWXVSc1M1cFdaNDY2eDI4dExONG53?oc=5",
-   "summary": "ソフトバンク、「緊急速報メール」を全面再開 PHP問題への対処完了で Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:20:24Z",
-   "first_seen": "2026-10-27T02:51:59Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "2bec94a1ebb11ca1",
-   "title": "母が作り娘が歌う渋谷愛 「センター街」の歌 お披露目 商店街の協力 佐世保出身などが縁",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE93VDVhSjMtZ2U1eWpUaXN3dlpGLTdVMFBiWEhYWENTQVhLWVNlNk83NFVXQS1MUklUU2N0Q2s1VnFDRW1Zd013ZjFKMnI0Mkd0NjRR?oc=5",
-   "summary": "母が作り娘が歌う渋谷愛 「センター街」の歌 お披露目 商店街の協力 佐世保出身などが縁 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:19:34Z",
-   "first_seen": "2026-10-27T01:07:57Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "62d1259e06d454f4",
-   "title": "Protests in Europe: Fact-checking viral videos amid claims of 'chaos'",
-   "link": "https://www.france24.com/en/tv-shows/truth-or-fake/20261026-protests-in-europe-fact-checking-viral-videos-amid-claims-of-chaos",
-   "summary": "As young people protest poor school conditions and the rising cost of living across Europe, misleading videos are spreading online. Footage from Poland in 2017, military preparations in Portugal and a protest in Argentina have all been falsely presented as recent demonstrations i…",
-   "outlet": "France 24",
-   "feed": "France 24",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://s.france24.com/media/display/0a8135c2-d18a-11f1-a2e4-4b25c96ec90e/w:1024/p:16x9/icon-1.png",
-   "published": "2026-10-26T22:18:34Z",
-   "first_seen": "2026-10-26T23:47:33Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "2e42904cd2a53ccf",
-   "title": "100年分の感謝と歴史を感じてね 国立駅の記念入場券、硬券で計4枚入り 31日、来月1日 販売",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE01aFNvWjk3NV9FdC1tZkd5d3MzT2s0TGJGVXgzTHhfOHpkLU9Fc09RZWUxQmFJMlRZRmxpUjgzeDA2UWhFcXNXaWN3dUFhcDhGdlBV?oc=5",
-   "summary": "100年分の感謝と歴史を感じてね 国立駅の記念入場券、硬券で計4枚入り 31日、来月1日 販売 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:15:57Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "b96023774e70d2bc",
-   "title": "付けひげに2時間 「VIVANT」出演の歌舞伎俳優が撮影秘話",
-   "link": "https://mainichi.jp/articles/20261026/k00/00m/310/097000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:15:10Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/26/20261026k0000m310106000p/0c10.jpg?1",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "1cad9b51204742ab",
-   "title": "Kis-My-Ft2、デビュー15周年記念日に表紙 5000字超ロングインタビューで関係性や未来を語る",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBYWksxSE5Tem9GRVdsUXNfNHA3UWVkeld0TmJmcFFyYklVSmU0aFpIVWZOeXhvZ19hT0VyR1plOGFZWHdtdU1WVjExV0JVci12c3JJZy1YTmprbG5XNG82WjdtVQ?oc=5",
-   "summary": "Kis-My-Ft2、デビュー15周年記念日に表紙 5000字超ロングインタビューで関係性や未来を語る 山陽新聞",
-   "outlet": "山陽新聞",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-10-26T22:14:28Z",
-   "first_seen": "2026-10-27T09:57:02Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "492cb5e695887382",
-   "title": "適切運用へ医療者の教育を 4学会、生命維持治療終了の新指針 「患者と共同で決める」 周知も課題",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9NWGptOUxwNm05eUo4aDAwczZrb2U0cTJUMm94eGJqUVY0NWNwRVV3T1ppWHd1emtBeGZrdVpjU0tqVmpEakdFZlVrVUREWFZtWTk3ZkZYeWxCVHZlNEhv?oc=5",
-   "summary": "適切運用へ医療者の教育を 4学会、生命維持治療終了の新指針 「患者と共同で決める」 周知も課題 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:13:55Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "0f9954bc88234466",
-   "title": "NVIDIAの最強の買い手となったスペースX。6兆円を借りてGPUを買い、IPO前のアンソロピックとは18兆円の契約を結び、多数のネオクラウドを負けさせる事業のメカニズムを大解説：経営者が読むNVIDIAのフィジカルAI / ADAS業界日報 by 今泉大輔",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBrbzgxbG9aTTNyRkxBbFBzZ2lWUngxa3BFaU9CUjh2bElPUDBvMGRBT0huU0oyaHZ5bk9xU21WYVhEOVNUc1FnaHFKejRNV1A4UGtVWTJIS1dzOHhtTzdrQUxDZG91bC1MMXc?oc=5",
-   "summary": "NVIDIAの最強の買い手となったスペースX。6兆円を借りてGPUを買い、IPO前のアンソロピックとは18兆円の契約を結び、多数のネオクラウドを負けさせる事業のメカニズムを大解説：経営者が読むNVIDIAのフィジカルAI / ADAS業界日報 by 今泉大輔 オルタナティブ・ブログ",
-   "outlet": "オルタナティブ・ブログ",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:10:09Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "b016df4a11350647",
-   "title": "ADR主要銘柄（日本）－ソフトバンクＧ、東京エレクが上昇、ニデック、小野薬が下落(トレーダーズ・ウェブ)",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPU0VRSlIxS3JJdjdabS05Y19URUhFcWlHM2drMzFULXZhMUNOTFpZQV9QdnAzSDJnZllUQUNsek9jb3R2bmU2WHZGNVVaRUdxS0JvNFlMeENQakdiUnBPUUdUV3pVNmhvbmp4NENyMHBDeXpWSzFVelFTZHM4cDU4ZjdZX1pqR3c?oc=5",
-   "summary": "ADR主要銘柄（日本）－ソフトバンクＧ、東京エレクが上昇、ニデック、小野薬が下落(トレーダーズ・ウェブ) Yahoo!ファイナンス",
-   "outlet": "Yahoo!ファイナンス",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:10:03Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "a0b1885af39049da",
-   "title": "Jordan attacks militants in Syria in retaliation for church attack",
-   "link": "https://www.theguardian.com/world/2026/oct/26/jordan-attacks-militants-syria-retaliation-for-last-week-church-attack",
-   "summary": "Jordanian air force says it carried out strikes against ‘terrorist groups’ tied to killing of nine during funeral Jordan has carried out airstrikes against armed groups in Syria in retaliation for Friday’s attack on a Greek Orthodox church in the southern Jordanian governorate of…",
-   "outlet": "The Guardian World",
-   "feed": "The Guardian World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/64332ec0d49e7efed321c759c9a426f587b9848b/461_0_4610_3688/master/4610.jpg?width=140&quality=85&auto=format&fit=max&s=24001820a6d5bb71f1395ce87d57319a",
-   "published": "2026-10-26T22:08:38Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "60348af62200e914",
-   "title": "Former FBI director James Comey hit with third set of charges under Trump",
-   "link": "https://www.aljazeera.com/news/2026/10/26/former-fbi-director-james-comey-hit-with-third-set-of-charges-under-trump?traffic_source=rss",
-   "summary": "Comey, who was fired during Trump's first term, has been accused of unlawfully divulging national security information.",
-   "outlet": "Al Jazeera",
-   "feed": "Al Jazeera",
-   "kind": "overseas",
-   "lang": "en",
-   "published": "2026-10-26T22:03:26Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/getty_6adfce5982-1793052249.jpg?resize=1920%2C1440",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "9b099c320ce456bb",
-   "title": "大手生保、国債の入れ替え加速 長期金利上昇で―今年度下期：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8yVFV2UzhjOW1xbzJkeXlWUW8xWklGY2dtdmJQbUg0NGUtMVBwbkJaVGNpUmI3S0pNN3hhOEQta2hoNzVqaWxuZ1I4U0FVRElrSGVDRmhuSDVvTHRUeEN4NktnYw?oc=5",
-   "summary": "大手生保、国債の入れ替え加速 長期金利上昇で―今年度下期：時事ドットコム 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:02:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8e1d17f096cb230c",
-   "title": "〈コラム 筆洗〉「銀は成らずに好手あり」。そんな将棋の格言がある。敵陣の三…",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE81ZENTbGdZbHBiZndBMUI1OEp0V1JZd2d1OHJsMmFBalBIVnpJNTBtQkVyYjl6YkdLTW9pbUpmRXZBVFFpdGtER2Y4NEc0aWhfZ044?oc=5",
-   "summary": "〈コラム 筆洗〉「銀は成らずに好手あり」。そんな将棋の格言がある。敵陣の三… 東京新聞",
-   "outlet": "東京新聞",
-   "feed": "東京新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:01:47Z",
-   "first_seen": "2026-10-26T23:47:33Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8a6a1da62f8e7afc",
-   "title": "Anthropic's IPO filing shows soaring sales and steep losses",
-   "link": "https://www.france24.com/en/tv-shows/business/20261026-anthropic-s-ipo-filing-shows-soaring-sales-and-steep-losses",
-   "summary": "AI giant Anthropic has publicly filed for an initial public offering (IPO) with US market regulators. The document offered a glimpse into the company's finances but also contained nearly 100 pages related to risks around investing in the firm. The filing revealed that in the firs…",
-   "outlet": "France 24",
-   "feed": "France 24",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://s.france24.com/media/display/b8b37604-d186-11f1-9cf6-4d317af013fd/w:1024/p:16x9/202606241200WD-ANTHROPIC-ARCHIVE-O.png",
-   "published": "2026-10-26T22:01:25Z",
-   "first_seen": "2026-10-26T23:47:33Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "01e96778e4b74b13",
-   "title": "みんなの高校野球:空白の4日間 横浜が県内連勝43ストップで練習中断し得たもの",
-   "link": "https://mainichi.jp/articles/20261026/k00/00m/050/352000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:01:11Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/26/20261026k0000m050359000p/0c10.jpg?1",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "c0055840e225b6c3",
-   "title": "経済プラス:熊本地震「ふっこう応援割」 予約殺到でも不満目立つワケ",
-   "link": "https://mainichi.jp/articles/20261026/k00/00m/020/294000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:22Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/26/20261026k0000m020303000p/0c10.jpg?1",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "f53b8294e629537f",
-   "title": "関東決勝は2年前の再戦 横浜と健大高崎、両チームの思惑は?",
-   "link": "https://mainichi.jp/articles/20261026/k00/00m/050/279000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:17Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/26/20261026k0000m050285000p/0c10.jpg?1",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "de4470897cad4aa4",
-   "title": "ネタニヤフ氏の続投可否が争点 イスラエル総選挙、27日投票へ",
-   "link": "https://mainichi.jp/articles/20261026/k00/00m/030/109000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:15Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/10/26/20261026k0000m030125000p/0c10.jpg?1",
-   "tv_match": {
-    "title": "イスラエル総選挙 投票開始“ネタニヤフ首相の続投”は（2026年10月27日掲載）｜日テレNEWS NNN",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNekJ6czd3QnBZTzVkZjNuZFVlbEtScFo3MlpJcFNRYUViSmlOR2NRYXdjMVl1dk5DMWJ3UlZsVGtMQUlFU09QZHg1TTlRaUNwcjBJNTNPYjBodEtfNHJVdWxLRVo0MEdURDd2OVRhVU5xVTBIdG4wNDk1akZqZWhScF9aOUw?oc=5",
-    "score": 0.59
-   },
-   "picked": false
-  },
-  {
-   "id": "cfef5579e0d12d3c",
-   "title": "iOS 27.2配信開始 Siri AIが日本語に対応 iPhone DuoはApple Pencilを利用可能に",
-   "link": "https://www.itmedia.co.jp/mobile/articles/2610/27/news050.html",
-   "summary": "AppleがiOSの最新アップデートの配信を開始した。より自然な会話や画面認識、文面編集に対応したSiri AIが日本語を含む多言語で利用可能となった。あわせてiPhone DuoのApple Pencil対応や、標準アプリの各種機能強化が実施されている。",
-   "outlet": "ITmedia Mobile",
-   "feed": "ITmedia Mobile",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-26T23:47:33Z",
-   "image_checked": true,
-   "image": "https://image.itmedia.co.jp/mobile/articles/2610/27/cover_news050.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "18d084c2436a30fc",
-   "title": "勤務間インターバル、定着せず 導入６．９％、義務化が焦点に",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1tSGJ5dFE1VEFOSE1HcHJmUUVKNm1PcHNOLUl5THV5VmVrYld3WUk5eFF5ZmNPTXFvMFQ4OG51NGtMWDZINF9uVHdFREVuTHk5LTRBSEQxVEplWWJqcVp4NGZ3cw?oc=5",
-   "summary": "勤務間インターバル、定着せず 導入６．９％、義務化が焦点に 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "34492d1fa43ca604",
-   "title": "止まらぬサイバー被害、政府危機感 対策手探り、実効性は不透明：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1zUjBUQl9Da3FMZjd6amstdmJOY1lfaHNRU05KVlVOTEQxZTYwVmllUmVwTFZaNEdXeEFJUDY0ZjVxbXRwczB5NTE5dUU0Q0xGeUhmTHg2MWpfSndxMFBjV0VCMA?oc=5",
-   "summary": "止まらぬサイバー被害、政府危機感 対策手探り、実効性は不透明：時事ドットコム 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "ff5039a8ab56d005",
-   "title": "あきらめなかった「やらまいか魂」 10年続くJASRACとの闘争",
-   "link": "http://www.asahi.com/articles/ASVBM23C4VBMPTIL019M.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261019002795_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "d467991970243250",
-   "title": "配信視聴、dポイントクラブ会員基盤、購買の各データ連携へ（TVer/NTTドコモ/データ・ワン）",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBLaWlaUFdTTjZNTTVpTGpmRi0wbGdZeEdPUGZfZEs5cEg3alEtUXhtUGxwb2t4NFZHMWdWdGF1VzBJVUtMV2xrMlZWb2p1dV80bzJQS1J6Y0RoZlk?oc=5",
-   "summary": "配信視聴、dポイントクラブ会員基盤、購買の各データ連携へ（TVer/NTTドコモ/データ・ワン） ペイメントナビ",
-   "outlet": "ペイメントナビ",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8ec25a37541f7c3c",
-   "title": "民主知事、次期大統領選へ布石 党勢拡大に激戦区奔走―米中間選挙",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBVLVVvbkd3ZGJEU0VaVHg2TUpXTVdNT08yZFdxTHBnZEtMV2JvU3FBN1l1SGNuSW1RTlZvYXVId2lIVVhrNVJvRkZhZlpEZmd5OWJEcDhkRzRiSjhPUzRMTUpUNA?oc=5",
-   "summary": "民主知事、次期大統領選へ布石 党勢拡大に激戦区奔走―米中間選挙 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T21:59:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "7e3f37d8f9807415",
-   "title": "租特見直し、１兆円捻出視野 維新・萩原税調会長に聞く",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBURXVlTHNQcldrdVZKMDBNVVpxd1hPVUF2ZFlvd3VtcG5nbWltZXBvU3kyZmVRdHY3eWJ1SEFWdFE0cFJ6UXViYktsNjRlNGF1SmFiVmg1eTRsUVF3c3VOY284OA?oc=5",
-   "summary": "租特見直し、１兆円捻出視野 維新・萩原税調会長に聞く 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-26T21:59:00Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "35fa3955b09aa2a5",
-   "title": "黒柳徹子、「一番緊張した人」は？回答＆理由でキスマイをうならせる「かっこいいですね」",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBFZmlCSVd3OVFFc2E4SU9lY1M2Wk5ER2s1YVplR3BUalFtcVJpaEhtOEpnbVc4b3BZOTRDdG84bFdKRlFYUGxtOWpvandnQ21yaXc?oc=5",
-   "summary": "黒柳徹子、「一番緊張した人」は？回答＆理由でキスマイをうならせる「かっこいいですね」 山陽新聞",
-   "outlet": "山陽新聞",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-10-26T21:58:47Z",
-   "first_seen": "2026-10-27T05:51:13Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "d7a1fd79d5b5368c",
-   "title": "Brazil: defeated Flávio Bolsonaro ordered to surrender passports",
-   "link": "https://www.theguardian.com/world/2026/oct/26/flavio-bolsonaro-brazil-lula-election",
-   "summary": "Far-right senator banned from leaving country as supreme court judge’s ruling cites money-laundering case The far-right senator Flávio Bolsonaro was banned from leaving Brazil and ordered to surrender his passports just hours after his dramatic loss in the presidential election t…",
-   "outlet": "The Guardian World",
-   "feed": "The Guardian World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/0de4d058b50f7c1ef96360807b8a7d704ff3313e/688_0_6880_5504/master/6880.jpg?width=140&quality=85&auto=format&fit=max&s=5969f0d60c15699a3e9e3616e76012f9",
-   "published": "2026-10-26T21:56:49Z",
-   "first_seen": "2026-10-26T22:52:41Z",
-   "tv_match": "unknown",
-   "picked": false
   }
  ],
  "tv": [
+  {
+   "id": "d10efda6f69f05e7",
+   "title": "【速報】スペイン列車衝突事故 日本人2人目の死亡を確認 69人全員の身元特定 スペイン当局発表",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9WbFdYVnFaMjNjTjFGbXNkdVhaTEF6VU9rRG1VWG9neGd0N1N4S0pWeGRnRDdNWTkzX0hTTXZtalk5LVhuallIV2lRRTNOblU3QlNqaWtkdw?oc=5",
+   "summary": "【速報】スペイン列車衝突事故 日本人2人目の死亡を確認 69人全員の身元特定 スペイン当局発表 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T22:03:24Z",
+   "first_seen": "2026-11-02T22:56:01Z"
+  },
   {
    "id": "27e2b362506a3585",
    "title": "兄の遺体を数か月にわたり自宅地下の物置に遺棄か…50歳女が容疑認める…同居していた80代父親も関与した疑いが浮上、警察が任意で事情聴取、兄の死因は分からず＜北海道小樽市",
@@ -108679,6 +108400,30 @@
    "lang": "ja",
    "published": "2026-11-02T21:06:26Z",
    "first_seen": "2026-11-02T21:56:47Z"
+  },
+  {
+   "id": "008f61e4a2c1d828",
+   "title": "『自分たちらしい正解』を探して～ゲームと対話で見直す家庭内のジェンダー平等～",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IbHVxd0JtRWZPX3hNQzZnN2tSN3R2ZEtUNHlMZE8yQjBkV3M0UkRGbWxqV1dNc1l3enhodTVjOXFHbHE2M0d2LVp0VThIYWM3OTRmREdCdw?oc=5",
+   "summary": "『自分たちらしい正解』を探して～ゲームと対話で見直す家庭内のジェンダー平等～ TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T21:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
+  },
+  {
+   "id": "aca138bfec06890c",
+   "title": "｢ボールが来て欲しくない…｣どん底からJ1通算100試合へ 横浜FM宮市亮、3度の前十字靭帯断裂を越え地元・愛知で噛みしめた感謝【KICK OFF! J】",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE45WDdvdlFYU1NvUUVPdjVqOWtlUjkwX0JCQmZybkMwWUpPWkgyQWExT3NmNF83cURkMFhZOEVRcGN4LUl6elFaRHJkYUFPTWhnZ05rUkJybw?oc=5",
+   "summary": "｢ボールが来て欲しくない…｣どん底からJ1通算100試合へ 横浜FM宮市亮、3度の前十字靭帯断裂を越え地元・愛知で噛みしめた感謝【KICK OFF! J】 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T21:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
   },
   {
    "id": "04f69d7e896c6aee",
@@ -108741,6 +108486,18 @@
    "first_seen": "2026-11-02T21:56:47Z"
   },
   {
+   "id": "716843804f8fa8fe",
+   "title": "「日本にもトランプ氏のような強い政治家が必要」は52.6% 日本国内での調査でトランプ政権に「共感」は23.1% 強い政治家を求める人の78.2%はトランプ氏を評価せず アメリカ中間選挙直前に日本国内でインターネット調査 【TBS NEWS DIG】 | TBS NEWS DIG",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBmYXRscC1uS3dwMl9ObHQ2cms2QUMzX2ppeFdYcUdPX3NiMVlQY0xUdFZabmNmZE9uOE9pa1RfZnBqeUI1UTZTV29IcnM5T29xWkdNdktzYw?oc=5",
+   "summary": "「日本にもトランプ氏のような強い政治家が必要」は52.6% 日本国内での調査でトランプ政権に「共感」は23.1% 強い政治家を求める人の78.2%はトランプ氏を評価せず アメリカ中間選挙直前に日本国内でインターネット調査 【TBS NEWS DIG】 | TBS NEWS DIG TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T20:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
+  },
+  {
    "id": "60480ffa4369a0a8",
    "title": "ポーランド警察がロシア国境に対テロ大部隊を派遣 武装グループ越境を警戒",
    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE14VGlFU2FKX25KTmNUTFVGZ0oxRzFHS2NBaDVJOEFBeVIxNFZrUk16bXNUWXFsVm1nX1pxQnFZS0NveTloc3JZVzYxWDhmdmFZSkJ0cFhvS2xkYXR6dWJBbExfZktBek5nODNwQWJtakNXZEVRSFNZSTFR?oc=5",
@@ -108777,6 +108534,18 @@
    "first_seen": "2026-11-02T21:56:47Z"
   },
   {
+   "id": "8ddcf2e6afeafbde",
+   "title": "スウェーデンやベルギーなどのスーパーにサイバー攻撃…“冷蔵庫が50℃”に（2026年11月2日掲載）｜日テレNEWS NNN",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxORnBPWGE0ZEk4Wl9aXzg5dmRWUF9ObjRSNnpDODFjMnA5OEtiOTJ0TklXTUZuREVlemRfNjFUYVhyZmQ0WTkyMnBqLThNd083ZnREMjZGSnd1ZERDTzlXY1J0d1h5ZTQ3QzhQdUphbFE2QkpjNjNXRXlWeDRMWExIZkdXZTg?oc=5",
+   "summary": "スウェーデンやベルギーなどのスーパーにサイバー攻撃…“冷蔵庫が50℃”に（2026年11月2日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T16:20:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
+  },
+  {
    "id": "dcea0ef10b47f389",
    "title": "小池都知事とOECD事務総長が会談 国際会議を来年5月に東京開催で合意（2026年11月2日掲載）｜日テレNEWS NNN",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5tLVhpc0VBbkJvaHVfNTl4Y3RmcXFkLXBpT3lYanJlN0w2dE42cGZQcDFKblJ4S1VfbkVoTm9qanZNSU0zeUhHVFZpb2Y2M0lEa2MwWkttc2NBanI0RG5OMmxCWXdyQWRTSVY4OTlnWHpNSEJsQTNLckFCNFY?oc=5",
@@ -108799,6 +108568,18 @@
    "lang": "ja",
    "published": "2026-11-02T15:52:21Z",
    "first_seen": "2026-11-02T19:14:13Z"
+  },
+  {
+   "id": "80129fa3f42e641f",
+   "title": "アメリカ中間選挙にAIデータセンターが“暗い影” 「格差の拡大」「富の集中」…米の実情色濃く反映",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdEw5Uk5TN2d4ZlhDMVRjOXdVMmEteVZvTFVnRVFtRUR1SzYzOXJzZ09IaWtfc2VIbEpTSlFtQ0RCOEV3amNxd1B1X09lTmwxVU5YdkU4ejJGRXBmSUlQSk1zWnUwUFJFZ09zM0tnU1Z5eTgtaGJGVkFRbGlrWTFENFJvdG4?oc=5",
+   "summary": "アメリカ中間選挙にAIデータセンターが“暗い影” 「格差の拡大」「富の集中」…米の実情色濃く反映 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T15:51:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
   },
   {
    "id": "0b4ae032a26de86c",
@@ -109401,6 +109182,18 @@
    "first_seen": "2026-11-02T13:28:47Z"
   },
   {
+   "id": "a2b9531df142c435",
+   "title": "「病院の時間迫っていた」ボンネットに男性乗せたまま…2キロ超走行か 79歳女を逮捕",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE94WGFLcGZhaG0zdk16cGt2eUFVUDBaRnhJYkowQWlzU2JOV2xPN1lmSEdUZFB5TzN1Vml4R25NMEFzcWtQR0E1QkJSWkpzV0dNa2ZWSml3NW1mMEF3X1hiZXF6VEhac19ldmZOam9HbUpqSWtTYS1XWWt6YzM?oc=5",
+   "summary": "「病院の時間迫っていた」ボンネットに男性乗せたまま…2キロ超走行か 79歳女を逮捕 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T10:45:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
+  },
+  {
    "id": "7fe9a623dfd4e377",
    "title": "【画像まとめ】広さ8倍であす開館！皇居内「三の丸尚蔵館」皇室の至宝が一堂に",
    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcElHX29kSWY2WDc1YkJ4SDZKSGRsVUVYRlRyNTR1amJlVTFqTW8tb0lCSDZBcFZ1aGJ2MFZJa0dHbkpSbklSYUlKMHNhdkN3RnZwQmhrVXJOdlpXZUswM2QxMlFhTlZkZEJCUnowNEI1QmpJV0ZrSF9UbFNoY0pkS3BjTVhOdHJ2S3RkV1Y5dmM4YWZMVVpvQWNXTVRKLW9JS2hMcGJoYmU0TV84c05jdDZCRVItR0VJ?oc=5",
@@ -109857,18 +109650,6 @@
    "first_seen": "2026-11-02T11:14:45Z"
   },
   {
-   "id": "f19e3dd80018409a",
-   "title": "今季のハタハタ漁「禁漁せず」 操業しながらの資源管理を継続 県や漁業者らによる協議会で方針確認 秋田",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0zbGlqSlU0MFRrZ0ZPWU1YYkVDZHVQaDh0SWFsM0RGZnpIakgybExRczF1b09nS002S1JBNXVmTlVMUjRQbzVja3BXR2NUZw?oc=5",
-   "summary": "今季のハタハタ漁「禁漁せず」 操業しながらの資源管理を継続 県や漁業者らによる協議会で方針確認 秋田 FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-02T09:00:00Z",
-   "first_seen": "2026-11-02T11:14:45Z"
-  },
-  {
    "id": "1cb427d8309571b2",
    "title": "日経平均続落、キオクシア15％安 東京エレクトロンなど好決算AI株は上昇【日経CNBC／きょうのポイント、明日のヒント】",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE05YjdOOTVRYXQ0b1ZuTXZ4REtmZ0c1TmRPZi1RcnVBYUlIX2QyZENZdDh6X2lUc0JmQXdpMC1oQTY1ZURWMy04WUdWNUVteWNRTnhaalpGYkk4ckRHSDVtTTl1YlROUnc?oc=5",
@@ -109879,6 +109660,18 @@
    "lang": "ja",
    "published": "2026-11-02T09:00:00Z",
    "first_seen": "2026-11-02T18:08:09Z"
+  },
+  {
+   "id": "f19e3dd80018409a",
+   "title": "今季のハタハタ漁「禁漁せず」 操業しながらの資源管理を継続 県や漁業者らによる協議会で方針確認 秋田",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0zbGlqSlU0MFRrZ0ZPWU1YYkVDZHVQaDh0SWFsM0RGZnpIakgybExRczF1b09nS002S1JBNXVmTlVMUjRQbzVja3BXR2NUZw?oc=5",
+   "summary": "今季のハタハタ漁「禁漁せず」 操業しながらの資源管理を継続 県や漁業者らによる協議会で方針確認 秋田 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T09:00:00Z",
+   "first_seen": "2026-11-02T11:14:45Z"
   },
   {
    "id": "61979cd61f34c254",
@@ -110061,10 +109854,34 @@
    "first_seen": "2026-11-02T12:10:11Z"
   },
   {
+   "id": "e03f318ded5d152c",
+   "title": "皇居三の丸尚蔵館 3日に全面開館 特別展を開催",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1SSW9mMlNyX0RIQkpVd1pIZk9KMUx2WFZ4SGJKWGxnLVRaMkhhM1o1MlFxdFFVOHJBWmxjTUlsQXBfbV9NeU5iUHlyaFB5WUdUQTlsUnhCRTctMkpmQ0E?oc=5",
+   "summary": "皇居三の丸尚蔵館 3日に全面開館 特別展を開催 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T07:54:00Z",
+   "first_seen": "2026-11-02T12:10:11Z"
+  },
+  {
    "id": "405fa4624a23dd80",
    "title": "ウクライナとロシアで警報アプリ攻撃受ける",
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5NME9QN0FKMnFxT282dVZudjVDYXk2Q1E4RWxtdi00MEcxS1hXam5adXROQndSQnk3SS1jWWlBQlpRMFc2VERGVng5cnpEZ2lNNzExTURQQjFmakxyRlE?oc=5",
    "summary": "ウクライナとロシアで警報アプリ攻撃受ける テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-02T07:54:00Z",
+   "first_seen": "2026-11-02T18:08:09Z"
+  },
+  {
+   "id": "b6ed9e335a7ef0d4",
+   "title": "オウム後継3団体 観察処分9回目の更新請求",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBiWjBQbnlxNWhfR2lVR2VRejNSNlZJWVgwOGZLQWJDRjNZMWx2Y3FwWm9Dai1Pc0Ntay1fLU1LUmNwSDhsb3lxWHBHNm10UzBqV0hTS0tRbVFTaldOM3c?oc=5",
+   "summary": "オウム後継3団体 観察処分9回目の更新請求 テレ東BIZ",
    "outlet": "テレ東BIZ",
    "feed": "テレ東BIZ",
    "kind": "tv",
@@ -110089,30 +109906,6 @@
    "title": "「防災庁」発足 細野防災大臣「世界一の防災大国を目指す」",
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9JbTB4VjRESkJsV3lDeHdvRTNLVVh3ZUJtdDJZTDZXYVRTR1RjRFdVWmRHTlVZUUpTZUlUMXZTME00T1dQTWUzMU9FeUVBdEFZdVFfcUJzcjZtSGtrNnc?oc=5",
    "summary": "「防災庁」発足 細野防災大臣「世界一の防災大国を目指す」 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-02T07:54:00Z",
-   "first_seen": "2026-11-02T18:08:09Z"
-  },
-  {
-   "id": "e03f318ded5d152c",
-   "title": "皇居三の丸尚蔵館 3日に全面開館 特別展を開催",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1SSW9mMlNyX0RIQkpVd1pIZk9KMUx2WFZ4SGJKWGxnLVRaMkhhM1o1MlFxdFFVOHJBWmxjTUlsQXBfbV9NeU5iUHlyaFB5WUdUQTlsUnhCRTctMkpmQ0E?oc=5",
-   "summary": "皇居三の丸尚蔵館 3日に全面開館 特別展を開催 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-02T07:54:00Z",
-   "first_seen": "2026-11-02T12:10:11Z"
-  },
-  {
-   "id": "b6ed9e335a7ef0d4",
-   "title": "オウム後継3団体 観察処分9回目の更新請求",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBiWjBQbnlxNWhfR2lVR2VRejNSNlZJWVgwOGZLQWJDRjNZMWx2Y3FwWm9Dai1Pc0Ntay1fLU1LUmNwSDhsb3lxWHBHNm10UzBqV0hTS0tRbVFTaldOM3c?oc=5",
-   "summary": "オウム後継3団体 観察処分9回目の更新請求 テレ東BIZ",
    "outlet": "テレ東BIZ",
    "feed": "テレ東BIZ",
    "kind": "tv",
@@ -111717,18 +111510,6 @@
    "first_seen": "2026-11-01T21:51:43Z"
   },
   {
-   "id": "7595e95f562e6e55",
-   "title": "【株価見通し】5年目の強気相場に入ったS&P500",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9Ybk9QTHBVaGR4NVpTdVhRTFpXQ1doRng1dkstelVlWFh2Y1FlaWRYREtLVWVkay0tTkI3LW5odUtvSXVYVUQ4V2w3aW94Wl9vY2RKR3RNUXhZUDlDdkxnLQ?oc=5",
-   "summary": "【株価見通し】5年目の強気相場に入ったS&P500 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-01T20:45:00Z",
-   "first_seen": "2026-11-01T21:51:43Z"
-  },
-  {
    "id": "0bc5cd2f03d219af",
    "title": "GMO熊谷社長 きょう記者会見 経緯や事実関係を説明へ",
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE96YTRib3dnZmtvYTNVR29tTm0yekFFR0lwY1lwZGNibUVwQkZBbk80OFlCSmQzajNENWtmWEJWVmgtT21UdlN4ZUJVMHZjc1Rvak9CckVrakM0MzZTOXc?oc=5",
@@ -111763,6 +111544,18 @@
    "lang": "ja",
    "published": "2026-11-01T20:45:00Z",
    "first_seen": "2026-11-01T23:49:14Z"
+  },
+  {
+   "id": "7595e95f562e6e55",
+   "title": "【株価見通し】5年目の強気相場に入ったS&P500",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9Ybk9QTHBVaGR4NVpTdVhRTFpXQ1doRng1dkstelVlWFh2Y1FlaWRYREtLVWVkay0tTkI3LW5odUtvSXVYVUQ4V2w3aW94Wl9vY2RKR3RNUXhZUDlDdkxnLQ?oc=5",
+   "summary": "【株価見通し】5年目の強気相場に入ったS&P500 テレ東BIZ",
+   "outlet": "テレ東BIZ",
+   "feed": "テレ東BIZ",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-01T20:45:00Z",
+   "first_seen": "2026-11-01T21:51:43Z"
   },
   {
    "id": "b83af77f9e736641",
@@ -112233,10 +112026,10 @@
    "first_seen": "2026-11-01T15:51:30Z"
   },
   {
-   "id": "df28947c2e816a84",
-   "title": "【沖縄県(大東島地方)】11/2の天気予報",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5SMWU0OGdZZ0trZXhoVnFSUVBlV3d5Ukx2Nmo3amlUVG4wQmRYaW96MVM2aUZMV0s0c2lYVElTQm02ZmEtVkh3cUtBLWZNQQ?oc=5",
-   "summary": "【沖縄県(大東島地方)】11/2の天気予報 FNNプライムオンライン",
+   "id": "89e8fb58b3405170",
+   "title": "【福島県】11/2の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE96amo2aF9RYlpISTNWdlF6V09yU0R0WVlCNENkek0yZW4xRGlzb3l4TzVzZlAxVE90VmlURjB2dmZneG54YVZWRXlBUW1QZw?oc=5",
+   "summary": "【福島県】11/2の天気予報 FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
@@ -112245,10 +112038,10 @@
    "first_seen": "2026-11-01T19:52:13Z"
   },
   {
-   "id": "89e8fb58b3405170",
-   "title": "【福島県】11/2の天気予報",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE96amo2aF9RYlpISTNWdlF6V09yU0R0WVlCNENkek0yZW4xRGlzb3l4TzVzZlAxVE90VmlURjB2dmZneG54YVZWRXlBUW1QZw?oc=5",
-   "summary": "【福島県】11/2の天気予報 FNNプライムオンライン",
+   "id": "df28947c2e816a84",
+   "title": "【沖縄県(大東島地方)】11/2の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5SMWU0OGdZZ0trZXhoVnFSUVBlV3d5Ukx2Nmo3amlUVG4wQmRYaW96MVM2aUZMV0s0c2lYVElTQm02ZmEtVkh3cUtBLWZNQQ?oc=5",
+   "summary": "【沖縄県(大東島地方)】11/2の天気予報 FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
@@ -114619,6 +114412,18 @@
    "lang": "ja",
    "published": "2026-10-31T09:00:00Z",
    "first_seen": "2026-10-31T13:07:49Z"
+  },
+  {
+   "id": "f0abb2c4ec997bb8",
+   "title": "子どもたちが全力プレー！『イオン九州プレゼンツ２０２６がんばろう熊本！キッズバスケットボール大会』",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5TbUpiMW9jSERTVFRLcFJ2OS0wRUtxV1lwU0d3RWZLbGEtcmJQMXo1ci1kR2xyenRFVUhGTS13RUdNQ2VVSDZDdl9tb2FTZw?oc=5",
+   "summary": "子どもたちが全力プレー！『イオン九州プレゼンツ２０２６がんばろう熊本！キッズバスケットボール大会』 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-10-31T09:00:00Z",
+   "first_seen": "2026-11-02T22:56:01Z"
   },
   {
    "id": "b7eeeb110a40be53",
@@ -118390,9 +118195,9 @@
   },
   {
    "id": "098ba18ea7bb9c2c",
-   "title": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が日本人1人の死亡を確認 死者、安否不明者は追突列車の先頭2両に集中 日本人1人の安否はいまだ不明",
+   "title": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が全員の身元を特定 日本人は2人死亡",
    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE44U2J4aTdaTVlNMW9vbUpHYmhTdWl0bUZqMFpHUWg2eU1SZ3BXZnN5NjE0cTB6R2FTNmdPTVdKeDd1UHZZaE1XUXItNkt0MkwtV2RmV0VtSld5ZkZOUzNnU2t2MHRpRVFvZGhMd0dTSFpzUTZCWEVtcVJR?oc=5",
-   "summary": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が日本人1人の死亡を確認 死者、安否不明者は追突列車の先頭2両に集中 日本人1人の安否はいまだ不明 テレ朝NEWS",
+   "summary": "【情報まとめ】スペイン列車事故 69人死亡 スペイン当局が全員の身元を特定 日本人は2人死亡 テレ朝NEWS",
    "outlet": "テレ朝NEWS",
    "feed": "テレ朝NEWS",
    "kind": "tv",
@@ -129141,114 +128946,6 @@
    "lang": "ja",
    "published": "2026-10-26T22:59:02Z",
    "first_seen": "2026-10-26T23:47:33Z"
-  },
-  {
-   "id": "90c07b1396aa04b4",
-   "title": "米マイクロソフト 希望退職6万人募集 全従業員の4分の1 AI巨額投資が背景",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB5ZlpUXzdjczBxSW5pczN4Q2RzZzNoTXFjQjQ3SjFDSEFTY3dOWTl0TEk4ZlhjMUYzbUFLZVF3OGZsd3RqbjlMNm56NEFWdkNReV9YVVY3Q1JqbWJsM2NtdjZzNDdab3ZFVk1DSmI5SUV5T1RmYW5DTjF3?oc=5",
-   "summary": "米マイクロソフト 希望退職6万人募集 全従業員の4分の1 AI巨額投資が背景 テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:21:32Z",
-   "first_seen": "2026-10-26T23:47:33Z"
-  },
-  {
-   "id": "ec852ca91b66190e",
-   "title": "【熊本地震まもなく3か月】「水がないのは死活問題」井戸損壊で苦しむ住民も…被災者同士で“給水支援” 藤井キャスターが見た八代市の今",
-   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5zdXcyRGtOM2pqUThHNEtqWjlaWmhzaUtFSll4ZkdYakVmSXlLcUJQVEIyNnFsS1dYbnRhck5VcVdyOUpha2dmVWpRMVpNU3djVUNzYm5yT1pnZUxKUkxCbDZIclZTT2gwVHlQQW5NNlNTbUpwV25uUWZ3OUk?oc=5",
-   "summary": "【熊本地震まもなく3か月】「水がないのは死活問題」井戸損壊で苦しむ住民も…被災者同士で“給水支援” 藤井キャスターが見た八代市の今 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:15:00Z",
-   "first_seen": "2026-10-27T02:51:59Z"
-  },
-  {
-   "id": "92b3fc135fb70757",
-   "title": "免税制度転換で変わるインバウンド戦略｜日経モーニングプラスFT（モープラFT）",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAyLUpFU29zRkF0RExUUlR4eWpyb1p6REVyWk5Icnd0aUZLTnU1MEdLS1V6NHVMLWZUa29GMlpHZUNubnBjek1pc2plb21sMmJPRDcyVXBWc1JuTG5MZW80ZA?oc=5",
-   "summary": "免税制度転換で変わるインバウンド戦略｜日経モーニングプラスFT（モープラFT） テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:05:00Z",
-   "first_seen": "2026-10-27T02:51:59Z"
-  },
-  {
-   "id": "e2f16737fd35011a",
-   "title": "完全版 ナチス映画多様化 現代への教訓｜日経モーニングプラスFT（モープラFT）",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBpanZ2S2FERm9QQlEwYU9iU0NfZGZHMmVQTElkU3RtaUxpdXA4cWd0OGduM1FvdEtILVp4TmdmWWFIcU5JZlluSU90aXZ0VHRwX2psazFRWjBvWEUtUWJfOWpvd0kzZw?oc=5",
-   "summary": "完全版 ナチス映画多様化 現代への教訓｜日経モーニングプラスFT（モープラFT） テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:05:00Z",
-   "first_seen": "2026-10-28T07:19:01Z"
-  },
-  {
-   "id": "0a821881def8df31",
-   "title": "【日経解説】中国AI株 熱狂相場に異変か【マーケットビュー】",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9zd04zWGQyVmhuU3Z3T2ZnY2dtRlZILTUxNjlXNjhSWUNONk0xMGw1cTg1OWVyUTlURGctd3VEWWVrbTZzNGV2NlJWb1FuTWRZUkRPRU9NSDJyZFZVMmlXSTlKb00?oc=5",
-   "summary": "【日経解説】中国AI株 熱狂相場に異変か【マーケットビュー】 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:05:00Z",
-   "first_seen": "2026-10-27T10:55:22Z"
-  },
-  {
-   "id": "8b1079c11bdff37d",
-   "title": "ナチス映画多様化 現代への教訓【日経FTカルチャー】",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5UMDROYUF3T1E4Rk12Y0FHYUd5TGV6X2xqWXgyRVV0aTh4WVhpUTh3UWhXSnI0dnEzS09oNVdTbmt6MVVVdlpyT3JreVh5WnRqSDhHa0NTVmJVZVZsd3dTT2xka0hYZw?oc=5",
-   "summary": "ナチス映画多様化 現代への教訓【日経FTカルチャー】 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:05:00Z",
-   "first_seen": "2026-10-27T10:55:22Z"
-  },
-  {
-   "id": "0028d348e3dea738",
-   "title": "免税制度転換で変わるインバウンド戦略",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1CMlc2NHFLY0dheFdDVmlSVVN3SFpaaWRZcHhLdEhCM3NTNTk4akptdVpYbExIZFEwaVhNZjZ5clNIb0lBamFxeG1tbUE4VlFMWmxMVndNbFF4MVE2WkZOQl85Z1daQQ?oc=5",
-   "summary": "免税制度転換で変わるインバウンド戦略 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:05:00Z",
-   "first_seen": "2026-10-27T05:51:13Z"
-  },
-  {
-   "id": "d116e59aa4784b32",
-   "title": "学校に“合う”“合わない”判断ポイント／女子校継続？共学化？【配信版③/円卓コンフィデンシャル】",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5zZnc4dVl3Tk1GS1VMUjNlakt3YWdDTW9xRzZ3X1N5MUwwendncE9XY1VzZWZCYTc2b3hDQWRHZlZWa0VkQnYwZTk5TUxlak1lV3JGbUVSYklfWnNzaWNaOQ?oc=5",
-   "summary": "学校に“合う”“合わない”判断ポイント／女子校継続？共学化？【配信版③/円卓コンフィデンシャル】 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-27T01:56:57Z"
-  },
-  {
-   "id": "25a00d961305c702",
-   "title": "学校に“合う”“合わない”判断ポイント／女子校継続？共学化？【配信版③/円卓コンフィデンシャル】",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAwclllV3pJOTZoMkdzd0M2RHZHNWV4NFpsa1BkM0RxVWdTSHBtM1lLQzlkTnhkSTd4NDRUeXhjLWQ3QXgyVVRmNEdRVU05QkMtN0NxbTNBaF8wbl9jRmp4SjNia0tndw?oc=5",
-   "summary": "学校に“合う”“合わない”判断ポイント／女子校継続？共学化？【配信版③/円卓コンフィデンシャル】 テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-26T22:00:00Z",
-   "first_seen": "2026-10-27T01:07:57Z"
   }
  ]
 }
