@@ -1156,6 +1156,7 @@ button.chip { font: inherit; font-size: 13px; }
     </div>
   </div>
   <nav class="toc" aria-label="目次">
+    <button type="button" data-go="jc-ne">職種別対策（NW）</button>
     <button type="button" data-go="jc-pitch">30秒で言える会社像</button>
     <button type="button" data-go="jc-profile">会社の基本</button>
     <button type="button" data-go="jc-numbers">業績</button>
@@ -1166,6 +1167,57 @@ button.chip { font: inherit; font-size: 13px; }
     <button type="button" data-go="jc-news">最新ニュース</button>
     <button type="button" data-go="jc-sources">出典</button>
   </nav>
+
+  <section class="sheet note-sheet" id="jc-ne">
+    <div class="sheet-head"><h2>職種別対策：ネットワークエンジニア（ZAQ）</h2><span class="cap">公開情報と一般的な技術範囲から</span></div>
+    <div class="pad">
+      <h3>この仕事を一言で</h3>
+      <p class="pitch"><b>ZAQ</b> は J:COM グループのインターネットサービスのブランドで、もとは関西マルチメディアサービスが関西を中心に始めたものです。<b>J:COM 以外の地域のケーブルテレビ局にも</b>、ネット接続などのサービスを提供しています。ネットワークエンジニアは、その網を「止めずに動かし続ける」役（監視・障害対応）と、「つなぐ・増やす・入れ替える」役（設計・構築・切り替え・局への提案）の両方を担う、と言えれば十分です。</p>
+      <ul class="keys"><li><b>キーワード</b>：ZAQ ／ ケーブルテレビ局（地域の事業者）向け ／ 運用保守 ／ IX・上位回線 ／ 専用線 ／ ケーブルプラス電話（KDDI の設備 × 局の網で提供する固定電話） ／ 光（FTTH）化</li></ul>
+
+      <h3>技術で聞かれやすいこと（30秒で説明できるように）</h3>
+      <div class="qa">
+        <details open><summary>IX とトランジットの違い／ピアリングとは</summary><p><b>IX</b> は多くの事業者が集まって直接つなぎ合う場所。<b>ピアリング</b>はお互いの利用者あての通信を無料（または対等）で交換すること。<b>トランジット</b>はお金を払って「インターネット全体への経路」を買うこと。IX でピアリングを増やすと、遅延が減り、トランジットの費用も下がる。</p></details>
+        <details><summary>BGP の基本と経路の制御</summary><p>事業者（AS）同士が経路を交換するプロトコル。外向きは <b>eBGP</b>、自社内は <b>iBGP</b>。入ってくる通信は AS パスのプリペンドや MED、出ていく通信は Local Preference で調整する。<b>経路フィルタ</b>（プレフィックスリスト、最大経路数）で誤った経路の流出入を防ぐ。最近は <b>RPKI（ROV）</b>で経路の正しさを確かめる流れ。</p></details>
+        <details><summary>網内のルーティングと冗長化</summary><p>網内は OSPF や IS-IS、ゲートウェイの冗長は VRRP、回線は LAG で束ねる。「どこか1つ壊れても通信が続く」設計と、切り替わる時間（収束時間）を意識する、と言えると強い。</p></details>
+        <details><summary>専用線の種類</summary><p>広域イーサネット（L2 でつなぐ）、IP-VPN（MPLS で L3 をつなぐ）、ダークファイバ（光ファイバそのものを借りる）など。帯域保証・冗長ルート・SLA・費用のバランスで選ぶ。</p></details>
+        <details><summary>ケーブル網の仕組み（HFC と光化）</summary><p>ケーブル局のネットは、局の設備（CMTS）から光と同軸を組み合わせた <b>HFC</b> で家まで届き、家ではケーブルモデムで受ける（規格は DOCSIS）。J:COM の中期経営計画でも、同軸から<b>光（FTTH）</b>への切り替えを進めている。光化では PON（1本の光を分岐して多くの家に届ける方式）が中心。</p></details>
+        <details><summary>電話（VoIP）で押さえること</summary><p>呼の制御は <b>SIP</b>、音声は RTP。音声は遅延・ゆらぎに弱いので <b>QoS</b>（優先制御）が要る。<b>緊急通報（110・118・119）</b>は止められない通信なので、冗長化と障害時の影響確認が特に大事。ケーブルプラス電話は KDDI の設備とケーブル局の網を組み合わせた固定電話。</p></details>
+        <details><summary>監視と障害対応の進め方</summary><p>監視は SNMP・syslog・死活監視（Zabbix など）。障害時は ①影響範囲の確認（どの局・何人・どのサービス）→ ②<b>第一報</b>（分かっていることだけを早く）→ ③下の層から切り分け（物理 → L2 → L3 → アプリ）→ ④暫定対処で復旧 → ⑤原因究明と恒久対策・報告書。「関係部署への依頼」が仕事に入るので、誰に何をいつまでに頼むかを言葉にできると良い。</p></details>
+        <details><summary>切り替え作業（工事）で気をつけること</summary><p>手順書と<b>切り戻し手順</b>を事前に用意、影響の少ない時間帯（夜間など）に実施、作業前後で同じ確認（経路数・疎通・トラフィック）をして差を見る、関係者への事前告知と作業中の連絡体制。</p></details>
+        <details><summary>DDoS などの攻撃への備え</summary><p>ISP としては、攻撃先あての通信を上流で捨てる <b>RTBH</b>、上位事業者や専用サービスでの吸収・遮断、監視でトラフィックの急増を早く見つけること。このサイトの「サイバー攻撃」タブで最近の傾向も見ておける。</p></details>
+      </div>
+
+      <h3>この職種で聞かれそうな質問</h3>
+      <div class="qa">
+        <details open><summary>これまでのネットワークの経験を教えてください</summary><p>「規模（拠点数・機器数・利用者数）→ 自分の役割（設計／構築／運用）→ 使った技術（ルーティング・冗長化など）→ 結果」の順で1〜2分。<b>設計・構築に関わった年数と L3 の内容</b>は具体的に言えるようにしておく。</p></details>
+        <details><summary>一番大変だった障害対応は？</summary><p>状況 → 自分がした切り分け → 誰と連携したか → 復旧までの時間 → 再発防止、の順で。数字（何分で復旧、何件に影響）を入れる。</p></details>
+        <details><summary>なぜ J:COM（ZAQ）なのか</summary><p>①地域のケーブル局を支える「インフラの裏方」として、たくさんの家庭の通信を支えられる、②運用だけでなく設計・構築・局への提案まで関われる、③光化や電話など網が変わっていく時期に関われる、の中から自分に合うものを選んで、経験とつなげる。</p></details>
+        <details><summary>運用保守と設計構築、どちらがやりたい？</summary><p>「どちらも」が本音でも、まず運用で網を深く知り、それを設計・構築や提案に生かしたい、という流れで話すと自然。</p></details>
+        <details><summary>夜間作業や緊急対応はできますか</summary><p>運用保守では切り替え工事や障害対応で時間外が出ることがある。できる範囲を正直に答え、どれくらいの頻度かは逆質問で確認する。</p></details>
+        <details><summary>リモートワークでの仕事の進め方</summary><p>状況の共有（チャット・チケット・作業ログ）、報告の早さ、質問のしかた。障害時の連絡手段も含めて話せると安心感がある。</p></details>
+        <details><summary>資格の勉強はしていますか</summary><p>CCNA などの範囲（ルーティング、スイッチング、IP アドレス設計）をどこまで身につけているか、今後何を取る予定か。勉強中なら「いつまでに」を添える。このサイトの「ネットワーク」タブのゲームも基礎の復習に使える。</p></details>
+        <details><summary>逆質問の例</summary><ul>
+          <li>ZAQ を提供している局はどれくらいの数・規模で、局ごとに網の構成はどのくらい違いますか。</li>
+          <li>監視と障害対応はどんな体制（何人・交代制・オンコール）で回していますか。</li>
+          <li>光（FTTH）化が進むと、ZAQ のネットワーク側ではどんな変化や取り組みがありますか。</li>
+          <li>使っている主な機器のメーカーや、設定・監視の自動化はどこまで進んでいますか。</li>
+          <li>入社後しばらくは、どんな業務から担当することが多いですか。</li>
+        </ul></details>
+      </div>
+
+      <h3>前日のチェックリスト</h3>
+      <ul>
+        <li>自分の経歴のうち、<b>L3 の設計・構築に関わった年数と内容</b>を1分で言える</li>
+        <li>障害対応の話を1つ、数字入りで用意した</li>
+        <li>「なぜ J:COM／ZAQ」と「入社後にやりたいこと」をつなげて言える</li>
+        <li>上の技術の項目を、声に出して30秒ずつ説明してみた</li>
+        <li>逆質問を2〜3個えらんだ</li>
+        <li>オンラインなら回線・カメラ・マイクを確認、対面なら会場と到着時間を確認</li>
+      </ul>
+      <p class="note">求人票は一般に公開されていない情報なので、このページには載せていません（このサイトはインターネットに公開されています）。給与や勤務条件などの細かい内容は、求人票を直接見て確認してください。</p>
+    </div>
+  </section>
 
   <section class="sheet note-sheet" id="jc-pitch">
     <div class="sheet-head"><h2>30秒で言える会社像</h2></div>
@@ -1270,6 +1322,9 @@ button.chip { font: inherit; font-size: 13px; }
       <li><a href="https://www.satemaga.co.jp/topic/14394" target="_blank" rel="noopener">サテマガ：J:COM 決算</a></li>
       <li><a href="https://dempa-digital.com/article/564684" target="_blank" rel="noopener">電波新聞：J:COM</a></li>
       <li><a href="https://www.nikkei.com/article/DGXZRSP709469_W6A700C2000000/" target="_blank" rel="noopener">日経：再エネの分散調達</a></li>
+      <li><a href="https://internet.watch.impress.co.jp/cda/news/2005/12/27/10373.html" target="_blank" rel="noopener">INTERNET Watch：J:COM、ZAQ を運営する関西マルチメディアサービスの経営権を取得（2005年）</a></li>
+      <li><a href="https://internet.watch.impress.co.jp/cda/news/2007/06/12/16012.html" target="_blank" rel="noopener">INTERNET Watch：@NetHome と ZAQ（2007年）</a></li>
+      <li><a href="https://businessnetwork.jp/article/652/" target="_blank" rel="noopener">BUSINESS NETWORK：ケーブルプラス電話の仕組み</a></li>
     </ul>
     <p class="note">数字や予定は2026年10月21日時点で公開されている情報をもとにしています。J:COM は非上場のため、公開される数字が限られます。面接の前に公式サイトとニュースリリースで最新を確認してください。</p></div>
   </section>
