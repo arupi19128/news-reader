@@ -408,6 +408,17 @@ button.chip { font: inherit; font-size: 13px; }
 .wx-day .tt { font-family: var(--font-mono); white-space: nowrap; }
 .wx-day .tt .max { color: var(--out); font-weight: 600; } .wx-day .tt .min { color: var(--wave); }
 .wx-day .tt .p { color: var(--muted); font-size: 12px; margin-left: 8px; display: inline-block; min-width: 3.2em; text-align: right; }
+.rd-mode { padding: 10px 18px 10px; }
+.wx-kinki { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.wx-city { border: 0; border-right: 1px solid var(--line); background: transparent; padding: 10px 4px 12px; display: grid; gap: 2px; justify-items: center; font: inherit; color: var(--ink); cursor: pointer; }
+.wx-city:last-child { border-right: 0; }
+.wx-city:hover { background: var(--wave-soft); }
+.wx-city .n { font-size: 13.5px; font-weight: 600; }
+.wx-city .i { font-size: 26px; }
+.wx-city .now { font: 600 16px var(--font-mono); }
+.wx-city .tt { font: 12.5px var(--font-mono); } .wx-city .max { color: var(--out); } .wx-city .min { color: var(--wave); }
+.wx-city .p { font: 11.5px var(--font-mono); color: var(--muted); }
+@media (max-width: 560px) { .wx-kinki { grid-template-columns: repeat(3, minmax(0, 1fr)); } .wx-city:nth-child(3n) { border-right: 0; } .wx-city:nth-child(-n+3) { border-bottom: 1px solid var(--line); } }
 .rd-map { height: 360px; background: var(--bg); }
 .rd-map .leaflet-control-attribution { font-size: 10px; }
 .rd-ctrl { display: flex; gap: 12px; align-items: center; padding: 10px 18px 0; }
@@ -699,7 +710,7 @@ button.chip { font: inherit; font-size: 13px; }
   </div>
   <div class="row wx-places" id="wx-places"></div>
   <form class="row wx-search" id="wx-search" role="search">
-    <input id="wx-q" type="search" placeholder="地名で探す（例：札幌、那覇、グアム）" aria-label="地名で探す" autocomplete="off">
+    <input id="wx-q" type="search" placeholder="地名で探す（例：姫路、舞鶴、グアム）" aria-label="地名で探す" autocomplete="off">
     <button type="submit" class="chip">探す</button>
     <button type="button" class="chip ghost" id="wx-here">現在地</button>
   </form>
@@ -707,11 +718,16 @@ button.chip { font: inherit; font-size: 13px; }
 
   <section class="sheet note-sheet wx-now" id="wx-now"></section>
   <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>近畿の今日</h2><span class="cap">押すとその街の詳しい天気へ</span></div>
+    <div class="wx-kinki" id="wx-kinki"></div>
+  </section>
+  <section class="sheet note-sheet">
     <div class="sheet-head"><h2>24時間の天気</h2><span class="cap">1時間ごと・降水確率</span></div>
     <div class="wx-hours" id="wx-hours"></div>
   </section>
   <section class="sheet note-sheet">
     <div class="sheet-head"><h2>雨雲レーダー</h2><span class="cap" id="rd-time">—</span></div>
+    <div class="row rd-mode" id="rd-mode"><button type="button" class="chip" data-mode="kinki">近畿全体</button><button type="button" class="chip" data-mode="place">選んだ場所付近</button></div>
     <div class="rd-map" id="rd-map" role="img" aria-label="雨雲レーダーの地図"></div>
     <div class="rd-ctrl">
       <button type="button" class="chip" id="rd-play" aria-pressed="false">▶ 再生</button>
@@ -2306,8 +2322,16 @@ button.chip { font: inherit; font-size: 13px; }
     const [i, t] = WX_CODES[c] || ["・", "—"];
     return [!day && (c === 0 || c === 1) ? "🌙" : i, t];
   };
-  const WX_DEFAULT = [{ name: "東京", lat: 35.6895, lon: 139.6917, tz: "Asia/Tokyo" }];
-  const wx = { places: store.get("nr.wx.places", WX_DEFAULT), current: store.get("nr.wx.current", 0), cache: {} };
+  const KINKI = [
+    { name: "大阪", lat: 34.6937, lon: 135.5023, tz: "Asia/Tokyo" }, { name: "京都", lat: 35.0116, lon: 135.7681, tz: "Asia/Tokyo" },
+    { name: "神戸", lat: 34.6901, lon: 135.1955, tz: "Asia/Tokyo" }, { name: "奈良", lat: 34.6851, lon: 135.8048, tz: "Asia/Tokyo" },
+    { name: "大津", lat: 35.0045, lon: 135.8686, tz: "Asia/Tokyo" }, { name: "和歌山", lat: 34.226, lon: 135.1675, tz: "Asia/Tokyo" },
+  ];
+  const KINKI_BOUNDS = [[33.4, 134.3], [35.8, 136.5]];
+  const WX_DEFAULT = KINKI.map((p) => ({ ...p }));
+  let savedPlaces = store.get("nr.wx.places", null);
+  if (!savedPlaces || (savedPlaces.length === 1 && savedPlaces[0].name === "東京")) savedPlaces = null;
+  const wx = { places: savedPlaces || WX_DEFAULT, current: savedPlaces ? store.get("nr.wx.current", 0) : 0, cache: {} };
   const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
   function wxSave() { store.set("nr.wx.places", wx.places); store.set("nr.wx.current", wx.current); }
   function wxPlaceChips() {
@@ -2357,6 +2381,31 @@ button.chip { font: inherit; font-size: 13px; }
     return data;
   }
   const hm = (iso) => iso.slice(11, 16);
+  async function renderKinki() {
+    const box = $("wx-kinki");
+    if (!wx.kinki || Date.now() - wx.kinki.at > 10 * 60000) {
+      const params = new URLSearchParams({
+        latitude: KINKI.map((p) => p.lat).join(","), longitude: KINKI.map((p) => p.lon).join(","),
+        timezone: "Asia/Tokyo", forecast_days: "1", current: "temperature_2m,weather_code,is_day",
+        daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+      });
+      try {
+        const r = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+        wx.kinki = { at: Date.now(), list: Array.isArray(r) ? r : [r] };
+      } catch { box.replaceChildren(el("div", { class: "wd-empty" }, "近畿の天気を取得できませんでした。")); return; }
+    }
+    box.replaceChildren(...KINKI.map((p, i) => {
+      const d = wx.kinki.list[i];
+      if (!d) return null;
+      const [ic, tx] = wxCode(d.daily.weather_code[0]);
+      return el("button", { type: "button", class: "wx-city", title: tx, onclick: () => wxAdd({ ...p }) },
+        el("span", { class: "n" }, p.name), el("span", { class: "i", "aria-label": tx }, ic),
+        el("span", { class: "now" }, `${Math.round(d.current.temperature_2m)}°`),
+        el("span", { class: "tt" }, el("span", { class: "max" }, `${Math.round(d.daily.temperature_2m_max[0])}°`), "/",
+          el("span", { class: "min" }, `${Math.round(d.daily.temperature_2m_min[0])}°`)),
+        el("span", { class: "p" }, `☂${d.daily.precipitation_probability_max[0] ?? "—"}%`));
+    }));
+  }
   // Rain radar: RainViewer's past 2 hours (free tier: zoom 7 at most, one colour scheme), on a Leaflet map loaded on first use.
   const rd = { map: null, layers: [], frames: [], at: 0, timer: null, loadedAt: 0, loading: null };
   function loadLeaflet() {
@@ -2391,14 +2440,26 @@ button.chip { font: inherit; font-size: 13px; }
     }, 600);
   });
   $("rd-slider").addEventListener("input", (e) => { rdStop(); rdShow(+e.target.value); });
+  function rdView(place) {
+    rd.place = place;
+    if (rd.mode === "place") rd.map.setView([place.lat, place.lon], 9);
+    else rd.map.fitBounds(KINKI_BOUNDS);
+    for (const b of document.querySelectorAll("#rd-mode button")) b.setAttribute("aria-pressed", String(b.dataset.mode === rd.mode));
+    document.querySelector('#rd-mode [data-mode="place"]').textContent = `${place.name}付近`;
+  }
+  rd.mode = store.get("nr.rd.mode", "kinki");
+  document.querySelectorAll("#rd-mode button").forEach((b) => b.addEventListener("click", () => {
+    rd.mode = b.dataset.mode; store.set("nr.rd.mode", rd.mode);
+    if (rd.map && rd.place) rdView(rd.place);
+  }));
   async function renderRadar(place) {
     try { await loadLeaflet(); } catch { $("rd-time").textContent = "地図を読み込めませんでした"; return; }
     if (!rd.map) {
-      rd.map = L.map("rd-map", { zoomControl: true, attributionControl: true, scrollWheelZoom: false }).setView([place.lat, place.lon], 7);
+      rd.map = L.map("rd-map", { zoomControl: true, attributionControl: true, scrollWheelZoom: false });
+      rdView(place);
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 12, attribution: "© OpenStreetMap" }).addTo(rd.map);
     } else {
-      rd.map.setView([place.lat, place.lon], rd.map.getZoom());
-      setTimeout(() => rd.map.invalidateSize(), 0);  // the tab was hidden while the map was built
+      setTimeout(() => { rd.map.invalidateSize(); rdView(place); }, 0);  // the tab was hidden while the map was built
     }
     if (Date.now() - rd.loadedAt < 5 * 60000) return;  // radar frames refresh every 10 minutes
     let meta;
@@ -2419,6 +2480,7 @@ button.chip { font: inherit; font-size: 13px; }
     const p = wx.places[wx.current] || wx.places[0];
     $("wx-place").textContent = `${p.name}の天気`;
     renderRadar(p);
+    renderKinki();
     $("wx-updated").textContent = "読み込み中…";
     let d;
     try { d = await wxFetch(p); }
