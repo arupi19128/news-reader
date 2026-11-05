@@ -408,6 +408,12 @@ button.chip { font: inherit; font-size: 13px; }
 .wx-day .tt { font-family: var(--font-mono); white-space: nowrap; }
 .wx-day .tt .max { color: var(--out); font-weight: 600; } .wx-day .tt .min { color: var(--wave); }
 .wx-day .tt .p { color: var(--muted); font-size: 12px; margin-left: 8px; display: inline-block; min-width: 3.2em; text-align: right; }
+.rd-map { height: 360px; background: var(--bg); }
+.rd-map .leaflet-control-attribution { font-size: 10px; }
+.rd-ctrl { display: flex; gap: 12px; align-items: center; padding: 10px 18px 0; }
+.rd-ctrl input { flex: 1; accent-color: var(--wave); }
+.rd-note { margin: 8px 18px 14px; font-size: 12px; }
+@media (max-width: 560px) { .rd-map { height: 300px; } }
 .wx-credit { margin: 4px 2px 18px; font-size: 12px; }
 @media (max-width: 560px) {
   .wx-now dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -703,6 +709,15 @@ button.chip { font: inherit; font-size: 13px; }
   <section class="sheet note-sheet">
     <div class="sheet-head"><h2>24時間の天気</h2><span class="cap">1時間ごと・降水確率</span></div>
     <div class="wx-hours" id="wx-hours"></div>
+  </section>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>雨雲レーダー</h2><span class="cap" id="rd-time">—</span></div>
+    <div class="rd-map" id="rd-map" role="img" aria-label="雨雲レーダーの地図"></div>
+    <div class="rd-ctrl">
+      <button type="button" class="chip" id="rd-play" aria-pressed="false">▶ 再生</button>
+      <input type="range" id="rd-slider" min="0" max="0" value="0" aria-label="レーダーの時刻">
+    </div>
+    <p class="note rd-note">過去2時間・10分ごとの実況です（予報は含みません）。拡大すると粗く見えます。詳しい雨雲の動きと1時間先までの予報は<a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener">気象庁「雨雲の動き」</a>で。レーダー：<a href="https://www.rainviewer.com/" target="_blank" rel="noopener">RainViewer</a> ／ 地図：<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a></p>
   </section>
   <section class="sheet note-sheet">
     <div class="sheet-head"><h2>週間天気</h2></div>
@@ -2342,10 +2357,68 @@ button.chip { font: inherit; font-size: 13px; }
     return data;
   }
   const hm = (iso) => iso.slice(11, 16);
+  // Rain radar: RainViewer's past 2 hours (free tier: zoom 7 at most, one colour scheme), on a Leaflet map loaded on first use.
+  const rd = { map: null, layers: [], frames: [], at: 0, timer: null, loadedAt: 0, loading: null };
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve();
+    rd.loading ||= new Promise((ok, ng) => {
+      const css = document.createElement("link");
+      css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+      document.head.append(css);
+      const js = document.createElement("script");
+      js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+      js.onload = ok; js.onerror = ng;
+      document.head.append(js);
+    });
+    return rd.loading;
+  }
+  function rdShow(i) {
+    rd.at = i;
+    rd.layers.forEach((l, k) => l.setOpacity(k === i ? 0.75 : 0));
+    $("rd-slider").value = String(i);
+    const f = rd.frames[i];
+    if (f) $("rd-time").textContent = `${timeFmt.format(new Date(f.time * 1000))}${i === rd.frames.length - 1 ? "（最新）" : ""}`;
+  }
+  function rdStop() { clearInterval(rd.timer); rd.timer = null; $("rd-play").textContent = "▶ 再生"; $("rd-play").setAttribute("aria-pressed", "false"); }
+  $("rd-play").addEventListener("click", () => {
+    if (rd.timer) { rdStop(); return; }
+    if (!rd.frames.length) return;
+    $("rd-play").textContent = "■ 停止"; $("rd-play").setAttribute("aria-pressed", "true");
+    if (rd.at === rd.frames.length - 1) rdShow(0);
+    rd.timer = setInterval(() => {
+      if (rd.at >= rd.frames.length - 1) { rdStop(); return; }
+      rdShow(rd.at + 1);
+    }, 600);
+  });
+  $("rd-slider").addEventListener("input", (e) => { rdStop(); rdShow(+e.target.value); });
+  async function renderRadar(place) {
+    try { await loadLeaflet(); } catch { $("rd-time").textContent = "地図を読み込めませんでした"; return; }
+    if (!rd.map) {
+      rd.map = L.map("rd-map", { zoomControl: true, attributionControl: true, scrollWheelZoom: false }).setView([place.lat, place.lon], 7);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 12, attribution: "© OpenStreetMap" }).addTo(rd.map);
+    } else {
+      rd.map.setView([place.lat, place.lon], rd.map.getZoom());
+      setTimeout(() => rd.map.invalidateSize(), 0);  // the tab was hidden while the map was built
+    }
+    if (Date.now() - rd.loadedAt < 5 * 60000) return;  // radar frames refresh every 10 minutes
+    let meta;
+    try { meta = await fetch("https://api.rainviewer.com/public/weather-maps.json").then((r) => r.json()); }
+    catch { $("rd-time").textContent = "レーダーを取得できませんでした"; return; }
+    rdStop();
+    rd.layers.forEach((l) => rd.map.removeLayer(l));
+    rd.frames = meta.radar?.past || [];
+    rd.layers = rd.frames.map((f) => L.tileLayer(`${meta.host}${f.path}/256/{z}/{x}/{y}/2/1_1.png`,
+      { maxNativeZoom: 7, maxZoom: 12, opacity: 0, zIndex: 10, attribution: "RainViewer" }).addTo(rd.map));
+    rd.loadedAt = Date.now();
+    $("rd-slider").max = String(Math.max(0, rd.frames.length - 1));
+    if (rd.frames.length) rdShow(rd.frames.length - 1); else $("rd-time").textContent = "レーダーのデータがありません";
+  }
+
   async function renderWeather() {
     wxPlaceChips();
     const p = wx.places[wx.current] || wx.places[0];
     $("wx-place").textContent = `${p.name}の天気`;
+    renderRadar(p);
     $("wx-updated").textContent = "読み込み中…";
     let d;
     try { d = await wxFetch(p); }
