@@ -374,6 +374,47 @@ button.chip { font: inherit; font-size: 13px; }
 .wd-more > summary h2::before { content: "▸ "; color: var(--muted); }
 .wd-more[open] > summary h2::before { content: "▾ "; }
 #wd-venue { margin: 12px 0; }
+.wx-places { margin: 12px 0 8px; }
+.wx-places .chip .x { margin-left: 2px; }
+.wx-search { margin-bottom: 8px; }
+.wx-search input { flex: 1 1 200px; min-width: 0; font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--sheet); color: var(--ink); }
+.wx-results { list-style: none; margin: 0 0 12px; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--sheet); overflow: hidden; }
+.wx-results button { width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: transparent; padding: 9px 14px; font: inherit; font-size: 14px; cursor: pointer; color: var(--ink); }
+.wx-results li:last-child button { border-bottom: 0; }
+.wx-results small { color: var(--muted); margin-left: 6px; }
+.wx-now .pad { display: grid; grid-template-columns: auto 1fr; gap: 4px 20px; align-items: center; }
+.wx-now .icon { font-size: 56px; line-height: 1; grid-row: span 2; }
+.wx-now .temp { font: 600 44px/1.1 var(--font-mono); }
+.wx-now .temp small { font-size: 16px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+.wx-now .desc { font-size: 15px; }
+.wx-now dl { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 10px 0 0; }
+.wx-now dl div { border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+.wx-now dt { font-size: 11.5px; color: var(--muted); }
+.wx-now dd { margin: 0; font: 500 15px var(--font-mono); }
+.wx-hours { display: flex; overflow-x: auto; padding: 10px 8px 12px; gap: 2px; scroll-snap-type: x proximity; }
+.wx-hour { flex: 0 0 56px; text-align: center; display: grid; gap: 2px; font-size: 12.5px; scroll-snap-align: start; padding: 4px 0; border-radius: 6px; }
+.wx-hour .i { font-size: 22px; }
+.wx-hour .t { font: 600 14px var(--font-mono); }
+.wx-hour .p { color: var(--wave); font-family: var(--font-mono); font-size: 11.5px; }
+.wx-hour .h { color: var(--muted); }
+.wx-hour.night .h { color: var(--unknown); }
+.wx-days { display: grid; }
+.wx-day { display: grid; grid-template-columns: 6.5em 2em 1fr auto; gap: 10px; align-items: center; padding: 9px 18px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.wx-day:last-child { border-bottom: 0; }
+.wx-day .d small { color: var(--muted); margin-left: 4px; }
+.wx-day .d .sat { color: var(--wave); } .wx-day .d .sun { color: var(--out); }
+.wx-day .i { font-size: 22px; text-align: center; }
+.wx-day .w { color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wx-day .tt { font-family: var(--font-mono); white-space: nowrap; }
+.wx-day .tt .max { color: var(--out); font-weight: 600; } .wx-day .tt .min { color: var(--wave); }
+.wx-day .tt .p { color: var(--muted); font-size: 12px; margin-left: 8px; display: inline-block; min-width: 3.2em; text-align: right; }
+.wx-credit { margin: 4px 2px 18px; font-size: 12px; }
+@media (max-width: 560px) {
+  .wx-now dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wx-day { grid-template-columns: 5.2em 1.8em 1fr; padding: 9px 14px; }
+  .wx-day .w { display: none; }
+  .wx-day .tt { grid-column: 3; text-align: right; }
+}
 .co-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
 .co-switch a { text-decoration: none; padding: 4px 14px; }
 .co-switch a[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
@@ -478,6 +519,7 @@ button.chip { font: inherit; font-size: 13px; }
       <a href="#cyber" id="tab-cyber">サイバー攻撃</a>
       <a href="#industry-ai" id="tab-ai">業界AI</a>
       <a href="#wedding" id="tab-wedding">式場</a>
+      <a href="#weather" id="tab-weather">天気</a>
       <a href="network.html" id="tab-net">ネットワーク</a>
     </nav>
     <nav class="jump" id="news-nav" aria-label="ニュースの中のリンク">
@@ -640,6 +682,33 @@ button.chip { font: inherit; font-size: 13px; }
     <div id="cy-news"></div>
   </section>
   <p class="credit">データ：<a href="https://radar.cloudflare.com/security" target="_blank" rel="noopener">Cloudflare Radar</a>（CC BY-NC 4.0）。Cloudflare のネットワークで観測・防御した攻撃の統計で、世界のすべての攻撃ではありません。攻撃元の国は攻撃に使われた通信の出どころで、攻撃者の国籍とは限りません。</p>
+</div>
+
+<div id="weather-view" class="wrap" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap" id="wx-updated">読み込み中…</div>
+      <h1 id="wx-place">天気</h1>
+    </div>
+  </div>
+  <div class="row wx-places" id="wx-places"></div>
+  <form class="row wx-search" id="wx-search" role="search">
+    <input id="wx-q" type="search" placeholder="地名で探す（例：札幌、那覇、グアム）" aria-label="地名で探す" autocomplete="off">
+    <button type="submit" class="chip">探す</button>
+    <button type="button" class="chip ghost" id="wx-here">現在地</button>
+  </form>
+  <ul class="wx-results" id="wx-results" hidden></ul>
+
+  <section class="sheet note-sheet wx-now" id="wx-now"></section>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>24時間の天気</h2><span class="cap">1時間ごと・降水確率</span></div>
+    <div class="wx-hours" id="wx-hours"></div>
+  </section>
+  <section class="sheet note-sheet">
+    <div class="sheet-head"><h2>週間天気</h2></div>
+    <div class="wx-days" id="wx-days"></div>
+  </section>
+  <p class="note wx-credit">天気データ：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>（CC BY 4.0）。気象庁などの予報モデルをもとにしています。警報・注意報は<a href="https://www.jma.go.jp/bosai/warning/" target="_blank" rel="noopener">気象庁</a>で確認してください。</p>
 </div>
 
 <div id="wedding-view" class="wrap" hidden>
@@ -2208,18 +2277,123 @@ button.chip { font: inherit; font-size: 13px; }
     }));
   }
 
+  // ---------------- Weather (Open-Meteo, fetched in the browser; places live in this browser) ----------------
+  const WX_CODES = {
+    0: ["☀️", "快晴"], 1: ["🌤️", "晴れ"], 2: ["⛅", "晴れ時々くもり"], 3: ["☁️", "くもり"],
+    45: ["🌫️", "霧"], 48: ["🌫️", "霧（着氷）"],
+    51: ["🌦️", "弱い霧雨"], 53: ["🌦️", "霧雨"], 55: ["🌧️", "強い霧雨"], 56: ["🌧️", "着氷性の霧雨"], 57: ["🌧️", "着氷性の霧雨"],
+    61: ["🌧️", "弱い雨"], 63: ["🌧️", "雨"], 65: ["🌧️", "強い雨"], 66: ["🌧️", "着氷性の雨"], 67: ["🌧️", "着氷性の強い雨"],
+    71: ["🌨️", "弱い雪"], 73: ["🌨️", "雪"], 75: ["❄️", "大雪"], 77: ["🌨️", "あられ"],
+    80: ["🌦️", "にわか雨"], 81: ["🌧️", "強いにわか雨"], 82: ["⛈️", "激しいにわか雨"], 85: ["🌨️", "にわか雪"], 86: ["❄️", "強いにわか雪"],
+    95: ["⛈️", "雷雨"], 96: ["⛈️", "雷雨（ひょう）"], 99: ["⛈️", "激しい雷雨（ひょう）"],
+  };
+  const wxCode = (c, day = 1) => {
+    const [i, t] = WX_CODES[c] || ["・", "—"];
+    return [!day && (c === 0 || c === 1) ? "🌙" : i, t];
+  };
+  const WX_DEFAULT = [{ name: "東京", lat: 35.6895, lon: 139.6917, tz: "Asia/Tokyo" }];
+  const wx = { places: store.get("nr.wx.places", WX_DEFAULT), current: store.get("nr.wx.current", 0), cache: {} };
+  const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
+  function wxSave() { store.set("nr.wx.places", wx.places); store.set("nr.wx.current", wx.current); }
+  function wxPlaceChips() {
+    $("wx-places").replaceChildren(...wx.places.map((p, i) => el("button", { type: "button", class: "chip", "aria-pressed": String(i === wx.current),
+      onclick: (e) => {
+        if (e.target.classList.contains("x")) { wx.places.splice(i, 1); if (!wx.places.length) wx.places = [...WX_DEFAULT]; wx.current = Math.min(wx.current, wx.places.length - 1); }
+        else wx.current = i;
+        wxSave(); renderWeather();
+      } }, p.name, wx.places.length > 1 ? el("span", { class: "x", "aria-label": `${p.name}を消す` }, "×") : null)));
+  }
+  function wxAdd(p) {
+    const at = wx.places.findIndex((q) => Math.abs(q.lat - p.lat) < 0.01 && Math.abs(q.lon - p.lon) < 0.01);
+    if (at >= 0) wx.current = at; else { wx.places.push(p); wx.current = wx.places.length - 1; }
+    wxSave(); $("wx-results").hidden = true; $("wx-q").value = ""; renderWeather();
+  }
+  $("wx-search").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const q = $("wx-q").value.trim();
+    if (!q) return;
+    const box = $("wx-results");
+    box.hidden = false; box.replaceChildren(el("li", { class: "wd-empty" }, "探しています…"));
+    try {
+      const r = await fetch(`https://geocoding-api.open-meteo.com/v1/search?${new URLSearchParams({ name: q, language: "ja", count: "8" })}`).then((r) => r.json());
+      const hits = r.results || [];
+      box.replaceChildren(...(hits.length ? hits.map((h) => el("li", {}, el("button", { type: "button",
+        onclick: () => wxAdd({ name: h.name, lat: h.latitude, lon: h.longitude, tz: h.timezone || "auto" }) },
+        h.name, el("small", {}, [h.admin1, h.country].filter(Boolean).join("・"))))) : [el("li", { class: "wd-empty" }, "見つかりませんでした。別の書き方で試してください。")]));
+    } catch { box.replaceChildren(el("li", { class: "wd-empty" }, "検索できませんでした。時間をおいて試してください。")); }
+  });
+  $("wx-here").addEventListener("click", () => {
+    if (!navigator.geolocation) { toast("このブラウザでは現在地を使えません"); return; }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => wxAdd({ name: "現在地", lat: +pos.coords.latitude.toFixed(3), lon: +pos.coords.longitude.toFixed(3), tz: "auto" }),
+      () => toast("現在地を取得できませんでした（位置情報の許可を確認してください）"), { timeout: 10000 });
+  });
+  async function wxFetch(p) {
+    const key = `${p.lat},${p.lon}`, hit = wx.cache[key];
+    if (hit && Date.now() - hit.at < 10 * 60000) return hit.data;  // reuse for 10 minutes
+    const params = new URLSearchParams({
+      latitude: p.lat, longitude: p.lon, timezone: p.tz || "auto", forecast_days: "7", wind_speed_unit: "ms",
+      current: "temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,precipitation,is_day",
+      hourly: "temperature_2m,precipitation_probability,weather_code,is_day",
+      daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset,uv_index_max",
+    });
+    const data = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+    wx.cache[key] = { at: Date.now(), data };
+    return data;
+  }
+  const hm = (iso) => iso.slice(11, 16);
+  async function renderWeather() {
+    wxPlaceChips();
+    const p = wx.places[wx.current] || wx.places[0];
+    $("wx-place").textContent = `${p.name}の天気`;
+    $("wx-updated").textContent = "読み込み中…";
+    let d;
+    try { d = await wxFetch(p); }
+    catch { $("wx-updated").textContent = "天気を取得できませんでした。時間をおいて開き直してください。"; return; }
+    if ((wx.places[wx.current] || wx.places[0]) !== p) return;  // switched place while loading
+    const c = d.current, [icon, desc] = wxCode(c.weather_code, c.is_day);
+    $("wx-updated").textContent = `${c.time.slice(5, 10).replace("-", "/")} ${hm(c.time)} 時点（現地時刻）`;
+    const today = d.daily;
+    $("wx-now").replaceChildren(el("div", { class: "pad" },
+      el("span", { class: "icon", "aria-hidden": "true" }, icon),
+      el("div", { class: "temp" }, `${Math.round(c.temperature_2m)}°`, el("small", {}, `体感 ${Math.round(c.apparent_temperature)}°`)),
+      el("div", { class: "desc" }, desc, `　最高 ${Math.round(today.temperature_2m_max[0])}° ／ 最低 ${Math.round(today.temperature_2m_min[0])}°`),
+      el("dl", {},
+        el("div", {}, el("dt", {}, "降水確率（今日）"), el("dd", {}, `${today.precipitation_probability_max[0] ?? "—"}%`)),
+        el("div", {}, el("dt", {}, "湿度"), el("dd", {}, `${c.relative_humidity_2m}%`)),
+        el("div", {}, el("dt", {}, "風"), el("dd", {}, `${c.wind_speed_10m.toFixed(1)} m/s`)),
+        el("div", {}, el("dt", {}, "日の出・日の入り"), el("dd", {}, `${hm(today.sunrise[0])}・${hm(today.sunset[0])}`)))));
+    // Next 24 hours from the current hour.
+    const h = d.hourly, start = Math.max(0, h.time.findIndex((t) => t >= c.time.slice(0, 13)));
+    $("wx-hours").replaceChildren(...h.time.slice(start, start + 24).map((t, k) => {
+      const i = start + k, [ic, tx] = wxCode(h.weather_code[i], h.is_day[i]);
+      return el("div", { class: "wx-hour" + (h.is_day[i] ? "" : " night"), title: tx },
+        el("span", { class: "h" }, k === 0 ? "今" : `${+t.slice(11, 13)}時`), el("span", { class: "i", "aria-label": tx }, ic),
+        el("span", { class: "t" }, `${Math.round(h.temperature_2m[i])}°`), el("span", { class: "p" }, `${h.precipitation_probability[i] ?? "—"}%`));
+    }));
+    $("wx-days").replaceChildren(...today.time.map((t, i) => {
+      const dt = new Date(`${t}T12:00:00`), wd = dt.getDay(), [ic, tx] = wxCode(today.weather_code[i]);
+      return el("div", { class: "wx-day" },
+        el("span", { class: "d" }, i === 0 ? "今日" : i === 1 ? "明日" : `${dt.getMonth() + 1}/${dt.getDate()}`,
+          el("small", { class: wd === 0 ? "sun" : wd === 6 ? "sat" : null }, `(${WEEK[wd]})`)),
+        el("span", { class: "i", "aria-label": tx }, ic), el("span", { class: "w" }, tx),
+        el("span", { class: "tt" }, el("span", { class: "max" }, `${Math.round(today.temperature_2m_max[i])}°`), " / ",
+          el("span", { class: "min" }, `${Math.round(today.temperature_2m_min[i])}°`), el("span", { class: "p" }, `☂${today.precipitation_probability_max[i] ?? "—"}%`)));
+    }));
+  }
+
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai", wedding = h === "#wedding";
-    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : wedding ? "wedding" : "home";
+    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai", wedding = h === "#wedding", weather = h === "#weather";
+    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : wedding ? "wedding" : weather ? "weather" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
-    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai"; $("wedding-view").hidden = view !== "wedding";
+    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai"; $("wedding-view").hidden = view !== "wedding"; $("weather-view").hidden = view !== "weather";
     $("recipe-credit").hidden = view !== "recipe";
-    $("news-nav").hidden = recipes || company || cyber || ai || wedding;
-    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : wedding ? "tab-wedding" : "tab-news";
-    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai", "tab-wedding"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
+    $("news-nav").hidden = recipes || company || cyber || ai || wedding || weather;
+    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : wedding ? "tab-wedding" : weather ? "tab-weather" : "tab-news";
+    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai", "tab-wedding", "tab-weather"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
     if (company) {
       for (const k of Object.keys(COMPANIES)) {
         $("co-" + k).hidden = k !== company;
@@ -2229,6 +2403,7 @@ button.chip { font: inherit; font-size: 13px; }
     }
     if (cyber) { renderCyber(); window.scrollTo(0, 0); }
     if (wedding) { renderWedding(); window.scrollTo(0, 0); }
+    if (weather) { renderWeather(); window.scrollTo(0, 0); }
     if (ai) { renderAiMatrix(); showAiView(aiState.view); renderAiNews(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }
