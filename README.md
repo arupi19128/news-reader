@@ -19,6 +19,8 @@
 | `scripts/attacks.py` | Cloudflare Radar から世界の攻撃統計を毎時取得（`docs/data/attacks.json`。GitHub の Secrets に `CLOUDFLARE_API_TOKEN` が必要） |
 | `docs/firebase-config.js` / `firestore.rules` | レシピのお気に入りを Google ログインで保存するための Firebase 設定と、本人だけが読み書きできるセキュリティルール（設定が空ならブラウザに保存） |
 | `docs/rakuten-config.js` | 楽天ウェブサービスのアプリIDとアクセスキー（レシピのタブで使用。閲覧者のブラウザが楽天レシピAPIを直接呼び出します） |
+| `worker/` | 会議メモの要約に使う Cloudflare Worker（Claude の API キーを隠し、Firebase のログインを確かめる）。`.github/workflows/deploy-worker.yml` でデプロイ |
+| `firestore.rules` | Firestore のルール（お気に入りと会議メモは本人だけが読み書きできる） |
 | `scripts/summarize.py` | 今日の注目に Claude Haiku で「3行でいうと」の要約を付ける（`docs/data/summaries.json`。Secrets に `ANTHROPIC_API_KEY` が必要） |
 | `scripts/ai.py` | Claude による日本語化・分類・厳選・解説（結果は `docs/data/picks.json`。`config.toml` の `ai_reports = true` のときだけ動く） |
 | `.github/workflows/update-news.yml` | 毎時の自動実行と GitHub Pages への公開 |

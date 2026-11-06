@@ -5,5 +5,11 @@ service cloud.firestore {
     match /users/{uid}/favs/{recipeId} {
       allow read, write: if request.auth != null && request.auth.uid == uid;
     }
+    // Meeting notes: only the listed accounts, and each only their own.
+    // Replace YOUR_UID with the account ID shown on the meeting tab (Firebase console → Firestore → Rules).
+    match /users/{uid}/meetings/{meetingId} {
+      allow read, write: if request.auth != null && request.auth.uid == uid
+                         && uid in ["YOUR_UID"];
+    }
   }
 }

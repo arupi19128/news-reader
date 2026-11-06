@@ -432,6 +432,24 @@ button.chip { font: inherit; font-size: 13px; }
   .wx-day .w { display: none; }
   .wx-day .tt { grid-column: 3; text-align: right; }
 }
+.mt-rec input { flex: 1 1 200px; min-width: 0; font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--sheet); color: var(--ink); }
+.chip.mt-start { border-color: var(--out); color: var(--out); }
+.chip:disabled { opacity: 0.45; cursor: default; }
+.mt-live { margin-top: 12px; min-height: 120px; max-height: 320px; overflow-y: auto; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); font-size: 14.5px; line-height: 1.8; white-space: pre-wrap; }
+.mt-interim { color: var(--muted); }
+#mt-status.rec { color: var(--out); font-weight: 600; }
+.mt-actions { margin-bottom: 10px; }
+.mt-text { width: 100%; box-sizing: border-box; font: inherit; font-size: 14px; line-height: 1.7; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--sheet); color: var(--ink); resize: vertical; }
+.mt-sum { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; }
+.mt-sum h4 { margin: 10px 0 4px; font-size: 13px; color: var(--wave); }
+.mt-sum h4:first-child { margin-top: 0; }
+.mt-sum table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.mt-sum th, .mt-sum td { text-align: left; border-bottom: 1px solid var(--line); padding: 5px 6px; vertical-align: top; }
+.mt-sum th { color: var(--muted); font-weight: 500; }
+.mt-item { width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: transparent; padding: 11px 18px; font: inherit; color: var(--ink); cursor: pointer; display: grid; gap: 2px; }
+.mt-item:hover { background: var(--wave-soft); }
+.mt-item small { color: var(--muted); font-size: 12px; }
+.mt-uid { font-family: var(--font-mono); font-size: 12.5px; background: var(--bg); padding: 2px 6px; border-radius: 4px; word-break: break-all; }
 .co-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
 .co-switch a { text-decoration: none; padding: 4px 14px; }
 .co-switch a[aria-current="page"] { background: var(--wave); border-color: var(--wave); color: var(--sheet); }
@@ -537,6 +555,7 @@ button.chip { font: inherit; font-size: 13px; }
       <a href="#cyber" id="tab-cyber">サイバー攻撃</a>
       <a href="#industry-ai" id="tab-ai">業界AI</a>
       <a href="#wedding" id="tab-wedding">式場</a>
+      <a href="#meeting" id="tab-meeting">会議</a>
       <a href="network.html" id="tab-net">ネットワーク</a>
     </nav>
     <nav class="jump" id="news-nav" aria-label="ニュースの中のリンク">
@@ -699,6 +718,50 @@ button.chip { font: inherit; font-size: 13px; }
     <div id="cy-news"></div>
   </section>
   <p class="credit">データ：<a href="https://radar.cloudflare.com/security" target="_blank" rel="noopener">Cloudflare Radar</a>（CC BY-NC 4.0）。Cloudflare のネットワークで観測・防御した攻撃の統計で、世界のすべての攻撃ではありません。攻撃元の国は攻撃に使われた通信の出どころで、攻撃者の国籍とは限りません。</p>
+</div>
+
+<div id="meeting-view" class="wrap" hidden>
+  <div class="menu-head">
+    <div>
+      <div class="cap">ログインした本人だけが使えます</div>
+      <h1>会議メモ</h1>
+      <p>会議中に話した内容をその場で文字にして保存し、あとから AI（Claude）で「要点・決まったこと・宿題」にまとめます。文字起こしと要約は、あなたのアカウントの中だけに保存されます。</p>
+    </div>
+  </div>
+  <section class="sheet note-sheet" id="mt-gate"></section>
+  <div id="mt-app" hidden>
+    <section class="sheet note-sheet">
+      <div class="sheet-head"><h2>文字起こし</h2><span class="cap" id="mt-status">待機中</span></div>
+      <div class="pad">
+        <div class="row mt-rec">
+          <input id="mt-title" type="text" placeholder="会議名（例：週次定例）" aria-label="会議名" maxlength="100">
+          <button type="button" class="chip mt-start" id="mt-start">● 開始</button>
+          <button type="button" class="chip" id="mt-stop" disabled>■ 停止</button>
+        </div>
+        <div class="mt-live" id="mt-live" aria-live="polite"><span class="mt-final" id="mt-final"></span><span class="mt-interim" id="mt-interim"></span></div>
+        <p class="note">ブラウザの音声認識を使います（Chrome なら Google、Safari なら Apple のサーバーで音声が処理されます）。話す人の区別はできません。会議の前に、録音することを参加者に伝え、会社のルールで外部サービスの利用が認められているか確かめてください。</p>
+      </div>
+    </section>
+    <section class="sheet note-sheet" id="mt-detail" hidden>
+      <div class="sheet-head"><h2 id="mt-d-title">会議</h2><span class="cap" id="mt-d-date"></span></div>
+      <div class="pad">
+        <div class="row mt-actions">
+          <button type="button" class="chip mt-start" id="mt-summarize">要約する</button>
+          <button type="button" class="chip" id="mt-save">文字起こしを保存</button>
+          <button type="button" class="chip" id="mt-copy">要約をコピー</button>
+          <button type="button" class="chip ghost" id="mt-delete">削除</button>
+          <button type="button" class="chip ghost" id="mt-close">閉じる</button>
+        </div>
+        <div id="mt-summary"></div>
+        <h3>文字起こし（直してから要約すると精度が上がります）</h3>
+        <textarea id="mt-text" class="mt-text" rows="12" aria-label="文字起こし"></textarea>
+      </div>
+    </section>
+    <section class="sheet note-sheet">
+      <div class="sheet-head"><h2>これまでの会議</h2><span class="cap" id="mt-count"></span></div>
+      <div id="mt-list"></div>
+    </section>
+  </div>
 </div>
 
 <div id="weather-view" class="wrap" hidden>
@@ -1344,6 +1407,7 @@ button.chip { font: inherit; font-size: 13px; }
 <div class="toast" id="toast" role="status" hidden></div>
 <script src="rakuten-config.js"></script>
 <script src="firebase-config.js"></script>
+<script src="meeting-config.js"></script>
 <script>
 (() => {
   const PER_PAGE = 9;
@@ -1764,6 +1828,7 @@ button.chip { font: inherit; font-size: 13px; }
       Object.assign(cloud, { auth: authMod.getAuth(app), db: fs.getFirestore(app), authMod, fs, ready: true });
       authMod.onAuthStateChanged(cloud.auth, (user) => {
         cloud.user = user;
+        mtWatch(user);
         cloud.unsub?.(); cloud.unsub = null;
         if (user) {
           migrateLocalFavs(user);
@@ -2578,18 +2643,178 @@ button.chip { font: inherit; font-size: 13px; }
     }));
   }
 
+  // ---------------- Meeting notes: live transcription (browser speech recognition), stored per user in Firestore,
+  // summarised by Claude through a Worker that holds the API key and checks the Firebase ID token. ----------------
+  const mt = { meetings: [], unsub: null, rec: null, recording: false, current: null, final: "", saveTimer: null, wake: null, denied: false };
+  const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const mtCol = () => cloud.fs.collection(cloud.db, "users", cloud.user.uid, "meetings");
+  const mtDoc = (id) => cloud.fs.doc(cloud.db, "users", cloud.user.uid, "meetings", id);
+  const mtFmt = new Intl.DateTimeFormat("ja-JP", { month: "numeric", day: "numeric", weekday: "short", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" });
+
+  function mtGate() {
+    const gate = $("mt-gate");
+    const show = (...kids) => { gate.hidden = false; $("mt-app").hidden = true; gate.replaceChildren(el("div", { class: "pad" }, ...kids)); };
+    if (!useCloud) return show(el("p", {}, "ログインの設定（docs/firebase-config.js）がないため使えません。"));
+    if (!cloud.ready) { initCloud(); return show(el("p", {}, "ログインの仕組みを読み込んでいます…")); }
+    if (!cloud.user) {
+      return show(el("p", {}, "会議メモは、ログインした本人しか使えません。"),
+        el("button", { type: "button", class: "chip mt-start", onclick: () => cloud.authMod.signInWithPopup(cloud.auth, new cloud.authMod.GoogleAuthProvider())
+          .catch((e) => { if (e?.code !== "auth/popup-closed-by-user" && e?.code !== "auth/cancelled-popup-request") toast("ログインできませんでした。もう一度試してください。"); }) }, "Google でログイン"));
+    }
+    if (mt.denied) {
+      return show(el("p", {}, "このアカウントは、まだ会議メモを使う許可がありません。最初の設定では、下のあなたのアカウント ID を許可リストに登録します。"),
+        el("p", {}, "アカウント ID：", el("span", { class: "mt-uid" }, cloud.user.uid), " ",
+          el("button", { type: "button", class: "linkbtn", onclick: () => navigator.clipboard?.writeText(cloud.user.uid).then(() => toast("コピーしました")) }, "コピー")),
+        el("p", { class: "note" }, `ログイン中：${cloud.user.email || cloud.user.displayName || ""}`),
+        el("button", { type: "button", class: "linkbtn", onclick: () => cloud.authMod.signOut(cloud.auth) }, "ログアウト"));
+    }
+    gate.hidden = true; $("mt-app").hidden = false;
+  }
+
+  function mtWatch(user) {
+    mt.unsub?.(); mt.unsub = null; mt.meetings = []; mt.denied = false;
+    if (!user) { mtGate(); return; }
+    const q = cloud.fs.query(mtCol(), cloud.fs.orderBy("startedAt", "desc"), cloud.fs.limit(100));
+    mt.unsub = cloud.fs.onSnapshot(q, (snap) => {
+      mt.meetings = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+      mtGate(); mtList();
+    }, (err) => { mt.denied = err?.code === "permission-denied"; mtGate(); if (!mt.denied) toast("会議の一覧を読み込めませんでした。"); });
+  }
+
+  function mtList() {
+    $("mt-count").textContent = `${mt.meetings.length}件`;
+    $("mt-list").replaceChildren(...(mt.meetings.length ? mt.meetings.map((m) => el("button", { type: "button", class: "mt-item", onclick: () => mtOpen(m.id) },
+      el("span", {}, m.title || "（無題の会議）"),
+      el("small", {}, `${m.startedAt ? mtFmt.format(new Date(m.startedAt)) : ""} ・ ${(m.transcript || "").length.toLocaleString()}文字${m.summary ? " ・ 要約あり" : ""}`)))
+      : [el("div", { class: "wd-empty" }, "まだ会議はありません。上の「● 開始」で文字起こしを始められます。")]));
+  }
+
+  async function mtSave(fields) {
+    if (!mt.current) return;
+    try { await cloud.fs.setDoc(mtDoc(mt.current), { ...fields, updatedAt: new Date().toISOString() }, { merge: true }); }
+    catch (e) { toast(e?.code === "permission-denied" ? "保存する許可がありません。" : "保存できませんでした。通信状態を確かめてください。"); }
+  }
+
+  function mtStatus(text, rec) { $("mt-status").textContent = text; $("mt-status").classList.toggle("rec", !!rec); }
+
+  $("mt-start").addEventListener("click", async () => {
+    if (!Recognition) { toast("このブラウザは音声認識に対応していません。Chrome か Safari で開いてください。"); return; }
+    if (mt.recording) return;
+    mt.current = `m${Date.now()}`; mt.final = "";
+    $("mt-final").textContent = ""; $("mt-interim").textContent = "";
+    await mtSave({ title: $("mt-title").value.trim() || "会議", startedAt: new Date().toISOString(), transcript: "" });
+    const rec = new Recognition();
+    rec.lang = "ja-JP"; rec.continuous = true; rec.interimResults = true;
+    rec.onresult = (e) => {
+      let interim = "";
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const t = e.results[i][0].transcript;
+        if (e.results[i].isFinal) mt.final += t.trim() + "\n"; else interim += t;
+      }
+      $("mt-final").textContent = mt.final; $("mt-interim").textContent = interim;
+      $("mt-live").scrollTop = $("mt-live").scrollHeight;
+    };
+    rec.onerror = (e) => {
+      if (e.error === "not-allowed" || e.error === "service-not-allowed") { toast("マイクの使用が許可されていません。ブラウザの設定を確かめてください。"); mtStop(); }
+    };
+    // Recognition stops by itself after silence or a time limit; start it again while recording.
+    rec.onend = () => { if (mt.recording) { try { rec.start(); } catch { /* already restarting */ } } };
+    mt.rec = rec; mt.recording = true;
+    try { rec.start(); } catch { toast("音声認識を始められませんでした。"); mt.recording = false; return; }
+    try { mt.wake = await navigator.wakeLock?.request("screen"); } catch { /* the screen may still turn off */ }
+    mt.saveTimer = setInterval(() => mtSave({ transcript: mt.final }), 20000);
+    $("mt-start").disabled = true; $("mt-stop").disabled = false; $("mt-title").disabled = true;
+    mtStatus("● 文字起こし中（画面を閉じないでください）", true);
+  });
+
+  async function mtStop() {
+    if (!mt.recording) return;
+    mt.recording = false; clearInterval(mt.saveTimer);
+    try { mt.rec?.stop(); } catch { /* already stopped */ }
+    mt.wake?.release?.(); mt.wake = null;
+    await mtSave({ transcript: mt.final, endedAt: new Date().toISOString() });
+    $("mt-start").disabled = false; $("mt-stop").disabled = true; $("mt-title").disabled = false;
+    mtStatus("保存しました"); $("mt-interim").textContent = "";
+    mtOpen(mt.current);
+  }
+  $("mt-stop").addEventListener("click", mtStop);
+
+  function mtSummaryView(s) {
+    const list = (items) => items?.length ? el("ul", {}, ...items.map((t) => el("li", {}, t))) : el("p", { class: "note" }, "なし");
+    return el("div", { class: "mt-sum" },
+      el("h4", {}, "要点"), el("p", {}, s.overview || ""),
+      el("h4", {}, "話し合ったこと"), list(s.points),
+      el("h4", {}, "決まったこと"), list(s.decisions),
+      el("h4", {}, "宿題"), s.actions?.length ? el("table", {}, el("thead", {}, el("tr", {}, el("th", {}, "やること"), el("th", {}, "担当"), el("th", {}, "期限"))),
+        el("tbody", {}, ...s.actions.map((a) => el("tr", {}, el("td", {}, a.task), el("td", {}, a.owner || "—"), el("td", {}, a.due || "—"))))) : el("p", { class: "note" }, "なし"),
+      el("h4", {}, "持ち越し・未決"), list(s.open_questions));
+  }
+  function mtSummaryText(m) {
+    const s = m.summary; if (!s) return "";
+    const b = (items) => (items || []).map((t) => `・${t}`).join("\n") || "・なし";
+    return `【${m.title || "会議"}】${m.startedAt ? mtFmt.format(new Date(m.startedAt)) : ""}\n\n■要点\n${s.overview}\n\n■話し合ったこと\n${b(s.points)}\n\n■決まったこと\n${b(s.decisions)}\n\n■宿題\n${(s.actions || []).map((a) => `・${a.task}（担当：${a.owner || "未定"}／期限：${a.due || "未定"}）`).join("\n") || "・なし"}\n\n■持ち越し・未決\n${b(s.open_questions)}`;
+  }
+
+  function mtOpen(id) {
+    const m = mt.meetings.find((x) => x.id === id) || (id === mt.current ? { id, title: $("mt-title").value || "会議", transcript: mt.final } : null);
+    if (!m) return;
+    mt.current = id;
+    $("mt-detail").hidden = false;
+    $("mt-d-title").textContent = m.title || "会議";
+    $("mt-d-date").textContent = m.startedAt ? mtFmt.format(new Date(m.startedAt)) : "";
+    $("mt-text").value = m.transcript || "";
+    $("mt-summary").replaceChildren(m.summary ? mtSummaryView(m.summary) : el("p", { class: "note" }, "まだ要約していません。"));
+    $("mt-detail").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  }
+  $("mt-close").addEventListener("click", () => { $("mt-detail").hidden = true; });
+  $("mt-save").addEventListener("click", async () => { await mtSave({ transcript: $("mt-text").value }); toast("保存しました"); });
+  $("mt-copy").addEventListener("click", () => {
+    const m = mt.meetings.find((x) => x.id === mt.current);
+    const text = m && mtSummaryText(m);
+    if (!text) { toast("まだ要約がありません"); return; }
+    navigator.clipboard?.writeText(text).then(() => toast("要約をコピーしました"), () => toast("コピーできませんでした"));
+  });
+  $("mt-delete").addEventListener("click", async () => {
+    if (!mt.current || !confirm("この会議の文字起こしと要約を削除します。元に戻せません。よろしいですか？")) return;
+    try { await cloud.fs.deleteDoc(mtDoc(mt.current)); $("mt-detail").hidden = true; toast("削除しました"); }
+    catch { toast("削除できませんでした。"); }
+  });
+  $("mt-summarize").addEventListener("click", async () => {
+    const url = window.MEETING_CONFIG?.workerUrl;
+    if (!url) { toast("要約の仕組みがまだ準備できていません（Worker の設定待ち）。"); return; }
+    const transcript = $("mt-text").value.trim();
+    if (!transcript) { toast("文字起こしが空です"); return; }
+    const btn = $("mt-summarize"); btn.disabled = true; btn.textContent = "要約中…";
+    try {
+      await mtSave({ transcript });
+      const token = await cloud.user.getIdToken();
+      const r = await fetch(`${url}/summarize`, { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ title: $("mt-d-title").textContent, transcript }) });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        const why = { not_allowed: "このアカウントは要約を使う許可がありません。", login: "ログインし直してください。", too_long: "文字起こしが長すぎます。", rate_limited: "混み合っています。少し待ってから試してください。", api_key: "Claude の API キーの設定を確かめてください。" }[data.error];
+        toast(why || "要約できませんでした。時間をおいて試してください。"); return;
+      }
+      await mtSave({ summary: data.summary, summarizedAt: new Date().toISOString(), summaryModel: data.model });
+      $("mt-summary").replaceChildren(mtSummaryView(data.summary));
+      toast("要約しました");
+    } catch { toast("要約できませんでした。通信状態を確かめてください。"); }
+    finally { btn.disabled = false; btn.textContent = "要約する"; }
+  });
+  window.addEventListener("beforeunload", (e) => { if (mt.recording) { mtSave({ transcript: mt.final }); e.preventDefault(); } });
+
   function route() {
     const h = location.hash;
     const art = h.match(/^#article\/([\w-]+)$/), rec = h.match(/^#recipe\/([\w-]+)$/);
-    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai", wedding = h === "#wedding", weather = h === "#weather";
-    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : wedding ? "wedding" : weather ? "weather" : "home";
+    const recipes = h === "#recipes" || !!rec, company = ["#softbank", "#kddi", "#jcom"].includes(h) ? h.slice(1) : null, cyber = h === "#cyber", ai = h === "#industry-ai", wedding = h === "#wedding", weather = h === "#weather", meeting = h === "#meeting";
+    const view = art ? "article" : rec ? "recipe-detail" : recipes ? "recipe" : company ? "company" : cyber ? "cyber" : ai ? "ai" : wedding ? "wedding" : weather ? "weather" : meeting ? "meeting" : "home";
     $("home").hidden = view !== "home"; $("article-view").hidden = view !== "article";
     $("recipe-view").hidden = view !== "recipe"; $("recipe-detail").hidden = view !== "recipe-detail";
-    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai"; $("wedding-view").hidden = view !== "wedding"; $("weather-view").hidden = view !== "weather";
+    $("company-view").hidden = view !== "company"; $("cyber-view").hidden = view !== "cyber"; $("ai-view").hidden = view !== "ai"; $("wedding-view").hidden = view !== "wedding"; $("weather-view").hidden = view !== "weather"; $("meeting-view").hidden = view !== "meeting";
     $("recipe-credit").hidden = view !== "recipe";
-    $("news-nav").hidden = recipes || company || cyber || ai || wedding || weather;
-    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : wedding ? "tab-wedding" : weather ? "tab-weather" : "tab-news";
-    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai", "tab-wedding", "tab-weather"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
+    $("news-nav").hidden = recipes || company || cyber || ai || wedding || weather || meeting;
+    const tab = recipes ? "tab-recipes" : company ? "tab-company" : cyber ? "tab-cyber" : ai ? "tab-ai" : wedding ? "tab-wedding" : weather ? "tab-weather" : meeting ? "tab-meeting" : "tab-news";
+    for (const id of ["tab-news", "tab-recipes", "tab-company", "tab-cyber", "tab-ai", "tab-wedding", "tab-weather", "tab-meeting"]) id === tab ? $(id).setAttribute("aria-current", "page") : $(id).removeAttribute("aria-current");
     if (company) {
       for (const k of Object.keys(COMPANIES)) {
         $("co-" + k).hidden = k !== company;
@@ -2600,6 +2825,7 @@ button.chip { font: inherit; font-size: 13px; }
     if (cyber) { renderCyber(); window.scrollTo(0, 0); }
     if (wedding) { renderWedding(); window.scrollTo(0, 0); }
     if (weather) { renderWeather(); window.scrollTo(0, 0); }
+    if (meeting) { mtGate(); window.scrollTo(0, 0); }
     if (ai) { renderAiMatrix(); showAiView(aiState.view); renderAiNews(); window.scrollTo(0, 0); }
     if (art) { renderArticle(art[1]); window.scrollTo(0, 0); }
     else if (rec) { renderRecipe(rec[1]); window.scrollTo(0, 0); }
