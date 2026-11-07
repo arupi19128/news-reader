@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T15:53:38Z",
+ "generated_at": "2026-11-07T16:55:42Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -431,7 +431,7 @@
    "name": "BBC World",
    "kind": "overseas",
    "ok": true,
-   "count": 23
+   "count": 24
   },
   {
    "name": "Al Jazeera",
@@ -509,7 +509,7 @@
    "name": "Googleニュース：J:COM",
    "kind": "通信",
    "ok": true,
-   "count": 20
+   "count": 21
   },
   {
    "name": "Googleニュース：製造・物流のAI",
@@ -589,6 +589,11 @@
    "outlets": 2
   },
   {
+   "id": "8d3c9debbd41a80a",
+   "related": [],
+   "outlets": 1
+  },
+  {
    "id": "ee46e0e3e9709373",
    "related": [
     "e2e1115e02d24919",
@@ -596,24 +601,139 @@
     "3ec91ac54b20b8a4"
    ],
    "outlets": 3
-  },
-  {
-   "id": "54c6f5b0ec061a09",
-   "related": [],
-   "outlets": 1
   }
  ],
  "articles": [
   {
+   "id": "a7617f9dfa5674d5",
+   "title": "愛知県知多市で震度5強 震源は静岡県西部 M5・7",
+   "link": "https://mainichi.jp/articles/20261108/k00/00m/040/002000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-07T16:50:02Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/04/27/20260427k0000m040014000p/0c10.jpg?1",
+   "tv_match": {
+    "title": "愛知県西部で震度5強 津波の心配なし",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE02by16UFJoTl9hNUpCNFB1bnNlZzVyNDV3UWxNYWRBVWZDNDUzcU9GLVQzMnhrakJVTTdTN3hQN19jUDNRWGd3NWw2LWI4U2tOdGdkWkRGUW1mRXZ4dlRkUlB1bkpsaU8wS25OZjZCS2RtQQ?oc=5",
+    "score": 0.36
+   },
+   "picked": false
+  },
+  {
+   "id": "9fd3205decb1d994",
+   "title": "Review Links 5G, 6G, and AI for Maize Disease Monitoring",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcFdSQ05TY2F6ak1VcVllVDhOX24ydFY4bF9FUkV0M0VRNng2Y1l3X1V0eWJXV3NVazVBRXFSaTVockRpU0g0cGd3VFlBZEVDdUR5VW12RGtLQjQtNFNqNFZUZk5lSEZpNUJCSmN4d1hVUFFTNTJYSDQyanJMR2lEdUI2M293UQ?oc=5",
+   "summary": "Review Links 5G, 6G, and AI for Maize Disease Monitoring Bioengineer.org",
+   "outlet": "Bioengineer.org",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-07T16:43:53Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "8d3c9debbd41a80a",
+   "title": "ポーランド・クラクフで5人死亡十数人が負傷 男が車から無差別発砲",
+   "link": "http://www.asahi.com/articles/ASVC75HBQVC7UHBI017M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-07T16:43:12Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261108000355_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "08b2507bc01f8787",
+   "title": "愛知県知多市で震度5強 震源は静岡県西部、津波の心配なし",
+   "link": "http://www.asahi.com/articles/ASVC75F9SVC7UEFT009M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-07T16:24:28Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261108000353_comm.jpg",
+   "tv_match": {
+    "title": "愛知県西部で震度5強 津波の心配なし",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE02by16UFJoTl9hNUpCNFB1bnNlZzVyNDV3UWxNYWRBVWZDNDUzcU9GLVQzMnhrakJVTTdTN3hQN19jUDNRWGd3NWw2LWI4U2tOdGdkWkRGUW1mRXZ4dlRkUlB1bkpsaU8wS25OZjZCS2RtQQ?oc=5",
+    "score": 0.54
+   },
+   "picked": false
+  },
+  {
+   "id": "56d20b78c2b29579",
+   "title": "Guatemalan lawmaker and three police officers killed in armed attack",
+   "link": "https://www.aljazeera.com/news/2026/11/7/guatemalan-lawmaker-and-three-police-officers-killed-in-armed-attack?traffic_source=rss",
+   "summary": "It happened in a region of the country known to have drug trafficking activity.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-11-07T16:15:18Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/ap_6aef4b9de861a-1794067357.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "53bb7ed77fc8dea7",
+   "title": "Hundreds march in Pau, France against high living costs",
+   "link": "https://www.aljazeera.com/video/newsfeed/2026/11/7/hundreds-march-in-pau-france-against-high-living-costs?traffic_source=rss",
+   "summary": "Hundreds march in Pau, France against high living costs",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-11-07T16:09:11Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/image-1794067845.jpg?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "dff1118f9b2b57d1",
+   "title": "Five killed and at least 10 injured in Krakow shooting",
+   "link": "https://www.aljazeera.com/video/newsfeed/2026/11/7/7-11-clip-poland-krakow-shooting?traffic_source=rss",
+   "summary": "Five people have been killed and at least 10 injured in a shooting near the main market square in Krakow, Poland.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-11-07T16:06:58Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/image-1794067587.jpg?resize=1920%2C1080&quality=80",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
    "id": "2836ed32ece62428",
    "title": "Kraków shooting latest updates: five killed and more than a dozen injured, police say",
    "link": "https://www.theguardian.com/world/live/2026/nov/07/krakow-shooting-poland-latest-news-updates",
-   "summary": "Polish Prime Minister Donald Tusk, in a post on X, said police are investigating the attack A man was firing toward random people from a car driving through the city’s Main Square, Kraków police said. Police officers are among the wounded. Continue reading...",
+   "summary": "Polish Prime Minister Donald Tusk, in a post on X, said police are investigating the attack Tom Rose, the US ambassador to Poland, wrote on X: We are just learning details of the horrific mass shooting in Kraków, a savage and murderous attack that’s shattered the peace of Poland.…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
    "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/0ba585ac87e3a2c28b9b171801fb854c71310266/639_0_4381_3505/master/4381.jpg?width=140&quality=85&auto=format&fit=max&s=ccff5c2fe243d350d07c3bdf5bdc8bdb",
+   "image": "https://i.guim.co.uk/img/media/e32b67bd2c480efc91d11a0ef804c62a760ee830/451_0_4490_3592/master/4490.jpg?width=140&quality=85&auto=format&fit=max&s=61703e9a86e28a806ff71546f8571161",
    "published": "2026-11-07T15:39:55Z",
    "first_seen": "2026-11-07T15:53:38Z",
    "tv_match": "unknown",
@@ -776,17 +896,31 @@
   },
   {
    "id": "1d7a89b3e1b3c165",
-   "title": "Watch live: French presidential candidate Jean-Luc Mélenchon launches campaign",
+   "title": "🔴 Watch live: 'We must change everything,' French far-left presidential candidate Mélenchon says",
    "link": "https://www.france24.com/en/france/20261107-french-presidential-hopeful-m%C3%A9lenchon-launches-campaign-by-vowing-lower-retirement-age",
-   "summary": "Veteran leftist Jean-Luc Mélenchon is set to formally announce his plan to raise France's minimum wage, cap prices for essential foods and restore the country's retirement age to 60 in a speech launching his 2027 presidential election programme on Saturday. Polls currently indica…",
-   "outlet": "© Abdul Saboor, Reuters",
+   "summary": "Veteran leftist Jean-Luc Mélenchon formally announced his plan to raise France's minimum wage, cap prices for essential foods and restore the country's retirement age to 60 in a speech launching his 2027 presidential election programme on Saturday. Polls currently indicate that h…",
+   "outlet": "© Kenzo Tribouillard, AFP",
    "feed": "France 24",
    "kind": "overseas",
    "lang": "en",
-   "image": "https://s.france24.com/media/display/8d768438-dabc-11f1-a00a-695cb59fade5/w:1024/p:16x9/2026-11-05T135949Z-1819265572-RC2PHOAXM5XB-RTRMADP-3-FRANCE-PROTEST.jpg",
+   "image": "https://s.france24.com/media/display/9d39473c-dac3-11f1-81fe-695cb59fade5/w:1024/p:16x9/000-D6R93X3.jpg",
    "published": "2026-11-07T14:44:24Z",
    "first_seen": "2026-11-07T14:55:49Z",
    "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "55e6717903e8135a",
+   "title": "ソフトバンク法人回線でIoT機器への組み込みが可能に！ピクセラ「PIX-MT200e」",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1rd0dKR1g1YTNQaGU3Ti0wUnFCeGNlMTIwamx5eDNYeW1qZ25MamZtVWpNRVBPZ0Vib25ibUpfQXduakhYYkJkeTAwZ2RLbkE2emFlZk52RHpPd29iRGxv?oc=5",
+   "summary": "ソフトバンク法人回線でIoT機器への組み込みが可能に！ピクセラ「PIX-MT200e」 ライブドアニュース",
+   "outlet": "ライブドアニュース",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-07T14:44:23Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -1355,9 +1489,9 @@
   },
   {
    "id": "65a817c2e36a90c2",
-   "title": "Two men arrested after boy injured in Gloucester sword attack",
+   "title": "Three teenagers arrested after 17-year-old injured in Gloucester sword attack",
    "link": "https://www.theguardian.com/uk-news/2026/nov/07/sword-attack-gloucester-school-men-arrested-boy-injured",
-   "summary": "Armed police attended the scene, which led to two nearby schools going into lockdown on Friday Two teenagers have been arrested after a 17-year-old was injured in a suspected sword attack near a school in Gloucester. Officers were called to Chalford Road, near St Peter’s high sch…",
+   "summary": "Armed police attended the scene, which led to two nearby schools going into lockdown Three teenagers have been arrested after a 17-year-old was injured in a suspected sword attack near a school in Gloucester. Officers were called to Chalford Road, near St Peter’s high school, in …",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -2873,7 +3007,7 @@
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9yc3dnaVJZMGllc3FXZFZDZ1F2UjE4eGpGb2xhaVRZZFF2d0dROWFyNlNYSUVqWkdoNDZSSXl6eVZ3LUdONUNXTWk4LWRjN2o2WDhQZjNuMjVHekthQlM3NS1hWFFqdDhGU3dmTE0xMUxZVXBDWmJkclJ4S1VuNHc?oc=5",
    "summary": "「povoの新規加入が非常に順調に伸びている」背景は？ 今後は「2枚目→メイン」利用狙う――KDDI松田社長（ITmedia Mobile） Yahoo!ニュース",
    "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：通信キャリア",
+   "feed": "Googleニュース：KDDI",
    "kind": "通信",
    "lang": "ja",
    "published": "2026-11-07T08:04:01Z",
@@ -6171,10 +6305,10 @@
    "picked": false
   },
   {
-   "id": "47b2965b76748f06",
-   "title": "消費減税、「本丸」参院へ 公・国の協力、なお見えず：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5uVWR1LTBNQ3RIYjk1RlllQWpLZmt3djI5X0MyQmlIT3piY2VjZXhTM1VNMlNXblBYQnM1SzI4aFlKRk9Lc2ROLU1rSW5xVmVWY2lHd1VyOGE5OXRmNmdrLU4zOA?oc=5",
-   "summary": "消費減税、「本丸」参院へ 公・国の協力、なお見えず：時事ドットコム 時事ドットコム",
+   "id": "b0b010da91325827",
+   "title": "日中経済、進む「選択的依存」 供給網分散も商機逃さず―台湾有事答弁１年",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA4c1A4S3FSWG81VE5xOHdrQU5qZGpOaEVIZUJ6eDFiNUNmVWpsMWlUUk5jcDNFdUZzYmQ3ZS1mX29BTUFEb2ZNaFpxa0FqX1dKbHRsTkRKVlJVdEVhWFlXb3paNA?oc=5",
+   "summary": "日中経済、進む「選択的依存」 供給網分散も商機逃さず―台湾有事答弁１年 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -6185,10 +6319,10 @@
    "picked": false
   },
   {
-   "id": "b0b010da91325827",
-   "title": "日中経済、進む「選択的依存」 供給網分散も商機逃さず―台湾有事答弁１年",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA4c1A4S3FSWG81VE5xOHdrQU5qZGpOaEVIZUJ6eDFiNUNmVWpsMWlUUk5jcDNFdUZzYmQ3ZS1mX29BTUFEb2ZNaFpxa0FqX1dKbHRsTkRKVlJVdEVhWFlXb3paNA?oc=5",
-   "summary": "日中経済、進む「選択的依存」 供給網分散も商機逃さず―台湾有事答弁１年 時事ドットコム",
+   "id": "47b2965b76748f06",
+   "title": "消費減税、「本丸」参院へ 公・国の協力、なお見えず：時事ドットコム",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5uVWR1LTBNQ3RIYjk1RlllQWpLZmt3djI5X0MyQmlIT3piY2VjZXhTM1VNMlNXblBYQnM1SzI4aFlKRk9Lc2ROLU1rSW5xVmVWY2lHd1VyOGE5OXRmNmdrLU4zOA?oc=5",
+   "summary": "消費減税、「本丸」参院へ 公・国の協力、なお見えず：時事ドットコム 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -8528,25 +8662,6 @@
    "picked": false
   },
   {
-   "id": "7722cb6ec61f35d8",
-   "title": "「非常に巧妙な形」ドコモが情報流出で謝罪 政府は緊急対策パッケージでサイバー対策強化に100億円支出【news23】",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9FSVkyeG9lQVNySUNZSTJHOUs2YmdoYmVGZ3dNcjlQdTJqbTByTlFJYmliZ01nYjhZWVhUbno5T05FejFPaXhCTTZ5Q1hfeUczSUZPYmh1Yw?oc=5",
-   "summary": "「非常に巧妙な形」ドコモが情報流出で謝罪 政府は緊急対策パッケージでサイバー対策強化に100億円支出【news23】 TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-06T16:34:21Z",
-   "first_seen": "2026-11-06T17:59:27Z",
-   "tv_match": {
-    "title": "政府がサイバー対策の緊急対応に約100億円「緊急対策パッケージ」とりまとめへ AI活用した対策の徹底など“概要案” 判明",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBHR0daN00tYmx6dWZ4TFR3OW1IMEtpSDdsWW5kRmZDeVhaUUtoMENhdkJLWDk1N3p0Nnk2X0FVeGpQTldKVE56Z3NVVW0zWThfa1dTSzZrRQ?oc=5",
-    "score": 0.33
-   },
-   "picked": false
-  },
-  {
    "id": "a1760aa7ee75bef3",
    "title": "'Chaos within aviation industry' as European air traffic hit by bomb threats",
    "link": "https://www.france24.com/en/video/20261106-chaos-within-aviation-industry-as-european-air-traffic-hit-by-bomb-threats",
@@ -8573,10 +8688,10 @@
    "published": "2026-11-06T16:32:42Z",
    "first_seen": "2026-11-06T17:59:27Z",
    "tv_match": {
-    "title": "政府がサイバー対策の緊急対応に約100億円「緊急対策パッケージ」とりまとめへ AI活用した対策の徹底など“概要案” 判明",
+    "title": "「非常に巧妙な形」ドコモが情報流出で謝罪 政府は緊急対策パッケージでサイバー対策強化に100億円支出【news23】",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBHR0daN00tYmx6dWZ4TFR3OW1IMEtpSDdsWW5kRmZDeVhaUUtoMENhdkJLWDk1N3p0Nnk2X0FVeGpQTldKVE56Z3NVVW0zWThfa1dTSzZrRQ?oc=5",
-    "score": 0.33
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9FSVkyeG9lQVNySUNZSTJHOUs2YmdoYmVGZ3dNcjlQdTJqbTByTlFJYmliZ01nYjhZWVhUbno5T05FejFPaXhCTTZ5Q1hfeUczSUZPYmh1Yw?oc=5",
+    "score": 1.0
    },
    "picked": false
   },
@@ -9648,22 +9763,6 @@
    "picked": false
   },
   {
-   "id": "c2657df28f137618",
-   "title": "海底の「ゴジラ」が地質遺産に 発見「功労者」の余生、海保が模索",
-   "link": "http://www.asahi.com/articles/ASVC61PD9VC6UTIL017M.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-06T14:00:00Z",
-   "first_seen": "2026-11-06T15:03:30Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261106002207_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "d03d6293c14b6947",
    "title": "Czech arms makers set sights on space defense in bid to sustain Ukraine-driven arms boom",
    "link": "https://www.dw.com/en/czech-arms-makers-set-sights-on-space-defense-in-bid-to-sustain-ukraine-driven-arms-boom/a-79876035?maca=en-rss-en-world-4025-rdf",
@@ -9677,6 +9776,22 @@
    "image_checked": true,
    "image": "https://static.dw.com/image/75314141_6.jpg",
    "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "c2657df28f137618",
+   "title": "海底の「ゴジラ」が地質遺産に 発見「功労者」の余生、海保が模索",
+   "link": "http://www.asahi.com/articles/ASVC61PD9VC6UTIL017M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-06T14:00:00Z",
+   "first_seen": "2026-11-06T15:03:30Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261106002207_comm.jpg",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -11601,9 +11716,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/11/06/20261106k0000m010332000p/0c10.jpg?1",
    "tv_match": {
-    "title": "政府がサイバー対策の緊急対応に約100億円「緊急対策パッケージ」とりまとめへ AI活用した対策の徹底など“概要案” 判明",
+    "title": "「非常に巧妙な形」ドコモが情報流出で謝罪 政府は緊急対策パッケージでサイバー対策強化に100億円支出【news23】",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBHR0daN00tYmx6dWZ4TFR3OW1IMEtpSDdsWW5kRmZDeVhaUUtoMENhdkJLWDk1N3p0Nnk2X0FVeGpQTldKVE56Z3NVVW0zWThfa1dTSzZrRQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9FSVkyeG9lQVNySUNZSTJHOUs2YmdoYmVGZ3dNcjlQdTJqbTByTlFJYmliZ01nYjhZWVhUbno5T05FejFPaXhCTTZ5Q1hfeUczSUZPYmh1Yw?oc=5",
     "score": 0.38
    },
    "picked": false
@@ -12019,8 +12134,8 @@
    "id": "c61133ec67cada95",
    "title": "ドコモ、不正アクセス被害者へお見舞金 流出は29万回線、本人確認書類の番号も（更新）",
    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9HOVNKUjdGY2c2QkdLLVI4eFRFal8ySnA3VjEycEpDc2hGZXY3M2NVdlhZdTBvYjFxeTNpX21QbWN3YmN0dEFqZ0FxSFlaOWJ5YXc?oc=5",
-   "summary": "ドコモ、不正アクセス被害者へお見舞金 流出は29万回線、本人確認書類の番号も（更新） CNET",
-   "outlet": "CNET",
+   "summary": "ドコモ、不正アクセス被害者へお見舞金 流出は29万回線、本人確認書類の番号も（更新） CNET Japan",
+   "outlet": "CNET Japan",
    "feed": "Googleニュース：通信キャリア",
    "kind": "通信",
    "lang": "ja",
@@ -12405,9 +12520,9 @@
    "published": "2026-11-06T10:36:34Z",
    "first_seen": "2026-11-06T15:03:30Z",
    "tv_match": {
-    "title": "NTTドコモ 不正アクセスによる顧客情報流出について謝罪会見",
+    "title": "【速報】ドコモ 不正アクセスで顧客情報 最大約30万件流出の可能性",
     "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5Hcnl5b0pjQ1owQXpyVGNzMDhac0xDT0JWa2xkUlEzbWlvRkpkSVh4czdIQmx3NWFrSi1QaWpvbXdkenlXNVpwUWRWa0dsNVBqcmczVUZDRQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8zbTR2Ti11OGZ3UXNPN3pwQl9iQ0Z4M2lKTk90amNGSjQ0WWxkcV9tTW9WbE14bE96MzNkOGNxandHODVnWkh1aGQtQ3l6MXpDTzFab3V4VQ?oc=5",
     "score": 0.4
    },
    "picked": false
@@ -13252,6 +13367,20 @@
    "lang": "ja",
    "published": "2026-11-06T09:49:00Z",
    "first_seen": "2026-11-06T17:59:27Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2ea2167c9db171ad",
+   "title": "中国ドラマでよく聞く「江湖」とは――チェンシャオ（陳暁）主演「ユン・シャン伝」で知る武侠ドラマの奥深い世界",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9oNDFFa3lsdklvX0lCNVJsc3pHZTVNTkdQZHhNSlpJWGhpeDVhX0UtUGo3MVhkb0paMzJoMUlfbE1FbTNKU0JCOHNkMHZMYVlMZldnR3ZyNlpaTmFvWVY3TldTVGhtYmY4eXc?oc=5",
+   "summary": "中国ドラマでよく聞く「江湖」とは――チェンシャオ（陳暁）主演「ユン・シャン伝」で知る武侠ドラマの奥深い世界 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-06T09:48:49Z",
+   "first_seen": "2026-11-07T16:55:42Z",
    "tv_match": null,
    "picked": false
   },
@@ -17007,6 +17136,20 @@
    "picked": false
   },
   {
+   "id": "70b428bfc7f4321a",
+   "title": "前海がAPECを追い風に：アジア太平洋協力の拠点として台頭 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBpdW8zc0xTeUwtNGx0RkptdElManUzMW9RMUEwYjg2YVl4UHlNUHJ2TXhHYnZsTkFXMTRYU2x2SGk4RFlxOHpCZEVUMEZtelJMa3c?oc=5",
+   "summary": "前海がAPECを追い風に：アジア太平洋協力の拠点として台頭 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-06T05:42:00Z",
+   "first_seen": "2026-11-07T16:55:42Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "6ea9fd96c08fcdf6",
    "title": "タランチュラ３０００匹密輸画策 欧州向け２．６億円相当、３人拘束―ペルー：時事ドットコム",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1DZzk1UzhES2o5S053bWJwbjRhelRFSVNqOEhnQUcwUGw0OVBqUWpTZ0I5dTlxMjVqTmtudVJZajQ3UVo3T1dyaFRjUjMxOE1mTmJ2bU9vaGZiWlN2TmFsOTVLYw?oc=5",
@@ -17244,6 +17387,20 @@
    "lang": "ja",
    "published": "2026-11-06T05:06:48Z",
    "first_seen": "2026-11-07T04:07:29Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "39d1e9f046f37f1a",
+   "title": "長ねぎをたっぷり使用した香味オイスターだれが決めての「ふんわり白身魚のガーリックソース」が11月6日（金）に新登場",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qSmthTlRUM01ra09RcWJWX3JJb0g0OURzZy0wdEtMMTVSMUJkS2NLUjdIaVZ6enpfNl9BRmJMSTY5SGpaeWpyNzNvU3I2elQ2b0E?oc=5",
+   "summary": "長ねぎをたっぷり使用した香味オイスターだれが決めての「ふんわり白身魚のガーリックソース」が11月6日（金）に新登場 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-06T05:06:47Z",
+   "first_seen": "2026-11-07T16:55:42Z",
    "tv_match": null,
    "picked": false
   },
@@ -18860,9 +19017,9 @@
    "published": "2026-11-06T02:30:00Z",
    "first_seen": "2026-11-06T04:12:08Z",
    "tv_match": {
-    "title": "消費減税法案が衆院通過 全野党が反対、石破前総理ら自民4人が採決退席",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ldDdITUMzQ1VmVmlRZURVcWFoak5WZE13Rkpqc3UydlZKTGM4Q2pyazZFak81bllHWmoxQS1veEtzT0lkWnB4T29SUjQ4eTAxRkRzekRHSUVzRkYybDJvSE1tSTR3YmthX2U4NUhuTTFOX0U?oc=5",
+    "title": "消費減税法案が衆院通過 自民党内で“足並み乱れ”石破前総理ら4人退席「最後の最後でありえない」 参院は国民・公明との連携が焦点",
+    "outlet": "FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFB1ZG9KUXZTcmx5ZjgyVXRoRlFxZk1rVmhfTEh0ajY5Z1lreE5WbmFXV3lWNmFIem03SUxneEZ4bkxZV1lFUTR6MF9qZDNSUQ?oc=5",
     "score": 0.47
    },
    "picked": false
@@ -19530,16 +19687,16 @@
    "picked": false
   },
   {
-   "id": "0cfc20941f64b38f",
+   "id": "4140e3fa6ce8f479",
    "title": "プーチン、ロシアのスポーツ復帰反対は「選手と民主主義の権利侵害」と非難",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5qUTdoTGtmTzVZbkNNS1BIT2FYSXhHckdFeE5EVEY2Tk14T1A0ZUlYckRsSENTc0tBY1hJUVV5TTIwc21XNmRTQXlzTktSVk9jT2tVV2pwWWpkQQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1aNE92WlNJX3YxSndHV0hHQmFlRHA4YWxRUzhJNUJJMXlXcUQ0M2szZDJ6enJkMThsN195ZnVRQXFIVFprRFBBbVRTRi1fb19vTFVSQXVRQXBmbkVQbVBteG1NdWVZcXM?oc=5",
    "summary": "プーチン、ロシアのスポーツ復帰反対は「選手と民主主義の権利侵害」と非難 ニューズウィーク日本版",
    "outlet": "ニューズウィーク日本版",
    "feed": "ニューズウィーク日本版",
    "kind": "国際",
    "lang": "ja",
    "published": "2026-11-06T01:45:00Z",
-   "first_seen": "2026-11-06T05:16:19Z",
+   "first_seen": "2026-11-07T11:54:02Z",
    "tv_match": null,
    "picked": false
   },
@@ -19563,16 +19720,16 @@
    "picked": false
   },
   {
-   "id": "4140e3fa6ce8f479",
+   "id": "0cfc20941f64b38f",
    "title": "プーチン、ロシアのスポーツ復帰反対は「選手と民主主義の権利侵害」と非難",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1aNE92WlNJX3YxSndHV0hHQmFlRHA4YWxRUzhJNUJJMXlXcUQ0M2szZDJ6enJkMThsN195ZnVRQXFIVFprRFBBbVRTRi1fb19vTFVSQXVRQXBmbkVQbVBteG1NdWVZcXM?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5qUTdoTGtmTzVZbkNNS1BIT2FYSXhHckdFeE5EVEY2Tk14T1A0ZUlYckRsSENTc0tBY1hJUVV5TTIwc21XNmRTQXlzTktSVk9jT2tVV2pwWWpkQQ?oc=5",
    "summary": "プーチン、ロシアのスポーツ復帰反対は「選手と民主主義の権利侵害」と非難 ニューズウィーク日本版",
    "outlet": "ニューズウィーク日本版",
    "feed": "ニューズウィーク日本版",
    "kind": "国際",
    "lang": "ja",
    "published": "2026-11-06T01:45:00Z",
-   "first_seen": "2026-11-07T11:54:02Z",
+   "first_seen": "2026-11-06T05:16:19Z",
    "tv_match": null,
    "picked": false
   },
@@ -26997,9 +27154,9 @@
    "published": "2026-11-05T11:46:00Z",
    "first_seen": "2026-11-05T13:31:53Z",
    "tv_match": {
-    "title": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN",
+    "title": "プーチン大統領、新たにJT関連3社のロシア事業の資産を一時管理下に（2026年11月7日掲載）｜日テレNEWS NNN",
     "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZzI0VmNJTXBqamFQNmpuSWFLdWlvNG9SSHpmS2VkVG5hXy1sSHpCR3pmVUw0V2NwTTU4SWRhSE8xWEV6bl9BaHdmZnlXZDdiM0J1YUJOb1QtNUkwaXJEaE5BYkhzU2dlNm4wS2VLejJiR3RBamlqckNPUTIweEwySDBNOXc?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQTXFLcXhBU0pjLUJfRHhlN0QwZUt0bTRSdTVHekFjWkIxTXlNZTVVZjNTOHptaUtUWW80SWtHOTg5c1ZDUG5zN3YzX0VyZ3M5MjFPZFQ3TjYtWk1NOERSb3piMmxEXy1WdEdxOE9PN2NOSE93b2JqemhaXzV1bDFHaFdTR0c?oc=5",
     "score": 0.39
    },
    "picked": false
@@ -30980,6 +31137,20 @@
    "lang": "ja",
    "published": "2026-11-05T08:00:00Z",
    "first_seen": "2026-11-07T14:00:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "00b398e1bea88144",
+   "title": "森香澄×若葉竜也が映画『てんてん ずっと独身でいるつもり？』で見せた「水と油」な心地よい距離感",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9hRmR1YmdMcEJDOHJ0UzZjUHBzTU9MZTVIcDZIQUlOVnowWXcwQzRELUFGNmVaS0xTTWhNRHNqUkJ1Ny0xNUlRbGFKMkJ1QzloRk83bndRT2xGVDZXYTNUYlRmeXE?oc=5",
+   "summary": "森香澄×若葉竜也が映画『てんてん ずっと独身でいるつもり？』で見せた「水と油」な心地よい距離感 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-05T08:00:00Z",
+   "first_seen": "2026-11-07T16:55:42Z",
    "tv_match": null,
    "picked": false
   },
@@ -101900,131 +102071,105 @@
    "first_seen": "2026-10-31T20:52:51Z",
    "tv_match": "unknown",
    "picked": false
-  },
-  {
-   "id": "b277e55e2a43d772",
-   "title": "US Plans to Bar Chinese Telecom Firms From US Phone Numbers",
-   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORV9IVW5meE9FNWhkTDg4aUNJS0xtTGx5NksyR0pzaUNkX0NBd0o5QXNOU3dBMmVyVWd5Z2k0U2dBQWlnRWl5VUVuRjA4bHZrSzJFTTlXZkplc0pXNTJGTFFTWExha3lsT0NnVnMxZFV2Z20tLVBvbmtwVUN3MEVSVlctUUthNG5wT2N0dlpnSjk3QzlkRC1QLWdzOE1YZnpfbFE?oc=5",
-   "summary": "US Plans to Bar Chinese Telecom Firms From US Phone Numbers Hoodline",
-   "outlet": "Hoodline",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-31T16:47:43Z",
-   "first_seen": "2026-10-31T17:48:44Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "641fcec3e146e5fc",
-   "title": "Crypto firm Binance covers 90% of losses after $6.3bn hack",
-   "link": "https://www.bbc.co.uk/news/articles/ckpdg3ql4169o?at_medium=RSS&at_campaign=rss",
-   "summary": "The Federal Bureau of Investigation (FBI) says North Korea was responsible for the hack.",
-   "outlet": "BBC World",
-   "feed": "BBC World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2e52/live/ccbb9490-d53e-11f1-93de-81de9e959fac.jpg",
-   "published": "2026-10-31T16:32:08Z",
-   "first_seen": "2026-10-31T16:53:22Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "c65489aadf5da4e1",
-   "title": "Seoul Electronics & Telecom Co., Ltd. (027040.KQ) Seasonal Returns Chart - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5oYkN4ZFpucW5CNVEtX2lVX0RtSFh0ZlNuQzItYV9JWE9nd2pGb3pEVDZZOHNVT0FBcTlpczVJZFdCLTNldGdLdmRHMVhxaWd3MHd1Wkpqb3pGMGNmbHBfSzhaTlpUYzNu?oc=5",
-   "summary": "Seoul Electronics & Telecom Co., Ltd. (027040.KQ) Seasonal Returns Chart - Yahoo Finance Yahoo! Finance Canada",
-   "outlet": "Yahoo! Finance Canada",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-31T16:30:05Z",
-   "first_seen": "2026-11-01T05:04:48Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "e50b736a7914f18d",
-   "title": "Thousands rally in Berlin as Gen Z protests in more than 30 German cities",
-   "link": "https://www.aljazeera.com/news/2026/10/31/thousands-rally-in-berlin-as-gen-z-plans-protests-in-30-german-cities?traffic_source=rss",
-   "summary": "Demonstrations sweeping Europe are inspiring young Germans frustrated by rising costs of living amid military spending.",
-   "outlet": "Al Jazeera",
-   "feed": "Al Jazeera",
-   "kind": "overseas",
-   "lang": "en",
-   "published": "2026-10-31T16:28:04Z",
-   "first_seen": "2026-10-31T17:48:44Z",
-   "image_checked": true,
-   "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/Jan-left-and-Phil-1793461706.jpg?resize=1920%2C1440",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "cbcc3e7865ea7e8e",
-   "title": "OWVサプライズイベント／キスマイ／風とロック芋煮会⑤（#768）",
-   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE10SVBMRUFuRGY1TkZZSmlaUTJGLXZIVHVzQm0zMFJPalVocDVYRDczTldWUEJ5T1BBdDU0TjVad0JYZi1ubkRYcVFHaw?oc=5",
-   "summary": "OWVサプライズイベント／キスマイ／風とロック芋煮会⑤（#768） TVer",
-   "outlet": "TVer",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-10-31T16:17:52Z",
-   "first_seen": "2026-10-31T17:48:44Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "298fe83a449197bd",
-   "title": "Top 5G Stocks To Keep An Eye On - October 31st",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUE9mc1NLNXNIeHVDaTU5MFNSVXc4UjYtV0gtR0VfZ0hzcEk4NmUwMTBUbEtQeS1KcEY3WkNrRWNXbU5pdW43WENwcWREOWF4emlueFRWbDE5SUVUVTh5eHI4aTVvaUtRcjhsV3lfTnFsci1vNk1LX2NlenJIR1NfM3VnVl9sMkdCbEJQOGd5NVVXWHl4Z3ZIcVBoM0ZLX0RmcjZGX2dR?oc=5",
-   "summary": "Top 5G Stocks To Keep An Eye On - October 31st MarketBeat",
-   "outlet": "MarketBeat",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-10-31T16:16:07Z",
-   "first_seen": "2026-10-31T17:48:44Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "df3942cf94635b32",
-   "title": "ボンネットに男性乗せて2キロ走行、殺人未遂の疑いで女を逮捕 奈良",
-   "link": "http://www.asahi.com/articles/ASVB05CQ8VB0POMB00CM.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-10-31T16:14:48Z",
-   "first_seen": "2026-10-31T16:53:22Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261101000267_comm.jpg",
-   "tv_match": {
-    "title": "男性をボンネットに乗せたまま約2キロ走行か 殺人未遂疑いで79歳女逮捕「病院の時間が迫っていた」 奈良・橿原市",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE12MHRsVERaQXZqVHFmYy1wa0Z3MG56MDg2c3NjcGpDZjlyTEJCY3NLWUxKM3hPOWRCZkdnNkdRZ0ZCRzBzZHFhd1ppcmlhN19icDZMdV9sWGZnQWE4X1ZPNXMtcDJiY3BGR0hQbGVXb0hSb2hIdTBzTlJWZGg?oc=5",
-    "score": 0.63
-   },
-   "picked": false
-  },
-  {
-   "id": "572b1528c5648ba6",
-   "title": "なぜ、研究開発のAI・MI導入は現場に定着しないのか？～MI活用・データ基盤・外部プロによる組織変革",
-   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBIN3JtbW5BZVBxQ1NZa3ZzdmZSZG1rNGdQcFhEMTF1UVhiblpwLV93cWROSy1Yd1ZXT2FDb29oSTlCVnB4eDl0MlNkZXJYMTJnTUlHX0V4M0h6WmtWOE1iLXVZUE4tQ2JxajFrTDV1OUpJeDZw?oc=5",
-   "summary": "なぜ、研究開発のAI・MI導入は現場に定着しないのか？～MI活用・データ基盤・外部プロによる組織変革 Excite エキサイト",
-   "outlet": "Excite エキサイト",
-   "feed": "Googleニュース：製造・物流のAI",
-   "kind": "IT",
-   "lang": "ja",
-   "published": "2026-10-31T16:10:00Z",
-   "first_seen": "2026-10-31T16:53:22Z",
-   "tv_match": null,
-   "picked": false
   }
  ],
  "tv": [
+  {
+   "id": "a2e2cb3d742172c1",
+   "title": "愛知県西部で震度5強 津波の心配なし",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE02by16UFJoTl9hNUpCNFB1bnNlZzVyNDV3UWxNYWRBVWZDNDUzcU9GLVQzMnhrakJVTTdTN3hQN19jUDNRWGd3NWw2LWI4U2tOdGdkWkRGUW1mRXZ4dlRkUlB1bkpsaU8wS25OZjZCS2RtQQ?oc=5",
+   "summary": "愛知県西部で震度5強 津波の心配なし テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T16:11:46Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "dc44e1b4dc95eb77",
+   "title": "【速報】気象庁が緊急地震速報 愛知県で地震 強い揺れ警戒（2026年11月7日掲載）｜日テレNEWS NNN",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBIT0ItQzQ4dGhWRjVFUlpld29LVnlMQjFKVU94RUZFYmVwb1ZkVnF6Sm1wRGJzQkpHOEpqVHNDT2RoM3F1MThsOFhrcUp4NDVBVXBOSnNWTEJERWVnM0JfVVRISWNQd3lERUZVdGMxUnE5NG1NMlctOUkzZlI?oc=5",
+   "summary": "【速報】気象庁が緊急地震速報 愛知県で地震 強い揺れ警戒（2026年11月7日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T16:08:01Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "5f52dce2bcb42a38",
+   "title": "愛知県で最大震度5強の強い地震 愛知県・知多市",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1mVXBxTjhrYnRzRGt2OUx2VFZZczR1OEV5aHZIbWRDMWpPSjhWZHpsVmxtcUNFUVluREN1ZGlUcWgwd3ljS2VQYW0xNExqbXFKb18zcm9RNA?oc=5",
+   "summary": "愛知県で最大震度5強の強い地震 愛知県・知多市 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T16:08:00Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "4e7d6b18213fcb5d",
+   "title": "山梨県産などの国産ブドウ、来季からベトナム輸出へ（2026年11月7日掲載）｜日テレNEWS NNN",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBkUGtaLWZHNXhoNU9vTE5FeWE5dXRmdWFlNXE1Y2FqTmtTYXExb09FVEdwcGxGYm5ON0lNd3ZNTldwbmhQeUxtd2FOaUJDX2t6am5jbEo2MTlPaGpTZnNhMXNyZllvTEJ6SGM4TzBzMjVfaTllZzd5eWJELWc?oc=5",
+   "summary": "山梨県産などの国産ブドウ、来季からベトナム輸出へ（2026年11月7日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T16:03:01Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "9d378a6bc32b7699",
+   "title": "プーチン大統領、新たにJT関連3社のロシア事業の資産を一時管理下に（2026年11月7日掲載）｜日テレNEWS NNN",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQTXFLcXhBU0pjLUJfRHhlN0QwZUt0bTRSdTVHekFjWkIxTXlNZTVVZjNTOHptaUtUWW80SWtHOTg5c1ZDUG5zN3YzX0VyZ3M5MjFPZFQ3TjYtWk1NOERSb3piMmxEXy1WdEdxOE9PN2NOSE93b2JqemhaXzV1bDFHaFdTR0c?oc=5",
+   "summary": "プーチン大統領、新たにJT関連3社のロシア事業の資産を一時管理下に（2026年11月7日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T16:00:03Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "f3686723b1caaf81",
+   "title": "北日本、各地で大荒れ 札幌市中心部で初の積雪 岩手で強風被害も（2026年11月7日掲載）｜日テレNEWS NNN",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9WZzQ5SHpqcUJQZFFQek5VLTk2UWlPbHVNSjFuZnprMmNFQV85dHRSRGdialUwTV9RQXdGVE5Ya1VjTHdQQ0RXOEM5UkhJekt6XzN3aVFUdVZyVVVWNDFyZVdOckV1NExsTjF4Vi1fRFFPc0tCSHVQYTY1TlU?oc=5",
+   "summary": "北日本、各地で大荒れ 札幌市中心部で初の積雪 岩手で強風被害も（2026年11月7日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T15:54:01Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "afa7451f308dad85",
+   "title": "岩手県で最大震度1の地震 岩手県・盛岡市",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1qRG9xck1GZkFOSG0wZnVwZXdHZ3hWTDNzSERnTVpmUzFyVW5wV3Q1MVVwUnI1R0RMTXNla19vQ3lWcEZQWGw4Sk5DN1QtTlk1OTY5dXhzTQ?oc=5",
+   "summary": "岩手県で最大震度1の地震 岩手県・盛岡市 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T15:45:00Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
+   "id": "5c2a6dcfdcf040b2",
+   "title": "「デジコン6アジア」 今年は日本のアニメーションがグランプリ受賞",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9JaGl3cTJXN3otRHNLYktyMy05VVZMbXJLRFhLclA0bmQtcUYzTk1wUS1FekpXWW5INXM2UVZpR1RiVXYwVjdKc1FDaHVPOE9OeW5zcHFFMWpFZDF3eE01RnVYOWk?oc=5",
+   "summary": "「デジコン6アジア」 今年は日本のアニメーションがグランプリ受賞 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-07T15:19:41Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
   {
    "id": "aa04406cbd5918a4",
    "title": "「デジコン6アジア」 今年は日本のアニメーションがグランプリ受賞",
@@ -102242,10 +102387,10 @@
    "first_seen": "2026-11-07T11:54:02Z"
   },
   {
-   "id": "3a10312081bfb977",
-   "title": "【ひき逃げ】現場はスーパー駐車場…70代男性車にはねられ“右足骨折の重傷”会社員の61歳男逮捕「救護せずに立ち去ったのは間違いない」容疑認める〈北海道〉",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5LQWJOdzVYRzctdmxtRDJndWNIUXAtS3I5Mlc5VHBFVC1hbVhFenhwSW5nWW1aTUdqNFdjRlFUWV9GeENQSjlmVXFscW5rQQ?oc=5",
-   "summary": "【ひき逃げ】現場はスーパー駐車場…70代男性車にはねられ“右足骨折の重傷”会社員の61歳男逮捕「救護せずに立ち去ったのは間違いない」容疑認める〈北海道〉 FNNプライムオンライン",
+   "id": "ffcedd388e58f605",
+   "title": "【大荒れ】一晩で“雪景色”急速発達の低気圧で…札幌は今季初の”氷点下”中心部の積雪は10センチ！テレビ塔では雪に負けじと「456段ダッシュ」荒天は8日まで続く見通し",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE53eXktNHRPc2JIZVZUTUlxeXg4cDJtZzk1cWpvbkhQbl8zMlFlWHBGRWhKdzZoWXVfMlI1cUFBV211SVhNc05PdkxNTGRIQQ?oc=5",
+   "summary": "【大荒れ】一晩で“雪景色”急速発達の低気圧で…札幌は今季初の”氷点下”中心部の積雪は10センチ！テレビ塔では雪に負けじと「456段ダッシュ」荒天は8日まで続く見通し FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
@@ -102254,10 +102399,10 @@
    "first_seen": "2026-11-07T10:57:42Z"
   },
   {
-   "id": "ffcedd388e58f605",
-   "title": "【大荒れ】一晩で“雪景色”急速発達の低気圧で…札幌は今季初の”氷点下”中心部の積雪は10センチ！テレビ塔では雪に負けじと「456段ダッシュ」荒天は8日まで続く見通し",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE53eXktNHRPc2JIZVZUTUlxeXg4cDJtZzk1cWpvbkhQbl8zMlFlWHBGRWhKdzZoWXVfMlI1cUFBV211SVhNc05PdkxNTGRIQQ?oc=5",
-   "summary": "【大荒れ】一晩で“雪景色”急速発達の低気圧で…札幌は今季初の”氷点下”中心部の積雪は10センチ！テレビ塔では雪に負けじと「456段ダッシュ」荒天は8日まで続く見通し FNNプライムオンライン",
+   "id": "3a10312081bfb977",
+   "title": "【ひき逃げ】現場はスーパー駐車場…70代男性車にはねられ“右足骨折の重傷”会社員の61歳男逮捕「救護せずに立ち去ったのは間違いない」容疑認める〈北海道〉",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5LQWJOdzVYRzctdmxtRDJndWNIUXAtS3I5Mlc5VHBFVC1hbVhFenhwSW5nWW1aTUdqNFdjRlFUWV9GeENQSjlmVXFscW5rQQ?oc=5",
+   "summary": "【ひき逃げ】現場はスーパー駐車場…70代男性車にはねられ“右足骨折の重傷”会社員の61歳男逮捕「救護せずに立ち去ったのは間違いない」容疑認める〈北海道〉 FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
@@ -103754,6 +103899,18 @@
    "first_seen": "2026-11-07T01:21:52Z"
   },
   {
+   "id": "100eaced7915c033",
+   "title": "大阪府で最大震度2の地震 大阪府・大阪岬町、和歌山県・和歌山市",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5rOVVuMll0dFl1Ymx2bm9CMV9sOUprUlJOdDIxa0dFc3lPaGVOR0NhNGtlQjFqeUo0Y2NJVWhSNjNSblo4U1l5dFhJbE9KQQ?oc=5",
+   "summary": "大阪府で最大震度2の地震 大阪府・大阪岬町、和歌山県・和歌山市 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-06T18:05:00Z",
+   "first_seen": "2026-11-07T16:55:42Z"
+  },
+  {
    "id": "82dedf749a9f3743",
    "title": "大阪府、和歌山県で最大震度2の地震 大阪府・大阪岬町、和歌山県・和歌山市",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1SMnZ0c2dwT0VTRVpseVA4VXZuNzVkVHJ2UDBrTFNjYmpYVGVTSk5qZnlOY2pteXZpM21vX0ZLVlM3cUNnSXRoRndKVF8tWUUxWU5PVGhFcw?oc=5",
@@ -103860,6 +104017,25 @@
    "lang": "ja",
    "published": "2026-11-06T16:37:19Z",
    "first_seen": "2026-11-06T17:59:27Z"
+  },
+  {
+   "id": "7722cb6ec61f35d8",
+   "title": "「非常に巧妙な形」ドコモが情報流出で謝罪 政府は緊急対策パッケージでサイバー対策強化に100億円支出【news23】",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9FSVkyeG9lQVNySUNZSTJHOUs2YmdoYmVGZ3dNcjlQdTJqbTByTlFJYmliZ01nYjhZWVhUbno5T05FejFPaXhCTTZ5Q1hfeUczSUZPYmh1Yw?oc=5",
+   "summary": "「非常に巧妙な形」ドコモが情報流出で謝罪 政府は緊急対策パッケージでサイバー対策強化に100億円支出【news23】 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "TBS NEWS DIG",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-06T16:34:21Z",
+   "first_seen": "2026-11-06T17:59:27Z",
+   "tv_match": {
+    "title": "政府がサイバー対策の緊急対応に約100億円「緊急対策パッケージ」とりまとめへ AI活用した対策の徹底など“概要案” 判明",
+    "outlet": "TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBHR0daN00tYmx6dWZ4TFR3OW1IMEtpSDdsWW5kRmZDeVhaUUtoMENhdkJLWDk1N3p0Nnk2X0FVeGpQTldKVE56Z3NVVW0zWThfa1dTSzZrRQ?oc=5",
+    "score": 0.33
+   },
+   "picked": false
   },
   {
    "id": "526474a10d23c41b",
@@ -107955,18 +108131,6 @@
    "first_seen": "2026-11-05T16:24:59Z"
   },
   {
-   "id": "ee65205670f876f5",
-   "title": "福岡県議会の“ドン”蔵内勇夫前議長「私は嘘はついていない」議員辞職後初の会見で金銭授受疑惑を改めて否定 「私は大変、名誉を汚されました」告発した議長・副議長経験者らに怒りも",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFB5Y3A4Qk1FemZiQWFhcGF4MUFrbWZGYXVJWTEweWY5SldCalpmU1A1T3JfSy1SS0ZtcjJhTXZmbER6ekN1dXF4dWtpeFV6UQ?oc=5",
-   "summary": "福岡県議会の“ドン”蔵内勇夫前議長「私は嘘はついていない」議員辞職後初の会見で金銭授受疑惑を改めて否定 「私は大変、名誉を汚されました」告発した議長・副議長経験者らに怒りも FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-05T12:00:00Z",
-   "first_seen": "2026-11-05T15:15:47Z"
-  },
-  {
    "id": "d4f035deadeb8f40",
    "title": "『我々は宇宙人』門脇監督インタビュー “10回も見た！”リピーターが続出する作品の熱の正体は【WBS未公開版】",
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1KTk1CZ3RESWRGUUMwd1hodGRHZ2xMbXlwbjFsS2tvb3dFR1E5ZDZfT0tKNEdNR29kMWt6eVJsbG51OFdRYkpBZGgycXduN0ItWjFZZ3I1ZDktUE1YYW13QzBn?oc=5",
@@ -107977,6 +108141,18 @@
    "lang": "ja",
    "published": "2026-11-05T12:00:00Z",
    "first_seen": "2026-11-05T13:31:53Z"
+  },
+  {
+   "id": "ee65205670f876f5",
+   "title": "福岡県議会の“ドン”蔵内勇夫前議長「私は嘘はついていない」議員辞職後初の会見で金銭授受疑惑を改めて否定 「私は大変、名誉を汚されました」告発した議長・副議長経験者らに怒りも",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFB5Y3A4Qk1FemZiQWFhcGF4MUFrbWZGYXVJWTEweWY5SldCalpmU1A1T3JfSy1SS0ZtcjJhTXZmbER6ekN1dXF4dWtpeFV6UQ?oc=5",
+   "summary": "福岡県議会の“ドン”蔵内勇夫前議長「私は嘘はついていない」議員辞職後初の会見で金銭授受疑惑を改めて否定 「私は大変、名誉を汚されました」告発した議長・副議長経験者らに怒りも FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-05T12:00:00Z",
+   "first_seen": "2026-11-05T15:15:47Z"
   },
   {
    "id": "9314d3b88a956f28",
@@ -123105,18 +123281,6 @@
    "kind": "tv",
    "lang": "ja",
    "published": "2026-10-31T19:26:21Z",
-   "first_seen": "2026-10-31T20:52:51Z"
-  },
-  {
-   "id": "9158e4131d7169e3",
-   "title": "ハロウィーンの秋葉原で違法改造車を一斉取り締まり 整備不良など10件摘発 騒音などのトラブル防止へ 警視庁万世橋署",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE15STRPRkk1S1hYdnJ4YWNNS3NQTGtJeVM2ZDVPeFBpMUZzTHBiQ3dtaHU4Nmlqcm85My1taGlUZ3VCdUpYVVdveHUzazF6UlBNYWJ6SGZKVQ?oc=5",
-   "summary": "ハロウィーンの秋葉原で違法改造車を一斉取り締まり 整備不良など10件摘発 騒音などのトラブル防止へ 警視庁万世橋署 TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-10-31T16:48:27Z",
    "first_seen": "2026-10-31T20:52:51Z"
   }
  ]
