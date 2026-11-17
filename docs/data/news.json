@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T03:05:42Z",
+ "generated_at": "2026-11-17T04:13:51Z",
  "settings": {
   "keep_days": 7,
   "tv_match_threshold": 0.32,
@@ -370,8 +370,8 @@
   {
    "name": "テレ東BIZ",
    "kind": "tv",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests"
   },
   {
    "name": "BBCニュース日本語",
@@ -382,8 +382,8 @@
   {
    "name": "ロイター日本語",
    "kind": "国際",
-   "ok": true,
-   "count": 3
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests"
   },
   {
    "name": "CNN.co.jp",
@@ -400,8 +400,8 @@
   {
    "name": "ニューズウィーク日本版",
    "kind": "国際",
-   "ok": true,
-   "count": 40
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests"
   },
   {
    "name": "毎日新聞",
@@ -491,7 +491,7 @@
    "name": "Googleニュース：Kis-My-Ft2",
    "kind": "エンタメ",
    "ok": true,
-   "count": 40
+   "count": 39
   },
   {
    "name": "Googleニュース：ソフトバンク株式会社",
@@ -502,14 +502,14 @@
   {
    "name": "Googleニュース：KDDI",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 429: Too Many Requests"
+   "ok": true,
+   "count": 32
   },
   {
    "name": "Googleニュース：J:COM",
    "kind": "通信",
-   "ok": false,
-   "error": "HTTP Error 429: Too Many Requests"
+   "ok": true,
+   "count": 19
   },
   {
    "name": "Googleニュース：製造・物流のAI",
@@ -526,15 +526,25 @@
  ],
  "featured": [
   {
-   "id": "5061febc21836529",
+   "id": "7def2736757a6e89",
    "related": [
-    "0f7c18a75c1d21ba",
-    "d559b4e290251628",
-    "9b3f5f387620fe05",
-    "c51b9f1ee2df3863",
-    "1778db5c6e53ddc1"
+    "04b842f44750bfc3",
+    "38802c341453a3bc",
+    "2f003a0549a289c7",
+    "e127079285c10a93",
+    "5061febc21836529"
    ],
    "outlets": 9
+  },
+  {
+   "id": "0f7947e5915183b1",
+   "related": [
+    "a3ba3df3a6d54602",
+    "b07f2defe8c08ed6",
+    "1caaabf02cd0cdc4",
+    "6f57bf91e2fe266c"
+   ],
+   "outlets": 5
   },
   {
    "id": "ddbdfa6f76ad3f1f",
@@ -548,19 +558,21 @@
    "outlets": 5
   },
   {
-   "id": "0f7947e5915183b1",
+   "id": "42d53a24ffb93bb7",
    "related": [
-    "a3ba3df3a6d54602",
-    "b07f2defe8c08ed6",
-    "1caaabf02cd0cdc4"
+    "6974f5ea8ba23b79",
+    "e99b842d9a3ab551",
+    "cddf2dcd23fa70ef",
+    "68fca0cb05a3000f",
+    "21c443ddcffcc67c"
    ],
-   "outlets": 4
+   "outlets": 5
   },
   {
-   "id": "7afc3feea28acab9",
+   "id": "4f06ccc020e0c972",
    "related": [
-    "edca2e129485e672",
-    "ee0b8554b99299b9"
+    "1543a54c005f3ac6",
+    "36efc2b2606e7e38"
    ],
    "outlets": 3
   },
@@ -575,6 +587,13 @@
    "outlets": 3
   },
   {
+   "id": "66b410d3d72bb909",
+   "related": [
+    "68eb5e8925226029"
+   ],
+   "outlets": 2
+  },
+  {
    "id": "dbc6c1735e6c8689",
    "related": [
     "192c81174aef4fee"
@@ -587,24 +606,637 @@
     "c4e42734b5cb1f4b"
    ],
    "outlets": 2
-  },
-  {
-   "id": "1543a54c005f3ac6",
-   "related": [
-    "36efc2b2606e7e38"
-   ],
-   "outlets": 2
-  },
-  {
-   "id": "fbdc00fc589ea118",
-   "related": [
-    "c48c5dbb827089c0",
-    "1a081a683f5607b6"
-   ],
-   "outlets": 2
   }
  ],
  "articles": [
+  {
+   "id": "0b006f31fe5365ca",
+   "title": "元プロ野球選手の江夏豊さん死去 78歳 球宴で9者連続奪三振",
+   "link": "https://mainichi.jp/articles/20261117/k00/00m/050/078000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T04:12:10Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/17/20261117k0000m050075000p/0c10.jpg?2",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "35ca211c191ff015",
+   "title": "関文科相「説明を重ねることは重要」 東大学長選巡る再回答受け",
+   "link": "https://mainichi.jp/articles/20261117/k00/00m/010/079000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T04:07:03Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/17/20261117k0000m010085000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "4f16d6ed22bb3e29",
+   "title": "東京都市大学がオーストラリア・クイーンズランド工科大学大学院修士課程とのアーティキュレーションプログラムを開始 ― 大学4年次から渡豪して修士課程の科目を先取り履修",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE84dlhtOXhfa0I2SU5MZlpONWxpUFlZZVNyOEZKUEsydDF2SWtNOGVVNlZ4Z3VrTmcyeWhxb3lLT1JFZEJKUTRIcTF2QkdDeUd5UEE?oc=5",
+   "summary": "東京都市大学がオーストラリア・クイーンズランド工科大学大学院修士課程とのアーティキュレーションプログラムを開始 ― 大学4年次から渡豪して修士課程の科目を先取り履修 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T04:05:52Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "94e06e07793948a6",
+   "title": "【関西初】大阪電気通信大学がARスポーツ「HADO」を導入〜デジタル技術と身体運動を融合した次世代のスポーツ教育・研究をスタート〜",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9NX2lXNHRjRG50ekJIQVFzOXRaRTBGR0dJOUctLU5KdmVRX0JONXBBVVprOWpxTHZYYW5Sb1haZHlsd3VMdElXZ2ZNcTJBTkxKTGc?oc=5",
+   "summary": "【関西初】大阪電気通信大学がARスポーツ「HADO」を導入〜デジタル技術と身体運動を融合した次世代のスポーツ教育・研究をスタート〜 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T04:05:44Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "0f82a4a48d85056f",
+   "title": "二松学舎大学で12月5日に「2026年度『論語』の学校」を開催 ― 高野登氏と安岡定子氏が講演 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5wWjN1R2JFWEEtMW9DaWZvTldNR1ZySURYQ1FySUZ1T3A3X3E4TTFVS2NXdlE1UnJvZnZBXy1PRl9DZmJGLVNNVEVKYW5TSkdsWFE?oc=5",
+   "summary": "二松学舎大学で12月5日に「2026年度『論語』の学校」を開催 ― 高野登氏と安岡定子氏が講演 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T04:05:40Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "28f58326226d9c43",
+   "title": "武蔵エナジーソリューションズが経済産業省「GX地域共創補助金」に採択 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBFeG9hRFFUemJOQW5ZRWxwOGYybjBhX0V2RFltdlRkRDN2Y0plNGMycGhDcTk0akhFWllCNWtRa0Q5ck16aGlqX2tVYkdLUEhodHc?oc=5",
+   "summary": "武蔵エナジーソリューションズが経済産業省「GX地域共創補助金」に採択 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T04:05:38Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "6c18eeed6b178b9b",
+   "title": "Duolingoとポケモンがコラボ、期間限定イベントや特別背景ポケモンが登場",
+   "link": "https://k-tai.watch.impress.co.jp/docs/news/2157025.html",
+   "summary": "Duolingoとポケモン、Scopely Exploreはグローバルコラボレーションを17日に開始した。コラボ期間中、Duolingoではポケモンをテーマにした期間限定イベントが実施されるほか、ポケモンGOでは“言語”をテーマにした「タイムチャレンジ」が登場する。",
+   "outlet": "ケータイ Watch",
+   "feed": "ケータイ Watch",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:55:59Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2157/025/main.png",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "76798c0dbcd132f7",
+   "title": "Japan's NTT Docomo Hit by Third Network Outage This Month; Communications Minister Takeda Calls It 'Deeply Regrettable,' Demands Root-Cause Probe",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5QZTFWVnRGN2lDWnh5a0VpUURSd2NzWEw0VVRTOEdabFRsZldpa1d0UmdZTDdKX3BNRDRpajNxbEtHSVdrUVBucXZhaXdlNHdxMTFDbktHSWNrSlFzRnR3a3o3ZTZZek1rZEQxSUQ0MkxBUU9TcUE?oc=5",
+   "summary": "Japan's NTT Docomo Hit by Third Network Outage This Month; Communications Minister Takeda Calls It 'Deeply Regrettable,' Demands Root-Cause Probe BigGo Finance",
+   "outlet": "BigGo Finance",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-17T03:55:47Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "7def2736757a6e89",
+   "title": "ドコモ通信障害、今月3度目 藤井総務相「大変遺憾」根本原因の究明を要求",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE84cWlDdkQxYktUclN4WFRuRkFDdU9qSHBzdUpKeHNzU0Y2d0F0RE1Vdm85Ykc0dk5KcV82VWpGZ0U3Y2ZLdjVNN2dXajl1SU1GbF9XS1ZiV3FXYW9tbndpc1Y3WXlGV1JRaFdfX1NGSDNjQ3hW?oc=5",
+   "summary": "ドコモ通信障害、今月3度目 藤井総務相「大変遺憾」根本原因の究明を要求 BigGo ファイナンス",
+   "outlet": "BigGo ファイナンス",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:55:38Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "NTTドコモ全国規模で通信障害 今月3度目",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1CWDZYeVk2cFltbktxcjRaT2lMZ2F4UGNScnhTekE0eGVNOTQzQW51VkhuWnAxZFRaOUpJWTFsVktrYUZNWjhJYU91NVFzY0VxVFFCcVQ4Qnc4VXBJbHc?oc=5",
+    "score": 0.33
+   },
+   "picked": false
+  },
+  {
+   "id": "3d74f689b403ab16",
+   "title": "フアン前CEOを復帰させる動き、トランプ氏も支持 エヌビディアは取り合わない意向か",
+   "link": "https://www.bbc.com/japanese/articles/cx5y14qy79mvo?at_medium=RSS&at_campaign=rss",
+   "summary": "中国のスパイと疑われる人物らとの不倫をめぐって先週、米半導体大手エヌビディアの前最高経営責任者（CEO）を辞任したジェンスン・フアン氏を、同社トップに復帰させようとする動きがテクノロジー業界でみられる。16日には、トランプ米大統領も同氏の復帰への支持を表明した。エヌビディアは、こうした動きに取り合わない意向とされる。",
+   "outlet": "BBCニュース日本語",
+   "feed": "BBCニュース日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/78e4/live/4bc24280-e1d2-11f1-b8c8-67fa35f5afdb.jpg",
+   "published": "2026-11-17T03:53:53Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "トランプ氏 エヌビディア前CEOの復帰検討に理解 米商務長官を擁護する姿勢",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBVVkxaNTRDM3R4bloyWGdHWmt1eHdpNlhtWWRVc0o1S3pZeFVfSTF5ZklWQTVHa0Vyd3BuN2FDZ1RsUkhSUVlLTkpXS1RGM3JJbGttZHY0bGg3M0hkdWFiMkE4U1NtWTVNZ2FsczREV2dXR2N3NXJ3WDh3?oc=5",
+    "score": 0.38
+   },
+   "picked": false
+  },
+  {
+   "id": "18f77c5f2bf9a82b",
+   "title": "CFMEU pushed to get notorious Bandidos member hired on construction project, Big Build royal commission hears",
+   "link": "https://www.theguardian.com/australia-news/2026/nov/17/cfmeu-bandidos-bikie-joel-leavitt-big-build-royal-commission-ntwnfb",
+   "summary": "Bikie Joel Leavitt, who has a criminal history including riot, affray and assaulting police, tells inquiry he can’t recall why union was pushing for him Get our breaking news email , free app or daily news podcast A bikie and former CFMEU member says he can’t recall why union rep…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/0647c991f3650ed66a57bb884ec98efb1d585bae/1126_363_2069_1656/master/2069.jpg?width=140&quality=85&auto=format&fit=max&s=0ec39ebf5a0de5d3a232665c1f470c92",
+   "published": "2026-11-17T03:51:23Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "306740c843aa2320",
+   "title": "東大総長選考、文科相「検証の中で説明責任を果たして」改めて見解",
+   "link": "http://www.asahi.com/articles/ASVCK0GWPVCKUTIL003M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:50:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261117001039_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "73d86de261d181df",
+   "title": "ロシア機が領空侵犯か 福岡・沖ノ島周辺で：時事ドットコム",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBwZ0JROV9yanl5TG4xbmMzbVBQWkpmTUZXVDhpMlNncGNWaEw1cEdrU2lrRmdOR2RTWkxlcWtNd0JTMkk5MzFGUTBsc1pyZVVQdWYxWkl0bkxZTGVlRFU5aU5yZw?oc=5",
+   "summary": "ロシア機が領空侵犯か 福岡・沖ノ島周辺で：時事ドットコム 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:50:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "ロシア軍機2機が日本の領空侵犯か 小泉防衛大臣「主権の重大な侵害、全く受け入れられない」と厳重抗議 福岡・沖ノ島周辺",
+    "outlet": "FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBxR1NVZ1lVNG1uUEhDc0VSQ3lRc1NHSUMzVEpucENzdmdCT2V3ZDNQTWZ0b2JYTzc5cWI2cmZhTTlYTWxEcjdYUGpmanNtZw?oc=5",
+    "score": 0.56
+   },
+   "picked": false
+  },
+  {
+   "id": "04b842f44750bfc3",
+   "title": "ドコモ通信障害 藤井総務大臣「大変遺憾」 今月3度目 「根本原因の究明を」（テレビ朝日系（ANN））",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4yRTc3ZExUWjUxRVozOVhFVlVqbU1rcV9MNzJRSF90LVdVOHJSVHBEMGhnUldqbUZMRmpaczRMekpwaVRGS19CTU0wRklFWkNxTFRIWUdVMWxXeE9XZ1QycWNHb09uZlpoUW8xMjYybmZpSGJWMFEwQ3VqU0Z2bkE?oc=5",
+   "summary": "ドコモ通信障害 藤井総務大臣「大変遺憾」 今月3度目 「根本原因の究明を」（テレビ朝日系（ANN）） Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:47:53Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "66b410d3d72bb909",
+   "title": "クレカ22社とJCCA、フィッシングの注意喚起を実施",
+   "link": "https://k-tai.watch.impress.co.jp/docs/news/2157011.html",
+   "summary": "NTTドコモ・フィナンシャルグループ、auフィナンシャルサービス、PayPayカード、楽天カードなどクレジットカード会社22社と日本クレジットカード協会（JCCA）は、フィッシングに関する注意喚起を17日に共同で開始した。",
+   "outlet": "ケータイ Watch",
+   "feed": "ケータイ Watch",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:47:19Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2157/011/00.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "969be28344af42a1",
+   "title": "Macron visits Malaysia as France seeks closer defence and rare earths ties",
+   "link": "https://www.france24.com/en/asia-pacific/20261117-macron-malaysia-france-defence-rare-earths-trade-energy",
+   "summary": "French President Emmanuel Macron will meet Malaysian Prime Minister Anwar Ibrahim in Kuala Lumpur on Tuesday to discuss strengthening defence, trade, energy and critical minerals co-operation. Macron's two-day visit, his first since 2017, comes ahead of the countries' 70th annive…",
+   "outlet": "© Ludovic Marin, AFP",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/7f1d673a-e1ec-11f1-9596-f71d22e7fea9/w:1024/p:16x9/7f6d81c95ab87a584e5082fe94983065fe1e7685.jpg",
+   "published": "2026-11-17T03:40:31Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "cbadeb7ff8136fa7",
+   "title": "高知県 令和10年度（令和９年度＝2027年実施）採用試験の概要を発表",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA0Qmw1ZXhycHFNZkhEUGluNXd3QVdROVEtRHZyNFlUdW1FOExvaEpJZ0d5bDZBOTVMWlN4TWttY0dqMmhmZTdvRl9RVE9BckZDMjFpWTA4MTZrUGl6cC1n?oc=5",
+   "summary": "高知県 令和10年度（令和９年度＝2027年実施）採用試験の概要を発表 教員採用試験対策サイト",
+   "outlet": "教員採用試験対策サイト",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:37:38Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "ca53f28829543b5f",
+   "title": "Nation of No One breaks down the infectious chaos of ‘5G Fever Dream’ -",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5od3FEQkhpZE1UUlpjYWZwR1BOZFBpeVA2Y2lXOGJERVZsaWFPODZmTG9jVmRqYmxVZkZ0eGYxQzc5Ri14N1h0cTZoWmJkSVFaY2Izb0d2blY5ekk?oc=5",
+   "summary": "Nation of No One breaks down the infectious chaos of ‘5G Fever Dream’ - Happy Mag",
+   "outlet": "Happy Mag",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-17T03:35:42Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "1a8fdea425592745",
+   "title": "APEC首脳会議を控え、横琴・マカオの協力は地域における開放と協力の縮図を提示 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBoXzUzVkZzRVdnTUl1YVlBcWFCUVFFdTRlTjlGaHdpOEFWX1JUaDJrQU5CUmE1Tm1idnduR3JsYWw0VWdaT3hqb0JKNjlUd1Z5bnc?oc=5",
+   "summary": "APEC首脳会議を控え、横琴・マカオの協力は地域における開放と協力の縮図を提示 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T03:34:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "fd856071191fd106",
+   "title": "ドリフト走行でひき逃げ容疑で19歳を逮捕 「殊更滑走」全国初適用",
+   "link": "http://www.asahi.com/articles/ASVCK11KRVCKUTNB001M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:30:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261117001382_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "4fc35c6d2c478734",
+   "title": "STOMP ストンプ『STOMPシート』購入者特典公開！ ブラックフライデーキャンペーン実施決定！ 写真1枚 国際ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1iRG1IWXdUN0x0MWVCa3pMczFuSkR4dEVJOGpUUkFmbEdQd1BSY3ZtRmZNVlBHZjMwZS02YUc0Ny1rZ183Wk5qUkF1Q0I2ajZISWc?oc=5",
+   "summary": "STOMP ストンプ『STOMPシート』購入者特典公開！ ブラックフライデーキャンペーン実施決定！ 写真1枚 国際ニュース AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T03:29:42Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "270f24c46763e664",
+   "title": "江夏豊さんが78歳で死去 阪神、広島などで活躍した「優勝請負人」",
+   "link": "http://www.asahi.com/articles/ASVCK126DVCKPTQP002M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:28:33Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261117001597_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "a997843cf22595e5",
+   "title": "‘Let me talk to Snez’: court hears recording of Sam Wood saying wife Snezana could recant domestic violence allegations",
+   "link": "https://www.theguardian.com/australia-news/2026/nov/17/sam-wood-snezana-bail-domestic-violence-allegations-ntwnfb",
+   "summary": "Fitness influencer’s lawyer calls comment during taped conversation between client and his father ‘ill-judged’ but denies it amounts to a suggestion of interfering with a witness Get our breaking news email , free app or daily news podcast A Queensland court has been played a pri…",
+   "outlet": "The Guardian World",
+   "feed": "The Guardian World",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://i.guim.co.uk/img/media/1d82fb024ed7d912bb4fc5f2d3293dc1ca863ebc/0_0_1333_1065/master/1333.jpg?width=140&quality=85&auto=format&fit=max&s=8a763c9c758960a86a5c958e048f1254",
+   "published": "2026-11-17T03:27:05Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "3d219bdc7b583674",
+   "title": "「ボスの中のボス」、有力カルテル率いた受刑者が80歳で病死 メキシコ",
+   "link": "https://www.cnn.co.jp/world/35254988.html?ref=rss",
+   "summary": "メキシコで最初の主要な麻薬カルテルを創設したミゲル・アンヘル・フェリックス・ガジャルド受刑者が、ハリスコ州グアダラハラの病院で死亡した。80歳だった。 「ボスの中のボス」とも呼ばれた同受刑者は、グアダラハラ・カルテルの指導者の一人。メキシコ国内における大規模な麻薬密売の基盤を築き、米国へのコカイン密輸ルートの変革にも関与した。 ガジャルド受刑者は、1985年に発生した米麻薬取締局（DEA）の捜査官の誘拐...",
+   "outlet": "CNN.co.jp",
+   "feed": "CNN.co.jp",
+   "kind": "国際",
+   "lang": "ja",
+   "image": "https://www.cnn.co.jp/storage/2026/11/17/a644997f5d5780c4529ba0967288b39b/t/288/432/d/reuters-archive-final.jpg",
+   "published": "2026-11-17T03:27:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "e46315acb36ab20f",
+   "title": "富岳への不正アクセス、木原官房長官「研究活動への影響最小限に」 原因究明を指示",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJLWR0TW1XUDhoOFk5NGFBYTZHd2sxczNaLVVRY3YwaWJFMm9VVFJRRDJaMDJ2YlUwQ3lPdEpmaXNiNzVMS2MtTFBwb1JBVmRVNVRHVDQtQlM2MHM0NkVJY1hnLTctNEM4ekJRcUowRTZNOWo2?oc=5",
+   "summary": "富岳への不正アクセス、木原官房長官「研究活動への影響最小限に」 原因究明を指示 BigGo ファイナンス",
+   "outlet": "BigGo ファイナンス",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:25:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2b4e1d74f1dd61b0",
+   "title": "官僚が政治資金パーティーで説明、関文科相「法的に問題ない」",
+   "link": "https://mainichi.jp/articles/20261117/k00/00m/010/069000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:24:49Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/09/17/20260917k0000m010109000p/0c10.jpg?1",
+   "tv_match": {
+    "title": "野党追及へ…官僚“講師”に議員会館パーティー 関文科大臣に新たな問題",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aSVhVZWszTkQxaVdfdzN1QkU3cVVxNnRMd01ValBrVFZ0dmhLT2JXYm5tTWZ1cVJteWR2ZkVXZjIxdWNnMGpkYzFGLXpTT0dBMi05RlBhZVRDMm9zSW9MdElMdEY3Ni1idlNRVDdpUmdLN0E?oc=5",
+    "score": 0.33
+   },
+   "picked": false
+  },
+  {
+   "id": "49bbbb2e7e92f694",
+   "title": "金正恩氏、建設中のスキーリゾートを視察 娘らがゲレンデ滑走",
+   "link": "https://mainichi.jp/articles/20261117/k00/00m/030/068000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:21:52Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/11/17/20261117k0000m030070000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "17966c970ca4c126",
+   "title": "ispaceとの連携をNTT・KDDIが相次ぎ発表｜各社の技術と月面インフラ構想を解説",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE42M2djYWIwTmh5cUVDSmVwQkEwWWxPOGgxQlFyUzNTN2ZkaXFpNlpycVhjMGRrbjdnQjVJVXV4eWR2cmZRQkE5SVg5UmpQdXZMcmIw?oc=5",
+   "summary": "ispaceとの連携をNTT・KDDIが相次ぎ発表｜各社の技術と月面インフラ構想を解説 SPACE CONNECT",
+   "outlet": "SPACE CONNECT",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:20:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "NTT 宇宙開発ベンチャーispaceと連携 地球と月面を光通信で繋ぎ月のインフラ構築へ",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9PQ1UzUUM3TDNNUEZwalM3ZVhsQi1Hd3IycktsLVJUakpBNHMxSmtSa2h6eVVYbW85SUtRYmcyYTd4UHJ2NDhjZXRKaXVGbjdScWFTZkhFa2VRS1RZblpRN0c4UlFudVJxdW5oQ2txMjdaZw?oc=5",
+    "score": 0.38
+   },
+   "picked": false
+  },
+  {
+   "id": "cd9534a9be13633b",
+   "title": "香川県 令和10年度（令和９年＝2027年実施）試験大綱を発表。１次試験は7月10日より実施",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0yR0hZLTR4X3dDdVNPMy0yQ1MyM1loNGU5MFFPSUhDYldxZXpjd0Fxandnb2lURTZQRkNlN1M5MWZQNVlSdDFsTndSa1JGdXV4OEpxTlFGcl8tZHp2eW0w?oc=5",
+   "summary": "香川県 令和10年度（令和９年＝2027年実施）試験大綱を発表。１次試験は7月10日より実施 教員採用試験対策サイト",
+   "outlet": "教員採用試験対策サイト",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:17:36Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "09b0b353850f521b",
+   "title": "農相辞任から1カ月、姿消す簗氏 「おわび行脚」の気配なく",
+   "link": "https://mainichi.jp/articles/20261116/k00/00m/310/177000c",
+   "summary": "",
+   "outlet": "毎日新聞",
+   "feed": "毎日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:15:09Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://cdn.mainichi.jp/vol1/2026/10/25/20261025k0000m010222000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "20f672f73eb2fdfc",
+   "title": "IIJmio「すみっコぐらし」コラボ第3弾、新規契約で限定グッズ",
+   "link": "https://k-tai.watch.impress.co.jp/docs/news/2156991.html",
+   "summary": "インターネットイニシアティブ（IIJ）は11月17日より、MVNOサービス「IIJmio」で「すみっコぐらしコラボキャンペーン第3弾」を開始した。期間は12月24日まで。特設ページから対象プランを新規契約すると、限定グッズや壁紙が進呈される。",
+   "outlet": "ケータイ Watch",
+   "feed": "ケータイ Watch",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:15:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2156/991/iij01.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "0793abc141c2f34f",
+   "title": "ソフトバンク、iPhone 18 Proを実質値上げ MNP・オンラインショップで",
+   "link": "https://k-tai.watch.impress.co.jp/docs/news/2156980.html",
+   "summary": "ソフトバンクは17日、「iPhone 18 Pro（256GB）」と「iPhone Air（256GB）」のオンラインショップにおける割引額を改定した。",
+   "outlet": "ケータイ Watch",
+   "feed": "ケータイ Watch",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:14:56Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2156/980/iphone18pro.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "d2f7dbf188eeb901",
+   "title": "ソフトバンク、iPhone 18 Proを実質値上げ MNP・オンラインショップで",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MRDNSN0x6UFVlNGM4N0NaeV83SV9lalB5bmFpTzNfYmVOZ1JfRFFwVXphZElHNXdyR0xBd3JSSlVmc2Jick5oZmxFYnZXbWZOaWF3bkpneHk1d1RkRFlDVEtpTmRIeFU?oc=5",
+   "summary": "ソフトバンク、iPhone 18 Proを実質値上げ MNP・オンラインショップで ケータイ Watch",
+   "outlet": "ケータイ Watch",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:14:56Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "78f74af01219f09c",
+   "title": "Tankers hit in Strait of Hormuz as drone raises alarm at Iraq gas field",
+   "link": "https://www.aljazeera.com/news/2026/11/17/tankers-hit-in-strait-of-hormuz-as-drone-raises-alarm-at-iraq-gas-field?traffic_source=rss",
+   "summary": "Iran reports tanker mine strikes as a drone alert in Iraq and the arrival of a US aircraft carrier raise tensions.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-11-17T03:12:54Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/getty_6af466ae1a-1794401966.jpg?resize=1920%2C1440",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "64035bf6b53d2236",
+   "title": "次のジェイムズ・ボンド役に英俳優ロバート・パティンソン氏が決定 英王室も歓迎メッセージ",
+   "link": "https://www.bbc.com/japanese/articles/cm1dv364yng2o?at_medium=RSS&at_campaign=rss",
+   "summary": "映画「トワイライト」シリーズや「ザ・バットマン」などの作品で知られるイギリス人俳優ロバート・パティンソン氏（40）が、次期ジェイムズ・ボンド役に決定した。アマゾンMGMスタジオが16日、ソーシャルメディアへの投稿で、英スパイ007（ジェイムズ・ボンド）に扮したパティンソン氏の写真を公開した。",
+   "outlet": "BBCニュース日本語",
+   "feed": "BBCニュース日本語",
+   "kind": "国際",
+   "lang": "ja",
+   "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/6cce/live/ac752f20-e209-11f1-99a1-253766e7ad8b.jpg",
+   "published": "2026-11-17T03:11:52Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "英王室も異例のコメント発表 007シリーズ新ボンド役にロバート・パティンソン",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1maE9qczNQQVpkUVFPTVh5ZDhsNUFYbzkxSnp6SWFrX1pMalg1UVBtQkVHTUI4U1NoMlNHSUJRRmxRUDBwWkl5OTlQclk1NVktRkplekNObmx2MFc3OG5rcmpCNkFqcWtTZFpXWDUwUGE?oc=5",
+    "score": 0.41
+   },
+   "picked": false
+  },
+  {
+   "id": "b4bc0dc8d6e0eff7",
+   "title": "Trump heads to Asia for historic nuclear talks with China and Russia",
+   "link": "https://www.france24.com/en/asia-pacific/20261117-trump-asia-nuclear-talks-china-russia",
+   "summary": "US President Donald Trump headed to Asia on Monday for economic talks and a planned trilateral meeting with Chinese President Xi Jinping and Russian President Vladimir Putin on nuclear issues and the war in Ukraine. Trump also raised the possibility of meeting North Korean leader…",
+   "outlet": "© Manuel Balce Ceneta, AP",
+   "feed": "France 24",
+   "kind": "overseas",
+   "lang": "en",
+   "image": "https://s.france24.com/media/display/f3560fd6-e1e6-11f1-a0e9-29048b396e03/w:1024/p:16x9/AP26320545342836.jpg",
+   "published": "2026-11-17T03:07:59Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "c61254b14e8918b5",
+   "title": "株式会社エディオン、障がいのある方を対象としたアートコンテストを開催！今年のテーマは「あなたの『いいな』のカタチ」",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE00cGVrWTU5YTNNX01rdUxWU3g2T0tBRl9yNnR0Nnp1UDM4bGVKdTg0RUVnNC0wbUxVWE05aE85Z1hocUJxcVF3OV9CdllmdmFVdEE?oc=5",
+   "summary": "株式会社エディオン、障がいのある方を対象としたアートコンテストを開催！今年のテーマは「あなたの『いいな』のカタチ」 AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-17T03:04:57Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "38802c341453a3bc",
+   "title": "NTTドコモ 今月3回目の通信障害に対し、藤井総務大臣「根本原因の究明求める」",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5jN3p6ZGdTUG9DVlgxTjE1bGJSMVFVckdvQ3gwM21RMlpjbnRNTmRtUEltdDExVTZxdTJiaWV2SHNyLUpfOW1mbmp1cmc4V2p2T21OX0hpbw?oc=5",
+   "summary": "NTTドコモ 今月3回目の通信障害に対し、藤井総務大臣「根本原因の究明求める」 TBS NEWS DIG",
+   "outlet": "TBS NEWS DIG",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:04:21Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2f003a0549a289c7",
+   "title": "NTTドコモ 今月3回目の通信障害に対し、藤井総務大臣「根本原因の究明求める」",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBkZXpVS3hsZ1o3di1IVnVFTFFiUnlXVUpoVFdVZGRkc0Z3eUZkUGpMeGV3NS1yYm9fXy1EMVIwTWZPNy1vQjg1QU50NWlneWJndnI2Q0hKNzVkbmlzUGE1dnpFRzJNbENra0JrSGNyZHNaQdIBd0FVX3lxTFBYNmE3UEVVblNPWkVhTW9zSkI4YVA3MDV5aU5weEp3TzduUzZrcHM0cHhYWExUeUZzVzZmZHgyUjRkSTJ5Wkk2YzMtb0hsb1RhXzhCTVZkUlpSQTlsWC1JVjlmMllYOVE4RlBLSThLN0Z0a1JxV05F?oc=5",
+   "summary": "NTTドコモ 今月3回目の通信障害に対し、藤井総務大臣「根本原因の究明求める」 ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T03:04:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "82bcf7488880d147",
+   "title": "愛子さま、シンガポールへ出発 ２度目の外国公式訪問",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9LcFpZckgxOVhpMHFVaEtOeHFTeF9WQTNjQ1VSZ1h2cDhuSk9mLVpiREY3bVQxRHpuUFlENTgzZnJ3SmhSdFZKUlc5czlfT0Zyc3RGcmNYUzJDdlpoeXlTNkVBcw?oc=5",
+   "summary": "愛子さま、シンガポールへ出発 ２度目の外国公式訪問 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:03:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "【速報】愛子さまシンガポールに向け皇居を出発 2回目の外国公式訪問 大統領表敬やランの命名式、植樹式などに出席 21日まで滞在へ（2026年11月16日掲載）",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBiT2ZfanN0cUJ0endMTl9nZ252OFNWdGFBLWNQYU4zVm1wNWhITk1jZXBjNW9HS2FpQ2R0dndhTnNGUkpSeXhqREZyTHA2VjNwUHlwdEFrS1RHcFhVWVRwMEZ1SWhrM0JwU2tmaUNHTUJyZTB4OU4xbkZqa0Y?oc=5",
+    "score": 0.8
+   },
+   "picked": false
+  },
   {
    "id": "7203668312ab127e",
    "title": "画像・写真：カボベルデ大統領が再選：時事ドットコム",
@@ -655,6 +1287,43 @@
    "picked": false
   },
   {
+   "id": "7c09a44e487f61d9",
+   "title": "親子とみられるクマ2頭、前橋市内に出没 50代男性が襲われてけが",
+   "link": "http://www.asahi.com/articles/ASVCK0PWPVCKUHNB003M.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:00:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261117001142_comm.jpg",
+   "tv_match": {
+    "title": "【速報】前橋市の住宅街でクマ2頭目撃 付近で男性襲われけが 命に別状なし",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE80YjFGUlJablJUMHJiLXRUREplLU0zLWg2QU1uN1RoMVFmLTI0UkNBd0dsRWFkZU16UVBHemZScTZqMnRkVVZ3ZDcyZFNlakZFdVY4V0hlRExTcXUyTHlOSXJ3cjRnWE9WSmZwWXJYblFoZw?oc=5",
+    "score": 0.33
+   },
+   "picked": false
+  },
+  {
+   "id": "0f7f0319d485dcab",
+   "title": "車の排ガス、ミニカーに変身 マツダが挑む「CO2の循環」",
+   "link": "http://www.asahi.com/articles/ASVCK0F1KVCKULFA00YM.html?ref=rss",
+   "summary": "",
+   "outlet": "朝日新聞",
+   "feed": "朝日新聞",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T03:00:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://imgopt.asahi.com/ogp/AS20261117000988_comm.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "69adedd6dc960e30",
    "title": "楽天モバイル、AQUOS sense11を11月26日発売！価格は91,920円、最大16,000ポイント還元",
    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9PTWFvMF9QeTMtQXZBVHBaYWVaX2pLeUV2WXp2cVJ0VnA2b2NfaWMySF9aSlluVWxpaTVGVzZ2QVZWdGxDREY5MzRZeTgwMkZLNEJUbHhZOWdtQk1vNURvOA?oc=5",
@@ -682,6 +1351,50 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/11/17/20261117k0000m010067000p/0c10.jpg?1",
    "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "133b68f04e57787d",
+   "title": "China Unicom and Huawei Build a“5G-AxAI” Smart Wind Farm Cluster Benchmark for Inner Mongolia Energy Group",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBFSG1ibW1aSlBaLXpWai1zZm9mN1E4eUJXdzYydWFucGVpYmZFRVNBS2NRYnNIYkVXbEFDd1JwalphWkVnbE95R2REbUZwY0RfQlFtazUyLURUYlROd3dFZUV3?oc=5",
+   "summary": "China Unicom and Huawei Build a“5G-AxAI” Smart Wind Farm Cluster Benchmark for Inner Mongolia Energy Group Huawei",
+   "outlet": "Huawei",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-17T02:56:09Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "edd702b047b90299",
+   "title": "【メディア出演情報】11/11 J:COM「ジモトに乾杯！居酒屋ゴルゴ」の撮影がありました",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE44S0ZZV0hjQWJrNkVTakdEMk5JVGszSGNNYTBnUlhkQlB0ZkxIU2h1d3pEMUFmek9TSmRreWFlRllrZnBvckZUTFR3ck1TUnhDQnV4VGxtS3gzSU51clRjWkpjb3hDMTRaTUE?oc=5",
+   "summary": "【メディア出演情報】11/11 J:COM「ジモトに乾杯！居酒屋ゴルゴ」の撮影がありました Tリーグ公式サイト",
+   "outlet": "Tリーグ公式サイト",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T02:55:28Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "c6cf2fe294c0008c",
+   "title": "US moves to block China’s remote access to AI chips amid Nvidia scandal",
+   "link": "https://www.aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal?traffic_source=rss",
+   "summary": "The Trump administration introduces export licence requirement for Malaysia, Thailand, Indonesia, Singapore and Brazil.",
+   "outlet": "Al Jazeera",
+   "feed": "Al Jazeera",
+   "kind": "overseas",
+   "lang": "en",
+   "published": "2026-11-17T02:52:56Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/2026-03-17T231408Z_1912828925_RC2M6KA5I6G3_RTRMADP_3_NVIDIA-CHINA-1794876521_9866d0-1794880024.jpg?resize=1200%2C630&quality=80",
+   "tv_match": "unknown",
    "picked": false
   },
   {
@@ -769,6 +1482,22 @@
    "picked": false
   },
   {
+   "id": "9bb70011ab5519c1",
+   "title": "ドコモSMTBネット銀行、ドコモ回線ユーザーのメインバンク利用で毎月ポイント還元（上限なし）",
+   "link": "https://www.itmedia.co.jp/mobile/articles/2611/17/news054.html",
+   "summary": "ドコモSMTBネット銀行は、11月13日から「～ドコモ回線ご利用者さま向け～預けてたまるメインバンク特典プログラム」を実施。ドコモ回線利用かつメインバンクのユーザーへ預金月末残高100万円につき毎月dポイントを進呈する。",
+   "outlet": "ITmedia Mobile",
+   "feed": "ITmedia Mobile",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T02:36:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "image_checked": true,
+   "image": "https://image.itmedia.co.jp/mobile/articles/2611/17/l_asa_docomo_01.jpg",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "9202dc38d5a9efbb",
    "title": "ロシア機とみられる航空機2機が福岡沖で領空侵犯 外交ルートで抗議",
    "link": "http://www.asahi.com/articles/ASVCK0H18VCKUTIL007M.html?ref=rss",
@@ -782,10 +1511,10 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261117001044_comm.jpg",
    "tv_match": {
-    "title": "【速報】福岡県の沖ノ島北西の領空を侵犯 ロシア機とみられる2機 築城基地から戦闘機が緊急発進",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQamY3b01kTEo1eHdFOWNscUVnLXFUT3ljbDl4RGRCbkNYWVB1cjFsVXJHUlpXYTNBanJ1RzlMTEtPaTJWbW1Nc3RBbkM5VTlrM3dZcHVvS0l5bzlCS0FKVWRhWFNTWTVROWdBeGdXOVBZWkp0VUM2S3FwcU9UeWFMTWRiREluZU0?oc=5",
-    "score": 0.35
+    "title": "ロシア軍機2機が日本の領空侵犯か 小泉防衛大臣「主権の重大な侵害、全く受け入れられない」と厳重抗議 福岡・沖ノ島周辺",
+    "outlet": "FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBxR1NVZ1lVNG1uUEhDc0VSQ3lRc1NHSUMzVEpucENzdmdCT2V3ZDNQTWZ0b2JYTzc5cWI2cmZhTTlYTWxEcjdYUGpmanNtZw?oc=5",
+    "score": 0.38
    },
    "picked": false
   },
@@ -1135,6 +1864,20 @@
    "picked": false
   },
   {
+   "id": "4f06ccc020e0c972",
+   "title": "【東京ゲームショウ2026】キスマイ宮田俊哉、最終日リアル開催中止も来年参加に意欲「今から休みを取っておこうと思います」",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOenFQU0tWbU9nNTZ6SUxxb2txUVVVU3FFN2drcVptLV9DYmNaeFpCUWJSWGEtdzlQaTFZV25Zcl8wX1ljbDFHQ3ZwZGwtNkxMTjBvcldSN1ExbnFzWGRyVU9JYTItS09rOXo2UDZQXzBDT1czc1dFX254ZkNQSUY5WG1Hb2xTZw?oc=5",
+   "summary": "【東京ゲームショウ2026】キスマイ宮田俊哉、最終日リアル開催中止も来年参加に意欲「今から休みを取っておこうと思います」 山陽新聞",
+   "outlet": "山陽新聞",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-17T02:02:14Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "17a9331fc1ca3d13",
    "title": "九州・山口経済,経済プラス:日鉄・八幡が挑む世界初の電炉は、かつての「下克上」にあらず",
    "link": "https://mainichi.jp/articles/20261114/k00/00m/020/053000c",
@@ -1256,10 +1999,10 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2019/04/05/20190405k0000m040191000p/0c10.jpg?1",
    "tv_match": {
-    "title": "【速報】福岡県の沖ノ島北西の領空を侵犯 ロシア機とみられる2機 築城基地から戦闘機が緊急発進",
-    "outlet": "日テレNEWS NNN",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQamY3b01kTEo1eHdFOWNscUVnLXFUT3ljbDl4RGRCbkNYWVB1cjFsVXJHUlpXYTNBanJ1RzlMTEtPaTJWbW1Nc3RBbkM5VTlrM3dZcHVvS0l5bzlCS0FKVWRhWFNTWTVROWdBeGdXOVBZWkp0VUM2S3FwcU9UeWFMTWRiREluZU0?oc=5",
-    "score": 0.38
+    "title": "ロシア軍機2機が日本の領空侵犯か 小泉防衛大臣「主権の重大な侵害、全く受け入れられない」と厳重抗議 福岡・沖ノ島周辺",
+    "outlet": "FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBxR1NVZ1lVNG1uUEhDc0VSQ3lRc1NHSUMzVEpucENzdmdCT2V3ZDNQTWZ0b2JYTzc5cWI2cmZhTTlYTWxEcjdYUGpmanNtZw?oc=5",
+    "score": 0.43
    },
    "picked": false
   },
@@ -1380,6 +2123,20 @@
    "picked": false
   },
   {
+   "id": "0220898309b1f46e",
+   "title": "利用者の個人情報流出か 理研、スパコン「富岳」など：時事ドットコム",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA5UnM1SGZXcU5WVGRVZ1pyYXpET3hkM3ZKeFlVNFlnZU1oR213dTlVRHJwT0ZpT3B1Yk5Jd09fRkNHQ1otTEwwVkdtcExwWFREcVV0RUJyZkU1S2w0b1pKSGctbw?oc=5",
+   "summary": "利用者の個人情報流出か 理研、スパコン「富岳」など：時事ドットコム 時事ドットコム",
+   "outlet": "時事ドットコム",
+   "feed": "時事ドットコム",
+   "kind": "国内",
+   "lang": "ja",
+   "published": "2026-11-17T01:45:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "8617b652910f5c9d",
    "title": "NECと日本IBM、日本初方式のハイブリッド型量子安全通信の実証に成功",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9DM1l6QlVDZk9aN0x3VXFCM1dYdGMtb1VEdzNZcGZ0Z2ZlM0tKUVhTaEVKRVdzd1h4VW9rRFdzeVRVMXNVM0VSSkk4STh4ZWJGdHBz?oc=5",
@@ -1421,7 +2178,12 @@
    "first_seen": "2026-11-17T03:05:42Z",
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/06/09/20260609k0000m040122000p/0c10.jpg?1",
-   "tv_match": null,
+   "tv_match": {
+    "title": "東京・葛飾区の住宅街に野生のシカが迷い込む 警視庁などが捕獲作業",
+    "outlet": "テレ朝NEWS",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE0teGhSRXZ5Y01wQ2ZVVmt6LVkzZFludnRqSHoxRzhId3VfYWtIVDVnV2M4UWhMSl9seFQyeU12TGdWUXRQZTVjNW9EZ09nQnhxaGlxN2tVZDBudVJQZXVac0dtVVhOTXBZa0pTTEJvNzlBQQ?oc=5",
+    "score": 0.5
+   },
    "picked": false
   },
   {
@@ -1874,6 +2636,20 @@
    "picked": false
   },
   {
+   "id": "6f57bf91e2fe266c",
+   "title": "「J:COM MOBILE」で11月26日AQUOS sense11提供開始 (2026年11月17日掲載)",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBGa05Mc3ZscXB0aVVia2ZNSGxDUVlDb2RaMjlpQm1nTjR1bTJjMFZyLXZ2QVF1MnpQWDZrVkNMazZOVWdoR1Nza0k0RlBrODhhak43Nm0yNkNjMnprRXVNaVFn?oc=5",
+   "summary": "「J:COM MOBILE」で11月26日AQUOS sense11提供開始 (2026年11月17日掲載) ライブドアニュース",
+   "outlet": "ライブドアニュース",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T01:00:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "68b3985affe5549e",
    "title": "NTTドコモにおけるレシート OCR サーバーレスシステムの多重処理流量制御",
    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE94WHEzeWROX3NOZGR6VFJLVm1icmlIOFVSdUdCOUt6VTROcU05MXRNUVBBUF9Oek4tMExWZWRyREY2azhkMklYQ1BDWUNzU1JVWmV3cXVnQ0pBT2JBQnlyNkxoVVFtWWVOQnNlREh6T0s?oc=5",
@@ -2051,6 +2827,20 @@
    "image_checked": true,
    "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/2026-11-16T213551Z_1833612859_RC26POAJK359_RTRMADP_3_BRITAIN-EU-BURNHAM-1794870258.jpg?resize=1920%2C1440",
    "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "73cc77d455f8fb34",
+   "title": "KDDIグループのECモール「au PAY マーケット」の「BLACK FRIDAY」セールは11/18から、ポイント還元上限が2025年比2倍へ大幅アップ",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQV3JJYV9kc1U0QmY0eWpUdlkzQWNVbFJFYzJKaEtnYWJFY2J5OG1hQmhzVEdiOHpKalZRVnA4YTdxQ0dVNWtPSlFLR2pQbXNMcmloZDVLQmVtUEg1aW9ORUlJSGNLTnljVlZsOHozVHd1RTRTcVVpTDA4SUY5dFdyakNmbFpIZG5QYS1pc2pMUFN4T0NsM3pDVTgxaldDcWgxa1d3ajA5cjVWbUp4VW5R0gG0AUFVX3lxTE16VE16OWFlSmZER192MS15eUtjNWl2aTV3QzlURVhOaTVkYUR4MnhYNjRqenhGNXFrVjQ5Zm9OTkxkZWJXRFFNLUVLQ1FXTHpfWUFrV1VhMnRVeEszT2IzRjVJYWVCRlVTTE1USnE0Sm5iYnNvZjJNSFZrUTVERktsMWlhaEVCZlJtaXZQY3o4Vk9oVGx4SmtpbTdZVndYdVl1R21pb0VBRDJCVU1VS1BCTENOTA?oc=5",
+   "summary": "KDDIグループのECモール「au PAY マーケット」の「BLACK FRIDAY」セールは11/18から、ポイント還元上限が2025年比2倍へ大幅アップ ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：KDDI",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-17T00:30:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -2385,6 +3175,20 @@
    "first_seen": "2026-11-16T23:57:34Z",
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2023/11/15/20231115k0000m030068000p/0c10.jpg?1",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "155474e49265c6ae",
+   "title": "IMTEとNTTドコモビジネスなど4社、データセンターの排熱を陸上養殖に活用する共同実証を開始",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE80LW1tNU1qa0d5S2U5Z1JWbDl6UWR0NjY2VDh2cUlXM0s1YlJGaUVJUk8xamlXNnNkVVA1ejl1YVI4d0hNdTYyUUJTb1JDUl9tUW16Snk2NFBfUmpOUXYwSHV2dDc4NjA?oc=5",
+   "summary": "IMTEとNTTドコモビジネスなど4社、データセンターの排熱を陸上養殖に活用する共同実証を開始 クラウド Watch",
+   "outlet": "クラウド Watch",
+   "feed": "Googleニュース：通信キャリア",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-16T23:30:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
    "tv_match": null,
    "picked": false
   },
@@ -2948,9 +3752,9 @@
   },
   {
    "id": "9da34efeed4436bf",
-   "title": "Mid-year budget update will ‘cut enough, but not too much’, Jim Chalmers says",
+   "title": "RBA board members who voted against rate hike warned of ‘materially sharper downturn’",
    "link": "https://www.theguardian.com/australia-news/2026/nov/17/myefo-mid-year-budget-update-australia-treasurer-jim-chalmers",
-   "summary": "Under growing pressure to sell government’s strategy, treasurer says Myefo will ‘help ease immediate capacity pressures without putting growth at risk’ Get our breaking news email , free app or daily news podcast Jim Chalmers has promised next month’s mid-year budget update “will…",
+   "summary": "Minutes released from latest Reserve Bank meeting as Jim Chalmers says Myefo ‘will cut enough, but not too much’ Get our breaking news email , free app or daily news podcast Reserve Bank board members who voted against this month’s official interest rate hike were worried about a…",
    "outlet": "The Guardian World",
    "feed": "The Guardian World",
    "kind": "overseas",
@@ -3325,6 +4129,25 @@
    "picked": false
   },
   {
+   "id": "70d8cc16a8268919",
+   "title": "大規模通信障害で揺れるドコモ、NTTが再び「売却」する日は来るか？",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM3ItcE50NE1FenFxV1RMa1ZFQjEtanNUVnJGR05nRlA1X2lQRG1vWEtyWXR4ZmkwczNpWTVKYTVSTTFpNVdYcWVzbDNQSFUtYTNQRkRod3JDV1ZBWFpmdmJ6WGJBVl9jb2VGUThMVlo5TVJzYTVIc09kVkplb0ZHZDJYdml3MFpJMlBjRlRCSDhHWXZpdUNPTFB0Wi15cjg5dTJsWTRhUTJtNHl6b1VmMUFLMW0tR1JfWWxoMVVlNFQxUdIBxwFBVV95cUxOZlZNVnBTajhZcHBQeUhaTmFjRFFuU1F0VHMtQkgzbE5JRDBKcWdfSC1oZHdPSWtBaDRqbENTd1cyb1NkeDByUDB6RzMxRjhZVUUyTjNTZy1MbDM2bVI2dzRwQlMwTS1nMXVjdFJibXRQY0g3VktxTHR1ajJreWNnNlpwSFFud3pGc3dqd0NhRHI2dk1WekRTemVBUDV1SzB2R0pKeGtRX2FvZkJ6QzcxdWNvcXZQemZSSVQ2VHVCemVLVGk5cTNj?oc=5",
+   "summary": "大規模通信障害で揺れるドコモ、NTTが再び「売却」する日は来るか？ ｄメニューニュース",
+   "outlet": "ｄメニューニュース",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-16T21:30:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": {
+    "title": "NTTドコモ全国規模で通信障害 今月3度目",
+    "outlet": "テレ東BIZ",
+    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1CWDZYeVk2cFltbktxcjRaT2lMZ2F4UGNScnhTekE0eGVNOTQzQW51VkhuWnAxZFRaOUpJWTFsVktrYUZNWjhJYU91NVFzY0VxVFFCcVQ4Qnc4VXBJbHc?oc=5",
+    "score": 0.32
+   },
+   "picked": false
+  },
+  {
    "id": "a2eb4ef072a559bb",
    "title": "第七回 キスマイ、NEWS、SixTONES、INI……30代なのに1ヶ月で8現場を達成した私の体力改造プロジェクト",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4zTGttUVhTbTh1Q250elB1YlM2VTI1QTZaZUNLVzc5WWxjMzdQSEtFQTU2LUdNUjlMM2FWanVKbE5tMnpFUWRVOXktR0lYSTlwNmZIbjFuT2FnejE2QmU5dFJaV0dhVFk?oc=5",
@@ -3460,15 +4283,29 @@
   },
   {
    "id": "bc8382f8b52bfb81",
-   "title": "T-Mobile 5G Home Internet Plans Come With New Customer Perks",
+   "title": "T-Mobile Is Offering a New 5G Home Internet Deal With a Month of Internet Service Included—Here’s Everything You Need to Know",
    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWWFiX08tLU5SNVdQX3N3Z18zUlFOUVNkd1RCdll2cDVsR1A3QXlIRWh3WkJkV0lPV3lhcWhJTU1XczhSRmJZRFJIU2p5ZUZYRl82VldHWmhUQlNFdlRyNXlkVGJqVHdpRHJReTNIb2VZU0hvUlFUWk5RSHY0amZqY0dXOVdEam12WU91Tk5B?oc=5",
-   "summary": "T-Mobile 5G Home Internet Plans Come With New Customer Perks SheKnows",
+   "summary": "T-Mobile Is Offering a New 5G Home Internet Deal With a Month of Internet Service Included—Here’s Everything You Need to Know SheKnows",
    "outlet": "SheKnows",
    "feed": "Google News: Telecom",
    "kind": "通信",
    "lang": "en",
    "published": "2026-11-16T21:09:00Z",
    "first_seen": "2026-11-16T23:57:34Z",
+   "tv_match": "unknown",
+   "picked": false
+  },
+  {
+   "id": "bc9ae694e54618bc",
+   "title": "T-Mobile has a holiday-ready home internet deal from $30 a month",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPN0plNERUMnlaM3NTUVA3aHpxTURQazJsVGNBeWMzMWVwVUpadi1SVUVWaHVNRkQtZDc1TG5sZ0pWR0loMFQ1SmxYTFI2MG00NGpXUHhsbl9YUjNScTVtSkdmQ2IwMzdMRlEycUtTTzRYQnVZTWd2QU5VcTNrNGNRUVh5OUNraDVfeU1UMENzOVdLdXVmem1yX0pPMVNXdnR3dS1IcGt5aDZQMV8xLXB5Q0kwYVRtVjBnN0dLM1FHMWpsREQzdG53?oc=5",
+   "summary": "T-Mobile has a holiday-ready home internet deal from $30 a month The Fayetteville Observer",
+   "outlet": "The Fayetteville Observer",
+   "feed": "Google News: Telecom",
+   "kind": "通信",
+   "lang": "en",
+   "published": "2026-11-16T21:07:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
    "tv_match": "unknown",
    "picked": false
   },
@@ -3798,6 +4635,20 @@
     "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1TSkVkcUJHeVhQZkItbHdmTHQ4VHNxLUM4NENFa0E3T1luaHhRUEI3ZGV5em9jSV9OZGhDQkxIMlloVGk2QzVBVmt4NXBmNHQyRUJxeE44QW16dmpETHFIZmtjZ2hhZ0xlYTZ4MHBoVDNvUQ?oc=5",
     "score": 0.34
    },
+   "picked": false
+  },
+  {
+   "id": "1b6d05fd407c6ab3",
+   "title": "モナキ・おヨネ＆横尾渉“おヨコ”が入れ替わり 違和感ゼロの間違え探し＆キュートな2ショットを披露",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBYcGdnamVzQXdCdFQxV0ZsWDZHWGhtaVpxem5Cd05WMkpuMU5aS3FPckNjdGd2TEhiREl3VXlENHpOUGtoYXY0QzZXaFJVY0EzT1ZnVV9CRThTaW1ocThZdkY3M0VRV2lIcDZtUkdoLVgxQWdK?oc=5",
+   "summary": "モナキ・おヨネ＆横尾渉“おヨコ”が入れ替わり 違和感ゼロの間違え探し＆キュートな2ショットを披露 山陽新聞",
+   "outlet": "山陽新聞",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-16T20:21:14Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
    "picked": false
   },
   {
@@ -5359,6 +6210,20 @@
    "picked": false
   },
   {
+   "id": "c7aadb110240509f",
+   "title": "JSCテクノロジー、完全無動力で2kW超の素子冷却を実現する「サイレント ジェット（SJ）冷却技術」を発表",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5KYzJZdEpPdGx6VzkyQVR6Rl9wem0wUGhlUW9KblE0eXBsdlhNSEtfbFpJV3lKdERnTGJIVElUMklXSmpFa0dUQWRzSTN5NWJmeDZEX0NZQ01WaFlvVTdVYk9pMEU3WjJPYkJVREMtVk5tdw?oc=5",
+   "summary": "JSCテクノロジー、完全無動力で2kW超の素子冷却を実現する「サイレント ジェット（SJ）冷却技術」を発表 Infoseek",
+   "outlet": "Infoseek",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-16T15:15:33Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "ca1bf29107c205fa",
    "title": "Quebecor proposes $31 bn merger with Telus in Canadian telecom deal",
    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5GR1ZJYWZGUEEtM3pWT1F3TEZqUEF1ZHc1Z0t1aW16YlkzNXAtS2xoUVNmd1FmOFd6WnBXWm9xd2xEZzU3S1JUNkVBc1dtSGdROGpjaGExRGt2ZlJvQ2U4MEFUVmxGRlpwZW82TUtCN0dMT1lRVWc?oc=5",
@@ -5603,11 +6468,11 @@
    "picked": false
   },
   {
-   "id": "c700356032545209",
-   "title": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！ ソフトバンク株式会社 | 上毛新聞電子版｜群馬県のニュース・スポーツ情報",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9IQl94NVc3Q01hQkZfVlRDS1NJTy1Ccm90a0NJeWJNSHZpWjlwRFhXM3M2LTA3OUI1M3hPZkcwREY1YmlNUXZRT2RhRWhrdWxGQVExVlBEQ2Q3Zw?oc=5",
-   "summary": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！ ソフトバンク株式会社 | 上毛新聞電子版｜群馬県のニュース・スポーツ情報 上毛新聞電子版",
-   "outlet": "上毛新聞電子版",
+   "id": "f6c1a4c1775b7d3f",
+   "title": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5uRDA1LV9JbHphV0xoMFJJdzNCUjZpWW95LUJUVkktYWoyNlBwRFFleFRmU19SMjdrYTI2UHhTaXZFQjV1MjFkR1VnaFZhLVllTjFiN0g2T00yeGc?oc=5",
+   "summary": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！ 共同通信PRワイヤー",
+   "outlet": "共同通信PRワイヤー",
    "feed": "Googleニュース：ソフトバンク株式会社",
    "kind": "通信",
    "lang": "ja",
@@ -5645,6 +6510,20 @@
    "picked": false
   },
   {
+   "id": "c700356032545209",
+   "title": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！ ソフトバンク株式会社 | 上毛新聞電子版｜群馬県のニュース・スポーツ情報",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9IQl94NVc3Q01hQkZfVlRDS1NJTy1Ccm90a0NJeWJNSHZpWjlwRFhXM3M2LTA3OUI1M3hPZkcwREY1YmlNUXZRT2RhRWhrdWxGQVExVlBEQ2Q3Zw?oc=5",
+   "summary": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！ ソフトバンク株式会社 | 上毛新聞電子版｜群馬県のニュース・スポーツ情報 上毛新聞電子版",
+   "outlet": "上毛新聞電子版",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-16T15:00:00Z",
+   "first_seen": "2026-11-16T15:53:05Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "810d1382b6c4c81f",
    "title": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！",
    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5NQ052cHZPZXlBSlRDbFNHV21BZ2ZOWkt4Tjl1ajFpT3RNVlBVUHBJeHdabEJPT0NOZ1B1UDBDOEF5LXBJQWFWc1dfNDJ2QVItZ1ZvMnRQc09Zdw?oc=5",
@@ -5655,20 +6534,6 @@
    "lang": "ja",
    "published": "2026-11-16T15:00:00Z",
    "first_seen": "2026-11-16T19:16:58Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "f6c1a4c1775b7d3f",
-   "title": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5uRDA1LV9JbHphV0xoMFJJdzNCUjZpWW95LUJUVkktYWoyNlBwRFFleFRmU19SMjdrYTI2UHhTaXZFQjV1MjFkR1VnaFZhLVllTjFiN0g2T00yeGc?oc=5",
-   "summary": "お子さまのスマホデビューがおトク！「ソフトバンクデビュー割」新ＣＭ 中島歩さん、楽音(ささね)さんがソフトバンクのＣＭに初登場！ 話題曲『mosi mosi?』に乗せて永尾柚乃さんとダンス！ 共同通信PRワイヤー",
-   "outlet": "共同通信PRワイヤー",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-16T15:00:00Z",
-   "first_seen": "2026-11-16T15:53:05Z",
    "tv_match": null,
    "picked": false
   },
@@ -7162,9 +8027,9 @@
   },
   {
    "id": "b20c48ef05ff0970",
-   "title": "【速報】東京・中野で女性が刺された事件で、警視庁は逃走した男の身柄を確保した：時事ドットコム",
+   "title": "【速報】東京・中野で女性が刺された事件で、警視庁は逃走した男の身柄を確保した",
    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5oZWFyZWR1REtDTXRJQWNEYWNTMTFZamVIcHlqd2U4V0hrV0ZTQk5GbDNNcDJqMzlYeXFDNGowMmx0aFpleWN4dlhSVWRZT25VX0FhVS1WTDdra3FqTWtMTzlvdUxTdw?oc=5",
-   "summary": "【速報】東京・中野で女性が刺された事件で、警視庁は逃走した男の身柄を確保した：時事ドットコム 時事ドットコム",
+   "summary": "【速報】東京・中野で女性が刺された事件で、警視庁は逃走した男の身柄を確保した 時事ドットコム",
    "outlet": "時事ドットコム",
    "feed": "時事ドットコム",
    "kind": "国内",
@@ -7175,7 +8040,7 @@
     "title": "【速報】東京・JR中野駅近くで女性刺され死亡 逃走していた刺したとみられる男逮捕－警視庁（2026年11月16日掲載）",
     "outlet": "日テレNEWS NNN",
     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE12WUVGUjJXOXdtVmtBOUlqUGN5UF96a0o1VlZHZmZzbjhlSE5WNWpQRGZRTTF3LWREbjR2c0I3WklPejJ6aG84SmJ1Y183U2dhNy01V015QmVNMnBIa0NCdlFzYWwwOC1DdURnWjhWRzFlazdmMmUza3NRY2E?oc=5",
-    "score": 0.32
+    "score": 0.4
    },
    "picked": false
   },
@@ -7718,9 +8583,9 @@
    "published": "2026-11-16T11:08:28Z",
    "first_seen": "2026-11-16T15:53:05Z",
    "tv_match": {
-    "title": "ASEAN首脳会議が開幕 ミャンマーや南シナ海めぐり協議へ",
+    "title": "ASEAN首脳会議 ミャンマーへの関与継続で合意",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE95NFIyV1NLR1lYQVhyZjJ4YlBEZVltT3VYcjNlRllpallORHRBMHVjcTViZmY3b0JQY0lhY3lJdktfelZ1YXA4cVhJcWljYW9PSXd0NEg3OWpmMFlHbVpRTUNmZw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hRzJBWFBKTXVIenFZMnhWdmg1Mmo4LTY3RWtOSTNLXzNMM09zMmtzOFA3T2tubm9EM0V5REhQcDdFTXlZZlItYU16T2l1MHNyWXQyT2s5dk12Z1N0TG1zSmpGWQ?oc=5",
     "score": 0.33
    },
    "picked": false
@@ -12606,6 +13471,20 @@
    "picked": false
   },
   {
+   "id": "d5526d0513f21e1d",
+   "title": "パリ、一部高校・大学周辺で無届けデモ禁止 学校封鎖続く",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA5ZW5xbHNTOEZvVktCWmRBVXd0NUk3UUd4dGlqMlBZLTZjTHBiOGNLN1dzOVlyTHItWTk5SkUxLTRLRnphV1JPVlJ2UERjTlpzdnfSAVRBVV95cUxOa0x6b28xR0RVUXQySF94cFREdURTWEpGTy10NWFIOW9KRDJfYk9qREVTUmk0OVE0QkUxS1h0dXlSWlRDejE2U0I0bDAwRV9Xak05emQ?oc=5",
+   "summary": "パリ、一部高校・大学周辺で無届けデモ禁止 学校封鎖続く AFPBB News",
+   "outlet": "AFPBB News",
+   "feed": "AFPBB News",
+   "kind": "国際",
+   "lang": "ja",
+   "published": "2026-11-16T03:53:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "d146d9c58811377c",
    "title": "Shophouse fire kills at least 11 in Phuket",
    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/shophouse-fire-kills-at-least-11-in-phuket?traffic_source=rss",
@@ -13556,9 +14435,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/11/16/20261116k0000m030043000p/0c10.jpg?1",
    "tv_match": {
-    "title": "ASEAN首脳会議が開幕 ミャンマーや南シナ海めぐり協議へ",
+    "title": "ASEAN首脳会議 ミャンマーへの関与継続で合意",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE95NFIyV1NLR1lYQVhyZjJ4YlBEZVltT3VYcjNlRllpallORHRBMHVjcTViZmY3b0JQY0lhY3lJdktfelZ1YXA4cVhJcWljYW9PSXd0NEg3OWpmMFlHbVpRTUNmZw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hRzJBWFBKTXVIenFZMnhWdmg1Mmo4LTY3RWtOSTNLXzNMM09zMmtzOFA3T2tubm9EM0V5REhQcDdFTXlZZlItYU16T2l1MHNyWXQyT2s5dk12Z1N0TG1zSmpGWQ?oc=5",
     "score": 0.35
    },
    "picked": false
@@ -16449,9 +17328,9 @@
    "published": "2026-11-15T22:07:30Z",
    "first_seen": "2026-11-15T22:54:58Z",
    "tv_match": {
-    "title": "【兵庫県】11/17の天気予報",
+    "title": "【沖縄県(宮古島地方)】11/17の天気予報",
     "outlet": "FNNプライムオンライン",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9ldXlXVlhfVDQtNVYwRnpaTTE1Q0tVakRQQmZlZTZZSzYwdVpSb01rd3ZZTHAyNjRRZlowV3EtWXcwNUxtNHA1aEhNQUdNQQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1HQTB2UkI5S3FJRkNqZU0zYVphRWQxU21BdF8zM1p6VDlWbmpJLXJnMGplZHRsQUdRd1RrVWE4UjhORUp1WUdZSnlZSjViUQ?oc=5",
     "score": 0.38
    },
    "picked": false
@@ -17465,6 +18344,20 @@
    "picked": false
   },
   {
+   "id": "dae9c68fc5306b67",
+   "title": "KDDIが「menu」を終了、Woltも撤退 フードデリバリー市場で再編の動き",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ETUZGaVNNN0hQTjRIdlFYRkhTR240U2F5elAzUkI4SGRrRE95aTBJbHlQT0RYaVlkWlkwczJaSHM2NUNMbGUtRWlfbnhrbTlBWnoxdFJNNUhHZG9uSi1GNDcxekpSbjd5NGc?oc=5",
+   "summary": "KDDIが「menu」を終了、Woltも撤退 フードデリバリー市場で再編の動き 日経クロステック Active",
+   "outlet": "日経クロステック Active",
+   "feed": "Googleニュース：KDDI",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-15T20:00:00Z",
+   "first_seen": "2026-11-16T01:44:43Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "b3e4a9910ba0ecc1",
    "title": "日本の原潜保有論はアメリカにとっても都合がいい？ 有事に米軍の指揮下で使い倒される恐れはないのか",
    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5jS1daTkRLaVJHWHFyZjJoOXVKekI3bzRuc3FYaGZHWDB2Ym1LSTAzUTJZdWhWalhpU0hnd3JCRTBzWFdSNEFKekdvQ21DcjAyOUc0?oc=5",
@@ -17489,20 +18382,6 @@
    "lang": "ja",
    "published": "2026-11-15T20:00:00Z",
    "first_seen": "2026-11-15T21:54:38Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "dae9c68fc5306b67",
-   "title": "KDDIが「menu」を終了、Woltも撤退 フードデリバリー市場で再編の動き",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ETUZGaVNNN0hQTjRIdlFYRkhTR240U2F5elAzUkI4SGRrRE95aTBJbHlQT0RYaVlkWlkwczJaSHM2NUNMbGUtRWlfbnhrbTlBWnoxdFJNNUhHZG9uSi1GNDcxekpSbjd5NGc?oc=5",
-   "summary": "KDDIが「menu」を終了、Woltも撤退 フードデリバリー市場で再編の動き 日経クロステック Active",
-   "outlet": "日経クロステック Active",
-   "feed": "Googleニュース：KDDI",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-15T20:00:00Z",
-   "first_seen": "2026-11-16T01:44:43Z",
    "tv_match": null,
    "picked": false
   },
@@ -22087,20 +22966,6 @@
    "picked": false
   },
   {
-   "id": "b14f530d475c9e9d",
-   "title": "山下智久、学生時代は「撮影終わって塾」芸能活動と両立した大学進学の理由 キスマイ藤ヶ谷太輔は驚き",
-   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9xVW5PckJ3Um5LSzluYjZZWWlnUUxkMXN0LWt6R0lZZVVmV09vMUJ3am9Sc2k0MzY2UTdGeFBGZXdWT1pBSmV4WnRTSdIBR0FVX3lxTE5WM1Vqdm9JNjdLbGdEcldZSXBqckh1Y3F3MFJsS191SmZHeDMzVm5nMEZPYnJRSTZuZXZCemVqMHlyRmRXX2pj?oc=5",
-   "summary": "山下智久、学生時代は「撮影終わって塾」芸能活動と両立した大学進学の理由 キスマイ藤ヶ谷太輔は驚き モデルプレス",
-   "outlet": "モデルプレス",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-15T07:04:15Z",
-   "first_seen": "2026-11-16T03:17:35Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "573ab3fec37b02cf",
    "title": "山下智久、学生時代は「撮影終わって塾」芸能活動と両立した大学進学の理由 キスマイ藤ヶ谷太輔は驚き",
    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5adlE5UWJiZ2c5cmh4NFpIWVhKNTNSNGNDZWdDcVNaTk1MSm9fRFZqZDRYZHBtM0tZSlNtQVZwY3BqNHItOWNfV1Q1RHVyRXdEeDE1SHFHNTdwN3hDemR3?oc=5",
@@ -22111,6 +22976,20 @@
    "lang": "ja",
    "published": "2026-11-15T07:04:15Z",
    "first_seen": "2026-11-15T15:55:57Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "b14f530d475c9e9d",
+   "title": "山下智久、学生時代は「撮影終わって塾」芸能活動と両立した大学進学の理由 キスマイ藤ヶ谷太輔は驚き",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9xVW5PckJ3Um5LSzluYjZZWWlnUUxkMXN0LWt6R0lZZVVmV09vMUJ3am9Sc2k0MzY2UTdGeFBGZXdWT1pBSmV4WnRTSdIBR0FVX3lxTE5WM1Vqdm9JNjdLbGdEcldZSXBqckh1Y3F3MFJsS191SmZHeDMzVm5nMEZPYnJRSTZuZXZCemVqMHlyRmRXX2pj?oc=5",
+   "summary": "山下智久、学生時代は「撮影終わって塾」芸能活動と両立した大学進学の理由 キスマイ藤ヶ谷太輔は驚き モデルプレス",
+   "outlet": "モデルプレス",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-15T07:04:15Z",
+   "first_seen": "2026-11-16T03:17:35Z",
    "tv_match": null,
    "picked": false
   },
@@ -23383,20 +24262,6 @@
    "picked": false
   },
   {
-   "id": "5190064eef4b1b81",
-   "title": "小林裕介×碧乃梨心×宮田俊哉「毎話終わるたびに汗だくになる」最強(?)バディと苦労人が語るアフレコ裏話＜超巡！超条先輩＞",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9GanU2YjBqYm9pX2hZdlcxSWk5NEtFU000eTlzX1R5UjgwcHg5OXNnbzhteExsUnhuVEpDLVllSHhMSWJ1YUJueWFpTWcwcEY5Zjg3MkV6OHBVYzlvajFNQzlBWWVLLTBBTUltLVduM1JnZy1kWTU4bVdhSjlIaFE?oc=5",
-   "summary": "小林裕介×碧乃梨心×宮田俊哉「毎話終わるたびに汗だくになる」最強(?)バディと苦労人が語るアフレコ裏話＜超巡！超条先輩＞ Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-15T03:00:10Z",
-   "first_seen": "2026-11-15T04:12:32Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "fb5ec6e11f8f8830",
    "title": "小林裕介×碧乃梨心×宮田俊哉「毎話終わるたびに汗だくになる」最強(?)バディと苦労人が語るアフレコ裏話＜超巡！超条先輩",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5pb3AxTWRuTEhMMWZ0RndySHE1bmpvOWJFZm5wZC15cl94LTVqenhEd2Y2UVlRelBuejR4cU5Xc3hXVzRyTVdmQWRUdXRMQQ?oc=5",
@@ -23407,6 +24272,20 @@
    "lang": "ja",
    "published": "2026-11-15T03:00:10Z",
    "first_seen": "2026-11-15T03:05:10Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "5190064eef4b1b81",
+   "title": "小林裕介×碧乃梨心×宮田俊哉「毎話終わるたびに汗だくになる」最強(?)バディと苦労人が語るアフレコ裏話＜超巡！超条先輩＞",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9GanU2YjBqYm9pX2hZdlcxSWk5NEtFU000eTlzX1R5UjgwcHg5OXNnbzhteExsUnhuVEpDLVllSHhMSWJ1YUJueWFpTWcwcEY5Zjg3MkV6OHBVYzlvajFNQzlBWWVLLTBBTUltLVduM1JnZy1kWTU4bVdhSjlIaFE?oc=5",
+   "summary": "小林裕介×碧乃梨心×宮田俊哉「毎話終わるたびに汗だくになる」最強(?)バディと苦労人が語るアフレコ裏話＜超巡！超条先輩＞ Yahoo!ニュース",
+   "outlet": "Yahoo!ニュース",
+   "feed": "Googleニュース：Kis-My-Ft2",
+   "kind": "エンタメ",
+   "lang": "ja",
+   "published": "2026-11-15T03:00:10Z",
+   "first_seen": "2026-11-15T04:12:32Z",
    "tv_match": null,
    "picked": false
   },
@@ -25697,20 +26576,6 @@
    "picked": false
   },
   {
-   "id": "f2b4605f2de5127d",
-   "title": "理研と米クオンティニュアム、量子コンピューター「黎明」を大幅強化…「新たな計算領域を切り開く」",
-   "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9Hb2lZeGRma2JHaTJEVl9nZTVyY3o4aU00bkIzV09KQjFhc0JXMDQ3RkhVMlY0S1lDanRJVlVpdDYtUQ?oc=5",
-   "summary": "理研と米クオンティニュアム、量子コンピューター「黎明」を大幅強化…「新たな計算領域を切り開く」 ニュースイッチ by 日刊工業新聞社",
-   "outlet": "ニュースイッチ by 日刊工業新聞社",
-   "feed": "Googleニュース：ソフトバンク株式会社",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-14T21:00:00Z",
-   "first_seen": "2026-11-14T21:53:26Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "386c2edbabec480a",
    "title": "画像 | KDDI｢山口衛星通信所｣が宇宙の玄関口に､海外通信を支えた57年の拠点が低軌道衛星時代に狙う新たな役割",
    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9rSmVrYmV0Z2ZORUpvazhDbmViTXZrZTFXMmt1a2U5WDJiSGl2N2gxQ3dvM1V3RVZteVBoOGRSdTR2NjRRYWNDX3FPanFkR2Ixd0Jud1podFVtd3BFS0E?oc=5",
@@ -25721,6 +26586,20 @@
    "lang": "ja",
    "published": "2026-11-14T21:00:00Z",
    "first_seen": "2026-11-15T09:04:22Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "f2b4605f2de5127d",
+   "title": "理研と米クオンティニュアム、量子コンピューター「黎明」を大幅強化…「新たな計算領域を切り開く」",
+   "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9Hb2lZeGRma2JHaTJEVl9nZTVyY3o4aU00bkIzV09KQjFhc0JXMDQ3RkhVMlY0S1lDanRJVlVpdDYtUQ?oc=5",
+   "summary": "理研と米クオンティニュアム、量子コンピューター「黎明」を大幅強化…「新たな計算領域を切り開く」 ニュースイッチ by 日刊工業新聞社",
+   "outlet": "ニュースイッチ by 日刊工業新聞社",
+   "feed": "Googleニュース：ソフトバンク株式会社",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-14T21:00:00Z",
+   "first_seen": "2026-11-14T21:53:26Z",
    "tv_match": null,
    "picked": false
   },
@@ -27661,9 +28540,9 @@
    "image_checked": true,
    "image": "https://cdn.mainichi.jp/vol1/2026/11/14/20261114k0000m030116000p/0c10.jpg?1",
    "tv_match": {
-    "title": "ASEAN首脳会議が開幕 ミャンマーや南シナ海めぐり協議へ",
+    "title": "ASEAN首脳会議 ミャンマーへの関与継続で合意",
     "outlet": "テレ東BIZ",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE95NFIyV1NLR1lYQVhyZjJ4YlBEZVltT3VYcjNlRllpallORHRBMHVjcTViZmY3b0JQY0lhY3lJdktfelZ1YXA4cVhJcWljYW9PSXd0NEg3OWpmMFlHbVpRTUNmZw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hRzJBWFBKTXVIenFZMnhWdmg1Mmo4LTY3RWtOSTNLXzNMM09zMmtzOFA3T2tubm9EM0V5REhQcDdFTXlZZlItYU16T2l1MHNyWXQyT2s5dk12Z1N0TG1zSmpGWQ?oc=5",
     "score": 0.42
    },
    "picked": false
@@ -29878,20 +30757,6 @@
    "picked": false
   },
   {
-   "id": "2e2705463d55193e",
-   "title": "（画像）パク・ウンビンの圧倒的演技力を堪能！「ウ・ヨンウ弁護士は天才肌」から「恋は命がけ」まで名作ドラマ4選",
-   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5oUjhYNFUzUUtBX0s4YkNEVXg2dlJKS004Z3dIZGVfal9HYjhselpaT0hHVEptbUd0ekktVVZZY2xYd0RKTWZEUkN4dzc2N242WjNoWHRqTTJ5cFhjX19vY1liQVhqZUxHX3FNMnQ4MGNyYlNC?oc=5",
-   "summary": "（画像）パク・ウンビンの圧倒的演技力を堪能！「ウ・ヨンウ弁護士は天才肌」から「恋は命がけ」まで名作ドラマ4選 J:magazine!",
-   "outlet": "J:magazine!",
-   "feed": "Googleニュース：J:COM",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-14T08:00:00Z",
-   "first_seen": "2026-11-16T09:05:28Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
    "id": "1275a60f81bb18c6",
    "title": "「スター・トレック」はなぜ60年愛されるのか――映画評論家・町山智浩が語るSFの未来を変えた革新と不変の魅力",
    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE81ZVB3WngzS1ZKYXAzejEwZHJneV9DSDBDMm51U05lS0pSNmdvSGtZZTZhQkNEclFGRG1oVjhaQjFyXzNIOUhzVURkYzJSV05wLV8yTmxWcnZ6cjhDYXlWb3hrMkc1dDVUazlRYW9n?oc=5",
@@ -29906,6 +30771,20 @@
    "picked": false
   },
   {
+   "id": "02508373ec41e2b6",
+   "title": "『スター・トレック』60周年記念特集｜インタビューや厳選記事でシリーズの魅力を深掘り！（画像 1 2",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE41WXYtVnFsQ1ZKNERadjlvb0VzeloxZUdCU0NTdGlaeG5vYU5QZTNfeGZabzItWlFpSFEwTllsaUpkUlplQ3dlb2dRQTJFczJxaHBTYmtNS29BQTBoWE94RTBOU3RiS3A0Vl9JUG1PTWt4UnE2eEl1Vw?oc=5",
+   "summary": "『スター・トレック』60周年記念特集｜インタビューや厳選記事でシリーズの魅力を深掘り！（画像 1 2 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-14T08:00:00Z",
+   "first_seen": "2026-11-17T04:13:51Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
    "id": "f4723c8ac4788087",
    "title": "渡辺美里が40周年ツアー、そして聖地・西武ドームライブへの思いを語る",
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBBV3ZBcmYya0tIQUd4ZmZ2eWZ5MGFaU3ZqakJqdHpJY3RDVnM5elpqVm5OVG9ZcVBaM1llazllRW5rdHo3N3pkeWtiQmFrQXdYZC1oaGNOSUk5Q1F0R1h3MFhRVGM?oc=5",
@@ -29916,20 +30795,6 @@
    "lang": "ja",
    "published": "2026-11-14T08:00:00Z",
    "first_seen": "2026-11-17T01:32:59Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "77a997969ba959a8",
-   "title": "今田美桜×磯村勇斗インタビュー ドラマ「クロスロード ～救命救急の約束～」撮影秘話と役づくりを語る",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1iUFJRRzFlaGNEVHdoNzQycWNIdXVWd1lVR0ZBZ0luRkVQTVR3N01aWHdiWF9zdEE1Njh4NkNTUTZhdjItcnVueUdUYWRUdXA5Z01ISkY2YWc2ek16a0V0NlhvX0ZkM2FIRTFxSkxsVQ?oc=5",
-   "summary": "今田美桜×磯村勇斗インタビュー ドラマ「クロスロード ～救命救急の約束～」撮影秘話と役づくりを語る J:magazine!",
-   "outlet": "J:magazine!",
-   "feed": "Googleニュース：J:COM",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-14T08:00:00Z",
-   "first_seen": "2026-11-16T20:12:44Z",
    "tv_match": null,
    "picked": false
   },
@@ -29958,6 +30823,34 @@
    "lang": "ja",
    "published": "2026-11-14T08:00:00Z",
    "first_seen": "2026-11-16T19:16:58Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "2e2705463d55193e",
+   "title": "（画像）パク・ウンビンの圧倒的演技力を堪能！「ウ・ヨンウ弁護士は天才肌」から「恋は命がけ」まで名作ドラマ4選",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5oUjhYNFUzUUtBX0s4YkNEVXg2dlJKS004Z3dIZGVfal9HYjhselpaT0hHVEptbUd0ekktVVZZY2xYd0RKTWZEUkN4dzc2N242WjNoWHRqTTJ5cFhjX19vY1liQVhqZUxHX3FNMnQ4MGNyYlNC?oc=5",
+   "summary": "（画像）パク・ウンビンの圧倒的演技力を堪能！「ウ・ヨンウ弁護士は天才肌」から「恋は命がけ」まで名作ドラマ4選 J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-14T08:00:00Z",
+   "first_seen": "2026-11-16T09:05:28Z",
+   "tv_match": null,
+   "picked": false
+  },
+  {
+   "id": "77a997969ba959a8",
+   "title": "今田美桜×磯村勇斗インタビュー ドラマ「クロスロード ～救命救急の約束～」撮影秘話と役づくりを語る",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1iUFJRRzFlaGNEVHdoNzQycWNIdXVWd1lVR0ZBZ0luRkVQTVR3N01aWHdiWF9zdEE1Njh4NkNTUTZhdjItcnVueUdUYWRUdXA5Z01ISkY2YWc2ek16a0V0NlhvX0ZkM2FIRTFxSkxsVQ?oc=5",
+   "summary": "今田美桜×磯村勇斗インタビュー ドラマ「クロスロード ～救命救急の約束～」撮影秘話と役づくりを語る J:magazine!",
+   "outlet": "J:magazine!",
+   "feed": "Googleニュース：J:COM",
+   "kind": "通信",
+   "lang": "ja",
+   "published": "2026-11-14T08:00:00Z",
+   "first_seen": "2026-11-16T20:12:44Z",
    "tv_match": null,
    "picked": false
   },
@@ -30129,10 +31022,10 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261114001953_comm.jpg",
    "tv_match": {
-    "title": "3歳女児が虐待死か 両親逮捕 「あざが…」通告も共有されず 大阪・枚方市",
-    "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1YSkVQZ3FrMjczR0pTWVZUb2NYMmxlUGxKWlBVeWNSM3luV3FtU1ZMeHlWenk4cXA1aTJZWFo5R2w4SWJVZUdHeXEyaGlBd3F1RlFScDIzNER4bUtUU0tpUVhhTDBfU3BYeXVfM0dwQVpoUQ?oc=5",
-    "score": 0.38
+    "title": "5回の通報も児相「緊急性なし」枚方市3歳女児虐待死 あざ確認も警察へ情報共有せず 命救えぬ組織の壁",
+    "outlet": "日テレNEWS NNN",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNHRRUy1zWEhVMTYwdlk2R1JOLWpNU2ZQblJYMUJjUWN5Qm51Y1k5M2t3WDB2T2g2OEY4OV96a2hDVm9YWC1qWXNpSWgyVkJpcWMzVldrb3hUNS1uLU1YWVE0dWxNcnBKS3VUOGFVV3dBUzd5b3JUY0xKcmYtdTFQYmVfSURMVVU?oc=5",
+    "score": 0.43
    },
    "picked": false
   },
@@ -69828,12 +70721,7 @@
    "first_seen": "2026-11-11T12:09:27Z",
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261111003564_comm.jpg",
-   "tv_match": {
-    "title": "安保3文書改定に向け与党の実務者協議始まる 「原子力潜水艦」「非核三原則」で意見に隔たり",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NWlZhalVFSjZvUDZpXzVhUWY0Y3RoN3h6SW9jVkF6eFdWQW9UUVBkbmFsYUZzaTZJSUdxM1ROWmVxRW5vVTdULVJkTkVwY1JUSG5RcXkxQQ?oc=5",
-    "score": 0.4
-   },
+   "tv_match": null,
    "picked": false
   },
   {
@@ -86808,12 +87696,7 @@
    "lang": "ja",
    "published": "2026-11-10T10:04:15Z",
    "first_seen": "2026-11-10T12:04:14Z",
-   "tv_match": {
-    "title": "安保3文書改定に向け与党の実務者協議始まる 「原子力潜水艦」「非核三原則」で意見に隔たり",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NWlZhalVFSjZvUDZpXzVhUWY0Y3RoN3h6SW9jVkF6eFdWQW9UUVBkbmFsYUZzaTZJSUdxM1ROWmVxRW5vVTdULVJkTkVwY1JUSG5RcXkxQQ?oc=5",
-    "score": 0.38
-   },
+   "tv_match": null,
    "picked": false
   },
   {
@@ -87774,12 +88657,7 @@
    "lang": "ja",
    "published": "2026-11-10T09:17:43Z",
    "first_seen": "2026-11-10T10:11:08Z",
-   "tv_match": {
-    "title": "「トー横」で知り合った女性らカンボジアに送り特殊詐欺か 暴力団組員の男（26）を8回目逮捕 950万円詐取疑い 警視庁",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TTkdfMERXcWttRVJ1b0hEeWVkUERiUk5zaW1nakdBU3E1ekc1RmFsdnJMVFdYNkZ0MkZucXlEcWhxNDdnOFhjRXV0VXRSbWcwdjVSRzJTcw?oc=5",
-    "score": 0.4
-   },
+   "tv_match": null,
    "picked": false
   },
   {
@@ -91440,7 +92318,7 @@
   },
   {
    "id": "c61f26f858729763",
-   "title": "柵と警官に囲まれる中、市街地デモで気候変動対策訴え【随時更新】",
+   "title": "AIデータセンター、大量の電力消費めぐりCOPで議論【随時更新】",
    "link": "http://www.asahi.com/articles/ASVCB1CHBVCBUTFL018M.html?ref=rss",
    "summary": "",
    "outlet": "朝日新聞",
@@ -92066,608 +92944,87 @@
    "image_checked": true,
    "image": "https://imgopt.asahi.com/ogp/AS20261110001655_comm.jpg",
    "tv_match": {
-    "title": "徳島・阿波市長ら3人逮捕 自分の交通事故の修理代350万円を市の事業の工事代金に上乗せか",
-    "outlet": "TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9BaDJZbU1KUHMtRUJLQkpqTXBuWndlb0dycjllUnA1R25OeVVFQWJQZlJOMURGZElGWTBMY3V1a0ExdVJMRFlCM3ozZGVRMFlkazhCa1Ewcw?oc=5",
-    "score": 0.52
-   },
-   "picked": false
-  },
-  {
-   "id": "12b02928d97abf06",
-   "title": "Kis-My-Ft2、新曲「La la la」MVをプレミア公開（CDJournal）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56QzRnVUh0c2REYjVnZjBERkpPMkQ1U2RkMUdLdzVfc2UyWlBXOEhMeUFWc2REbndhWEE5MHdOY3BFR0pjdTFMOWJuQW53anB3VUxhc1JjTXk4LWt4WDVzUGkxbWt5djJMZi1aVmw3SG4zYzlHamRGaDZheWRJRmc?oc=5",
-   "summary": "Kis-My-Ft2、新曲「La la la」MVをプレミア公開（CDJournal） Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-10T04:13:03Z",
-   "first_seen": "2026-11-10T05:10:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "ca9a1db7ab94a38a",
-   "title": "Kis-My-Ft2、新曲「La la la」MVをプレミア公開 (CDJournal)",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOUtFbnFZeDZOVW9uT0pLcE1uWDVqTlV1XzdBOGt5ckdVT2dKYlFUNWc0ZTc0TTZQX0dKZUU1SmVHTDBodUxvTHhrb1AwR2hjaFotaThrY2FsclptZHBidXhPdXc5LXI1U05MTGlmbVVEb1dxMUhFN1RobGNka25vREtQNHJvbi1CMVBWRWR3?oc=5",
-   "summary": "Kis-My-Ft2、新曲「La la la」MVをプレミア公開 (CDJournal) Yahoo!ニュース",
-   "outlet": "Yahoo!ニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-10T04:13:03Z",
-   "first_seen": "2026-11-10T15:07:12Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "013f1c0beb3ef2d2",
-   "title": "アングル：「永久先物」に揺れる米金融街、新たなリスク警戒 政権が導入推進",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1pOFR0R3V3VzduenZhcFd6QVdlTUhhaXhhTlVleFNraXJjVTI2dTZCMTh1M2I4cW1RQ3NFRTJ3LVljNkl6MXptLS1LRTBIUmVtQjdXRlRhM1NRdw?oc=5",
-   "summary": "アングル：「永久先物」に揺れる米金融街、新たなリスク警戒 政権が導入推進 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T04:11:35Z",
-   "first_seen": "2026-11-10T05:10:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "c6eb65d730d70ce2",
-   "title": "英俳優ラッセル・ブランド被告に禁錮10年6カ月 女性を「性的餌食」にし続けた罪",
-   "link": "https://www.cnn.co.jp/showbiz/35254643.html?ref=rss",
-   "summary": "英ロンドンのサザーク刑事法院は9日、性的暴行などの罪に問われた英俳優でコメディアンのラッセル・ブランド被告（51）に対し、10年6カ月の禁錮を言い渡した。 ジョエル・ベナサン裁判官は量刑言い渡しに際し、ブランド被告は20年前から名声が高まるにつれ、女性を餌食にするようになったと述べ、「あなたのような相手から同意なく性的餌食にされた女性たちには、裁判で公正を求める権利がある」と指摘した。 ブランド被告は...",
-   "outlet": "CNN.co.jp",
-   "feed": "CNN.co.jp",
-   "kind": "国際",
-   "lang": "ja",
-   "image": "https://www.cnn.co.jp/storage/2026/11/10/1707886ae74b2325313e23a2734c3c77/t/768/511/d/image__21_.jpg",
-   "published": "2026-11-10T04:11:00Z",
-   "first_seen": "2026-11-10T05:10:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "79528ed897475440",
-   "title": "楽天モバイル、延期されてい「楽メール」たシステムメンテナンス実施日程確定【2026年11月11日（水）】",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZVhTNjBCeW9DUUNRc0R4ZGR2RzhnYWF3Nmo0c2NwUDJVU2lrN1kxbm9MaDg1UTRrNU9RYjdUSE5OWXJWQ1BSRGZLYXdFeHdMRDRVa1IwaXNESW1GNUdpazU0eUcyQ3pJTzhDdVQ3N2V3TllpTE5WZjRodF90OVhKbDgyelM5UklyaWtobEVCYXc?oc=5",
-   "summary": "楽天モバイル、延期されてい「楽メール」たシステムメンテナンス実施日程確定【2026年11月11日（水）】 Jetstream",
-   "outlet": "Jetstream",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T04:07:19Z",
-   "first_seen": "2026-11-10T05:10:47Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "5b6656fac234215f",
-   "title": "【東京都市大学】創立100周年記念シンボルロゴを決定 ― 在学生から作品を募集し、最優秀賞・優秀賞の計3作品を選出",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TaXlzcElIZ3JaT1R0WUJHRnc5aF9xbjZBbnc1cndXMVlYNXg5VFpxYTE1RHZ1c0J5T2E2UWRkalpubXRMTHpUQjNKZWhiRE1zYmc?oc=5",
-   "summary": "【東京都市大学】創立100周年記念シンボルロゴを決定 ― 在学生から作品を募集し、最優秀賞・優秀賞の計3作品を選出 AFPBB News",
-   "outlet": "AFPBB News",
-   "feed": "AFPBB News",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T04:04:07Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "2e2d34419e9ef155",
-   "title": "神奈川大学「第20回 神奈川大学高大連携協議会フォーラム」を12月4日に開催 写真1枚 国際ニュース",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4wMVFKMG9haWx2Q2VkSUF2VnhWSkNON0lsMTVKN0hOOG5peHNSZEVyVG1GMlR0YUx3ZTIwQk1ORFF1U19OcVJCdnNZTFQ0TVdxS1E?oc=5",
-   "summary": "神奈川大学「第20回 神奈川大学高大連携協議会フォーラム」を12月4日に開催 写真1枚 国際ニュース AFPBB News",
-   "outlet": "AFPBB News",
-   "feed": "AFPBB News",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T04:04:01Z",
-   "first_seen": "2026-11-10T10:11:08Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "19ec147dbfaf90dc",
-   "title": "国内唯一飼育のラッコ「メイ」11日に展示再開 鳥羽水族館、配信も",
-   "link": "http://www.asahi.com/articles/ASVCB169CVCBONFB003M.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T04:03:38Z",
-   "first_seen": "2026-11-10T05:10:47Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261110001953_comm.jpg",
-   "tv_match": {
-    "title": "国内唯一のラッコになった「メイ」 展示とライブ配信きょう再開 鳥羽水族館",
+    "title": "詐欺容疑で阿波市長ら逮捕 事故の修理費用“上乗せ”か",
     "outlet": "テレ朝NEWS",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFByRjhfeEthdUVLSXM1dmFCTEE1WUg5RlNldFNkQzVmOVpPQ2h3R3RyZ1l6TWowbjZQcTRlWnJSdExzNktxcFJTWEI4ZzJmQUlNaEtVa0lUbVZvc2ZRdnM0NkJWNkZtSDk3RVlBbFdhbmh5Zw?oc=5",
-    "score": 0.56
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE93bTMwVnk1ZkFyeVMwbmZTMzRONlNoUXhiWTZCdWdtT2xvYXhqVDdxTXQ1c3B0TWx4UFh5OFlFakY5cC1lTUQtRzRKLWo4bVFBNDVBWUtZYmNQQUNLb0piRVRscFZTT1lSTVQ0LXo1THQwZw?oc=5",
+    "score": 0.34
    },
-   "picked": false
-  },
-  {
-   "id": "993cf2bd1dc99dcd",
-   "title": "LINEの「メッセージ予約」機能が期間限定で登場 正式提供は今冬以降",
-   "link": "https://www.itmedia.co.jp/mobile/articles/2611/10/news058.html",
-   "summary": "LINEヤフーのコミュニケーションアプリ「LINE」が、LINEラボで新機能 「メッセージ予約」を提供開始。指定した日時にメッセージを送信できる機能で、試験提供終了後は「LYPプレミアム」会員特典として正式提供する予定だ。",
-   "outlet": "ITmedia Mobile",
-   "feed": "ITmedia Mobile",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T04:02:00Z",
-   "first_seen": "2026-11-10T07:31:24Z",
-   "image_checked": true,
-   "image": "https://image.itmedia.co.jp/mobile/articles/2611/10/l_asa_LINE_01.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "af2f72a15679e3b2",
-   "title": "突然現れた「かまいたち」 60年前、故郷で舞った希代の舞踏家",
-   "link": "https://mainichi.jp/articles/20261109/k00/00m/040/049000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T04:00:26Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/11/09/20261109k0000m040051000p/0c10.jpg?1",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "917780296ff82aae",
-   "title": "構想と実装の「空白」を埋めるエンジニア OpenAIとSB OAI Japanの「FDE」が挑む日本企業のAIトランスフォーメーション",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBIMzdTRDkzd3JsXzQyQWlRNkNlejV0UE91RS01Szl6V3hrUDVjbm4yNTZmWTJkOEU3YmVyZXFzWDI0RmdRVXZBTHVpZTltOVhfX3c?oc=5",
-   "summary": "構想と実装の「空白」を埋めるエンジニア OpenAIとSB OAI Japanの「FDE」が挑む日本企業のAIトランスフォーメーション DIAMOND ハーバード・ビジネス・レビュー",
-   "outlet": "DIAMOND ハーバード・ビジネス・レビュー",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T04:00:00Z",
-   "first_seen": "2026-11-10T05:57:12Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "95a27916fe4f39d6",
-   "title": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9DbW5wVWx6OHduQVp2OVVienZwSFppNDdER2RwNU82UWpldTkwVGtlMGUwWXFTUHVUU0c0cWpqVlpJb0ZfcU50YXBvd1Vpdlctcm9fbkhVX1lkN2FWdFBFNXdkMFo1TmlY?oc=5",
-   "summary": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初 マイナビニュース",
-   "outlet": "マイナビニュース",
-   "feed": "Googleニュース：KDDI",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:59:43Z",
-   "first_seen": "2026-11-10T06:10:05Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "4d94d40c1da863d7",
-   "title": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1UZHRSX2ozVTFiLWpYazVjNE1HWURWREx3LWM4Wk54czNPTEtBNkNLRE82eTlhWlBYNDUtTE15dDhNMUoxdlhjYlJhVUJZMHFTeEpwSlh4eGgtNWVxVEIw?oc=5",
-   "summary": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初 Infoseek",
-   "outlet": "Infoseek",
-   "feed": "Googleニュース：KDDI",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:59:00Z",
-   "first_seen": "2026-11-10T06:10:05Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "62439cba8b095e83",
-   "title": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBfeW9DV1R0UXVqdUhFeThXZmZIS0J6N3Q4eHlGT21JVUROQlhfVXBHYXB0R1JsWXhPbzA0R1pRUDAwNlBZeTZvWGRNdVpZaFRwdkgtNU8zdjMzdUlTalE?oc=5",
-   "summary": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初 Infoseek",
-   "outlet": "Infoseek",
-   "feed": "Googleニュース：KDDI",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:59:00Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "8bc8506c6b5e8e01",
-   "title": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初",
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNLV9lb2Y1ekZ1emdTU0djVnBmUmRKbkNNTDJOTVhNZlRfTEs0eVRnWkdIWFo1ckdvZWljZWd1TjM4MjdYWHZkM3R5TXViamx6c0Jia3FDUzVNRnd3Qjc5c1EwTVlDVzZiajVEOTJMOWR1YnltQzZtMHBGc2x2SVp1cHZjRU42TThtQlHSAXxBVV95cUxQaWZ1S0hHa0tXSFprN2Z5Z3hKNDJLOERrS0dpVWhSQ3hwMnRXeEt0al9NamdjMVhUN1RadElwbnpWVFNuM3JBNE4wT0tCUEhTclJac2ZfRU0tQmVkanZOU3RtejVReTJJQmJ3cGFFa01sQVRvdDAtMEhTNjRn?oc=5",
-   "summary": "「水」がアンテナに、三菱電機とKDDIがモバイル通信に成功 - 通信業界初 ｄメニューニュース",
-   "outlet": "ｄメニューニュース",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:59:00Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "7ef0aa6296d4620a",
-   "title": "グーグル、AI用「TPU 8tx／8i Max」発表 AMD製CPUで機密保護",
-   "link": "https://k-tai.watch.impress.co.jp/docs/news/2155109.html",
-   "summary": "グーグルは10日、AIの計算処理を担う専用チップ「TPU（Tensor Processing Unit）」の第8世代の新たな製品群として、「TPU 8tx」と「TPU 8i Max」を発表した。",
-   "outlet": "ケータイ Watch",
-   "feed": "ケータイ Watch",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:54:55Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2155/109/0.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "33bb0be92c096564",
-   "title": "まるで地球外生命体…深海で見つかった「スパゲティワーム」の奇妙すぎる姿",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5kakxRTjdXQzM4WjFWeG9yUFBHQ2tobnhCSVRQbE9jc1FUUlBJd0hEemdpbEhnUm5OSFd4ZnpUMXNfd3ZrVzUzVF9fN0ItZllPbkc4SnZJN3BrcExwYVdJUkJRb2pqTXM?oc=5",
-   "summary": "まるで地球外生命体…深海で見つかった「スパゲティワーム」の奇妙すぎる姿 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T03:53:00Z",
-   "first_seen": "2026-11-11T01:24:48Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "15c6e9b5015ab1cb",
-   "title": "まるで地球外生命体…深海で見つかった「スパゲティワーム」の奇妙すぎる姿",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9WdjN0czNDWU53RmNxZWdueF9TT3hwMGdZTzllUnpIUVUxeTNnTFBiNmp4NERjVWNDbTFWVEpTZ1lhb01tNGRmWGNXSUNfbnJyblF3UnJfdEs2Zw?oc=5",
-   "summary": "まるで地球外生命体…深海で見つかった「スパゲティワーム」の奇妙すぎる姿 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T03:53:00Z",
-   "first_seen": "2026-11-10T05:57:12Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "f68565f0464c937e",
-   "title": "イランへの再攻撃「必要ない」 トランプ氏、中間選挙大敗で慎重に？",
-   "link": "http://www.asahi.com/articles/ASVCB0R3HVCBUHBI00HM.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T03:50:09Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261110001445_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "0627735a1d30b3d4",
-   "title": "日経平均は大幅に続伸、ソフトバンクGが1銘柄で約400円分押し上げ(フィスコ)",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUmRzcDVqY2RkSFAyWlBOVmltel9BTkhXUDhfQURDZGQyZFFlcUMtR25VMU5aczNFMHh4MWdfNWNNYUJKc29EX1hVZ194V2tCVHV2aFF0YnZJMnNBWEc4MzNNalpzYmlEUDJpREpEZWdpYm5RMUh1ZFRRWl82WnUyRHNabkh5QU0?oc=5",
-   "summary": "日経平均は大幅に続伸、ソフトバンクGが1銘柄で約400円分押し上げ(フィスコ) Yahoo!ファイナンス",
-   "outlet": "Yahoo!ファイナンス",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:45:17Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "e440939e8793d30a",
-   "title": "ドコモ利用者を襲う“次のリスク” 最大30万件情報流出で狙われるのは何か？：「電話番号が漏れた」だけでは済まない",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBlcFhXRlgtLXExbUd3Rkc5UG5LU0FPTWMzbVlOTXJLTFBtcHNQRFlYMVJaZnBlODF6S3huUmJKMXJmbmxaZC1MVmw5NWtrVE84dnRWSkR6cTdYbEgybS1oRGtMUjE4dGVrOW1nNjJ2cnRTUQ?oc=5",
-   "summary": "ドコモ利用者を襲う“次のリスク” 最大30万件情報流出で狙われるのは何か？：「電話番号が漏れた」だけでは済まない ITmedia",
-   "outlet": "ITmedia",
-   "feed": "Googleニュース：通信キャリア",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:45:00Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "0d93acae2cfb8305",
-   "title": "シャオミ、背面ディスプレイ搭載「Xiaomi 18 Pro」シリーズを11月17日に発表 表参道で先行体験イベントも開催",
-   "link": "https://k-tai.watch.impress.co.jp/docs/news/2155096.html",
-   "summary": "シャオミは、背面ディスプレイ搭載の新型スマートフォン「Xiaomi 18 Pro」シリーズを11月17日に発表すると告知した。あわせて20日～23日には、東京・表参道で発売記念イベントも開催する。",
-   "outlet": "ケータイ Watch",
-   "feed": "ケータイ Watch",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:40:44Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2155/096/213658.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "ad68322c2ef66d68",
-   "title": "Kis-My-Ft2、新曲「La la la」MVをプレミア公開",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9MSnh2UkM3STdFODNTWDJCbVd0TnhpVzF2dDRiQ3Noand2RWhGbDMxZWZ6Z1J1cTV5TU9NN29ka3Rubl9qR243TEdnUWQyTWNhLVY1SFBjbzBXa2hDUGpjeU5yNA?oc=5",
-   "summary": "Kis-My-Ft2、新曲「La la la」MVをプレミア公開 CDJournal.com",
-   "outlet": "CDJournal.com",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-10T03:38:00Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "c7b29e9fb6374847",
-   "title": "Deutsche Telekom CEO to fight Huawei ban amid Nvidia scandal",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSEVoQXdIa0FJREdYZGRJbEV0ejVVWW5vbHZJakVZOS1vM3d6ZTF5S3A2cDA4QmxGMXhNVmlUOWwzSlV5UHBWd0pPQkhIYXdvN3cwT2Nmdk96YVRrUk44MU9URTc2SGdPZzdKS3A0aEtiTFYzQ0hvZE1yLWdTWFFQeXZrMkljS2I0NVl2STJHNFZCanNzSzl3?oc=5",
-   "summary": "Deutsche Telekom CEO to fight Huawei ban amid Nvidia scandal Light Reading",
-   "outlet": "Light Reading",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-11-10T03:36:36Z",
-   "first_seen": "2026-11-10T11:06:37Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "6348c8604c735f17",
-   "title": "画像1 / 5＞Kis-My-Ft2・宮田俊哉「本当の仲間って、厳しいことも言い合う仲だと思う」渾身の2作目ラノベに込めたリアルと仲間像",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE85QlZoaDQwUFQtdXdSd1Ztcjd6dElPWk5tNDNZY1pZcXFsQVpjZHJvSS1hNGFhQ3NLRG5ydWdoQVgyOEg1NERVeWhnYTd0Qkl0aGUzVkhnNlNKRkR6cUdEMGNudkhKM0tNYUFzLUhadGtrX2Rqb1BpcEo1Y1U4alE?oc=5",
-   "summary": "画像1 / 5＞Kis-My-Ft2・宮田俊哉「本当の仲間って、厳しいことも言い合う仲だと思う」渾身の2作目ラノベに込めたリアルと仲間像 ウォーカープラス",
-   "outlet": "ウォーカープラス",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-10T03:34:39Z",
-   "first_seen": "2026-11-10T09:08:36Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "474865538082d5e9",
-   "title": "One Nation dumps Victorian election candidate who praised Adolf Hitler as ‘GOAT’",
-   "link": "https://www.theguardian.com/australia-news/2026/nov/10/one-nation-dumps-franco-guardiani-praised-hitler-victoria-elections-ntwnfb",
-   "summary": "Party disendorses Preston candidate Franco Guardiani after social media posts emerge Get our breaking news email , free app or daily news podcast One Nation Victoria has disendorsed a candidate whose private social media account described Adolf Hitler as the “GOAT” and claimed th…",
-   "outlet": "The Guardian World",
-   "feed": "The Guardian World",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://i.guim.co.uk/img/media/ffd2084856240a692fa1884c87559b8ff08d3986/329_0_3288_2631/master/3288.jpg?width=140&quality=85&auto=format&fit=max&s=7961765fc52974fa23d75a5acda4119f",
-   "published": "2026-11-10T03:33:55Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "fe0c9a5e9bc4ddb4",
-   "title": "ズワイガニの初競り 最高値は雄5匹で40万円 京都・京丹後",
-   "link": "https://mainichi.jp/articles/20261110/k00/00m/310/051000c",
-   "summary": "",
-   "outlet": "毎日新聞",
-   "feed": "毎日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T03:32:49Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://cdn.mainichi.jp/vol1/2026/11/10/20261110ddlk26040346000p/0c10.jpg?3",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "bbeb27a7224f68d3",
-   "title": "Kis-My-Ft2、新曲「La la la」配信 TVショーをイメージしたMVのプレミア公開も",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPbGI1cFlzNHlQdE9sQzJlTTNpYTg0ZUE3bzJsdUt0eXVqMnJoQTFwblhHdTExR2JfWlZ0bUI3NDdwdnplZktTY0k5QlhZb3ZuakFOMjR3cVQtSHpoa1NJcnJMTGNfQ2RpVUc3VDI1b0lTTWpQa2ZtUnFmcTZNTzUwcWtSWjNia2M0OXQwVDZYdjZUNFl4cEd3ai04SQ?oc=5",
-   "summary": "Kis-My-Ft2、新曲「La la la」配信 TVショーをイメージしたMVのプレミア公開も 産経ニュース",
-   "outlet": "産経ニュース",
-   "feed": "Googleニュース：Kis-My-Ft2",
-   "kind": "エンタメ",
-   "lang": "ja",
-   "published": "2026-11-10T03:31:11Z",
-   "first_seen": "2026-11-11T10:17:35Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "6a1558c845940c78",
-   "title": "Nation of No One is donning a tinfoil hat for '5G Fever Dream' -",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9HSnRIdk5OZ0gwcDNXM292eG1VeWNKcm1maFpOOWptWWxjWW9xd3lnbW9xOGtOZ2hZejMweXBJMWhVdWR6dW5BRXBJZlB0d2dPY2Z1V3Y3UQ?oc=5",
-   "summary": "Nation of No One is donning a tinfoil hat for '5G Fever Dream' - Happy Mag",
-   "outlet": "Happy Mag",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-11-10T03:28:37Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "a1b4ec151ce3fa01",
-   "title": "織田翔希を強行指名の巨人、横浜高を訪問 本人と松井監督は同席せず",
-   "link": "http://www.asahi.com/articles/ASVCB116LVCBUTQP008M.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T03:22:34Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261110001712_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "fc1190d09ec4445c",
-   "title": "画像・写真：スパイ疑惑、ＦＢＩが調査：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB4NDZwSUt5WURuNy1HcWxNV01lOGNieXNnZnhreXVqbm1kQW1acThsZ3pBYVFjYl9mbGk0a3JUT3FpT0R2eDhsV01lS2RVRV92cVptLWFta3pxZkR3eDBrQXJyVmQ?oc=5",
-   "summary": "画像・写真：スパイ疑惑、ＦＢＩが調査：時事ドットコム 時事ドットコム",
-   "outlet": "時事ドットコム",
-   "feed": "時事ドットコム",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T03:22:27Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "dbeb3c431c24dd34",
-   "title": "市営住宅の自宅で拳銃と実弾所持容疑、67歳男を逮捕 発射の疑いも",
-   "link": "http://www.asahi.com/articles/ASVCB11P5VCBPTIL00QM.html?ref=rss",
-   "summary": "",
-   "outlet": "朝日新聞",
-   "feed": "朝日新聞",
-   "kind": "国内",
-   "lang": "ja",
-   "published": "2026-11-10T03:21:13Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://imgopt.asahi.com/ogp/AS20261110001970_comm.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "3eec15e15ef11c18",
-   "title": "Apple Music、「DJ CHARI & DJ TATSUKI のヒップホップ講座」最終回を配信",
-   "link": "https://k-tai.watch.impress.co.jp/docs/news/2155068.html",
-   "summary": "Apple Musicは10日、「DJ CHARI」と「DJ TATSUKI」によるラジオ番組「DJ CHARI & DJ TATSUKI のヒップホップ講座」の最終回を配信した。",
-   "outlet": "ケータイ Watch",
-   "feed": "ケータイ Watch",
-   "kind": "通信",
-   "lang": "ja",
-   "published": "2026-11-10T03:20:57Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://k-tai.watch.impress.co.jp/img/ktw/list/2155/068/01_thumb.jpg",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "fc78e0684132ef8d",
-   "title": "California voters reject proposed one-time tax on billionaires' wealth",
-   "link": "https://www.france24.com/en/americas/20261110-california-voters-reject-proposed-one-time-tax-on-billionaires-wealth",
-   "summary": "California voters have rejected a proposed 5% tax on the net worth of billionaires, handing a victory to tech leaders who poured hundreds of millions of dollars into defeating the measure. The defeat of Proposition 40 also marks a setback for progressives seeking to tax the wealt…",
-   "outlet": "© Jeff Chiu, AP",
-   "feed": "France 24",
-   "kind": "overseas",
-   "lang": "en",
-   "image": "https://s.france24.com/media/display/1bfc22d4-d82f-11f1-844d-bf1914cabd52/w:1024/p:16x9/billionaire-calif-taxe.jpg",
-   "published": "2026-11-10T03:19:56Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "6e4355e98c195391",
-   "title": "英人気コメディアンに拘禁10年半、レイプと性的暴行の罪",
-   "link": "https://www.bbc.com/japanese/articles/cr4g1g9klql2o?at_medium=RSS&at_campaign=rss",
-   "summary": "ロンドンの裁判所は9日、イギリスの人気コメディアンだったラッセル・ブランド被告（51）に対し、レイプと性的暴行の罪で拘禁10年6カ月を言い渡した。陪審団は5日、2004年から2009年にかけて4人の女性に性的暴行をした罪で、被告に有罪評決を下していた。",
-   "outlet": "BBCニュース日本語",
-   "feed": "BBCニュース日本語",
-   "kind": "国際",
-   "lang": "ja",
-   "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/e1c3/live/e7281af0-dc47-11f1-b441-2b33b063138f.jpg",
-   "published": "2026-11-10T03:18:33Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "f23da70639b3223f",
-   "title": "SpaceX selects Qualcomm to accelerate Starlink Mobile’s Nationwide 5G Network",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWHhwbTJ6c2d1XzBlbENfb0JFaWJkQURBTVJ4ZDB6U0UtT3V3TGVVVGtIRlFXeUhuYzhQZFVoN1hhM0llcFVuTDFiMC1Kek4tZ1VocjRsWWtsZlgwR1pTWXcza0xxTS11Rm0zSjQyNTVIelZUaEVud1pHdkdlS0EwSjJlQy1KQVRWWGlaTEtWMnl0X0w2MzI2ZDVhR0tLTnVEMTJUcWpQQmFCUzliWmx2cUgwZUtpeVhDeFpn?oc=5",
-   "summary": "SpaceX selects Qualcomm to accelerate Starlink Mobile’s Nationwide 5G Network Cyprus Shipping News",
-   "outlet": "Cyprus Shipping News",
-   "feed": "Google News: Telecom",
-   "kind": "通信",
-   "lang": "en",
-   "published": "2026-11-10T03:18:24Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "1e8eade9d41122dd",
-   "title": "Saudi Arabia downs missiles fired at Riyadh after Houthi attack on pipeline",
-   "link": "https://www.aljazeera.com/news/2026/11/10/saudi-arabia-downs-missiles-fired-at-riyadh-after-houthi-attack-on-pipeline?traffic_source=rss",
-   "summary": "Saudi forces intercept two missiles fired towards Riyadh, hours after reporting damage to key East-West pipeline.",
-   "outlet": "Al Jazeera",
-   "feed": "Al Jazeera",
-   "kind": "overseas",
-   "lang": "en",
-   "published": "2026-11-10T03:17:51Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/AP26287636573938-1794279573.jpg?resize=1920%2C1440",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "3d70b2a4e8c7b8ba",
-   "title": "Newly-elected Democrats react to Hegseth impeachment bid",
-   "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/newly-elected-democrats-react-to-hegseth-impeachment-bid?traffic_source=rss",
-   "summary": "Newly-elected Democrats say holding Defense Secretary Pete Hegseth accountable, will be a priority in the next Congress.",
-   "outlet": "Al Jazeera",
-   "feed": "Al Jazeera",
-   "kind": "overseas",
-   "lang": "en",
-   "published": "2026-11-10T03:16:44Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "image_checked": true,
-   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/image-1794280529.jpg?resize=1620%2C1080&quality=80",
-   "tv_match": "unknown",
-   "picked": false
-  },
-  {
-   "id": "9aa322d3ec09facf",
-   "title": "日清紡ＨＤ、通期純利益見通し上方修正 成形品事業譲渡で特別利益",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE05emRKOUJYTlFPVjI2Wl9MbzhNcFhzUUFWRXh4ZkpwNVA0YzFjTE03ZE1telVjcFZ4dmxBbTBCeUpoWi1DR0NmWllSeDhIVU50YTgtRzVXVXBDUQ?oc=5",
-   "summary": "日清紡ＨＤ、通期純利益見通し上方修正 成形品事業譲渡で特別利益 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T03:10:00Z",
-   "first_seen": "2026-11-10T04:09:01Z",
-   "tv_match": null,
-   "picked": false
-  },
-  {
-   "id": "d55d49f9ca7fd843",
-   "title": "高さ38メートル、ビルから巨大な滑り台が伸びる…メキシコに出現した奇妙な建造物の正体",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBDZXE4OGNEV1o1X0VMNno3RVJpLVdkdEowTWZDcGREQnk5QW1BLU1qb2xFTWUtRkdTSk5jVU5SQ3lvWjlDekVncFg3QTBDY2prbWx1cENJeG0yZGJJbndr?oc=5",
-   "summary": "高さ38メートル、ビルから巨大な滑り台が伸びる…メキシコに出現した奇妙な建造物の正体 ニューズウィーク日本版",
-   "outlet": "ニューズウィーク日本版",
-   "feed": "ニューズウィーク日本版",
-   "kind": "国際",
-   "lang": "ja",
-   "published": "2026-11-10T03:09:19Z",
-   "first_seen": "2026-11-10T05:57:12Z",
-   "tv_match": null,
    "picked": false
   }
  ],
  "tv": [
+  {
+   "id": "a1ddb92ce529f71d",
+   "title": "北朝鮮・金総書記 家族でスキー場開発を視察 白いウェアの娘ジュエ氏の写真も",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZWnRqVnItNGl0dTZVNTVlRVZHVmJLR0xtSjFEd3NCR2VWNVM4bWJDRndDeVZOQWx0T05kYjFxTUZKaXFzYU9KbmdZWGFGdGx4ajE0d1l4MS1OS1JpSHVERjZrcGllZ2lFYlU0Yk5palVHeXloQ1R0VFNR?oc=5",
+   "summary": "北朝鮮・金総書記 家族でスキー場開発を視察 白いウェアの娘ジュエ氏の写真も テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T03:43:18Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
+   "id": "d9f1ced5b5a4c3d8",
+   "title": "ロシア軍機2機が日本の領空侵犯か 小泉防衛大臣「主権の重大な侵害、全く受け入れられない」と厳重抗議 福岡・沖ノ島周辺",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBxR1NVZ1lVNG1uUEhDc0VSQ3lRc1NHSUMzVEpucENzdmdCT2V3ZDNQTWZ0b2JYTzc5cWI2cmZhTTlYTWxEcjdYUGpmanNtZw?oc=5",
+   "summary": "ロシア軍機2機が日本の領空侵犯か 小泉防衛大臣「主権の重大な侵害、全く受け入れられない」と厳重抗議 福岡・沖ノ島周辺 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T03:16:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
+   "id": "ac55ed2204f540c3",
+   "title": "「麦ごはんにとろろが一番おいしい！」静岡市の特産・自然薯の品評会 年末にかけ出荷のピーク",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE02czNNTm5UY1Vxd1FPWFBkNG9wVVVDUUFIR00xYmNWLTc4Z0ZiU3VmeS13RWFzNGtoQU5Od0NWR1VlRVYydVg1UThxaHYydw?oc=5",
+   "summary": "「麦ごはんにとろろが一番おいしい！」静岡市の特産・自然薯の品評会 年末にかけ出荷のピーク FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T03:00:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
+   "id": "76f985fa42f71dc4",
+   "title": "【交通事故相次ぐ】札幌市で乗用車など“3台絡む事故”10～60代の男女4人ケガ…千歳市で道路横断中の30代女性2人が軽乗用車にはねられ病院に搬送〈北海道〉",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFA0Y3V3VmtRRFZlek80X1J6TTc4YWZoR0JLcGNVeWh6QndBZnFtQXpGUFQtTmtCakc1OHByRld4Sjc2RlVNWEZ4ajBJR0s5QQ?oc=5",
+   "summary": "【交通事故相次ぐ】札幌市で乗用車など“3台絡む事故”10～60代の男女4人ケガ…千歳市で道路横断中の30代女性2人が軽乗用車にはねられ病院に搬送〈北海道〉 FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T02:55:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
+   "id": "6428505b7a2fc9f2",
+   "title": "「仙台市から強盗のため訪れた」愛知・強盗事件で逮捕の少年らの一部が供述 トクリュウ犯行か",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBKTGxvV1hZZ0RxNFg5OEF3dzg5ZTNhMGxlTjNwbjhTcmZhbE5pZDljTTdKdXY2QmdxNThQRW9Mckp0bDg1WHZPd2lvUFhGQQ?oc=5",
+   "summary": "「仙台市から強盗のため訪れた」愛知・強盗事件で逮捕の少年らの一部が供述 トクリュウ犯行か FNNプライムオンライン",
+   "outlet": "FNNプライムオンライン",
+   "feed": "FNNプライムオンライン",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T02:39:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
+   "id": "a483bfc899d1ddd6",
+   "title": "逮捕の男「4年前に知り合った」 包丁で首刺され女性死亡 東京・中野区",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9RMFhRcENpQ1ZpdzF5QTJuSk9MMUlqTXZnZlpNSkNIZkVEd1JCLUtrdjhoQktBa1UtMF9yb0JrUy1JTndfUmZaeHNMZEtBbXVhTU1IaXlfUmprRUltVWw2WmNsY29OWTBXTFpNLUVpcVV2dw?oc=5",
+   "summary": "逮捕の男「4年前に知り合った」 包丁で首刺され女性死亡 東京・中野区 テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T02:26:59Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
   {
    "id": "a9e00a7c8588bfb5",
    "title": "【速報】福岡県の沖ノ島北西の領空を侵犯 ロシア機とみられる2機 築城基地から戦闘機が緊急発進",
@@ -92679,6 +93036,18 @@
    "lang": "ja",
    "published": "2026-11-17T02:08:00Z",
    "first_seen": "2026-11-17T03:05:42Z"
+  },
+  {
+   "id": "a88b5481a3455834",
+   "title": "東京・葛飾区の住宅街に野生のシカが迷い込む 警視庁などが捕獲作業",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE0teGhSRXZ5Y01wQ2ZVVmt6LVkzZFludnRqSHoxRzhId3VfYWtIVDVnV2M4UWhMSl9seFQyeU12TGdWUXRQZTVjNW9EZ09nQnhxaGlxN2tVZDBudVJQZXVac0dtVVhOTXBZa0pTTEJvNzlBQQ?oc=5",
+   "summary": "東京・葛飾区の住宅街に野生のシカが迷い込む 警視庁などが捕獲作業 テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-17T02:07:20Z",
+   "first_seen": "2026-11-17T04:13:51Z"
   },
   {
    "id": "9104ddbe045f0f75",
@@ -93617,6 +93986,18 @@
    "first_seen": "2026-11-16T12:34:18Z"
   },
   {
+   "id": "9e90b40e084e48fb",
+   "title": "道路標識の不備で反則金誤徴収 岐阜県内17か所の横断歩道で… 調査の結果約3600の横断歩道で標識の不備",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZG5hY3lfZkN2YmNCSVRUcmY4NHVtYjBjYzZOcXYxMUJYc0hHVkFLakZsamZJdnEybzFmSGJ2S0lZYk02SFc2elh5Z3YzdUU4ZWU3VG9mdFJnMmRnWUw5S1ZDMkoxREo2a3FnQkVmWE1LWjM0UFVXVzBiaTVBSEpEb1pVQXprLWM?oc=5",
+   "summary": "道路標識の不備で反則金誤徴収 岐阜県内17か所の横断歩道で… 調査の結果約3600の横断歩道で標識の不備 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-16T11:15:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
    "id": "5df432163f6b7465",
    "title": "“史上初”の米中露首脳会談に警戒の声 高市総理“外交ウィーク”にどう動く",
    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9fNmVEWXlrVlpkQzItUDhTemZiUThjNHF1VHlzVDJOUnRGa2ZPRGxsZHRtVGZsdWNobGl4V25QUFlmREtoUGExR2VUT0g5QQ?oc=5",
@@ -93737,6 +94118,18 @@
    "first_seen": "2026-11-16T12:34:18Z"
   },
   {
+   "id": "ce92c28ffa4684a0",
+   "title": "「鹿児島の畜産を盛り上げたい」鹿屋農業高校が2年連続金賞 南九州黒牛枝肉共励会で快挙",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQS3NzNlNiNHZDT2sxTmQ4bWRhY1lYenFxaGVWenVJQzRzMzVQRGtaQ3lJNHdzc2NLX05xdi1MRTcyRXJpREFZTXA4QVN2MFhYZnkxcUd0X2k4WGJ2anROenNvUmxWc1ZMOUtiVlgwMXFpdDBMOGNuR1kyVTJfd3VKenVEbjNvYzA?oc=5",
+   "summary": "「鹿児島の畜産を盛り上げたい」鹿屋農業高校が2年連続金賞 南九州黒牛枝肉共励会で快挙 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-16T10:38:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
    "id": "d83485b820ddadec",
    "title": "「鹿児島、好きすぎて滅！」M!LK吉田仁人さん（霧島市出身）が「薩摩大使」に就任 委嘱式開かれる",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1RU09sYUVNc2ZVQ2otS0ExRXltYUJhbXFNVkkxMDJPVU9IYTdMb1dTUUMwNWdvRUZwdTJUMlJNSnNpTnJRWXRiUDBZbktZTFZjaFJiRnEwQQ?oc=5",
@@ -93773,10 +94166,10 @@
    "first_seen": "2026-11-16T12:34:18Z"
   },
   {
-   "id": "f9f8772e9693354a",
-   "title": "【兵庫県】11/17の天気予報",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9ldXlXVlhfVDQtNVYwRnpaTTE1Q0tVakRQQmZlZTZZSzYwdVpSb01rd3ZZTHAyNjRRZlowV3EtWXcwNUxtNHA1aEhNQUdNQQ?oc=5",
-   "summary": "【兵庫県】11/17の天気予報 FNNプライムオンライン",
+   "id": "71d02037fcc1ec57",
+   "title": "【沖縄県(宮古島地方)】11/17の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1HQTB2UkI5S3FJRkNqZU0zYVphRWQxU21BdF8zM1p6VDlWbmpJLXJnMGplZHRsQUdRd1RrVWE4UjhORUp1WUdZSnlZSjViUQ?oc=5",
+   "summary": "【沖縄県(宮古島地方)】11/17の天気予報 FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
@@ -93785,10 +94178,10 @@
    "first_seen": "2026-11-16T17:30:31Z"
   },
   {
-   "id": "71d02037fcc1ec57",
-   "title": "【沖縄県(宮古島地方)】11/17の天気予報",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1HQTB2UkI5S3FJRkNqZU0zYVphRWQxU21BdF8zM1p6VDlWbmpJLXJnMGplZHRsQUdRd1RrVWE4UjhORUp1WUdZSnlZSjViUQ?oc=5",
-   "summary": "【沖縄県(宮古島地方)】11/17の天気予報 FNNプライムオンライン",
+   "id": "f9f8772e9693354a",
+   "title": "【兵庫県】11/17の天気予報",
+   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9ldXlXVlhfVDQtNVYwRnpaTTE1Q0tVakRQQmZlZTZZSzYwdVpSb01rd3ZZTHAyNjRRZlowV3EtWXcwNUxtNHA1aEhNQUdNQQ?oc=5",
+   "summary": "【兵庫県】11/17の天気予報 FNNプライムオンライン",
    "outlet": "FNNプライムオンライン",
    "feed": "FNNプライムオンライン",
    "kind": "tv",
@@ -94553,6 +94946,18 @@
    "first_seen": "2026-11-16T17:30:31Z"
   },
   {
+   "id": "47ff2c9144a7fe45",
+   "title": "5回の通報も児相「緊急性なし」枚方市3歳女児虐待死 あざ確認も警察へ情報共有せず 命救えぬ組織の壁",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNHRRUy1zWEhVMTYwdlk2R1JOLWpNU2ZQblJYMUJjUWN5Qm51Y1k5M2t3WDB2T2g2OEY4OV96a2hDVm9YWC1qWXNpSWgyVkJpcWMzVldrb3hUNS1uLU1YWVE0dWxNcnBKS3VUOGFVV3dBUzd5b3JUY0xKcmYtdTFQYmVfSURMVVU?oc=5",
+   "summary": "5回の通報も児相「緊急性なし」枚方市3歳女児虐待死 あざ確認も警察へ情報共有せず 命救えぬ組織の壁 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-16T07:49:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
+  },
+  {
    "id": "e21244513f69bfc8",
    "title": "【速報】NTTドコモ 通信障害の5G一部サービスが全面復旧",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1TSkVkcUJHeVhQZkItbHdmTHQ4VHNxLUM4NENFa0E3T1luaHhRUEI3ZGV5em9jSV9OZGhDQkxIMlloVGk2QzVBVmt4NXBmNHQyRUJxeE44QW16dmpETHFIZmtjZ2hhZ0xlYTZ4MHBoVDNvUQ?oc=5",
@@ -94695,6 +95100,18 @@
    "lang": "ja",
    "published": "2026-11-16T06:37:07Z",
    "first_seen": "2026-11-16T09:05:28Z"
+  },
+  {
+   "id": "0f7bfa23ed2d975f",
+   "title": "公印を無断で使用し契約書を作成 黒石市が20代男性職員を11月13日付で停職6か月に",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ1EzMURsbVp4UXBPZEs4cTUxcjFrS0VuVXlkY1FnaHBOcTQwZUhmQmdnWGZWZ2V4dTVHYUs0TG92WnpwMTZFU0N0VFRVY0IyVGRXa2JpcUVwWkM4NUY0X0NiVTV3ZkpmVXRRVG9kMmg2c3JndTJTcTJnbWRmM2RlUVI1ckZwM28?oc=5",
+   "summary": "公印を無断で使用し契約書を作成 黒石市が20代男性職員を11月13日付で停職6か月に 日テレNEWS NNN",
+   "outlet": "日テレNEWS NNN",
+   "feed": "日テレNEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-16T06:31:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
   },
   {
    "id": "5739db93cb6586bc",
@@ -94851,6 +95268,18 @@
    "lang": "ja",
    "published": "2026-11-16T05:01:46Z",
    "first_seen": "2026-11-16T09:05:28Z"
+  },
+  {
+   "id": "72f58e5c9b80d0ad",
+   "title": "【これまでの裁判経緯】《速報》元ジャンポケ・斉藤慎二被告に懲役4年の1審判決「反省した態度を示していない」 弁護人は即日控訴",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBrUjRnd1ItX3h2NUw1WDhBTWJzcWxXcmVGWjhiYlVHUlZwd3pvTXJjNERQdUpVdTBhc3h0ZHhWOVFPbGNEYU9WeFdxdWVEVWlYcHRUTFpsRTVXcGEtTkl1clV6X3N0a0xNX09paVhUM0trdw?oc=5",
+   "summary": "【これまでの裁判経緯】《速報》元ジャンポケ・斉藤慎二被告に懲役4年の1審判決「反省した態度を示していない」 弁護人は即日控訴 テレ朝NEWS",
+   "outlet": "テレ朝NEWS",
+   "feed": "テレ朝NEWS",
+   "kind": "tv",
+   "lang": "ja",
+   "published": "2026-11-16T05:00:00Z",
+   "first_seen": "2026-11-17T04:13:51Z"
   },
   {
    "id": "61a001a9bcb6dfce",
@@ -110087,174 +110516,6 @@
    "lang": "ja",
    "published": "2026-11-10T04:37:23Z",
    "first_seen": "2026-11-10T05:57:12Z"
-  },
-  {
-   "id": "4857ca04a04ff208",
-   "title": "自民、棄権の石破前総理ら4人を戒告処分 参院で造反者出れば否決の可能性も",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jd0Y4NG1jdDRWdTNHaER4VXJXa0RkdUhvdFJFM1RZLW5UYlVpb2RUamR3UkFJbkM4V2sxZzZMRE15Y1NtdTUzRVVVLUd2NlQwZy1QMVNqNWVaQWkyRm83SnhJZ082V1U2S09BT1o0aGdxV3c?oc=5",
-   "summary": "自民、棄権の石破前総理ら4人を戒告処分 参院で造反者出れば否決の可能性も テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T04:01:12Z",
-   "first_seen": "2026-11-10T05:10:47Z"
-  },
-  {
-   "id": "076bd7160327375d",
-   "title": "ニッポン！こんな未来があるなんて～巨大企業の変革プロジェクト～",
-   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBwdW11MEJSMXhucDVlbE8tcHZMWHN3T2xRRlU3YWlQelhsbVd6cDlpX3NoOUdyTFdwWm03WEZPc29UYUtUQ2lNUHR6MjVJbUNPYUxLc293?oc=5",
-   "summary": "ニッポン！こんな未来があるなんて～巨大企業の変革プロジェクト～ テレ東BIZ",
-   "outlet": "テレ東BIZ",
-   "feed": "テレ東BIZ",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:55:34Z",
-   "first_seen": "2026-11-11T12:09:27Z"
-  },
-  {
-   "id": "861f40458a5dc2c9",
-   "title": "【続報】工事代金水増し 詐欺の疑いで阿波市の町田市長ら3人逮捕【徳島】（2026年11月9日掲載）｜JRT NEWS NNN",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOHBXTzFFcVZidjdZd1JvVzlxMHVTRXJIS1lDRHgyNG0xRHMtRnl5RFE1WWo0TmFHTTdiQzJLNmpMZGlRWXg5SnBrd0tIQ1NSTHdnZjBRWDlNTGV4Unh1X0g3cXBXdDBaSV96LWRldllJYTNRVEZhTGxxd1c5TjVmUVZaZzEtRzQ?oc=5",
-   "summary": "【続報】工事代金水増し 詐欺の疑いで阿波市の町田市長ら3人逮捕【徳島】（2026年11月9日掲載）｜JRT NEWS NNN 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:42:00Z",
-   "first_seen": "2026-11-10T05:10:47Z"
-  },
-  {
-   "id": "3f98bef823ffc9bd",
-   "title": "思い様々 生活切り詰めて投資する「NISA貧乏」は株価急落をどう見たか",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBnX1dOYmJVMTgzM0xWb2pOcV9ENnJrcWpZd25uazNmR0JubjBhM2EwMjM1bTYtOUljSDZHcmFJbGpNQnZsamlvN29heXBCSXhfaFB0YTdfZjZGQzdKNlNUSF9TZU5fMjFXNDNpNno3X2FXdw?oc=5",
-   "summary": "思い様々 生活切り詰めて投資する「NISA貧乏」は株価急落をどう見たか テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:37:00Z",
-   "first_seen": "2026-11-10T12:04:14Z"
-  },
-  {
-   "id": "7c426b8685fde734",
-   "title": "金融の記事一覧 (948ページ) | TBS CROSS DIG with Bloomberg",
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVGp6Y1NJb2VtZWxPaEl4aGItLTR5eUNMLVRDOHpjWWRkNjRJNzFLSnh2UjQ0NDNDbUtSYldadmhUc1Zkdl9iS042a1dYelpUOW1kcFdjUWVzdzRjaW9sQUJSMGJBMWJJLU54YlliSGNFTTRnS3pMU3F6X096RnBQQnVqYw?oc=5",
-   "summary": "金融の記事一覧 (948ページ) | TBS CROSS DIG with Bloomberg TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:33:14Z",
-   "first_seen": "2026-11-10T10:11:08Z"
-  },
-  {
-   "id": "9e18c9090ec096eb",
-   "title": "安保3文書改定に向け与党の実務者協議始まる 「原子力潜水艦」「非核三原則」で意見に隔たり",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9NWlZhalVFSjZvUDZpXzVhUWY0Y3RoN3h6SW9jVkF6eFdWQW9UUVBkbmFsYUZzaTZJSUdxM1ROWmVxRW5vVTdULVJkTkVwY1JUSG5RcXkxQQ?oc=5",
-   "summary": "安保3文書改定に向け与党の実務者協議始まる 「原子力潜水艦」「非核三原則」で意見に隔たり TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:27:27Z",
-   "first_seen": "2026-11-10T12:04:14Z"
-  },
-  {
-   "id": "4db2ceafbd510421",
-   "title": "アパート男性刺殺事件 逮捕の男「騒音がうるさかった」趣旨の供述 北海道室蘭市",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBPR3lyZVVNUGczRG5lUWdsZk9Tbk5tUjJSX0NRSG5Ia3F1MlRCWUhpSlpZUVZISXRieWQ0emlfekpVZHUzUXdReHY1NVBZanlJcXVJNURCM3I4VmRIS29Pd3JjQXNTMjRwdG9objBqWXVZUQ?oc=5",
-   "summary": "アパート男性刺殺事件 逮捕の男「騒音がうるさかった」趣旨の供述 北海道室蘭市 テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:16:57Z",
-   "first_seen": "2026-11-10T05:10:47Z"
-  },
-  {
-   "id": "e701e87fee992472",
-   "title": "【天気】10日（火）午後は天気回復も師走並みの寒さ（2026年11月9日掲載）｜日テレNEWS NNN",
-   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE84VUltX1BSbnlBa0JpcjIyZmRoMWRuRG01U0R5bUh2YmNrMGMwQjdoV2J3SjVDald6V2oyOHJoZmxpVFVfV0pSeWRSYmJ5YVFWZk92a2JEQUlaV0t5QmxiU283dHZlNUhqN3V3UjVELVNFSm95c3FpaDdzZXY?oc=5",
-   "summary": "【天気】10日（火）午後は天気回復も師走並みの寒さ（2026年11月9日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:14:01Z",
-   "first_seen": "2026-11-10T07:31:24Z"
-  },
-  {
-   "id": "5f078a589dd06867",
-   "title": "「トー横」で知り合った女性らカンボジアに送り特殊詐欺か 暴力団組員の男（26）を8回目逮捕 950万円詐取疑い 警視庁",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TTkdfMERXcWttRVJ1b0hEeWVkUERiUk5zaW1nakdBU3E1ekc1RmFsdnJMVFdYNkZ0MkZucXlEcWhxNDdnOFhjRXV0VXRSbWcwdjVSRzJTcw?oc=5",
-   "summary": "「トー横」で知り合った女性らカンボジアに送り特殊詐欺か 暴力団組員の男（26）を8回目逮捕 950万円詐取疑い 警視庁 TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:13:00Z",
-   "first_seen": "2026-11-10T13:25:39Z"
-  },
-  {
-   "id": "79d18d3a6d928ed4",
-   "title": "福井県の山林で発見された遺体は富山・小矢部市出身の26歳女性 首に圧迫された痕跡",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBQblhSTWJKTUZ2anJaRzhrZVE4ckRpelNXeC11VEwta3V3WVl6U0xuSHhqSGhEWHoySEc2WEI3Zl90ZG5TRUk4Vnk4NUl5UQ?oc=5",
-   "summary": "福井県の山林で発見された遺体は富山・小矢部市出身の26歳女性 首に圧迫された痕跡 FNNプライムオンライン",
-   "outlet": "FNNプライムオンライン",
-   "feed": "FNNプライムオンライン",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:12:00Z",
-   "first_seen": "2026-11-10T04:09:01Z"
-  },
-  {
-   "id": "667489f788675097",
-   "title": "ビールを飲んで熊本城復旧を支援 熊本屋台村で｢キリン一番搾りの日｣キャンペーン始まる",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQeWJDc21aTHhpQjZwY1pPSG4ySXpYY0RaWHRCR0lrdzM4c0tVSmpfUFZCcE5NbFR3MjdoQUd5cy1QaUVoZnNDc0FObmhKTlJvMHE5cF85enhhYXRiWUNxeldSMFVuSzJuQ05XWE5VLVFMaTZUS2lrVWpnaEhqNWhzbkpGeDdIaVU?oc=5",
-   "summary": "ビールを飲んで熊本城復旧を支援 熊本屋台村で｢キリン一番搾りの日｣キャンペーン始まる 日テレNEWS NNN",
-   "outlet": "日テレNEWS NNN",
-   "feed": "日テレNEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:09:01Z",
-   "first_seen": "2026-11-10T13:25:39Z"
-  },
-  {
-   "id": "5f1f17f1e9b03598",
-   "title": "徳島・阿波市長ら3人逮捕 自分の交通事故の修理代350万円を市の事業の工事代金に上乗せか",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9BaDJZbU1KUHMtRUJLQkpqTXBuWndlb0dycjllUnA1R25OeVVFQWJQZlJOMURGZElGWTBMY3V1a0ExdVJMRFlCM3ozZGVRMFlkazhCa1Ewcw?oc=5",
-   "summary": "徳島・阿波市長ら3人逮捕 自分の交通事故の修理代350万円を市の事業の工事代金に上乗せか TBS NEWS DIG",
-   "outlet": "TBS NEWS DIG",
-   "feed": "TBS NEWS DIG",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:08:00Z",
-   "first_seen": "2026-11-10T04:09:01Z"
-  },
-  {
-   "id": "9ddca119aea2901d",
-   "title": "トランプ大統領の求心力に陰り 政権内の離反警戒しバンス副大統領を牽制か",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE11MFpYSVVQS2h0S2phQ2oxaklzWVlCXzk1WUhyUzFFRG9JTWpWT0hyTFZsc0FfTWJxS2xZbzBHQmU3T2JTcXFtdzVCM1RZMkVnQVhBcTY5WjQwYlRjQ1VrbDZOTmJDblpyQllhcHFtY0duTDdSRjNMeFZ3?oc=5",
-   "summary": "トランプ大統領の求心力に陰り 政権内の離反警戒しバンス副大統領を牽制か テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:07:23Z",
-   "first_seen": "2026-11-10T05:10:47Z"
-  },
-  {
-   "id": "038c81e9484db417",
-   "title": "米ホワイトハウス近くで2つの事件 車が歩道に突っ込むなど2人逮捕",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9nR1dvcEhySFNiUTNKRC04YUdOVGx2b3JSSUE3a2RCUEhsYXg2djBLdTBIUjRpR2xwRmlaM0ZTdjl4ZVFyeV95SERhNEFBZWVKSmFuc05qNXM5c2ZtN205VFc5NUdrVVozVDYtemNNVFdsQ0pGeElfM2RB?oc=5",
-   "summary": "米ホワイトハウス近くで2つの事件 車が歩道に突っ込むなど2人逮捕 テレ朝NEWS",
-   "outlet": "テレ朝NEWS",
-   "feed": "テレ朝NEWS",
-   "kind": "tv",
-   "lang": "ja",
-   "published": "2026-11-10T03:05:56Z",
-   "first_seen": "2026-11-10T05:10:47Z"
   }
  ]
 }
